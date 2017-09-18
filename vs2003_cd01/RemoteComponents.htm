@@ -1,0 +1,541 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<TITLE>Remote Components Setup</TITLE>
+		<META content="text/html; charset=Windows-1252" http-equiv="Content-Type">
+		<STYLE>
+			<!--
+BODY {
+	BACKGROUND: #ffffff;
+	COLOR: #000000;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	FONT-SIZE: 10pt;
+	MARGIN: 0px;
+	PADDING: 0px;
+	PADDING-BOTTOM: 12pt
+}
+.banner {
+	PADDING-TOP: 6pt;
+	PADDING-BOTTOM: 6pt;
+	PADDING-LEFT: 5px;
+	PADDING-RIGHT: 0px;
+	TEXT-ALIGN: left;
+	FONT-SIZE: 10pt;
+	WIDTH: 100%;
+	BACKGROUND-COLOR: #66CCFF;
+	FONT-WEIGHT: bold
+}
+.tblpara {
+	MARGIN-LEFT: 5px
+}
+.buttons {
+	MARGIN-RIGHT: 15px;
+	MARGIN-BOTTOM: 5px
+}
+H1 {
+	FONT-SIZE: 13.5pt;
+	FONT-WEIGHT: bold;
+	MARGIN-BOTTOM: 6pt;
+	MARGIN-LEFT: 5px
+}
+H2 {
+	FONT-SIZE: 10pt;
+	FONT-WEIGHT: bold;
+	PADDING-TOP: 12pt;
+	MARGIN-BOTTOM: 6pt;
+	MARGIN-LEFT: 5px
+}
+TABLE {
+	BACKGROUND-COLOR: #FFFFFF;
+	FONT-SIZE: 100%;
+	MARGIN-BOTTOM: 12pt;
+	MARGIN-LEFT: 30px;
+	MARGIN-RIGHT: 30px;
+	BORDER: #CCCCCC 1px solid
+}
+
+TH {
+	FONT-SIZE: 10pt;
+	FONT-WEIGHT: bold;
+	TEXT-ALIGN: left;
+	BACKGROUND: #cccccc;
+	VERTICAL-ALIGN: top;
+	PADDING-TOP: 6pt;
+	PADDING-BOTTOM: 6pt;
+	PADDING-LEFT: 5px
+}
+TD {
+	BACKGROUND: #ffffff;
+	VERTICAL-ALIGN: top
+}
+P {
+	MARGIN-LEFT: 30px
+}
+.clsLink {
+	COLOR: #0000ff;
+	 TEXT-DECORATION: underline
+}
+BLOCKQUOTE.dtBlock {MARGIN: 0.5em 1.5em 0.5em 2em}
+A:link {COLOR: #0000ff}
+A:visited {COLOR: #666699}
+A:hover {COLOR: #3366ff}
+OL {MARGIN: 0.5em 0em 0em 2em}
+UL {MARGIN: 0.5em 0em 0em 2em}
+LI {MARGIN-BOTTOM: 0.5em}
+UL P {MARGIN-LEFT: 0em}
+OL P {MARGIN-LEFT: 0em}
+DL P {MARGIN-LEFT: 0em}
+UL P.label {MARGIN-TOP: 0.5em}
+OL P.label {MARGIN-TOP: 0.5em}
+DL {MARGIN-TOP: 0em; PADDING-LEFT: 1px}
+DD {MARGIN-BOTTOM: 0em; MARGIN-LEFT: 1.5em}
+DT {MARGIN-TOP: 0.5em}
+PRE {MARGIN-BOTTOM: 0.5em; MARGIN-TOP: 0.5em}
+PRE {COLOR: #000066; FONT: 100% Courier New, Courier, mono}
+CODE {COLOR: #000066; FONT: 100% Courier New, Courier, mono}
+.code {COLOR: #000066; FONT: 100% Courier New, Courier, mono}
+.file {COLOR: #0000FF; FONT: 100% Courier New, Courier, mono}
+PRE B {LETTER-SPACING: 0.1em}
+CODE B {LETTER-SPACING: 0.1em}
+PRE.syntax {BACKGROUND: #cccccc; BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid; BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; COLOR: #000000; CURSOR: text; MARGIN-BOTTOM: 1em; MARGIN-TOP: 1em; PADDING-BOTTOM: 4px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; PADDING-TOP: 4px}
+OL DIV.tablediv {MARGIN-TOP: 0em}
+UL DIV.tablediv {MARGIN-TOP: 0em}
+--></STYLE>
+	</HEAD>
+	<BODY>
+		<DIV class="banner">Visual Studio .NET Readme</DIV>
+		<H1><A name="contents"></A>Remote Components Setup</H1>
+		<P>Remote Components Setup installs components that provide functionality for 
+			debugging and analyzing deployed applications. You should install these 
+			components using this page if you wish to use this machine as a test machine 
+			only. Please read the prerequisites below and then follow the directions to 
+			install each component.</P>
+		<P><B>Important Note:</B> Visual Studio .NET cannot be installed on a machine with 
+			remote components installed from this page, without first uninstalling the 
+			remote components. If you wish to install Visual Studio .NET on this machine, 
+			you should close this page, return to setup, and then follow steps 1, 
+        2, and 3. The steps above allow you to install these debugging and 
+        analysis components as well as other Visual Studio .NET features.</P>
+		<h2>End User License Agreement</h2>
+		<P>BY INSTALLING, COPYING OR OTHERWISE USING THE SOFTWARE AND RELATED DOCUMENTATION 
+			YOU AGREE TO BE BOUND BY THE TERMS OF THE END USER LICENSE AGREEMENT <A target="_TOP" href="Setup\eula.txt">
+				FOUND HERE</A>. IF YOU DO NOT AGREE TO THE TERMS OF THIS AGREEMENT, DO NOT 
+			INSTALL, COPY OR USE THE SOFTWARE AND CLOSE THIS WINDOW TO ABORT INSTALLATION.</P>
+		<h2>Before Installing Remote Components</h2>
+		<p>Before installing any of these remote components, you must first have Windows 
+			Installer 2.0 on your machine. Windows XP already includes Windows Installer 
+			2.0. Windows NT 4.0 requires that Service Pack 6a be installed prior to 
+			installing Windows Installer.</p>
+		<TABLE>
+			<TR>
+				<TH>
+					To install Service Pack 6a and Windows Installer 2.0 on Windows NT 4.0</TH>
+			</TR>
+			<TR>
+				<TD>
+					<OL>
+						<LI>
+							Insert the Visual Studio .NET Prerequisites CD and click <B>OK</B> to 
+							ignore the autorun message box that appears with instructions to insert Disk 1.
+							<br>
+							-or-<BR>
+							Insert the Visual Studio .NET DVD and open the
+							<SPAN CLASS="file">wcu</SPAN>
+						folder.
+						<LI>
+							Open the
+							<SPAN CLASS="file">NTSP6a</SPAN>
+							folder and run
+							<SPAN CLASS="file">sp6i386.exe</SPAN>.
+						<LI>
+							When you have finished installing the Service Pack, open the
+							<SPAN CLASS="file">WindowsInstaller\2.0</SPAN>
+						folder.
+						<li>
+							Run
+							<SPAN CLASS="file">instmsiW.exe</SPAN>.</li>
+					</OL>
+				</TD>
+			</TR>
+		</TABLE>
+		<TABLE>
+			<TR>
+				<TH>
+					To install Windows Installer 2.0 on Windows 2000, Windows 98, or Windows ME</TH>
+			</TR>
+			<TR>
+				<TD>
+					<OL>
+						<LI>
+							Insert the Visual Studio .NET Prerequisites CD and click <b>OK</b> to 
+							ignore the autorun message box that appears with instructions to insert Disk 1.
+							<br>
+							-or-<BR>
+							Insert the Visual Studio .NET DVD and open the
+							<SPAN CLASS="file">wcu</SPAN>
+						folder.
+						<LI>
+							Open the
+							<SPAN CLASS="file">WindowsInstaller\2.0</SPAN>
+						folder.
+						<LI>
+							On Windows 98 or Windows Me run
+							<SPAN CLASS="file">instmsiA.exe</SPAN>.
+							<br>
+							-or-<BR>
+							On Windows 2000 run
+							<SPAN CLASS="file">instmsiW.exe</SPAN>.</LI>
+					</OL>
+				</TD>
+			</TR>
+		</TABLE>
+		<H2>Visual Studio Analyzer Server</H2>
+		<p>You do not need to install the remote Visual Studio Analyzer Server components 
+			in order to install the remote debugging components.</p>
+		<P>This component helps you analyze performance, isolate faults, and understand the 
+			structure of your distributed applications. You can use Visual Studio Analyzer 
+			with applications and systems built with Visual Studio tools. This component 
+			can be installed on Windows NT 4.0 and Windows 98, and later versions of 
+			Windows.</P>
+		<TABLE>
+			<TR>
+				<TH>
+					Before installing Visual Studio Analyzer Server on Windows 98 and Me</TH>
+			</TR>
+			<TR>
+				<TD>
+					<ol>
+						<LI>
+						Install Internet Explorer 5.01 or greater.
+						<li>
+							Insert the Visual Studio .NET Prerequisites CD and click <b>OK</b> to 
+							ignore the autorun message box that appears with instructions to insert Disk 1.
+							<br>
+							-or-<BR>
+							Insert the Visual Studio .NET DVD and open the
+							<SPAN CLASS="file">WCU</SPAN>
+						folder.
+						<li>
+							Open the
+							<SPAN CLASS="file">dotNetFramework</SPAN>
+							folder and run
+							<SPAN CLASS="file">dotnetfx.exe</SPAN>. <b>Note:</b> 
+                            For languages other than English, the language pack 
+                            for your operating system locale, Microsoft .NET 
+                            Framework 1.1 <i>&lt;locale&gt;</i> Language Pack, is also 
+                            required. Please find and run <font color="#0000FF">langpack.exe
+                            </font>from the 
+                            same folder<li>
+							Download and install
+							<SPAN CLASS="file">DCOM98 for Windows 98</SPAN>
+							and
+							<SPAN CLASS="file">DCOM98 for Windows 98 configuration utility</SPAN>
+							from <a target="_top" href="http://www.microsoft.com/COM/DCOM/DCOM98/download.asp">http://www.microsoft.com/COM/DCOM/DCOM98/download.asp</a>.</li>
+                    </ol>
+				</TD>
+			</TR>
+		</TABLE>
+		<TABLE>
+			<TR>
+				<TH>
+					Before installing Visual Studio Analyzer Server on Windows NT 4.0, Windows 
+					2000, and Windows XP or later</TH>
+			</TR>
+			<TR>
+				<TD>
+					<OL>
+						<LI>
+						Install Internet Explorer 5.01 or greater.
+						<li>
+							Insert the Visual Studio .NET Prerequisites CD and click <b>OK</b> to 
+							ignore the autorun message box that appears with instructions to insert Disk 1.
+							<br>
+							-or-<BR>
+							Insert the Visual Studio .NET DVD and open the
+							<SPAN CLASS="file">WCU</SPAN>
+						folder.
+						<li>
+							Open the
+							<SPAN CLASS="file">dotNetFramework</SPAN>
+							folder and run
+							<SPAN CLASS="file">dotnetfx.exe</SPAN>. <b>Note:</b> 
+                            For languages other than English, the language pack 
+                            for your operating system locale, Microsoft .NET 
+                            Framework 1.1 <i>&lt;locale&gt;</i> Language Pack, is also 
+                            required. Please find and run <font color="#0000FF">langpack.exe</font> from the 
+                            same folder</li>
+					</OL>
+				</TD>
+			</TR>
+		</TABLE>
+		<TABLE>
+			<TR>
+				<TH>
+					To install Visual Studio Analyzer Server on all operating systems</TH>
+			</TR>
+			<TR>
+				<TD>
+					<OL>
+						<LI>
+							On the <b>Start</b> menu, choose <b>Run</b>.
+						<LI>
+							Type the following: <BLOCKQUOTE class="dtBlock">
+								<DIV class="code">msiexec /qb+ /i <i>n:</i>\&lt;<i>Visual Studio .NET CD1</i>&gt;\vs_setup.msi 
+									NOVSUI=1 TRANSFORMS="<EM>n:</EM>\&lt;<EM>Visual Studio .NET CD1</EM>&gt;\Setup\Rmt9x.mst" 
+									SERVER_SETUP=1 ADDLOCAL=Visual_Studio_Analyzer_Server11</DIV>
+								<BR>
+								<DIV>For example:</DIV>
+								<DIV class="code">msiexec /qb+ /i d:\vs_setup.msi NOVSUI=1 
+									TRANSFORMS="d:\Setup\Rmt9x.mst" SERVER_SETUP=1 
+									ADDLOCAL=Visual_Studio_Analyzer_Server11</DIV>
+							</BLOCKQUOTE>
+						</LI>
+					</OL>
+				</TD>
+			</TR>
+		</TABLE>
+		<TABLE>
+			<TR>
+				<TH>
+					After installing Visual Studio Analyzer Server on Windows 98 and Me</TH>
+			</TR>
+			<TR>
+				<TD>
+					<OL>
+						<li>
+						Restart your computer.
+						<li>
+							On the <b>Start</b> menu, choose <b>Settings</b> and then choose <b>Control Panel</b>.
+						<li>
+							Open <b>Network</b> and then choose the <b>Access Control</b>
+						tab.
+						<li>
+							Select <b>User-level access control</b> and specify a domain in the <b>Obtain list 
+								of users and groups from</b>
+						edit box below.
+						<li>
+							Click <b>OK</b>.
+						<li>
+							Run
+							<SPAN CLASS="file">dcomcnfg.exe</SPAN>.
+						<li>
+							In the dialog box that appears, select the <b>Default security</b>
+						tab.
+						<li>
+							Select the <b>Enable remote connection</b> check box and then click <b>Edit Default</b>.
+							<p><b>Caution:</b> Selecting this option opens a DCOM port on your machine that can 
+								be accessed by other users. This can pose a security risk.</p>
+						<li>
+							In the <b>Access Permissions</b> dialog box, click <b>Add</b> and then add the 
+							set of users who you would like to debug on this machine.
+							<p><b>Caution:</b> Selecting this option allows users with permissions to access 
+								objects on your machine remotely. This can pose a security risk.</p>
+						</li>
+					</OL>
+				</TD>
+			</TR>
+		</TABLE>
+		<H2>Full Remote Debugging</H2>
+		<P>The Visual Studio Remote Debugger allows you to set up one or more machines as 
+			debugging platforms while another machine is your test platform. Visual Studio 
+			Remote Debugger can be installed on Windows NT 4.0 and Windows 98, and later 
+			versions of Windows. This component includes the files necessary for SQL 
+			Debugging.</P>
+		<p>This option installs support for Native, Managed, Script, and TSQL debugging.</p>
+		<p><b>Caution:</b> Windows 98 and Windows Me machines need to be on a domain.</p>
+		<p><b>Note:</b> If you intend to debug only TSQL code, you can pass over the 
+			pre-installation steps below and skip to <b>To install full remote debugging 
+				support on all operating systems</b>. Otherwise you must install the 
+			runtime to ensure debugging of all other languages works. The pre-installation 
+			steps below install the Common Language Runtime (CLR).</p>
+		<TABLE>
+			<TR>
+				<TH>
+					Before installing full remote debugging on Windows 98 and Me</TH>
+			</TR>
+			<TR>
+				<TD>
+					<OL>
+						<LI>
+						Install Internet Explorer 5.01 or greater.
+						<li>
+							Insert the Visual Studio .NET Prerequisites CD and click <b>OK</b> to 
+							ignore the autorun message box that appears with instructions to insert Disk 1.
+							<br>
+							-or-<BR>
+							Insert the Visual Studio .NET DVD and open the
+							<SPAN CLASS="file">WCU</SPAN>
+						folder.
+						<li>
+							Open the
+							<SPAN CLASS="file">dotNetFramework</SPAN>
+							folder and run
+							<SPAN CLASS="file">dotnetfx.exe</SPAN>. <b>Note:</b> 
+                            For languages other than English, the language pack 
+                            for your operating system locale, Microsoft .NET 
+                            Framework 1.1 <i>&lt;locale&gt;</i> Language Pack, is also 
+                            required. Please find and run <font color="#0000FF">langpack.exe</font> from the 
+                            same folder<li>
+							Download and install
+							<SPAN CLASS="file">DCOM98 for Windows 98</SPAN>
+							and
+							<SPAN CLASS="file">DCOM98 for Windows 98 configuration utility</SPAN>
+							from <a target="_top" href="http://www.microsoft.com/COM/DCOM/DCOM98/download.asp">http://www.microsoft.com/COM/DCOM/DCOM98/download.asp</a>.</li>
+					</OL>
+				</TD>
+			</TR>
+		</TABLE>
+		<TABLE>
+			<TR>
+				<TH>
+					Before installing full remote debugging on Windows NT 4.0, Windows 2000, and 
+					Windows XP</TH>
+			</TR>
+			<TR>
+				<TD>
+					<OL>
+						<LI>
+						Install Internet Explorer 5.01 or greater.
+						<li>
+							Insert the Visual Studio .NET Prerequisites CD and click <b>OK</b> to 
+							ignore the autorun message box that appears with instructions to insert Disk 1.
+							<br>
+							-or-<BR>
+							Insert the Visual Studio .NET DVD and open the
+							<SPAN CLASS="file">WCU</SPAN>
+						folder.
+						<li>
+							Open the
+							<SPAN CLASS="file">dotNetFramework</SPAN>
+							folder and run
+							<SPAN CLASS="file">dotnetfx.exe</SPAN>.&nbsp; <b>
+                            Note:</b> For languages other than English, the 
+                            language pack for your operating system locale, 
+                            Microsoft .NET Framework 1.1 <i>&lt;locale&gt;</i> 
+                            Language Pack, is also required. Please find and run 
+                            langpack.exe from the same folder</li>
+					</OL>
+				</TD>
+			</TR>
+		</TABLE>
+		<TABLE>
+			<TR>
+				<TH>
+					To install full remote debugging support on all operating systems</TH>
+			</TR>
+			<TR>
+				<TD>
+					<OL>
+						<LI>
+							On the <b>Start</b> menu, choose <b>Run</b>.
+						<LI>
+							Type the following: <BLOCKQUOTE class="dtBlock">
+								<DIV class="code">msiexec /qb+ /i <i>n:</i>\&lt;<i>Visual Studio .NET CD1</i>&gt;\vs_setup.msi 
+									NOVSUI=1 TRANSFORMS="<EM>n:</EM>\&lt;<EM>Visual Studio .NET CD1</EM>&gt;\Setup\Rmt9x.mst" 
+									SERVER_SETUP=1 ADDLOCAL=Full_Remote_Debugging</DIV>
+								<BR>
+								<DIV>For example:</DIV>
+								<DIV class="code">msiexec /qb+ /i d:\vs_setup.msi NOVSUI=1 
+									TRANSFORMS="d:\Setup\Rmt9x.mst" SERVER_SETUP=1 ADDLOCAL=Full_Remote_Debugging</DIV>
+							</BLOCKQUOTE>
+						</LI>
+					</OL>
+				</TD>
+			</TR>
+		</TABLE>
+		<TABLE>
+			<TR>
+				<TH>
+					After installing full remote debugging on Windows 98 and Me</TH>
+			</TR>
+			<TR>
+				<TD>
+					<OL>
+						<li>
+						Restart your computer.
+						<li>
+							On the <b>Start</b> menu, choose <b>Settings</b> and then choose <b>Control Panel</b>.
+						<li>
+							Open <b>Network</b> and then choose the <b>Access Control</b>
+						tab.
+						<li>
+							Select <b>User-level access control</b> and specify a domain in the <b>Obtain list 
+								of users and groups from</b>
+						edit box below.
+						<li>
+							Click <b>OK</b>.
+						<li>
+							Run
+							<SPAN CLASS="file">dcomcnfg.exe</SPAN>.
+						<li>
+							In the dialog box that appears, select the <b>Default security</b>
+						tab.
+						<li>
+							Select the <b>Enable remote connection</b> check box and then click <b>Edit Default</b>.
+							<p><b>Caution:</b> Selecting this option opens a DCOM port on your machine that can 
+								be accessed by other users. This can pose a security risk.</p>
+						<li>
+							In the <b>Access Permissions</b> dialog box, click <b>Add</b> and then add the 
+							set of users who you would like to debug on this machine.
+							<p><b>Caution:</b> Selecting this option allows users with permissions to access 
+								objects on your machine remotely. This can pose a security risk.</p>
+						</li>
+					</OL>
+				</TD>
+			</TR>
+		</TABLE>
+		<H2>Native-only Remote Debugging Support</H2>
+		<P>The Visual Studio Remote Debugger allows you to set up one or more machines as 
+			debugging platforms while another machine is your test platform. Visual Studio 
+			Remote Debugger can be installed on Windows NT 4.0 and Windows 98, and later 
+			versions of Windows.</P>
+		<TABLE>
+			<TR>
+				<TH>
+					To install native-only remote debugging support</TH>
+			</TR>
+			<TR>
+				<TD>
+					<OL>
+						<LI>
+							On the <b>Start</b> menu, choose <b>Run</b>.
+						<LI>
+							Type the following: <BLOCKQUOTE class="dtBlock">
+								<DIV class="code">msiexec /qb+ /i <i>n:</i>\&lt;<i>Visual Studio .NET CD1</i>&gt;\vs_setup.msi 
+									NOVSUI=1 TRANSFORMS="<EM>n:</EM>\&lt;<EM>Visual Studio .NET CD1</EM>&gt;\Setup\Rmt9x.mst" 
+									SERVER_SETUP=1 ADDLOCAL=Native_Only_Debugging</DIV>
+								<BR>
+								<DIV>For example:</DIV>
+								<DIV class="code">msiexec /qb+ /i d:\vs_setup.msi NOVSUI=1 
+									TRANSFORMS="d:\Setup\Rmt9x.mst" SERVER_SETUP=1 ADDLOCAL=Native_Only_Debugging</DIV>
+							</BLOCKQUOTE>
+						</LI>
+					</OL>
+				</TD>
+			</TR>
+		</TABLE>
+		<h2>Uninstalling Remote Components</h2>
+		<p>Using the steps below uninstalls <i>all</i> Remote Components.
+		</p>
+		<TABLE>
+			<TR>
+				<TH>
+					To uninstall all Remote Components</TH>
+			</TR>
+			<TR>
+				<TD>
+					<OL>
+						<LI>
+							Choose the <b>Start</b> menu, <b>Settings</b>, <B>Control Panel</B>.
+						<LI>
+							Open <B>Add/Remove Programs</B>.
+						<LI>
+							In the <B>Add/Remove Programs</B> dialog box, choose <B>Visual Studio .NET</B>.
+						<LI>
+							Click <B>Remove</B>.</LI>
+					</OL>
+				</TD>
+			</TR>
+		</TABLE>
+	</BODY>
+</HTML>

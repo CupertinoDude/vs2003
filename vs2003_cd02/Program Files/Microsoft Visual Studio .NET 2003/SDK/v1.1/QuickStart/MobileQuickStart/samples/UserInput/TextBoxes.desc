@@ -1,0 +1,7 @@
+User Input on a Mobile Web Form
+This sample demonstrates how to accept numeric and password input using 
+the TextBox mobile control. 
+Because the first Textbox is numeric, some devices will limit input to
+numeric data. For other devices, validation must be done on the server.
+The first form on this page contains multiple
+input controls, and may be paginated differently according to the target device.

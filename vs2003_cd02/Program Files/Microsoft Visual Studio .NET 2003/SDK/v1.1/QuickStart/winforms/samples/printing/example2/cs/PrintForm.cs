@@ -1,0 +1,108 @@
+//-----------------------------------------------------------------------
+//  This file is part of the Microsoft .NET SDK Code Samples.
+// 
+//  Copyright (C) Microsoft Corporation.  All rights reserved.
+// 
+//This source code is intended only as a supplement to Microsoft
+//Development Tools and/or on-line documentation.  See these other
+//materials for detailed information regarding Microsoft code samples.
+// 
+//THIS CODE AND INFORMATION ARE PROVIDED AS IS WITHOUT WARRANTY OF ANY
+//KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+//IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+//PARTICULAR PURPOSE.
+//-----------------------------------------------------------------------
+
+
+namespace Microsoft.Samples.WinForms.Cs.PrintingExample2 {
+    using System;
+    using System.ComponentModel;
+    using System.Windows.Forms;
+    using System.Drawing;
+    using System.Drawing.Printing;
+    using System.IO;
+
+    public class PrintForm : System.Windows.Forms.Form {
+        /// <summary>
+        ///    Required designer variable.
+        /// </summary>
+        private System.ComponentModel.Container components;
+        protected internal System.Windows.Forms.Button printButton;
+
+        public PrintForm() {
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
+
+            // Wire up event handler for print button
+            printButton.Click += new System.EventHandler(printButton_Click);
+        }
+
+        /// <summary>
+        ///    Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+           if (disposing) {
+                if (components != null) {
+                    components.Dispose();
+                }
+           }
+           base.Dispose(disposing);
+        }
+
+        //Event fired when the user presses the print button
+        private void printButton_Click(object sender, EventArgs e) {
+            try {
+
+                StreamReader streamToPrint = new StreamReader ("PrintMe.Txt");
+                try {
+                    TextFilePrintDocument pd = new TextFilePrintDocument(streamToPrint); //Assumes the default printer
+                    pd.Print();
+                } finally {
+                    streamToPrint.Close() ;
+                }
+
+            } catch(Exception ex) {
+                MessageBox.Show("An error occurred printing the file - " + ex.Message);
+            }
+        }
+
+        /// <summary>
+        ///    Required method for Designer support - do not modify
+        ///    the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container ();
+            this.printButton = new System.Windows.Forms.Button ();
+
+
+
+            this.Text = "Print Example 2";
+            this.AutoScaleBaseSize = new System.Drawing.Size (5, 13);
+            this.ClientSize = new System.Drawing.Size (504, 381);
+            printButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            printButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            printButton.Size = new System.Drawing.Size (136, 40);
+            printButton.TabIndex = 0;
+            printButton.Location = new System.Drawing.Point (32, 112);
+            printButton.Text = "Print the file";
+            this.Controls.Add (this.printButton);
+        }
+
+        // The main entry point for the application.
+        [STAThread]
+        public static void Main(string[] args) {
+            Application.Run(new PrintForm());
+        }
+
+    }
+}
+
+
+
+
+
+

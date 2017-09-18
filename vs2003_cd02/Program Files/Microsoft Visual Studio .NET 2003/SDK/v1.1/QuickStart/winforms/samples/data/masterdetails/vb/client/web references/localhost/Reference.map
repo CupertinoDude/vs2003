@@ -1,0 +1,6 @@
+﻿<?xml version="1.0"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2000/10/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://localhost/quickstart/winforms/samples/data/MasterDetails/vb/CustomersAndOrdersWebService.asmx?WSDL" filename="C:\QuickStart\WinForms\Samples\Data\MasterDetails\VB\Client\Web References\localhost\CustomersAndOrdersWebService.wsdl"/>
+  </Results>
+</DiscoveryClientResultsFile>

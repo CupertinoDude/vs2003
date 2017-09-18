@@ -1,0 +1,581 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META content="Microsoft Visual Studio 7.0" name="GENERATOR">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet"></HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">DumpModule&nbsp;</TD>
+					</TR>
+					<TR>
+						<TD>Dumps EE Module information</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!DumpModule &lt;addr&gt;</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="57" cellSpacing="1" cellPadding="1" width="708" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>&lt;addr&gt;<BR>
+										</STRONG><EM>Module Address</EM></TD>
+									<TD vAlign="top">Can be obtained using the&nbsp;DumpMT or DumpDomain command.</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>0:003&gt; !DumpModule  0014ea50 
+Name G:\Projects\VC\basedebug\bin\Debug\basedebug.exe
+dwFlags 00003280
+Attribute PEFile Edit&amp;Continue 
+Assembly 0014c620
+LoaderHeap* 0014ead8
+TypeDefToMethodTableMap* 03150010
+TypeRefToMethodTableMap* 0315001c
+MethodDefToDescMap* 03150064
+FieldDefToDescMap* 03150094
+MemberRefToDescMap* 0315009c
+FileReferencesMap* 031500ec
+AssemblyReferencesMap* 031500f0
+MetaData starts at 00402220 (0x694 bytes)</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Output</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<table border="1">
+								<tr>
+									<td class="outputname">Name</td>
+									<td class="outputcontents">Physical location of the module
+									</td>
+								</tr>
+								<tr>
+									<td class="outputname">dwFlags</td>
+									<td class="outputcontents">Bitmasked DWORD for assigning attribute values
+									</td>
+								</tr>
+								<tr>
+									<td class="outputname">Attributes</td>
+									<td class="outputcontents">
+										<P>Lists the attributes that are set in dwFlags.
+										</P>
+										<P>Can be any of the following values:
+											<br>
+											<br>
+											InMemory
+											<br>
+											PreLoad
+											<br>
+											PEFile
+											<br>
+											Reflection
+											<br>
+											PreCompile<br>
+											Edit&amp;Continue
+											<br>
+											SupportsUpdateableMethods
+										</P>
+									</td>
+								</tr>
+								<tr>
+									<td class="outputname">Assembly</td>
+									<td class="outputcontents">
+										<P>
+											Address of the assembly containing this module.
+										</P>
+									</td>
+								</tr>
+								<tr>
+									<td class="outputname">LoaderHeap</td>
+									<td class="outputcontents">
+										<P>
+											The&nbsp;LoaderHeap used to store the table lookups below.
+										</P>
+									</td>
+								</tr>
+								<tr>
+									<td class="outputname">TypeDefToMethodTableMap</td>
+									<td class="outputcontents">
+										<P>Starting location of all type definitions (mdTypeDep) for the module.
+										</P>
+										<P>Method tables&nbsp;for the type definitions are stored within the 
+											TypeDefToMethodTableMap and TypeRefToMethodTableMap addresses and can be dumped 
+											out using the DumpMT command, as shown&nbsp;below:
+										</P>
+										<table id="Table4">
+											<tr>
+												<td class="WinDBGOut"><pre>0:003&gt; !dumpmodule 0014ea50 
+Name G:\Projects\VC\basedebug\bin\Debug\basedebug.exe
+dwFlags 00003280
+Attribute PEFile Edit&amp;Continue 
+Assembly 0014c620
+LoaderHeap* 0014ead8
+TypeDefToMethodTableMap* <FONT color=red><STRONG>03150010</STRONG></FONT>
+TypeRefToMethodTableMap* 0315001c
+MethodDefToDescMap* 03150064
+FieldDefToDescMap* 03150094
+MemberRefToDescMap* 0315009c
+FileReferencesMap* 031500ec
+AssemblyReferencesMap* 031500f0
+MetaData starts at 00402220 (0x694 bytes)
+
+0:003&gt; dd <STRONG><FONT color=red>03150010</FONT></STRONG> 0315001c
+03150010  00000000 00000000 <FONT color=blue><STRONG>003750d8</STRONG></FONT> 00000000
+
+0:003&gt; !dumpmt <STRONG><FONT color=blue>003750d8</FONT></STRONG> 
+EEClass : 03141088
+Module : 0014ea50
+Name: basedebug.MyMain
+mdToken: 02000002  (G:\Projects\VC\basedebug\bin\Debug\basedebug.exe)
+MethodTable Flags : 80000
+Number of IFaces in IFaceMap : 0
+Interface Map : 00375130
+Slots in VTable : 11</pre>
+												</td>
+											</tr>
+										</table>
+										In the preceding&nbsp;example,&nbsp;the following class is&nbsp;defined in the 
+										basedebug module:
+										<br>
+										<br>
+										basedebug.MyMain<br>
+										<br>
+										However, this is a bit misleading as there is actually another class 
+										defined.&nbsp; It appears that we do not add the last class defined in the 
+										module.<br>
+									</td>
+								</tr>
+								<tr>
+									<td class="outputname">TypeRefToMethodTableMap</td>
+									<td class="outputcontents">
+										<P>Starting location of all type references (mdTypeRef) for the module.
+										</P>
+										<P>Method tables&nbsp;for the type references are stored within the 
+											TypeRefToMethodTableMap and MethodDefToDescMap addresses and can be dumped out 
+											using the DumpMT command, as shown below.
+										</P>
+										<table id="Table5">
+											<tr>
+												<td class="WinDBGOut"><pre>0:003&gt; !DumpModule 0014ea50 
+Name G:\Projects\VC\basedebug\bin\Debug\basedebug.exe
+dwFlags 00003280
+Attribute PEFile Edit&amp;Continue 
+Assembly 0014c620
+LoaderHeap* 0014ead8
+TypeDefToMethodTableMap* 03150010
+TypeRefToMethodTableMap* <STRONG><FONT color=red>0315001c</FONT></STRONG>
+MethodDefToDescMap* 03150064
+FieldDefToDescMap* 03150094
+MemberRefToDescMap* 0315009c
+FileReferencesMap* 031500ec
+AssemblyReferencesMap* 031500f0
+MetaData starts at 00402220 (0x694 bytes)
+
+0:003&gt; dd <STRONG><FONT color=red>0315001c</FONT></STRONG> 03150064
+0315001c  00000000 <STRONG><FONT color=blue>00392140</FONT></STRONG> 00000000 00000000
+0315002c  00000000 00000000 00000000 00000000
+0315003c  00000000 00000000 00000000 00000000
+0315004c  00000000 00000000 00000000 00000000
+0315005c  <STRONG><FONT color=blue>03132528</FONT></STRONG> <STRONG><FONT color=blue>003941b0</FONT></STRONG> 00000000
+
+0:003&gt; !DumpMT <FONT color=blue><STRONG>00392140</STRONG></FONT> 
+EEClass : 02d46990
+Module : 001440c0
+Name: System.Object
+mdToken: 02000002  (f:\winnt\microsoft.net\framework\v1.0.3705\mscorlib.dll)
+MethodTable Flags : 2080000
+Number of IFaces in IFaceMap : 0
+Interface Map : 003921a4
+Slots in VTable : 14
+
+0:003&gt; !DumpMT <STRONG><FONT color=blue>03132528</FONT></STRONG> 
+EEClass : 02d4ac54
+Module : 001440c0
+Name: System.Console
+mdToken: 02000054  (f:\winnt\microsoft.net\framework\v1.0.3705\mscorlib.dll)
+MethodTable Flags : 2000000
+Number of IFaces in IFaceMap : 0
+Interface Map : 03132658
+Slots in VTable : 62
+
+0:003&gt; !DumpMT <STRONG><FONT color=blue>003941b0</FONT></STRONG> 
+EEClass : 02d46c70
+Module : 001440c0
+Name: System.String
+mdToken: 0200000f  (f:\winnt\microsoft.net\framework\v1.0.3705\mscorlib.dll)
+MethodTable Flags : 2000000
+Number of elements in array: 2
+Number of IFaces in IFaceMap : 4
+Interface Map : 003944d8
+Slots in VTable : 189</pre>
+												</td>
+											</tr>
+										</table>
+										In the preceding&nbsp;example,&nbsp;you can see that the following external 
+										classes are used in the basedebug module:
+										<br>
+										<br>
+										System.Object<br>
+										System.Console<br>
+										System.String<br>
+									</td>
+								</tr>
+								<tr>
+									<td class="outputname">MethodDefToDescMap</td>
+									<td class="outputcontents">
+										<P>Starting location of all method definitions (mdMethodDef) for the module.
+										</P>
+										<P>Method descriptors&nbsp;for the method definitions are stored within the 
+											MethodDefToDescMap and FieldDefToDescMap addresses and can be dumped out using 
+											the DumpMD command, as shown below.
+										</P>
+										<table id="Table6">
+											<tr>
+												<td class="WinDBGOut"><pre>0:003&gt; !DumpModule  0014ea50 
+Name G:\Projects\VC\basedebug\bin\Debug\basedebug.exe
+dwFlags 00003280
+Attribute PEFile Edit&amp;Continue 
+Assembly 0014c620
+LoaderHeap* 0014ead8
+TypeDefToMethodTableMap* 03150010
+TypeRefToMethodTableMap* 0315001c
+MethodDefToDescMap* <STRONG><FONT color=red>03150064</FONT></STRONG>
+FieldDefToDescMap* 03150094
+MemberRefToDescMap* 0315009c
+FileReferencesMap* 031500ec
+AssemblyReferencesMap* 031500f0
+MetaData starts at 00402220 (0x694 bytes)
+
+0:003&gt; dd <STRONG><FONT color=red>03150064</FONT></STRONG> 03150094
+03150064  00000000 <STRONG><FONT color=blue>00375070</FONT></STRONG> <STRONG><FONT color=blue>00375080</FONT></STRONG> <STRONG><FONT color=blue>00375090</FONT></STRONG>
+03150074  <STRONG><FONT color=blue>003750a0</FONT></STRONG> <STRONG><FONT color=blue>003750b0</FONT></STRONG> <STRONG><FONT color=blue>003750c0</FONT></STRONG> <STRONG><FONT color=blue>003750d0</FONT></STRONG>
+03150084  <STRONG><FONT color=blue>00375160</FONT></STRONG> <STRONG><FONT color=blue>00375170</FONT></STRONG> <STRONG><FONT color=blue>00375180</FONT></STRONG> <STRONG><FONT color=blue>00375190</FONT></STRONG>
+03150094  00000000
+
+0:003&gt; !dumpmd <STRONG><FONT color=blue>00375070</FONT></STRONG> 
+Method Name : [DEFAULT] Void basedebug.MyMain.Main(SZArray String)
+MethodTable 3750d8
+Module: 14ea50
+mdToken: 06000001 (G:\Projects\VC\basedebug\bin\Debug\basedebug.exe)
+Flags : 10
+Method VA : 03121540
+
+...
+
+0:003&gt; !dumpmd <STRONG><FONT color=blue>00375190</FONT></STRONG>
+Method Name : [DEFAULT] [hasThis] String basedebug.MyClass.MyFunction()
+MethodTable 3751a4
+Module: 14ea50
+mdToken: 0600000b (G:\Projects\VC\basedebug\bin\Debug\basedebug.exe)
+Flags : 0
+IL RVA : 000021a0</pre>
+												</td>
+											</tr>
+										</table>
+										In the&nbsp;preceding example, the following methods are defined in the 
+										basedebug module:
+										<br>
+										<br>
+										basedebug.MyMain.Main()<br>
+										. . .<br>
+										basedebug.MyClass.MyFunction()<br>
+									</td>
+								</tr>
+								<tr>
+									<td class="outputname">FieldDefToDescMap</td>
+									<td class="outputcontents">
+										<P>Starting location of all field definitions (mdFieldDef) for the module.
+										</P>
+										<P>FieldDescs for the field definitions are stored within the FieldDefToDescMap and 
+											MemberRefToDescMap addresses and can be dumped out using the DumpObj command, 
+											as shown&nbsp;below.
+										</P>
+										<table id="Table7">
+											<tr>
+												<td class="WinDBGOut"><pre>0:003&gt; !dumpmodule  0014ea50 
+Name G:\Projects\VC\basedebug\bin\Debug\basedebug.exe
+dwFlags 00003280
+Attribute PEFile Edit&amp;Continue 
+Assembly 0014c620
+LoaderHeap* 0014ead8
+TypeDefToMethodTableMap* 03150010
+TypeRefToMethodTableMap* 0315001c
+MethodDefToDescMap* 03150064
+FieldDefToDescMap* <STRONG><FONT color=red>03150094</FONT></STRONG>
+MemberRefToDescMap* 0315009c
+FileReferencesMap* 031500ec
+AssemblyReferencesMap* 031500f0
+MetaData starts at 00402220 (0x694 bytes)
+
+0:003&gt; dd <STRONG><FONT color=red>03150094</FONT></STRONG> 0315009c
+03150094  00000000 <STRONG><FONT color=blue>00375138</FONT></STRONG> 00000000
+
+0:003&gt; !dumpobj <FONT color=blue><STRONG>00375138</STRONG></FONT> 
+Name: basedebug.MyClass
+MethodTable 0x003751a4
+EEClass 0x031410ec
+Size 12(0xc) bytes
+mdToken: 02000003  (G:\Projects\VC\basedebug\bin\Debug\basedebug.exe)
+FieldDesc*: 00375138
+      MT    Field   Offset                 Type       Attr    Value Name
+003751a4  4000001        4                CLASS   instance 10000001 _myProp</pre>
+												</td>
+											</tr>
+										</table>
+										In the preceding example,&nbsp;you can see that the following data member is 
+										defined in the basedebug module:
+										<br>
+										<br>
+										_myProp<br>
+									</td>
+								</tr>
+								<tr>
+									<td class="outputname">MemberRefToDescMap</td>
+									<td class="outputcontents">Starting location of all member references (mdMemberRef) 
+										for the module.
+										<br>
+										<P>Method descriptors&nbsp;for the member references are stored within the 
+											MemberRefToDescMap and FileReferencesMap addresses and can be dumped out using 
+											the DumpMD command, as shown&nbsp;below.
+										</P>
+										<table id="Table9">
+											<tr>
+												<td class="WinDBGOut"><pre>0:003&gt; !DumpModule  0014ea50 
+Name G:\Projects\VC\basedebug\bin\Debug\basedebug.exe
+dwFlags 00003280
+Attribute PEFile Edit&amp;Continue 
+Assembly 0014c620
+LoaderHeap* 0014ead8
+TypeDefToMethodTableMap* 03150010
+TypeRefToMethodTableMap* 0315001c
+MethodDefToDescMap* 03150064
+FieldDefToDescMap* 03150094
+MemberRefToDescMap* <STRONG><FONT color=red>0315009c</FONT></STRONG>
+FileReferencesMap* 031500ec
+AssemblyReferencesMap* 031500f0
+MetaData starts at 00402220 (0x694 bytes)
+
+0:003&gt; dd <STRONG><FONT color=red>0315009c</FONT></STRONG> 031500ec
+0315009c  00000000 00000000 00000000 00000000
+031500ac  00000000 00000000 00000000 00000000
+031500bc  00000000 00000000 00000000 00000000
+031500cc  00000000 00000000 00000000 <STRONG><FONT color=blue>03132358</FONT></STRONG>
+031500dc  <STRONG><FONT color=blue>03132268</FONT></STRONG> <STRONG><FONT color=blue>003938c8</FONT></STRONG> <STRONG><FONT color=blue>003938a8</FONT></STRONG> 00000000
+031500ec  00000000
+
+0:003&gt; !DumpMD <STRONG><FONT color=blue>03132358</FONT></STRONG>
+Method Name : [DEFAULT] Void System.Console.WriteLine(String)
+MethodTable 3132528
+Module: 1440c0
+mdToken: 06000502 (f:\winnt\microsoft.net\framework\v1.0.3705\mscorlib.dll)
+Flags : 10
+Method VA : 03122920
+
+0:003&gt; !DumpMD <STRONG><FONT color=blue>03132268</FONT></STRONG>
+Method Name : [DEFAULT] I4 System.Console.Read()
+MethodTable 3132528
+Module: 1440c0
+mdToken: 060004f3 (f:\winnt\microsoft.net\framework\v1.0.3705\mscorlib.dll)
+Flags : 10
+Method VA : 03123148
+
+0:003&gt; !DumpMD <STRONG><FONT color=blue>003938c8</FONT></STRONG>
+Method Name : [DEFAULT] [hasThis] String System.String.ToUpper()
+MethodTable 3941b0
+Module: 1440c0
+mdToken: 060000e4 (f:\winnt\microsoft.net\framework\v1.0.3705\mscorlib.dll)
+Flags : 0
+IL RVA : 000666e3
+
+0:003&gt; !DumpMD <STRONG><FONT color=blue>003938a8</FONT></STRONG> 
+Method Name : [DEFAULT] [hasThis] String System.String.ToLower()
+MethodTable 3941b0
+Module: 1440c0
+mdToken: 060000e2 (f:\winnt\microsoft.net\framework\v1.0.3705\mscorlib.dll)
+Flags : 0
+IL RVA : 000666d6</pre>
+												</td>
+											</tr>
+										</table>
+										In the preceding example,&nbsp;you can see that the following external methods 
+										are used in the basedebug module:
+										<br>
+										<br>
+										Console.WriteLine()<br>
+										Console.Read()<br>
+										String.ToUpper()<br>
+										String.ToLower()<br>
+									</td>
+								</tr>
+								<tr>
+									<td class="outputname">FileReferencesMap</td>
+									<td class="outputcontents">
+										<P>Starting location of all file references used by the module.
+										</P>
+									</td>
+								</tr>
+								<tr>
+									<td class="outputname">AssemblyReferencesMap</td>
+									<td class="outputcontents">Starting location of all assembly references used by the 
+										module.</td>
+								</tr>
+								<tr>
+									<td class="outputname">MetaData</td>
+									<td class="outputcontents">
+										<P>Starting location of the metadata.
+										</P>
+										<P>You can take a look at the metadata by dumping out the memory, as shown in the 
+											following example.
+										</P>
+										<table id="Table12">
+											<tr>
+												<td class="WinDBGOut"><pre>0:003&gt; !DumpModule  0014ea50 
+Name G:\Projects\VC\basedebug\bin\Debug\basedebug.exe
+dwFlags 00003280
+Attribute PEFile Edit&amp;Continue 
+Assembly 0014c620
+LoaderHeap* 0014ead8
+TypeDefToMethodTableMap* 03150010
+TypeRefToMethodTableMap* 0315001c
+MethodDefToDescMap* 03150064
+FieldDefToDescMap* 03150094
+MemberRefToDescMap* 0315009c
+FileReferencesMap* 031500ec
+AssemblyReferencesMap* 031500f0
+MetaData starts at <STRONG><FONT color=red>00402220 (0x694 bytes)</FONT></STRONG>
+
+0:003&gt; dc <STRONG><FONT color=red>00402220 00402220+0x694</FONT></STRONG> 
+00402220  424a5342 00010001 00000000 0000000c  BSJB............
+00402230  302e3176 3037332e 00000035 00050000  v1.0.3705.......
+00402240  0000006c 0000029c 00007e23 00000308  l.......#~......
+00402250  00000280 72745323 73676e69 00000000  ....#Strings....
+00402260  00000588 000000a0 00535523 00000628  ........#US.(...
+00402270  00000010 49554723 00000044 00000638  ....#GUID...8...
+00402280  0000005c 6f6c4223 00000062 00000000  \...#Blob.......
+00402290  01000001 01a21557 00000009 3301fa00  ....W..........3
+004022a0  00000200 00000001 00000011 00000003  ................
+004022b0  00000001 0000000b 00000002 00000013  ................
+004022c0  0000000c 00000004 00000001 00000001  ................
+004022d0  00000002 00000001 00000001 000a0000  ................
+004022e0  00000001 00060000 00210028 00d10006  ........(.!.....
+004022f0  000600bf 00bf00ea 01030006 000600bf  ................
+00402300  00bf011e 01370006 000600bf 00bf0150  ......7.....P...
+00402310  016b0006 000600bf 00bf0186 019f0006  ..k.............
+00402320  000600bf 00bf01b8 01d70006 000600bf  ................
+00402330  00bf01f4 021e0006 0006020b 00210232  ............2.!.
+00402340  024a0006 00060021 00210261 00000000  ..J.!...a.!.....
+00402350  00000001 00010000 00000001 002f0010  ............../.
+00402360  00050036 00010001 00100001 00360040  6...........@.6.
+00402370  00010005 00010008 0018008e 00002050  ............P ..
+00402380  00910000 000a0048 209c0001 00000000  ....H...... ....
+00402390  004d0096 00020010 000020b4 00960000  ..M...... ......
+004023a0  00100058 20cc0002 00000000 00640096  X...... ......d.
+004023b0  00020010 000020e4 00960000 00100070  ..... ......p...
+004023c0  20fc0002 00000000 007c0096 00020010  ... ......|.....
+004023d0  00002140 18860000 00140088 21540002  @!............T!
+004023e0  00000000 00881886 00020014 00002174  ............t!..
+004023f0  08860000 001b0096 218c0002 00000000  ...........!....
+00402400  00a50886 0002001f 000021a0 00860000  .........!......
+00402410  001b004d 00000003 02450001 00010000  M.........E.....
+00402420  00110278 001f0088 00880019 0021001f  x.............!.
+00402430  00280088 00880029 0031001f 001f0088  ..(.).....1.....
+00402440  00880039 0041001f 001f0088 00880049  9.....A.....I...
+00402450  0051001f 001f0088 00880059 0061001f  ..Q.....Y.....a.
+00402460  001f0088 00880069 0071001f 002d0088  ....i.....q...-.
+00402470  00880079 00810014 00380252 025c0081  y.......R.8...\.
+00402480  0089003d 001b0268 02700089 0009001b  =...h.....p.....
+00402490  00140088 00730020 002e0033 004e003b  .... .s.3...;.N.
+004024a0  0013002e 002e004e 004e001b 0033002e  ....N.....N...3.
+004024b0  002e004e 004e000b 0043002e 002e004e  N.....N...C.N...
+004024c0  004e004b 0053002e 002e004e 004e005b  K.N...S.N...[.N.
+004024d0  0063002e 002e004e 0054006b 00460041  ..c.N...k.T.A.F.
+004024e0  0018004a 00010003 00b40000 00020024  J...........$...
+004024f0  00030009 000a0001 80040003 00010000  ................
+00402500  03440000 00007831 00000000 00000036  ..D.1x......6...
+00402510  00000001 00000ce4 00000000 00180001  ................
+00402520  00000000 00000000 6f4d3c00 656c7564  .........&lt;Module
+00402530  6162003e 65646573 2e677562 00657865  &gt;.basedebug.exe.
+00402540  6f63736d 62696c72 73795300 006d6574  mscorlib.System.
+00402550  656a624f 4d007463 69614d79 6162006e  Object.MyMain.ba
+00402560  65646573 00677562 6c43794d 00737361  sedebug.MyClass.
+00402570  6e69614d 46794d00 74636e75 006e6f69  Main.MyFunction.
+00402580  7546794d 6974636e 00326e6f 7546794d  MyFunction2.MyFu
+00402590  6974636e 00336e6f 7546794d 6974636e  nction3.MyFuncti
+004025a0  00346e6f 7546794d 6974636e 00356e6f  on4.MyFunction5.
+004025b0  6f74632e 6d5f0072 6f725079 65670070  .ctor._myProp.ge
+004025c0  794d5f74 706f7250 79747265 74657300  t_MyProperty.set
+004025d0  50794d5f 65706f72 00797472 7250794d  _MyProperty.MyPr
+004025e0  7265706f 53007974 65747379 65522e6d  operty.System.Re
+004025f0  63656c66 6e6f6974 73734100 6c626d65  flection.Assembl
+00402600  79654b79 656d614e 72747441 74756269  yKeyNameAttribut
+00402610  73410065 626d6573 654b796c 6c694679  e.AssemblyKeyFil
+00402620  74744165 75626972 41006574 6d657373  eAttribute.Assem
+00402630  44796c62 79616c65 6e676953 72747441  blyDelaySignAttr
+00402640  74756269 73410065 626d6573 6556796c  ibute.AssemblyVe
+00402650  6f697372 7474416e 75626972 41006574  rsionAttribute.A
+00402660  6d657373 43796c62 75746c75 74416572  ssemblyCultureAt
+00402670  62697274 00657475 65737341 796c626d  tribute.Assembly
+00402680  64617254 72616d65 7474416b 75626972  TrademarkAttribu
+00402690  41006574 6d657373 43796c62 7279706f  te.AssemblyCopyr
+004026a0  74686769 72747441 74756269 73410065  ightAttribute.As
+004026b0  626d6573 7250796c 6375646f 74744174  semblyProductAtt
+004026c0  75626972 41006574 6d657373 43796c62  ribute.AssemblyC
+004026d0  61706d6f 7441796e 62697274 00657475  ompanyAttribute.
+004026e0  65737341 796c626d 666e6f43 72756769  AssemblyConfigur
+004026f0  6f697461 7474416e 75626972 41006574  ationAttribute.A
+00402700  6d657373 44796c62 72637365 69747069  ssemblyDescripti
+00402710  74416e6f 62697274 00657475 65737341  onAttribute.Asse
+00402720  796c626d 6c746954 74744165 75626972  mblyTitleAttribu
+00402730  53006574 65747379 69442e6d 6f6e6761  te.System.Diagno
+00402740  63697473 65440073 67677562 656c6261  stics.Debuggable
+00402750  72747441 74756269 54530065 72685441  Attribute.STAThr
+00402760  41646165 69727474 65747562 67726100  eadAttribute.arg
+00402770  6f430073 6c6f736e 72570065 4c657469  s.Console.WriteL
+00402780  00656e69 64616552 72745300 00676e69  ine.Read.String.
+00402790  70556f54 00726570 6f4c6f54 00726577  ToUpper.ToLower.
+004027a0  756c6176 00000065 00731700 00610074  value.....s.t.a.
+004027b0  00740072 006e0069 002e0067 002e002e  r.t.i.n.g.......
+004027c0  002e1300 002e002e 006e0065 00690064  ........e.n.d.i.
+004027d0  0067006e 00692300 0020006e 0079004d  n.g..#i.n. .M.y.
+004027e0  00750046 0063006e 00690074 006e006f  F.u.n.c.t.i.o.n.
+004027f0  002e0035 002e002e 00660d00 006f006f  5.........f.o.o.
+00402800  00610062 15000072 0079004d 00750046  b.a.r...M.y.F.u.
+00402810  0063006e 00690074 006e006f 004d2700  n.c.t.i.o.n..'M.
+00402820  00430079 0061006c 00730073 003a003a  y.C.l.a.s.s.:.:.
+00402830  0079004d 00720050 0070006f 00720065  M.y.P.r.o.p.e.r.
+00402840  00790074 00000000 83153578 4d0a28df  t.y.....x5...(.M
+00402850  93597b8a e4143199 7ab70800 3419565c  .{Y..1.....z\V.4
+00402860  000589e0 0e1d0101 0e000003 01002003  ............. ..
+00402870  030e0602 040e0020 0e010120 0e002803  .... ... ....(..
+00402880  01012004 02200502 04020201 00000001  . .... .........
+00402890  01010004 0000030e 01070408 06030c12  ................
+004028a0  07030c12 01050e01 00000000 01000106  ................
+004028b0  00000001 000028dc                    .....(..</pre>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

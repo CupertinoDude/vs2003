@@ -1,0 +1,7 @@
+VSWIZARD 7.0
+Wizard=VsWizard.VsWizardEngine.7.1
+Param="WIZARD_NAME = VJSharpAddMobileWebUserControlWiz"
+Param="WIZARD_UI = FALSE"
+Param="PROJECT_TYPE = JSHPROJ"
+Param="FALLBACK_LCID = 1033"
+

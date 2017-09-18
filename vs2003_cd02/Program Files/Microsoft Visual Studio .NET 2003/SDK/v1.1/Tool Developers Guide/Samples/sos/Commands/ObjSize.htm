@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META content="Microsoft Visual Studio 7.0" name="GENERATOR">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet"></HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">ObjSize</TD>
+					</TR>
+					<TR>
+						<TD>Finds the number of bytes that a root or all roots keep alive on the 
+							garbage-collected&nbsp;heap.</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!ObjSize [&lt;addr&gt;]</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="13" cellSpacing="1" cellPadding="1" width="710" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>&lt;addr&gt;</STRONG></TD>
+									<TD vAlign="top">Address of the object to get size of. If no address is given, all 
+										objects on all threads will be shown.</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>0:001&gt; !ObjSize 010a50e0
+sizeof(010a50e0) =       28 (    0x1c) bytes (Behavior1.Behavior1)
+</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Comments</TD>
+					</TR>
+					<TR>
+						<TD class="Comments"></TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

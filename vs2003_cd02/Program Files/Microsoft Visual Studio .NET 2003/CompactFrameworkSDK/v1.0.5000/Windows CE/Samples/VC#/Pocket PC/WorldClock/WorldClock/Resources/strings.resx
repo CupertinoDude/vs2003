@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" />
+                            <xsd:attribute name="type" type="xsd:string" />
+                            <xsd:attribute name="mimetype" type="xsd:string" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" />
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="ResMimeType">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="Version">
+        <value>1.0.0.0</value>
+    </resheader>
+    <resheader name="Reader">
+        <value>System.Windows.Forms.Design.CFResXResourceReader, System.CF.Design, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    </resheader>
+    <resheader name="Writer">
+        <value>System.Windows.Forms.Design.CFResXResourceWriter, System.CF.Design, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    </resheader>
+    <data name="txtDate">
+        <value>Date:</value>
+        <comment>current date label</comment>
+    </data>
+    <data name="txtTime">
+        <value>Time:</value>
+        <comment>current time label</comment>
+    </data>
+    <data name="txtDST">
+        <value>Daylight Saving Time:</value>
+        <comment>daylight saving time section label</comment>
+    </data>
+    <data name="txtDSTFrom">
+        <value>From:</value>
+        <comment>DST period start label</comment>
+    </data>
+    <data name="txtDSTTo">
+        <value>To:</value>
+        <comment>DST period end label</comment>
+    </data>
+    <data name="txtUTC">
+        <value>UTC (GMT):</value>
+        <comment>Universal Coordinated Time/Greenwich Mean Time</comment>
+    </data>
+    <data name="txtFormName">
+        <value>Clock</value>
+        <comment>form caption</comment>
+    </data>
+    <data name="txtMenLang">
+        <value>Lang.</value>
+        <comment>language menu item</comment>
+    </data>
+    <data name="txtMenENU">
+        <value>English</value>
+        <comment>English menu selection</comment>
+    </data>
+    <data name="txtMenDEU">
+        <value>German</value>
+        <comment>German Menu item</comment>
+    </data>
+    <data name="txtMenFRA">
+        <value>French</value>
+        <comment>French menu item</comment>
+    </data>
+    <data name="txtTimezone">
+        <value>Time zone offset (hours):</value>
+        <comment>Time zone offset label</comment>
+    </data>
+</root>

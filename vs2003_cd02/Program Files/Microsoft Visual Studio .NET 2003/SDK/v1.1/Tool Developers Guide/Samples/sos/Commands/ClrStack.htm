@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META content="Microsoft Visual Studio 7.0" name="GENERATOR">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet"></HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">ClrStack</TD>
+					</TR>
+					<TR>
+						<TD>Provides true managed stack trace, source and line numbers</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!ClrStack -p[arams] -l[ocals] -r[egs] -a[ll].</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<P><STRONG>
+									<TABLE id="Table2" height="79" cellSpacing="1" cellPadding="1" width="708" border="0" valign="top">
+										<TR>
+											<TD vAlign="top" width="81"><STRONG>-p[arams]</STRONG></TD>
+											<TD vAlign="top">Shows types and addresses of method parameters, including the <STRONG>this</STRONG>
+												pointer. For&nbsp;more information about the parameters use the&nbsp;DumpObj 
+												command on the address for the object.</TD>
+										</TR>
+										<TR>
+											<TD vAlign="top" width="81"><STRONG>-l[ocals]</STRONG></TD>
+											<TD vAlign="top">Shows types and addresses of local variables.&nbsp; For more 
+												information about the&nbsp;local variables,&nbsp;use the&nbsp;DumpObj command 
+												on the address for the object.</TD>
+										</TR>
+										<TR>
+											<TD vAlign="top" width="81"><STRONG>-r[egs]</STRONG></TD>
+											<TD vAlign="top">Shows register values</TD>
+										</TR>
+										<TR>
+											<TD vAlign="top" width="81"><STRONG>-a[ll]</STRONG></TD>
+											<TD vAlign="top">Shows all of the above</TD>
+										</TR>
+									</TABLE>
+								</STRONG>
+							</P>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>0:000&gt; !ClrStack 
+Thread 0
+ESP       EIP     
+0012f7f0  7ffe0304 [FRAME: NDirectMethodFrameStandalone] [DEFAULT] I4 System.IO.__ConsoleStream.ReadFile(I,Ptr UI1,I4,ByRef I4,I)
+0012f80c  79a68f59 [DEFAULT] I4 System.IO.__ConsoleStream.ReadFileNative(I,SZArray UI1,I4,I4,I4,ByRef I4)
+0012f838  79a68df2 [DEFAULT] [hasThis] I4 System.IO.__ConsoleStream.Read(SZArray UI1,I4,I4)
+0012f858  79a72c7f [DEFAULT] [hasThis] I4 System.IO.StreamReader.ReadBuffer()
+0012f864  79a72b87 [DEFAULT] [hasThis] I4 System.IO.StreamReader.Read()
+0012f86c  79a7262b [DEFAULT] [hasThis] I4 System.IO.TextReader/SyncTextReader.Read()
+0012f874  799d3005 [DEFAULT] I4 System.Console.Read()
+0012f898  02e800fa [DEFAULT] [hasThis] Void MyDebugApp.myOtherClass.MyMethod(I4,String)
+  at [+0x12] [+0x5] c:\myProjects\mydebugapp\class1.cs:9
+0012f8ac  02e800a2 [DEFAULT] Void MyDebugApp.MyApp.Main(SZArray String)
+  at [+0x4a] [+0x16] c:\myProjects\mydebugapp\class1.cs:26
+0012faf8  791ec57b [FRAME: GCFrame] 
+0012fc4c  791ec57b [FRAME: GCFrame] 
+0012fd00  791ec57b [FRAME: GCFrame] 						</pre>
+						</TD>
+					</TR>
+					<tr>
+						<TD class="SectionTitle">Comments</TD>
+					</tr>
+					<tr>
+						<td class="comments">
+							<P>
+								For each frame the current stack pointer(ESP), the current instruction 
+								pointer(EIP), and the method signature are&nbsp;displayed.
+								<BR>
+								To get the assembly of the method you can use the&nbsp;<STRONG>u</STRONG> command 
+								on the instruction pointer.<BR>
+								<br>
+								If you use the <STRONG>-p</STRONG> parameter it will display the parameters 
+								passed into the method. For example:</P>
+							<table border="0" height="248">
+								<tr>
+									<td class="WinDBGOut">
+										<pre>0:000&gt; !ClrStack -p
+Thread 0
+ESP       EIP     
+0012f8a4  02e800e2 [DEFAULT] [hasThis] Void MyDebugApp.myOtherClass.MyMethod(I4,String)
+  at [+0x12] [+0x5] c:\myProjects\mydebugapp\class1.cs:9
+    PARAM: this: 0x00c41bfc (MyDebugApp.myOtherClass)
+    PARAM: class System.String a: 0x00000005 
+    PARAM: wchar b: 0x00c41bd4 (System.String)
+0012f8b8  02e80090 [DEFAULT] Void MyDebugApp.MyApp.Main(SZArray String)
+  at [+0x38] [+0x12] c:\myProjects\mydebugapp\class1.cs:24
+    PARAM: class System.String[] args: 0x00c41bc4 
+0012faf8  791ec57b [FRAME: GCFrame] 
+0012fc4c  791ec57b [FRAME: GCFrame] 
+0012fd00  791ec57b [FRAME: GCFrame] 
+</pre>
+									</td>
+								</tr>
+							</table>
+							<P>With the parameters you can use the DumpObj command&nbsp;to get information 
+								about each&nbsp;parameter.&nbsp; For example:
+							</P>
+							<table border="0" ID="Table4" height="281">
+								<tr>
+									<td class="WinDBGOut">
+										<pre>0:000&gt; !DumpObj 0x00c41bd4 
+Name: System.String
+MethodTable 0x79b4f3f8
+EEClass 0x79b4f740
+Size 40(0x28) bytes
+mdToken: 0200000f  (c:\windows\microsoft.net\framework\v1.0.3705\mscorlib.dll)
+String: hello world
+FieldDesc*: 79b4f7a4
+      MT    Field   Offset                 Type       Attr    Value Name
+79b4f3f8  4000013        4         System.Int32   instance       12 m_arrayLength
+79b4f3f8  4000014        8         System.Int32   instance       11 m_stringLength
+79b4f3f8  4000015        c          System.Char   instance       68 m_firstChar
+79b4f3f8  4000016        0                CLASS     shared   static Empty
+    &gt;&gt; Domain:Value 0014a250:00c41308 &lt;&lt;
+79b4f3f8  4000017        4                CLASS     shared   static WhitespaceChars
+    &gt;&gt; Domain:Value 0014a250:00c4131c &lt;&lt;</pre>
+									</td>
+								</tr>
+							</table>
+							<P>You can work with local variables&nbsp;in a similar fashion.</P>
+							<P>The method signature consists of a calling convention [DEFAULT] and the full 
+								signature of the method being called,
+								<BR>
+								including input parameters and return parameters. If the method is an instance 
+								method [hasThis]&nbsp;appears at the beginning of the method signature.</P>
+							<P>To execute the ClrStack command for all threads, use <STRONG>~*e !ClrStack</STRONG>.</P>
+						</td>
+					</tr>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

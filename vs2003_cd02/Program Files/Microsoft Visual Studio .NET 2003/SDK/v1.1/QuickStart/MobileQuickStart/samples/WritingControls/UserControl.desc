@@ -1,0 +1,4 @@
+Writing a User Control
+This sample illustrates how to write and use mobile User Controls in 
+your application. The control shown here uses a List mobile control
+to create a menu.

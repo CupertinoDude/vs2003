@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root xmlns:dt="urn:schemas-microsoft-com:datatypes" xmlns:d2="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?><HTML><HEAD><TITLE>Reflection-Invoke Sample</TITLE><STYLE>
+    .Title{FONT-FAMILY: Verdana;FONT-SIZE: large;COLOR: #808080}
+    </STYLE><STYLE>
+    .Heading{FONT-FAMILY: Verdana;FONT-SIZE: large}
+    </STYLE><STYLE>
+    .SectionBreak{FONT-SIZE: small;MARGIN-BOTTOM: 2em}
+    </STYLE><STYLE>
+    .SmallBreak{FONT-SIZE: small;MARGIN-BOTTOM: 1.5em}
+    </STYLE><STYLE>
+    .Text{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedHeading{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedText{MARGIN-LEFT: 3ex;FONT-FAMILY: Lucida Console;FONT-SIZE: x-small;FONT-WEIGHT: Bold}
+    </STYLE><STYLE>
+    .ListSansBullets {list-style-type: none;FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE></HEAD><BODY><table><tr><td><h2 class="Title">Reflection-Invoke Sample</h2></td><td valign="baseline" class="Text">
+               
+              
+                  (Console Application)
+                </td></tr></table><p class="Text">
+    This document contains the release information for the .NET Framework Invoke sample. You will find the following sections below: 
+    </p><ul class="Text"><li><a href="#_Sample_Overview">Overview</a></li><li><a href="#_Sample_Topics">Topics</a></li><li><a href="#_Location_of_Sample">Location</a></li><li><a href="#_Building_the_Sample">Building the sample</a></li><li><a href="#_Running_the_Sample">Running the sample</a></li><li><a href="#_sdkvars">Notes</a></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Overview" />
+    Overview
+    </h4><p class="Text">
+This sample demonstrates how to implement late binding. From the command line you select an assembly, type, method, and parameters. The sample will attempt to load the assembly, locate the type and method, and invoke the method with the passed parameters. The sample even attempts to do the necessary type conversions for method calls that take parameters that are not strings. The reflection classes make this advanced functionality surprisingly simple.  A simple DLL project named Tester.dll is included with this sample.  The tester project is provided to include a simple type with some methods to try with the Invoke sample.
+</p><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Topics" />
+  Topics
+  </h4><p class="Text">
+  The following bullets briefly describe the classes and technologies used by this sample.
+  </p><ul class="Text"><li><b>Reflection - </b><ul class="Text"><li><b>Assembly - </b>
+      This class is used by this sample to load an assembly and to lookup a type in that assembly.
+      </li></ul><ul class="Text"><li><b>Type - </b>
+      The sample uses the Type class to obtain an array of MemberInfo objects, as well as to refer to a type when creating an instance if needed.
+      </li></ul><ul class="Text"><li><b>MethodInfo - </b>
+      Used to find out information for a single method, including parameters and method name.  The sample compares information from this type with the information provided on the command line.  Method info is also used to invoke a method.
+      </li></ul><ul class="Text"><li><b>ParameterInfo - </b>
+      The ParameterInfo type is primarily used to find the type of the parameters so that the sample can convert the command line arguments appropriately.
+      </li></ul><ul class="Text"><li><b>Activator - </b>
+      This type is used to create an instance of a type if the sample finds that a call to an instance method is needed.
+      </li></ul></li><li><b>System - </b><ul class="Text"><li><b>Array - </b>
+      The sample uses the Array type to copy a portion of one array to another array.
+      </li></ul><ul class="Text"><li><b>Convert - </b>
+      This sample makes use of the Convert type to attempt to modify the command line arguments of type String into whatever type is needed by the parameters of the various methods in a type.
+      </li></ul></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Location_of_Sample" />
+    Location
+    </h4><p class="Text">
+    This sample is located in the <a href="." title="Jump to Folder" target="_blank">Technologies\Reflection\Invoke</a> subdirectory of the .NET Framework SDK samples directory.
+    </p><p class="FixedHeading">
+    For Example:
+      <p class="FixedText">
+      C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Reflection\Invoke</p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Building_the_Sample" />
+    Building the Sample
+    </h4><p class="Text">
+    In order to properly build and run this sample, the following steps need to be performed.
+    </p><p class="Text">
+      Type <b>BUILD.bat</b> from the command line.
+      <p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Reflection\Invoke\VB&gt;Build.bat
+      </p></p><p class="Text">
+      Note that BUILD.bat actually builds two PE files: Invoke.exe and Tester.dll. 
+   </p><p class="SectionBreak" /><h4 class="Heading"><a name="_Running_the_Sample" />
+    Running the Sample
+    </h4><p class="Text">
+    In order to run this sample, follow the instructions listed below.
+    </p><span class="Text"><ul class="Text"><li>
+      Invoke.exe accepts command line parameters indicating what you would like to invoke.  Sample usage is displayed if run with no parameters.
+   </li></ul><ul class="Text"><li>
+      Type <b>Invoke.exe [Assembly] [Type] [Method] [Parameters...]</b> from the command line to have the sample load an assembly and call a method on a type.  In the following example, the <i>ShowMessage</i> method on type <i>SomeType</i> is called with three parameters.
+      <p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+         ..\Invoke\VB&gt;Invoke.exe Tester.dll SomeType ShowMessage "Is this cool or what?" "Question:" 4
+      </p></li></ul></span><p class="SectionBreak" /><h4 class="Heading"><a name="_sdkvars" />
+    Notes
+    </h4><p class="Text">
+    For the .Net Framework samples to function properly, your Path, Include, and Lib environment variables must be set correctly. 
+    In many cases, the SDK install program updates these environment variables for you. However, if you installed the .Net Framework SDK 
+    using Visual Studio .NET, or unselected "register environment variables" during setup, these environment variables will not be updated. 
+    You can set the Path, Include and Lib environment variables by running SDKVars.bat, located in the <i>&lt;SDKRoot&gt;\Bin</i> directory. 
+    SDKVars.bat must be executed in every command shell.
+    </p></BODY></HTML></root>

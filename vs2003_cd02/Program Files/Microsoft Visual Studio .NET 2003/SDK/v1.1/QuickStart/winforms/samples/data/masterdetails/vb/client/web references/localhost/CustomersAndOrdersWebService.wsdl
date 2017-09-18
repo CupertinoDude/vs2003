@@ -1,0 +1,159 @@
+﻿<?xml version="1.0"?>
+<definitions xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2000/10/XMLSchema" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <xsd:import namespace="http://www.w3.org/2000/10/XMLSchema"/>
+      <xsd:element name="GetCustomersAndOrders">
+        <xsd:complexType/>
+      </xsd:element>
+      <xsd:element name="GetCustomersAndOrdersResult">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nullable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element ref="xsd:schema"/>
+                  <xsd:any/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateCustomersAndOrders">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ds" nullable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element ref="xsd:schema"/>
+                  <xsd:any/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateCustomersAndOrdersResult">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nullable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element ref="xsd:schema"/>
+                  <xsd:any/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DataSet" nullable="true">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="xsd:schema"/>
+            <xsd:any/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="GetCustomersAndOrdersSoapIn">
+    <part name="parameters" xmlns:q1="http://tempuri.org/" element="q1:GetCustomersAndOrders"/>
+  </message>
+  <message name="GetCustomersAndOrdersSoapOut">
+    <part name="parameters" xmlns:q2="http://tempuri.org/" element="q2:GetCustomersAndOrdersResult"/>
+  </message>
+  <message name="UpdateCustomersAndOrdersSoapIn">
+    <part name="parameters" xmlns:q3="http://tempuri.org/" element="q3:UpdateCustomersAndOrders"/>
+  </message>
+  <message name="UpdateCustomersAndOrdersSoapOut">
+    <part name="parameters" xmlns:q4="http://tempuri.org/" element="q4:UpdateCustomersAndOrdersResult"/>
+  </message>
+  <message name="GetCustomersAndOrdersHttpGetIn"/>
+  <message name="GetCustomersAndOrdersHttpGetOut">
+    <part name="Body" xmlns:q5="http://tempuri.org/" element="q5:DataSet"/>
+  </message>
+  <message name="GetCustomersAndOrdersHttpPostIn"/>
+  <message name="GetCustomersAndOrdersHttpPostOut">
+    <part name="Body" xmlns:q6="http://tempuri.org/" element="q6:DataSet"/>
+  </message>
+  <portType name="CustomersAndOrdersSoap">
+    <operation name="GetCustomersAndOrders">
+      <input xmlns:q7="http://tempuri.org/" message="q7:GetCustomersAndOrdersSoapIn"/>
+      <output xmlns:q8="http://tempuri.org/" message="q8:GetCustomersAndOrdersSoapOut"/>
+    </operation>
+    <operation name="UpdateCustomersAndOrders">
+      <input xmlns:q9="http://tempuri.org/" message="q9:UpdateCustomersAndOrdersSoapIn"/>
+      <output xmlns:q10="http://tempuri.org/" message="q10:UpdateCustomersAndOrdersSoapOut"/>
+    </operation>
+  </portType>
+  <portType name="CustomersAndOrdersHttpGet">
+    <operation name="GetCustomersAndOrders">
+      <input xmlns:q11="http://tempuri.org/" message="q11:GetCustomersAndOrdersHttpGetIn"/>
+      <output xmlns:q12="http://tempuri.org/" message="q12:GetCustomersAndOrdersHttpGetOut"/>
+    </operation>
+  </portType>
+  <portType name="CustomersAndOrdersHttpPost">
+    <operation name="GetCustomersAndOrders">
+      <input xmlns:q13="http://tempuri.org/" message="q13:GetCustomersAndOrdersHttpPostIn"/>
+      <output xmlns:q14="http://tempuri.org/" message="q14:GetCustomersAndOrdersHttpPostOut"/>
+    </operation>
+  </portType>
+  <binding name="CustomersAndOrdersSoap" xmlns:q15="http://tempuri.org/" type="q15:CustomersAndOrdersSoap">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <operation name="GetCustomersAndOrders">
+      <operation soapAction="http://tempuri.org/GetCustomersAndOrders" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+    <operation name="UpdateCustomersAndOrders">
+      <operation soapAction="http://tempuri.org/UpdateCustomersAndOrders" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="CustomersAndOrdersHttpGet" xmlns:q16="http://tempuri.org/" type="q16:CustomersAndOrdersHttpGet">
+    <binding verb="GET" xmlns="http://schemas.xmlsoap.org/wsdl/http/"/>
+    <operation name="GetCustomersAndOrders">
+      <operation location="/GetCustomersAndOrders" xmlns="http://schemas.xmlsoap.org/wsdl/http/"/>
+      <input>
+        <urlEncoded xmlns="http://schemas.xmlsoap.org/wsdl/http/"/>
+      </input>
+      <output>
+        <mimeXml part="Body" xmlns="http://schemas.xmlsoap.org/wsdl/mime/"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="CustomersAndOrdersHttpPost" xmlns:q17="http://tempuri.org/" type="q17:CustomersAndOrdersHttpPost">
+    <binding verb="POST" xmlns="http://schemas.xmlsoap.org/wsdl/http/"/>
+    <operation name="GetCustomersAndOrders">
+      <operation location="/GetCustomersAndOrders" xmlns="http://schemas.xmlsoap.org/wsdl/http/"/>
+      <input>
+        <content type="application/x-www-form-urlencoded" xmlns="http://schemas.xmlsoap.org/wsdl/mime/"/>
+      </input>
+      <output>
+        <mimeXml part="Body" xmlns="http://schemas.xmlsoap.org/wsdl/mime/"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="CustomersAndOrders">
+    <port name="CustomersAndOrdersSoap" xmlns:q18="http://tempuri.org/" binding="q18:CustomersAndOrdersSoap">
+      <address location="http://localhost/quickstart/winforms/samples/data/MasterDetails/vb/CustomersAndOrdersWebService.asmx" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </port>
+    <port name="CustomersAndOrdersHttpGet" xmlns:q19="http://tempuri.org/" binding="q19:CustomersAndOrdersHttpGet">
+      <address location="http://localhost/quickstart/winforms/samples/data/MasterDetails/vb/CustomersAndOrdersWebService.asmx" xmlns="http://schemas.xmlsoap.org/wsdl/http/"/>
+    </port>
+    <port name="CustomersAndOrdersHttpPost" xmlns:q20="http://tempuri.org/" binding="q20:CustomersAndOrdersHttpPost">
+      <address location="http://localhost/quickstart/winforms/samples/data/MasterDetails/vb/CustomersAndOrdersWebService.asmx" xmlns="http://schemas.xmlsoap.org/wsdl/http/"/>
+    </port>
+  </service>
+</definitions>

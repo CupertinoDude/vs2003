@@ -1,0 +1,3 @@
+C# Source:CS\TransformXML.cs,CS\TransformXML.aspx,CS\books.xml,CS\books.xsl,CS\ProcessParametersA.xml,CS\ProcessParametersB.xml,CS\StyleSheetGenerator.xsl
+VB Source:VB\TransformXML.vb,VB\TransformXML.aspx,VB\books.xml,VB\books.xsl,VB\ProcessParametersA.xml,VB\ProcessParametersB.xml,VB\StyleSheetGenerator.xsl
+C++ Source:CP\TransformXML.cpp,CP\books.xml,CP\books.xsl,CP\ProcessParametersA.xml,CP\ProcessParametersB.xml,CP\StyleSheetGenerator.xsl

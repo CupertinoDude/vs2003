@@ -1,0 +1,350 @@
+﻿<html>
+<head>
+<!-- Script for links jumping into Havana docs-->
+<SCRIPT language="jscript">
+	var viewer;
+	var helpHost;
+	function Link(url)
+	{
+  		viewer = new ActiveXObject("DExplore.AppObj.7");
+   		helpHost = viewer.Help;
+   		helpHost.SetCollection("ms-help://MS.NETFrameworkSDKv1.1", ".NET Framework SDK Documentation");
+   		helpHost.DisplayTopicFromURL(url);
+   		helpHost.SyncContents(url);
+	}
+</SCRIPT>
+	<META HTTP-EQUIV="Content-Type" Content="text/html; charset=UTF-8">
+	<title>Microsoft .NET Framework SDK QuickStarts, Tutorials and Samples </title>
+    <style>
+        a:hover { color:#ff0000; }
+    </style>
+</head>
+<body topmargin="0" leftmargin="0">
+
+
+<!-- Start Toolbar-->
+<DIV ID="TBDownLevelDiv">
+<TABLE WIDTH="100%" CELLPADDING=0 CELLSPACING=0 BORDER=0 BGCOLOR='#ffffff'>
+<TR>
+	<TD VALIGN=top HEIGHT=60 WIDTH=250 ROWSPAN=2>
+    <IMG height=59 alt="" src="../docs/complus.gif" width=230 border=0></TD>
+	<TD VALIGN=top HEIGHT=20 ALIGN=right><IMG height=20 src="../docs/curve.gif" width=18 border=0></TD>
+	<TD BGCOLOR=#000000 HEIGHT=20 VALIGN=center ALIGN=right NOWRAP COLSPAN=2>
+		<FONT COLOR='#ffffff' FACE="Verdana, Arial" SIZE=1>
+		<B>
+			&nbsp;&nbsp;<A style="COLOR: #ffffff; TEXT-DECORATION: none" target  =_top href="http://support.microsoft.com"><FONT COLOR='#ffffff'>Links to the Web: &nbsp; &nbsp; Support</FONT></A>&nbsp;&nbsp;<FONT COLOR='#ffffff'>|</FONT>
+			&nbsp;&nbsp;<A style="COLOR: #ffffff; TEXT-DECORATION: none" target  =_top href="http://search.microsoft.com/"><FONT COLOR='#ffffff'>Search</FONT></A>&nbsp;&nbsp;<FONT COLOR='#ffffff'>|</FONT>
+			&nbsp;&nbsp;<A style="COLOR: #ffffff; TEXT-DECORATION: none" target  =_top href="http://www.microsoft.com/"><FONT COLOR='#ffffff'>microsoft.com Guide</FONT></A>&nbsp;&nbsp;
+		</B>
+		</FONT>
+	</TD>
+</TR>
+<TR>
+	<TD VALIGN=top HEIGHT=40 WIDTH=19>&nbsp;</TD>
+	<TD VALIGN=top HEIGHT=40 ALIGN=right NOWRAP COLSPAN=2>
+	<A HREF="http://www.microsoft.com/" TARGET="_top"><IMG height=40 src="../docs/mslogo.gif" width=112 border=0></A></TD>
+</TR>
+
+<!-- Start: Local menus -->
+<TR>
+	<TD BGCOLOR="#336699" HEIGHT=20 VALIGN=center NOWRAP COLSPAN=4>
+
+
+<TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0>
+<TR>
+
+<TD BGCOLOR="#336699" nowrap>
+	<FONT COLOR='#ffffff' FACE="Verdana, Arial" SIZE=1>
+		<B>&nbsp;&nbsp;
+	<FONT COLOR='#ffffff'>
+		Related Links: &nbsp; &nbsp; 
+		<A style="FONT-WEIGHT: bold; COLOR: #ffffff; TEXT-DECORATION: none" target=_top href="http://msdn.microsoft.com/">
+			MSDN Online
+	</FONT></A>
+		&nbsp;&nbsp;</B>
+	</FONT>
+</TD>
+
+<TD>
+	<FONT COLOR='#ffffff' FACE="Verdana, Arial" SIZE=1>
+		<B>|</B>
+	</FONT>
+</TD>
+
+
+<TD BGCOLOR="#336699" nowrap>
+	<FONT COLOR='#ffffff' FACE="Verdana, Arial" SIZE=1>
+		<B>&nbsp;&nbsp;
+	<FONT COLOR='#ffffff'>
+		<A style="FONT-WEIGHT: bold; COLOR: #ffffff; TEXT-DECORATION: none" target=_top href="http://msdn.microsoft.com/net/">
+			MSDN Online .NET page
+	</FONT></A>
+		&nbsp;&nbsp;</B>
+	</FONT>
+</TD>
+
+
+<TD>
+	<FONT COLOR='#ffffff' FACE="Verdana, Arial" SIZE=1>
+		<B>|</B>
+	</FONT>
+</TD>
+
+<TD BGCOLOR="#336699" nowrap>
+	<FONT COLOR='#fffff' FACE="Verdana, Arial" SIZE=1>
+		<B>&nbsp;&nbsp;
+		<A style="FONT-WEIGHT: bold; COLOR: #ffffff; TEXT-DECORATION: none" target=_top href="http://msdn.microsoft.com/vstudio/">
+	<FONT COLOR='#ffffff'>
+		Visual Studio .NET
+	</FONT>
+		</A>
+		&nbsp;&nbsp;</B>
+	</FONT>
+</TD>
+
+</TR>
+</TABLE>
+
+</TD>
+<!-- End: Local menus -->
+</TR>
+</TABLE>
+</DIV>
+<!-- End Toolbar-->
+
+
+
+<!-- Start Document -->
+<br>
+<table width="750" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="100%">
+
+<div style="MARGIN-LEFT: 10px; MARGIN-RIGHT: 10px; FONT: normal x-small; FONT-FAMILY: Verdana, Arial, Helvetica;">
+<p>
+
+<span style="FONT: bold medium; FONT-FAMILY: Verdana, Arial, Helvetica;" align="left">Microsoft .NET Framework SDK QuickStarts, Tutorials and Samples</span>
+<p>
+The .NET Framework SDK QuickStarts, tutorials, and samples are designed to 
+quickly acquaint you with the programming model, architecture, and components 
+that comprise the .NET Framework. <br>
+&nbsp;<p>
+
+<b>QuickStarts</b> <br>
+The QuickStarts are written in ASP.NET which requires Internet Information 
+Services (IIS) 5.0 or 
+later.&nbsp; IIS 5.0 is only available on the Windows 2000 and Windows XP operating 
+systems.&nbsp; You will not be able to host the QuickStarts locally on your 
+computer.&nbsp;&nbsp; However, the you can  view the QuickStarts on the Internet.&nbsp; 
+If you select this option, all  the ASP.NET samples 
+are viewed remotely from the Internet website, while the Windows Forms and console 
+applications are run locally from your  computer.<ul>
+	<a href="http://go.microsoft.com/fwlink/?linkid=516">The QuickStarts Tutorials</a><br>
+&nbsp;</ul>
+
+<p>
+
+<b>Tutorials</b> <br>
+The tutorials provide a step-by-step introduction to  fundamental 
+areas of programming for the .NET Framework, including packaging, deploying, 
+debugging, and resources and localization.<p>
+<ul>
+	<A href="javascript:Link('ms-help://MS.NETFrameworkSDKv1.1/cptutorials/html/introduction_to_developing_with_the__net_framework.htm')">Introduction to Developing with the .NET Framework</A><br>
+	<A href="Tutorials/CLR_Fundamentals/Default.htm" target="_blank">Common Language Runtime Fundamentals</A><br>
+	<A href="javascript:Link('ms-help://MS.NETFrameworkSDKv1.1/cptutorials/html/debugging_with_the__net_framework.htm')">Debugging with the .NET Framework</A><br>
+	<A href="javascript:Link('ms-help://MS.NETFrameworkSDKv1.1/cptutorials/html/packaging_and_deploying__net_framework_applications.htm')">Packaging and Deploying .NET Framework Applications</A><br>
+	<A href="javascript:Link('ms-help://MS.NETFrameworkSDKv1.1/cptutorials/html/resources_and_localization_using_the__net_framework_sdk.htm')">Resources and Localization Using the .NET Framework</A><br>
+	<A href="javascript:Link('ms-help://MS.NETFrameworkSDKv1.1/cptutorials/html/il_dasm_tutorial.htm')">ILDASM Tutorial</A>
+    <br>
+&nbsp;</ul>
+
+<b>Technology Samples</b> <br>
+The following samples demonstrate the various technologies in the .NET 
+Framework. These samples represent a single technology 
+or  related technologies in an accurate and useful way for developers. 
+These samples are installed and ready for immediate use.
+
+<table cellSpacing=0 cellPadding=0 width=640 border="0" DESIGNTIMESP="13727">
+  <TR>
+    <TD width="50%" valign="top">
+<ul>
+	  <FONT face=Verdana size=2>
+	  <BR>
+      <b>General</b><BR>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Permissions/Readme.htm">Code Access Security</A><br>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/CrossDevLanguage/Readme.htm">Cross-Language Development</A><BR>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Reflection/CustomAttribute/Readme.htm">Custom Attribute</A><br>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Localization/CustomCulture/Readme.htm">Custom Culture</A><BR>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/DelegatesAndEvents/Readme.htm">Delegates And Events</A><BR>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Exceptions/Readme.htm">Exceptions</A><BR>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/GarbageCollection/Readme.htm">Garbage Collection</A><BR>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/IL/Readme.htm">Microsoft Intermediate Language</A><br>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Interop/PlatformInvoke/Readme.htm">Platform Invoke</A><BR>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Security/PublicKeyCryptography/Readme.htm">Public Key Cryptography</A><BR>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Localization/StringWalker/Readme.htm">String Walker</A><BR>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Serialization/Readme.htm">Serialization</A><BR>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/ValueAndEnumTypes/Readme.htm">Value And Enumeration Types</A><BR>
+      <BR>
+      <b>Component Services</b><BR>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/ComponentServices/ObjectConstruction/Readme.htm">Object Construction</a><br>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/ComponentServices/ObjectPooling/Readme.htm">Object Pooling</a><br>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/ComponentServices/QueuedComponents/Readme.htm">Queued Components</a><br>
+      &nbsp;&nbsp;&nbsp;<a target="_top" href="Technologies/ComponentServices/RoleBasedSecurity/Readme.htm">Role Based Security</a><br>
+      &nbsp;&nbsp;&nbsp;<a target="_top" href="Technologies/ComponentServices/Transactions/Readme.htm">Transactions</a><br>
+      
+      <BR>
+      <b>Interop</b><BR>
+      <font color="dimgray">&nbsp;&nbsp;&nbsp;<b>Interop Basic</b></font><BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Basic/ActiveDS/Readme.htm">Active Directory</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Basic/ASPXToADO/Readme.htm">ASPX-To-ADO</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Basic/DirectX/DirectDraw/Readme.htm">DirectX- Direct Draw</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Basic/DirectX/DirectMusic/Readme.htm">DirectX- Direct Music</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Basic/InternetExplorer/Readme.htm">Internet Explorer</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Basic/ManagedEvents/Readme.htm">Managed Events</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Basic/WinForms/Readme.htm">Windows Forms</a><br>
+      <BR>
+      <font color="dimgray">&nbsp;&nbsp;&nbsp;<b>Interop Advanced</b></font><BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Advanced/comreg/Readme.htm">CLR ComReg</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Advanced/marshaler/Readme.htm">CLR Marshaler</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Advanced/tlbgen/Readme.htm">CLR TlbGen</a><br>
+      <BR>
+      <font color="dimgray">&nbsp;&nbsp;&nbsp;<b>Interop Applications</b></font><BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Applications/bank/Readme.htm">Bank</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Applications/CDO/Readme.htm">CDO</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Applications/comservices/Readme.htm">COM Services</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Applications/LoanApps/Readme.htm">Loan Apps</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Applications/MPView/Readme.htm">MPView</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Applications/Office/Excel/Readme.htm">MS Excel</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Applications/Office/Word/Readme.htm">MS Word</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Applications/ShellCmd/Readme.htm">Explorer Shell Extension</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  target="_top" href="Technologies/Interop/Applications/WMI/Readme.htm">WMI</a>
+      
+
+
+      </FONT>
+</ul>
+    </TD>
+    
+    <TD width="50%" valign="top">
+<ul>
+      <FONT face=Verdana size=2>
+      
+      <BR>
+      <b>Reflection</b><BR>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Reflection/DynamicTypeResolve/Readme.htm">Dynamic Type Resolution</a><br>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Reflection/Invoke/Readme.htm">Reflection Invoke</a><br>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Reflection/ReflectionEmit/Readme.htm">Reflection Emit</a><BR>
+
+      <BR>
+      <b>Remoting</b><BR>
+      <font color="dimgray">&nbsp;&nbsp;&nbsp;<b>Remoting Basic</b></font><BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Remoting/VB/Basic/RemotingCollections/Readme.htm">Remoting Collections</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Remoting/VB/Basic/RemotingEvents/Readme.htm">Remoting Events</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Remoting/VB/Basic/RemotingHello/Readme.htm">Remoting Hello</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Remoting/VB/Basic/RemotingObjects/Readme.htm">Remoting Objects</a><br>
+      <BR>
+      <font color="dimgray">&nbsp;&nbsp;&nbsp;<b>Remoting Advanced</b></font><BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Remoting/Advanced/AsyncDelegate/Readme.htm">Async Delegate</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Remoting/Advanced/CallContext/Readme.htm">Call Context</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Remoting/Advanced/ChannelSinks/Readme.htm">Channel Sinks</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Remoting/Advanced/CustomProxies/Readme.htm">Custom Proxies</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Remoting/Advanced/RemotingCOM/Readme.htm">Remoting COM</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Remoting/Advanced/Serialization/Readme.htm">Serialization</a><br>
+
+      <BR>
+      <b>Threading</b><BR>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Threading/JoinThread/Readme.htm">Thread Join</a><br>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Threading/MonitorSynchronization/Readme.htm">Monitor Synchronization</a><br>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Threading/Pools/Readme.htm">Thread Pools</a><br>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Threading/ReaderWriterSynchronization/Readme.htm">ReaderWriterLock Synchronization</a><br>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Threading/ThreadStaticVariables/Readme.htm">Thread Static Variables</a><br>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Threading/Timers/Readme.htm">Thread Timer</a><br>
+      &nbsp;&nbsp;&nbsp;<A target="_top" href="Technologies/Threading/WaitSynchronization/Readme.htm">Wait Synchronization</a><BR>
+      
+      </FONT>
+</ul>
+    </TD>
+  </TR>
+</table>
+
+<br>
+<b>Application Samples</b> <br>
+The following samples represent  complete applications written for 
+the .NET Framework.  As such, the application samples use several  .NET Framework technologies.
+These samples are installed and ready for immediate use.<p>
+<ul>
+	<A target="_top" href="Applications/TypeFinder/Readme.htm">Find Type Class Browser</A><BR>
+	<A target="_top" href="Applications/Wintalk/Readme.htm">WinTalk Sample Application</A><BR>
+	<A target="_top" href="Applications/WordCount/Readme.htm">Word Count</A>
+    <br>
+&nbsp;</ul>      
+      
+							<br>
+							<span style="FONT: bold small Verdana, Arial, Helvetica" align="left">
+								Visual J# Samples</span><br>
+Visual J# samples are not installed and not ready for immediate use. To install them, follow the instruction in the Visual J# samples <a href=VJSharp/readme.htm>readme file</a>. To run the Visual J# samples, the Visual J# .NET Redistributable Package version 1.1 must be installed. 
+<a href=..\redist.htm>Installing the Visual J# Redistributable Package.</a> The following Visual J# samples are provided.
+
+<p>
+<UL>
+<b>VJ# Application Samples</b>
+<UL>
+Find Type Class Browser<br>
+WinTalk Sample Application<br>
+WordCount Sample Application<br>
+</UL>
+<br>
+<b>VJ# Technology Samples</b>
+<UL>
+CLSExtender<br>
+CrossLanguage<br>
+PInvoke<br>
+RemotingSample<br>
+Attributes<br>
+Enums<br>
+EventsAndDelegates<br>
+Minesweeper<br>
+Properties<br>
+ValueTypes<br>
+</UL>
+</UL>
+
+
+<p>
+<b>Caution</b>&nbsp;&nbsp;&nbsp;If you use the samples 
+in a production environment, be sure to remove the code that displays exception messages 
+and stack traces. An unauthorized user could use the information to compromise your 
+system's security.
+</p>
+
+<p>
+<b>Configuration Details:</b>&nbsp; 
+For a detailed listing of the configuration steps performed by the samples setup, see the
+<a href="Setup/HTML/ConfigDetails.htm">configuration details</a> document.  
+This document includes the following information. </p>
+<ol>
+  <li>Manual configuration instructions.
+  <li>General machine setup and configuration information.
+  <li>Solutions to common problems relating to the samples setup.</ol>
+
+<p>
+
+<span style="FONT: bold small Verdana, Arial, Helvetica" align="left">
+</span><br>
+	For additional technical support for the .NET Framework SDK samples 
+    consult the, <a href="http://go.microsoft.com/fwlink/?LinkId=4480">
+    Microsoft Support Knowledge Base</a>.<p>
+
+</td>
+</tr>
+</table>
+
+&nbsp;<HR>
+<span style="FONT: normal 8pt; FONT-FAMILY: Verdana, Arial, Helvetica">Copyright © 2002 Microsoft Corporation. All rights reserved.
+</span>
+<br><P>
+
+</div>
+
+</body>
+</html>

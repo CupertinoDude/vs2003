@@ -1,0 +1,24 @@
+IF NOT EXIST RemotingCollections\BUILDALL.BAT GOTO REMOTINGCOLLECTIONSEND
+  CD REMOTINGCOLLECTIONS
+  CALL BUILDALL.BAT %1
+  CD ..
+:REMOTINGCOLLECTIONSEND
+
+IF NOT EXIST RemotingEvents\BUILDALL.BAT GOTO RemotingEventsEND
+  CD RemotingEvents
+  CALL BUILDALL.BAT %1
+  CD ..
+:RemotingEventsEND
+
+IF NOT EXIST RemotingHello\BUILDALL.BAT GOTO RemotingHelloEND
+  CD RemotingHello
+  CALL BUILDALL.BAT %1
+  CD ..
+:RemotingHelloEND
+
+IF NOT EXIST RemotingObjects\BUILDALL.BAT GOTO RemotingObjectsEND
+  CD RemotingObjects
+  CALL BUILDALL.BAT %1
+  CD ..
+:RemotingObjectsEND
+

@@ -1,0 +1,314 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<META http-equiv="Content-Type" content="text/html; charset=Windows-1252">
+<STYLE>BODY { PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 10pt; BACKGROUND: #ffffff; PADDING-BOTTOM: 12pt; MARGIN: 0px; COLOR: #000000; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif }
+	.banner { PADDING-RIGHT: 0px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 10pt; PADDING-BOTTOM: 6pt; WIDTH: 100%; PADDING-TOP: 6pt; BACKGROUND-COLOR: #ff9933; TEXT-ALIGN: left }
+	.tblpara { MARGIN-LEFT: 5px }
+	H1 { FONT-WEIGHT: bold; FONT-SIZE: 13.5pt; MARGIN-BOTTOM: 6pt; MARGIN-LEFT: 5px }
+	H2 { FONT-WEIGHT: bold; FONT-SIZE: 10pt; MARGIN-BOTTOM: 6pt; MARGIN-LEFT: 5px }
+	TABLE { BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FONT-SIZE: 100%; MARGIN-BOTTOM: 12pt; MARGIN-LEFT: 30px; BORDER-LEFT: #cccccc 1px solid; MARGIN-RIGHT: 30px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #ffffff }
+	TH { PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 10pt; BACKGROUND: #cccccc; PADDING-BOTTOM: 6pt; VERTICAL-ALIGN: top; PADDING-TOP: 6pt; TEXT-ALIGN: left }
+	TD { BACKGROUND: #ffffff; VERTICAL-ALIGN: top }
+	P { MARGIN-LEFT: 30px }
+	BLOCKQUOTE.dtBlock { MARGIN: 0.5em 1.5em 0.5em 2em }
+	A:link { COLOR: #0000ff }
+	A:visited { COLOR: #666699 }
+	A:hover { COLOR: #3366ff }
+	OL { MARGIN: 0.5em 0em 0em 2em }
+	UL { MARGIN: 0.5em 0em 0em 2em }
+	LI { MARGIN-BOTTOM: 0.5em; MARGIN-LEFT: 0.5em }
+	UL P { MARGIN-LEFT: 0em }
+	OL P { MARGIN-LEFT: 0em }
+	DL P { MARGIN-LEFT: 0em }
+	UL P.label { MARGIN-TOP: 0.5em }
+	OL P.label { MARGIN-TOP: 0.5em }
+	DL { MARGIN-TOP: 0em; PADDING-LEFT: 1px }
+	DD { MARGIN-BOTTOM: 0em; MARGIN-LEFT: 1.5em }
+	DT { MARGIN-TOP: 0.5em }
+	PRE { MARGIN-TOP: 0.5em; MARGIN-BOTTOM: 0.5em }
+	PRE { FONT: 100% Courier New, Courier, mono; COLOR: #000066 }
+	CODE { FONT: 100% Courier New, Courier, mono; COLOR: #000066 }
+	.code { FONT: 100% Courier New, Courier, mono; COLOR: #000066 }
+	PRE B { LETTER-SPACING: 0.1em }
+	CODE B { LETTER-SPACING: 0.1em }
+	PRE.syntax { BORDER-RIGHT: #999999 1px solid; PADDING-RIGHT: 8px; BORDER-TOP: #999999 1px solid; MARGIN-TOP: 1em; PADDING-LEFT: 8px; BACKGROUND: #cccccc; MARGIN-BOTTOM: 1em; PADDING-BOTTOM: 4px; BORDER-LEFT: #999999 1px solid; CURSOR: text; COLOR: #000000; PADDING-TOP: 4px; BORDER-BOTTOM: #999999 1px solid }
+	OL DIV.tablediv { MARGIN-TOP: 0em }
+	UL DIV.tablediv { MARGIN-TOP: 0em }
+	</STYLE>
+<META content="Microsoft FrontPage 5.0" name="GENERATOR">
+<BODY>
+	<DIV class="banner" id="DIV1">Microsoft Visual Studio .NET</DIV>
+	<H1>Setup Administrator Mode Readme</H1>
+	<H2>1. Introduction</H2>
+	<P>Microsoft Visual Studio .NET offers an administrator mode setup, which 
+		facilitates deployment to field clients. The administrator initially runs setup 
+		to select which features will be deployed. An .INI file is created based on 
+		this selection, and is then deployed by running setup in unattend mode, 
+		pointing to the generated .INI file. When run in unattend mode, setup runs 
+		silently installing the designated options. If there are any errors, setup 
+		exits silently with failure. This allows deployment through Microsoft Systems 
+		Management Server.</P>
+	<p>
+		For information on deploying Visual Studio .NET using SMS, see <a TARGET="_TOP" href="http://support.microsoft.com/?scid=kb;en-us;Q327792">
+			http://support.microsoft.com/?scid=kb;en-us;Q327792</a>.
+	</p>
+
+<P><B>Active Directory deployment scenarios for the .NET Framework 1.1 and 
+Visual J# .NET Redistributable Package 1.1.</B></P>
+<P>In Active Directory deployment scenarios, the .NET Framework 1.1 and Visual 
+J# .NET Redistributable Package 1.1 are deployed per-machine via the <B>Assign to 
+Machine</B> option of the Group Policy Software Installation 
+snap-in.<BR><BR><B>Important:</B> For detailed instructions on Active Directory 
+deployment of .NET Framework 1.1 and the Visual J# .NET Redistributable Package 
+1.1, see <A href="http://go.microsoft.com/fwlink/?LinkId=11806" 
+target=_blank>http://go.microsoft.com/fwlink/?LinkId=11806</A>.</P>
+
+<P><B>Redistributing the .NET Framework 1.1 and Visual J# .NET Redistributable 
+Package 1.1.</B></P>
+<P>Applications and controls written for the .NET Framework or the Visual J# 
+.NET Redistributable Package require the .NET Framework or the Visual J# .NET 
+Redistributable Package to be installed on the computer where the application or 
+control runs. The .NET Framework is available as a stand-alone executable file, dotnetfx.exe. The Visual J# .NET Redistributable Package is also a standalone executable file, vjredist.exe. Additionally, for non-English applications, the .NET Framework language pack, langpack.exe, and the Visual J# .NET Redistributable language pack, vjredist-LP.exe, should be deployed. For more information 
+on obtaining these executables and how to use them to deploy applications, see <A 
+href="http://go.microsoft.com/fwlink/?LinkId=10377">Redistributing the .NET 
+Framework</A>.</P>
+
+
+		<H2>2. Running Administrator Mode Setup</H2>
+	<P>Before running this phase of administrator setup, you <B>must</B> first run 
+		Visual Studio .NET Prerequisites Setup on your machine.&nbsp; Some of the 
+		components installed by the update are required for Visual Studio .NET setup to 
+		function.</P>
+	<P><B>Note:</B> You must run the setup.exe found in the \setup subdirectory in 
+		order to create an .ini file. The setup.exe file found at the root of the CD or 
+		DVD does not support administrator setup.</P>
+	<TABLE>
+		<TBODY>
+			<TR>
+				<TH>
+					To create the deployment .INI file</TH></TR>
+			<TR>
+				<TD>
+					<OL>
+						<LI>
+						Insert the Visual Studio .NET 2003&nbsp;CD 1&nbsp;or DVD and ignore the autorun 
+						message.
+						<LI>
+							Choose the <B>Start</B> menu and then choose <B>Run</B>.
+						<LI>
+							Type the following: <BLOCKQUOTE class="dtBlock">
+								<P class="code"><I>n</I>:\setup\Setup.exe /createunattend &lt;<I>path to .INI file</I>&gt;</P>
+								<P>For example:</P>
+								<P class="code">D:\setup\setup.exe /createunattend c:\vs7_deployment.ini</P>
+							</BLOCKQUOTE>
+						</LI>
+					</OL>
+				</TD>
+			</TR>
+		</TBODY></TABLE>
+	<TABLE>
+		<TBODY>
+			<TR>
+				<TH>
+					To run setup with the generated file on a client</TH></TR>
+			<TR>
+				<TD>
+					<OL>
+						<LI>
+							Verify that Visual Studio .NET 2003 is available on the network (see <I>Creating a 
+								Network Image</I>).
+						<LI>
+							Choose the <B>Start</B> menu and then choose <B>Run</B>.
+						<LI>
+							Type the following: <BLOCKQUOTE class="dtBlock">
+								<P class="code">\\<I>&lt;computer&gt;</I>\<I>&lt;share&gt;</I>\...\setup\Setup.exe 
+									/unattendfile &lt;<I>path to .INI file</I>&gt;</P>
+								<P>For example:</P>
+								<P class="code">\\products\VisualStudio\setup\setup.exe /unattendfile 
+									\\computer\share\vs7_deployment.ini</P>
+							</BLOCKQUOTE>
+						</LI>
+					</OL>
+				</TD>
+			</TR>
+		</TBODY></TABLE>
+	<TABLE>
+		<TBODY>
+			<TR>
+				<TH>
+					To run MSDN Library setup</TH></TR>
+			<TR>
+				<TD>
+					<OL>
+						<LI>
+							Verify that the MSDN Library is available on the network (see <I>Creating a Network 
+								Image</I>).
+						<LI>
+							From the <B>Start</B> menu, choose <B>Run</B>.
+						<LI>
+							Type the following: <BLOCKQUOTE class="dtBlock">
+								<P class="code">msiexec.exe /gb /a &lt;<I>path to msdn.msi</I>&gt;</P>
+								<P>For example:</P>
+								<P class="code">msiexec.exe /gb /a \\products\VisualStudio\MSDN</P>
+							</BLOCKQUOTE><BLOCKQUOTE class="dtBlock">For further details on MSDN setup options, 
+								please refer to the readme in the top-level MSDN folder. </BLOCKQUOTE>
+						</LI>
+					</OL>
+				</TD>
+			</TR>
+		</TBODY></TABLE>
+	<H2 class="dtH1">3. Creating a Network Image</H2>
+	<P>Visual Studio .NET 2003 setup may be run from a network share as an alternative to running setup from CDs or DVDs.<br>
+<br>
+
+The following procedure illustrates how to prepare Visual Studio .NET 2003 for installation from a network share.</P>
+	<TABLE>
+		<TR>
+			<TH>Example procedure for sharing installation files from CDs</TH>
+		</TR>
+		<TR>
+			<TD>
+				<OL>
+					<LI>
+						Create a folder (for example, VS2003) on the server.
+					<LI>
+						Create three subfolders, named PRE, VS, and MSDN within the 								top-level folder. For example:<br><br>
+						VS2003\PRE<br>
+						VS2003\VS<br>
+						VS2003\MSDN
+
+					<LI>
+						Copy  the contents of the CD labeled <b>Visual Studio .NET 								2003 Prerequisites</b> to the subfolder named PRE.<br><br>
+						Copy the contents of all CDs labeled as <b>Visual Studio .NET 						2003</b> 
+						to the subfolder named VS folder. If prompted, overwrite existing 						files.<br><br>
+						Copy the contents of all CDs labeled <b>MSDN Library for 						Visual Studio .NET 
+						2003</b> to the subfolder named MSDN. If prompted, overwrite 						existing files.
+
+					<LI>
+						Open <B>setup.ini</B> in the VS subfolder using a text editor, such 						as Notepad.
+					<LI>
+						In the [Baseline] section, change the line that starts with 								"DIR=" as follows: 
+						<BLOCKQUOTE class="dtBlock">
+						<DIV class="code">[Baseline]<BR>
+								DIR=..\PRE<BR>
+								FileName=setup.exe</DIV>
+						</BLOCKQUOTE>
+						In the [Documentation] section, change the line that starts with 						"DIR=" to 
+						"DIR=..\MSDN". For example: 
+						<BLOCKQUOTE class="dtBlock">
+						<DIV class="code">[Documentation]<BR>
+								DIR=..\MSDN</DIV>
+						</BLOCKQUOTE>
+					
+					<LI>
+						Save your changes and close the file.
+	
+						<P><b>Note</B> Completing this step prevents disk-swapping 								requests during setup and informs setup of the correct paths 
+						to the Visual Studio .NET 2003 Prerequisites and 
+						the MSDN Library CDs.</P>
+					<LI>
+						In the VS subfolder, open the <B>Setup</B> folder.
+					<LI>	
+						 Open <b>setup.sdb</b> using a text editor, such 						as Notepad, and add the following lines to the end of the file:
+						<BLOCKQUOTE class="dtBlock">
+						<DIV class="code">[Product Key]<BR>
+								<i>XXXXXXXXXXXXXXXXXXXXXXXXX</i>
+								</DIV>
+						
+						</BLOCKQUOTE>
+						<b>Note</b> <i>XXXXXXXXXXXXXXXXXXXXXXXXX</i> is the 25 digit product 
+						key, entered without dashes, found on the CD packaging.
+					
+					<LI>
+						Save your changes and close the file.
+	
+						<P><b>Note</B> Completing this step enables pre-populating the product key for the user.</P>
+					
+					<LI>
+						Share the VS2003 folder on the network and set the appropriate
+						security settings.  The path to Visual Studio .NET 2003 setup 
+						from the network looks as follows:
+						<SPAN class="code">\\[servername]\VS2003\VS\setup.exe</SPAN>.<bR>
+						<bR>
+						<b>Note</b>&nbsp;When installing, setup fails if any path 
+						and file name combination exceeds 260 characters. 									The maximum length of a path in Visual Studio is 									221 characters; accordingly, you should copy files to a path 						with less than 70 characters. 
+						If you create a network share for a network image, 
+						the UNC path to the root install location should contain 								fewer than 39 characters.<br>
+						<br>
+						<b>Note</b>&nbsp;Setup may fail if the folder names in this path 						include embedded spaces, for example “\\[servername]\VS 2003\MSDN\” 						or “\\[servername]\VS2003\Visual Studio\”.<br>
+						<br>
+				    		<b>Note</b> Visual SourceSafe and Visio are not part of 
+						Visual Studio .NET 2003 setup. However, you may also copy the 
+						contents of the Visual SourceSafe and Visio CDs to separate folders 							on your server to facilitate setup of these products over a network 						as separate installations.
+                    
+                    			</li>
+				</OL>
+				
+			</TD>
+		</TR>
+	</TABLE>
+
+	<H2>4. Installation Maintenance</H2>
+	<P>Setup can be run again on a machine with an existing installation.&nbsp;This 
+		should be done by the administrator running in createunattend mode on a master 
+		machine that had the same install as the client machines. Changes to the 
+		feature state can then be deployed to clients.</P>
+	<P>Clients should not run setup from <B>Add/Remove Programs</B> in Control Panel 
+		(or any other means) on their own. This will cause a discontinuity in the 
+		feature state. All changes should come from setup being run with the 
+		unattend file switch.</P>
+	<H2>5. Required Prerequisite Components</H2>
+	<P>The following is a list of components required for Visual Studio .NET. Visual 
+		Studio .NET 2003&nbsp;unattended setup will fail if any component is not installed.</P>
+	<UL type="disc">
+		<LI style="MARGIN-LEFT: 30px">
+		Windows 2000 Service Pack 3
+		<LI style="MARGIN-LEFT: 30px">
+		Microsoft FrontPage 2000 Web Extensions Client
+		<LI style="MARGIN-LEFT: 30px">
+		Setup Runtime Files
+		<LI style="MARGIN-LEFT: 30px">
+		Microsoft Internet Explorer 6 Service Pack 1
+		<LI style="MARGIN-LEFT: 30px">
+		Microsoft Data Access Components 2.7 Service Pack 1 (Windows 2000 only)
+		<LI style="MARGIN-LEFT: 30px">
+			Microsoft .NET Framework&nbsp;1.1</LI>
+		<LI style="MARGIN-LEFT: 30px">
+			Microsoft Visual J# .NET Redistributable Package</LI>
+	</UL>
+	<h5>&nbsp;6. Deploying VSS and Visio</h5>
+    <h5 class="dtH1">&nbsp;6.1.&nbsp; Visio</h5>
+    <p>To deploy Visio silently, run with the following command -- &quot;msiexec /qn 
+    D:visio.msi&quot;; where &quot;D:\&quot; is the path to the CD drive or network location.</p>
+    <dir>
+      <font SIZE="1">
+    </dir>
+    </font>
+    <h5 class="dtH1">&nbsp;6.2.&nbsp; VSS</h5>
+    <p>Details of VSS deployment can be found in the following KB article --
+    <font size="2">
+    <a href="http://support.microsoft.com/?scid=kb;en-us;Q195828">Q195828</a></p>
+    </font>
+	<H2>7. Known Installation Issues</H2>
+	<H2>7.1. Data file cannot be created</H2>
+	<P>When running setup in createunattend mode with a file that already exists, you 
+		will see an error "The data file &lt;<I>filename</I>&gt; cannot be created. 
+		Setup cannot continue." Either delete the existing file, or provide a unique 
+		file name.</P>
+	<h5 class="dtH1">&nbsp;7.2. Visibility of user-specific data</h5>
+    <p>When you create an unattended install file, some user-specific data might 
+    appear in the file. Specifically, the name of the user who created the file 
+    and their organization name appear as two line items:</p>
+    <ul type="disc" style="margin-left: 2em; margin-right: 0em; margin-top: 0.5em; margin-bottom: 0em">
+      <li style="margin-left: 30px; margin-bottom: 0.5em">gfn_pid core user 
+      name=Your Name </li>
+      <li style="margin-left: 30px; margin-bottom: 0.5em">gfn_pid core 
+      organization=Your Company </li>
+    </ul>
+    <p>You can change the values of these variables before using the INI file, 
+    but do not delete the lines completely</p>
+	<h2>8. Deployment of Visual Studio .Net Service Releases</h2>
+	<P>For information on downloading and deploying Visual Studio .NET Service Releases, 
+	see <a href="http://go.microsoft.com/fwlink/?LinkId=10605">
+    	http://go.microsoft.com/fwlink/?LinkId=10605</a>.</P>
+
+</BODY>

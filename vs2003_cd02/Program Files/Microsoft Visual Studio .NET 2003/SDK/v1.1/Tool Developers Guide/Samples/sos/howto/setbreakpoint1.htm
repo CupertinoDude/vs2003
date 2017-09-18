@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<LINK href="..\commands\HelpStyle.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="HowDoI">Set a breakpoint in managed code</TD>
+					</TR>
+					<TR>
+						<TD class="Comment">
+							<table class="Comments2" ID="Table4">
+								<tr>
+									<td valign="top"><b>Comments:</b></td>
+									<td>This allows you to set a breakpoint in managed code for a method that has 
+										already been JIT-compiled.
+									</td>
+								</tr>
+							</table>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="Step">Step 1: Find the MethodDesc for a given function</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">
+							<pre>
+0:003&gt; !Name2EE basedebug.exe basedebug.MyMain.MyFunction
+--------------------------------------
+MethodDesc: <STRONG><FONT color=red>375080</FONT></STRONG>
+Name: [DEFAULT] String basedebug.MyMain.MyFunction()
+-----------------------</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="Step">Step 2: Find the JIT-compiled&nbsp;address.</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">
+							<pre>
+0:003&gt; !DumpMD <FONT color=red><STRONG>375080</STRONG></FONT>
+  
+Method Name : [DEFAULT] String basedebug.MyMain.MyFunction()
+MethodTable 375098
+Module: 14ea50
+mdToken: 06000002 (G:\Projects\VC\basedebug\bin\Debug\basedebug.exe)
+Flags : 10
+Method VA : <b><FONT color=blue>03122ff0</FONT></b></pre>
+							<b>-or-</b>
+							<pre>
+0:003&gt; !u <FONT color=red><STRONG>375080</STRONG></FONT>
+Normal JIT generated code
+[DEFAULT] String basedebug.MyMain.MyFunction()
+Begin 03122ff0, size 18
+<STRONG><FONT color=blue>03122ff0</FONT></STRONG> 55               push    ebp
+03122ff1 8bec             mov     ebp,esp
+03122ff3 50               push    eax
+03122ff4 56               push    esi
+03122ff5 33f6             xor     esi,esi
+03122ff7 8b05e800ba01     mov     eax,[01ba00e8] ("MyFunction")
+03122ffd 8bf0             mov     esi,eax
+03122fff eb00             jmp     03123001
+03123001 8bc6             mov     eax,esi
+03123003 5e               pop     esi
+03123004 8be5             mov     esp,ebp
+03123006 5d               pop     ebp
+03123007 c3               ret</pre>
+							<table class="Notes" ID="Table2">
+								<tr>
+									<td valign="top"><b>Note:</b></td>
+									<td>If you have a specific place within the function where&nbsp;you need to set a 
+										breakpoint, use the <STRONG>u</STRONG> command.
+									</td>
+								</tr>
+							</table>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="Step">Step 3: Set the breakpoint</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">
+							<pre>
+0:003&gt; bp <STRONG><FONT color=blue>03122ff0</FONT></STRONG></pre>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

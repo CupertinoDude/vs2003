@@ -1,0 +1,6 @@
+Inserting Arbitrary Content
+This sample demonstrates how to use a ContentTemplate template in 
+a Panel mobile control to insert arbitrary device-specific markup
+into a page. On HTML devices, the panel in this form emits custom
+HTML markup. On other devices, they render the panel's 
+ordinary contents.

@@ -1,0 +1,30 @@
+<xsd:schema id="custDS"  xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:element name="customers">
+    <xsd:complexType>
+      <xsd:all>
+        <xsd:element name="CustomerID" type="xsd:string"></xsd:element>
+        <xsd:element name="CompanyName" type="xsd:string"></xsd:element>
+        <xsd:element name="ContactName" minOccurs="0" type="xsd:string"></xsd:element>
+        <xsd:element name="ContactTitle" minOccurs="0" type="xsd:string"></xsd:element>
+        <xsd:element name="Address" minOccurs="0" type="xsd:string"></xsd:element>
+        <xsd:element name="City" minOccurs="0" type="xsd:string"></xsd:element>
+        <xsd:element name="Region" minOccurs="0" type="xsd:string"></xsd:element>
+        <xsd:element name="PostalCode" minOccurs="0" type="xsd:string"></xsd:element>
+        <xsd:element name="Country" minOccurs="0" type="xsd:string"></xsd:element>
+        <xsd:element name="Phone" minOccurs="0" type="xsd:string"></xsd:element>
+        <xsd:element name="Fax" minOccurs="0" type="xsd:string"></xsd:element>
+      </xsd:all>
+    </xsd:complexType>
+    <xsd:key name="Constraint1" msdata:PrimaryKey="true">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="CustomerID"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:element name="custDS" msdata:IsDataSet="true">
+    <xsd:complexType>
+      <xsd:choice maxOccurs="unbounded">
+        <xsd:element ref="customers"/>
+      </xsd:choice>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

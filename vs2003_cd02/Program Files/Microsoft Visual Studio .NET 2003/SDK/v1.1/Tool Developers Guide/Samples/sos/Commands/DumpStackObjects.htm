@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">DumpStackObjects</TD>
+					</TR>
+					<TR>
+						<TD>Dumps all the objects used on the current thread</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!DumpStackObjects [&lt;top stack&gt;[&lt;bottom stack&gt;]]</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="81" cellSpacing="1" cellPadding="1" width="748" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="129"><STRONG>&lt;top stack&gt;</STRONG></TD>
+									<TD vAlign="top">Stack pointer at top of stack segment you wish to display</TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="129"><STRONG>&lt;bottom stack&gt;</STRONG></TD>
+									<TD vAlign="top">Stack pointer at&nbsp;bottom of stack segment you wish to display</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>
+0:000&gt; !DumpStackObjects
+ESP/REG  Object   Name
+0012f810 00c42d58 System.Byte[]
+0012f814 00c42bd8 System.IO.__ConsoleStream
+0012f840 00c42c00 System.IO.StreamReader
+0012f844 00c41bfc MyDebugApp.myOtherClass
+0012f85c 00c42c00 System.IO.StreamReader
+0012f864 00c430b4 System.IO.TextReader/SyncTextReader
+0012f86c 00c41bfc MyDebugApp.myOtherClass
+0012f878 00c41bfc MyDebugApp.myOtherClass
+0012f87c 00c41bfc MyDebugApp.myOtherClass
+0012f89c 00c41bfc MyDebugApp.myOtherClass
+0012f8a8 00c41bd4 System.String    hello world
+0012f8bc 00c41bd4 System.String    hello world
+0012f8c4 00c41bc4 System.Object[]
+0012f8f8 00c41bc4 System.Object[]
+0012fb10 00c41bc4 System.Object[]
+0012fb24 00c41bc4 System.Object[]
+
+
+0:000&gt; !DumpStackObjects 0012f85c 0012f8bc
+ESP/REG  Object   Name
+0012f85c 00c42c00 System.IO.StreamReader
+0012f864 00c430b4 System.IO.TextReader/SyncTextReader
+0012f86c 00c41bfc MyDebugApp.myOtherClass
+0012f878 00c41bfc MyDebugApp.myOtherClass
+0012f87c 00c41bfc MyDebugApp.myOtherClass
+0012f89c 00c41bfc MyDebugApp.myOtherClass
+0012f8a8 00c41bd4 System.String    hello world
+</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Comments</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<P>Use the DumpObj command with&nbsp;the object address to dump out the contents of 
+								the objects.</P>
+							<P>ESP/REG indicates the location of the object on the stack</P>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

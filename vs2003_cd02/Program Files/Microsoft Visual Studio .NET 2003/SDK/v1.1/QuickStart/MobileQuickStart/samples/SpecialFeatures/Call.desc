@@ -1,0 +1,4 @@
+Originating Phone Calls
+This sample demonstrates a simple use of the PhoneCall control to allow calling-capable devices to
+originate a phone call from a link, and to display text including a phone number and hyperlink on
+non-calling-capable devices.

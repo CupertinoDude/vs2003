@@ -1,0 +1,28 @@
+﻿<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="All Types are Derived from the System.Object Base Type">
+	<Paragraph>
+		The CLR requires that every type is ultimately derived from the System.Object type. Having all types derive from System.Object guarantees that every object of every type offers a minimum set of 		capabilities. Specifically, the System.Object class offers the following instance methods:
+	</Paragraph>
+	<Paragraph>
+		<List>Equals (public, virtual): Allows two objects to be compared for value equality.</List>
+		<List>GetHashCode (public, virtual): Allows a type to calculate and return a 32-bit signed integer hash code for its objects. This is typically used for storing objects in a hashtable.</List>
+		<List>ToString (public, virtual): Allows a type to return a string that represents the object’s value.</List>
+		<List>GetType (public, non-virtual): Returns an object that represents the Type of the object. This object can be used with Reflection.</List>
+		<List>MemberwiseClone (protected, non-virtual): Allows the type to construct a new instance that is a bitwise clone (shallow copy) of itself.</List>
+		<List>Finalize (protected, virtual): Allows the type’s objects to gracefully cleanup and release resource when the object is garbage collected. See the Memory Management QuickStart for more info.</List>
+	</Paragraph>
+	<Paragraph>
+		The sample program illustrates how to create a very simple type and how it is possible to call the public methods defined by System.Object using an instance of this simple type.
+	</Paragraph>
+	<Paragraph>
+		<Sample Caption="System.Object" Image="..\Images\Console.gif">
+			<CSPath>..\Samples\TypeFundamentals\ObjectBaseType\CS</CSPath>
+			<VBPath>..\Samples\TypeFundamentals\ObjectBaseType\VB</VBPath>
+		</Sample>
+	</Paragraph>
+	<Navigation>
+		<Previous>Type Fundamentals.xml</Previous>
+		<Next>Casting.xml</Next>
+	</Navigation>
+</Document>

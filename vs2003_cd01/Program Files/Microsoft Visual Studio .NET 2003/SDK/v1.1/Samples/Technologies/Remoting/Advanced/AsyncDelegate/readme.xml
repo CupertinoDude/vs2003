@@ -1,0 +1,41 @@
+<?xml version='1.0'?> 
+<?xml-stylesheet type="text/xsl" href="..\..\..\..\readme.xsl"?> 
+<sample> 
+<title> Remoting Async Delegate Sample</title>
+
+<title-short>Making Async calls with .NET remoting</title-short>
+
+<overview> 
+This sample shows how to make asynchronous calls using remoting.  Both samples in this
+directory use BeginInvoke and EndInvoke to make asynchronous calls and retrieve
+the results from the call.  
+</overview>
+
+<subdirectory>Technologies\Remoting\Advanced\AsyncDelegate
+</subdirectory>
+
+<buildsteps> 
+<step> 
+Type <b>nmake -a all</b> from the command line.      
+<example> 
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\Advanced\AsyncDelegate> nmake -a all
+</example>
+</step>
+</buildsteps>
+
+<runsteps> 
+<step>
+Run the executables AsyncDelegate.exe and AsyncDelegate2.exe from a console window.
+</step>
+</runsteps>
+
+<keywords> 
+<word name="Remoting" keyword="R"/>
+<word name="Asynchronous" keyword="A"/>
+<word name="MBR" keyword="M"/>
+<word name="BeginInvoke" keyword="B"/>
+<word name="EndInvoke" keyword="E"/>
+</keywords>
+</sample>
+
+

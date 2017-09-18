@@ -1,0 +1,72 @@
+﻿<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?>
+
+<sample>
+<title>Public Key Cryptography Sample</title>
+<title-short>PublicKey</title-short>
+<overview>
+This sample demonstrates how public key encryption can be used to securely 
+exchange messages between 3 entities.  The messages are encrypted using a 
+symmetric algorithm (RC2) and then the RC2 key is encrypted using an asymmetric 
+algorithm (RSA). Asymmetric cryptographic algorithms, also known as public-key algorithms, require that each entity 
+maintains a pair of related keys: a private key and a public key. Both keys are 
+unique to the entity. The public key can be made available to anyone; this key 
+is used for encoding data to be sent to a receiver. The private key must be kept 
+private by the receiver; this key is used for decoding messages encoded using 
+the receiver's public key.
+</overview>
+<subdirectory>Technologies\Security\PublicKeyCryptography</subdirectory>
+<buildsteps>
+   <step>
+      Type <b>BUILD.bat</b> from the command line.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Security\PublicKeyCryptography\VB>Build.bat
+      </example>
+   </step>   
+</buildsteps>
+<runsteps>
+   <step>
+      <P>
+      This sample requires the Windows 2000 High Encryption Pack.  
+      Additional information and downloads of the high encryption pack are available 
+      on the Microsoft web site:
+      </P>
+      <A href="http://www.microsoft.com/WINDOWS2000/downloads/recommended/encryption/">http://www.microsoft.com/WINDOWS2000/downloads/recommended/encryption/</A>
+   </step>   
+   <step>
+      Type <b>PublicKey.exe</b> from the command line
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Security\PublicKeyCryptography\VB>PublicKey.exe
+      </example>
+   </step>
+</runsteps>
+<technologies>
+   <technology name = "Security.Cryptography" keyword="T">      
+      <class name = "RSACryptoServiceProvider" keyword="T">      
+      The .NET implementation of RSA, which is an asymmetric (public key) algorithm. RSA is used to encrypt the RC2 key to be sent with the encrypted message.
+      </class>
+      <class name = "RC2CryptoServiceProvider" keyword="T">      
+      A symmetric encryption algorithm which is used to encrypt the message text.
+      </class>
+      <class name = "ICryptoTransform" keyword="T">      
+      This interface defines the basic operations of cryptographic transformations.
+      </class>
+      <class name = "CryptoStream" keyword="T">      
+      A stream used to encrypt data which is fed into a memorystream.
+      </class>
+   </technology>          
+   <technology name = "I/O" keyword="T">      
+      <class name = "MemoryStream" keyword="T">      
+      The memory stream is used to temporarily store the output of encryption.
+      </class>
+   </technology>
+   <technology name = "Text" keyword="T">      
+      <class name = "Encoding" keyword="T">      
+      The Encoding.Unicode class is used to convert strings to byte arrays and vice versa.
+      </class>
+   </technology>
+</technologies>
+</sample>
+
+
+

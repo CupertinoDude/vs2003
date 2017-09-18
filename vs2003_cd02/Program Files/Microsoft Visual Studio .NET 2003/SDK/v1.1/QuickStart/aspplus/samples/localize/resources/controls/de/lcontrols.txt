@@ -1,0 +1,7 @@
+;
+; German strings
+;
+ok=Ok
+cancel=Abbruch
+continue=Weiter
+close=Schliessen

@@ -1,0 +1,3 @@
+C# Sample:CS\Control\CustomerControl.cs,CS\Control\Customer.cs,CS\HostApp\HostApp.cs
+VB Sample:VB\Control\CustomerControl.vb,VB\Control\Customer.vb,VB\HostApp\HostApp.vb
+VS.NET:CS\Control\CustomerControl.csproj,CS\HostApp\UserControl.csproj,VB\Control\CustomerControl.vbproj,VB\HostApp\UserControl.vbproj

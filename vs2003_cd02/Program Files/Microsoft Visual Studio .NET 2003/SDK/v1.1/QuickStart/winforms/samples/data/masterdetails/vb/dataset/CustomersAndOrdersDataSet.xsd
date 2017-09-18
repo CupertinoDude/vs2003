@@ -1,0 +1,59 @@
+﻿<xsd:schema id="CustomersAndOrdersDataSet" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xsd:element name="Customers">
+		<xsd:complexType>
+			<xsd:all>
+				<xsd:element name="CustomerID" type="xsd:string" />
+				<xsd:element name="CompanyName" type="xsd:string" />
+				<xsd:element name="ContactName" minOccurs="0" type="xsd:string" />
+				<xsd:element name="ContactTitle" minOccurs="0" type="xsd:string" />
+				<xsd:element name="Address" minOccurs="0" type="xsd:string" />
+				<xsd:element name="City" minOccurs="0" type="xsd:string" />
+				<xsd:element name="Region" minOccurs="0" type="xsd:string" />
+				<xsd:element name="PostalCode" minOccurs="0" type="xsd:string" />
+				<xsd:element name="Country" minOccurs="0" type="xsd:string" />
+				<xsd:element name="Phone" minOccurs="0" type="xsd:string" />
+				<xsd:element name="Fax" minOccurs="0" type="xsd:string" />
+			</xsd:all>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Orders">
+		<xsd:complexType>
+			<xsd:all>
+				<xsd:element name="OrderID" msdata:ReadOnly="True" msdata:AutoIncrement="True" type="xsd:int" />
+				<xsd:element name="CustomerID" minOccurs="0" type="xsd:string" />
+				<xsd:element name="EmployeeID" minOccurs="0" type="xsd:int" />
+				<xsd:element name="OrderDate" minOccurs="0" type="xsd:dateTime" />
+				<xsd:element name="RequiredDate" minOccurs="0" type="xsd:dateTime" />
+				<xsd:element name="ShippedDate" minOccurs="0" type="xsd:dateTime" />
+				<xsd:element name="ShipVia" minOccurs="0" type="xsd:int" />
+				<xsd:element name="Freight" minOccurs="0" type="xsd:decimal" />
+				<xsd:element name="ShipName" minOccurs="0" type="xsd:string" />
+				<xsd:element name="ShipAddress" minOccurs="0" type="xsd:string" />
+				<xsd:element name="ShipCity" minOccurs="0" type="xsd:string" />
+				<xsd:element name="ShipRegion" minOccurs="0" type="xsd:string" />
+				<xsd:element name="ShipPostalCode" minOccurs="0" type="xsd:string" />
+				<xsd:element name="ShipCountry" minOccurs="0" type="xsd:string" />
+			</xsd:all>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="CustomersAndOrdersDataSet" msdata:IsDataSet="true">
+		<xsd:complexType>
+			<xsd:choice maxOccurs="unbounded">
+				<xsd:element ref="Customers" />
+				<xsd:element ref="Orders" />
+			</xsd:choice>
+		</xsd:complexType>
+		<xsd:unique name="Constraint1" msdata:PrimaryKey="true">
+			<xsd:selector xpath=".//Customers" />
+			<xsd:field xpath="CustomerID" />
+		</xsd:unique>
+		<xsd:unique name="Orders_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xsd:selector xpath=".//Orders" />
+			<xsd:field xpath="OrderID" />
+		</xsd:unique>
+		<xsd:keyref name="CustomersOrders" refer="Constraint1">
+			<xsd:selector xpath=".//Orders" />
+			<xsd:field xpath="CustomerID" />
+		</xsd:keyref>
+	</xsd:element>
+</xsd:schema>

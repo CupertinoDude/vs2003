@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Step 2 of Setup is complete</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="Microsoft FrontPage 5.0" name=GENERATOR></HEAD>
+<BODY lang=EN-US vLink=purple link=blue bgColor=white><BASEFONT face="Verdana" color="navy" size="2">
+<P style="MARGIN-TOP: 0px; FONT-SIZE: 16pt; MARGIN-BOTTOM: 6pt">Step 2 of Setup 
+is complete.</P><SPAN>
+<SCRIPT language=JavaScript>
+<!--
+	var strInput;
+	var strRemainingInput;
+	var strPath;
+	var strErrors;
+	var strRollback;
+	var strReadmePath;
+	var i;
+	var strErrorAnchor;
+	var strInstallAnchor;
+	
+	
+	strInput=window.location.search.substring(1,window.location.search.length);
+	i=strInput.indexOf(";");
+	
+	strErrors=strInput.substring(0,i);
+	strRemainingInput=
+	
+	strInput.substring(i+1,strInput.length);i=strErrors.indexOf("=");
+	strErrors=strErrors.substring(i+1,i+2);
+	
+	i=strRemainingInput.indexOf(";");
+
+	strPath=strRemainingInput.substring(0,i);
+	strRemainingInput=
+
+	strRemainingInput.substring(i+1,strInput.length);i=strPath.indexOf("=");
+	strPath=
+	
+	strPath.substring(i+1,strPath.length);i=strRemainingInput.indexOf("=");
+	strRollback=strRemainingInput.substring(i+1,i+2);
+
+	strRemainingInput=
+	strRemainingInput.substring(i+2,strInput.length);i=strRemainingInput.indexOf("=");
+	strReadmePath=strRemainingInput.substring(i+1,strInput.length);
+	
+	// Security precaution
+	forbiddenChars = new RegExp("[<>\'\"]", "g");	// Global search/replace
+	strPath = strPath.replace(forbiddenChars, "");
+	strReadmePath = strReadmePath.replace(forbiddenChars, "");
+
+	document.write("<p style='margin-top: 0; margin-bottom: 6pt'><b>");
+
+	if (strErrors=="1" && strRollback=="1")
+	{
+		document.write ("Warnings were generated during setup, causing installation to roll back. Setup has returned the computer to the state before installation started; all Visual Studio files have been removed. ");
+		document.write ("Review the <a target='_blank' href='file://" + strPath + "/vserror71.txt'>Error Log</a> and <a target='_blank' href='file://" + strPath + "/vsinstall71.txt'>Step 2 Setup Log</a>.</b></p><br>");			
+	}
+	else
+	{
+		if (strErrors=="1")
+		{
+			document.write ("<font size='+1'>Warnings were generated during setup.</font><br><br>");		
+			document.write ("<a target='_blank' href='file://" + strPath + "/vserror71.txt'>View Error Log</a> and <a target='_blank' href='file://" + strPath + "/vsinstall71.txt'>Step 2 Setup Log</a></b></p>");
+		}
+		else 
+		{
+			document.write ("<font size='+1'>There were no errors during setup.</font><br><br>");
+			document.write ("<a target='_blank' href='file://" + strPath + "/vsinstall71.txt'>View Step 2 Setup Log</a></b></p>");
+		}
+		
+		document.write ("<p style='margin-top: 0; margin-bottom: 6pt'><b><a href='#SecNotes'>Read Security Notes</a></b><font size=4 color=#FF0000>!</font></p>");
+		document.write ("<p style='margin-top: 0; margin-bottom: 6pt'><b><a href='#InstallVisio'>Install Microsoft Visio for Enterprise Architects</a></b></p>");
+		document.write ("<p style='margin-top: 0; margin-bottom: 6pt'><b><a href='#InstallSDE'>Microsoft SQL Server Desktop Engine</a></b></p>");
+		document.write ("<p style='margin-top: 0; margin-bottom: 6pt'><b><a href='#InstallIPv6'>Configuring Internet Protocol ver 6.0 (IPv6)</a></b></p><br>");
+		document.write ("<p style='font-size: 14pt; margin-top: 0; margin-bottom: 0pt'>Next Steps</p>");
+		document.write ("<ol start='1' type='1' style='margin-top: 6pt; margin-bottom: 0pt; font-weight=bold'>");
+		document.write ("	<li>");
+		document.write ("		<p style='margin-top: 0; margin-bottom: 0pt'>Register your product</p>");
+		document.write ("		<p style='margin-top: 0; margin-bottom: 6pt; font-weight=normal'>Click this link to <a target='_blank' href='http://register.microsoft.com/regsys/regsys.asp?wizid=6028&lcid=1033'> register this product online</a>.</p>");
+		document.write ("	</li>");
+		document.write ("	<li>");
+		document.write ("		<p style='margin-top: 0; margin-bottom: 0pt'>Install help</p>");
+		document.write ("		<p style='margin-top: 0; margin-bottom: 3pt; font-weight=normal'>Click Done and then select Step 3 of setup to install the MSDN Library.</p>");
+		document.write ("	</li>");
+		document.write ("</ol><br><br><br>");
+		
+		document.write ("<p style='margin-top: 0; margin-bottom: 6pt'><font size='+1'><b><a name='SecNotes'>Security Notes:</a></b></font></p>");
+		document.write ("<p style='margin-top: 0; margin-bottom: 6pt'>It is <font color=#FF0000><b>highly recommended</font></b> that you update this machine with the latest system security patches from the Windows Update web site, <a href='http://www.windowsupdate.com/' target='_blank'>http://www.windowsupdate.com</a>. You can also get updates for Windows 2000 at the <a href='http://www.microsoft.com/windows2000/downloads/default.asp' target='_blank'>Windows 2000 Downloads Page</a> and for Windows XP at the <a href='http://www.microsoft.com/windowsxp/pro/downloads/default.asp' target='_blank'>Windows XP Downloads Page</a>.</p>");
+		document.write ("	<ul>");
+		document.write ("<p style='margin-top: 0; margin-bottom: 6pt'><li>To analyze your machine for security vulnerabilities go to <a target='_blank' href='http://www.microsoft.com/technet/treeview/default.asp?url=/technet/Security/tools/tools/MBSAHome.ASP'><b> Microsoft Baseline Security Analyzer (MBSA)</b> </a>. MBSA includes a graphical and command line interface that can perform local or remote scans of Windows systems. MBSA runs on Windows 2000 and Windows XP systems.</li></p>");
+		document.write ("<p style='margin-top: 0; margin-bottom: 6pt'><li>If you installed a programming language, Setup created the VS Developer and Debugger Users groups on this machine. You should only add trusted users to these groups.</li></p>");
+		document.write ("<p style='margin-top: 0; margin-bottom: 6pt'><li>If Microsoft Internet Information Services (IIS) is installed on this computer, Setup automatically registered ASP.NET.</li></p>");
+		document.write ("<p style='margin-top: 0; margin-bottom: 6pt'><li>If you have installed to a directory other than the default directory, or you installed to a partition that uses the FAT file system, your files might not be protected from other users of the machine. If this machine is shared by other users, you are encouraged to check that the permissions on the installation directory do not allow all users to modify files. Failing to do so could pose a security risk to you.</li></p>");
+		document.write ("	</ul>");
+		document.write ("<br>");
+				
+		document.write ("<p style='margin-top: 12pt; margin-bottom: 6pt'><font size='+1'><b><a name='InstallVisio'>Installing Microsoft Visio for Enterprise Architects:</a></b></font></p>");
+		document.write ("<p style='margin-top: 0; margin-bottom: 6pt'>Microsoft Visio for Enterprise Architects, which provides software and database modeling capabilities, is included with Visual Studio .NET Enterprise Architect, but on a separate CD. To install Microsoft Visio for Enterprise Architects, follow the instructions on the Visio CD.</p>");
+		document.write ("<br>");
+		document.write ("<p style='margin-top: 12pt; margin-bottom: 6pt'><font size='+1'><b><a name='InstallSDE'>Microsoft SQL Server Desktop Engine:</a></b></font></p>");
+		document.write ("<p style='margin-top: 0; margin-bottom: 6pt'>Visual Studio .NET 2003 does not include Microsoft SQL Server Desktop Engine (MSDE). You can download and install MSDE from <a href='http://go.microsoft.com/fwlink/?linkid=13962' title='http://go.microsoft.com/fwlink/?linkid=13962' target='_blank'>http://go.microsoft.com/fwlink/?linkid=13962</a>.</p>");
+		document.write ("<br>");
+		document.write ("<p style='margin-top: 12pt; margin-bottom: 6pt'><font size='+1'><b><a name='InstallIPv6'>Configuring Internet Protocol ver 6.0 (IPv6):</a></b></font></p>");
+		document.write ("<p style='margin-top: 0; margin-bottom: 6pt'>Internet Protocol version 6.0 (IPv6) allows the next generation of applications to leverage the Internet. IPv6 is supported by Windows, the .NET Framework, and Visual Studio .NET. Click <a target='_blank' href='file://" + strPath + "/../ipv6.htm'>here</a> for information on how to configure your machine to use IPv6.</p>");		
+
+	}	
+-->
+			</SCRIPT>
+<NOSCRIPT>
+<br><br>
+<p style='font-size: 14pt; margin-top: 0; margin-bottom: 0pt'>Next Steps</p>
+<ol start='1' type='1' style='margin-top: 6pt; margin-bottom: 0pt; font-weight=bold'>
+	<li>
+		<p style='margin-top: 0; margin-bottom: 0pt'>Register your product</p>
+		<p style='margin-top: 0; margin-bottom: 6pt; font-weight=normal'>Click this link to <a target='_blank' href='http://register.microsoft.com/regsys/regsys.asp?wizid=6028&lcid=1033'> register this product online</a>.</p>
+	</li>
+	<li>
+		<p style='margin-top: 0; margin-bottom: 0pt'>Install help</p>
+		<p style='margin-top: 0; margin-bottom: 3pt; font-weight=normal'>Click Done and then select Step 3 of setup to install the MSDN Library.</p>
+	</li>
+</ol><br><br>
+
+<p style='margin-top: 0; margin-bottom: 6pt'><font size='+1'><b>Security Notes:</b></font></p>
+<p style='margin-top: 0; margin-bottom: 6pt'>It is <font color="#FF0000"> <b>highly recommended </b> </font> that you update this machine with the latest system security patches from the Windows Update web site, <a href='http://www.windowsupdate.com/' target='_blank'>http://www.windowsupdate.com</a>. You can also get updates for Windows 2000 at the <a href='http://www.microsoft.com/windows2000/downloads/default.asp' target='_blank'>Windows 2000 Downloads Page</a> and for Windows XP at the <a href='http://www.microsoft.com/windowsxp/pro/downloads/default.asp' target='_blank'>Windows XP Downloads Page</a>.</p>
+<ul>
+<p style='margin-top: 0; margin-bottom: 6pt'>To analyze your machine for security vulnerabilities go to <a href='http://www.microsoft.com/technet/treeview/default.asp?url=/technet/Security/tools/tools/MBSAHome.ASP'><b> Microsoft Baseline Security Analyzer (MBSA)</b> </a>. MBSA includes a graphical and command line interface that can perform local or remote scans of Windows systems. MBSA runs on Windows 2000 and Windows XP systems.</p>
+<p style='margin-top: 0; margin-bottom: 6pt'>If you installed a programming language, Setup created the VS Developer and Debugger Users groups on this machine. You should only add trusted users to these groups.</p>
+<p style='margin-top: 0; margin-bottom: 6pt'>If Microsoft Internet Information Services (IIS) is installed on this computer, Setup automatically registered ASP.NET.</p>
+<p style='margin-top: 0; margin-bottom: 6pt'>If you have installed to a directory other than the default directory, or you installed to a partition that uses the FAT file system, your files might not be protected from other users of the machine. If this machine is shared by other users, you are encouraged to check that the permissions on the installation directory do not allow all users to modify files. Failing to do so could pose a security risk to you.</p>
+</ul>
+<br>
+<p style='margin-top: 12pt; margin-bottom: 6pt'><font size='+1'><b>Installing Microsoft Visio for Enterprise Architects:</b></font></p>
+<p style='margin-top: 0; margin-bottom: 6pt'>Microsoft Visio for Enterprise Architects, which provides software and database modeling capabilities, is included with Visual Studio .NET Enterprise Architect, but on a separate CD. To install Microsoft Visio for Enterprise Architects, follow the instructions on the Visio CD.</p>
+<br>
+<p style='margin-top: 12pt; margin-bottom: 6pt'><font size='+1'><b>Microsoft SQL Server Desktop Engine:</b></font></p>
+<p style='margin-top: 0; margin-bottom: 6pt'>Visual Studio .NET 2003 does not include Microsoft SQL Server Desktop Engine (MSDE). You can download and install MSDE from <a href='http://go.microsoft.com/fwlink/?linkid=13962' title='http://go.microsoft.com/fwlink/?linkid=13962' target='_blank'>http://go.microsoft.com/fwlink/?linkid=13962</a>.</p>		
+<br>
+<p style='margin-top: 12pt; margin-bottom: 6pt'><font size='+1'><b>Configuring Internet Protocol ver 6.0 (IPv6):</b></font></p>
+<p style='margin-top: 0; margin-bottom: 6pt'>Internet Protocol version 6.0 (IPv6) allows the next generation of applications to leverage the Internet. IPv6 is supported by Windows, the .NET Framework, and Visual Studio .NET. For information on how to configure your machine to use IPv6, see <b>ipv6.htm</b> in your install directory. For example, c:\Program Files\Microsoft Visual Studio .NET 2003\ipv6.htm.</p></NOSCRIPT>
+</SPAN></BODY></HTML>

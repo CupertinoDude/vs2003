@@ -1,0 +1,48 @@
+<?xml version='1.0'?> 
+<?xml-stylesheet type="text/xsl" href="..\..\..\..\readme.xsl"?> 
+<sample> 
+<title> Remoting Call Context Sample</title>
+
+<title-short>Using Call Contexts with .NET remoting</title-short>
+
+<overview> 
+This sample shows how to add and retrieve context data that will flow
+with a remote call.  A method called on a remote object retrieves the
+context data and echoes it back to the client.
+</overview>
+
+<subdirectory>Technologies\Remoting\Advanced\CallContext
+</subdirectory>
+
+<customsection  name = "Hosting the service in a console application">
+Run runme.bat from a console window. 
+</customsection>
+
+<buildsteps> 
+<step> 
+Type <b>nmake -a all</b> from the command line.      
+<example> 
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\Advanced\CallContext> nmake -a all
+</example>
+</step>
+</buildsteps>
+
+<runsteps> 
+<step>
+Ensure that the service is hosted as described above.
+</step>
+
+<step>
+Run FooClient.exe.
+</step>
+
+</runsteps>
+
+<keywords> 
+<word name="Remoting" keyword="R"/>
+<word name="Collections" keyword="C"/>
+<word name="MBR" keyword="M"/>
+</keywords>
+</sample>
+
+

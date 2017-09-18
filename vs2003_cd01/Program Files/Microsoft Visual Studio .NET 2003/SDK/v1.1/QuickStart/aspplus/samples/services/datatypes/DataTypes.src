@@ -1,0 +1,4 @@
+C# Source:CS\DataTypes.asmx
+VB Source:VB\DataTypes.asmx
+JScript Source:JS\DataTypes.asmx
+VS.NET:..\..\vstudio\services\DataTypes\CS\DataTypes.csproj,..\..\vstudio\services\DataTypes\VB\DataTypes.vbproj

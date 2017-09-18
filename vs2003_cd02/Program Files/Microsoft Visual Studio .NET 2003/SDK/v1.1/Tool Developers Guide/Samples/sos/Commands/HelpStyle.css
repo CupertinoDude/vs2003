@@ -1,0 +1,91 @@
+body
+{
+}
+
+.Command
+{
+	background-color:Yellow;
+	font-weight:bold;
+}
+.OutputHeader
+{
+}
+.OutputContents
+{
+	vertical-align: top;
+}
+.OutputName
+{
+
+	font-weight: bold;
+	vertical-align: top;
+	text-align: left;
+}
+.MSOnlyHeader
+{
+	border-right: black 1px solid;
+	border-top: black 1px solid;
+	font-weight: bold;
+	border-left: black 1px solid;
+	color: white;
+	border-bottom: black 1px solid;
+	background-color: red;
+}
+.MSOnly
+{
+	border-right: black 1px solid;
+	border-top: black 1px solid;
+	border-left: black 1px solid;
+	color: black;
+	border-bottom: black 1px solid;
+}
+.HowDoI
+{
+	font-weight: bold;
+	background-color: deepskyblue;
+}
+.Step
+{
+	font-weight: bold;
+	background-color: silver;
+}
+.Notes
+{
+	font-weight: normal;
+	background-color: antiquewhite;
+}
+.Comments2
+{
+	font-weight: normal;
+	background-color: lightblue;
+}
+.SectionTitle
+{
+	background-color:Silver;
+	font-weight:bold;
+}
+.Syntax
+{
+	background-color:White;
+	font-weight:normal;
+}
+.Parameters
+{
+	background-color:White;
+	font-weight:normal;
+}
+.Example
+{
+	background-color:white;
+	font-weight:normal;
+}
+.WinDBGOut
+{
+	background-color:linen;
+	font-weight:normal;
+}
+.Comments
+{
+	background-color:White;
+	font-weight:normal;
+}

@@ -1,0 +1,6 @@
+Using a SelectionList
+This sample demonstrates how to use a SelectionList control
+to allow the user to choose between several options as part of an input form.
+The sample also shows how the Label controls on the second form
+use declarative data binding (with the <b>&lt;%# #&gt;</b>) syntax to 
+display dynamic data.

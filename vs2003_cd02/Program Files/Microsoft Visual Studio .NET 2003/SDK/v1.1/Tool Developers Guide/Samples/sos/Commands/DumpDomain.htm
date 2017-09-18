@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">DumpDomain</TD>
+					</TR>
+					<TR>
+						<TD>Lists assemblies and modules in a domain</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!DumpDomain [&lt;addr&gt;]</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="34" cellSpacing="1" cellPadding="1" width="710" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>&lt;addr&gt;<BR>
+										</STRONG><EM>domain address</EM></TD>
+									<TD vAlign="top">You can get the domain address of the thread from the Threads 
+										command. If you don't provide an address all current&nbsp;domains will be 
+										dumped</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>
+0:001&gt; !DumpDomain 001a57b8
+Domain: 001a57b8 <BR>LowFrequencyHeap: 001a581c
+HighFrequencyHeap: 001a5870
+StubHeap: 001a58c4
+Name: /LM/W3SVC/1/ROOT/NetDebuggingLabs-1-126629344620462523
+Assembly: 00179468 [System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken= b77a5c561934e089] <BR>ClassLoader: 0016d278 <BR>  Module Name <BR>00179620 c:\windows\assembly\gac\system\1.0.3300.0__b77a5c561934e089\system.dll						
+										</pre>
+							<PRE>Assembly:0017ba50 [System.Drawing, Version= 1.0.3300.0, Culture=neutral, PublicKeyToken= b03f5f7f11d50a3a] <BR>ClassLoader: 00159358 <BR>  Module Name <BR>0017cb18 c:\windows\assembly\gac\system.drawing\1.0.3300.0__b03f5f7f11d50a3a\system.drawing.dll <BR>...																</PRE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Comments</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<P><FONT color="#ff00ff"><FONT color="#000000">Shows the addresses of the heaps for the 
+										current domain and all assemblies loaded within the domain.</FONT></FONT><FONT color="#ff00ff"><BR>
+								</FONT>
+								<BR>
+								You can dump out the heaps with the DumpHeap command.</P>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

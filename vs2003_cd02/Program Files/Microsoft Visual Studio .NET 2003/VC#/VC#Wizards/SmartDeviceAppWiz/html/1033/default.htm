@@ -1,0 +1,293 @@
+<HTML>
+	<HEAD>
+		<TITLE>'Smart Device Application Wizard' </TITLE>
+		<meta content="False" name="vs_showGrid">
+		<META content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+		<STYLE type="text/css"> @import url(); 
+		</STYLE>
+		<OBJECT id="ProjWiz" classid="CLSID:9019C713-B40C-4772-891C-A3C72EE995BA" VIEWASTEXT>
+		</OBJECT>
+		<SCRIPT>
+			// Load the New Project Wizard DLL
+			var ProjWiz;
+			var Platforms,Projects,Devices;
+			try {
+				ProjWiz = document.all.tags("OBJECT").item("ProjWiz");
+				ProjWiz.Init(window.external);
+			}
+			catch(e) {
+				window.external.Finish(document, 'cancel');
+			}
+
+			// Setup the stylesheet
+			document.styleSheets(0).imports(0).href = ProjWiz.GetLocPath(window.external.FindSymbol("PRODUCT_INSTALLATION_DIR") + "VC#Wizards","NewStyles.css");
+		</SCRIPT>
+		<!--  -->
+		<!-- The SYMBOL tag is used to set the default values for the user-defined symbols.-->
+		<!--  --><SYMBOL NAME="WIZARD_DIALOG_TITLE" TYPE="text" VALUE="Smart Device Application Wizard"></SYMBOL><SYMBOL NAME="SAMPLE_CHECKBOX" TYPE="checkbox" VALUE="true"></SYMBOL><SYMBOL NAME="SAMPLE_RADIO_OPTION1" TYPE="checkbox" VALUE="true"></SYMBOL><SYMBOL NAME="SAMPLE_RADIO_OPTION2" TYPE="checkbox" VALUE="false"></SYMBOL><SYMBOL NAME="SAMPLE_LISTBOX" TYPE="select-one" VALUE="option1"></SYMBOL><SYMBOL NAME="SOURCE_FILTER" TYPE="text" VALUE="txt"></SYMBOL><SYMBOL NAME="APP_TYPE_SUMMARY" TYPE="text" VALUE="//TODO: Application summary"></SYMBOL>
+	</HEAD>
+	<BODY onkeypress="OnPress();" onkeydown="OnKey();" bottomMargin="0" bgColor="buttonface"
+		leftMargin="0" topMargin="0" onload="InitDocument(document);" rightMargin="0">
+		<TABLE class="ONE" height="100%" cellSpacing="0" cellPadding="0" width="100%" border="0">
+			<TR vAlign="top">
+				<TD width="100%" height="80">
+					<!--OPEN OF TITLE HTML//-->
+					<TABLE class="TWO" cellSpacing="0" cellPadding="0" border="0">
+						<COLGROUP>
+							<COL width="12">
+							<COL>
+							<COL width="12">
+							<TR>
+								<TD vAlign="top" width="12" height="12">&nbsp;
+								</TD>
+								<TD vAlign="top" height="12">&nbsp;
+								</TD>
+								<TD vAlign="top" width="12" height="12">&nbsp;
+								</TD>
+								<TD class="IMAGE" vAlign="bottom" width="110" rowSpan="2">
+									<DIV class="SMALLA" id="Layer0"><IMG class="SMALLEST" height="64" alt="" src="../../Images/wizard.gif" width="62" border="0">
+									</DIV>
+								</TD>
+								<TD vAlign="top" width="6" height="12" rowSpan="2">&nbsp;
+								</TD>
+							</TR>
+							<TR>
+								<TD vAlign="top" width="12" height="65">&nbsp;
+								</TD>
+								<TD vAlign="top" height="65">
+									<H4 class="HEAD" id="HEAD">Welcome to the Smart Device Application Wizard</H4>
+									<P class="SUBHEAD" id="SUBHEAD">This wizard creates a project to develop an 
+										application to run on a smart device.</P>
+								</TD>
+								<TD vAlign="top" width="12" height="65">&nbsp;
+								</TD>
+							</TR>
+							<TR>
+								<TD class="RULE" vAlign="top" colSpan="5" height="2">
+									<TABLE height="1" cellSpacing="0" cellPadding="0" width="100%" border="0">
+										<TR vAlign="top">
+											<TD width="100%" bgColor="buttonshadow" height="1"></TD>
+											<TD width="1" bgColor="window" height="1"></TD>
+										</TR>
+									</TABLE>
+								</TD>
+							</TR>
+					</TABLE>
+					<!--CLOSE OF TITLE HTML//--></TD>
+			</TR>
+			<TR vAlign="top">
+				<TD vAlign="top">
+					<!--OPEN OF PROJWIZ HTML//-->
+					<table style="WIDTH: 600px; HEIGHT: 266px" cellSpacing="10" cellpadding="0">
+						<tr>
+							<td><b><u>W</u>hat platform do you want to target?</b></td>
+							<td vAlign="top" rowSpan="4">
+								<table>
+									<tr>
+										<td height="12"></td>
+									</tr>
+									<tr>
+										<td width="230" height="50">You currently have the following devices installed that 
+											will run an application targeting this platform.</td>
+									</tr>
+									<tr>
+										<td valign="top" width="224" height="184" style="BORDER-RIGHT: 1px inset; BORDER-TOP: 1px inset; BORDER-LEFT: 1px inset; BORDER-BOTTOM: 1px inset; PADDING-LEFT: 3px" id="devices">
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td><select style="WIDTH: 324px; HEIGHT: 98px" size="7" id="platforms" accesskey="w" onchange="OnPlatformSelected();" NAME="platforms">
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td><b>What p<u>r</u>oject type do you want to create?</b></td>
+						</tr>
+						<tr>
+							<td>
+								<select style="WIDTH: 324px; HEIGHT: 98px" size="7" id="projects" accesskey="r" ondblclick="OnFinish(document);">
+								</select>
+							</td>
+						</tr>
+					</table>
+					<!--CLOSE OF PROJWIZ HTML//-->
+				</TD>
+			</TR>
+			<TR>
+				<TD height="45">
+					<!--OPEN OF BUTTON HTML//-->
+					<TABLE id="Table1" height="45" cellSpacing="0" cellPadding="0" border="0">
+						<COLGROUP>
+							<COL width="400">
+							<COL width="75">
+							<COL width="2">
+							<COL width="75">
+							<COL width="2">
+							<COL width="75">
+							<COL width="2">
+							<TR>
+								<TD class="RULE" style="WIDTH: 658px" vAlign="top" colSpan="8" height="2">
+									<TABLE id="Table2" height="1" cellSpacing="0" cellPadding="0" width="100%" border="0">
+										<TR vAlign="top">
+											<TD width="100%" bgColor="buttonshadow" height="1"><IMG height="1" alt="" src="../../Images/spacer.gif" width="1"></TD>
+											<TD width="1" bgColor="window" height="1"><IMG height="1" alt="" src="../../Images/spacer.gif" width="1"></TD>
+										</TR>
+									</TABLE>
+								</TD>
+							</TR>
+							<TR>
+								<TD vAlign="top" colSpan="7" height="10"></TD>
+							</TR>
+							<TR>
+								<TD vAlign="top">&nbsp;
+								</TD>
+								<TD vAlign="middle" width="75" height="23"><BUTTON class="BUTTONS" id="FinishBtn" style="WIDTH: 75px" accessKey="O" onclick="OnFinish(document);"
+										type="button">OK</BUTTON>
+								</TD>
+								<TD vAlign="middle" width="3" height="23">&nbsp;
+								</TD>
+								<TD vAlign="middle" width="75" height="23"><BUTTON class="BUTTONS" id="CancelBtn" style="WIDTH: 75px" accessKey="C" onclick="window.external.Finish(document, 'cancel');"
+										type="button">Cancel</BUTTON>
+								</TD>
+								<TD vAlign="middle" width="3" height="23">&nbsp;
+								</TD>
+								<TD vAlign="middle" width="75" height="23"><BUTTON class="BUTTONS" id="HelpBtn" style="WIDTH: 75px" accessKey="H" onclick="window.external.OnHelp('csd.appwiz.custom.overview');"
+										type="button">Help</BUTTON>
+								</TD>
+								<TD vAlign="middle" width="10" height="23">&nbsp;
+								</TD>
+							</TR>
+							<TR>
+								<TD vAlign="top" colSpan="7" height="15"></TD>
+							</TR>
+					</TABLE>
+					<!--CLOSE OF BUTTON HTML//--></TD>
+			</TR>
+		</TABLE>
+		<SCRIPT language="JSCRIPT">
+		
+			// Initialize the page
+
+			function InitDocument(document)
+			{
+				if (window.external.FindSymbol('DOCUMENT_FIRST_LOAD'))
+				{
+					// This function sets the default symbols based 
+					// on the values specified in the SYMBOL tags above
+
+					window.external.SetDefaults(document);
+				}
+
+				// Load the document 
+				try {
+					window.external.Load(document);
+					var FinishButton=document.all.tags("BUTTON").item("FinishBtn");
+					FinishButton.focus();
+
+					Platforms=document.all.tags("SELECT").item("platforms");
+					Projects=document.all.tags("SELECT").item("projects");
+					Devices=document.all.tags("TD").item("devices");
+					Platforms.options.length=0;
+					var nPlatforms=ProjWiz.GetPlatforms();
+					for (i=0;i<nPlatforms;i++) {
+						var oOption=document.createElement("OPTION");
+						Platforms.options.add(oOption);
+						oOption.innerText=ProjWiz.GetPlatform(i);
+					}					
+					Platforms.selectedIndex=ProjWiz.GetDefaultPlatform();
+					Projects.options.length=0;
+					var nProjects=ProjWiz.GetProjects(Platforms.selectedIndex);
+					for (i=0;i<nProjects;i++) {
+						var oOption=document.createElement("OPTION");
+						Projects.options.add(oOption);
+						oOption.innerText=ProjWiz.GetProject(i);
+					}
+					Projects.selectedIndex=ProjWiz.GetDefaultProject();
+					Devices.innerHTML=ProjWiz.GetDeviceText(Platforms.selectedIndex);
+				}
+				catch(e) {
+					window.external.Finish(document, 'cancel');
+				}
+			}
+			
+			function OnPlatformSelected()
+			{
+				try {
+					Projects.options.length=0;
+					var nProjects=ProjWiz.GetProjects(Platforms.selectedIndex);
+					for (i=0;i<nProjects;i++) {
+						var oOption=document.createElement("OPTION");
+						Projects.options.add(oOption);
+						oOption.innerText=ProjWiz.GetProject(i);
+					}
+					Projects.selectedIndex=0;
+					Devices.innerHTML=ProjWiz.GetDeviceText(Platforms.selectedIndex);
+				}
+				catch(e) {
+					window.external.Finish(document, 'cancel');
+				}
+			}
+			
+			function InitPaths()
+			{
+				try {
+					var strProjectName, strPlatformName, strTemplatePath, strStartPath, strScriptPath;
+				
+					strPlatformName = ProjWiz.GetPlatformDir(Platforms.selectedIndex);
+					strProjectName = ProjWiz.GetProjectDir(Projects.selectedIndex);
+					strStartPath = window.external.FindSymbol("START_PATH");
+
+					//Initialize the project template path and the template path
+
+					strTemplatePath = strStartPath + "\\" + strPlatformName + "\\Templates\\" + strProjectName;
+					window.external.AddSymbol("PROJECT_TEMPLATE_PATH",  strTemplatePath);
+					var strTemplatePath2 = ProjWiz.GetLocPath(strTemplatePath,"");
+					window.external.AddSymbol("TEMPLATES_PATH",  strTemplatePath2);
+				
+					//Initialize the script path 
+				
+					strScriptPath = ProjWiz.GetLocPath(strStartPath + "\\" + strPlatformName + "\\Scripts","");
+					window.external.AddSymbol("SCRIPT_PATH", strScriptPath);
+				}
+				catch(e) {
+					window.external.Finish(document, 'cancel');
+				}
+			}
+			
+			// This is an example of a function which
+			// gets called when the user clicks on 'Finish'
+			//
+			function OnFinish(document)
+			{
+				InitPaths();
+				var err=OnWizFinish(document);
+				if (err==VS_E_WIZARDBACKBUTTONPRESS)
+					window.external.Finish(document,'cancel');
+			}
+
+			
+		</SCRIPT>
+		<SCRIPT language="JSCRIPT" id="INCLUDE_SCRIPT"></SCRIPT>
+		<SCRIPT language="JSCRIPT" id="INCLUDE_COMMON"></SCRIPT>
+		<!-- 
+			Common.js is a script file which contains the helper functions 
+			used by the wizards.  Include this line if you want to
+			call these functions from your html scripts.
+			//-->
+		<SCRIPT>
+			try {
+				var strWizDir = window.external.FindSymbol("PRODUCT_INSTALLATION_DIR") + "VC#Wizards";
+				document.scripts("INCLUDE_SCRIPT").src = ProjWiz.GetLocPath(strWizDir,"Script.js");
+				document.scripts("INCLUDE_COMMON").src = ProjWiz.GetLocPath(strWizDir,"Common.js");
+			}
+			catch(e) {
+				window.external.Finish(document, 'cancel');
+			}
+		</SCRIPT>
+		<SCRIPT event="OnProjWizFinish" for="ProjWiz">
+			OnFinish(document);
+		</SCRIPT>
+	</BODY>
+</HTML>

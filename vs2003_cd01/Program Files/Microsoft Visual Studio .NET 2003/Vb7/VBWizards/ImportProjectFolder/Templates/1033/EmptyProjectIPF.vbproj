@@ -1,0 +1,33 @@
+<VisualStudioProject AllowExistingFolder = "true">
+    <VisualBasic>
+        <Build>
+            <Settings 
+		OutputType = "WinExe"
+	    >
+                <Config
+                    Name = "Debug"
+                    EnableASPXDebugging = "false"
+                    DebugSymbols = "true"
+                    DefineDebug = "true"
+                    DefineTrace = "true"
+                    IncrementalBuild = "true"
+                    OutputPath = "bin"
+                />
+                <Config
+                    Name = "Release"
+                    EnableASPXDebugging = "false"
+                    DebugSymbols = "false"
+                    DefineDebug = "false"
+                    DefineTrace = "true"
+                    IncrementalBuild = "false"
+                    Optimize = "true"
+                    OutputPath = "bin"
+                />
+            </Settings>
+        </Build>
+        <Files>
+            <Include>
+            </Include>
+        </Files>
+    </VisualBasic>
+</VisualStudioProject>

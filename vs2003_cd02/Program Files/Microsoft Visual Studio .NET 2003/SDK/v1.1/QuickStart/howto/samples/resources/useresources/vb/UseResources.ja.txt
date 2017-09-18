@@ -1,0 +1,26 @@
+﻿[strings]
+;prompts
+promptCulture = このサンプルであなたが見たいカルチャーを選択してください。==> 
+promptName = 名前を入力してください。==>
+promptAge = 年齢を入力してください。==>
+promptDegrees = 現在の気温を入力してください、
+promptMissing = 正しい値を入力したか確認してください。
+promptValidAge = 正しい年齢を入力してください。(15以上)
+promptDist = 職場までの距離を教えてください。
+promptValidDist = 正しい距離を入力してください。(0以上).
+promptValidDeg = 正しい屋外の気温を入力してください。(-100 to 140).
+promptEntries = あなたの入力した情報は以下のとおりです：
+
+;ditances
+dist1 = (キロメートル) ==>
+
+;degree measurements
+degree1 = 摂氏:
+degree2 = -100
+degree3 = 140
+
+;outputs
+outputName = 名前:
+outputAge = 年齢:
+outputDegrees = 気温:
+outputDist = 職場までの距離:

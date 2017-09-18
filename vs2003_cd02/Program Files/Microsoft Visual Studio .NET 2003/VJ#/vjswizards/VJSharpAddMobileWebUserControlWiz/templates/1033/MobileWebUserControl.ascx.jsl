@@ -1,0 +1,41 @@
+package [!output NAMESPACE];
+
+import System.Data.*;
+import System.Drawing.*;
+import System.Web.*;
+import System.Web.Mobile.*;
+import System.Web.UI.MobileControls.*;
+import System.Web.UI.WebControls.*;
+import System.Web.UI.HtmlControls.*;
+
+/**
+ * Summary description for [!output SAFE_CLASS_NAME].
+ */
+public abstract class [!output SAFE_CLASS_NAME] extends System.Web.UI.MobileControls.MobileUserControl
+{
+
+    private void Page_Load(System.Object sender, System.EventArgs e)
+    {
+        // Put user code to initialize the page here
+    }
+
+    #region Web Form Designer generated code
+    protected void OnInit(System.EventArgs e)
+    {
+        //
+        // CODEGEN: This call is required by the ASP.NET Web Form Designer.
+        //
+        InitializeComponent();
+        super.OnInit(e);
+    }
+
+    /**
+     * Required method for Designer support - do not modify
+     * the contents of this method with the code editor.
+     */
+    private void InitializeComponent()
+    {
+        this.add_Load(new System.EventHandler(this.Page_Load));
+    }
+    #endregion
+}

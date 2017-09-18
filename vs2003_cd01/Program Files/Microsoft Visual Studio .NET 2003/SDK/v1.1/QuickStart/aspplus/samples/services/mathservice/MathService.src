@@ -1,0 +1,4 @@
+C# Source:CS\MathService.asmx
+VB Source:VB\MathService.asmx
+JScript Source:JS\MathService.asmx
+VS.NET:..\..\vstudio\services\MathService\CS\MathService.csproj,..\..\vstudio\services\MathService\VB\MathService.vbproj

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root xmlns:dt="urn:schemas-microsoft-com:datatypes" xmlns:d2="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?><HTML><HEAD><TITLE>Thread Pools Sample</TITLE><STYLE>
+    .Title{FONT-FAMILY: Verdana;FONT-SIZE: large;COLOR: #808080}
+    </STYLE><STYLE>
+    .Heading{FONT-FAMILY: Verdana;FONT-SIZE: large}
+    </STYLE><STYLE>
+    .SectionBreak{FONT-SIZE: small;MARGIN-BOTTOM: 2em}
+    </STYLE><STYLE>
+    .SmallBreak{FONT-SIZE: small;MARGIN-BOTTOM: 1.5em}
+    </STYLE><STYLE>
+    .Text{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedHeading{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedText{MARGIN-LEFT: 3ex;FONT-FAMILY: Lucida Console;FONT-SIZE: x-small;FONT-WEIGHT: Bold}
+    </STYLE><STYLE>
+    .ListSansBullets {list-style-type: none;FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE></HEAD><BODY><table><tr><td><h2 class="Title">Thread Pools Sample</h2></td><td valign="baseline" class="Text">
+               
+              
+                  (Console Application)
+                </td></tr></table><p class="Text">
+    This document contains the release information for the .NET Framework Pools sample. You will find the following sections below: 
+    </p><ul class="Text"><li><a href="#_Sample_Overview">Overview</a></li><li><a href="#_Sample_Topics">Topics</a></li><li><a href="#_Location_of_Sample">Location</a></li><li><a href="#_Building_the_Sample">Building the sample</a></li><li><a href="#_Running_the_Sample">Running the sample</a></li><li><a href="#_sdkvars">Notes</a></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Overview" />
+    Overview
+    </h4><p class="Text">
+   This sample demonstrates use of the ThreadPool class. The sample queues up an asynchronous method call that is executed by a thread from the thread pool managed by the Common Language Runtime.  The method "does some work" and then sets an event indicating that the work has finished.  The main thread waits on the event and then exits.
+</p><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Topics" />
+  Topics
+  </h4><p class="Text">
+  The following bullets briefly describe the classes and technologies used by this sample.
+  </p><ul class="Text"><li><b>Threading - </b><ul class="Text"><li><b>ThreadPool - </b>
+         When writing managed code, it is suggested that whenever possible, developers use the QueueUserWorkItem() method of the ThreadPool class to implement asynchronous method calls. This sample demonstrates simple use of this type to execute asynchronous behavior.
+      </li></ul></li><li><b>Thread Synchronization - </b><ul class="Text"><li><b>AutoResetEvent - </b>
+         The sample's main thread waits on an AutoResetEvent object until it is set by the asynchronous method.  The asynchronous method calls the Set() method when it has finished with its work.
+      </li></ul></li><li><b>Delegates - </b><ul class="Text"><li><b>WaitCallback - </b>
+         The WaitCallback delegate type is used by this sample to create a type-safe callback method for the ThreadPool class to use. 
+      </li></ul></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Location_of_Sample" />
+    Location
+    </h4><p class="Text">
+    This sample is located in the <a href="." title="Jump to Folder" target="_blank">Technologies\Threading\Pools</a> subdirectory of the .NET Framework SDK samples directory.
+    </p><p class="FixedHeading">
+    For Example:
+      <p class="FixedText">
+      C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Threading\Pools</p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Building_the_Sample" />
+    Building the Sample
+    </h4><p class="Text">
+    In order to properly build and run this sample, the following steps need to be performed.
+    </p><p class="Text">
+      Type <b>BUILD.bat</b> from the command line.<p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Threading\Pools\VB&gt;Build.bat
+      </p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Running_the_Sample" />
+    Running the Sample
+    </h4><p class="Text">
+    In order to run this sample, follow the instructions listed below.
+    </p><span class="Text"><ul class="Text"><li>
+      Type <b>AsyncMethod.exe</b> from the command line.<p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Threading\Pools\VB&gt;AsyncMethod.exe
+      </p></li></ul></span><p class="SectionBreak" /><h4 class="Heading"><a name="_sdkvars" />
+    Notes
+    </h4><p class="Text">
+    For the .Net Framework samples to function properly, your Path, Include, and Lib environment variables must be set correctly. 
+    In many cases, the SDK install program updates these environment variables for you. However, if you installed the .Net Framework SDK 
+    using Visual Studio .NET, or unselected "register environment variables" during setup, these environment variables will not be updated. 
+    You can set the Path, Include and Lib environment variables by running SDKVars.bat, located in the <i>&lt;SDKRoot&gt;\Bin</i> directory. 
+    SDKVars.bat must be executed in every command shell.
+    </p></BODY></HTML></root>

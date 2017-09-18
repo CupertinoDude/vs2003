@@ -1,0 +1,621 @@
+//-----------------------------------------------------------------------------
+// Microsoft VSEE
+//
+// Microsoft Confidential
+// Copyright 1995-2000 Microsoft Corporation. All Rights Reserved.
+//
+// @doc EXTERNAL
+// @module VSAEventClass.idl-IDL source for VS Analyzer Event Class (for LCE) |
+//
+//-----------------------------------------------------------------------------
+
+// Includes -------------------------------------------------------------------
+
+#ifndef _VSAEventObjectInterface_IDL_
+#define _VSAEventObjectInterface_IDL_
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+// Types ----------------------------------------------------------------------
+
+// Structure containing information regarding the source or target of an event
+struct EventObjectComponent {
+	LPOLESTR bstrSessionName;		// Session Name
+	LPOLESTR bstrMachineName;		// Machine Name
+	LPOLESTR bstrProcessName;		// Process Name
+	DWORD dwProcessId;			// Process Id
+	LPOLESTR bstrThreadId;			// Thread Id
+	LPOLESTR bstrComponentGUID;		// Component Id (GUID)
+	LPOLESTR bstrHandle;			// Handle
+};
+
+// Structure containing arrays of information regarding extra data for an event
+struct EventObjectArguments {
+	long nArgumentCount;		// Number of fields
+	LPDWORD ldwFieldNames;		// Array of field names (DWORD is a pointer to a name)
+	LPDWORD ldwFieldTypes;		// Array of field types (DWORD is an enum)
+	LPDWORD ldwFieldValues;		// Array of field values (DWORD is a pointer to a value string or DWORD)
+};
+
+// Structure containing information regarding an alert condition
+struct EventObjectAlert {
+	DWORD dwAlertType;			// Alert type
+	LPOLESTR bstrAlertDescription;	// Text description of the alert
+	DWORD dwAlertSeverity;		// Severity of the alert
+};
+
+
+
+// Interfaces -----------------------------------------------------------------
+
+//----------------------------------------------------------------------------- 
+// Name: IVSAnalyzerEventInit
+// 
+// @interface IVSAnalyzerEventInit |
+// Visual Studio Analyzer Event Object Initialization Interface
+// for analyzing events.  Should not be called by clients.
+// 
+// @base public | IUnknown 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736d8C-361F-11d3-B2C0-005004775988),
+	hidden,
+	helpstring("Analyzer Event Object Initialization Interface")
+]
+interface IVSAnalyzerEventInit : IUnknown
+{
+	HRESULT Initialize(
+			[in] int nIdLEC,					// The LEC's unique identifier for its conversations with the MEC
+			[in] const SYSTEMTIME sysTimeBaseLocal,
+			[in] const LARGE_INTEGER liTimeBaseRemote,
+			[in] const LARGE_INTEGER liTimeBaseRemoteFreq,
+			[in] int nByteSize,						// The size of the byte buffer being passed
+			[in, size_is(nByteSize)] BYTE eventsBuffer[]
+			);
+};
+
+
+//----------------------------------------------------------------------------- 
+// Name: IVSAnalyzerEventBuffer
+// 
+// @interface IVSAnalyzerEventBuffer |
+// Visual Studio Analyzer Event Object Raw Buffer Interface 
+// for analyzing events.
+// This is only available for legacy Visual Studio Analyzer.
+// Current applications should use the IVSAnalyzerEvent interface.
+// 
+// @base public | IUnknown 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736dA6-30AF-11d3-B2BE-005004775988),
+	hidden,
+	helpstring("Analyzer Event Object Raw Interface")
+]
+interface IVSAnalyzerEventBuffer : IUnknown
+{
+	HRESULT GetEventInfo(
+			[out] int * pnIdLEC,					// The LEC's unique identifier for its conversations with the MEC
+			[out] int * pnByteSize,					// The size of the byte buffer being passed
+			[in, out] BYTE ** pEventsBuffer	// Pointer to receive the buffer pointer
+			);
+};
+
+//----------------------------------------------------------------------------- 
+// Name: IEventFieldAuto
+// 
+// @interface IEventFieldAuto |
+// Visual Studio Analyzer Event Automation-friendly Interface 
+// for analyzing an event field from an individual event.
+// 
+// @base public | IDispatch 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736dA7-30AF-11d6-B2BE-005004775988),
+	helpstring("Analyzer Event Object Event Fields Enumerator Automation Interface"),
+	dual
+]
+interface IEventFieldAuto : IDispatch
+{
+	[propget]
+	[id(1), helpstring("property Field Name")]
+	HRESULT FieldName(
+		[out, retval] BSTR* pbstrFieldName
+	);
+
+	[propget]
+	[id(2), helpstring("property Field Value")]
+	HRESULT FieldValue(
+		[out, retval] VARIANT* pvValue
+	);
+
+	[propget]
+	[id(3), helpstring("property Field Type")]
+	HRESULT FieldType(
+		[out, retval] int* pnFieldType
+	);
+};
+
+
+//----------------------------------------------------------------------------- 
+// Name: IEventFieldsAuto
+// 
+// @interface IEventFieldsAuto |
+// Visual Studio Analyzer Event Automation-friendly Interface 
+// for enumerating event fields from individual events.
+// 
+// @base public | IDispatch 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736dA7-30AF-11d5-B2BE-005004775988),
+	helpstring("Analyzer Event Object Custom Fields Enumerator Automation Interface"),
+	dual
+]
+interface IEventFieldsAuto : IDispatch
+{
+	[propget]
+	[id(1), helpstring("property Count")]
+	HRESULT Count(
+		[out, retval] long* pnCount
+	);
+
+	[id(DISPID_VALUE), helpstring("property Item")]
+	HRESULT Item(
+		[in] VARIANT vIndex,
+		[out, retval] IEventFieldAuto** ppIEventFieldAuto
+	);
+
+	[propget]
+	[id(DISPID_NEWENUM), helpstring("property _NewEnum")]
+	HRESULT _NewEnum(
+		[out, retval] IUnknown** ppunk
+	);
+};
+
+
+//----------------------------------------------------------------------------- 
+// Name: IEventFieldsEnum
+// 
+// @interface IEventFieldsEnum |
+// Visual Studio Analyzer Event Enumeration Interface for analyzing events.
+// 
+// @base public | IUnknown 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736dA8-30AF-11d5-B2BE-005004775988),
+	helpstring("Analyzer Event Enumeration Interface")
+]
+interface IEventFieldsEnum : IUnknown
+{
+	[helpstring ("method Next")]
+	HRESULT Next(
+		[in] ULONG celt,
+		[out, size_is(celt), length_is(*pceltFetched)] IEventFieldAuto ** rgEventField,
+		[out] ULONG * pceltFetched
+		);
+
+	[helpstring ("method Skip")]
+	HRESULT Skip(
+		[in] ULONG celt
+		);
+
+	[helpstring ("method Reset")]
+	HRESULT Reset();
+
+	[helpstring ("method Clone")]
+	HRESULT Clone(
+		[out, retval] IEventFieldsEnum ** ppEnum
+		);
+};
+
+
+//----------------------------------------------------------------------------- 
+// Name: IEventAuto
+// 
+// @interface IEventAuto |
+// Visual Studio Analyzer Event Automation-friendly Interface 
+// for analyzing individual events.
+// 
+// @base public | IDispatch 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736dA7-30AF-11d4-B2BE-005004775988),
+	helpstring("Analyzer Event Object Automation Interface"),
+	dual
+]
+interface IEventAuto : IDispatch
+{
+	[propget]
+	[id(1), helpstring("property Machine Id")]
+	HRESULT MachineId(
+		[out, retval] int * pnMachineId
+	);
+
+	[propget]
+	[id(2), helpstring("property Event GUID")]
+	HRESULT EventGUID(
+		[out, retval] BSTR * pbstrEventType
+	);
+
+	[propget]
+	[id(3), helpstring("property Source GUID")]
+	HRESULT SourceGUID(
+		[out, retval] BSTR * pbstrSourceId
+	);
+
+	[id(4), helpstring("property Event Time")]
+	HRESULT EventTime(
+		[out] VARIANT * pvarTime,
+		[out] int * pnNanoseconds
+	);
+
+	[propget]
+	[id(5), helpstring("property Source Component GUID")]
+	HRESULT SourceComponent(
+		[out, retval] BSTR * pbstrComponentGUID
+	);
+
+	[propget]
+	[id(6), helpstring("property Source Session")]
+	HRESULT SourceSession(
+		[out, retval] BSTR * pbstrSourceSessionName
+	);
+
+	[propget]
+	[id(7), helpstring("property Source Process Name")]
+	HRESULT SourceProcessName(
+		[out, retval] BSTR * pbstrSourceProcessName
+	);
+
+	[propget]
+	[id(8), helpstring("property Source Process Id")]
+	HRESULT SourceProcessId(
+		[out, retval] int * pnProcessId
+	);
+
+	[propget]
+	[id(9), helpstring("property Source Machine Name")]
+	HRESULT SourceMachineName(
+		[out, retval] BSTR * pbstrMachineName
+	);
+
+	[propget]
+	[id(10), helpstring("property Source Thread Id")]
+	HRESULT SourceThreadId(
+		[out, retval] int * pnThreadId
+	);
+
+	[propget]
+	[id(11), helpstring("property Source Handle")]
+	HRESULT SourceHandle(
+		[out, retval] BSTR * pbstrThreadId
+	);
+
+	[propget]
+	[id(12), helpstring("property Target Component GUID")]
+	HRESULT TargetComponent(
+		[out, retval] BSTR * pbstrComponentGUID
+	);
+
+	[propget]
+	[id(13), helpstring("property Target Session")]
+	HRESULT TargetSession(
+		[out, retval] BSTR * pbstrTargetSessionName
+	);
+
+	[propget]
+	[id(14), helpstring("property Target Process Name")]
+	HRESULT TargetProcessName(
+		[out, retval] BSTR * pbstrTargetProcessName
+	);
+
+	[propget]
+	[id(15), helpstring("property Target Process Id")]
+	HRESULT TargetProcessId(
+		[out, retval] int * pnProcessId
+	);
+
+	[propget]
+	[id(16), helpstring("property Target Machine Name")]
+	HRESULT TargetMachineName(
+		[out, retval] BSTR * pbstrMachineName
+	);
+
+	[propget]
+	[id(17), helpstring("property Target Thread Id")]
+	HRESULT TargetThreadId(
+		[out, retval] int * pnThreadId
+	);
+
+	[propget]
+	[id(18), helpstring("property Target Handle")]
+	HRESULT TargetHandle(
+		[out, retval] BSTR * pbstrHandle
+	);
+
+	[propget]
+	[id(19), helpstring("property Security Id")]
+	HRESULT SecurityId(
+		[out, retval] BSTR * pbstrSecurityId
+	);
+
+	[propget]
+	[id(20), helpstring("property Causality Id")]
+	HRESULT CausalityId(
+		[out, retval] BSTR * pbstrCausalityId
+	);
+
+	[propget]
+	[id(21), helpstring("property Arguments")]
+	HRESULT Arguments(
+		[out, retval] BSTR * pbstrArguments
+	);
+
+	[propget]
+	[id(22), helpstring("property Return Value")]
+	HRESULT ReturnValue(
+		[out, retval] BSTR * pbstrReturnValue
+	);
+
+	[propget]
+	[id(23), helpstring("property Exception")]
+	HRESULT Exception(
+		[out, retval] BSTR * pbstrException
+	);
+
+	[propget]
+	[id(24), helpstring("property Correlation Id")]
+	HRESULT CorrelationId(
+		[out, retval] BSTR * pbstrCorrelationId
+	);
+
+	[propget]
+	[id(25), helpstring("property Enumerate All Fields")]
+	HRESULT EventFields(
+		[out, retval] IEventFieldsAuto ** ppIEventFieldsAuto
+	);
+
+	[propget]
+	[id(26), helpstring("property Dynamic Event Data")]
+	HRESULT DynamicEventData(
+		[out, retval] BSTR * pbstrDynamicEventData
+	);
+
+	[id(27), helpstring("method Dynamic Event Data")]
+	HRESULT GetDynamicEventDataRaw(
+		[in, out] int * pdwDataLow,
+		[in, out] int * pdwDataHigh
+	);
+};
+
+
+//----------------------------------------------------------------------------- 
+// Name: IEventsAuto
+// 
+// @interface IEventsAuto |
+// Visual Studio Analyzer Event Objects Automation-friendly Interface 
+// for analyzing events.
+// 
+// @base public | IDispatch 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736dA7-30AF-11d3-B2BE-005004775988),
+	helpstring("Analyzer Event Object Automation Collection Interface"),
+	dual
+]
+interface IEventsAuto : IDispatch
+{
+	[propget] 
+	[id(1), helpstring("property Count")]
+	HRESULT Count( 
+		[out, retval] long * nElements     //@parm [out] Number of elements
+	);
+
+	[id(DISPID_VALUE), helpstring("property Item")]
+	HRESULT Item(
+		[in] VARIANT varIndex,    //@parm [in] Index of element
+		[out, retval] IEventAuto ** ppIEventAuto    //@parm [out] Event element
+	);
+
+	[propget]
+	[id(DISPID_NEWENUM), helpstring("property _NewEnum")]
+	HRESULT _NewEnum(
+		[out, retval] IUnknown **punk   //@parm [out] IEnumVARIANT
+	);
+};
+
+
+//----------------------------------------------------------------------------- 
+// Name: IEvent
+// 
+// @interface IEvent |
+// Visual Studio Analyzer Event Object.
+// 
+// @base public | IUnknown
+//----------------------------------------------------------------------------- 
+[
+	object,
+	uuid(6c736d31-4944-11d3-81C6-0000F80273C0),
+	helpstring("Event interface")
+]
+interface IEvent : IUnknown
+{
+	[helpstring ("method GetMachineId")]
+	HRESULT GetMachineId(					
+		[out, retval] int *pnMachineId				
+	);
+
+	[helpstring ("method GetEventGUID")]
+	HRESULT GetEventGUID(
+		[out, retval] GUID* pguidEventGUID
+	);
+
+	[helpstring ("method GetSourceGUID")]
+	HRESULT GetSourceGUID(
+		[out, retval] GUID* pguidSourceGUID
+	);
+
+	[helpstring ("method GetEventTime")]
+	HRESULT GetEventTime(
+		[out] SYSTEMTIME * pSysTime,
+		[out] int * pnNanoseconds
+	);
+
+	[helpstring ("method GetEventTimeRaw")]
+	HRESULT GetEventTimeRaw(
+		[out] LARGE_INTEGER * pliEventTimeRaw
+	);
+
+	[helpstring ("method GetSourceComponent")]
+	HRESULT GetSourceComponent(
+		[out, retval] LPOLESTR *pszComponent
+	);
+
+	[helpstring ("method GetSourceSession")]
+	HRESULT GetSourceSession(
+		[out, retval] LPOLESTR *pszSessionName
+	);
+
+	[helpstring ("method GetSourceProcessName")]
+	HRESULT GetSourceProcessName(
+		[out, retval] LPOLESTR *pszProcessName
+	);
+
+	[helpstring ("method GetSourceProcessId")]
+	HRESULT GetSourceProcessId(
+		[out, retval] DWORD *pdwProcessId
+	);
+
+	[helpstring ("method GetSourceMachineName")]
+	HRESULT GetSourceMachineName(
+		[out, retval] LPOLESTR *pszMachineName
+	);
+
+	[helpstring ("method GetSourceThreadId")]
+	HRESULT GetSourceThreadId(
+		[out, retval] DWORD *pdwThreadId
+	);
+
+	[helpstring ("method GetSourceHandle")]
+	HRESULT GetSourceHandle(
+		[out, retval] LPOLESTR *pszHandle
+	);
+
+	[helpstring ("method GetTargetComponent")]
+	HRESULT GetTargetComponent(
+		[out, retval] LPOLESTR *pszComponent
+	);
+
+	[helpstring ("method GetTargetSession")]
+	HRESULT GetTargetSession(
+		[out, retval] LPOLESTR *pszSessionName
+	);
+
+	[helpstring ("method GetTargetProcessName")]
+	HRESULT GetTargetProcessName(
+		[out, retval] LPOLESTR *pszProcessName
+	);
+
+	[helpstring ("method GetTargetProcessId")]
+	HRESULT GetTargetProcessId(
+		[out, retval] DWORD *pdwProcessId
+	);
+
+	[helpstring ("method GetTargetMachineName")]
+	HRESULT GetTargetMachineName(
+		[out, retval] LPOLESTR *pszMachineName
+	);
+
+	[helpstring ("method GetTargetThreadId")]
+	HRESULT GetTargetThreadId(
+		[out, retval] DWORD *pdwThreadId
+	);
+
+	[helpstring ("method GetTargetHandle")]
+	HRESULT GetTargetHandle(
+		[out, retval] LPOLESTR *pszHandle
+	);
+
+	[helpstring ("method GetSecurityId")]
+	HRESULT GetSecurityId(
+		[out, retval] LPOLESTR *pszSecurityId		//@parm [out] The security context in use
+	);
+	
+	[helpstring ("method GetCausalityId")]
+	HRESULT GetCausalityId(
+		[out, retval] LPOLESTR *pszCausalityId		//@parm [out] Value to match sequences of sub-actions
+	);
+	
+	[helpstring ("method GetArguments")]
+	HRESULT GetArguments(
+		[out, retval] LPOLESTR *pszArguments
+	);
+
+	[helpstring ("method GetReturnValue")]
+	HRESULT GetReturnValue(
+		[out, retval] LPOLESTR *pszReturnValue		//@parm [out] Return value of event
+	);
+
+	[helpstring ("method GetException")]
+	HRESULT GetException(
+		[out, retval] LPOLESTR *pszException		//@parm [out] Exception info of event
+	);
+
+	[helpstring ("method GetCorrelationId")]
+	HRESULT GetCorrelationId(
+		[out, retval] LPOLESTR *pszCorrelationId	//@parm [out] ID to match inbound and outbound events
+	);
+
+	[helpstring ("method GetEventFieldsEnum")]
+	HRESULT GetEventFieldsEnum(
+		[out, retval] IEventFieldsEnum **ppIEventFieldsEnum
+	);
+	
+	[helpstring ("method GetDynamicEventData")]
+	HRESULT GetDynamicEventData(
+		[out, retval] LPOLESTR *pszDynamicEventData
+	);
+
+	[helpstring ("method GetDynamicEventDataRaw")]
+	HRESULT GetDynamicEventDataRaw(
+		[out, retval] LARGE_INTEGER* pliDynamicEventData
+	);
+};
+
+
+//----------------------------------------------------------------------------- 
+// Name: IEnumEvents
+// 
+// @interface IEnumEvents |
+// Visual Studio Analyzer Event Enumeration Interface for analyzing events.
+// 
+// @base public | IUnknown 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736d24-3647-11d3-B2C0-005004775988),
+	helpstring("Analyzer Event Enumeration Interface")
+]
+interface IEnumEvents : IUnknown
+{
+	[helpstring ("method Next")]
+	HRESULT Next(
+		[in] ULONG celt,
+		[out, size_is(celt), length_is(*pceltFetched)] IEvent ** rgEvent,
+		[out] ULONG * pceltFetched
+		);
+
+	[helpstring ("method Skip")]
+	HRESULT Skip(
+		[in] ULONG celt
+		);
+
+	[helpstring ("method Reset")]
+	HRESULT Reset();
+
+	[helpstring ("method Clone")]
+	HRESULT Clone(
+		[out, retval] IEnumEvents ** ppEnum
+		);
+};
+
+#endif // _VSAEventObjectInterface_IDL_

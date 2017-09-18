@@ -1,0 +1,3 @@
+C# Source:CS\SimplePad.cs,CS\TextPrintDocument.cs,CS\GotoForm.cs,CS\OptionsForm.cs
+VB Source:VB\SimplePad.vb,VB\TextPrintDocument.vb,VB\GotoForm.vb,VB\OptionsForm.vb
+VS.NET:CS\SimplePad.csproj;VB\SimplePad.vbproj

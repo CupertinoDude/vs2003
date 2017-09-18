@@ -1,0 +1,25 @@
+[strings]
+;Hinweise
+promptName = Geben Sie Ihren Namen ein ==>
+promptAge = Geben Sie Ihr Alter ein ==>
+promptDegrees = Geben Sie die aktuelle Temperatur ein,
+promptMissing = Stellen Sie sicher, dass Sie einen gültigen Wert eingeben.
+promptValidAge = Geben Sie ein gültiges Alter für einen Erwachsenen ein (15 und älter). 
+promptDist = Geben Sie an, wie weit Sie zur Arbeit fahren
+promptValidDist =Geben Sie einen gültigen Abstand ein (größer als Null). 
+promptValidDeg = Geben Sie eine Außentemperatur ein (-60C bis 60F).
+promptEntries = Sie trugen die folgenden Informationen ein:
+
+;Abstände
+dist1 = (in den Kilometern) ==>
+
+;Gradmessen
+degree1 = in Celsius ==>
+degree2 = -60
+degree3 = 60
+
+;Ausgaben
+outputName = Name:
+outputAge = Alter:
+outputDegrees = Temperatur:
+outputDist = Abstand Zur Arbeit:

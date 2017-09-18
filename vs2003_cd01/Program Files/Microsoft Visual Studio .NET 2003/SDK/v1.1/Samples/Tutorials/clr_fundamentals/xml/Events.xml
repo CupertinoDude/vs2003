@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Events">
+	<Paragraph>
+		Frequently, objects want to register themselves with another object so that they receive notifications for certain events. For example, you might have some object that wants to receive a 			notification when a Button object is clicked. To offer this notification, the Button object offers a Click event. Other objects can create delegates (callback methods) and register themselves with the 		event. Then, when the user clicks the Button, the button object fires the event which sends the notification to all objects that have previously registered themselves with the Button object.
+	</Paragraph>
+	<Paragraph>
+		The code below shows how to create a type whose instances exposes an event, how another object can register itself with that event and then how the event gets fired.
+	</Paragraph>
+	<Paragraph>
+		<Sample Caption="Events" Image="..\Images\Console.gif">
+			<CSPath>..\Samples\TypeMembers\Events\CS</CSPath>
+			<VBPath>..\Samples\TypeMembers\Events\VB</VBPath>
+		</Sample>
+	</Paragraph>
+	<Navigation>
+		<Previous>Index Properties.xml</Previous>
+		<Next>Exception Handling.xml</Next>
+	</Navigation>
+</Document>

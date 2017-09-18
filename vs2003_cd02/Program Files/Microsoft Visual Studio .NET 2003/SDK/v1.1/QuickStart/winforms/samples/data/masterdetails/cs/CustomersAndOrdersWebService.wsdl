@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://tempuri.org/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://www.w3.org/2001/XMLSchema" />
+      <s:element name="GetCustomersAndOrders">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCustomersAndOrdersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustomersAndOrdersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCustomersAndOrders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCustomersAndOrdersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateCustomersAndOrdersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="GetCustomersAndOrdersSoapIn">
+    <part name="parameters" element="s0:GetCustomersAndOrders" />
+  </message>
+  <message name="GetCustomersAndOrdersSoapOut">
+    <part name="parameters" element="s0:GetCustomersAndOrdersResponse" />
+  </message>
+  <message name="UpdateCustomersAndOrdersSoapIn">
+    <part name="parameters" element="s0:UpdateCustomersAndOrders" />
+  </message>
+  <message name="UpdateCustomersAndOrdersSoapOut">
+    <part name="parameters" element="s0:UpdateCustomersAndOrdersResponse" />
+  </message>
+  <message name="GetCustomersAndOrdersHttpGetIn" />
+  <message name="GetCustomersAndOrdersHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="GetCustomersAndOrdersHttpPostIn" />
+  <message name="GetCustomersAndOrdersHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <portType name="CustomersAndOrdersSoap">
+    <operation name="GetCustomersAndOrders">
+      <input message="s0:GetCustomersAndOrdersSoapIn" />
+      <output message="s0:GetCustomersAndOrdersSoapOut" />
+    </operation>
+    <operation name="UpdateCustomersAndOrders">
+      <input message="s0:UpdateCustomersAndOrdersSoapIn" />
+      <output message="s0:UpdateCustomersAndOrdersSoapOut" />
+    </operation>
+  </portType>
+  <portType name="CustomersAndOrdersHttpGet">
+    <operation name="GetCustomersAndOrders">
+      <input message="s0:GetCustomersAndOrdersHttpGetIn" />
+      <output message="s0:GetCustomersAndOrdersHttpGetOut" />
+    </operation>
+  </portType>
+  <portType name="CustomersAndOrdersHttpPost">
+    <operation name="GetCustomersAndOrders">
+      <input message="s0:GetCustomersAndOrdersHttpPostIn" />
+      <output message="s0:GetCustomersAndOrdersHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="CustomersAndOrdersSoap" type="s0:CustomersAndOrdersSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="GetCustomersAndOrders">
+      <soap:operation soapAction="http://tempuri.org/GetCustomersAndOrders" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UpdateCustomersAndOrders">
+      <soap:operation soapAction="http://tempuri.org/UpdateCustomersAndOrders" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="CustomersAndOrdersHttpGet" type="s0:CustomersAndOrdersHttpGet">
+    <http:binding verb="GET" />
+    <operation name="GetCustomersAndOrders">
+      <http:operation location="/GetCustomersAndOrders" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="CustomersAndOrdersHttpPost" type="s0:CustomersAndOrdersHttpPost">
+    <http:binding verb="POST" />
+    <operation name="GetCustomersAndOrders">
+      <http:operation location="/GetCustomersAndOrders" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <service name="CustomersAndOrders">
+    <port name="CustomersAndOrdersSoap" binding="s0:CustomersAndOrdersSoap">
+      <soap:address location="http://localhost/quickstart/winforms/samples/data/MasterDetails/CS/CustomersAndOrdersWebService.asmx" />
+    </port>
+    <port name="CustomersAndOrdersHttpGet" binding="s0:CustomersAndOrdersHttpGet">
+      <http:address location="http://localhost/quickstart/winforms/samples/data/MasterDetails/CS/CustomersAndOrdersWebService.asmx" />
+    </port>
+    <port name="CustomersAndOrdersHttpPost" binding="s0:CustomersAndOrdersHttpPost">
+      <http:address location="http://localhost/quickstart/winforms/samples/data/MasterDetails/CS/CustomersAndOrdersWebService.asmx" />
+    </port>
+  </service>
+</definitions>

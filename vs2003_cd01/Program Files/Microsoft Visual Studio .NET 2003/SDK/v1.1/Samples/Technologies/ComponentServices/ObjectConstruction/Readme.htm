@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root xmlns:dt="urn:schemas-microsoft-com:datatypes" xmlns:d2="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?><HTML><HEAD><TITLE> Object Construction Sample</TITLE><STYLE>
+    .Title{FONT-FAMILY: Verdana;FONT-SIZE: large;COLOR: #808080}
+    </STYLE><STYLE>
+    .Heading{FONT-FAMILY: Verdana;FONT-SIZE: large}
+    </STYLE><STYLE>
+    .SectionBreak{FONT-SIZE: small;MARGIN-BOTTOM: 2em}
+    </STYLE><STYLE>
+    .SmallBreak{FONT-SIZE: small;MARGIN-BOTTOM: 1.5em}
+    </STYLE><STYLE>
+    .Text{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedHeading{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedText{MARGIN-LEFT: 3ex;FONT-FAMILY: Lucida Console;FONT-SIZE: x-small;FONT-WEIGHT: Bold}
+    </STYLE><STYLE>
+    .ListSansBullets {list-style-type: none;FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE></HEAD><BODY><table><tr><td><h2 class="Title"> Object Construction Sample</h2></td><td valign="baseline" class="Text">
+               
+              
+                  (Windows Forms Application)
+                </td></tr></table><p class="Text">
+    This document contains the release information for the .NET Framework  Object Construction sample. You will find the following sections below: 
+    </p><ul class="Text"><li><a href="#_Sample_Overview">Overview</a></li><li><a href="#_Sample_Topics">Topics</a></li><li><a href="#_Location_of_Sample">Location</a></li><li><a href="#_Building_the_Sample">Building the sample</a></li><li><a href="#_Running_the_Sample">Running the sample</a></li><li><a href="#_Uninstalling_the_Sample">Uninstalling the sample</a></li><li><a href="#_sdkvars">Notes</a></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Overview" />
+    Overview
+    </h4><p class="Text"><p class="text">
+This sample demonstrates the use of Object contructor strings in a .Net environment. Object Constructor strings are initialization strings that can be specified or edited administratively (through the Component Services administrative tool), eliminating the need to hard-code configuration information within components.
+</p><p class="text">
+When object construction is enabled for a component, COM+ will call the IObjectContruct::Construct method that it implements immediately after instantiating the object. The object construction string specified in the component's activation properties is passed as an argument to the method. This, in combination with component code that uses the object string in a meaningful way, effectively provides parameterized object construction.
+</p><p class="text">
+You can specify a default string value for the construction string in the Default property of the ConstructionEnabledAttribute, in the COM+ catalog, or both.
+</p><p class="text">
+A component developer might use this feature, for example, to write a component that holds a generic ODBC connection. The object construction string would hold an exact DSN that could be changed through the Component Services admin tool.
+</p><p class="text">
+Object Contruction strings can be useful in combination with COM+ objection pooling services. See the Platform SDK help for more information.
+</p><p class="text">
+The .NET Object Constructor sample creates a COM+ component with object construction enabled and a default construction string. On creating an object instance, various component methods display message boxes to demonstrate call order. The user can modify the object construction string by means of the Component Services admin tool and re-run the sample to observe that the object construction string passed to the component instance has changed.
+</p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Topics" />
+  Topics
+  </h4><p class="Text">
+  The following bullets briefly describe the technologies used by this sample.
+  </p><ul class="Text"><li><b>Object Construction - </b>COM+ service that passes a persistent string value to a class instance on construction of the instance. 
+    </li><li><b>IObjectConstruction - </b>User object interface in System.EnterpriseServices namespace that must be implemented to access object construction strings.
+    </li><li><b>ConstructionEnabled attribute - </b>System.EnterpriseServices component attribute that can be used to enable Object Construction strings and specify a default value for the constructor string.
+    </li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Location_of_Sample" />
+    Location
+    </h4><p class="Text">
+    This sample is located in the <a href="." title="Jump to Folder" target="_blank">Technologies\ComponentServices\ObjectConstruction</a> subdirectory of the .NET Framework SDK samples directory.
+    </p><p class="FixedHeading">
+    For Example:
+      <p class="FixedText">
+      C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\ObjectConstruction</p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Building_the_Sample" />
+    Building the Sample
+    </h4><p class="Text">
+    In order to properly build and run this sample, the following steps need to be performed.
+    </p><p class="Text"> 
+Type <b>BuildAll.bat</b> from the command line.      
+<p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText"> 
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\ObjectConstruction&gt;buildall.bat
+</p></p><p class="Text">
+If you're building the sample from Visual Studio 7, you will need to install the OCDemoSvr.dll assembly to the Global Assembly Cache before running the sample.  Note: The gacutil.exe program is located in the <i>SDK\v1.1</i>\Bin directory.  
+<p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\ObjectConstruction\CS&gt;gacutil -i OCDemoSvr.dll
+</p></p><p class="Text">
+The sample builds a C# and VB version of the client application and COM+ component. Source code for each language is stored in subdirectories named \CS and \VB. The C# component has 'CS' appended to its name as viewed in the Component Services administrative tool, 'OCDemoServerCS.ObjectConstructionTest'. The VB version is named 'OCDemoServerVB.ObjectConstructionTest'. When working with the sample code, be sure to observe and/or modify the version of the COM+ component that corresponds to the client application you launch.
+</p><p class="Text">
+Review comments in the source code and build.bat files for more information on sample binary creation and registration steps.
+</p><p class="SectionBreak" /><h4 class="Heading"><a name="_Running_the_Sample" />
+    Running the Sample
+    </h4><p class="Text">
+    In order to run this sample, follow the instructions listed below.
+    </p><span class="Text"><ul class="Text"><li>
+NOTE: The COM+ .NET samples require Windows 2000 or higher in order to build and run.
+</li></ul><ul class="Text"><li>
+Build the Object Construction sample code following the instructions above. 
+</li></ul><ul class="Text"><li>
+Type <b>OCDemo.exe</b> from the command line. Note whether you are executing the C# (located in the \CS subdirectory) or VB (located in \VB) version of the sample application, as this will determine which COM+ component attributes you will edit administratively in a subsequent step.
+<p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\ObjectConstruction\CS&gt;ocdemo.exe
+</p></li></ul><ul class="Text"><li>
+Press the button labeled 'Create Object'.
+</li></ul><ul class="Text"><li>
+A message box will appear at each stage of activation. Note the object construction string value reported in the call to IObjectConstruct::Construct.
+</li></ul><ul class="Text"><li>
+Launch the Component Services administrative tool (also called the 'COM+ explorer'), by clicking 'Start\Settings\Control Panel' then double-clicking 'Administrative Tools\Component Services'.
+</li></ul><ul class="Text"><li>
+Locate the OCDemoSvr COM+ application by expanding Component Services\Computers\My Computer\COM+ Applications in the left-hand COM+ explorer pane.
+</li></ul><ul class="Text"><li>
+Locate the OCDemoServerCS.ObjectConstructionTest or OCDemoServerVB.ObjectConstructionTest component by expanding 'OCDemoSvr\Components'
+</li></ul><ul class="Text"><li>
+Right-Click the 'OCDemoServerCS.ObjectConstructionTest' or 'OCDemoServerVB.ObjectConstructionTest' component and select 'Properties' from the popup menu.
+</li></ul><ul class="Text"><li>
+Click the 'Activation' tab and enter a new text value in the 'Constructor string' edit field. Click 'OK' to accept the change and dismiss the properties dialog.
+</li></ul><ul class="Text"><li>
+Return to the OCDemo application and click 'Create Object' again. Note the new value which is reported by the IObjectConstruct method (it should match the newly edited string from the COM+ explorer component properties page.)
+</li></ul></span><p class="SectionBreak" /><h4 class="Heading"><a name="_Uninstalling_the_Sample" />			
+			Uninstalling the Sample
+		</h4><p class="Text">
+			In order to uninstall this sample, follow the instructions listed below.
+		</p><span class="Text"><ul class="Text"><li>
+To uninstall this sample, run <b>buildall.bat -u.</b> or <b>build.bat -u.</b> The batch file will then call regsvcs and gacutil with the /u switch in order to remove the sample files from the COM+ catalog and Global Assembly Cache.
+</li></ul></span><p class="SectionBreak" /><h4 class="Heading"><a name="_sdkvars" />
+    Notes
+    </h4><p class="Text">
+    For the .Net Framework samples to function properly, your Path, Include, and Lib environment variables must be set correctly. 
+    In many cases, the SDK install program updates these environment variables for you. However, if you installed the .Net Framework SDK 
+    using Visual Studio .NET, or unselected "register environment variables" during setup, these environment variables will not be updated. 
+    You can set the Path, Include and Lib environment variables by running SDKVars.bat, located in the <i>&lt;SDKRoot&gt;\Bin</i> directory. 
+    SDKVars.bat must be executed in every command shell.
+    </p></BODY></HTML></root>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+	</HEAD>
+	<BODY>
+		<pre>    enum ThreadState
+    {
+        TS_Unknown                = 0x00000000,    // threads are initialized this way
+
+        TS_StopRequested          = 0x00000001,    // process stop at next opportunity
+        TS_GCSuspendPending       = 0x00000002,    // waiting to get to safe spot for GC
+        TS_UserSuspendPending     = 0x00000004,    // user suspension at next opportunity
+        TS_DebugSuspendPending    = 0x00000008,    // Is the debugger suspending threads?
+        TS_GCOnTransitions        = 0x00000010,    // Force a GC on stub transitions (GCStress only)
+
+        TS_LegalToJoin            = 0x00000020,    // Is it now legal to attempt a Join()
+        TS_Hijacked               = 0x00000080,    // Return address has been hijacked
+
+        TS_Background             = 0x00000200,    // Thread is a background thread
+        TS_Unstarted              = 0x00000400,    // Thread has never been started
+        TS_Dead                   = 0x00000800,    // Thread is dead
+
+        TS_WeOwn                  = 0x00001000,    // Exposed object initiated this thread
+        TS_CoInitialized          = 0x00002000,    // CoInitialize has been called for this thread
+        TS_InSTA                  = 0x00004000,    // Thread hosts an STA
+        TS_InMTA                  = 0x00008000,    // Thread is part of the MTA
+
+        // Some bits that only have meaning for reporting the state to clients.
+        TS_ReportDead             = 0x00010000,    // in WaitForOtherThreads()
+
+        TS_SyncSuspended          = 0x00080000,    // Suspended via WaitSuspendEvent
+        TS_DebugWillSync          = 0x00100000,    // Debugger will wait for this thread to sync
+        TS_RedirectingEntryPoint  = 0x00200000,    // Redirecting entrypoint. Do not call managed entrypoint when set 
+
+        TS_SuspendUnstarted       = 0x00400000,    // latch a user suspension on an unstarted thread
+
+        TS_ThreadPoolThread       = 0x00800000,    // is this a threadpool thread?
+        TS_TPWorkerThread         = 0x01000000,    // is this a threadpool worker thread? (if not, it is a threadpool completionport thread)
+
+        TS_Interruptible          = 0x02000000,    // sitting in a Sleep(), Wait(), Join()
+        TS_Interrupted            = 0x04000000,    // was awakened by an interrupt APC
+
+        TS_AbortRequested         = 0x08000000,    // same as TS_StopRequested in order to trip the thread
+        TS_AbortInitiated         = 0x10000000,    // set when abort is begun
+        TS_UserStopRequested      = 0x20000000,    // set when a user stop is requested. This is different from TS_StopRequested
+        TS_GuardPageGone          = 0x40000000,    // stack overflow, not yet reset.
+        TS_Detached               = 0x80000000,    // Thread was detached by DllMain<BR>}
+</pre>
+	</BODY>
+</HTML>

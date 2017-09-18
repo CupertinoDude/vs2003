@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Language Specification</TITLE>
+<BODY>
+<H1>MYC Langauge Specification</H1>
+<H3>Goals</H3>
+The goal of the MYC compiler is to show MSIL instructions and the 
+EE in action. 
+<H3>Overview </H3>
+The compiler itself is a simple recursive descent parser with 
+a single pass code generator. It generates an assembler source file which is 
+then used as input to the MSIL Assembler (ILASM.EXE). 
+<H3>Language Specification </H3>
+The language is a subset of the C language with 
+simplified declarations, both external and local. 
+<H3>Data Types </H3>
+The only supported data types are "int" and "void". Limiting 
+these choices (for now) allows a simpler compiler design. 
+<H3>Data Declaration </H3>
+Variables can be declared "static" or local. Implicit 
+"static" declarations occur outside of function declarations. Local declarations 
+can occur only at the beginnings of functions prior to statements.
+<B>For example:</B>
+<PRE>
+int foo()
+  {
+  int y;
+  }
+int x;
+
+int bar()
+  {
+  static int z;
+  };
+</PRE>
+<P>
+In this example the variable "x" is a static declaration (by default) and the 
+variable "y" is a local variable in function "foo". The variable
+"z" is actually a static even though it is declared within a function. 
+<P>
+<H3>Flow Control </H3>
+<UL>
+  <LI>if-else blocks 
+  <LI>while loops 
+  <LI>for loops </LI>
+</UL>
+<H3>Restrictions </H3>
+<UL>
+  <LI>integer data 
+  <LI>outer declarations only 
+  <LI>static methods and function calls only </LI>
+</UL>
+<H3>Formal Definition </H3>
+<UL>
+  <LI><A href="MyCBNF.txt">Backus-Naur Definition</A></LI>
+</UL>
+<HR>
+

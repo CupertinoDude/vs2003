@@ -1,0 +1,3 @@
+C# Source:CS\Client\UpdateForm.cs,CS\Client\State.cs,CS\CustomersDataSet\CustomersDataSet.cs,CS\CustomersDataSet\CustomersDataSet.xsd,CS\ListCustomers.asmx.cs,CS\UpdateCustomers.asmx.cs,CS\ListCustomers.wsdl,CS\UpdateCustomers.wsdl
+VB Source:VB\Client\UpdateForm.VB,VB\Client\State.vb,VB\CustomersDataSet\CustomersDataSet.VB,VB\CustomersDataSet\CustomersDataSet.xsd,VB\ListCustomers.asmx.VB,VB\UpdateCustomers.asmx.VB,VB\ListCustomers.wsdl,VB\UpdateCustomers.wsdl
+VS.NET:CS\UpdateWebService.csproj,CS\Client\Update.csproj,CS\CustomersDataSet\CustomersDataSet.csproj,VB\UpdateWebService.vbproj,VB\Client\Update.vbproj,VB\CustomersDataSet\CustomersDataSet.vbproj

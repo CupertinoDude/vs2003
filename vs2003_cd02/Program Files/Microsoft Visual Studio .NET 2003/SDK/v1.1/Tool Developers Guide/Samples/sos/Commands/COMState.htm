@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">COMState</TD>
+					</TR>
+					<TR>
+						<TD>List COM State for each thread</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!COMState</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">None</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example">
+							<pre>0:011&gt; !COMState
+     ID     TEB   APT    APTId CallerTID Context
+  0  3f0 7ffde000 MTA      241         0 00136228
+  1  904 7ffdd000 MTA      242         0 00136228
+  2  36c 7ffdc000 Ukn
+  3  92c 7ffdb000 Ukn
+  5  9e4 7ffd9000 Ukn
+  6  878 7ffd8000 MTA        0         0 00136228
+  7  790 7ffd7000 Ukn
+  8  ad8 7ffd6000 MTA        0         0 00136228
+  9  974 7ffd5000 MTA        0         0 00136228
+ 10  6b4 7ffd4000 Ukn
+ 11  614 7ffaf000 STA        0         0 00136960
+ 12  afc 7ffae000 STA        0         0 00136420
+ 13  b9c 7ffad000 STA        0         0 001364c8
+ 14  9fc 7ffac000 STA        0         0 00136570
+ 15  7f8 7ffab000 STA        0         0 00136618
+ 16  888 7ffaa000 STA        0         0 001366c0
+ 17  874 7ffa9000 STA        0         0 00136768
+ 18  a90 7ffa8000 STA        0         0 00136810
+ 19  67c 7ffa7000 Ukn</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Output</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<TABLE id="Table3" height="159" cellSpacing="1" cellPadding="1" width="755" border="1">
+								<TR>
+									<TD class="outputname">ID</TD>
+									<TD class="outputcontents">Thread ID</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">TEB</TD>
+									<TD class="outputcontents">
+										<P>Thread Environment Block.</P>
+										<P>Use !teb to get more information about the thread.
+										</P>
+										<table>
+											<tr>
+												<td class="WinDBGOut">
+													<pre>0:011&gt; !teb 7ffde000
+TEB at 7FFDE000
+    ExceptionList:    12ffb0
+    Stack Base:       130000
+    Stack Limit:      12d000
+    SubSystemTib:     0
+    FiberData:        1e00
+    ArbitraryUser:    0
+    Self:             7ffde000
+    EnvironmentPtr:   0
+    ClientId:         984.3f0
+    Real ClientId:    984.3f0
+    RpcHandle:        0
+    Tls Storage:      0
+    PEB Address:      7ffdf000
+    LastErrorValue:   0
+    LastStatusValue:  103
+    Count Owned Locks:0
+    HardErrorsMode:   0</pre>
+												</td>
+											</tr>
+										</table>
+									</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">APT</TD>
+									<TD class="outputcontents">
+										Threading model. This can be STA, MTA, NTA (neutral) or Unk (unknown)</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">APTId</TD>
+									<TD class="outputcontents">Apartment&nbsp;ID</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">CallerTID</TD>
+									<TD class="outputcontents">Thread ID that&nbsp;made the call to this apartment.</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">Context</TD>
+									<TD class="outputcontents">Location of the ObjectContext associated with this 
+										thread.
+									</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

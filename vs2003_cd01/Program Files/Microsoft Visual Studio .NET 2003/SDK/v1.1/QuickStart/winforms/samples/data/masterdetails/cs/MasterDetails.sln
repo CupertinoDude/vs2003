@@ -1,0 +1,40 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDetailsService", "http://localhost/quickstart/winforms/samples/data/MasterDetails/CS/MasterDetailsService.csproj", "{8D7B98F9-A119-4E41-9A60-20A104044355}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9A39D858-BE0E-435F-9679-A2C364AF0CBC} = {9A39D858-BE0E-435F-9679-A2C364AF0CBC}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDetails", "Client\MasterDetails.csproj", "{A9050FFC-9049-401D-9362-FCEC7C30A797}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8D7B98F9-A119-4E41-9A60-20A104044355} = {8D7B98F9-A119-4E41-9A60-20A104044355}
+		{9A39D858-BE0E-435F-9679-A2C364AF0CBC} = {9A39D858-BE0E-435F-9679-A2C364AF0CBC}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomersAndOrdersDataSet", "DataSet\CustomersAndOrdersDataSet.csproj", "{9A39D858-BE0E-435F-9679-A2C364AF0CBC}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{8D7B98F9-A119-4E41-9A60-20A104044355}.Debug.ActiveCfg = Debug|.NET
+		{8D7B98F9-A119-4E41-9A60-20A104044355}.Debug.Build.0 = Debug|.NET
+		{8D7B98F9-A119-4E41-9A60-20A104044355}.Release.ActiveCfg = Release|.NET
+		{8D7B98F9-A119-4E41-9A60-20A104044355}.Release.Build.0 = Release|.NET
+		{A9050FFC-9049-401D-9362-FCEC7C30A797}.Debug.ActiveCfg = Debug|.NET
+		{A9050FFC-9049-401D-9362-FCEC7C30A797}.Debug.Build.0 = Debug|.NET
+		{A9050FFC-9049-401D-9362-FCEC7C30A797}.Release.ActiveCfg = Release|.NET
+		{A9050FFC-9049-401D-9362-FCEC7C30A797}.Release.Build.0 = Release|.NET
+		{9A39D858-BE0E-435F-9679-A2C364AF0CBC}.Debug.ActiveCfg = Debug|.NET
+		{9A39D858-BE0E-435F-9679-A2C364AF0CBC}.Debug.Build.0 = Debug|.NET
+		{9A39D858-BE0E-435F-9679-A2C364AF0CBC}.Release.ActiveCfg = Release|.NET
+		{9A39D858-BE0E-435F-9679-A2C364AF0CBC}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Threading">
+	<Paragraph Title="Introduction">
+		The CLR exposes several threading and thread synchronization mechanisms. This section explores some of the most common mechanisms that applications may choose to use. This section 			assumes that you are aware of common threading issues such as why threads are useful and why thread synchronization is an important mechanism. 
+	</Paragraph>
+	<Navigation>
+		<Previous>Creating Object Requiring Explicit Cleanup.xml</Previous>
+		<Next>Asynchronous Operations.xml</Next>
+	</Navigation>
+</Document>

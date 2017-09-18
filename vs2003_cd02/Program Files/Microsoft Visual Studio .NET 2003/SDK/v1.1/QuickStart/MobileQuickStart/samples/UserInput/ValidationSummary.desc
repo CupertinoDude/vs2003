@@ -1,0 +1,6 @@
+Using a Validation Summary
+This sample demonstrates how to use a ValidationSummary mobile control.
+The textbox on the first form has three associated validators, and
+if any of the validators find an error in the input, a summary of
+validation problems will be shown on the second form.
+

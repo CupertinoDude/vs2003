@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Introduction">
+	<Paragraph Title="Welcome to the Common Language Runtime (CLR) Fundamentals Tutorial">
+		This tutorial is a series of concepts and examples designed to quickly acquaint developers with the syntax, architecture, and power of the CLR and the core parts of the Framework Class Library 		(FCL). The Tutorial samples are designed to be short, easy-to-understand illustrations of CLR/FCL features. By the time you have completed the tutorial you will be familiar with many of the core 		concepts of a .NET Framework application including: Building applications and types for the .NET Framework, type fundamentals, special types, type members, exception handling, automatic memory 			management, threading, strings, and stream I/O.	
+	</Paragraph>
+	<Paragraph Title="What Level of Expertise Is Assumed in this Tutorial?">
+		It is assumed that the reader has some familiarity with object-oriented programming concepts such as data abstraction, inheritance, and polymorphism. However, the reader doesn't have to be 		well versed in any CLR programming language. The tutorial's examples are in C# and Visual Basic .NET.  However, the examples should be easily understandable by developers that are 		new to any 	of the CLR languages, the CLR, and the FCL.
+	</Paragraph>
+	<Navigation>
+		<Next>Building Applications.xml</Next>
+	</Navigation>
+</Document>

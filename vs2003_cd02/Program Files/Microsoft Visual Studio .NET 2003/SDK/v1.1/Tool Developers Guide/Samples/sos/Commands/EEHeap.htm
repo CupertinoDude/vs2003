@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META content="Microsoft Visual Studio 7.0" name="GENERATOR">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet"></HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">
+							EEHeap</TD>
+					</TR>
+					<TR>
+						<TD>Lists information for the garbage-collected and Loader heaps</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!EEHeap [-gc] [-win32] [-loader]</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="79" cellSpacing="1" cellPadding="1" width="708" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>-gc</STRONG></TD>
+									<TD vAlign="top">Show garbage-collected&nbsp;heap</TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>-win32</STRONG></TD>
+									<TD vAlign="top">
+										Show Win32 heap</TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>-loader</STRONG></TD>
+									<TD vAlign="top">Show Loader heap</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>
+0:001&gt; !EEHeap
+Loader Heap:
+--------------------------------------
+System Domain: 793b6e08
+LowFrequencyHeap:00cd0000(2000:00001000) 
+Size: 0x00001000(4096) bytes.
+HighFrequencyHeap:00cd2000(8000:00001000) 
+Size: 0x00001000(4096) bytes.
+StubHeap:00cda000(2000) 
+Size: 0x00002000(8192) bytes.
+Total size: 0x4000(16384)bytes
+--------------------------------------
+Shared Domain: 793b8238
+LowFrequencyHeap:00d00000(2000) 00e10000(10000) 0d6c0000(10000) 0d730000(10000) 0d8d0000(10000) 0d930000(10000) 0daf0000(10000:0000b000) 
+Size: 0x0005d000(380928) bytes.
+HighFrequencyHeap:00d02000(8000) 0d750000(10000) 0d8b0000(10000) 0d910000(10000) 0da60000(10000) 0de90000(10000:00006000) 
+Size: 0x0004e000(319488) bytes.
+StubHeap:00d0a000(2000) 0d690000(10000:00005000) 
+Size: 0x00007000(28672) bytes.
+Total size: 0xb2000(729088)bytes
+--------------------------------------
+Domain 0: 150718
+LowFrequencyHeap:00ce0000(2000:00001000) 
+Size: 0x00001000(4096) bytes.
+HighFrequencyHeap:00ce2000(8000:00007000) 0d720000(10000:00005000) 
+Size: 0x0000c000(49152) bytes.
+Wasted: 0x00001000(4096) bytes.
+StubHeap:00cea000(2000:00001000) 
+Size: 0x00001000(4096) bytes.
+Total size: 0xe000(57344)bytes
+--------------------------------------
+Domain 1: 1a57b8
+LowFrequencyHeap:0d760000(2000) 0da80000(10000) 0dbc0000(10000) 0dcb0000(10000) 0ddd0000(10000:00009000) 
+Size: 0x0003b000(241664) bytes.
+HighFrequencyHeap:0d762000(8000:00005000) 0d780000(10000:0000c000) 
+Size: 0x00011000(69632) bytes.
+Wasted: 0x00003000(12288) bytes.
+StubHeap:0d76a000(2000:00001000) 
+Size: 0x00001000(4096) bytes.
+Total size: 0x4d000(315392)bytes
+--------------------------------------
+Jit code heap:
+Normal Jit:0de80000(10000:0000f000) 
+Size: 0x0000f000(61440) bytes.
+0de60000(10000:00002000) 
+Size: 0x00002000(8192) bytes.
+0dac0000(10000) 
+Size: 0x00010000(65536) bytes.
+0da40000(10000:0000f000) 
+Size: 0x0000f000(61440) bytes.
+0d920000(10000) 
+Size: 0x00010000(65536) bytes.
+0d8e0000(10000) 
+Size: 0x00010000(65536) bytes.
+0d6b0000(10000) 
+Size: 0x00010000(65536) bytes.
+Total size 0x00060000(393216)bytes.
+--------------------------------------
+Total LoaderHeap size: 0x171000(1511424)bytes
+<STRONG>=======================================</STRONG>
+generation 0 starts at 0x050db328
+generation 1 starts at 0x050bb650
+generation 2 starts at 0x05040030
+generation 0 starts at 0x010821d4
+generation 1 starts at 0x01077658
+generation 2 starts at 0x01040030
+ segment    begin allocated     size
+05040000 05040030  051a6fb4 00166f84(1470340)
+01040000 01040030  010ac234 0006c204(442884)
+Total Size  0x1d3188(1913224)
+------------------------------
+large block   0xafff8(720888)
+large_np_objects start at 090d9340
+large_p_objects start  at 09040008
+------------------------------
+GC Heap Size  0x283180(2634112)
+										</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Comments</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<P>For each&nbsp;domain and for the JIT code heap, the following information is 
+								shown:
+								<table>
+									<tr>
+										<td class="windbgout">
+											<pre>
+System Domain: 793b6e08
+LowFrequencyHeap:<STRONG><FONT color=red>00cd0000</FONT></STRONG>(<STRONG><FONT color=green>2000</FONT></STRONG>:<STRONG><FONT color=blue>00001000</FONT></STRONG>) 
+Size: 0x00001000(4096) bytes.
+HighFrequencyHeap:00cd2000(8000:00001000) 
+Size: 0x00001000(4096) bytes.
+StubHeap:00cda000(2000) 
+Size: 0x00002000(8192) bytes.
+Total size: 0x4000(16384)bytes
+</pre>
+										</td>
+									</tr>
+								</table>
+							</P>
+							<P><FONT color="red">00cd0000 </FONT><FONT color="black">is the virtual address of the 
+									heap<BR>
+									<FONT color="green">2000 </FONT></FONT><FONT color="black">is the virtual 
+									size&nbsp;(hex) of the heap<BR>
+									<FONT color="blue">00001000 </FONT></FONT><FONT color="black">is the current 
+									size (hex) of the heap</FONT></P>
+							<P>
+								Finally the total size of all&nbsp;heaps for all domains and the JIT code heap 
+								is summed up.</P>
+							<P>The garbage-collected heap information:
+								<table>
+									<tr>
+										<td class="windbgout">
+											<pre>
+generation 0 starts at 0x050db328
+generation 1 starts at 0x050bb650
+generation 2 starts at 0x05040030
+generation 0 starts at 0x010821d4
+generation 1 starts at 0x01077658
+generation 2 starts at 0x01040030
+ segment    begin allocated     size
+05040000 05040030  051a6fb4 00166f84(1470340)
+01040000 01040030  010ac234 0006c204(442884)
+Total Size  0x1d3188(1913224)
+------------------------------
+large block   0xafff8(720888)
+large_np_objects start at 090d9340
+large_p_objects start  at 09040008
+------------------------------
+GC Heap Size  0x283180(2634112)
+</pre>
+										</td>
+									</tr>
+								</table>
+							</P>
+							<P>If no parameters are given all heaps will be shown.</P>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

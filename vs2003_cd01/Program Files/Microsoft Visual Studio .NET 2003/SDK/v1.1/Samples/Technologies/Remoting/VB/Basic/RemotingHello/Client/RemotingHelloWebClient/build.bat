@@ -1,0 +1,1 @@
+ECHO Y | copy ..\..\bin\Hello.dll bin

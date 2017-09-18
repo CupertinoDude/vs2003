@@ -1,0 +1,7 @@
+﻿<?xml version="1.0"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2000/10/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://localhost/quickstart/winforms/samples/data/update/cs/ListCustomers.asmx?WSDL" filename="C:\QuickStart\WinForms\Samples\Data\Update\CS\Client\Web References\localhost\ListCustomers.wsdl"/>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://localhost/quickstart/winforms/samples/data/update/cs/UpdateCustomers.asmx?WSDL" filename="C:\QuickStart\WinForms\Samples\Data\Update\CS\Client\Web References\localhost\UpdateCustomers.wsdl"/>
+  </Results>
+</DiscoveryClientResultsFile>

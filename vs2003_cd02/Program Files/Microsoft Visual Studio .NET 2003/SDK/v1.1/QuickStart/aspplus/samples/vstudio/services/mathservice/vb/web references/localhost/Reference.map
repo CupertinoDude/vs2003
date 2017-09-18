@@ -1,0 +1,6 @@
+﻿<?xml version="1.0"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2000/10/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://localhost/quickstart/aspplus/samples/vstudio/services/mathservice/vb/mathservice.asmx?wsdl" filename="C:\QuickStart\aspplus\samples\vstudio\services\MathService\VB\Web References\localhost\mathservice.wsdl"/>
+  </Results>
+</DiscoveryClientResultsFile>

@@ -1,0 +1,4 @@
+Validating Input
+This sample demonstrates how you can validate user input using a Validator
+Mobile control. In this instance, a CompareValidator mobile control is
+used to restrict input of a textbox to integers less than or equal to 100.

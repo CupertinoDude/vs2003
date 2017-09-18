@@ -1,0 +1,91 @@
+package [!output SAFE_NAMESPACE_NAME];
+
+import System.*;
+import System.Web.Services.*;
+import CrystalDecisions.Shared.*;
+import CrystalDecisions.CrystalReports.Engine.*;
+import CrystalDecisions.ReportSource.*;
+import CrystalDecisions.Web.Services.*;
+
+
+/** @attribute WebService( Namespace="http://crystaldecisions.com/reportwebservice/9.1/" ) */
+public class [!output SAFE_CLASS_NAME] extends ReportServiceBase
+{
+    public [!output SAFE_CLASS_NAME]() 
+    {
+        this.set_ReportSource( new CachedWeb[!output SAFE_REPORT_CLASS_NAME]( this ) );
+    }
+
+    
+    protected void  OnInitReport( System.Object source, EventArgs args )
+    {
+    }
+
+
+    public class CachedWeb[!output SAFE_REPORT_CLASS_NAME] implements ICachedReport
+    {
+        protected [!output SAFE_CLASS_NAME]     webService = null;
+
+        
+        public CachedWeb[!output SAFE_REPORT_CLASS_NAME]
+        (
+            [!output SAFE_CLASS_NAME]   webServiceParam
+        )
+        {
+            this.webService = webServiceParam;
+        }
+
+        public boolean  get_IsCacheable()
+        {
+            return ( true );
+        }
+
+        public void     set_IsCacheable( boolean value )
+        {
+        }
+
+        public boolean  get_ShareDBLogonInfo()
+        {
+            return ( false );
+        }
+
+        public void     set_ShareDBLogonInfo( boolean value )
+        {
+        }
+
+        public TimeSpan get_CacheTimeOut()
+        {
+            return ( CachedReportConstants.DEFAULT_TIMEOUT );
+        }
+
+        public void     set_CacheTimeOut( TimeSpan value )
+        {
+        }
+
+        public ReportDocument  CreateReport()
+        {
+            [!output SAFE_REPORT_CLASS_NAME]    report =
+                    new [!output SAFE_REPORT_CLASS_NAME]();
+
+            report.add_InitReport( new EventHandler( this.webService.OnInitReport ) );
+
+            return ( report );
+        }
+
+        public System.String  GetCustomizedCacheKey( RequestContext request )
+        {
+            System.String  key = null;
+
+            /*
+                key = RequestContext.BuildCompleteCacheKey(
+                        null,   // RequestContext
+                        null,   // sReportFilename
+                        this.GetType(),
+                        this.ShareDBLogonInfo );
+            */
+
+            return ( key );
+        }
+    } // CachedWeb[!output SAFE_REPORT_CLASS_NAME]
+} // [!output SAFE_CLASS_NAME]
+

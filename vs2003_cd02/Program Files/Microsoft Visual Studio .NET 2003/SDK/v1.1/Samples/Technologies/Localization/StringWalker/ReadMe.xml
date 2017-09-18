@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?>
+<sample>
+	<title>String Walker Sample</title>
+	<title-short>String Walker</title-short>
+	<overview>StringWalker shows how to handle Unicode surrogate pairs and combining characters when walking a string. It provides a class, named StringWalker that wraps the StringInfo.ParseCombiningCharacters method and handles the complexity of having to deal with surrogates and combining characters.</overview>
+	<subdirectory>Technologies\Localization\StringWalker</subdirectory>
+	<buildsteps>
+		<step>
+      Type <richcontent bold="T">BUILD.bat</richcontent>
+			<richcontent> from the command line.</richcontent>
+			<example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Localization\StringWalker\VB>Build.bat
+      </example>
+		</step>
+	</buildsteps>
+	<runsteps>
+		<step>
+      Type <richcontent bold="T">StringWalker.exe</richcontent>
+			<richcontent> from the command line.</richcontent>
+			<example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Localization\StringWalker\VB>StringWalker.exe
+      </example>
+		</step>
+	</runsteps>
+	<keywords>
+		<word name="Localization" keyword="T"/>
+		<word name="StringInfo.ParseCombiningCharacters" keyword="T"/>
+		<word name="String.IndexOf" keyword="T"/>
+	</keywords>
+</sample>

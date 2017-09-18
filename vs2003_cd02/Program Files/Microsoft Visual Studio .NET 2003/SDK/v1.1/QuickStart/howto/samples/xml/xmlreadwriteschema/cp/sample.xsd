@@ -1,0 +1,65 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified">
+
+ <xsd:annotation>
+  <xsd:documentation>
+   Purchase order schema for Example.com.
+   Copyright 2000 Example.com. All rights reserved.
+  </xsd:documentation>
+ </xsd:annotation>
+
+ <xsd:element name="purchaseOrder" type="PurchaseOrderType"/>
+
+ <xsd:element name="comment" type="string"/>
+
+ <xsd:complexType name="PurchaseOrderType">
+  <xsd:sequence>
+   <xsd:element name="shipTo" type="USAddress"/>
+   <xsd:element name="billTo" type="USAddress"/>
+   <xsd:element ref="comment" minOccurs="0"/>
+   <xsd:element name="items"  type="Items"/>
+  </xsd:sequence>
+  <xsd:attribute name="orderDate" type="date"/>
+ </xsd:complexType>
+
+ <xsd:complexType name="USAddress">
+  <xsd:sequence>
+   <xsd:element name="name"   type="string"/>
+   <xsd:element name="street" type="string"/>
+   <xsd:element name="city"   type="string"/>
+   <xsd:element name="state"  type="string"/>
+   <xsd:element name="zip"    type="decimal"/>
+  </xsd:sequence>
+  <xsd:attribute name="country" type="NMTOKEN"/>
+ </xsd:complexType>
+
+ <xsd:complexType name="Items">
+  <xsd:sequence>
+   <xsd:element name="item" minOccurs="0" maxOccurs="unbounded">
+    <xsd:complexType>
+     <xsd:sequence>
+      <xsd:element name="productName" type="string"/>
+      <xsd:element name="quantity">
+       <xsd:simpleType>
+        <xsd:restriction base="positiveInteger">
+         <xsd:maxExclusive value="100"/>
+        </xsd:restriction>
+       </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="USPrice"    type="decimal"/>
+      <xsd:element ref="comment"   minOccurs="0"/>
+      <xsd:element name="shipDate" type="date" minOccurs="0"/>
+     </xsd:sequence>
+     <xsd:attribute name="partNum" type="SKU"/>
+    </xsd:complexType>
+   </xsd:element>
+  </xsd:sequence>
+ </xsd:complexType>
+
+ <xsd:simpleType name="SKU">
+  <xsd:restriction base="string">
+   <xsd:pattern value="\d{3}-[A-Z]{2}"/>
+  </xsd:restriction>
+ </xsd:simpleType>
+
+</xsd:schema>

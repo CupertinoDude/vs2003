@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Diagnostics.Design</name>
+        <version>1.0.0.2328</version>
+    </assembly>
+    <members>
+        <member name="T:System.Diagnostics.Design.StartFileNameEditor">
+            <summary>
+                Editor for the ProcessStartInfo.FileName property.
+            </summary>
+            <internalonly/>
+        </member>
+        <member name="T:System.Diagnostics.Design.LogConverter">
+            <summary>
+            LogConverter is the TypeConverter for the Log property on EventLog. It returns
+            a list of all event logs on the system.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.Design.LogConverter.values">
+            <summary>
+               <para>
+                  Provides a <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"/> that specifies the
+                  possible values for the enumeration.
+               </para>
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.Design.LogConverter.#ctor">
+            <summary>
+               <para>
+                  Initializes a new instance of the <see cref="!:System.ComponentModel.LogConverter"/> class for the given
+                  type.
+               </para>
+            </summary>
+            <param name="type">
+               A <see cref="T:System.Type"/> that represents the type of enumeration to associate with this enumeration converter.
+            </param>
+        </member>
+        <member name="M:System.Diagnostics.Design.LogConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
+            <internalonly/>
+            <summary>
+               <para>Gets a collection of standard values for the data type this validator is
+                  designed for.</para>
+            </summary>
+            <param name="context"><para>An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context. </para></param>
+            <returns>
+            <para>A <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"/> that holds a standard set
+               of valid values, or <see langword="null"/> if the data type does not support a
+               standard set of values.</para>
+            </returns>
+            <remarks>
+            <para>The <paramref name="context"/> parameter can be used to extract additional information 
+               about the environment this converter is being invoked from. This can be
+            <see langword="null"/>, so always check. Also, properties on the context object 
+               can return <see langword="null"/>.</para>
+            </remarks>
+            <seealso cref="T:System.ComponentModel.ITypeDescriptorContext"/>
+        </member>
+        <member name="M:System.Diagnostics.Design.LogConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <internalonly/>
+            <summary>
+               <para>Gets a value indicating
+                  whether this object
+                  supports a standard set of values that can be picked
+                  from a list using the specified context.</para>
+            </summary>
+            <param name="context"><para>An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context. </para></param>
+            <returns>
+            <para><see langword="true"/> because 
+            <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues"/> should be called to find 
+               a common set of values the object supports. This method never returns
+            <see langword="false"/>.</para>
+            </returns>
+            <remarks>
+            <para>The <paramref name="context"/> parameter can be used to extract additional information 
+               about the environment this converter is being invoked from. This can be
+            <see langword="null"/>, so always check. Also, properties on the context object 
+               can return <see langword="null"/>.</para>
+            </remarks>
+            <seealso cref="T:System.ComponentModel.ITypeDescriptorContext"/>
+        </member>
+        <member name="T:System.Diagnostics.Design.WorkingDirectoryEditor">
+            <summary>
+                Folder editor for choosing the working directory.
+            </summary>
+        </member>
+    </members>
+</doc>

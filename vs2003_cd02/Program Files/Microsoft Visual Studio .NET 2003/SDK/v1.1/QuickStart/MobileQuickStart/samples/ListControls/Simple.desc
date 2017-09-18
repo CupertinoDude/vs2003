@@ -1,0 +1,4 @@
+A List Control
+This sample demonstrates how to use the List mobile control to show a 
+static list of items. The items are defined as <b>&lt;Item&gt;</b>
+elements within the control.

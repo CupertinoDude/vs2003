@@ -1,0 +1,4 @@
+C# Source:CS\DataList8.aspx,Header.inc,Footer.inc
+VB Source:VB\DataList8.aspx,Header.inc,Footer.inc
+JScript Source:JS\DataList8.aspx,Header.inc,Footer.inc
+VS.NET:..\..\vstudio\webforms\customize\CS\Customize.csproj,..\..\vstudio\webforms\customize\VB\Customize.vbproj

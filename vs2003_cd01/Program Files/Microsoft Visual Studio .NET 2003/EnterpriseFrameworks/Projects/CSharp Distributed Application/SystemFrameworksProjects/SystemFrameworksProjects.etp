@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<EFPROJECT>
+    <GENERAL>
+        <BANNER>Microsoft Visual Studio Distributed Application Template FILE</BANNER>
+        <VERSION>1.00</VERSION>
+        <SUBPROJECTWIZARDS>
+            <WIZARD>
+                <FILE>..\..\CSharp Building Blocks\SystemFrameworks.vsz</FILE>
+            </WIZARD>
+         </SUBPROJECTWIZARDS>
+    </GENERAL>
+    <GLOBALS>
+        <GLOBALENTRY>
+            <NAME>TDLFILE</NAME>
+            <VALUE>DAP.tdl</VALUE>
+        </GLOBALENTRY>
+        <GLOBALENTRY>
+            <NAME>TDLELEMENTTYPE</NAME>
+            <VALUE>SystemProjects</VALUE>
+        </GLOBALENTRY>
+    </GLOBALS>
+</EFPROJECT>

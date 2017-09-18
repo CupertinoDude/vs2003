@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xsd:schema id="ProjectSchema1" targetNamespace="http://tempuri.org/ProjectSchema1.xsd" xmlns="http://tempuri.org/ProjectSchema1.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:simpleType name="PseudoBooleanType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="0" />
+			<xsd:enumeration value="1" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="SourceControlSettingsType">
+		<xsd:sequence>
+			<xsd:element name="LOCALPATH" type="xsd:string" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="AUXPATH" type="xsd:string" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="PROJECTNAME" type="xsd:string" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="PROVIDER" type="xsd:string" minOccurs="1" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReferenceType">
+		<xsd:sequence>
+			<xsd:element name="FILE" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="UNLOADED" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="REQUIRESURL" type="PseudoBooleanType" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="GUIDPROJECTID" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReferencesType">
+		<xsd:sequence>
+			<xsd:element name="REFERENCE" type="ReferenceType" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FolderType">
+		<xsd:sequence>
+			<xsd:element name="FOLDERNAME" type="xsd:string" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="FILE" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="FOLDER" type="FolderType" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ProjectExplorerType">
+		<xsd:sequence>
+			<xsd:element name="FILE" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="FOLDER" type="FolderType" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="PREFERREDSTARTUP" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ViewsType">
+		<xsd:sequence>
+			<xsd:element name="PROJECTEXPLORER" type="ProjectExplorerType" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="WizardType">
+		<xsd:sequence>
+			<xsd:element name="FILE" type="xsd:string" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="REQUIRESURL" type="PseudoBooleanType" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SubProjectWizardsType">
+		<xsd:sequence>
+			<xsd:element name="WIZARD" type="WizardType" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GeneralType">
+		<xsd:sequence>
+			<xsd:element name="BANNER" type="xsd:string" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="VERSION" type="xsd:string" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="SOURCECONTROLSETTINGS" type="SourceControlSettingsType" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="REFERENCES" type="ReferencesType" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="VIEWS" type="ViewsType" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="SUBPROJECTWIZARDS" type="SubProjectWizardsType" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GlobalEntryType">
+		<xsd:sequence>
+			<xsd:element name="NAME" type="xsd:string" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="VALUE" type="xsd:string" minOccurs="1" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GlobalsType">
+		<xsd:sequence>
+			<xsd:element name="GLOBALENTRY" type="GlobalEntryType" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="StartupServicesType">
+		<xsd:sequence>
+			<xsd:element name="SERVICEGUID" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="EFProjectType">
+		<xsd:all>
+			<xsd:element name="GENERAL" type="GeneralType" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="GLOBALS" type="GlobalsType" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="STARTUPSERVICES" type="StartupServicesType" minOccurs="0" maxOccurs="1" />
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:element name="EFPROJECT" type="EFProjectType">
+	</xsd:element>
+</xsd:schema>

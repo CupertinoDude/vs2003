@@ -1,0 +1,15 @@
+Installing assembly 'F:\Samples\QuickStart\howto\samples\Services\ServiceApplication\simpleservice\vb\simpleservice.exe'.
+Parameters in effect are:
+   assemblypath = F:\Samples\QuickStart\howto\samples\Services\ServiceApplication\simpleservice\vb\simpleservice.exe
+   logfile = F:\Samples\QuickStart\howto\samples\Services\ServiceApplication\simpleservice\vb\simpleservice.InstallLog
+   installstatefile = F:\Samples\QuickStart\howto\samples\Services\ServiceApplication\simpleservice\vb\simpleservice.InstallState
+Committing assembly 'F:\Samples\QuickStart\howto\samples\Services\ServiceApplication\simpleservice\vb\simpleservice.exe'.
+Parameters in effect are:
+   assemblypath = F:\Samples\QuickStart\howto\samples\Services\ServiceApplication\simpleservice\vb\simpleservice.exe
+   logfile = F:\Samples\QuickStart\howto\samples\Services\ServiceApplication\simpleservice\vb\simpleservice.InstallLog
+   installstatefile = F:\Samples\QuickStart\howto\samples\Services\ServiceApplication\simpleservice\vb\simpleservice.InstallState
+Uninstalling assembly 'F:\Samples\QuickStart\howto\samples\Services\ServiceApplication\simpleservice\vb\simpleservice.exe'.
+Parameters in effect are:
+   assemblypath = F:\Samples\QuickStart\howto\samples\Services\ServiceApplication\simpleservice\vb\simpleservice.exe
+   logfile = F:\Samples\QuickStart\howto\samples\Services\ServiceApplication\simpleservice\vb\simpleservice.InstallLog
+   installstatefile = F:\Samples\QuickStart\howto\samples\Services\ServiceApplication\simpleservice\vb\simpleservice.InstallState

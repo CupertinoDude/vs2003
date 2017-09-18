@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://tempuri.org/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://www.w3.org/2001/XMLSchema" />
+      <s:element name="GetCustomers">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustomersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="GetCustomersSoapIn">
+    <part name="parameters" element="s0:GetCustomers" />
+  </message>
+  <message name="GetCustomersSoapOut">
+    <part name="parameters" element="s0:GetCustomersResponse" />
+  </message>
+  <message name="GetCustomersHttpGetIn" />
+  <message name="GetCustomersHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="GetCustomersHttpPostIn" />
+  <message name="GetCustomersHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <portType name="CustomersListSoap">
+    <operation name="GetCustomers">
+      <input message="s0:GetCustomersSoapIn" />
+      <output message="s0:GetCustomersSoapOut" />
+    </operation>
+  </portType>
+  <portType name="CustomersListHttpGet">
+    <operation name="GetCustomers">
+      <input message="s0:GetCustomersHttpGetIn" />
+      <output message="s0:GetCustomersHttpGetOut" />
+    </operation>
+  </portType>
+  <portType name="CustomersListHttpPost">
+    <operation name="GetCustomers">
+      <input message="s0:GetCustomersHttpPostIn" />
+      <output message="s0:GetCustomersHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="CustomersListSoap" type="s0:CustomersListSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="GetCustomers">
+      <soap:operation soapAction="http://tempuri.org/GetCustomers" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="CustomersListHttpGet" type="s0:CustomersListHttpGet">
+    <http:binding verb="GET" />
+    <operation name="GetCustomers">
+      <http:operation location="/GetCustomers" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="CustomersListHttpPost" type="s0:CustomersListHttpPost">
+    <http:binding verb="POST" />
+    <operation name="GetCustomers">
+      <http:operation location="/GetCustomers" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <service name="CustomersList">
+    <port name="CustomersListSoap" binding="s0:CustomersListSoap">
+      <soap:address location="http://localhost/quickstart/winforms/samples/data/WebServiceBinding/VB/SimpleCustomersWebService.asmx" />
+    </port>
+    <port name="CustomersListHttpGet" binding="s0:CustomersListHttpGet">
+      <http:address location="http://localhost/quickstart/winforms/samples/data/WebServiceBinding/VB/SimpleCustomersWebService.asmx" />
+    </port>
+    <port name="CustomersListHttpPost" binding="s0:CustomersListHttpPost">
+      <http:address location="http://localhost/quickstart/winforms/samples/data/WebServiceBinding/VB/SimpleCustomersWebService.asmx" />
+    </port>
+  </service>
+</definitions>

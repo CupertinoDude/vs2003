@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Setup>
+	<VirtualDirectory>
+		<Item FriendlyName="QuickStart" Path="QuickStart" RelPathFromSamplesDir="QuickStart" />
+		<Item FriendlyName="ASPPlus" Path="QuickStart\ASPPlus" RelPathFromSamplesDir="QuickStart\ASPPlus" />
+		<Item FriendlyName="WinForms" Path="QuickStart\WinForms" RelPathFromSamplesDir="QuickStart\WinForms" />
+		<Item FriendlyName="HowTo" Path="QuickStart\HowTo" RelPathFromSamplesDir="QuickStart\HowTo" />
+		<Item FriendlyName="grocertogoCS" Path="QuickStart\aspplus\samples\grocertogo\CS" RelPathFromSamplesDir="QuickStart\aspplus\samples\grocertogo\CS" />
+		<Item FriendlyName="grocertogoVB" Path="QuickStart\aspplus\samples\grocertogo\VB" RelPathFromSamplesDir="QuickStart\aspplus\samples\grocertogo\VB" />
+		<Item FriendlyName="grocertogoJS" Path="QuickStart\aspplus\samples\grocertogo\JS" RelPathFromSamplesDir="QuickStart\aspplus\samples\grocertogo\JS" />
+		<Item FriendlyName="portalCS" Path="QuickStart\aspplus\samples\portal\CS" RelPathFromSamplesDir="QuickStart\aspplus\samples\portal\CS" />
+		<Item FriendlyName="portalVB" Path="QuickStart\aspplus\samples\portal\VB" RelPathFromSamplesDir="QuickStart\aspplus\samples\portal\VB" />
+		<Item FriendlyName="portalJS" Path="QuickStart\aspplus\samples\portal\JS" RelPathFromSamplesDir="QuickStart\aspplus\samples\portal\JS" />
+		<Item FriendlyName="application1CS" Path="QuickStart\aspplus\samples\apps\application1\CS" RelPathFromSamplesDir="QuickStart\aspplus\samples\apps\application1\CS" />
+		<Item FriendlyName="application1JS" Path="QuickStart\aspplus\samples\apps\application1\JS" RelPathFromSamplesDir="QuickStart\aspplus\samples\apps\application1\JS" />
+		<Item FriendlyName="application1VB" Path="QuickStart\aspplus\samples\apps\application1\VB" RelPathFromSamplesDir="QuickStart\aspplus\samples\apps\application1\VB" />
+		<Item FriendlyName="application2JS" Path="QuickStart\aspplus\samples\apps\application2\JS" RelPathFromSamplesDir="QuickStart\aspplus\samples\apps\application2\JS" />
+		<Item FriendlyName="application2CS" Path="QuickStart\aspplus\samples\apps\application2\CS" RelPathFromSamplesDir="QuickStart\aspplus\samples\apps\application2\CS" />
+		<Item FriendlyName="application2VB" Path="QuickStart\aspplus\samples\apps\application2\VB" RelPathFromSamplesDir="QuickStart\aspplus\samples\apps\application2\VB" />
+		<Item FriendlyName="session1CS" Path="QuickStart\aspplus\samples\apps\session1\CS" RelPathFromSamplesDir="QuickStart\aspplus\samples\apps\session1\CS" />
+		<Item FriendlyName="session1JS" Path="QuickStart\aspplus\samples\apps\session1\JS" RelPathFromSamplesDir="QuickStart\aspplus\samples\apps\session1\JS" />
+		<Item FriendlyName="session1VB" Path="QuickStart\aspplus\samples\apps\session1\VB" RelPathFromSamplesDir="QuickStart\aspplus\samples\apps\session1\VB" />
+		<Item FriendlyName="cookieauthCS" Path="QuickStart\aspplus\samples\security\cookieauth\CS" RelPathFromSamplesDir="QuickStart\aspplus\samples\security\cookieauth\CS" />
+		<Item FriendlyName="cookieauthVB" Path="QuickStart\aspplus\samples\security\cookieauth\VB" RelPathFromSamplesDir="QuickStart\aspplus\samples\security\cookieauth\VB" />
+		<Item FriendlyName="cookieauthJS" Path="QuickStart\aspplus\samples\security\cookieauth\JS" RelPathFromSamplesDir="QuickStart\aspplus\samples\security\cookieauth\JS" />
+		<Item FriendlyName="userauthCS" Path="QuickStart\aspplus\samples\security\userauth\CS" RelPathFromSamplesDir="QuickStart\aspplus\samples\security\userauth\CS" />
+		<Item FriendlyName="userauthVB" Path="QuickStart\aspplus\samples\security\userauth\VB" RelPathFromSamplesDir="QuickStart\aspplus\samples\security\userauth\VB" />
+		<Item FriendlyName="userauthJS" Path="QuickStart\aspplus\samples\security\userauth\JS" RelPathFromSamplesDir="QuickStart\aspplus\samples\security\userauth\JS" />
+		<Item FriendlyName="windowsauthCS" Path="QuickStart\aspplus\samples\security\windowsauth\CS" RelPathFromSamplesDir="QuickStart\aspplus\samples\security\windowsauth\CS" />
+		<Item FriendlyName="windowsauthVB" Path="QuickStart\aspplus\samples\security\windowsauth\VB" RelPathFromSamplesDir="QuickStart\aspplus\samples\security\windowsauth\VB" />
+		<Item FriendlyName="windowsauthJS" Path="QuickStart\aspplus\samples\security\windowsauth\JS" RelPathFromSamplesDir="QuickStart\aspplus\samples\security\windowsauth\JS" />
+		<Item FriendlyName="resources" Path="QuickStart\aspplus\samples\localize\resources" RelPathFromSamplesDir="QuickStart\aspplus\samples\localize\resources" />
+		<Item FriendlyName="resourcesCS" Path="QuickStart\aspplus\samples\localize\resources\News\CS" RelPathFromSamplesDir="QuickStart\aspplus\samples\localize\resources\News\CS" />
+		<Item FriendlyName="resourcesVB" Path="QuickStart\aspplus\samples\localize\resources\News\VB" RelPathFromSamplesDir="QuickStart\aspplus\samples\localize\resources\News\VB" />
+		<Item FriendlyName="resourcesJS" Path="QuickStart\aspplus\samples\localize\resources\News\JS" RelPathFromSamplesDir="QuickStart\aspplus\samples\localize\resources\News\JS" />
+		<Item FriendlyName="vscookieauthCS" Path="QuickStart\aspplus\samples\vstudio\security\cookieauth\CS" RelPathFromSamplesDir="QuickStart\aspplus\samples\vstudio\security\cookieauth\CS" />
+		<Item FriendlyName="vscookieauthVB" Path="QuickStart\aspplus\samples\vstudio\security\cookieauth\VB" RelPathFromSamplesDir="QuickStart\aspplus\samples\vstudio\security\cookieauth\VB" />
+		<Item FriendlyName="vsdataserviceCS" Path="QuickStart\aspplus\samples\vstudio\services\dataservice\CS" RelPathFromSamplesDir="QuickStart\aspplus\samples\vstudio\services\dataservice\CS" />
+		<Item FriendlyName="vsdataserviceVB" Path="QuickStart\aspplus\samples\vstudio\services\dataservice\VB" RelPathFromSamplesDir="QuickStart\aspplus\samples\vstudio\services\dataservice\VB" />
+		<Item FriendlyName="vsdatatypesCS" Path="QuickStart\aspplus\samples\vstudio\services\datatypes\CS" RelPathFromSamplesDir="QuickStart\aspplus\samples\vstudio\services\datatypes\CS" />
+		<Item FriendlyName="vsdatatypesVB" Path="QuickStart\aspplus\samples\vstudio\services\datatypes\VB" RelPathFromSamplesDir="QuickStart\aspplus\samples\vstudio\services\datatypes\VB" />
+		<Item FriendlyName="vsintrinsicsCS" Path="QuickStart\aspplus\samples\vstudio\services\intrinsics\CS" RelPathFromSamplesDir="QuickStart\aspplus\samples\vstudio\services\intrinsics\CS" />
+		<Item FriendlyName="vsintrinsicsVB" Path="QuickStart\aspplus\samples\vstudio\services\intrinsics\VB" RelPathFromSamplesDir="QuickStart\aspplus\samples\vstudio\services\intrinsics\VB" />
+		<Item FriendlyName="vsmathserviceCS" Path="QuickStart\aspplus\samples\vstudio\services\mathservice\CS" RelPathFromSamplesDir="QuickStart\aspplus\samples\vstudio\services\mathservice\CS" />
+		<Item FriendlyName="vsmathserviceVB" Path="QuickStart\aspplus\samples\vstudio\services\mathservice\VB" RelPathFromSamplesDir="QuickStart\aspplus\samples\vstudio\services\mathservice\VB" />
+		<Item FriendlyName="vscustomizeCS" Path="QuickStart\aspplus\samples\vstudio\webforms\customize\CS" RelPathFromSamplesDir="QuickStart\aspplus\samples\vstudio\webforms\customize\CS" />
+		<Item FriendlyName="vscustomizeVB" Path="QuickStart\aspplus\samples\vstudio\webforms\customize\VB" RelPathFromSamplesDir="QuickStart\aspplus\samples\vstudio\webforms\customize\VB" />
+		<Item FriendlyName="vsdataCS" Path="QuickStart\aspplus\samples\vstudio\webforms\data\CS" RelPathFromSamplesDir="QuickStart\aspplus\samples\vstudio\webforms\data\CS" />
+		<Item FriendlyName="vsdataVB" Path="QuickStart\aspplus\samples\vstudio\webforms\data\VB" RelPathFromSamplesDir="QuickStart\aspplus\samples\vstudio\webforms\data\VB" />
+		<Item FriendlyName="vspageletsCS" Path="QuickStart\aspplus\samples\vstudio\webforms\pagelets\CS" RelPathFromSamplesDir="QuickStart\aspplus\samples\vstudio\webforms\pagelets\CS" />
+		<Item FriendlyName="vspageletsVB" Path="QuickStart\aspplus\samples\vstudio\webforms\pagelets\VB" RelPathFromSamplesDir="QuickStart\aspplus\samples\vstudio\webforms\pagelets\VB" />
+		<Item FriendlyName="vsvalidateCS" Path="QuickStart\aspplus\samples\vstudio\webforms\validate\CS" RelPathFromSamplesDir="QuickStart\aspplus\samples\vstudio\webforms\validate\CS" />
+		<Item FriendlyName="vsvalidateVB" Path="QuickStart\aspplus\samples\vstudio\webforms\validate\VB" RelPathFromSamplesDir="QuickStart\aspplus\samples\vstudio\webforms\validate\VB" />
+		<Item FriendlyName="masterdetailscs" Path="QuickStart\winforms\samples\Data\MasterDetails\CS" RelPathFromSamplesDir="QuickStart\winforms\samples\Data\MasterDetails\CS" />
+		<Item FriendlyName="masterdetailsvb" Path="QuickStart\winforms\samples\Data\MasterDetails\VB" RelPathFromSamplesDir="QuickStart\winforms\samples\Data\MasterDetails\VB" />
+		<Item FriendlyName="updatecs" Path="QuickStart\winforms\samples\Data\Update\CS" RelPathFromSamplesDir="QuickStart\winforms\samples\Data\Update\CS" />
+		<Item FriendlyName="updatevb" Path="QuickStart\winforms\samples\Data\Update\VB" RelPathFromSamplesDir="QuickStart\winforms\samples\Data\Update\VB" />
+		<Item FriendlyName="webservicebindingcs" Path="QuickStart\winforms\samples\Data\WebServiceBinding\CS" RelPathFromSamplesDir="QuickStart\winforms\samples\Data\WebServiceBinding\CS" />
+		<Item FriendlyName="webservicebindingvb" Path="QuickStart\winforms\samples\Data\WebServiceBinding\VB" RelPathFromSamplesDir="QuickStart\winforms\samples\Data\WebServiceBinding\VB" />
+		<Item FriendlyName="MobileQuickStart" Path="MobileQuickStart" RelPathFromSamplesDir="QuickStart\MobileQuickStart" />
+		<Item FriendlyName="MQSSecuritySamplevb" Path="MobileQuickStart\samples\security\VB" RelPathFromSamplesDir="QuickStart\MobileQuickStart\samples\security\VB" />
+		<Item FriendlyName="MQSSecuritySamplecs" Path="MobileQuickStart\samples\security\CS" RelPathFromSamplesDir="QuickStart\MobileQuickStart\samples\security\CS" />
+		<Item FriendlyName="MQSSecuritySamplejs" Path="MobileQuickStart\samples\security\JS" RelPathFromSamplesDir="QuickStart\MobileQuickStart\samples\security\JS" />
+	</VirtualDirectory>
+	<DataBase>
+		<Item Name="Pubs" Script="InstPubs.sql" DefaultData="pubs.mdf" DefaultLog="pubs_log.LDF" />
+		<Item Name="Northwind" Script="InstNwnd.sql" DefaultData="northwnd.mdf" DefaultLog="northwnd.LDF" />
+		<Item Name="GrocerToGo" Script="Grocer.sql" DefaultData="GrocerToGo.mdf" DefaultLog="GrocerToGo_log.LDF" />
+		<Item Name="Portal" Script="Portal.sql" DefaultData="Portal.mdf" DefaultLog="Portal_log.LDF" />
+	</DataBase>
+	<UserAccount>
+		<ASPNET>\ASPNET</ASPNET>
+		<NetworkService>NT Authority\Network Service</NetworkService>
+	</UserAccount>
+</Setup>

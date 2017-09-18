@@ -1,0 +1,7 @@
+; Sample strings for the calculator – Default locale
+;
+Math_Greeting = Welcome - Integer Calculator
+Math_Formula_Label = Formula and Results:
+Math_Clear_Button = Clear
+Math_Calc_Button = Calculate
+Math_Calc_Error = Invalid Formula. Please try again.

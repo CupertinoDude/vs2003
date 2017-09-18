@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Type Fundamentals">
+	<Paragraph Title="Introduction">
+		In this section we explore the fundamentals of types in the CLR. Specifically, we look at behaviors that are guaranteed to exist for all objects. We also look at the casting and type safety and the imporance this this has in the CLR. Finally, we look at the two kinds of types offerred by the CLR: references and value types and how to manipulate these types. 
+	</Paragraph>
+	<Navigation>
+		<Previous>Building Applications.xml</Previous>
+		<Next>Object Base Type.xml</Next>
+	</Navigation>
+</Document>

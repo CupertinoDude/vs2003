@@ -1,0 +1,51 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?>
+
+<sample>
+<title>Thread Pools Sample</title>
+<title-short>Pools</title-short>
+<overview>
+   This sample demonstrates use of the ThreadPool class. The sample queues up an asynchronous method call that is executed by a thread from the thread pool managed by the Common Language Runtime.  The method "does some work" and then sets an event indicating that the work has finished.  The main thread waits on the event and then exits.
+</overview>
+<subdirectory>Technologies\Threading\Pools</subdirectory>
+<buildsteps>
+   <step>
+      Type <richcontent bold="T">BUILD.bat</richcontent>
+      <richcontent> from the command line.</richcontent>      
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Threading\Pools\VB>Build.bat
+      </example>
+   </step>
+</buildsteps>
+<runsteps>
+   <step>
+      Type <richcontent bold="T">AsyncMethod.exe</richcontent><richcontent> from the command line.</richcontent>
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Threading\Pools\VB>AsyncMethod.exe
+      </example>
+   </step>   
+</runsteps>
+<technologies>
+   <technology name = "Threading" keyword="T">
+      <class name = "ThreadPool" keyword="T">
+         When writing managed code, it is suggested that whenever possible, developers use the QueueUserWorkItem() method of the ThreadPool class to implement asynchronous method calls. This sample demonstrates simple use of this type to execute asynchronous behavior.
+      </class>
+   </technology>
+   <technology name = "Thread Synchronization" keyword="T">      
+      <class name = "AutoResetEvent" keyword="T">
+         The sample's main thread waits on an AutoResetEvent object until it is set by the asynchronous method.  The asynchronous method calls the Set() method when it has finished with its work.
+      </class>      
+   </technology>   
+   <technology name = "Delegates" keyword="T">
+      <class name = "WaitCallback" keyword="T">
+         The WaitCallback delegate type is used by this sample to create a type-safe callback method for the ThreadPool class to use. 
+      </class>      
+   </technology>
+</technologies>
+<keywords>
+   <word name="Threads" keyword="T"/>
+   <word name="Thread Pools" keyword="T"/>
+   <word name="Pooling" keyword="T"/>
+</keywords>
+</sample>
+

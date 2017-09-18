@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://tempuri.org/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UpdateHitCounter">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateHitCounterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateHitCounterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAppCounter">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateAppCounterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateAppCounterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </types>
+  <message name="UpdateHitCounterSoapIn">
+    <part name="parameters" element="s0:UpdateHitCounter" />
+  </message>
+  <message name="UpdateHitCounterSoapOut">
+    <part name="parameters" element="s0:UpdateHitCounterResponse" />
+  </message>
+  <message name="UpdateAppCounterSoapIn">
+    <part name="parameters" element="s0:UpdateAppCounter" />
+  </message>
+  <message name="UpdateAppCounterSoapOut">
+    <part name="parameters" element="s0:UpdateAppCounterResponse" />
+  </message>
+  <message name="UpdateHitCounterHttpGetIn" />
+  <message name="UpdateHitCounterHttpGetOut">
+    <part name="Body" element="s0:string" />
+  </message>
+  <message name="UpdateAppCounterHttpGetIn" />
+  <message name="UpdateAppCounterHttpGetOut">
+    <part name="Body" element="s0:string" />
+  </message>
+  <message name="UpdateHitCounterHttpPostIn" />
+  <message name="UpdateHitCounterHttpPostOut">
+    <part name="Body" element="s0:string" />
+  </message>
+  <message name="UpdateAppCounterHttpPostIn" />
+  <message name="UpdateAppCounterHttpPostOut">
+    <part name="Body" element="s0:string" />
+  </message>
+  <portType name="SessionService1Soap">
+    <operation name="UpdateHitCounter">
+      <input message="s0:UpdateHitCounterSoapIn" />
+      <output message="s0:UpdateHitCounterSoapOut" />
+    </operation>
+    <operation name="UpdateAppCounter">
+      <input message="s0:UpdateAppCounterSoapIn" />
+      <output message="s0:UpdateAppCounterSoapOut" />
+    </operation>
+  </portType>
+  <portType name="SessionService1HttpGet">
+    <operation name="UpdateHitCounter">
+      <input message="s0:UpdateHitCounterHttpGetIn" />
+      <output message="s0:UpdateHitCounterHttpGetOut" />
+    </operation>
+    <operation name="UpdateAppCounter">
+      <input message="s0:UpdateAppCounterHttpGetIn" />
+      <output message="s0:UpdateAppCounterHttpGetOut" />
+    </operation>
+  </portType>
+  <portType name="SessionService1HttpPost">
+    <operation name="UpdateHitCounter">
+      <input message="s0:UpdateHitCounterHttpPostIn" />
+      <output message="s0:UpdateHitCounterHttpPostOut" />
+    </operation>
+    <operation name="UpdateAppCounter">
+      <input message="s0:UpdateAppCounterHttpPostIn" />
+      <output message="s0:UpdateAppCounterHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="SessionService1Soap" type="s0:SessionService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="UpdateHitCounter">
+      <soap:operation soapAction="http://tempuri.org/UpdateHitCounter" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UpdateAppCounter">
+      <soap:operation soapAction="http://tempuri.org/UpdateAppCounter" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="SessionService1HttpGet" type="s0:SessionService1HttpGet">
+    <http:binding verb="GET" />
+    <operation name="UpdateHitCounter">
+      <http:operation location="/UpdateHitCounter" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="UpdateAppCounter">
+      <http:operation location="/UpdateAppCounter" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="SessionService1HttpPost" type="s0:SessionService1HttpPost">
+    <http:binding verb="POST" />
+    <operation name="UpdateHitCounter">
+      <http:operation location="/UpdateHitCounter" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="UpdateAppCounter">
+      <http:operation location="/UpdateAppCounter" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <service name="SessionService1">
+    <port name="SessionService1Soap" binding="s0:SessionService1Soap">
+      <soap:address location="http://localhost/quickstart/aspplus/samples/vstudio/services/Intrinsics/VB/SessionService1.asmx" />
+    </port>
+    <port name="SessionService1HttpGet" binding="s0:SessionService1HttpGet">
+      <http:address location="http://localhost/quickstart/aspplus/samples/vstudio/services/Intrinsics/VB/SessionService1.asmx" />
+    </port>
+    <port name="SessionService1HttpPost" binding="s0:SessionService1HttpPost">
+      <http:address location="http://localhost/quickstart/aspplus/samples/vstudio/services/Intrinsics/VB/SessionService1.asmx" />
+    </port>
+  </service>
+</definitions>

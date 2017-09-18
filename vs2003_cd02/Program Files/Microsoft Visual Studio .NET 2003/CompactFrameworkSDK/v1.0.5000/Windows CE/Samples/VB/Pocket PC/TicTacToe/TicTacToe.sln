@@ -1,0 +1,31 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{CB4CE8C6-1BDB-4DC7-A4D3-65A1999772F8}") = "TicTacToe", "TicTacToe\TicTacToe.VBDPROJ", "{104151C6-F0F9-4DD7-8C2C-391C63C16547}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{20D4826A-C6FA-45DB-90F4-C717570B9F32}") = "GameControl", "GameControl\GameControl.CSDPROJ", "{281A4266-5F91-4BD5-A261-175F9216FC4A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{104151C6-F0F9-4DD7-8C2C-391C63C16547}.Debug.ActiveCfg = Debug|Pocket PC
+		{104151C6-F0F9-4DD7-8C2C-391C63C16547}.Debug.Build.0 = Debug|Pocket PC
+		{104151C6-F0F9-4DD7-8C2C-391C63C16547}.Debug.Deploy.0 = Debug|Pocket PC
+		{104151C6-F0F9-4DD7-8C2C-391C63C16547}.Release.ActiveCfg = Release|Pocket PC
+		{104151C6-F0F9-4DD7-8C2C-391C63C16547}.Release.Build.0 = Release|Pocket PC
+		{104151C6-F0F9-4DD7-8C2C-391C63C16547}.Release.Deploy.0 = Release|Pocket PC
+		{281A4266-5F91-4BD5-A261-175F9216FC4A}.Debug.ActiveCfg = Debug|Pocket PC
+		{281A4266-5F91-4BD5-A261-175F9216FC4A}.Release.ActiveCfg = Release|Pocket PC
+		{281A4266-5F91-4BD5-A261-175F9216FC4A}.Release.Build.0 = Release|Pocket PC
+		{281A4266-5F91-4BD5-A261-175F9216FC4A}.Release.Deploy.0 = Release|Pocket PC
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

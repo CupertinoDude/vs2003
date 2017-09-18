@@ -1,0 +1,61 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\readme.xsl"?>
+
+<sample>
+<title>Exceptions Sample</title>
+<title-short>Exceptions</title-short>
+<overview>
+   This sample demonstrates the use of structured exception handling in various programming languages. In addition to throwing and catching exceptions, this sample also shows how to install an unhandled exception handler which is called when an exception goes "un-caught".
+</overview>
+<subdirectory>Technologies\Exceptions</subdirectory>
+<buildsteps>
+   <step>
+      Type <b>BUILD.bat</b> from the command line.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Exceptions\VB>Build.bat
+      </example>
+   </step>
+</buildsteps>
+<runsteps>
+   <step>
+      Type <b>Except.exe</b> from the command line.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Exceptions\VB>Except.exe
+      </example>
+   </step>   
+</runsteps>
+<technologies>
+   <technology name = "Exceptions" keyword="T">
+      <class name = "ApplicationException" keyword="T">
+      The sample uses the ApplicationException type as the base type for its custom exception. Custom exceptions in your applications should be derived from ApplicationException.
+      </class>
+      <class name = "Exception" keyword="T">
+      The base of all exception classes, this class is used by the sample to catch any exception and display information about the exception.  
+      </class>                  
+   </technology>     
+   <technology name = "Threading" keyword="T">
+      <class name = "Thread" keyword="T">
+      This class is used to get the AppDomain for the sample.
+      </class>                      
+   </technology>
+   <technology name = "Reflection" keyword="T">
+      <class name = "AppDomain" keyword="T">
+      This class is used by the sample to set the unhandled exception handler event.
+      </class>                      
+   </technology>
+   <technology name = "Events and Delegates" keyword="T">
+      <class name = "UnhandledExceptionEventHandler" keyword="T">
+      The delegate type for setting a function to be called when an exception goes unhandled.
+      </class>                            
+   </technology>
+   <technology name = "Windows Forms" keyword="T">
+      <class name = "MessageBox" keyword="T">
+      The sample uses this type to display a simple message box in the unhandled exception handler.
+      </class>                            
+   </technology>
+</technologies>
+<keywords>
+   <word name="Error Handling" keyword="T"/>      
+</keywords>
+</sample>
+

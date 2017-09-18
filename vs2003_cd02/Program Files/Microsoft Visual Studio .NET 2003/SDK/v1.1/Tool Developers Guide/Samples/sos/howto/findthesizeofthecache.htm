@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META content="Microsoft Visual Studio 7.0" name="GENERATOR">
+		<LINK href="..\commands\HelpStyle.css" type="text/css" rel="stylesheet"></HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="HowDoI">Find the amount of data being cached in a Web application</TD>
+					</TR>
+					<TR>
+						<TD class="Comment">
+							<table class="Comments2" id="Table4">
+								<tr>
+									<td vAlign="top"><b>Comments:</b></td>
+									<td>
+										Often,&nbsp;what&nbsp;resembles a memory leak might simply be unnecessary 
+										caching. Followe these steps to find out&nbsp;how much&nbsp;data is being 
+										cached in an ASP.NET Web application.&nbsp;
+									</td>
+								</tr>
+							</table>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="Step">1: Find the method table for System.Web.Caching.Cache</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax"><pre>
+0:000&gt; !name2ee System.Web.dll System.Web.Caching.Cache
+--------------------------------------
+MethodTable: <STRONG><FONT color=red>0d7577f8</FONT></STRONG>
+EEClass: 0d73ac40
+Name: System.Web.Caching.Cache
+						</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="Step">2: Find the total&nbsp;size of&nbsp;objects referenced by the 
+							cache.</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">
+							<P><FONT face="Arial">Dump GC Heap contents<BR>
+									<pre>
+0:000&gt; !DumpHeap -mt <STRONG><FONT color=red>0d7577f8</FONT></STRONG>
+ Address       MT     Size
+<STRONG><FONT color=blue>0507f754</FONT></STRONG> 0d7577f8       12
+total 1 objects
+Statistics:
+      MT    Count TotalSize Class Name
+ d7577f8        1        12 System.Web.Caching.Cache
+Total 1 objects
+large objects
+ Address       MT     Size
+total 0 large objects</pre>
+									<BR>
+									Find number of bytes that this object keeps alive on the garbage collected 
+									heap.</FONT>
+								<pre>
+0:000&gt; !objsize <STRONG><FONT color=blue>0507f754</FONT></STRONG> 
+sizeof(0507f754) =   130108 ( 0x1fc3c) bytes (System.Web.Caching.Cache)
+</pre>
+							<P>In this&nbsp;example, the cache holds 130 KB.</P>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

@@ -1,0 +1,77 @@
+<?xml version='1.0'?> 
+<?xml-stylesheet type="text/xsl" href="..\..\..\..\readme.xsl"?> 
+<sample> 
+<title> Remoting ChannelSinks Sample</title>
+
+<title-short>Writing your own Channel Sinks .NET remoting</title-short>
+
+<overview> 
+This sample contains 3 different executables that demonstrate how to create your
+own channel sinks for use with remoting.  The IPFilterSink sample shows how a
+channel sink can be used to accept or reject calls coming from specified IP addresses.  The Logging sink shows how a sink might log all traffic passing through it while the WebServer sample shows how a sink might be used to server files to a browser.  The configuration files used with these samples demonstrate how these sinks and their
+providers are configured.
+</overview>
+
+<subdirectory>Technologies\Remoting\Advanced\ChannelSinks
+
+<directory name = "IPFilter">
+Contains the source for the sink, client and server together with the associated
+makefile.
+</directory>
+
+<directory name = "Logging">
+Contains the source for the sink, client and server together with the associated
+makefile.
+</directory>
+
+<directory name = "WebServer">
+Contains the source for the sink as server as well as the associated makefile.  Note that the files provided by this service are stored in the root directory under WebServer.
+</directory>
+</subdirectory>
+
+<buildsteps> 
+<step> 
+Type <b>nmake -a all</b> from the command line (note: will throw warnings)      
+<example> 
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\Advanced\ChannelSinks> nmake -a all
+</example>
+</step>
+</buildsteps>
+
+<runsteps> 
+<step>
+For IPFilter:  Start the service by running server.exe form a console window.  Run the
+client by executing client.exe from a console window.
+</step>
+
+<step>
+For Logging: Start the service by running server.exe from a console window.  Run the
+client by executing client.exe from a console window.
+</step>
+
+<step>
+For WebServer: Start the server by running server.exe from a console window.  Connect
+to this service from your browser as follows
+</step>
+
+<step>
+http://localhost:9000/MyServer/index.html
+</step>
+
+<step>
+http://localhost:9000/MyServer/dotnet.gif
+</step>
+
+<step>
+http://localhost:9000/MyServer/test.xml
+</step>
+</runsteps>
+
+<keywords> 
+<word name="Remoting" keyword="R"/>
+<word name="ChannelSink" keyword="C"/>
+<word name="MBR" keyword="M"/>
+</keywords>
+</sample>
+
+

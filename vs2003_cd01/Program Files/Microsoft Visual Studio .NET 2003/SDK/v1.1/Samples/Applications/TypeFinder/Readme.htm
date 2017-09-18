@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root xmlns:dt="urn:schemas-microsoft-com:datatypes" xmlns:d2="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><?xml-stylesheet type="text/xsl" href="..\..\readme.xsl"?><HTML><HEAD><TITLE>Find Type Class Browser Sample</TITLE><STYLE>
+    .Title{FONT-FAMILY: Verdana;FONT-SIZE: large;COLOR: #808080}
+    </STYLE><STYLE>
+    .Heading{FONT-FAMILY: Verdana;FONT-SIZE: large}
+    </STYLE><STYLE>
+    .SectionBreak{FONT-SIZE: small;MARGIN-BOTTOM: 2em}
+    </STYLE><STYLE>
+    .SmallBreak{FONT-SIZE: small;MARGIN-BOTTOM: 1.5em}
+    </STYLE><STYLE>
+    .Text{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedHeading{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedText{MARGIN-LEFT: 3ex;FONT-FAMILY: Lucida Console;FONT-SIZE: x-small;FONT-WEIGHT: Bold}
+    </STYLE><STYLE>
+    .ListSansBullets {list-style-type: none;FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE></HEAD><BODY><table><tr><td><h2 class="Title">Find Type Class Browser Sample</h2></td><td valign="baseline" class="Text">
+               
+              
+                  (Console Application)
+                </td></tr></table><p class="Text">
+    This document contains the release information for the .NET Framework FindType sample. You will find the following sections below: 
+    </p><ul class="Text"><li><a href="#_Sample_Overview">Overview</a></li><li><a href="#_Sample_Topics">Topics</a></li><li><a href="#_Location_of_Sample">Location</a></li><li><a href="#_Building_the_Sample">Building the sample</a></li><li><a href="#_Running_the_Sample">Running the sample</a></li><li><a href="#_sdkvars">Notes</a></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Overview" />
+    Overview
+    </h4><p class="Text">
+This sample utility provides the user with a command line interface to provide information about types in their environment. Sometimes locating a specific type can be difficult (what namespace is it in, which DLL?) and once you have located the type - the documentation may be unavailable or it is out of date. This utility provides a simple way for a developer to determine what types are available, what module they are in and what interfaces, methods, fields, properties and events are available on the type. This sample also provides a peek into reflection.
+</p><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Topics" />
+  Topics
+  </h4><p class="Text">
+  The following bullets briefly describe the classes and technologies used by this sample.
+  </p><ul class="Text"><li><b>Reflection - </b><ul class="Text"><li><b>Assembly - </b>
+      Used to load assemblies into the AppDomain so that they can be searched for types. 
+      </li></ul><ul class="Text"><li><b>Module - </b>
+      Used to get types from the Assembly/Module for comparison to the search string. 
+      </li></ul><ul class="Text"><li><b>Type - </b>
+      Used to get type information such as its name, namespace, and members. 
+      </li></ul><ul class="Text"><li><b>PropertyInfo - </b>
+      To find information about properties in types. 
+      </li></ul><ul class="Text"><li><b>EventInfo - </b>
+      Used to find information about events in types. 
+      </li></ul><ul class="Text"><li><b>FieldInfo - </b>
+      Finds information about fields in types. 
+      </li></ul><ul class="Text"><li><b>MethodInfo - </b>
+      Used to finds information about methods in types. 
+      </li></ul></li><li><b>IO - </b><ul class="Text"><li><b>TextWriter - </b>
+      Used by the IndentedWriter sample type to output (to the console, by default) in a generic fashion. 
+      </li></ul></li><li><b>Text - </b><ul class="Text"><li><b>StringBuilder - </b>
+      Used by the IndentedWriter sample type create a string. 
+      </li></ul><ul class="Text"><li><b>String - </b>
+      Used throughout the sample to find format strings, find sub-strings, upper-case strings etc. 
+      </li></ul></li><li><b>Collections - </b><ul class="Text"><li><b>ArrayList - </b>
+      Used by the sample to manage a growable list of strings. 
+      </li></ul></li><li><b>Registry - </b><ul class="Text"><li><b>Registry - </b>
+      Used to create an instance of the RegistryKey type for a subkey of the LocalMachine key.
+      </li></ul><ul class="Text"><li><b>RegistryKey - </b>
+      Used to read values from a key in the registry.
+      </li></ul></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Location_of_Sample" />
+    Location
+    </h4><p class="Text">
+    This sample is located in the <a href="." title="Jump to Folder" target="_blank">Applications\TypeFinder</a> subdirectory of the .NET Framework SDK samples directory.
+    </p><p class="FixedHeading">
+    For Example:
+      <p class="FixedText">
+      C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Applications\TypeFinder</p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Building_the_Sample" />
+    Building the Sample
+    </h4><p class="Text">
+    In order to properly build and run this sample, the following steps need to be performed.
+    </p><p class="Text">
+      Type <b>BUILD.bat</b> from the command line.<p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Applications\TypeFinder\VB&gt;Build.bat
+      </p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Running_the_Sample" />
+    Running the Sample
+    </h4><p class="Text">
+    In order to run this sample, follow the instructions listed below.
+    </p><span class="Text"><ul class="Text"><li>
+      Type <b>FindType.exe</b> from the command line for a complete list of command line options for the utility.
+      <p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Applications\TypeFinder\VB&gt;FindType.exe
+      </p></li></ul><ul class="Text"><li>
+      To find the location of each type with a word in its name type <b>FindType.exe [word]</b> from the command line.
+      <p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Applications\TypeFinder\VB&gt;FindType.exe String         
+      </p></li></ul></span><p class="SectionBreak" /><h4 class="Heading"><a name="_sdkvars" />
+    Notes
+    </h4><p class="Text">
+    For the .Net Framework samples to function properly, your Path, Include, and Lib environment variables must be set correctly. 
+    In many cases, the SDK install program updates these environment variables for you. However, if you installed the .Net Framework SDK 
+    using Visual Studio .NET, or unselected "register environment variables" during setup, these environment variables will not be updated. 
+    You can set the Path, Include and Lib environment variables by running SDKVars.bat, located in the <i>&lt;SDKRoot&gt;\Bin</i> directory. 
+    SDKVars.bat must be executed in every command shell.
+    </p></BODY></HTML></root>

@@ -1,0 +1,20 @@
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+<!--
+var newwindow = '';
+
+function launchwindow(url)
+{
+	if (newwindow.location && !newwindow.closed)
+	{
+		newwindow.location.href = url;
+	}
+	else
+	{
+		newwindow=window.open(url,'name','height=200,width=450,top=300,left=300');
+		if (!newwindow.opener) newwindow.opener = self;
+	}
+	if (window.focus) {newwindow.focus()}
+}
+launchwindow('ccp2.htm')
+</SCRIPT>
+

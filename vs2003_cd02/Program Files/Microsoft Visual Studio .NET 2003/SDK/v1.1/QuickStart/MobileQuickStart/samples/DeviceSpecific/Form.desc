@@ -1,0 +1,6 @@
+A Templated Form
+This sample demonstrates how to use a Template Set to customize a
+Form mobile control. When an HTML device requests this page,
+the forms is rendered with the header and footer defined in the 
+HTML-specific template set. For other devices, the form uses
+the header defined in the device-independent template set.

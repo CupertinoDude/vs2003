@@ -1,0 +1,35 @@
+﻿<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="The Two Types Offered by the CLR: Reference Types and Value Types">
+	<Paragraph>
+		The CLR supports two kinds of object types: reference types and value types. Of the two, you will run into reference types much more often. Reference types are always allocated from the 			managed heap and the new operator returns the memory address of the object – the memory address refers to the object’s bits. There are some performance considerations to consider when 		working with reference types. First, the memory must be allocated from the managed heap, which could force a garbage collection to occur.
+	</Paragraph>
+	<Paragraph>
+		The CLR also supports “lightweight” types called value types. Value type objects are usually allocated on a thread’s stack (although they can be embedded in a reference type object) and the 		variable representing the object does not contain a pointer to an object; the variable contains the value of the object itself. Since the variable contains the object’s value, a pointer does not 			have to be dereferenced in order to manipulate the object. Value type objects do not come under the control of the garbage collector thus reducing pressure in the managed heap and 			reducing the number of collections required by an application over its lifetime.
+	</Paragraph>
+	<Paragraph>
+		The .NET Framework Reference documentation clearly indicates which types are reference types and which types are value types. When looking up a type in the documentation, any type 			called a "Class" is a reference type. For example, the Object Class, the Exception Class, the FileStream Class, and the Random Class are all reference types. On the other hand, the 				documentation refers to each value type as a "Structure". For example, the Int32 Structure, the Boolean Structure, the Decimal Structure, and the TimeSpan Structure are all value types.
+	</Paragraph>
+	<Paragraph>
+		The sample below demonstrates how reference types and value types differ:	
+	</Paragraph>
+	<Paragraph>
+		<Sample Caption="Reference and Value Types" Image="..\Images\Console.gif">
+			<CSPath>..\Samples\TypeFundamentals\RefAndValueTypes\CS</CSPath>
+			<VBPath>..\Samples\TypeFundamentals\RefAndValueTypes\VB</VBPath>
+		</Sample>
+	</Paragraph>
+	<Paragraph>
+		When possible, you should use value types instead of reference types because your application’s performance will be better. In particular, you should declare a type as a value type if all of the 		following are true:
+	</Paragraph>
+	<Paragraph>
+		<List>The type acts like a primitive type</List>
+		<List>The type doesn’t need to inherit from any other type</List>
+		<List>The type will not have any other types derived from it</List>
+		<List>Objects of the type are not frequently passed as method arguments since this would cause frequent memory copy operations hurting performance.</List>
+	</Paragraph>
+	<Navigation>
+		<Previous>Casting.xml</Previous>
+		<Next>Boxing and Unboxing.xml</Next>
+	</Navigation>
+</Document>

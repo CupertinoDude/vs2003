@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<Recordset>
+  <Row>
+    <Symbol>LCP1</Symbol>
+    <Name>Lucerne Publishing</Name>
+    <Last>104.28 at 6:57:50 PM</Last>
+    <Change>-4.25</Change>
+    <PercentChange>-3.92%</PercentChange>
+    <Volume>11,687,900</Volume>
+  </Row>
+  <Row>
+    <Symbol>TST1</Symbol>
+    <Name>Tailspin Toys</Name>
+    <Last>17.15 at 6:57:50 PM</Last>
+    <Change>-0.64</Change>
+    <PercentChange>-3.60%</PercentChange>
+    <Volume>50,324,900</Volume>
+  </Row>
+  <Row>
+    <Symbol>BYA1</Symbol>
+    <Name>Blue Yonder Airlines</Name>
+    <Last>28.89 at 6:57:50 PM</Last>
+    <Change>+1.01</Change>
+    <PercentChange>+3.38%</PercentChange>
+    <Volume>71,681,500</Volume>
+  </Row>
+  <Row>
+    <Symbol>ALP1</Symbol>
+    <Name>Alpine Ski House</Name>
+    <Last>70.57 at 6:57:50 PM</Last>
+    <Change>0.00</Change>
+    <PercentChange>0.00%</PercentChange>
+    <Volume>28,799,200</Volume>
+  </Row>
+  <Row>
+    <Symbol>CHV1</Symbol>
+    <Name>Coho Vineyard</Name>
+    <Last>44.65 at 6:57:50 PM</Last>
+    <Change>+4.80</Change>
+    <PercentChange>+9.71%</PercentChange>
+    <Volume>36,340,500</Volume>
+  </Row>
+</Recordset>

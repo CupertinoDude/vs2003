@@ -1,0 +1,7 @@
+﻿;
+; Japanese strings
+;
+ok=はい
+cancel=キャンセル
+continue=続ける
+close=閉じる

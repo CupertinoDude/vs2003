@@ -1,0 +1,1315 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<head>
+		<title>Web Project Requirements</title>
+	<META content="Microsoft FrontPage 5.0" name=GENERATOR>
+	</head>
+	<STYLE>BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 10pt; BACKGROUND: #ffffff; PADDING-BOTTOM: 12pt; MARGIN: 0px; COLOR: #000000; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.banner {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 10pt; PADDING-BOTTOM: 6pt; WIDTH: 100%; PADDING-TOP: 6pt; BACKGROUND-COLOR: #ffcc99; TEXT-ALIGN: left
+}
+.tblpara {
+	MARGIN-TOP: 5px; MARGIN-LEFT: 5px
+}
+H1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 13.5pt; MARGIN-BOTTOM: 6pt; MARGIN-LEFT: 5px
+}
+H2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; MARGIN-BOTTOM: 6pt; MARGIN-LEFT: 5px
+}
+TABLE {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FONT-SIZE: 100%; MARGIN-BOTTOM: 12pt; MARGIN-LEFT: 35px; BORDER-LEFT: #cccccc 1px solid; MARGIN-RIGHT: 30px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #ffffff;width:90%;
+}
+TH {
+	PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 10pt; BACKGROUND: #cccccc; PADDING-BOTTOM: 6pt; VERTICAL-ALIGN: top; PADDING-TOP: 6pt; TEXT-ALIGN: left
+}
+TD {
+	BACKGROUND: #ffffff; VERTICAL-ALIGN: top
+}
+P {
+	MARGIN-LEFT: 30px
+}
+BLOCKQUOTE.dtBlock {
+	MARGIN: 0.5em 1.5em 0.5em 2em
+}
+A:link {
+	COLOR: #0000ff
+}
+A:visited {
+	COLOR: #666699
+}
+A:hover {
+	COLOR: #3366ff
+}
+OL {
+	MARGIN: 0.5em 0em 0em 2em
+}
+UL {
+	MARGIN: 0.5em 0em 0em 2em
+}
+LI {
+	MARGIN-BOTTOM: 0.5em
+}
+UL P {
+	MARGIN-LEFT: 0em
+}
+OL P {
+	MARGIN-LEFT: 0em
+}
+DL P {
+	MARGIN-LEFT: 0em
+}
+UL P.label {
+	MARGIN-TOP: 0.5em
+}
+OL P.label {
+	MARGIN-TOP: 0.5em
+}
+DL {
+	MARGIN-TOP: 0em; PADDING-LEFT: 1px
+}
+DD {
+	MARGIN-BOTTOM: 0em; MARGIN-LEFT: 1.5em
+}
+DT {
+	MARGIN-TOP: 0.5em
+}
+PRE {
+	MARGIN-TOP: 0.5em; MARGIN-BOTTOM: 0.5em
+}
+PRE {
+	FONT: 100% Courier New, Courier, mono; COLOR: #000066
+}
+CODE {
+	FONT: 100% Courier New, Courier, mono; COLOR: #000066
+}
+.code {
+	FONT: 100% Courier New, Courier, mono; COLOR: #000066
+}
+PRE B {
+	LETTER-SPACING: 0.1em
+}
+CODE B {
+	LETTER-SPACING: 0.1em
+}
+PRE.syntax {
+	BORDER-RIGHT: #999999 1px solid; PADDING-RIGHT: 8px; BORDER-TOP: #999999 1px solid; MARGIN-TOP: 1em; PADDING-LEFT: 8px; BACKGROUND: #cccccc; MARGIN-BOTTOM: 1em; PADDING-BOTTOM: 4px; BORDER-LEFT: #999999 1px solid; CURSOR: text; COLOR: #000000; PADDING-TOP: 4px; BORDER-BOTTOM: #999999 1px solid
+}
+OL DIV.tablediv {
+	MARGIN-TOP: 0em
+}
+UL DIV.tablediv {
+	MARGIN-TOP: 0em
+}
+    </STYLE>
+<body bgcolor="white" lang="EN-US" link="blue" vlink="purple" onload="docLoad()">
+	<basefont face="Verdana" size="2" color="black" >
+		<p style="font-size: 16pt; margin-top: 0; margin-bottom: 6pt"></p>
+		<span><script language="JavaScript">
+	var strInput;
+	var strRemainingInput;
+	var strPath;
+	var strOSType;
+	var strFileSys;
+	var strConfig;
+	var strReadmePath;
+	var i;
+	var strErrorAnchor;
+	var strInstallAnchor;
+	var ALL;
+		
+	//Init
+	strOSTypr="4";
+	strFileSys="0";
+	strConfig="2";
+	ALL="0";
+	
+	strInput=window.location.search.substring(1,window.location.search.length);
+	i=strInput.indexOf(";");
+	
+	strOSType=strInput.substring(0,i);
+	strRemainingInput=strInput.substring(i+1,strInput.length);
+	i=strOSType.indexOf("=");
+	strOSType=strOSType.substring(i+1,i+2);
+	
+	i=strRemainingInput.indexOf(";");
+
+	strPath=strRemainingInput.substring(0,i);
+	strRemainingInput=strRemainingInput.substring(i+1,strInput.length);
+	i=strPath.indexOf("=");
+	strFileSys=strPath.substring(i+1,strPath.length);
+	i=strRemainingInput.indexOf("=");
+
+	i=strRemainingInput.indexOf(";");
+
+	strPath=strRemainingInput.substring(0,i);
+	strRemainingInput=strRemainingInput.substring(i+1,strInput.length);
+	i=strPath.indexOf("=");
+	strPath=strPath.substring(i+1,strPath.length);
+	i=strRemainingInput.indexOf("=");
+	strConfig=strRemainingInput.substring(i+1,i+2);	
+
+	strRemainingInput=strRemainingInput.substring(i+2,strInput.length);
+	i=strRemainingInput.indexOf("=");
+	strReadmePath=strRemainingInput.substring(i+1,strInput.length);
+
+	// Security precaution
+	forbiddenChars = new RegExp("[<>\'\"]", "g");	// Global search/replace
+	strPath = strPath.replace(forbiddenChars, "");
+	strReadmePath = strReadmePath.replace(forbiddenChars, "");
+	
+	
+	//This section is the introduction.
+		document.write("<p style='margin-top: 0; margin-bottom: 6pt'><b>");
+		document.write ("<DIV class=banner>Microsoft Visual Studio .NET Prerequisites</DIV>");
+	
+		if(strOSType=="0")document.write ("<H1>Web Project Requirements for Windows 2000</H1>");
+		else if(strOSType=="1")document.write ("<H1>Web Project Requirements for Windows XP</H1>");
+		else if(strOSType=="2" || strOSType=="3")document.write ("<H1>Web Project Requirements for Windows Server 2003 and later</H1>");
+		else document.write ("<H1>Web Project Requirements</H1>");
+	
+		document.write ("<P>If you want to create Web projects on this machine, you must first install ");
+		document.write ("additional components. To create Web projects, both Internet Information ");
+		document.write ("Services (IIS) and FrontPage Server Extensions (FPSE) must be installed and ");
+		document.write ("configured. You can, however, create Web projects on remote machines that have ");
+		document.write ("these components installed and configured.<br>");
+		
+		document.write ("<br></b><b>Note:</b> It is recommended that you print or bookmark this page before ");
+		document.write ("  installing the components listed below. This page does not automatically display after a machine restart.<br></P>");
+
+		
+	//This section is for step 1 (Download Security Updates) and (Disconnect Network)
+	Secure();
+	
+	//LOGIC-----------------------------------------------------------------------
+	//This is the logic section for IIS/FPSE based on OSType and File System
+		
+		if (strConfig=="1")//IIS is not present, FPSE is not present.
+		{
+			//Install IIS
+				
+			if (strOSType=="0")
+			{
+				InstallIIS_2K();
+				strConfig = "0"; //this will route it to FPSE Config section below.
+			}
+			else if (strOSType=="1")
+			{
+				InstallIIS_XP();
+				strConfig = "0"; //this will route it to FPSE Config section below.
+			}
+			else if (strOSType=="2" || strOSType=="3")
+			{
+				InstallIIS_NETSRV();
+				strConfig = "0"; //this will route it to FPSE Config section below.
+			}
+			else
+			{
+				ALL="1";
+				Everything(); //this accounts for a nondetectable OS
+			}
+
+		}
+		if (strConfig=="0") //IIS is present, FPSE is not configured.
+		{
+			// Install FPSE and Configure FPSE
+		
+			if (strOSType=="0")
+			{
+				InstallFPSE_2K(); document.write (" <br>");
+				ConfigureFPSE_2K(); document.write (" <br>");
+			}
+			else if (strOSType=="1")
+			{
+				InstallFPSE_XP();document.write (" <br>");
+				ConfigureFPSE_XP();	document.write (" <br>");	
+			}
+			else if (strOSType=="2" || strOSType=="3")//Windows Server 2003 and later
+			{
+				InstallFPSE_NETSRV();
+				ConfigureFPSE_NETSRV();	document.write (" <br>");
+			}
+			else
+			{
+				ALL="1";
+				FPSE_OS_ALL();  //this accounts for a nondetectable OS
+			}
+		}
+		
+		if(strConfig!="0" && strConfig!="1")
+		{
+			//default everything
+			ALL="1";
+			Everything();
+
+		}
+
+
+//FUNCTIONS--------------------------------------------------
+
+	function docLoad()
+	{
+		document.all.NoScriptSpan.outerHTML = "";
+	}
+	
+	function Everything()
+	{
+			
+			InstallIIS_2K();
+			InstallIIS_XP();
+			InstallIIS_NETSRV();
+	
+			InstallFPSE_2K();
+			document.write (" <br>");
+			InstallFPSE_XP();
+			document.write (" <br>");
+			InstallFPSE_NETSRV();
+			document.write (" <br>");
+				
+			ConfigureFPSE_2K();	
+			document.write (" <br>");
+			ConfigureFPSE_XP();	
+			document.write (" <br>");
+			ConfigureFPSE_NETSRV();	
+			document.write (" <br>");
+	};
+
+	function FPSE_OS_ALL()
+	{
+	
+			InstallFPSE_2K();
+			document.write (" <br>");
+			InstallFPSE_XP();
+			document.write (" <br>");
+			InstallFPSE_NETSRV();
+			document.write (" <br>");
+				
+			ConfigureFPSE_2K();	
+			document.write (" <br>");
+			ConfigureFPSE_XP();	
+			document.write (" <br>");
+			ConfigureFPSE_NETSRV();	
+			document.write (" <br>");
+
+	};
+
+
+	function Secure()
+	{	
+	//This section is for step 1 Download Security Updates, Disconnect Network, FAT Warning
+	
+		document.write ("<ol style=\"font-weight: bold; font-size: 10pt; font-family:");
+		document.write (" Verdana; margin-left: 2em; margin-right: 0em; margin-top: 0.5em; margin-bottom: 0em\">");
+		document.write ("  <li style=\"margin-bottom: 0.5em\">");
+		document.write ("  <h2><a name=\"download\">Securing Your Machine for Installation</a></h2><br>");
+ 
+ 			document.write ("  <table>");
+			document.write ("    <tr>");
+			document.write ("      <th>Securing Your Machine for Installation ");
+			
+			//OS Specific Title
+			if(strOSType=="0") document.write ("      <b><span style=\"font-size: 10.0pt\">on Windows 2000</span></b></th>");
+			else if(strOSType=="1") document.write ("      <b><span style=\"font-size: 10.0pt\">on Windows XP</span></b></th>");
+			else if(strOSType=="2" || strOSType=="3") document.write ("      <b><span style=\"font-size: 10.0pt\">on Windows Server 2003 and later</span></b></th>");
+			else document.write ("</span></th>");
+						
+			document.write ("    </tr>");
+			document.write ("    <tr>");
+			document.write ("      <td>");
+			document.write ("      <ol style=\"margin-top: 0in; margin-bottom: 0in\" start=\"1\" type=\"1\">");
+	
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\"><b>Download</b> and <b>save</b> the <b>latest security updates</b> from ");
+			document.write ("        <a href=\"http://msdn.microsoft.com/vstudio/security/\" target=\"_TOP\" style=\"color: #0000ff\">");
+			document.write ("        http://msdn.microsoft.com/vstudio/security/</a> to your desktop.");
+
+			document.write ("        <span style=\"font-size:10.0pt\"><BLOCKQUOTE><B>Note:</B> Do not install the security updates now. You will be manually applying these ");
+			document.write ("        security updates in a later stage of the instructions below. If you have problems, please see your system administrator.</BLOCKQUOTE></span>");
+
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\"><b>Obtain</b> your <b>Windows operating system CD/DVD</b>.</span></li>");
+			
+			document.write ("        <span style=\"font-size:10.0pt\"><BLOCKQUOTE><B>Note:</B> Please contact your system  ");
+			document.write ("        administrator if you installed the Windows operating system over the network and you do not ");
+			document.write ("        have the Windows operating system CD/DVD readily available.</BLOCKQUOTE></span>");
+				
+			//FAT DETECTION	
+			if(strFileSys!="1"){
+				if(strOSType=="0"||strOSType=="1")
+				{
+				document.write ("  <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+				document.write ("  <span style=\"font-size: 10.0pt\"><b>Convert</b> your FAT16 or FAT32 file system to NTFS.  This is <b>strongly recommended</b> but not required to continue setup. </span></li>"); 
+
+				document.write ("  <span style=\"font-size:10.0pt\"><BLOCKQUOTE>");
+				document.write ("  <b>Note:</b> Running FrontPage Server ");
+				document.write ("  Extensions on a&nbsp;FAT file system allows any anonymous user to author on ");
+				document.write ("  your web server. ");
+				document.write ("  Go to <a href=\"http://www.microsoft.com/technet/treeview/default.asp?url=/TechNet/prodtechnol/winntas/tips/techrep/filesyst.asp#K\" target=\"_TOP\" style=\"color: #0000ff\">");
+				document.write ("  http://www.microsoft.com/technet/treeview/default.asp?url=/TechNet/prodtechnol/winntas/tips/techrep/filesyst.asp#K </a> for additional information on converting file systems. ");			
+				document.write ("  </BLOCKQUOTE></span>");
+				}
+				else if(strOSType=="2" || strOSType=="3")
+				{
+				document.write ("  <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+				document.write ("  <span style=\"font-size: 10.0pt\"><b>Convert</b> your FAT16 or FAT32 file system to NTFS.  NTFS is <b>required</b> by setup. </span></li>"); 
+
+				document.write ("  <span style=\"font-size:10.0pt\"><BLOCKQUOTE>");
+				document.write ("  <b>Note:</b> FrontPage Server");
+				document.write ("  Extensions will not install on a&nbsp;FAT 16 or FAT 32 file system.");
+				document.write ("  For information on converting file systems, see <a href=\"http://www.microsoft.com/technet/treeview/default.asp?url=/TechNet/prodtechnol/winntas/tips/techrep/filesyst.asp#K\" target=\"_TOP\" style=\"color: #0000ff\">");
+				document.write ("  http://www.microsoft.com/technet/treeview/default.asp?url=/TechNet/prodtechnol/winntas/tips/techrep/filesyst.asp#K </a> . ");			
+				document.write ("  </BLOCKQUOTE></span>");
+				}
+				else if(strOSType=="4")
+				{
+				document.write ("  <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+				document.write ("  <span style=\"font-size: 10.0pt\"><b>Convert</b> your FAT16 or FAT32 file system to NTFS.  Setup <b>requires</b> NTFS on Windows Server 2003 and later.  For all other operating systems, NTFS is <b>strongly recommended</b> but not required to continue setup. </span></li>");  
+
+				document.write ("  <span style=\"font-size:10.0pt\"><BLOCKQUOTE>");
+				document.write ("  <b>Note:</b> Running FrontPage Server ");
+				document.write ("  Extensions on a&nbsp;FAT file system allows any anonymous user to author on ");
+				document.write ("  your web server. ");
+				document.write ("  Go to <a href=\"http://www.microsoft.com/technet/treeview/default.asp?url=/TechNet/prodtechnol/winntas/tips/techrep/filesyst.asp#K\" target=\"_TOP\" style=\"color: #0000ff\">");
+				document.write ("  http://www.microsoft.com/technet/treeview/default.asp?url=/TechNet/prodtechnol/winntas/tips/techrep/filesyst.asp#K </a> for additional information on converting file systems. ");			
+				document.write ("  </BLOCKQUOTE></span>");
+				}
+			}			
+			//END OF FAT SECTION				
+				
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\"><b>Disconnect</b> your machine from <b>ALL</b> network connections.</span></li>");
+			
+			document.write ("        <span style=\"font-size:10.0pt\"><BLOCKQUOTE><B>Note:</B> If you do not disconnect, your ");
+			document.write ("        machine could be susceptible to viruses between installing the components and ");
+			document.write ("        applying the latest security updates.</BLOCKQUOTE></span>");
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\"><b>Remove</b> the <b>Visual Studio CD/DVD</b> from your machine now.</span></li>");
+					
+			document.write ("      </ol>");
+			document.write ("      </td>");
+			document.write ("    </tr>");
+			document.write ("  </table><br>");	
+	};
+
+	function InstallIIS_2K()
+	{
+			
+			document.write ("  <li style=\"margin-bottom: 0.5em\">");
+			document.write ("  <h2><a name=\"install\">Install Internet Information Services (IIS)</a>&nbsp;</h2><br>");
+			
+			document.write ("  <table>");
+			document.write ("    <tr>");
+			document.write ("      <th>To install Internet Information Services ");
+			document.write ("      <b><span style=\"font-size: 10.0pt\">on Windows 2000</span></b></th>");
+			document.write ("    </tr>");
+			document.write ("    <tr>");
+			document.write ("      <td>");
+			document.write ("      <ol style=\"margin-top: 0in; margin-bottom: 0in\" start=\"1\" type=\"1\">");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">On the <b>Start</b> menu, choose <b>Run</b>.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <b>Open</b> dialog box, type <b>appwiz.cpl</b>, ");
+			document.write ("        and then click <b>OK</b> to open the <b>Add/Remove Programs</b> dialog box; you can also access this dialog box from the Control Panel.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <b>Add/Remove Programs</b> dialog box, ");
+			document.write ("        choose <b>Add/Remove Windows Components</b> on the left side of the dialog box.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <B>Windows Component Wizard</B>, ");
+			document.write ("        check <b>Internet Information Services (IIS)</b>.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">Choose <b>Next</b> to begin installing IIS.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">Click <b>Finish</b> when installation is ");
+			document.write ("        complete.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">Close the <b>Add/Remove Programs</b> dialog box.</span></li>");
+			document.write ("      </ol>");
+			document.write ("      </td>");
+			document.write ("    </tr>");
+			document.write ("  </table><br>");
+	};
+	function InstallIIS_XP()
+	{	
+			if(ALL == "0"){
+			document.write ("  <li style=\"margin-bottom: 0.5em\">");
+			document.write ("  <h2><a name=\"install\">Install Internet Information Services (IIS)</a>&nbsp;</h2><br>");
+			}
+			
+			document.write ("  <table>");
+			document.write ("    <tr>");
+			document.write ("      <th>To install Internet Information Services ");
+			document.write ("      <b><span style=\"font-size: 10.0pt\">on Windows XP</span></b></th>");
+			document.write ("    </tr>");
+			document.write ("    <tr>");
+			document.write ("      <td>");
+			document.write ("      <ol style=\"margin-top: 0in; margin-bottom: 0in\" start=\"1\" type=\"1\">");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">On the <b>Start</b> menu, choose <b>Run</b>.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <b>Open</b> dialog box, type <b>appwiz.cpl</b>, ");
+			document.write ("        and then click <b>OK</b> to open the <b>Add/Remove Programs</b> dialog box; you can also access this dialog box from the Control Panel.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <b>Add/Remove Programs</b> dialog box, ");
+			document.write ("        choose <b>Add/Remove Windows Components</b> on the left side of the dialog box.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <B>Windows Component Wizard</B>, ");
+			document.write ("        check <b>Internet Information Services (IIS)</b>.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">Choose <b>Next</b> to begin installing IIS.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">Click <b>Finish</b> when installation is ");
+			document.write ("        complete.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");			
+			document.write ("        <span style=\"font-size: 10.0pt\">Close the <b>Add/Remove Programs</b> dialog box.</span></li>");
+			document.write ("      </ol>");
+			document.write ("      </td>");
+			document.write ("    </tr>");
+			document.write ("  </table><br>");
+	};
+	
+	function InstallIIS_NETSRV()
+	{
+			if(ALL == "0"){
+			document.write ("  <li style=\"margin-bottom: 0.5em\">");
+			document.write ("  <h2><a name=\"install\">Install Internet Information Services (IIS)</a>&nbsp;</h2><br>");
+			}
+			
+			document.write ("  <table>");
+			document.write ("    <tr>");
+			document.write ("      <th>To install Internet Information Services ");
+			document.write ("      <b><span style=\"font-size: 10.0pt\">on Windows Server 2003</span></b></th>");
+			document.write ("    </tr>");
+			document.write ("    <tr>");
+			document.write ("      <td>");
+			document.write ("      <ol style=\"margin-top: 0in; margin-bottom: 0in\" start=\"1\" type=\"1\">");
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">On the <b>Start</b> menu, click <b>Run</b>.</span></li>");
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <STRONG>Open</STRONG> box type <STRONG>appwiz.cpl</STRONG>, and then click <STRONG>OK </STRONG>");
+			document.write ("        The <STRONG>Add or Remove Programs</STRONG> dialog box appears; you can also access this dialog box from the Control Panel.</span></li>");
+
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">Click <STRONG>Add/Remove Windows Components.</STRONG> The Windows Component Wizard appears. </span></li>");
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <STRONG>Components </STRONG> select the <STRONG>Application Server</STRONG> checkbox, ");
+			document.write ("        and then click <STRONG>Details</STRONG>. Note: you will get warnings if you have not converted your drive to NTFS.  For details please refer to <STRONG>Securing Your Machine for Installation</STRONG> section above.</span></li>");
+
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <STRONG>Application Server</STRONG> dialog box, select the <STRONG>ASP .NET</STRONG> checkbox ");
+			document.write ("        Note: <STRONG>Do not</STRONG> click <STRONG>OK.</STRONG> </span></li>");
+
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">Select the <STRONG>Internet Information Services (IIS)</STRONG> checkbox, and then click <STRONG> Details</STRONG>. </span></li>");
+						
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <STRONG>Internet Information Services (IIS)</STRONG> dialog box, ");
+			document.write ("        select the <STRONG>FrontPage 2002 Server Extensions</STRONG> checkbox, and then click <STRONG>OK</STRONG>.</span></li>");						
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <STRONG>Application Server</STRONG> dialog box, click <STRONG>OK</STRONG>.</span></li>");
+
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <STRONG>Windows Component Wizard</STRONG> click <STRONG>Next</STRONG>.");
+			document.write ("        This will install required components. Note :-- you need have your Windows Server 2003 CD available.</span></li>");
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">When installation is complete. Click <STRONG>Finish</STRONG>.</span></li>");
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\"> Close the <STRONG>Add/Remove Programs</STRONG> dialog box.</span></li>");
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\"> Follow the instructions to <STRONG>Configure FrontPage Server Extensions (FPSE)</STRONG> below.</span></li>");
+					
+			document.write ("      </ol>");
+			document.write ("      </td>");
+			document.write ("    </tr>");
+			document.write ("  </table><br>");
+	};
+
+	function InstallFPSE_2K()
+	{
+	
+			document.write ("  <li style=\"margin-bottom: 0.5em\">");
+			document.write ("  <h2><a name=\"installFPSE\">Install FrontPage Server Extensions (FPSE)</a>&nbsp;</h2>");
+			document.write (" <br>");
+	
+			document.write ("  <table>");
+			document.write ("    <tr>");
+			document.write ("      <th>To install FrontPage Server Extensions  ");
+			document.write ("      <b><span style=\"font-size: 10.0pt\">on Windows 2000</span></b></th>");
+			document.write ("    </tr>");
+			document.write ("    <tr>");
+			document.write ("      <td>");
+			document.write ("      <ol style=\"margin-top: 0in; margin-bottom: 0in\" start=\"1\" type=\"1\">");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">On the <b>Start</b> menu, choose <b>Run</b>.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <b>Open</b> dialog box, type <b>appwiz.cpl</b>, ");
+			document.write ("        and then click <b>OK</b> to open the <b>Add/Remove Programs</b> dialog box.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <b>Add/Remove Programs</b> dialog box, ");
+			document.write ("        choose <b>Add/Remove Windows Components</b> on the left side of the dialog box.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <B>Windows Component Wizard</B>, ");
+			document.write ("        select <b>Internet Information Services (IIS)</b>.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">With <B>Internet Information Services (IIS)</B>");
+			document.write ("        selected, choose <STRONG>Details</STRONG>.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">If <B>FrontPage 2000 Server Extensions</B> ");
+			document.write ("        are not already selected, check the check box.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">Click <STRONG>OK</STRONG> to close the ");
+			document.write ("        <B>Internet Information Services (IIS)</B> box.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">Choose <B>Next</B> to begin installing.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">After installation completes, click ");
+			document.write ("        <b>Finish</b> to close the <b>Windows Component Wizard</b>.</span></li>");
+			document.write ("      </ol>");
+			document.write ("      </td>");
+			document.write ("    </tr>");
+			document.write ("  </table>");
+	};
+	
+	function InstallFPSE_XP()
+	{	
+			if(ALL=="0"){
+				document.write ("  <li style=\"margin-bottom: 0.5em\">");
+				document.write ("  <h2><a name=\"installFPSE\">Install FrontPage Server Extensions (FPSE)</a>&nbsp;</h2>");
+				document.write (" <br>");
+			}
+			document.write ("  <table>");
+			document.write ("    <tr>");
+			document.write ("      <th>To install FrontPage Server Extensions  ");
+			document.write ("      <b><span style=\"font-size: 10.0pt\">on Windows XP</span></b></th>");
+			document.write ("    </tr>");
+			document.write ("    <tr>");
+			document.write ("      <td>");
+			document.write ("      <ol style=\"margin-top: 0in; margin-bottom: 0in\" start=\"1\" type=\"1\">");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">On the <b>Start</b> menu, choose <b>Run</b>.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <b>Open</b> dialog box, type <b>appwiz.cpl</b>, ");
+			document.write ("        and then click <b>OK</b> to open the <b>Add/Remove Programs</b> dialog box.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <b>Add/Remove Programs</b> dialog box, ");
+			document.write ("        choose <b>Add/Remove Windows Components</b> on the left side of the dialog box.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <B>Windows Component Wizard</B>, ");
+			document.write ("        select <b>Internet Information Services (IIS)</b>.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">With <B>Internet Information Services (IIS)</B>");
+			document.write ("        selected, choose <STRONG>Details</STRONG>.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">If <B>FrontPage 2000 Server Extensions</B> ");
+			document.write ("        are not already selected, check the check box.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">Click <STRONG>OK</STRONG> to close the ");
+			document.write ("        <B>Internet Information Services (IIS)</B> box.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">Choose <B>Next</B> to begin installing.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">After installation completes, click ");
+			document.write ("        <b>Finish</b> to close the <b>Windows Component Wizard</b>.</span></li>");
+			document.write ("      </ol>");
+			document.write ("      </td>");
+			document.write ("    </tr>");
+			document.write ("  </table>");
+
+	};
+	
+	function InstallFPSE_NETSRV()
+	{	
+			if(ALL=="0"){
+				document.write ("  <li style=\"margin-bottom: 0.5em\">");
+				document.write ("  <h2><a name=\"installFPSE\">Install FrontPage Server Extensions (FPSE)</a>&nbsp;</h2>");
+				document.write (" <br>");
+			}
+			document.write ("  <table>");
+			document.write ("    <tr>");
+			document.write ("      <th>To install FrontPage Server Extensions ");
+			document.write ("      <b><span style=\"font-size: 10.0pt\">on Windows Server 2003</span></b></th>");
+			document.write ("    </tr>");
+			document.write ("    <tr>");
+			document.write ("      <td>");
+			
+			document.write ("      <ol style=\"margin-top: 0in; margin-bottom: 0in\" start=\"1\" type=\"1\">");
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">On the <b>Start</b> menu, click <b>Run</b>.</span></li>");
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <STRONG>Open</STRONG> box type <STRONG>appwiz.cpl</STRONG>, and then click <STRONG>OK </STRONG>");
+			document.write ("        The <STRONG>Add or Remove Programs</STRONG> dialog box appears; you can also access this dialog box from the Control Panel.</span></li>");
+
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">Click <STRONG>Add/Remove Windows Components.</STRONG> The Windows Component Wizard appears. </span></li>");
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <STRONG>Components </STRONG> select the <STRONG>Application Server</STRONG> checkbox, ");
+			document.write ("        and then click <STRONG>Details</STRONG>. Note: you will get warnings if you have not converted your drive to NTFS.  For details please refer to <STRONG>Securing Your Machine for Installation</STRONG> section above.</span></li>");
+
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <STRONG>Application Server</STRONG> dialog box, select the <STRONG>ASP .NET</STRONG> checkbox ");
+			document.write ("        Note: <STRONG>Do not</STRONG> click <STRONG>OK.</STRONG> </span></li>");
+
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">Select the <STRONG>Internet Information Services (IIS)</STRONG> checkbox, and then click <STRONG> Details</STRONG>. </span></li>");
+						
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <STRONG>Internet Information Services (IIS)</STRONG> dialog box, ");
+			document.write ("        select the <STRONG>FrontPage 2002 Server Extensions</STRONG> checkbox, and then click <STRONG>OK</STRONG>.</span></li>");						
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <STRONG>Application Server</STRONG> dialog box, click <STRONG>OK</STRONG>.</span></li>");
+
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">In the <STRONG>Windows Component Wizard</STRONG> click <STRONG>Next</STRONG>.");
+			document.write ("        This will install required components. Note :-- you need have your Windows Server 2003 CD available.</span></li>");
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\">When installation is complete. Click <STRONG>Finish</STRONG>.</span></li>");
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\"> Close the <STRONG>Add/Remove Programs</STRONG> dialog box.</span></li>");
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size: 10.0pt\"> Follow the instructions to <STRONG>Configure FrontPage Server Extensions (FPSE)</STRONG> below.</span></li>");
+
+					
+			document.write ("      </ol>");
+			document.write ("      </td>");
+			document.write ("    </tr>");
+			document.write ("  </table>");
+	};
+
+    function ConfigureFPSE_2K()
+	{
+	
+			document.write ("  <li style=\"margin-bottom: 0.5em\">");
+			document.write ("  <h2>Configure FrontPage Server Extensions (FPSE)&nbsp;</h2><br>");
+	
+			document.write ("  <table>");
+			document.write ("    <tr>");
+			document.write ("      <th>To configure FrontPage Server Extensions on Windows 2000</th>");
+			document.write ("    </tr>");
+			document.write ("    <tr>");
+			document.write ("      <td>");
+			document.write ("      <ol style=\"margin-top: 0in; margin-bottom: 0in\" start=\"1\" type=\"1\">");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">On the <b>Start</b> menu, choose <b>Run</b>. </span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">In the <b>Open</b> dialog box, type <b>compmgmt.msc \\s</b>, and then click <b>OK</b> ");
+			document.write ("        to open the <b>Computer Management</b> dialog box.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">In the Computer Management dialog box, ");
+			document.write ("        expand <b>Services and Applications</b>.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">Under <B>Services and Applications</B>, ");
+			document.write ("        expand <B>Internet Information Services</B>. ");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">Right-click <B>Default Web Site</B>, choose ");
+			document.write ("        <B>All Tasks</B>, and then choose <B>Configure Server Extensions</B>.</span></li>");
+
+						
+			document.write ("        <span style=\"font-size:10.0pt\"><BLOCKQUOTE><p><B>Note:</B> You can skip to ");
+			document.write ("        <A href=\"#secure\">Install Security Updates</A> below if the Configure Server Extensions menu ");
+			document.write ("        command is missing.");
+			document.write ("        &nbsp; If the Configure Server Extensions menu command is missing, ");
+			document.write ("        then FrontPage Server Extensions are already installed and configured.</p></BLOCKQUOTE></span>");
+
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">Choose <B>Next</B> on the first page of the ");
+			document.write ("        <b>Server Extensions Configuration Wizard</b>.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">Choose <b>Yes</b> in the <b>Warning</b> dialog box.");
+			document.write ("        </span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">Choose <b>No</b> for configuring the mail server ");
+			document.write ("        settings, and then choose <b>Next</b>. </span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">Choose <b>Finish</b>.</span></li>");
+			document.write ("      </ol>");
+			document.write ("      </td>");
+			document.write ("    </tr>");
+			document.write ("  </table>");
+	};
+	
+	function ConfigureFPSE_XP()
+	{
+			if (ALL =="0"){
+				document.write ("  <li style=\"margin-bottom: 0.5em\">");
+				document.write ("  <h2>Configure FrontPage Server Extensions (FPSE)&nbsp;</h2><br>");
+			}
+				
+			document.write ("  <table>");
+			document.write ("    <tr>");
+			document.write ("      <th>To configure FrontPage Server Extensions on Windows XP</th>");
+			document.write ("    </tr>");
+			document.write ("    <tr>");
+			document.write ("      <td>");
+			document.write ("      <ol style=\"margin-top: 0in; margin-bottom: 0in\" start=\"1\" type=\"1\">");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">On the <b>Start</b> menu, choose <b>Run</b>. </span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">In the <b>Open</b> dialog box, type <b>compmgmt.msc \\s</b>, and then click <b>OK</b> ");
+			document.write ("        to open the <b>Computer Management</b> dialog box.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">In the <b>Computer Management</b> dialog box, ");
+			document.write ("        expand <b>Services and Applications</b>.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">Under <B>Services and Applications</B>, ");
+			document.write ("        expand <B>Internet Information Services</B>. ");
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">Under the <B>Internet Information Services</B>, ");
+			document.write ("        expand <b>Web sites</b>.</span></li>");
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">Right-click <B>Default Web Site</B>, choose ");
+			document.write ("        <B>All Tasks</B>, and then choose <B>Configure Server Extensions</B>.</span></li>");
+						
+			document.write ("        <span style=\"font-size:10.0pt\"><BLOCKQUOTE><p><B>Note:</B> You can skip to ");
+			document.write ("        <A href=\"#secure\">Install Security Updates</A> below if the Configure Server Extensions menu ");
+			document.write ("        command is missing. ");
+			document.write ("        If the Configure Server Extensions menu command is missing, ");
+			document.write ("        then FrontPage Server Extensions are already installed and configured.</p></BLOCKQUOTE></span>");
+
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">Choose <B>Next</B> on the first page of the ");
+			document.write ("        <b>Server Extensions Configuration Wizard</b>.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">Choose <b>Yes</b> in the <b>Warning</b> dialog box.");
+			document.write ("        </span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">Choose <b>No</b> for configuring the mail server ");
+			document.write ("        settings, and then choose <b>Next</b>. </span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">Choose <b>Finish</b>.</span></li>");
+			document.write ("      </ol>");
+			document.write ("      </td>");
+			document.write ("    </tr>");
+			document.write ("  </table>");
+
+	};	
+	
+	function ConfigureFPSE_NETSRV()
+	{
+			if (ALL =="0"){
+				document.write ("  <li style=\"margin-bottom: 0.5em\">");
+				document.write ("  <h2>Configure FrontPage Server Extensions (FPSE)&nbsp;</h2><br>");
+			}
+			document.write ("  <table>");
+			document.write ("    <tr>");
+			document.write ("      <th>To configure FrontPage Server Extensions on Windows Server 2003</th>");
+			document.write ("    </tr>");
+			document.write ("    <tr>");
+			document.write ("      <td>");
+			document.write ("      <ol style=\"margin-top: 0in; margin-bottom: 0in\" start=\"1\" type=\"1\">");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">On the <b>Start</b> menu, choose <b>Run</b>. </span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">In the <b>Open</b> dialog box, type <b>compmgmt.msc \\s</b>, and then click <b>OK</b> ");
+			document.write ("        to open the <b>Computer Management</b> dialog box.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">In the <b>Computer Management</b> dialog box, ");
+			document.write ("        expand <b>Services and Applications</b>.</span></li>");
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">Under <B>Services and Applications</B>, ");
+			document.write ("        expand <B>Internet Information Services</B>. ");
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">Under the <B>Internet Information Services</B>, ");
+			document.write ("        expand <b>Web sites</b>.</span></li>");
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">Right-click <B>Default Web Site</B>, choose ");
+			document.write ("        <B>All Tasks</B>, and then choose <B>Configure Server Extensions 2002</B>.</span></li>");
+			
+			document.write ("        <li class=\"MsoNormal\" style=\"margin-top: 0in; margin-bottom: .0001pt\">");
+			document.write ("        <span style=\"font-size:10.0pt\">On the configuration web page");
+			document.write ("        <B>Extend virtual server with FrontPage Server Extensions 2002</B>, ensure the Administrator's user name is correct and click <B> Submit</B>.</span></li>");
+						
+			document.write ("        <span style=\"font-size:10.0pt\"><BLOCKQUOTE><p><B>Note:</B> You can skip to ");
+			document.write ("        <A href=\"#secure\">Install Security Updates</A> below if the Configure Server Extensions menu ");
+			document.write ("        command is missing. ");
+			document.write ("        If the Configure Server Extensions menu command is missing, ");
+			document.write ("        then FrontPage Server Extensions are already installed and configured.</p></BLOCKQUOTE></span>");
+
+			document.write ("      </ol>");
+			document.write ("      </td>");
+			document.write ("    </tr>");
+			document.write ("  </table>");
+
+	};
+
+//The rest of it
+	
+	document.write ("  <li style=\"margin-bottom: 0.5em\">");
+	document.write ("  <h2><A name=\"secure\">Install Security Updates</A></h2>");
+	document.write ("  <h2>");
+	document.write ("  <span style=\"font-weight: 400\">Run the security updates you downloaded in step 1, ");
+	document.write ("  \"Download Security Updates\", from your desktop.</span><br>");
+	document.write ("  &nbsp;</h2>");
+	
+	document.write ("  <li style=\"margin-bottom: 0.5em\">");
+	document.write ("  <h2>Connect to Network</h2>");
+	document.write ("  <h2>");
+	document.write ("  <span style=\"font-weight: 400\">If you disconnected from the network in step 2, \"Disconnect Network\",");
+	document.write ("  you can safely reconnect to the network after applying the security updates.</span><br>");
+	document.write ("  &nbsp;</h2>");
+	document.write ("  </li>");
+	
+	
+	document.write ("  </li>");
+	document.write ("  <li style=\"margin-bottom: 0.5em\">");
+	document.write ("  <h2><a name=\"return\">Return to setup</a></h2>");
+	document.write ("  <h2>");
+	document.write ("  <span style=\"font-weight: 400\">You are now ready to return to setup.&nbsp; ");
+	document.write ("  Please re-insert CD1 ");
+	document.write ("  or the DVD of the Visual Studio product you are installing and run setup.</span><br>");
+	document.write ("  &nbsp;</h2>");
+	document.write ("  </li>");
+	
+</script></span>
+</span>
+			<!-- for disabled script browsers -->
+			<SPAN id=NoScriptSpan>
+<P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 6pt"><B></P>
+<DIV class=banner>Microsoft Visual Studio .NET Prerequisites</DIV>
+<H1>Web Project Requirements</H1>
+<P>If you want to create Web projects on this machine, you must first install 
+additional components. To create Web projects, both Internet Information 
+Services (IIS) and FrontPage Server Extensions (FPSE) must be installed and 
+configured. You can, however, create Web projects on remote machines that have 
+these components installed and configured.<BR><BR></B><B>Note:</B> It is 
+recommended that you print or bookmark this page before installing the 
+components listed below. This page does not automatically display after a 
+machine restart.<BR></P>
+<OL 
+style="FONT-WEIGHT: bold; FONT-SIZE: 10pt; MARGIN: 0.5em 0em 0em 2em; FONT-FAMILY: Verdana">
+<LI style="MARGIN-BOTTOM: 0.5em">
+<H2><A name=download>Securing Your Machine for Installation</A></H2><BR>
+<TABLE ID="Table1">
+<TBODY>
+<TR>
+<TH>Securing Your Machine for Installation </SPAN></TH></TR>
+<TR>
+<TD>
+<OL style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0in" type=1>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt"><B>Download</B> and <B>save</B> the <B>latest security 
+updates</B> from <A style="COLOR: #0000ff" 
+href="http://msdn.microsoft.com/vstudio/security/" 
+target=_TOP>http://msdn.microsoft.com/vstudio/security/</A> to your desktop. 
+<SPAN style="FONT-SIZE: 10pt">
+<BLOCKQUOTE><B>Note:</B> Do not install the security updates now. You will be 
+manually applying these security updates in a later stage of the instructions 
+below. If you have problems, please see your system 
+administrator.</BLOCKQUOTE></SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt"><B>Obtain</B> your <B>Windows operating system 
+CD/DVD</B>.</SPAN> <SPAN style="FONT-SIZE: 10pt">
+<BLOCKQUOTE><B>Note:</B> Please contact your system administrator if you 
+installed the Windows operating system over the network and you do not have the 
+Windows operating system CD/DVD readily available.</BLOCKQUOTE></SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt"><B>Convert</B> your FAT16 or FAT32 file system to NTFS.
+Setup <B>requires</B> NTFS on Windows Server 2003 and later. For all other operating systems, 
+NTFS is <B>strongly recommended</B> but not required to continue setup. 
+</SPAN><SPAN style="FONT-SIZE: 10pt">
+<BLOCKQUOTE><B>Note:</B> Running FrontPage Server Extensions on a FAT file 
+system allows any anonymous user to author on your web server. Go to <A 
+style="COLOR: #0000ff" 
+href="http://www.microsoft.com/technet/treeview/default.asp?url=/TechNet/prodtechnol/winntas/tips/techrep/filesyst.asp#K" 
+target=_TOP>http://www.microsoft.com/technet/treeview/default.asp?url=/TechNet/prodtechnol/winntas/tips/techrep/filesyst.asp#K 
+</A>for additional information on converting file systems. </BLOCKQUOTE></SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt"><B>Disconnect</B> your machine from <B>ALL</B> network 
+connections.</SPAN> <SPAN style="FONT-SIZE: 10pt">
+<BLOCKQUOTE><B>Note:</B> If you do not disconnect, your machine could be 
+susceptible to viruses between installing the components and applying the latest 
+security updates.</BLOCKQUOTE></SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt"><B>Remove</B> the <B>Visual Studio CD/DVD</B> from your 
+machine now.</SPAN> </LI></OL></SPAN></TD></TR></TBODY></TABLE><BR>
+<LI style="MARGIN-BOTTOM: 0.5em">
+<H2><A name=install>Install Internet Information Services (IIS)</A> </H2><BR>
+<TABLE ID="Table2">
+<TBODY>
+<TR>
+<TH>To install Internet Information Services <B><SPAN style="FONT-SIZE: 10pt">on 
+Windows 2000</SPAN></B></TH></TR>
+<TR>
+<TD>
+<OL style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0in" type=1>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">On the <B>Start</B> menu, choose <B>Run</B>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <B>Open</B> dialog box, type <B>appwiz.cpl</B>, 
+and then click <B>OK</B> to open the <B>Add/Remove Programs</B> dialog box; you 
+can also access this dialog box from the Control Panel.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <B>Add/Remove Programs</B> dialog box, choose 
+<B>Add/Remove Windows Components</B> on the left side of the dialog box.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <B>Windows Component Wizard</B>, check 
+<B>Internet Information Services (IIS)</B>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Choose <B>Next</B> to begin installing IIS.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Click <B>Finish</B> when installation is 
+complete.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Close the <B>Add/Remove Programs</B> dialog box.</SPAN> 
+</LI></OL></TD></TR></TBODY></TABLE><BR>
+<TABLE ID="Table3">
+<TBODY>
+<TR>
+<TH>To install Internet Information Services <B><SPAN style="FONT-SIZE: 10pt">on 
+Windows XP</SPAN></B></TH></TR>
+<TR>
+<TD>
+<OL style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0in" type=1>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">On the <B>Start</B> menu, choose <B>Run</B>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <B>Open</B> dialog box, type <B>appwiz.cpl</B>, 
+and then click <B>OK</B> to open the <B>Add/Remove Programs</B> dialog box; you 
+can also access this dialog box from the Control Panel.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <B>Add/Remove Programs</B> dialog box, choose 
+<B>Add/Remove Windows Components</B> on the left side of the dialog box.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <B>Windows Component Wizard</B>, check 
+<B>Internet Information Services (IIS)</B>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Choose <B>Next</B> to begin installing IIS.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Click <B>Finish</B> when installation is 
+complete.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Close the <B>Add/Remove Programs</B> dialog box.</SPAN> 
+</LI></OL></TD></TR></TBODY></TABLE><BR>
+<TABLE ID="Table4">
+<TBODY>
+<TR>
+<TH>To install Internet Information Services <B><SPAN style="FONT-SIZE: 10pt">on 
+Windows Server 2003</SPAN></B></TH></TR>
+<TR>
+<TD>
+<OL style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0in" type=1>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">On the <B>Start</B> menu, click <B>Run</B>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <STRONG>Open</STRONG> box type 
+<STRONG>appwiz.cpl</STRONG>, and then click <STRONG>OK </STRONG>The <STRONG>Add 
+or Remove Programs</STRONG> dialog box appears; you can also access this dialog 
+box from the Control Panel.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Click <STRONG>Add/Remove Windows Components.</STRONG> 
+The Windows Component Wizard appears. </SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <STRONG>Components </STRONG>select the 
+<STRONG>Application Server</STRONG> checkbox, and then click 
+<STRONG>Details</STRONG>. Note: you will get warnings if you have not converted 
+your drive to NTFS. For details please refer to <STRONG>Securing Your Machine 
+for Installation</STRONG> section above.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <STRONG>Application Server</STRONG> dialog box, 
+select the <STRONG>ASP .NET</STRONG> checkbox Note: <STRONG>Do not</STRONG> 
+click <STRONG>OK.</STRONG> </SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Select the <STRONG>Internet Information Services 
+(IIS)</STRONG> checkbox, and then click <STRONG>Details</STRONG>. </SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <STRONG>Internet Information Services 
+(IIS)</STRONG> dialog box, select the <STRONG>FrontPage 2002 Server 
+Extensions</STRONG> checkbox, and then click <STRONG>OK</STRONG>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <STRONG>Application Server</STRONG> dialog box, 
+click <STRONG>OK</STRONG>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <STRONG>Windows Component Wizard</STRONG> click 
+<STRONG>Next</STRONG>. This will install required components. Note :-- you need 
+have your Windows Server 2003 CD available.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">When installation is complete. Click 
+<STRONG>Finish</STRONG>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Close the <STRONG>Add/Remove Programs</STRONG> dialog 
+box.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Follow the instructions to <STRONG>Configure FrontPage 
+Server Extensions (FPSE)</STRONG> below.</SPAN> 
+</LI></OL></TD></TR></TBODY></TABLE><BR>
+<LI style="MARGIN-BOTTOM: 0.5em">
+<H2><A name=installFPSE>Install FrontPage Server Extensions (FPSE)</A> </H2><BR>
+<TABLE ID="Table5">
+<TBODY>
+<TR>
+<TH>To install FrontPage Server Extensions <B><SPAN style="FONT-SIZE: 10pt">on 
+Windows 2000</SPAN></B></TH></TR>
+<TR>
+<TD>
+<OL style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0in" type=1>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">On the <B>Start</B> menu, choose <B>Run</B>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <B>Open</B> dialog box, type <B>appwiz.cpl</B>, 
+and then click <B>OK</B> to open the <B>Add/Remove Programs</B> dialog 
+box.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <B>Add/Remove Programs</B> dialog box, choose 
+<B>Add/Remove Windows Components</B> on the left side of the dialog box.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <B>Windows Component Wizard</B>, select 
+<B>Internet Information Services (IIS)</B>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">With <B>Internet Information Services (IIS)</B> 
+selected, choose <STRONG>Details</STRONG>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">If <B>FrontPage 2000 Server Extensions</B> are not 
+already selected, check the check box.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Click <STRONG>OK</STRONG> to close the <B>Internet 
+Information Services (IIS)</B> box.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Choose <B>Next</B> to begin installing.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">After installation completes, click <B>Finish</B> to 
+close the <B>Windows Component Wizard</B>.</SPAN> 
+</LI></OL></TD></TR></TBODY></TABLE><BR>
+<TABLE ID="Table6">
+<TBODY>
+<TR>
+<TH>To install FrontPage Server Extensions <B><SPAN style="FONT-SIZE: 10pt">on 
+Windows XP</SPAN></B></TH></TR>
+<TR>
+<TD>
+<OL style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0in" type=1>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">On the <B>Start</B> menu, choose <B>Run</B>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <B>Open</B> dialog box, type <B>appwiz.cpl</B>, 
+and then click <B>OK</B> to open the <B>Add/Remove Programs</B> dialog 
+box.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <B>Add/Remove Programs</B> dialog box, choose 
+<B>Add/Remove Windows Components</B> on the left side of the dialog box.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <B>Windows Component Wizard</B>, select 
+<B>Internet Information Services (IIS)</B>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">With <B>Internet Information Services (IIS)</B> 
+selected, choose <STRONG>Details</STRONG>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">If <B>FrontPage 2000 Server Extensions</B> are not 
+already selected, check the check box.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Click <STRONG>OK</STRONG> to close the <B>Internet 
+Information Services (IIS)</B> box.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Choose <B>Next</B> to begin installing.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">After installation completes, click <B>Finish</B> to 
+close the <B>Windows Component Wizard</B>.</SPAN> 
+</LI></OL></TD></TR></TBODY></TABLE><BR>
+<TABLE ID="Table7">
+<TBODY>
+<TR>
+<TH>To install FrontPage Server Extensions <B><SPAN style="FONT-SIZE: 10pt">on 
+Windows Server 2003</SPAN></B></TH></TR>
+<TR>
+<TD>
+<OL style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0in" type=1>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">On the <B>Start</B> menu, click <B>Run</B>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <STRONG>Open</STRONG> box type 
+<STRONG>appwiz.cpl</STRONG>, and then click <STRONG>OK </STRONG>The <STRONG>Add 
+or Remove Programs</STRONG> dialog box appears; you can also access this dialog 
+box from the Control Panel.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Click <STRONG>Add/Remove Windows Components.</STRONG> 
+The Windows Component Wizard appears. </SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <STRONG>Components </STRONG>select the 
+<STRONG>Application Server</STRONG> checkbox, and then click 
+<STRONG>Details</STRONG>. Note: you will get warnings if you have not converted 
+your drive to NTFS. For details please refer to <STRONG>Securing Your Machine 
+for Installation</STRONG> section above.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <STRONG>Application Server</STRONG> dialog box, 
+select the <STRONG>ASP .NET</STRONG> checkbox Note: <STRONG>Do not</STRONG> 
+click <STRONG>OK.</STRONG> </SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Select the <STRONG>Internet Information Services 
+(IIS)</STRONG> checkbox, and then click <STRONG>Details</STRONG>. </SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <STRONG>Internet Information Services 
+(IIS)</STRONG> dialog box, select the <STRONG>FrontPage 2002 Server 
+Extensions</STRONG> checkbox, and then click <STRONG>OK</STRONG>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <STRONG>Application Server</STRONG> dialog box, 
+click <STRONG>OK</STRONG>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <STRONG>Windows Component Wizard</STRONG> click 
+<STRONG>Next</STRONG>. This will install required components. Note :-- you need 
+have your Windows Server 2003 CD available.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">When installation is complete. Click 
+<STRONG>Finish</STRONG>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Close the <STRONG>Add/Remove Programs</STRONG> dialog 
+box.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Follow the instructions to <STRONG>Configure FrontPage 
+Server Extensions (FPSE)</STRONG> below.</SPAN> 
+</LI></OL></TD></TR></TBODY></TABLE><BR>
+<LI style="MARGIN-BOTTOM: 0.5em">
+<H2>Configure FrontPage Server Extensions (FPSE) </H2><BR>
+<TABLE ID="Table8">
+<TBODY>
+<TR>
+<TH>To configure FrontPage Server Extensions on Windows 2000</TH></TR>
+<TR>
+<TD>
+<OL style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0in" type=1>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">On the <B>Start</B> menu, choose <B>Run</B>. </SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <B>Open</B> dialog box, type <B>compmgmt.msc 
+\s</B>, and then click <B>OK</B> to open the <B>Computer Management</B> dialog 
+box.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the Computer Management dialog box, expand 
+<B>Services and Applications</B>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Under <B>Services and Applications</B>, expand 
+<B>Internet Information Services</B>. 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Right-click <B>Default Web Site</B>, choose <B>All 
+Tasks</B>, and then choose <B>Configure Server Extensions</B>.</SPAN> <SPAN 
+style="FONT-SIZE: 10pt">
+<BLOCKQUOTE>
+<P><B>Note:</B> You can skip to <A href="#secure">Install Security Updates</A> 
+below if the Configure Server Extensions menu command is missing.   If the 
+Configure Server Extensions menu command is missing, then FrontPage Server 
+Extensions are already installed and configured.</P></BLOCKQUOTE></SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Choose <B>Next</B> on the first page of the <B>Server 
+Extensions Configuration Wizard</B>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Choose <B>Yes</B> in the <B>Warning</B> dialog box. 
+</SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Choose <B>No</B> for configuring the mail server 
+settings, and then choose <B>Next</B>. </SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Choose <B>Finish</B>.</SPAN> 
+</LI></OL></SPAN></TD></TR></TBODY></TABLE><BR>
+<TABLE ID="Table9">
+<TBODY>
+<TR>
+<TH>To configure FrontPage Server Extensions on Windows XP</TH></TR>
+<TR>
+<TD>
+<OL style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0in" type=1>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">On the <B>Start</B> menu, choose <B>Run</B>. </SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <B>Open</B> dialog box, type <B>compmgmt.msc 
+\s</B>, and then click <B>OK</B> to open the <B>Computer Management</B> dialog 
+box.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <B>Computer Management</B> dialog box, expand 
+<B>Services and Applications</B>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Under <B>Services and Applications</B>, expand 
+<B>Internet Information Services</B>. 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Under the <B>Internet Information Services</B>, expand 
+<B>Web sites</B>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Right-click <B>Default Web Site</B>, choose <B>All 
+Tasks</B>, and then choose <B>Configure Server Extensions</B>.</SPAN> <SPAN 
+style="FONT-SIZE: 10pt">
+<BLOCKQUOTE>
+<P><B>Note:</B> You can skip to <A href="#secure">Install Security Updates</A> 
+below if the Configure Server Extensions menu command is missing. If the 
+Configure Server Extensions menu command is missing, then FrontPage Server 
+Extensions are already installed and configured.</P></BLOCKQUOTE></SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Choose <B>Next</B> on the first page of the <B>Server 
+Extensions Configuration Wizard</B>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Choose <B>Yes</B> in the <B>Warning</B> dialog box. 
+</SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Choose <B>No</B> for configuring the mail server 
+settings, and then choose <B>Next</B>. </SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Choose <B>Finish</B>.</SPAN> 
+</LI></OL></SPAN></TD></TR></TBODY></TABLE><BR>
+<TABLE ID="Table10">
+<TBODY>
+<TR>
+<TH>To configure FrontPage Server Extensions on Windows Server 2003 
+2003</TH></TR>
+<TR>
+<TD>
+<OL style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0in" type=1>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">On the <B>Start</B> menu, choose <B>Run</B>. </SPAN>
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <B>Open</B> dialog box, type <B>compmgmt.msc 
+\s</B>, and then click <B>OK</B> to open the <B>Computer Management</B> dialog 
+box.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">In the <B>Computer Management</B> dialog box, expand 
+<B>Services and Applications</B>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Under <B>Services and Applications</B>, expand 
+<B>Internet Information Services</B>. 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Under the <B>Internet Information Services</B>, expand 
+<B>Web sites</B>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">Right-click <B>Default Web Site</B>, choose <B>All 
+Tasks</B>, and then choose <B>Configure Server Extensions 2002</B>.</SPAN> 
+<LI class=MsoNormal style="MARGIN-TOP: 0in; MARGIN-BOTTOM: 0pt"><SPAN 
+style="FONT-SIZE: 10pt">On the configuration web page <B>Extend virtual server 
+with FrontPage Server Extensions 2002</B>, ensure the Administrator's user name 
+is correct and click <B>Submit</B>.</SPAN> <SPAN style="FONT-SIZE: 10pt">
+<BLOCKQUOTE>
+<P><B>Note:</B> You can skip to <A href="#secure">Install Security Updates</A> 
+below if the Configure Server Extensions menu command is missing. If the 
+Configure Server Extensions menu command is missing, then FrontPage Server 
+Extensions are already installed and 
+configured.</P></BLOCKQUOTE></SPAN></LI></OL></SPAN></TD></TR></TBODY></TABLE><BR>
+<LI style="MARGIN-BOTTOM: 0.5em">
+<H2><A name=secure>Install Security Updates</A></H2>
+<H2><SPAN style="FONT-WEIGHT: 400">Run the security updates you downloaded in 
+step 1, "Download Security Updates", from your desktop.</SPAN><BR> </H2>
+<LI style="MARGIN-BOTTOM: 0.5em">
+<H2>Connect to Network</H2>
+<H2><SPAN style="FONT-WEIGHT: 400">If you disconnected from the network in step 
+2, "Disconnect Network", you can safely reconnect to the network after applying 
+the security updates.</SPAN><BR> </H2>
+<LI style="MARGIN-BOTTOM: 0.5em">
+<H2><A name=return>Return to setup</A></H2>
+<H2><SPAN style="FONT-WEIGHT: 400">You are now ready to return to setup.  Please 
+re-insert CD1 or the DVD of the Visual Studio product you are installing and run 
+setup.</SPAN><BR> </H2></LI></OL></BASEFONT>
+	</SPAN>
+	</body>
+</html>

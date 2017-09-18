@@ -1,0 +1,58 @@
+// LoanLib.idl : IDL source for LoanLib.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (LoanLib.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+
+[
+	uuid(FF8076FE-F48E-464B-BCB2-E84F3262D9E5),
+	version(1.0),
+	helpstring("LoanLib")
+]
+library LoanLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		object,
+		uuid(8834C967-6F12-4AD6-9522-8B4B45748245),
+		dual,
+		oleautomation,
+		helpstring("ILoan Interface"),
+		pointer_default(unique)
+	]
+	interface ILoan : IDispatch
+	{
+		[propget, id(1), helpstring("property OpeningBalance")] HRESULT OpeningBalance([out, retval] double *pVal);
+		[propput, id(1), helpstring("property OpeningBalance")] HRESULT OpeningBalance([in] double newVal);
+		[propget, id(2), helpstring("property Rate")] HRESULT Rate([out, retval] double *pVal);
+		[propput, id(2), helpstring("property Rate")] HRESULT Rate([in] double newVal);
+		[propget, id(3), helpstring("property Payment")] HRESULT Payment([out, retval] double *pVal);
+		[propput, id(3), helpstring("property Payment")] HRESULT Payment([in] double newVal);
+		[propget, id(4), helpstring("property Term")] HRESULT Term([out, retval] short *pVal);
+		[propput, id(4), helpstring("property Term")] HRESULT Term([in] short newVal);
+		[id(5), helpstring("method ComputePayment")] HRESULT ComputePayment([out, retval] double *pVal);
+		[id(6), helpstring("method ComputeRate")] HRESULT ComputeRate([out, retval] double *pVal);
+		[id(7), helpstring("method ComputeOpeningBalance")] HRESULT ComputeOpeningBalance([out, retval] double *pVal);
+		[id(8), helpstring("method ComputeTerm")] HRESULT ComputeTerm([out, retval] short *pVal);
+		[id(9), helpstring("method GetFirstPmtDistribution")] HRESULT GetFirstPmtDistribution([in] double PmtAmt, [out] double *Balance, [out] double *PrinPortion, [out] double *IntPortion, [out, retval] VARIANT_BOOL *pVal);
+		[id(10), helpstring("method GetNextPmtDistribution")] HRESULT GetNextPmtDistribution([in] double PmtAmt, [in, out] double *Balance, [out] double *PrinPortion, [out] double *IntPortion, [out, retval] VARIANT_BOOL *pVal);
+		[propget, id(11), helpstring("property RiskRating")] HRESULT RiskRating([out, retval] BSTR *pVal);
+		[propput, id(11), helpstring("property RiskRating")] HRESULT RiskRating([in] BSTR newVal);
+	};
+
+
+	[
+		uuid(0A7366CB-9628-4D03-AAB7-87C316CE0737),
+		helpstring("Loan Class")
+	]
+	coclass Loan
+	{
+		[default] interface ILoan;
+	};
+};

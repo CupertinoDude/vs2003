@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root xmlns:dt="urn:schemas-microsoft-com:datatypes" xmlns:d2="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?><HTML><HEAD><TITLE>Public Key Cryptography Sample</TITLE><STYLE>
+    .Title{FONT-FAMILY: Verdana;FONT-SIZE: large;COLOR: #808080}
+    </STYLE><STYLE>
+    .Heading{FONT-FAMILY: Verdana;FONT-SIZE: large}
+    </STYLE><STYLE>
+    .SectionBreak{FONT-SIZE: small;MARGIN-BOTTOM: 2em}
+    </STYLE><STYLE>
+    .SmallBreak{FONT-SIZE: small;MARGIN-BOTTOM: 1.5em}
+    </STYLE><STYLE>
+    .Text{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedHeading{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedText{MARGIN-LEFT: 3ex;FONT-FAMILY: Lucida Console;FONT-SIZE: x-small;FONT-WEIGHT: Bold}
+    </STYLE><STYLE>
+    .ListSansBullets {list-style-type: none;FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE></HEAD><BODY><table><tr><td><h2 class="Title">Public Key Cryptography Sample</h2></td><td valign="baseline" class="Text">
+               
+              
+                  (Console Application)
+                </td></tr></table><p class="Text">
+    This document contains the release information for the .NET Framework PublicKey sample. You will find the following sections below: 
+    </p><ul class="Text"><li><a href="#_Sample_Overview">Overview</a></li><li><a href="#_Sample_Topics">Topics</a></li><li><a href="#_Location_of_Sample">Location</a></li><li><a href="#_Building_the_Sample">Building the sample</a></li><li><a href="#_Running_the_Sample">Running the sample</a></li><li><a href="#_sdkvars">Notes</a></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Overview" />
+    Overview
+    </h4><p class="Text">
+This sample demonstrates how public key encryption can be used to securely 
+exchange messages between 3 entities.  The messages are encrypted using a 
+symmetric algorithm (RC2) and then the RC2 key is encrypted using an asymmetric 
+algorithm (RSA). Asymmetric cryptographic algorithms, also known as public-key algorithms, require that each entity 
+maintains a pair of related keys: a private key and a public key. Both keys are 
+unique to the entity. The public key can be made available to anyone; this key 
+is used for encoding data to be sent to a receiver. The private key must be kept 
+private by the receiver; this key is used for decoding messages encoded using 
+the receiver's public key.
+</p><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Topics" />
+  Topics
+  </h4><p class="Text">
+  The following bullets briefly describe the classes and technologies used by this sample.
+  </p><ul class="Text"><li><b>Security.Cryptography - </b><ul class="Text"><li><b>RSACryptoServiceProvider - </b>      
+      The .NET implementation of RSA, which is an asymmetric (public key) algorithm. RSA is used to encrypt the RC2 key to be sent with the encrypted message.
+      </li></ul><ul class="Text"><li><b>RC2CryptoServiceProvider - </b>      
+      A symmetric encryption algorithm which is used to encrypt the message text.
+      </li></ul><ul class="Text"><li><b>ICryptoTransform - </b>      
+      This interface defines the basic operations of cryptographic transformations.
+      </li></ul><ul class="Text"><li><b>CryptoStream - </b>      
+      A stream used to encrypt data which is fed into a memorystream.
+      </li></ul></li><li><b>I/O - </b><ul class="Text"><li><b>MemoryStream - </b>      
+      The memory stream is used to temporarily store the output of encryption.
+      </li></ul></li><li><b>Text - </b><ul class="Text"><li><b>Encoding - </b>      
+      The Encoding.Unicode class is used to convert strings to byte arrays and vice versa.
+      </li></ul></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Location_of_Sample" />
+    Location
+    </h4><p class="Text">
+    This sample is located in the <a href="." title="Jump to Folder" target="_blank">Technologies\Security\PublicKeyCryptography</a> subdirectory of the .NET Framework SDK samples directory.
+    </p><p class="FixedHeading">
+    For Example:
+      <p class="FixedText">
+      C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Security\PublicKeyCryptography</p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Building_the_Sample" />
+    Building the Sample
+    </h4><p class="Text">
+    In order to properly build and run this sample, the following steps need to be performed.
+    </p><p class="Text">
+      Type <b>BUILD.bat</b> from the command line.
+      <p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Security\PublicKeyCryptography\VB&gt;Build.bat
+      </p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Running_the_Sample" />
+    Running the Sample
+    </h4><p class="Text">
+    In order to run this sample, follow the instructions listed below.
+    </p><span class="Text"><ul class="Text"><li><P>
+      This sample requires the Windows 2000 High Encryption Pack.  
+      Additional information and downloads of the high encryption pack are available 
+      on the Microsoft web site:
+      </P><A href="http://www.microsoft.com/WINDOWS2000/downloads/recommended/encryption/">http://www.microsoft.com/WINDOWS2000/downloads/recommended/encryption/</A></li></ul><ul class="Text"><li>
+      Type <b>PublicKey.exe</b> from the command line
+      <p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Security\PublicKeyCryptography\VB&gt;PublicKey.exe
+      </p></li></ul></span><p class="SectionBreak" /><h4 class="Heading"><a name="_sdkvars" />
+    Notes
+    </h4><p class="Text">
+    For the .Net Framework samples to function properly, your Path, Include, and Lib environment variables must be set correctly. 
+    In many cases, the SDK install program updates these environment variables for you. However, if you installed the .Net Framework SDK 
+    using Visual Studio .NET, or unselected "register environment variables" during setup, these environment variables will not be updated. 
+    You can set the Path, Include and Lib environment variables by running SDKVars.bat, located in the <i>&lt;SDKRoot&gt;\Bin</i> directory. 
+    SDKVars.bat must be executed in every command shell.
+    </p></BODY></HTML></root>

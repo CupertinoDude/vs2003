@@ -1,0 +1,257 @@
+<VisualStudioProject>
+    <EVisualBasic
+        ProjectType = "Local"
+        ProductVersion = "7.10.2234"
+        SchemaVersion = "1.0"
+        ProjectGuid = "{4674692E-2F6F-4422-9E2E-0E9348719FBE}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "Roman Legion VB PPC"
+                AssemblyOriginatorKeyFile = ""
+                AssemblyOriginatorKeyMode = "None"
+                DelaySign = "false"
+                OutputType = "WinExe"
+                OptionCompare = "Binary"
+                OptionExplicit = "On"
+                OptionStrict = "Off"
+                OutputFileFolder = "\Program Files\.NETCF Samples\VB\Roman Legion\"
+                RootNamespace = "Roman_Legion_VB_PPC"
+                StartupObject = ""
+            >
+                <Platform Name = "Pocket PC" />
+                <Config
+                    Name = "Debug|Pocket PC"
+                    BaseAddress = "0"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "true"
+                    DefineTrace = "true"
+                    DebugSymbols = "true"
+                    IncrementalBuild = "false"
+                    Optimize = "false"
+                    OutputPath = "bin\Debug\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+                <Config
+                    Name = "Release|Pocket PC"
+                    BaseAddress = "0"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "false"
+                    DefineTrace = "true"
+                    DebugSymbols = "false"
+                    IncrementalBuild = "false"
+                    Optimize = "false"
+                    OutputPath = "bin\Release\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Platform = "Pocket PC"
+                    Name = "System"
+                    AssemblyName = "System"
+                />
+                <Reference
+                    Platform = "Pocket PC"
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                />
+                <Reference
+                    Platform = "Pocket PC"
+                    Name = "System.Windows.Forms"
+                    AssemblyName = "System.Windows.Forms"
+                />
+                <Reference
+                    Platform = "Pocket PC"
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                />
+                <Reference
+                    Platform = "Pocket PC"
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                />
+                <Reference
+                    Platform = "Pocket PC"
+                    Name = "mscorlib"
+                    AssemblyName = "mscorlib"
+                />
+                <Reference
+                    Platform = "Pocket PC"
+                    Name = "Microsoft.VisualBasic"
+                    AssemblyName = "Microsoft.VisualBasic"
+                />
+                <Reference
+                    Platform = "Pocket PC-Designer"
+                    Name = "System.CF.Design"
+                    AssemblyName = "System.CF.Design"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Pocket PC-Designer"
+                    Name = "System.CF.Windows.Forms"
+                    AssemblyName = "System.CF.Windows.Forms"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Pocket PC-Designer"
+                    Name = "System.CF.Drawing"
+                    AssemblyName = "System.CF.Drawing"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Pocket PC-Designer"
+                    Name = "System"
+                    AssemblyName = "System"
+                    Private = "False"
+                />
+            </References>
+            <Imports>
+                <Import Namespace = "Microsoft.VisualBasic" />
+                <Import Namespace = "System" />
+                <Import Namespace = "System.Collections" />
+                <Import Namespace = "System.Configuration" />
+                <Import Namespace = "System.Data" />
+                <Import Namespace = "System.Diagnostics" />
+                <Import Namespace = "System.Drawing" />
+                <Import Namespace = "System.Windows.Forms" />
+            </Imports>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "Arrow.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "AssemblyInfo.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Barbarian.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "BaseObj.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Game.vb"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Game.resx"
+                    DependentUpon = "Game.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Legion.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Roman.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Score.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Images\Arrow.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\Arrow1.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\Barbarian.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\PPCBackground.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\PPCPause.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\PPCSplash.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\PPCWon.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanA0.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanA1.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanA2.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanA3.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanA4.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanA5.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanB0.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanB1.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanB2.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanB3.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanB4.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanB5.bmp"
+                    BuildAction = "Content"
+                />
+            </Include>
+        </Files>
+    </EVisualBasic>
+</VisualStudioProject>
+

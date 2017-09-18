@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META content="Microsoft Visual Studio 7.0" name="GENERATOR">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet"></HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">ThreadPool</TD>
+					</TR>
+					<TR>
+						<TD>Displays the common language runtime&nbsp;threadpool state.</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!ThreadPool</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">None</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>0:001&gt; !ThreadPool
+CPU utilization 9%
+Worker Thread: Total: 2 Running: 2 Idle: 2 MaxLimit: 50 MinLimit: 2
+Work Request in Queue: 0
+--------------------------------------
+Number of Timers: 0
+--------------------------------------
+Completion Port Thread: Total: 4 Free: 1 MaxFree: 4 CurrentLimit: 4 MaxLimit: 50 MinLimit: 2
+						
+										</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Comments</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<P><FONT color="black">Describes the state of all managed threads in the process.</FONT></P>
+							<P>
+								<TABLE id="Table2" height="511" cellSpacing="1" cellPadding="1" width="706" border="1">
+									<TR>
+										<TD width="137"><STRONG>Description</STRONG></TD>
+										<TD><STRONG>Sample Value</STRONG></TD>
+										<TD width="116"><STRONG><FONT color="#ff00ff">Corresponding threads in !Threads table below</FONT></STRONG></TD>
+										<TD><STRONG>Comment</STRONG></TD>
+									</TR>
+									<TR>
+										<TD width="137">CPU Utilization</TD>
+										<TD>9%</TD>
+										<TD width="116">N/A</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD width="137"></TD>
+										<TD></TD>
+										<TD width="116"></TD>
+										<TD></TD>
+									</TR>
+									<TR>
+										<TD width="137"><EM><STRONG>Worker Thread:</STRONG></EM></TD>
+										<TD>&nbsp;</TD>
+										<TD width="116">&nbsp;</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD width="137">Total</TD>
+										<TD>2</TD>
+										<TD width="116"><FONT color="#ff00ff">9, 13</FONT></TD>
+										<TD>Total number of active&nbsp;worker threads</TD>
+									</TR>
+									<TR>
+										<TD width="137">Running</TD>
+										<TD>2</TD>
+										<TD width="116"><FONT color="#ff00ff">9, 13</FONT></TD>
+										<TD>Number of worker threads executing requests</TD>
+									</TR>
+									<TR>
+										<TD width="137">Idle</TD>
+										<TD>2</TD>
+										<TD width="116"><FONT color="#ff00ff">9, 13</FONT></TD>
+										<TD>Number of waiting worker threads</TD>
+									</TR>
+									<TR>
+										<TD width="137">
+											MaxLimit</TD>
+										<TD>50</TD>
+										<TD width="116">N/A</TD>
+										<TD>
+											<P>Maximum number of worker threads per CPU * number of CPUs</P>
+											<P>This is configurable in machine.config under "processmodel, maxWorkerThreads"</P>
+										</TD>
+									</TR>
+									<TR>
+										<TD width="137">
+											MinLimit</TD>
+										<TD>2</TD>
+										<TD width="116">N/A</TD>
+										<TD>Minimum number of available worker threads&nbsp;required to start executing a 
+											request.</TD>
+									</TR>
+									<TR>
+										<TD width="137"></TD>
+										<TD></TD>
+										<TD width="116"></TD>
+										<TD></TD>
+									</TR>
+									<TR>
+										<TD width="137">Timers</TD>
+										<TD>0</TD>
+										<TD width="116">N/A</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD width="137"></TD>
+										<TD></TD>
+										<TD width="116"></TD>
+										<TD></TD>
+									</TR>
+									<TR>
+										<TD width="137"><EM><STRONG>Completion Port Thread:</STRONG></EM></TD>
+										<TD>&nbsp;</TD>
+										<TD width="116">&nbsp;</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD width="137">Total</TD>
+										<TD>4</TD>
+										<TD width="116"><FONT color="#ff00ff">1, 8, 4, 11</FONT></TD>
+										<TD>Total number of active completion port threads.</TD>
+									</TR>
+									<TR>
+										<TD width="137">Free</TD>
+										<TD>1</TD>
+										<TD width="116"><FONT color="#ff00ff">8</FONT></TD>
+										<TD>Number of free completion port threads.</TD>
+									</TR>
+									<TR>
+										<TD width="137" height="22">Max Free</TD>
+										<TD height="22">4</TD>
+										<TD width="116" height="22">N/A</TD>
+										<TD height="22"><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD width="137">Current Limit</TD>
+										<TD>4</TD>
+										<TD width="116">N/A</TD>
+										<TD></TD>
+									</TR>
+									<TR>
+										<TD width="137">Max Limit</TD>
+										<TD>50</TD>
+										<TD width="116">N/A</TD>
+										<TD>Maximum number of completion port threads per CPU * number of CPUs.</TD>
+									</TR>
+									<TR>
+										<TD width="137">Min Limit</TD>
+										<TD>2</TD>
+										<TD width="116">N/A</TD>
+										<TD>Minimum number of available&nbsp;completion port&nbsp;threads&nbsp;required to 
+											start executing a request.</TD>
+									</TR>
+								</TABLE>
+								<BR>
+								<table>
+									<tr>
+										<td class="windbgout">
+											<pre>
+0:001&gt; !threads
+ThreadCount: 6
+UnstartedThread: 0
+BackgroundThread: 6
+PendingThread: 0
+DeadThread: 0
+                             PreEmptive   GC Alloc               Lock     
+       ID ThreadOBJ    State     GC       Context       Domain   Count APT Exception
+  1    70 00150c98   200a220 Enabled  010a513c:010a6228 001a57b8     1 MTA
+  8   e5c 0015e338      b220 Enabled  00000000:00000000 00150718     0 MTA (Finalizer)
+  9   e90 00164ba8   1800220 Enabled  0108c3cc:0108e1f0 00150718     0 MTA (Threadpool Worker)
+  4   4cc 001ad5f0   2000220 Enabled  010abc64:010ac228 001a57b8     1 MTA
+ 11   e38 001d6598   2000220 Enabled  051a69e4:051a6fa8 001a57b8     1 MTA
+ 13   98c 0020e8b8   1800220 Enabled  0519f574:051a0fa8 00150718     0 MTA (Threadpool Worker)</pre>
+										</td>
+									</tr>
+								</table>
+							</P>
+							<P><FONT color="#ff00ff"></FONT>&nbsp;</P>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

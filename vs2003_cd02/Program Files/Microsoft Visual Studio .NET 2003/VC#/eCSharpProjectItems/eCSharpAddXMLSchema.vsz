@@ -1,0 +1,8 @@
+VSWIZARD 7.0
+Wizard=VsWizard.VsWizardEngine.7.1
+Param="WIZARD_NAME = CSharpAddXMLSchema"
+Param="WIZARD_UI = FALSE"
+Param="PROJECT_TYPE = csdproj"
+Param="SCRIPT_COMMON_PROJECT_TYPE = CSPROJ"
+Param="RELATIVE_PATH = VC#Wizards"
+Param="FRAMEWORK = {2AEFF50A-54C2-4231-AF49-4261AB717E34}"

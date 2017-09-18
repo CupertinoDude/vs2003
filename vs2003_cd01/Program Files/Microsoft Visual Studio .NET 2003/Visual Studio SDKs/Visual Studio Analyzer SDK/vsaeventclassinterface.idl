@@ -1,0 +1,145 @@
+//-----------------------------------------------------------------------------
+// Microsoft VSEE
+//
+// Microsoft Confidential
+// Copyright 1995-2000 Microsoft Corporation. All Rights Reserved.
+//
+// @doc EXTERNAL
+// @module VSAEventClass.idl-IDL source for VS Analyzer Event Class (for LCE) |
+//
+//-----------------------------------------------------------------------------
+
+// Includes -------------------------------------------------------------------
+
+#ifndef _VSAEventClassInterface_IDL_
+#define _VSAEventClassInterface_IDL_
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+// Types ----------------------------------------------------------------------
+
+typedef 
+[
+	uuid(6c736d7D-1652-40f4-8A8F-22838B1F9839),
+	helpstring("Analyzer Event Alert")
+]
+enum EventAlert
+{
+	eAlertConnectedMachineEventsLost = 0,
+	eAlertSubscriberError
+} eEventAlert;
+
+
+typedef 
+[
+	uuid(6c736d7D-1652-40f5-8A8F-22838B1F9839),
+	helpstring("Analyzer Event Alert Severity")
+]
+enum EventAlertSeverity
+{
+	eAlertSeverityCatastrophic = 0,
+	eAlertSeverityError,
+	eAlertSeverityWarning,
+	eAlertSeverityInformation
+} eEventAlertSeverity;
+
+
+// Interfaces -----------------------------------------------------------------
+
+//----------------------------------------------------------------------------- 
+// Name: IVSAnalyzerEventClass
+// 
+// @interface IVSAnalyzerEventClass |
+// Visual Studio Analyzer Event Interface for publishing Analyzer events.
+// 
+// @base public | IUnknown 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736dFA-0A13-11d3-9667-00105AA316F7),
+	version(1.0),
+	helpstring("Visual Studio Analyzer Event Class Interface")
+]
+interface IVSAnalyzerEventClass : IUnknown
+{
+	// @meth HRESULT | DebugBeginSession | BeginSession notification.
+	[helpstring ("method DebugBeginSession")]
+	HRESULT DebugBeginSession( 
+		[in] int nMachineId,
+		[in] BSTR guidSourceID,
+		[in] BSTR strSessionName
+	);
+
+	// @meth HRESULT | DebugEndSession | End session notification.
+	[helpstring ("method DebugEndSession")]
+	HRESULT DebugEndSession( 
+		[in] int nMachineId,
+		[in] BSTR guidSourceID,
+		[in] BSTR strSessionName
+	);
+
+	// @meth HRESULT | DebugFireEventObject | Fire event object into subscribers.
+	[helpstring ("method DebugFireEventObject")]
+	HRESULT DebugFireEventObject(
+		[in] IUnknown * punkEventObject
+	);
+
+	// @meth HRESULT | DebugEventAlert | Alert event message (extraneous information)
+	[helpstring ("method DebugEventAlert")]
+	HRESULT DebugEventAlert(
+		[in] eEventAlert eventAlert,
+		[in] BSTR bstrDescription,
+		[in] eEventAlertSeverity eventAlertSev
+	);
+};
+
+
+//----------------------------------------------------------------------------- 
+// Name: ISystemDebugRuntimeVariableChangeNotify
+// 
+// @interface ISystemDebugRuntimeVariableChangeNotify |
+// Visual Studio Analyzer Event Interface for publishing Analyzer 
+// runtime variable changes.
+// 
+// @base public | IUnknown 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736dD2-1E87-11d3-966A-00105AA316F7),
+	version(1.0),
+	helpstring("Visual Studio Analyzer Runtime Variable Change Notification Interface")
+]
+interface ISystemDebugRuntimeVariableChangeNotify : IUnknown
+{
+	[helpstring ("method RuntimeVariableChangeNotify")]
+	HRESULT RuntimeVariableChangeNotify(
+		[in] BSTR strComponentID,
+		[in] BSTR strSessionName,
+		[in] BSTR bstrRuntimeVariableName,
+		[in] BSTR bstrRuntimeVariableValue
+		);
+};
+
+//----------------------------------------------------------------------------- 
+// Name: ISystemDebugFilterChangeNotify
+// 
+// @interface ISystemDebugFilterChangeNotify |
+// Visual Studio Analyzer Event Interface for publishing Analyzer 
+// filter changes.  This is fired for each change in the collection
+// filter which may cause state changes in components.
+// 
+// @base public | IUnknown 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736dD4-1E87-11d3-966A-00105AA316F7),
+	version(1.0),
+	helpstring("Visual Studio Analyzer Filter Change Notification Interface")
+]
+interface ISystemDebugFilterChangeNotify : IUnknown
+{
+	[helpstring ("method FilterChangeNotify")]
+	HRESULT FilterChangeNotify(
+		[in] BOOL fRecordingFilterExists
+		);
+};
+
+#endif // _VSAEventClassInterface_IDL_

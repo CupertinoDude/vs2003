@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root xmlns:dt="urn:schemas-microsoft-com:datatypes" xmlns:d2="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><?xml-stylesheet type="text/xsl" href="..\..\readme.xsl"?><HTML><HEAD><TITLE>WinTalk Sample Application</TITLE><STYLE>
+    .Title{FONT-FAMILY: Verdana;FONT-SIZE: large;COLOR: #808080}
+    </STYLE><STYLE>
+    .Heading{FONT-FAMILY: Verdana;FONT-SIZE: large}
+    </STYLE><STYLE>
+    .SectionBreak{FONT-SIZE: small;MARGIN-BOTTOM: 2em}
+    </STYLE><STYLE>
+    .SmallBreak{FONT-SIZE: small;MARGIN-BOTTOM: 1.5em}
+    </STYLE><STYLE>
+    .Text{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedHeading{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedText{MARGIN-LEFT: 3ex;FONT-FAMILY: Lucida Console;FONT-SIZE: x-small;FONT-WEIGHT: Bold}
+    </STYLE><STYLE>
+    .ListSansBullets {list-style-type: none;FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE></HEAD><BODY><table><tr><td><h2 class="Title">WinTalk Sample Application</h2></td><td valign="baseline" class="Text">
+               
+              
+                  (Windows Forms Application)
+                </td></tr></table><p class="Text">
+    This document contains the release information for the .NET Framework WinTalk sample. You will find the following sections below: 
+    </p><ul class="Text"><li><a href="#_Sample_Overview">Overview</a></li><li><a href="#_Sample_Topics">Topics</a></li><li><a href="#_Location_of_Sample">Location</a></li><li><a href="#_Building_the_Sample">Building the sample</a></li><li><a href="#_Running_the_Sample">Running the sample</a></li><li><a href="#_sdkvars">Notes</a></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Overview" />
+    Overview
+    </h4><p class="Text">
+This sample offers a brief introduction to Windows Forms and Sockets including other FCL topics. The sample is a very simple "Sockets Chat" application.
+</p><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Topics" />
+  Topics
+  </h4><p class="Text">
+  The following bullets briefly describe the classes and technologies used by this sample.
+  </p><ul class="Text"><li><b>Windows Forms - </b><ul class="Text"><li><b>Application - </b>      
+      Used by the sample app to implement a message pump.
+      </li></ul><ul class="Text"><li><b>Splitter - </b>
+      Control type that handles splitter semantics. Used in the application to separate the send and receive text frames.
+      </li></ul><ul class="Text"><li><b>Panel - </b>      
+      The Panel control allow you to group controls in a way that allows for flexible organizing, docking, and anchoring of controls on a form.  In this case, the pane is used to house the two text boxes and the splitter.  The status control, on the other hand, is a peer to the panel.
+      </li></ul><ul class="Text"><li><b>TextBox - </b>      
+      Implements two edit controls in the sample. One is read-only for receiving text.
+      </li></ul><ul class="Text"><li><b>Label - </b>      
+      Used to display static status information in the sample.
+      </li></ul><ul class="Text"><li><b>MessageBox - </b>      
+      Used by the sample to relay information about errors and shutdown situations.
+      </li></ul></li><li><b>Networking - </b><ul class="Text"><li><b>IPEndPoint - </b>      
+      This type is used by the sample to encapsulate an IPAddress and port number.
+      </li></ul><ul class="Text"><li><b>IPAddress - </b>      
+      The sample uses this type for useful IPAddress related logic.
+      </li></ul><ul class="Text"><li><b>Dns - </b>      
+      This type can be used to get an IPAddress from a DNS name.
+      </li></ul><ul class="Text"><li><b>Socket - </b>      
+      Most networking implemented in managed code will be done using an abstraction such as remoting or WebServices.  However, it is possible to implement socket code directly, and this sample uses the Socket class to do this.
+      </li></ul><ul class="Text"><li><b>NetworkStream - </b>      
+      NetworkStream is derived from stream, and uses a socket as its underlying device. This makes it very useful for streaming data over a socket. You can use the NetworkStream type just like you would use any other stream type such as FileStream.
+      </li></ul></li><li><b>I/O - </b><ul class="Text"><li><b>StreamWriter - </b>      
+      The sample uses the StreamWriter to write to the NetworkStream which represents a socket.
+      </li></ul><ul class="Text"><li><b>StreamReader - </b>      
+      The sample uses the StreamReader to read from the  network stream which represents a socket.
+      </li></ul></li><li><b>Garbage Collection - </b><ul class="Text"><li><b>GC - </b>      
+      The GC type is used to surpress finalization of a custom object which has already been disposed.
+      </li></ul></li><li><b>Delegates - </b><ul class="Text"><li><b>MulticastDelegate - </b>      
+      This sample implements a delegate type derived from MulticastDelegate.  This type is used for notifications related to network events.  The sample uses this delegate type to bind the networking type to the form type in the sample.
+      </li></ul></li><li><b>Threading - </b><ul class="Text"><li><b>ThreadPool - </b>      
+      The custom <i>Talker</i> class in this sample handles networking logic and uses a second thread for reading from the network.  However, rather than creating a thread, it simply uses a thread from the CLR's thread pool.  This is the suggested method for multithreading in managed code.
+      </li></ul></li><li><b>Exceptions - </b><ul class="Text"><li><b>IOException - </b>      
+      The StreamReader and StreamWriter types commonly throw the IOException type.  However, to catch and handle these exceptions properly, it is commonly necessary to check the attached exception which reflects the more base error.  In this sample's case this will be the SocketException type.
+      </li></ul><ul class="Text"><li><b>SocketException - </b>      
+      This sample catches the SocketException type and checks the ErrorCode property of the socket for certain expected error types.
+      </li></ul></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Location_of_Sample" />
+    Location
+    </h4><p class="Text">
+    This sample is located in the <a href="." title="Jump to Folder" target="_blank">Applications\WinTalk</a> subdirectory of the .NET Framework SDK samples directory.
+    </p><p class="FixedHeading">
+    For Example:
+      <p class="FixedText">
+      C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Applications\WinTalk</p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Building_the_Sample" />
+    Building the Sample
+    </h4><p class="Text">
+    In order to properly build and run this sample, the following steps need to be performed.
+    </p><p class="Text">
+      Type <b>BUILD.bat</b> from the command line.
+      <p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Applications\WinTalk\VB&gt;Build.bat
+      </p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Running_the_Sample" />
+    Running the Sample
+    </h4><p class="Text">
+    In order to run this sample, follow the instructions listed below.
+    </p><span class="Text"><ul class="Text"><li>
+      Type <b>WinTalk.exe /?</b> from the command line for a complete list of command line options for the utility.
+      <p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Applications\WinTalk\VB&gt;WinTalk.exe /?
+      </p></li></ul><ul class="Text"><li>
+      To try the sample where the client and the server are on the same machine, simply run the application twice with no parameters.
+      <p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Applications\WinTalk\VB&gt;WinTalk.exe 
+      </p></li></ul><ul class="Text"><li>
+	  When specifying a port number, be sure to check if that port isn't already in use by another program. The sample won't run correctly if there is
+	  another program already running on that port. Try using a high portnumber, e.g. somewhere between 5001 and 5150.
+   </li></ul></span><p class="SectionBreak" /><h4 class="Heading"><a name="_sdkvars" />
+    Notes
+    </h4><p class="Text">
+    For the .Net Framework samples to function properly, your Path, Include, and Lib environment variables must be set correctly. 
+    In many cases, the SDK install program updates these environment variables for you. However, if you installed the .Net Framework SDK 
+    using Visual Studio .NET, or unselected "register environment variables" during setup, these environment variables will not be updated. 
+    You can set the Path, Include and Lib environment variables by running SDKVars.bat, located in the <i>&lt;SDKRoot&gt;\Bin</i> directory. 
+    SDKVars.bat must be executed in every command shell.
+    </p></BODY></HTML></root>

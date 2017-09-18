@@ -1,0 +1,125 @@
+<VisualStudioProject>
+    <CSHARP>
+        <Build>
+            <Settings
+                OutputType = "Library"
+                NoStandardLibraries = "false"
+            >
+                <Config
+                    Name = "Debug"
+                    DebugSymbols = "true"
+                    Optimize = "false"
+                    OutputPath = ".\bin\Debug"
+                    EnableUnmanagedDebugging = "true"
+                    DefineConstants = "DEBUG;TRACE"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    DebugSymbols = "false"
+                    Optimize = "true"
+                    OutputPath = ".\bin\Release"
+                    EnableUnmanagedDebugging = "true"
+                    DefineConstants = "TRACE"
+                    WarningLevel = "4"
+					IncrementalBuild = "false"
+                />
+            </Settings>
+        </Build>
+        <Files>
+            <Include/>
+            <Exclude/>
+        </Files>
+    </CSHARP>
+    <ECSHARP ProjectType = "Local">
+        <Build>
+            <Settings
+                OutputType = "Library"
+                OutputFileFolder = "\Windows"
+                NoStandardLibraries = "true"
+            >
+                <Platform Name = "Windows CE" />
+                <Config
+                    Name = "Debug|Windows CE"
+                    DebugSymbols = "true"
+                    MarkExeNativePocketPC = "false"
+                    Optimize = "false"
+                    OutputPath = ".\bin\Debug"
+                    DefineConstants = "DEBUG;TRACE"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release|Windows CE"
+                    DebugSymbols = "false"
+                    MarkExeNativePocketPC = "false"
+                    Optimize = "true"
+                    OutputPath = ".\bin\Release"
+                    DefineConstants = "TRACE"
+                    WarningLevel = "4"
+                    IncrementalBuild = "false"
+                />
+            </Settings>
+            <References>
+			<Reference 
+				Name = "MSCorLib" 
+				Private = "False"
+				Platform = "Windows CE"
+				AssemblyName = "MsCorLib"
+			/>
+			<Reference 
+				Name = "System" 
+				Private = "False"
+				Platform = "Windows CE"
+				AssemblyName = "System"
+			/>
+			<Reference 
+				Name = "System.XML"
+				Private = "False"
+				Platform = "Windows CE"
+				AssemblyName = "System.XML"
+			/>
+			<Reference 
+				Name = "System.Data"
+				Private = "False"
+				Platform = "Windows CE"
+				AssemblyName = "System.Data"
+			/>
+                <Reference
+                    Name = "System.CF.Design"
+                    Private = "False"
+                    Platform = "Windows CE-Designer"
+                    AssemblyName = "System.CF.Design"
+                />
+                	<Reference
+                    		Name = "System.CF.Design.UI"
+                    		Private = "False"	
+                    		Platform = "Windows CE-Designer"
+                    		AssemblyName = "System.CF.Design.UI"
+                	/>
+                <Reference
+                    Name = "System.CF.Windows.Forms"
+                    Private = "False"
+                    Platform = "Windows CE-Designer"
+                    AssemblyName = "System.CF.Windows.Forms"
+                />
+		<Reference
+                	Name = "System.CF.Drawing"
+                	Private = "False"
+                	Platform = "Windows CE-Designer"
+                	AssemblyName = "System.CF.Drawing"
+                />
+		<Reference
+                	Name = "System"
+                	Private = "False"
+                	Platform = "Windows CE-Designer"
+                	AssemblyName = "System"
+                />
+		</References>
+        </Build>
+        <Files>
+            <Include/>
+            <Exclude/>
+        </Files>
+    </ECSHARP>
+</VisualStudioProject>
+

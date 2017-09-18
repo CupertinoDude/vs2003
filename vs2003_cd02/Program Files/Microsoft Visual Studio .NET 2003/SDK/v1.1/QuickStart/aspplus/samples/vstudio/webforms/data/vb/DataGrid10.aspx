@@ -1,0 +1,38 @@
+<%@ Page Language="vb" AutoEventWireup="false" Codebehind="DataGrid10.aspx.vb" Inherits="Data.Vb.DataGrid10"%>
+
+ <html>
+  <head>
+    <meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.0">
+    <meta name="CODE_LANGUAGE" content="Visual Basic .NET">
+  </head>
+  <body>
+
+    <form id="DataGrid10" method="post" runat="server">
+    
+    <h3><font face="Verdana">Deleting a Row of Data</font></h3>
+
+    <span id="Message" EnableViewState="false" runat="server"></span><p></p>
+
+    <ASP:DataGrid id="MyDataGrid" runat="server"
+      Width="800"
+      BackColor="#ccccff"
+      BorderColor="black"
+      ShowFooter="false"
+      CellPadding=3
+      CellSpacing="0"
+      Font-Name="Verdana"
+      Font-Size="8pt"
+      HeaderStyle-BackColor="#aaaadd"
+      DataKeyField="emp_id"
+    >
+
+      <columns>
+         <asp:ButtonColumn Text="Delete Employee" CommandName="Delete"/>
+      </Columns>
+
+    </ASP:DataGrid>
+
+    </form>
+
+  </body>
+ </html>

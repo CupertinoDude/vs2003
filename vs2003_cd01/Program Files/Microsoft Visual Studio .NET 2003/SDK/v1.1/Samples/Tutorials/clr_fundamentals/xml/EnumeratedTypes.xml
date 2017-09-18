@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Enumerated Types">
+	<Paragraph>
+		Enumerated types allow the developer to assign symbolic names to numbers. The symbolic names make it much easier for developers to write, read, and maintain their code because it is easier 		to remember symbolic names versus their numeric counterparts. The code below demonstrates how to declare an enumerated type representing different colors:	</Paragraph>
+	<Paragraph>
+		<Code>
+enum Color {
+   Red,		// assigned the value 0
+   Green,	// assigned the value 1
+   Blue		// assigned the value 2
+}
+		</Code>
+	</Paragraph>
+	<Paragraph>
+		All enumerated types are derived from System.Enum (which is derived from System.ValueType). This means that any enumerated types you define inherit some methods from System.Enum. 			The code below demonstrates some of the operations that you can perform on enumerated types.
+	</Paragraph>
+	<Paragraph>
+		<Sample Caption="Enumerated Types" Image="..\Images\Console.gif">
+			<CSPath>..\Samples\SpecialTypes\EnumeratedTypes\CS</CSPath>
+			<VBPath>..\Samples\SpecialTypes\EnumeratedTypes\VB</VBPath>
+		</Sample>
+	</Paragraph>
+	<Navigation>
+		<Previous>Special Types.xml</Previous>
+		<Next>Arrays.xml</Next>
+	</Navigation>
+</Document>

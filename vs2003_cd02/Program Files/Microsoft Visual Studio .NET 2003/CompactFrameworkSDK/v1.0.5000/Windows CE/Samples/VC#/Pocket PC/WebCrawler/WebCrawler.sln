@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{20D4826A-C6FA-45DB-90F4-C717570B9F32}") = "WebCrawler", "WebCrawler.CSDPROJ", "{37FD7C34-244F-45E3-9EFA-A1BF29F0037F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{37FD7C34-244F-45E3-9EFA-A1BF29F0037F}.Debug.ActiveCfg = Debug|Pocket PC
+		{37FD7C34-244F-45E3-9EFA-A1BF29F0037F}.Debug.Build.0 = Debug|Pocket PC
+		{37FD7C34-244F-45E3-9EFA-A1BF29F0037F}.Debug.Deploy.0 = Debug|Pocket PC
+		{37FD7C34-244F-45E3-9EFA-A1BF29F0037F}.Release.ActiveCfg = Release|Pocket PC
+		{37FD7C34-244F-45E3-9EFA-A1BF29F0037F}.Release.Build.0 = Release|Pocket PC
+		{37FD7C34-244F-45E3-9EFA-A1BF29F0037F}.Release.Deploy.0 = Release|Pocket PC
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

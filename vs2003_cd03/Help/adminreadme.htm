@@ -1,0 +1,401 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<TITLE>Setup Administrator Mode Readme</TITLE>
+		<META content="text/html; charset=Windows-1252" http-equiv="Content-Type">
+		<STYLE> <!-- BODY { BACKGROUND: #ffffff; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; MARGIN: 0px; PADDING: 0px; PADDING-BOTTOM: 12pt }
+	.banner { PADDING-TOP: 6pt; PADDING-BOTTOM: 6pt; PADDING-LEFT: 5px; PADDING-RIGHT: 0px; TEXT-ALIGN: left; FONT-SIZE: 10pt; WIDTH: 100%; BACKGROUND-COLOR: #CC9999; FONT-WEIGHT: bold }
+	.tblpara { MARGIN-LEFT: 5px }
+	H1 { FONT-SIZE: 13.5pt; FONT-WEIGHT: bold; MARGIN-BOTTOM: 6pt; MARGIN-LEFT: 5px; }
+	H2 { FONT-SIZE: 10pt; FONT-WEIGHT: bold; MARGIN-BOTTOM: 6pt; MARGIN-LEFT: 5px; }
+	TABLE { BACKGROUND-COLOR: #FFFFFF; FONT-SIZE: 100%; MARGIN-BOTTOM: 12pt; MARGIN-LEFT: 30px; MARGIN-RIGHT: 30px; BORDER: #CCCCCC 1px solid }
+	TH { FONT-SIZE: 10pt; FONT-WEIGHT: bold; TEXT-ALIGN: left; BACKGROUND: #cccccc; VERTICAL-ALIGN: top; PADDING-TOP: 6pt; PADDING-BOTTOM: 6pt; PADDING-LEFT: 5px }
+	TD { BACKGROUND: #ffffff; VERTICAL-ALIGN: top }
+	P { MARGIN-LEFT: 30px }
+	BLOCKQUOTE.dtBlock {MARGIN: 0.5em 1.5em 0.5em 2em}
+	A:link {COLOR: #0000ff}
+	A:visited {COLOR: #666699}
+	A:hover {COLOR: #3366ff}
+	OL {MARGIN: 0.5em 0em 0em 2em}
+	UL {MARGIN: 0.5em 0em 0em 2em}
+	LI {MARGIN-BOTTOM: 0.5em}
+	UL P {MARGIN-LEFT: 0em}
+	OL P {MARGIN-LEFT: 0em}
+	DL P {MARGIN-LEFT: 0em}
+	UL P.label {MARGIN-TOP: 0.5em}
+	OL P.label {MARGIN-TOP: 0.5em}
+	DL {MARGIN-TOP: 0em; PADDING-LEFT: 1px}
+	DD {MARGIN-BOTTOM: 0em; MARGIN-LEFT: 1.5em}
+	DT {MARGIN-TOP: 0.5em}
+	PRE {MARGIN-BOTTOM: 0.5em; MARGIN-TOP: 0.5em}
+	PRE {COLOR: #000066; FONT: 100% Courier New, Courier, mono}
+	CODE {COLOR: #000066; FONT: 100% Courier New, Courier, mono}
+	.code {COLOR: #000066; FONT: 100% Courier New, Courier, mono}
+	PRE B {LETTER-SPACING: 0.1em}
+	CODE B {LETTER-SPACING: 0.1em}
+	PRE.syntax {BACKGROUND: #cccccc; BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid; BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; COLOR: #000000; CURSOR: text; MARGIN-BOTTOM: 1em; MARGIN-TOP: 1em; PADDING-BOTTOM: 4px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; PADDING-TOP: 4px}
+	OL DIV.tablediv {MARGIN-TOP: 0em}
+	UL DIV.tablediv {MARGIN-TOP: 0em}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+	--></STYLE>
+	</HEAD>
+	<BODY>
+		<DIV class="banner">Microsoft Visual Studio .NET 2003 Prerequisites</DIV>
+		<H1>Setup Administrator Mode Readme</H1>
+		<H2 class="dtH1"><A NAME="introduction"></A>1. Introduction</H2>
+		<P>
+			Microsoft Visual Studio .NET 2003 Prerequisites Setup offers an administrator mode, 
+			which allows deployment to field clients. This mode allows you to initially run 
+			setup to select the components that will be deployed.&nbsp;An .INI file is 
+			created based on this selection, and this file can&nbsp;then be deployed by 
+			running setup in unattend mode, pointing to the generated .INI file. When in 
+			unattend mode, setup runs silently, installing the designated options. If there 
+			are any errors, setup exits silently with failures. This mode allows deployment 
+			through Microsoft Systems Management Server.</P>
+		<P>For information on deploying Visual Studio .NET using SMS, see <a TARGET="_TOP" href="http://support.microsoft.com/?scid=kb;en-us;Q327792">
+				http://support.microsoft.com/?scid=kb;en-us;Q327792</a>.</P>
+		<H2 class="dtH1"><A NAME="introduction"></A>2. Running Administrator Mode Setup</H2>
+		<p>Before running this phase of administrator setup, you <b>must</b> 
+        first run Visual Studio .NET 2003 Prerequisites Setup on your machine.&nbsp; Some 
+        of the components installed by the update are required for Visual Studio 
+        .NET setup to function.</p>
+        <p><b>Note:</b> You must run the setup.exe found in the \setup 
+        subdirectory in order to create an .ini file. The setup.exe file found 
+        at the root of the CD or DVD does not support administrator setup.</p>
+		<TABLE>
+			<TBODY>
+				<TR>
+					<TH>
+						To create the deployment .INI file from CD</TH></TR>
+				<TR>
+					<TD>
+						<OL>
+							<LI>
+							Insert the Visual Studio .NET 2003 Prerequisites CD and ignore the autorun message.
+							<LI>
+								On&nbsp;the <B>Start</B> menu, choose <B>Run</B>.
+							<LI>
+								Type the following: <BLOCKQUOTE class="dtBlock">
+									<DIV class="code"><I>n</I>:\Setup.exe /createunattend &lt;<I>path to .INI file</I>&gt;</DIV>
+									<BR>
+									<DIV>For example:</DIV>
+									<DIV class="code">D:\setup.exe /createunattend c:\bsln_deployment.ini</DIV>
+								</BLOCKQUOTE>
+							</LI>
+						</OL>
+					</TD>
+				</TR>
+			</TBODY></TABLE>
+		<TABLE>
+			<TBODY>
+				<TR>
+					<TH>
+						To create the deployment .INI file from DVD</TH></TR>
+				<TR>
+					<TD>
+						<OL>
+							<LI>
+							Insert the Visual Studio .NET 2003 DVD and ignore the autorun message.
+							<LI>
+								On&nbsp;the <B>Start</B> menu, choose <B>Run</B>.
+							<LI>
+								Type the following: <BLOCKQUOTE class="dtBlock">
+									<DIV class="code"><I>n</I>:\pre\Setup.exe /createunattend &lt;<I>path to .INI file</I>&gt;</DIV>
+									<BR>
+									<DIV>For example:</DIV>
+									<DIV class="code">D:\pre\setup.exe /createunattend c:\bsln_deployment.ini</DIV>
+								</BLOCKQUOTE>
+							</LI>
+						</OL>
+					</TD>
+				</TR>
+			</TBODY></TABLE>
+		<TABLE>
+			<TR>
+				<TH>
+					To run setup with the deployment .INI file</TH>
+			</TR>
+			<TR>
+				<TD>
+					<OL>
+						<LI>
+						Verify that the Visual Studio .NET 2003 Prerequisites CD is available on the network 
+						(see "Creating a Network Image" below).
+						<LI>
+							On&nbsp;the <b>Start</b> menu,&nbsp;choose <b>Run</b>.
+						<LI>
+							Type the following: <BLOCKQUOTE class="dtBlock">
+								<DIV class="code">\\...\Setup.exe /unattendfile &lt;<i>path to .INI file</i>&gt;</DIV>
+								<BR>
+								<DIV>For example:</DIV>
+								<DIV class="code">\\computer\share\setup.exe /unattendfile 
+									\\computer\share\bsln_deployment.ini</DIV>
+							</BLOCKQUOTE>
+						</LI>
+					</OL>
+				</TD>
+			</TR>
+		</TABLE>
+		<H2 class="dtH1">3. Creating a Network Image</H2>
+		<P>Visual Studio .NET 2003 setup may be run from a network share as an alternative to running setup from CDs or DVDs.<br>
+<br>
+
+The following procedure illustrates how to prepare Visual Studio .NET 2003 for installation from a network share.</P>
+		<TABLE>
+		<TR>
+			<TH>Example procedure for sharing installation files from CDs</TH>
+		</TR>
+		<TR>
+			<TD>
+				<OL>
+					<LI>
+						Create a folder (for example, VS2003) on the server.
+					<LI>
+						Create three subfolders, named PRE, VS, and MSDN within the 								top-level folder. For example:<br><br>
+						VS2003\PRE<br>
+						VS2003\VS<br>
+						VS2003\MSDN 
+
+					<LI>
+						Copy  the contents of the CD labeled <b>Visual Studio .NET 								2003 Prerequisites</b> to the subfolder named PRE.<br><br>
+						Copy the contents of all CDs labeled as <b>Visual Studio .NET 						2003</b> 
+						to the subfolder named VS folder. If prompted, overwrite existing 						files.<br><br>
+						Copy the contents of all CDs labeled <b>MSDN Library for 						Visual Studio .NET 
+						2003</b> to the subfolder named MSDN. If prompted, overwrite 						existing files.
+
+					<LI>
+						Open <B>setup.ini</B> in the VS subfolder using a text editor, such 						as Notepad.
+					<LI>
+						In the [Baseline] section, change the line that starts with 								"DIR=" as follows: 
+						<BLOCKQUOTE class="dtBlock">
+						<DIV class="code">[Baseline]<BR>
+								DIR=..\PRE<BR>
+								FileName=setup.exe</DIV>
+						</BLOCKQUOTE>
+						In the [Documentation] section, change the line that starts with 						"DIR=" to 
+						"DIR=..\MSDN". For example: 
+						<BLOCKQUOTE class="dtBlock">
+						<DIV class="code">[Documentation]<BR>
+								DIR=..\MSDN</DIV>
+						</BLOCKQUOTE>
+					
+					<LI>
+						Save your changes and close the file.
+	
+						<P><b>Note</B> Completing this step prevents disk-swapping 								requests during setup and informs setup of the correct paths 
+						to the Visual Studio .NET 2003 Prerequisites and 
+						the MSDN Library CDs.</P>
+					<LI>
+						In the VS subfolder, open the <B>Setup</B> folder.
+					<LI>	
+						 Open <b>setup.sdb</b> using a text editor, such 						as Notepad, and add the following lines to the end of the file:
+						<BLOCKQUOTE class="dtBlock">
+						<DIV class="code">[Product Key]<BR>
+								<i>XXXXXXXXXXXXXXXXXXXXXXXXX</i>
+								</DIV>
+						
+						</BLOCKQUOTE>
+						<b>Note</b> <i>XXXXXXXXXXXXXXXXXXXXXXXXX</i> is the 25 digit product 
+						key, entered without dashes, found on the CD packaging.
+					
+					<LI>
+						Save your changes and close the file.
+	
+						<P><b>Note</B> Completing this step enables pre-populating the product key for the user.</P>
+					
+					<LI>
+						Share the VS2003 folder on the network and set the appropriate
+						security settings.  The path to Visual Studio .NET 2003 setup 
+						from the network looks as follows:
+						<SPAN class="code">\\[servername]\VS2003\VS\setup.exe</SPAN>.<bR>
+						<bR>
+						<b>Note</b>&nbsp;When installing, setup fails if any path 
+						and file name combination exceeds 260 characters. 									The maximum length of a path in Visual Studio is 									221 characters; accordingly, you should copy files to a path 						with less than 70 characters. 
+						If you create a network share for a network image, 
+						the UNC path to the root install location should contain 								fewer than 39 characters.<br>
+						<br>
+						<b>Note</b>&nbsp;Setup may fail if the folder names in this path 						include embedded spaces, for example “\\[servername]\VS 2003\MSDN\” 						or “\\[servername]\VS2003\Visual Studio\”.<br>
+						<br>
+				    		<b>Note</b> Visual SourceSafe and Visio are not part of 
+						Visual Studio .NET 2003 setup. However, you may also copy the 
+						contents of the Visual SourceSafe and Visio CDs to separate folders 							on your server to facilitate setup of these products over a network 						as separate installations.
+                    
+                    			</li>
+				</OL>
+				
+			</TD>
+		</TR>
+	</TABLE>
+		
+		<H2 class="dtH1">4. Required Prerequisite Components</H2>
+		<P>The following components are required for Visual Studio .NET2003. It is recommended 
+			that you choose the default list of components in the administrator mode of 
+			setup,&nbsp;because these&nbsp;components&nbsp;are&nbsp;required before you 
+			install Visual Studio .NET 2003. You can choose, however, not to include all default 
+			components, as you may wish to deploy some components using alternative 
+			methods.&nbsp; When you run setup in createunattend mode,&nbsp;setup displays 
+			only&nbsp;the list of components required for the operating system you are 
+			currently running.&nbsp; If you wish to deploy the Visual Studio .NET 
+			Prerequisites Setup to multiple operating systems, you must run createunattend 
+			for each operating system.</P>
+		<UL type="disc">
+			<LI STYLE="MARGIN-LEFT: 30px">
+			Windows 2000 Service Pack 3
+			<LI STYLE="MARGIN-LEFT: 30px">
+			Microsoft FrontPage 2000 Web Extensions Client
+			<LI STYLE="MARGIN-LEFT: 30px">
+			Setup Runtime Files
+			<LI STYLE="MARGIN-LEFT: 30px">
+			Microsoft Internet Explorer 6 Service Pack 1
+			<LI STYLE="MARGIN-LEFT: 30px">
+			Microsoft Data Access Components 2.7 Service Pack 1 (Windows 2000 only)
+			<LI STYLE="MARGIN-LEFT: 30px">
+				Microsoft .NET Framework 1.1</LI>
+			<LI STYLE="MARGIN-LEFT: 30px">
+				Microsoft Visual J# .NET Redistributable Package 1.1</LI>
+		</UL>
+		<H5 class="dtH1">4.1. Components with Language Version Conflicts</H5>
+		<P>Visual Studio .NET 2003 setup requires that certain prerequisites be installed in the 
+			same language version as the language version of your operating system. 
+			However, Visual Studio .NET 2003 setup might not include the language version that 
+			your operating systems require for these components. You can download the 
+			correct language version from the Internet&nbsp;and deploy it separately. See local.htm in the same directory as this file for more information.</P>
+		<h5>&nbsp;5. Deploying VSS and Visio</h5>
+		<H5 class="dtH1">&nbsp;5.1.&nbsp; Visio</H5>
+		<P>To deploy Visio run with the following command -- msiexec /qn</P>
+		<H5 class="dtH1">&nbsp;5.2.&nbsp; VSS</H5>
+		<P>Details of VSS deployment can be found in the following KB article --
+        <font SIZE="2">Q195828</P>
+		</font>
+		<H2 class="dtH1">6. Known Installation Issues</H2>
+		<H5 class="dtH1">6.1. Data file cannot be created</H5>
+		<P>If you run setup in createunattend mode using a&nbsp;file that already exists, 
+			an error appears stating "The data file &lt;<I>filename</I>&gt; cannot be 
+			created. Setup cannot continue." Either delete the existing file, or provide a 
+			unique file name.</P>
+		<H5 class="dtH1">6.2. Visibility of user-specific data</H5>
+		<P>When you create an unattended install file, some user-specific data might appear 
+			in the file. Specifically, the name of the user who created the file and their 
+			organization name appear as two line items:</P>
+		<UL type="disc">
+			<LI STYLE="MARGIN-LEFT: 30px">
+			gfn_pid core user name=Your Name
+			<LI STYLE="MARGIN-LEFT: 30px">
+				gfn_pid core organization=Your Company
+			</LI>
+		</UL>
+		<P>You can change the values of these variables before using the INI file, but do 
+			not delete the lines completely.</P>
+	    <h2><span style="font-family: Verdana">7</span><span style="font-family: Verdana; color: black">. 
+        Running Administrator Mode Uninstall</span></h2>
+        <p><span style="font-size: 10.0pt; font-family: Verdana; color: black">
+        Before running this phase of administrator setup, you <b>must</b> first 
+        have Visual Studio .NET installed on your machine.&nbsp; </span></p>
+        <p><b>
+        <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+        Note:</span></b><span style="font-size: 10.0pt; font-family: Verdana; color: black"> 
+        You must run the setup.exe found in the \setup subdirectory in order to 
+        create an .ini file. The setup.exe file found at the root of the CD or 
+        DVD does not support administrator setup.</span></p>
+        <table class="MsoNormalTable" border="1" cellpadding="0" style="border: 1.0pt solid #CCCCCC; margin-left: 22.5pt; background: white">
+          <tr>
+            <td valign="top" style="border: medium none; padding-left: 3.75pt; padding-right: .75pt; padding-top: 6.0pt; padding-bottom: 6.0pt; background: #CCCCCC">
+            <p class="MsoNormal" style="margin-bottom: 12.0pt"><b>
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            To create the uninstall .INI file</span></b></td>
+          </tr>
+          <tr>
+            <td valign="top" style="border: medium none; padding: .75pt">
+            <p class="MsoNormal" style="text-indent: -.25in; margin-left: 30.0pt; margin-bottom: 6.0pt">
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            1.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span>
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            Insert the Visual Studio .NET&nbsp;2003 CD 1&nbsp;or DVD and ignore the autorun 
+            message. </span></p>
+            <p class="MsoNormal" style="text-indent: -.25in; margin-left: 30.0pt; margin-bottom: 6.0pt">
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            2.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span>
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            Choose the <b>Start</b> menu and then choose <b>Run</b>. </span></p>
+            <p class="MsoNormal" style="text-indent: -.25in; margin-left: 30.0pt; margin-bottom: 6.0pt">
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            3.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span>
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            Type the following: </span></p>
+            <p class="code1" style="margin-left: 30.0pt"><i>
+            <span style="font-size: 10.0pt">n</span></i><span style="font-size: 10.0pt">:\setup\Setup.exe 
+            /createunattend &lt;<i>path to .INI file</i>&gt;</span></p>
+            <p class="NormalWeb2" style="margin-left: 30.0pt">
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            For example:</span></p>
+            <p class="code1" style="margin-left: 30.0pt">
+            <span style="font-size: 10.0pt">D:\setup\setup.exe /createunattend 
+            c:\vs7_uninstall.ini</span></p>
+            <p class="MsoNormal" style="text-indent: -.25in; margin-left: 30.0pt; margin-bottom: 6.0pt">
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            4.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span>
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            On the Visual Studio .NET Maintenance screen, select the Uninstall 
+            Microsoft Visual Studio .NET link.</span></p>
+            <p class="MsoNormal" style="text-indent: -.25in; margin-left: 30.0pt; margin-bottom: 6.0pt">
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            5.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span>
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            Click the Done link after the file is saved successfully.</span></p>
+            <p class="code1" style="margin-left: 30.0pt">&nbsp;</td>
+          </tr>
+        </table>
+        <p class="MsoNormal">
+        <span style="font-size: 10.0pt; font-family: Verdana; color: black; display: none">
+        &nbsp;</span></p>
+        <table class="MsoNormalTable" border="1" cellpadding="0" style="border: 1.0pt solid #CCCCCC; margin-left: 22.5pt; background: white">
+          <tr>
+            <td valign="top" style="border: medium none; padding-left: 3.75pt; padding-right: .75pt; padding-top: 6.0pt; padding-bottom: 6.0pt; background: #CCCCCC">
+            <p class="MsoNormal" style="margin-bottom: 12.0pt"><b>
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            To run setup with the generated file on a client</span></b></td>
+          </tr>
+          <tr>
+            <td valign="top" style="border: medium none; padding: .75pt">
+            <p class="MsoNormal" style="text-indent: -.25in; margin-left: 30.0pt; margin-bottom: 6.0pt">
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            1.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span>
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            Verify that Visual Studio .NET 2003 is available on the network (see <i>
+            Creating a Network Image</i>). </span></p>
+            <p class="MsoNormal" style="text-indent: -.25in; margin-left: 30.0pt; margin-bottom: 6.0pt">
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            2.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span>
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            Choose the <b>Start</b> menu and then choose <b>Run</b>. </span></p>
+            <p class="MsoNormal" style="text-indent: -.25in; margin-left: 30.0pt; margin-bottom: 6.0pt">
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            3.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span>
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            Type the following: </span></p>
+            <p class="code1" style="margin-left: 30.0pt">
+            <span style="font-size: 10.0pt">\\<i>&lt;computer&gt;</i>\<i>&lt;share&gt;</i>\...\setup\Setup.exe 
+            /unattendfile &lt;<i>path to .INI file</i>&gt;</span></p>
+            <p class="NormalWeb2" style="margin-left: 30.0pt">
+            <span style="font-size: 10.0pt; font-family: Verdana; color: black">
+            For example:</span></p>
+            <p class="code1" style="margin-left: 30.0pt">
+            <span style="font-size: 10.0pt">\\products\VisualStudio\setup\setup.exe 
+            /unattendfile \\computer\share\vs7_uninstall.ini</span></td>
+          </tr>
+        </table>
+        <p class="MsoNormal">&nbsp;</p>
+        <p>&nbsp;</p>
+	</BODY>
+</HTML>

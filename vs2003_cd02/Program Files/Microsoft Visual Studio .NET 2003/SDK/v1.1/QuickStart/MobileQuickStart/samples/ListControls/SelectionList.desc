@@ -1,0 +1,5 @@
+A Multiple Selection List
+This sample demonstrates how to use the SelectionList mobile control to 
+allow the user to select multiple items as part of an input form.
+On form submission, the Selected property of each item selected is set
+to true.

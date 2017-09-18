@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="TOC.xsl"?>
+<Document>
+	<Topic Src="Introduction.xml" Caption="Introduction"/>
+	<Topic Src="Building Applications.xml" Caption="The .NET Framework"/>
+	<Topic Src="Type Fundamentals.xml" Caption="Type Fundamentals">
+		<Item Src="Object Base Type.xml" Caption="System.Object"/>
+		<Item Src="Casting.xml" Caption="Casting"/>
+		<Item Src="Reference and Value Types.xml" Caption="Reference &amp; Value Types"/>
+		<Item Src="Boxing and Unboxing.xml" Caption="Boxing &amp; Unboxing"/>
+		<Item Src="Namespaces and Assemblies.xml" Caption="Namespaces &amp; Assemblies"/>
+	</Topic>
+	<Topic Src="Special Types.xml" Caption="Special Types">
+		<Item Src="EnumeratedTypes.xml" Caption="Enumerated Types"/>
+		<Item Src="Arrays.xml" Caption="Arrays"/>
+		<Item Src="Interfaces.xml" Caption="Interfaces"/>
+		<Item Src="Delegates.xml" Caption="Delegates"/>
+		<Item Src="Custom Attributes.xml" Caption="Custom Attributes"/>
+	</Topic>
+	<Topic Src="Type Members.xml" Caption="Type Members">
+		<Item Src="Accessibility Modifiers.xml" Caption="Accessibility Modifiers"/>
+		<Item Src="Fields.xml" Caption="Fields"/>
+		<Item Src="Constructors.xml" Caption="Constructors"/>
+		<Item Src="Properties.xml" Caption="Properties"/>
+		<Item Src="Index Properties.xml" Caption="Index Properties"/>
+		<Item Src="Events.xml" Caption="Events"/>
+	</Topic>
+	<Topic Src="Exception Handling.xml" Caption="Exception Handling"/>
+	<Topic Src="Memory Management.xml" Caption="Memory Management">
+		<Item Src="Using Objects Requiring Proper Cleanup.xml" Caption="Using Objects Requiring Proper Cleanup"/>
+		<Item Src="Creating Object Requiring Explicit Cleanup.xml" Caption="Creating Objects Requiring Explicit Cleanup"/>
+	</Topic>
+	<Topic Src="Threading.xml" Caption="Threading">
+		<Item Src="Asynchronous Operations.xml" Caption="Asynchronous Operations"/>
+		<Item Src="Timed Operations.xml" Caption="Timed Operations"/>
+		<Item Src="Exclusive Operations.xml" Caption="Exclusive Operations"/>
+	</Topic>
+	<Topic Src="Strings.xml" Caption="Strings"/>
+	<Topic Src="Streams.xml" Caption="Stream I/O"/>
+</Document>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Interfaces">
+	<Paragraph>
+		Any type you define is derived from System.Object or from some other type that is itself derived from System.Object. Your type inherits not only the methods of its base types but also inherits the 		implementation provided by the base types’ methods. Sometimes, it is necessary to consider an object to have multiple base types. That is, sometimes you want to think of an object as being a 			System.Object and sometime you want to think of an object as being a cloneable object or as an enumerable object.
+	</Paragraph>
+	<Paragraph>
+		Interfaces allow an object to be considered of different types. For example, let’s say that you wanted to define a Point type. This type would be derived from System.Object and all Point objects 		will support the normal expected behaviors of any object. Now, suppose you were going to create an array of Point objects and you want to be able to sort these points in order based on their 		distance to the origin coordinate, (0, 0). To do this, you would make Point objects comparable to one another by making your Point type implement the System.IComparable interface.
+	</Paragraph>
+	<Paragraph>
+		The class library defines many interfaces such as IComparable, ISerializable, and ICloneable. Types that implement these interfaces indicate that they support the ability to compare instances of 		themselves with other objects (IComparable), allow themselves to be serialized to disk or wire (ISerializable), and allow exact replicas of themselves to be created (ICloneable). The code below 		demonstrates how to define this Point type so that instances of the type are comparable to one another.
+	</Paragraph>
+	<Paragraph>
+		<Sample Caption="Interfaces" Image="..\Images\Console.gif">
+			<CSPath>..\Samples\SpecialTypes\Interfaces\CS</CSPath>
+			<VBPath>..\Samples\SpecialTypes\Interfaces\VB</VBPath>
+		</Sample>
+	</Paragraph>
+	<Navigation>
+		<Previous>Arrays.xml</Previous>
+		<Next>Delegates.xml</Next>
+	</Navigation>
+</Document>

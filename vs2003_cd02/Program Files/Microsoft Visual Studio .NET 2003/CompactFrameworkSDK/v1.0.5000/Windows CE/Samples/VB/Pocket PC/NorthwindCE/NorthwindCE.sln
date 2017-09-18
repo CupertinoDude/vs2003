@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{CB4CE8C6-1BDB-4DC7-A4D3-65A1999772F8}") = "NorthwindCE", "NorthwindCE.VBDPROJ", "{BDD4EA4A-667A-4A37-8E5F-867691F39DBA}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{BDD4EA4A-667A-4A37-8E5F-867691F39DBA}.Debug.ActiveCfg = Debug|Pocket PC
+		{BDD4EA4A-667A-4A37-8E5F-867691F39DBA}.Debug.Build.0 = Debug|Pocket PC
+		{BDD4EA4A-667A-4A37-8E5F-867691F39DBA}.Debug.Deploy.0 = Debug|Pocket PC
+		{BDD4EA4A-667A-4A37-8E5F-867691F39DBA}.Release.ActiveCfg = Release|Pocket PC
+		{BDD4EA4A-667A-4A37-8E5F-867691F39DBA}.Release.Build.0 = Release|Pocket PC
+		{BDD4EA4A-667A-4A37-8E5F-867691F39DBA}.Release.Deploy.0 = Release|Pocket PC
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

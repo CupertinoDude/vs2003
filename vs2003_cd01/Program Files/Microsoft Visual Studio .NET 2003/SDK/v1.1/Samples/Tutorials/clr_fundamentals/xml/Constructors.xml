@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Constructors">
+	<Paragraph>
+		Constructors are special methods that allow you to instantiate an object of a particular type and set the initial state of this object. The language you choose will determine what the syntax looks like 		for declaring a constructor. In C#, the constructor must have the same name as the class or struct. In VB, the constructor method is always called New regardless of the name of the type.	</Paragraph>
+	<Paragraph>
+		Note that many types in the framework class library do not allow themselves to be constructed. For example, the Console class offers only static methods that you can call to send output or read 		input from the console. 	
+	</Paragraph>
+	<Navigation>
+		<Previous>Fields.xml</Previous>
+		<Next>Properties.xml</Next>
+	</Navigation>
+</Document>

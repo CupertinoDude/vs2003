@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{20D4826A-C6FA-45DB-90F4-C717570B9F32}") = "StockQuote", "StockQuote.csdproj", "{CB0BD963-4A65-4539-9B26-0687B553BE5D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{CB0BD963-4A65-4539-9B26-0687B553BE5D}.Debug.ActiveCfg = Debug|Windows CE
+		{CB0BD963-4A65-4539-9B26-0687B553BE5D}.Debug.Build.0 = Debug|Windows CE
+		{CB0BD963-4A65-4539-9B26-0687B553BE5D}.Debug.Deploy.0 = Debug|Windows CE
+		{CB0BD963-4A65-4539-9B26-0687B553BE5D}.Release.ActiveCfg = Release|Windows CE
+		{CB0BD963-4A65-4539-9B26-0687B553BE5D}.Release.Build.0 = Release|Windows CE
+		{CB0BD963-4A65-4539-9B26-0687B553BE5D}.Release.Deploy.0 = Release|Windows CE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,283 @@
+<VisualStudioProject>
+    <VisualBasic
+        ProjectType = "Web"
+        ProductVersion = "7.10.2169"
+        SchemaVersion = "2.0"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "Customize"
+                AssemblyOriginatorKeyFile = ""
+                AssemblyOriginatorKeyMode = "None"
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Flow"
+                DefaultTargetSchema = "IE32Nav30"
+                DelaySign = "false"
+                OutputType = "Library"
+                OptionCompare = "Binary"
+                OptionExplicit = "On"
+                OptionStrict = "On"
+                RootNamespace = ""
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    BaseAddress = "0"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "true"
+                    DefineTrace = "true"
+                    DebugSymbols = "true"
+                    IncrementalBuild = "true"
+                    Optimize = "false"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+                <Config
+                    Name = "Release"
+                    BaseAddress = "0"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "false"
+                    DefineTrace = "true"
+                    DebugSymbols = "false"
+                    IncrementalBuild = "true"
+                    Optimize = "false"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                />
+                <Reference
+                    Name = "System.Web"
+                    AssemblyName = "System.Web"
+                />
+                <Reference
+                    Name = "System.Web.Services"
+                    AssemblyName = "System.Web.Services"
+                />
+                <Reference
+                    Name = "System.Management"
+                    AssemblyName = "System.Management"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                />
+            </References>
+            <Imports>
+                <Import Namespace = "Microsoft.VisualBasic" />
+                <Import Namespace = "System" />
+                <Import Namespace = "System.Data" />
+                <Import Namespace = "System.Collections" />
+                <Import Namespace = "System.Diagnostics" />
+                <Import Namespace = "System.Management" />
+            </Imports>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "datalist1.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "datalist1.aspx.vb"
+                    DependentUpon = "datalist1.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "datalist2.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "datalist2.aspx.vb"
+                    DependentUpon = "datalist2.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "datalist3.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "datalist3.aspx.vb"
+                    DependentUpon = "datalist3.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "datalist4.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "datalist4.aspx.vb"
+                    DependentUpon = "datalist4.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "datalist5.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "datalist5.aspx.vb"
+                    DependentUpon = "datalist5.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "datalist6.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "datalist6.aspx.vb"
+                    DependentUpon = "datalist6.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "datalist7.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "datalist7.aspx.vb"
+                    DependentUpon = "datalist7.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "datalist8.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "datalist8.aspx.vb"
+                    DependentUpon = "datalist8.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "purchase.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "purchase.aspx.vb"
+                    DependentUpon = "purchase.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "style1.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style1.aspx.vb"
+                    DependentUpon = "style1.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "style2.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style2.aspx.vb"
+                    DependentUpon = "style2.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "style3.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style3.aspx.vb"
+                    DependentUpon = "style3.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "style4.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style4.aspx.vb"
+                    DependentUpon = "style4.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "style5.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style5.aspx.vb"
+                    DependentUpon = "style5.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "style6.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style6.aspx.vb"
+                    DependentUpon = "style6.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "style7.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style7.aspx.vb"
+                    DependentUpon = "style7.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "style8.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style8.aspx.vb"
+                    DependentUpon = "style8.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "style9.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style9.aspx.vb"
+                    DependentUpon = "style9.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+            </Include>
+        </Files>
+    </VisualBasic>
+</VisualStudioProject>
+

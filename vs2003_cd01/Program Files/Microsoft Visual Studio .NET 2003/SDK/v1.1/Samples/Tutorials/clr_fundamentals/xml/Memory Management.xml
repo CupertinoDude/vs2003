@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Automatic Memory Management">
+	<Paragraph Title="Introduction">
+		The CLR offers a high performance, state of the art garbage collected environment. This environment automatically tracks the objects that an application is using so that programmers will not have 		to deal with complicated memory management issues. When you have finished using an object, you do not have to explicitly free its memory (in fact, there is no way for you to do this). The GC will 		eventually free the memory for you automatically. So, for most objects, you do not have to concern yourself with memory management issues at all. 
+	</Paragraph>
+	<Paragraph>
+		However, if you are using an object that wraps an underlying operating system resource (such as a file, network connection, window, bitmap, and so on), then you should explicitly close or 			dispose of the object when you no longer wish to use it in your application. The next two sections demonstrate how to use an object that requires explicit cleanup and how to design an object 		that requires explicit cleanup.
+	</Paragraph>
+	<Navigation>
+		<Previous>Exception Handling.xml</Previous>
+		<Next>Using Objects Requiring Proper Cleanup.xml</Next>
+	</Navigation>
+</Document>

@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">GCInfo</TD>
+					</TR>
+					<TR>
+						<TD>Dump garbage collection&nbsp;encoding information for a managed method.</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!GCInfo [&lt;MD&gt;] [&lt;IP&gt;]</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="13" cellSpacing="1" cellPadding="1" width="710" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>&lt;MD&gt;<BR>
+										</STRONG><EM>Method Description</EM></TD>
+									<TD vAlign="top">Method description address for the managed method.&nbsp; Can be 
+										obtained using the DumpStack command, for example.</TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>&lt;IP&gt;<BR>
+										</STRONG><EM>Instruction Pointer</EM></TD>
+									<TD vAlign="top">Instruction pointer to an instruction in a managed method. Can be 
+										obtained using the ClrStack command, for example.</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example">
+							<P>The method descriptor used in this example is taken from one of the methods in 
+								the&nbsp;DumpStack command results.</P>
+							<P><FONT face="Courier New" size="2">0075f91c 0de6099e (MethodDesc <STRONG>0xd78bbc8</STRONG>
+									+0x1e Behavior1.Behavior1.Start)</FONT></P>
+							<PRE>0:001&gt; !GCInfo 0xd78bbc8 Normal 
+JIT generated code Method
+info block: method
+    size      =   002F prolog
+    size      =   11  epilog 
+    size      =   7   epilog 
+    count     =   1   epilog 
+    end      =    yes saved  
+    reg. mask  =   000F ebp
+    frame =          yes fully  
+    interruptible= yes 
+    double align       = no  
+    security check     = no  
+    exception handlers = no  
+    local alloc        = no  
+    edit &amp; continue    = yes  
+    varargs            = no  
+    argument   count   =   0 
+    stack frame size   =   2 
+    untracked count    =   0 
+    var ptr tab count  =   0 
+    epilog        at   0028
+2F E5 9C C0 45 | 
+
+Pointer table:
+F0 BC 7B       | 000B        reg EDI becoming live 'this'
+75             | 0010        reg ESI becoming live
+4C             | 0014        reg ECX becoming live
+F0 0A          | 001E        reg ECX becoming dead
+30             | 001E        reg ESI becoming dead
+F1 39          | 002F        reg EDI becoming dead
+FF             | 
+						</PRE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Comments</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<P>
+								<TABLE id="Table3" height="463" cellSpacing="1" cellPadding="1" width="702" border="1">
+									<TR>
+										<TD><STRONG>Description</STRONG></TD>
+										<TD><STRONG>Sample Value</STRONG></TD>
+										<TD><STRONG>Comment</STRONG></TD>
+									</TR>
+									<TR>
+										<TD>Method Size</TD>
+										<TD>2F</TD>
+										<TD>0x0de609ae - 0x0de60980 (Addresses from the <STRONG>u</STRONG> example below)</TD>
+									</TR>
+									<TR>
+										<TD>Prolog Size
+										</TD>
+										<TD>11</TD>
+										<TD>0x0de60990 - 0x<FONT color="red"><FONT color="black">0de60980 (See red segment below.)</FONT></FONT></TD>
+									</TR>
+									<TR>
+										<TD>Epilog Size</TD>
+										<TD>7</TD>
+										<TD>0x0de609ae -&nbsp;0x<FONT color="black">0de609a8 (See blue segment below.)</FONT></TD>
+									</TR>
+									<TR>
+										<TD>Epilog count</TD>
+										<TD>1</TD>
+										<TD>Number of epilogs (method exits).</TD>
+									</TR>
+									<TR>
+										<TD>Epilog end</TD>
+										<TD>yes</TD>
+										<TD>Indicates whether&nbsp;the epilog is at the end of the method.</TD>
+									</TR>
+									<TR>
+										<TD>Saved reg. mask</TD>
+										<TD>F</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD>EBP frame</TD>
+										<TD>yes</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD>Fully interuptable</TD>
+										<TD>yes</TD>
+										<TD>Indicates whether the method contains critical sections.</TD>
+									</TR>
+									<TR>
+										<TD>Double align</TD>
+										<TD>no</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD>Security check</TD>
+										<TD>no</TD>
+										<TD>Indicates whether&nbsp;the method has&nbsp;a code security attribute.</TD>
+									</TR>
+									<TR>
+										<TD>Exception handlers</TD>
+										<TD>no</TD>
+										<TD>Indicates whether the method contains try-catch blocks.</TD>
+									</TR>
+									<TR>
+										<TD>Local alloc</TD>
+										<TD>no</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD>Edit &amp; Continue</TD>
+										<TD>yes</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD>Varargs</TD>
+										<TD>no</TD>
+										<TD>Indicates whether this is a&nbsp;vararg calling convention.</TD>
+									</TR>
+									<TR>
+										<TD>Argument count</TD>
+										<TD>0</TD>
+										<TD>Number of method arguments.</TD>
+									</TR>
+									<TR>
+										<TD>Stack frame size</TD>
+										<TD>2</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD>Untracked count</TD>
+										<TD>0</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD>Var ptr tab count</TD>
+										<TD>0</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD>Epilog at</TD>
+										<TD>28</TD>
+										<TD>0de60980 + 0x28 = 0de609a8 (end address from the <STRONG>u</STRONG> command 
+											below)</TD>
+									</TR>
+								</TABLE>
+							</P>
+							<table>
+								<tr>
+									<td class="windbgout">
+										<pre>
+0:001&gt; !u 0xd78bbc8 
+Normal JIT generated code
+[DEFAULT] [hasThis] Boolean Behavior1.Behavior1.Start()
+Begin 0de60980, size 2f
+<FONT color=red>0de60980 55               push    ebp
+0de60981 8bec             mov     ebp,esp
+0de60983 83ec08           sub     esp,0x8
+0de60986 57               push    edi
+0de60987 56               push    esi
+0de60988 53               push    ebx
+0de60989 8bf9             mov     edi,ecx
+0de6098b 33db             xor     ebx,ebx
+0de6098d 8b7704           mov     esi,[edi+0x4]
+0de60990 6a00             push    0x0</FONT>
+0de60992 8bce             mov     ecx,esi
+0de60994 baffffffff       mov     edx,0xffffffff
+0de60999 8b01             mov     eax,[ecx]
+0de6099b ff5050           call    dword ptr [eax+0x50]
+0de6099e 90               nop
+0de6099f bb01000000       mov     ebx,0x1
+0de609a4 eb00             jmp     0de609a6
+0de609a6 8bc3             mov     eax,ebx
+<FONT color=blue>0de609a8 5b               pop     ebx
+0de609a9 5e               pop     esi
+0de609aa 5f               pop     edi
+0de609ab 8be5             mov     esp,ebp
+0de609ad 5d               pop     ebp
+0de609ae c3               ret</FONT></pre>
+									</td>
+								</tr>
+							</table>
+							<P>The pointer table shows the native instruction at each&nbsp;offset. &nbsp;In the 
+								example above,&nbsp;the <STRONG>this</STRONG> pointer (EDI) is first used at 
+								(0xd78bbc8+0xB)</P>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

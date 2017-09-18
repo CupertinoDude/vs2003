@@ -1,0 +1,4 @@
+greeting=Welcome!
+article1=This is the first sentence.
+article2=This is the second sentence.
+article3=And here is the final sentence.

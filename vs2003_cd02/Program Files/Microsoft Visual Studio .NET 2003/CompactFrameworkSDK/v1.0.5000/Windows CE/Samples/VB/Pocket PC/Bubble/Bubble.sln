@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{CB4CE8C6-1BDB-4DC7-A4D3-65A1999772F8}") = "Bubble", "Bubble.VBDPROJ", "{752E96BA-AD08-4DF2-BA43-012E6A97678B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{752E96BA-AD08-4DF2-BA43-012E6A97678B}.Debug.ActiveCfg = Debug|Pocket PC
+		{752E96BA-AD08-4DF2-BA43-012E6A97678B}.Debug.Build.0 = Debug|Pocket PC
+		{752E96BA-AD08-4DF2-BA43-012E6A97678B}.Debug.Deploy.0 = Debug|Pocket PC
+		{752E96BA-AD08-4DF2-BA43-012E6A97678B}.Release.ActiveCfg = Release|Pocket PC
+		{752E96BA-AD08-4DF2-BA43-012E6A97678B}.Release.Build.0 = Release|Pocket PC
+		{752E96BA-AD08-4DF2-BA43-012E6A97678B}.Release.Deploy.0 = Release|Pocket PC
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,48 @@
+
+//-----------------------------------------------------------------------------
+// Microsoft VSEE
+//
+// Microsoft Confidential
+// Copyright 1995-2000 Microsoft Corporation. All Rights Reserved.
+//
+// @doc EXTERNAL
+// @module RuntimeVariables.idl-IDL source for Visual Studio Analyzer Run-Time variables |
+//
+//-----------------------------------------------------------------------------
+
+// Includes -------------------------------------------------------------------
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "RuntimeVariablesInfo.idl";
+
+
+//----------------------------------------------------------------------------- 
+// Name: ISystemDebugRuntimeVariablesEnum
+// 
+// @interface ISystemDebugRuntimeVariablesEnum |
+// Runtime variables enumerator.
+// 
+// @base public | IUnknown
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736d04-1222-11d3-BA1D-00105AA31A58),
+]
+interface ISystemDebugRuntimeVariablesEnum : IUnknown
+{
+	HRESULT Next(
+		[in] ULONG celt, 
+        [out, size_is(celt), length_is(*pceltFetched)] struct SystemDebugRuntimeVariable **prgpt, 
+		[out] ULONG *pceltFetched
+	);
+
+	HRESULT Skip(
+		[in] ULONG celt
+	);
+
+	HRESULT Reset();
+
+	HRESULT Clone(
+		[out] ISystemDebugRuntimeVariablesEnum **ppEnum
+	);
+};

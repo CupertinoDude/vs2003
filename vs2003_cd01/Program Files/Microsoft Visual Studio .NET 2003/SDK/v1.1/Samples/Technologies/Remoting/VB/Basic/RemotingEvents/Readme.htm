@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root xmlns:dt="urn:schemas-microsoft-com:datatypes" xmlns:d2="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><?xml-stylesheet type="text/xsl" href="..\..\..\..\..\readme.xsl"?><HTML><HEAD><TITLE>Remoting Events Sample</TITLE><STYLE>
+    .Title{FONT-FAMILY: Verdana;FONT-SIZE: large;COLOR: #808080}
+    </STYLE><STYLE>
+    .Heading{FONT-FAMILY: Verdana;FONT-SIZE: large}
+    </STYLE><STYLE>
+    .SectionBreak{FONT-SIZE: small;MARGIN-BOTTOM: 2em}
+    </STYLE><STYLE>
+    .SmallBreak{FONT-SIZE: small;MARGIN-BOTTOM: 1.5em}
+    </STYLE><STYLE>
+    .Text{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedHeading{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedText{MARGIN-LEFT: 3ex;FONT-FAMILY: Lucida Console;FONT-SIZE: x-small;FONT-WEIGHT: Bold}
+    </STYLE><STYLE>
+    .ListSansBullets {list-style-type: none;FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE></HEAD><BODY><table><tr><td><h2 class="Title">Remoting Events Sample</h2></td><td valign="baseline" class="Text">
+               
+              
+                  (Console Application)
+                </td></tr></table><p class="Text">
+    This document contains the release information for the .NET Framework Using Events with .NET remoting sample. You will find the following sections below: 
+    </p><ul class="Text"><li><a href="#_Sample_Overview">Overview</a></li><li><a href="#_Location_of_Sample">Location</a></li><li><a href="#_Building_the_Sample">Building the sample</a></li><li><a href="#_Running_the_Sample">Running the sample</a></li><li><a href="#_sdkvars">Notes</a></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Overview" />
+    Overview
+    </h4><p class="Text"><p class="Text">
+    This sample shows how to use events in .NET Remoting.  We host two remote objects
+    using two different console applications.  One of these remote objects, Waz, exposes
+    a method called HelloMethod that clients can call.  When this method is called, it
+    checks if any event handlers have been registered and then fires an event on the 
+    handler.  The other object, Baz, exposes a method called GreetingHandler that
+    will be called when the event is fired.
+    </p><p class="Text">
+    This sample also has two clients, one in RemotingEvents/Client and one in 
+    RemotingEvents/EventRegistration.  The client in the Client directory activates
+    a remote Waz object and calls the HelloMethod a few times.  Since no handlers have
+    been registered with Waz, no events will be fired.  The client in 
+    RemotingEvents/EventRegistration activates 2 remote objects, a Waz as well as a Baz.
+    It registers a GreetingEvent handler with Waz, providing the GreetingHandler 
+    method on the Baz object as the callback.  When the client now calls the
+    HelloMethod on Waz, an event is fired and the handler on Baz will be called.  You
+    should see Baz printing a message from the greeting handler in its console window and
+    Waz printing a notice that the event was fired.
+    </p></p><p class="SectionBreak" /><p class="SectionBreak" /><h4 class="Heading"><a name="_Location_of_Sample" />
+    Location
+    </h4><p class="Text">
+    This sample is located in the <a href="." title="Jump to Folder" target="_blank">Technologies\Remoting\VB\Basic\RemotingEvents
+
+    </a> subdirectory of the .NET Framework SDK samples directory.
+    </p><p class="FixedHeading">
+    For Example:
+      <p class="FixedText">
+      C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\VB\Basic\RemotingEvents
+
+    </p></p><p class="SmallBreak" /><p class="Text">
+      This sample contains the following directory structure:
+      
+      <ul><li class="ListSansBullets"><b>\EventFire</b> -- 
+     
+    The source code for the host, Waz, and the associated build.bat is stored here.  This
+    service can be started by running EventFireHost.exe.
+	</li></ul><ul><li class="ListSansBullets"><b>\Client</b> -- 
+     
+    The source code for the first client and associated build.bat is stored here.
+	</li></ul><ul><li class="ListSansBullets"><b>\EventSink</b> -- 
+     
+    The source code for the host and event handler (in the class Baz) as well as the 
+    associated build.bat is stored here.  The service can be started by running 
+    EventSinkHost.exe.
+	</li></ul><ul><li class="ListSansBullets"><b>\EventRegistration</b> -- 
+     
+    The source file as well as the associated build.bat for this client is stored here.
+	</li></ul></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Building_the_Sample" />
+    Building the Sample
+    </h4><p class="Text">
+    In order to properly build and run this sample, the following steps need to be performed.
+    </p><p class="Text"> 
+	Type <b>BuildAll.bat</b> from the command line in the RemotingEvents directory.
+	<p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText"> 
+	C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\VB\Basic\RemotingEvents&gt; BuildAll.bat
+	</p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Running_the_Sample" />
+    Running the Sample
+    </h4><p class="Text">
+    In order to run this sample, follow the instructions listed below.
+    </p><span class="Text"><ul class="Text"><li>
+    Start the EventFire host by running EventFireHost.exe from the EventFire directory.
+    Run the client by executing Client.exe in the Client directory.
+	</li></ul><ul class="Text"><li>
+    Start the EventSink host by running EventSinkHost.exe from the EventSink directory.  
+    Ensure that the EventFire host is running as well.  Run the client by executing
+    EventRegistration.exe in the EventRegistration directory.
+	</li></ul></span><p class="SectionBreak" /><h4 class="Heading"><a name="_sdkvars" />
+    Notes
+    </h4><p class="Text">
+    For the .Net Framework samples to function properly, your Path, Include, and Lib environment variables must be set correctly. 
+    In many cases, the SDK install program updates these environment variables for you. However, if you installed the .Net Framework SDK 
+    using Visual Studio .NET, or unselected "register environment variables" during setup, these environment variables will not be updated. 
+    You can set the Path, Include and Lib environment variables by running SDKVars.bat, located in the <i>&lt;SDKRoot&gt;\Bin</i> directory. 
+    SDKVars.bat must be executed in every command shell.
+    </p></BODY></HTML></root>

@@ -1,0 +1,21 @@
+
+Running transacted installation.
+
+Beginning Install phase of installation.
+(See contents of log file for assembly 'F:\Samples\QuickStart\howto\samples\Services\ServiceApplication\simpleservice\vb\simpleservice.exe' for progress.
+The file is located at 'F:\Samples\QuickStart\howto\samples\Services\ServiceApplication\simpleservice\vb\simpleservice.InstallLog'.)
+
+The Install phase has completed successfully. Beginning Commit phase.
+(See contents of log file for assembly 'F:\Samples\QuickStart\howto\samples\Services\ServiceApplication\simpleservice\vb\simpleservice.exe' for progress.
+The file is located at 'F:\Samples\QuickStart\howto\samples\Services\ServiceApplication\simpleservice\vb\simpleservice.InstallLog'.)
+
+The Commit phase has completed.
+
+Transacted install has completed.
+
+
+Beginning uninstall.
+(See contents of log file for assembly 'F:\Samples\QuickStart\howto\samples\Services\ServiceApplication\simpleservice\vb\simpleservice.exe' for progress.
+The file is located at 'F:\Samples\QuickStart\howto\samples\Services\ServiceApplication\simpleservice\vb\simpleservice.InstallLog'.)
+
+Uninstall has completed.

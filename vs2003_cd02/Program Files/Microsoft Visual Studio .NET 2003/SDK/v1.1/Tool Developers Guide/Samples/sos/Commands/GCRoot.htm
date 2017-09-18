@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META content="Microsoft Visual Studio 7.0" name="GENERATOR">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet"></HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">GCRoot</TD>
+					</TR>
+					<TR>
+						<TD>Finds roots on the stack or handle for an object.</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!GCRoot &lt;addr&gt;</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="13" cellSpacing="1" cellPadding="1" width="710" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>&lt;addr&gt;</STRONG></TD>
+									<TD vAlign="top">Address of tha object to find handles for.</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example">
+							<P><EM>010a50ec is the address of a <STRONG>System.Threading.ManualResetEvent</STRONG> found 
+									on the stack using the DumpStackObjects command.</EM></P>
+							<PRE>0:001&gt; !GCRoot <STRONG>010a50ec</STRONG> 
+Scan Thread 1 (70)
+ESP:75f8f4:Root:<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)-&gt;01092498(System.Web.HttpResponse)
+ESP:75f918:Root:<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)-&gt;01092498(System.Web.HttpResponse)
+ESP:75f91c:Root:010a50e0(Behavior1.Behavior1)-&gt;<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)
+ESP:75f92c:Root:010a50e0(Behavior1.Behavior1)-&gt;<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)
+ESP:75f930:Root:050a1fd4(System.Web.HttpApplicationState)-&gt;050a209c(System.Collections.Hashtable)-&gt;050a20cc(System.Collections.Hashtable/bucket[])-&gt;010a50fc(System.Collections.Specialized.NameObjectCollectionBase/NameObjectEntry)-&gt;010a50e0(Behavior1.Behavior1)
+ESP:75f948:Root:01094c08(System.Web.UI.WebControls.Button)-&gt;01093fbc(ASP.Test1Page_aspx)-&gt;050a1fd4(System.Web.HttpApplicationState)-&gt;050a2038(System.Collections.ArrayList)-&gt;050a204c(System.Object[])-&gt;010a50fc(System.Collections.Specialized.NameObjectCollectionBase/NameObjectEntry)
+ESP:75f958:Root:010a50e0(Behavior1.Behavior1)-&gt;<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)
+Scan Thread 8 (e5c)
+Scan Thread 9 (e90)
+Scan Thread 4 (4cc)
+ESP:c5f8f4:Root:<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)-&gt;<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)
+ESP:c5f918:Root:<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)-&gt;<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)
+ESP:c5f91c:Root:010a50e0(Behavior1.Behavior1)-&gt;<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)
+ESP:c5f92c:Root:010a50e0(Behavior1.Behavior1)-&gt;<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)
+ESP:c5f958:Root:010a50e0(Behavior1.Behavior1)-&gt;<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)
+Scan Thread 11 (e38)
+ESP:da3f8f4:Root:<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)-&gt;<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)
+ESP:da3f918:Root:<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)-&gt;<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)
+ESP:da3f91c:Root:010a50e0(Behavior1.Behavior1)-&gt;<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)
+ESP:da3f92c:Root:010a50e0(Behavior1.Behavior1)-&gt;<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)
+ESP:da3f958:Root:010a50e0(Behavior1.Behavior1)-&gt;<STRONG>010a50ec</STRONG>(System.Threading.ManualResetEvent)
+Scan Thread 13 (98c)
+Scan HandleTable 155350
+Scan HandleTable 151460
+Scan HandleTable 1a73b8</PRE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Comments</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<P>GCRoot scans all the managed threads and looks at all chains containing&nbsp;the 
+								specified object.
+							</P>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

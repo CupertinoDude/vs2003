@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<LINK href="..\commands\HelpStyle.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="HowDoI">Get the address of a module using DumpMT</TD>
+					</TR>
+					<TR>
+						<TD class="Comment">
+							<table class="Comments2" ID="Table4">
+								<tr>
+									<td valign="top"><b>Comments:</b></td>
+									<td>
+										To&nbsp;call the DumpModule command, you need to know the address of the 
+										module. You can find the address of a module in several different ways. This 
+										technique, given a MethodTable, uses the DumpMT command which&nbsp;outputs the 
+										associated module address.
+									</td>
+								</tr>
+							</table>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="Step">Step 1: Find a MethodTable within the module</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">
+							<pre>
+0:003&gt; !Name2EE basedebug.exe basedebug.MyClass
+--------------------------------------
+MethodTable: <STRONG><FONT color=red>003751a4</FONT></STRONG>
+EEClass: 031410ec
+Name: basedebug.MyClass</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="Step">Step 2: Dump the MethodTable to get the module address</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">
+							<pre>
+0:003&gt; !DumpMT <STRONG><FONT color=red>003751a4</FONT></STRONG>
+EEClass : 031410ec
+Module : <STRONG><FONT color=blue>0014ea50</FONT></STRONG>
+Name: basedebug.MyClass
+mdToken: 02000003  (G:\Projects\VC\basedebug\bin\Debug\basedebug.exe)
+MethodTable Flags : c0000
+Number of IFaces in IFaceMap : 0
+Interface Map : 003751f0
+Slots in VTable : 8</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="Step">Step 3: Dump the module information</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">
+							<pre>
+0:003&gt; !DumpModule <FONT color=blue><STRONG>0014ea50</STRONG></FONT>
+Name G:\Projects\VC\basedebug\bin\Debug\basedebug.exe
+dwFlags 00003280
+Attribute PEFile Edit&amp;Continue 
+Assembly 0014c620
+LoaderHeap* 0014ead8
+TypeDefToMethodTableMap* 03150010
+TypeRefToMethodTableMap* 0315001c
+MethodDefToDescMap* 03150060
+FieldDefToDescMap* 03150090
+MemberRefToDescMap* 03150098
+FileReferencesMap* 031500e0
+AssemblyReferencesMap* 031500e4
+MetaData starts at 00402204 (0x658 bytes)</pre>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

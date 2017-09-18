@@ -1,0 +1,706 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40" xmlns:o xmlns:w>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="Readme_files/filelist.xml">
+<title>LoanApps Interoperability Sample</title>
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536871559 0 0 0 415 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-font-kerning:0pt;}
+h2
+	{mso-style-parent:"Heading 1";
+	mso-style-next:"Text\,t";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:24.0pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:22.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Verdana;
+	mso-bidi-font-family:Tahoma;
+	color:gray;
+	mso-font-kerning:12.0pt;
+	mso-bidi-font-weight:normal;}
+h4
+	{mso-style-parent:"Heading 1";
+	mso-style-next:"Text\,t";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:20.0pt;
+	mso-pagination:widow-orphan;
+	mso-outline-level:4;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Verdana;
+	mso-bidi-font-family:Tahoma;
+	mso-font-kerning:12.0pt;
+	mso-bidi-font-weight:normal;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.25in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:Tahoma;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.Text, li.Text, div.Text
+	{mso-style-name:"Text\,t";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.NumberedList2, li.NumberedList2, div.NumberedList2
+	{mso-style-name:"Numbered List 2\,nl2";
+	mso-style-parent:"Text\,t";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	tab-stops:.5in list .75in;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.TextinList1, li.TextinList1, div.TextinList1
+	{mso-style-name:"Text in List 1\,t1";
+	mso-style-parent:"Text\,t";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:325279584;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1484433264 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:467281849;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1389775872 854327556 1026309256 -1359574590 1117712888 1287159878 1995765350 1424930378 -678791962 362807472;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:597131155;
+	mso-list-template-ids:178019388;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3
+	{mso-list-id:1851261782;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1505935564 67698689 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l3:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <u1:DocumentProperties>
+  <u1:Revision>4</u1:Revision>
+  <u1:TotalTime>527</u1:TotalTime>
+  <u1:Created>2000-09-25T18:58:00Z</u1:Created>
+  <u1:LastSaved>2000-11-10T23:49:00Z</u1:LastSaved>
+  <u1:Pages>2</u1:Pages>
+  <u1:Words>353</u1:Words>
+  <u1:Characters>2013</u1:Characters>
+  <u1:Company>Microsoft</u1:Company>
+  <u1:Lines>16</u1:Lines>
+  <u1:Paragraphs>4</u1:Paragraphs>
+  <u1:CharactersWithSpaces>2472</u1:CharactersWithSpaces>
+  <u1:Version>9.4305</u1:Version>
+ </u1:DocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h2 style='line-height:24.0pt;mso-line-height-rule:exactly'><span class=SpellE><span
+style='font-family:Tahoma'>LoanApps</span></span><span style='font-family:Tahoma'>
+Interoperability Sample</span></h2>
+
+<p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+font-family:Verdana'>This document contains the release information for the <span
+class=SpellE>LoanApps</span> Interoperability sample.<span
+style='mso-spacerun:yes'>  </span>You will find the following sections below: <u2:p></span><o:p></o:p></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list .5in'><span style='font-size:10.0pt;
+     mso-bidi-font-size:12.0pt;font-family:Verdana'><u2:p><a
+     href="#_Sample_Overview">Sample Overview</a><u2:p></span> </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list .5in'><span style='font-size:10.0pt;
+     mso-bidi-font-size:12.0pt;font-family:Verdana'><a href="#_Requirements:">Requirements</a></span>
+     <span class=MsoHyperlink><span style='font-size:10.0pt;mso-bidi-font-size:
+     12.0pt;font-family:Verdana;color:windowtext'><o:p></o:p></span></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list .5in'><a name=version></a><a
+     href="#_Location_of_Sample"><span style='mso-bookmark:version'><span
+     style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Verdana'>Location
+     of the Sample</span></span><span style='mso-bookmark:version'></span></a><span
+     style='mso-bookmark:version'><u2:p> </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list .5in'><span style='mso-bookmark:
+     version'></span><a href="#_Building_the_Sample"><span style='mso-bookmark:
+     version'><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+     font-family:Verdana'>Building and Running the Sample</span></span><span
+     style='mso-bookmark:version'></span></a><span style='mso-bookmark:version'><u2:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:0in;text-indent:-.25in;mso-list:l1 level1 lfo3;tab-stops:list .5in'><span
+style='mso-bookmark:version'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>&nbsp;</span></p>
+
+<h4><span style='mso-bookmark:version'><a name="_What_this_sample"></a><a
+name="_What_this_sample_1"></a><a name="_Sample_Overview"></a>Sample Overview</span></h4>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'><span style='mso-bookmark:version'><a
+name="_Getting_Started"></a><a name="_Location_of_Sample"></a><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Verdana'>This
+sample demonstrates the use of an unmanaged COM component from managed code and
+the use of a managed component from COM.<span style='mso-spacerun:yes'>  
+</span><span style='mso-spacerun:yes'> </span><u2:p></span></span></p>
+
+<h4><span style='mso-bookmark:version'><a name="_Requirements:"></a>Requirements</span></h4>
+
+<p class=Text><span style='mso-bookmark:version'>Portions of the sample require
+.NET Framework, Visual C++ 6.0, Visual Basic 6.0, and Internet Information
+Services (IIS).</span></p>
+
+<p class=Text style='margin-left:.5in'><span style='mso-bookmark:version'><b>Note:</b><span
+style='mso-spacerun:yes'>   </span>The compiled DLL and EXE files are available
+for unmanaged portions of the sample&nbsp;in case you don’t have Visual Studio
+6.0.</span></p>
+
+<h4><span style='mso-bookmark:version'>Location of the Sample<span
+style='mso-tab-count:2'>          </span></span></h4>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'><span style='mso-bookmark:version'><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Verdana'>This
+sample is located in the <b>Interop\Applications\<span class=SpellE>LoanApps</span></b>
+directory of the .NET Framework SDK samples directory.<u2:p></span></span></p>
+
+<p class=TextinList1 style='margin-bottom:12.0pt;line-height:normal'><span
+style='mso-bookmark:version'><b><span style='mso-bidi-font-family:Tahoma'>For
+Example:<u2:p></span></b></span></p>
+
+<p class=TextinList1 style='line-height:normal'><span style='mso-bookmark:version'><b><span
+style='font-family:"Courier New"'>C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Interop\Applications\LoanApps<u2:p></span></b><o:p></o:p></span></p>
+
+<p class=Text style='margin-bottom:12.0pt;line-height:normal'><span
+style='mso-bookmark:version'><u2:p><span style='mso-bidi-font-size:12.0pt'>This
+sample contains the following directory structure:<u2:p></span></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:12.0pt;
+margin-left:.25in'><span style='mso-bookmark:version'><span class=SpellE><b
+style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:Verdana'>COMtoNET</span></b></span></span><span
+style='mso-bookmark:version'><b style='mso-bidi-font-weight:normal'><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Verdana'> </span></b></span><span
+style='mso-bookmark:version'><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:Verdana'>– COM clients and .NET server <br>
+<span style='mso-tab-count:1'>     </span><b>\<span class=SpellE>LoanLib</span>
+</b>– A managed implementation of the Loan class written in C#<br>
+<span style='mso-tab-count:1'>     </span><b>\<span class=SpellE>WinLoan</span></b>
+– A VB6 application that uses the managed Loan class to do a loan amortization<br>
+<span style='mso-tab-count:1'>     </span><b>\<span class=SpellE>ConLoan</span></b>
+- A Console application written in C++ that that uses the managed Loan class to
+do a loan amortization </span></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:12.0pt;
+margin-left:.25in'><span style='mso-bookmark:version'><span class=SpellE><b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Verdana'>NETtoCOM</span></b></span></span><span
+style='mso-bookmark:version'><b><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:Verdana'> </span></b></span><span style='mso-bookmark:version'><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Verdana'>– .NET
+clients and COM server<br>
+<span style='mso-tab-count:1'>     </span><b>\<span class=SpellE>LoanLib</span></b>
+- An unmanaged implementation of the Loan class written in C++ using ATL<br>
+<span style='mso-tab-count:1'>     </span><b>\<span class=SpellE>WinLoan</span></b>
+- A Windows Forms application written in C# that that uses the unmanaged Loan
+class to do a loan amortization<br>
+<span style='mso-tab-count:1'>     </span><b>\<span class=SpellE>ConLoan</span></b>
+- A Console application written in C# that that uses the unmanaged Loan class
+to do a loan amortization<u2:p><br>
+<span style='mso-tab-count:1'>     </span><b>\<span class=SpellE>LoanWebService</span></b>
+– A <span class=SpellE>WebService</span> that exposes the unmanaged Loan class
+to clients<br>
+<span style='mso-tab-count:1'>     </span><b>\<span class=SpellE>WebLoan</span></b>
+– An ASP.NET application written in C# that uses the unmanaged Loan class to do
+a loan amortization<u2:p> </span></span><span style='mso-bookmark:version'><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><span
+style='mso-spacerun:yes'> </span></span></span><span style='mso-bookmark:version'><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Verdana'><span
+style='mso-spacerun:yes'> </span></span></span><span style='mso-bookmark:version'><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><span
+style='mso-spacerun:yes'> </span></span><o:p></o:p></span></p>
+
+<h4><span style='mso-bookmark:version'><u2:p><a name="_Building_the_Sample"></a><a
+name="_Running_the_Sample"></a>Building and Running the Sample</span></h4>
+
+<p class=Text style='margin-bottom:12.0pt;line-height:normal'><span
+style='mso-bookmark:version'><span style='mso-bidi-font-size:12.0pt'>In order to
+run this sample, follow the instructions listed below.<span
+style='mso-spacerun:yes'>  </span>In each of the following demos Balance, Rate,
+Term and Payment are defined as:<u2:p><o:p></o:p></span></span></p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;line-height:normal'><span
+style='mso-bookmark:version'><span style='mso-tab-count:1'>     </span>Balance
+= Loan Opening balance (i.e. 10000.00<span class=GramE>)</span><br>
+Rate = Monthly interest rate (i.e. 1.0)<br>
+Term = Term in months (i.e. 60)<br>
+Payment = Monthly payment (i.e. 222.44)<br>
+<br>
+Three of the above values must be supplied.<span style='mso-spacerun:yes'>  
+</span>The fourth value will be computed.<span style='mso-spacerun:yes'>  
+</span>The risk rating text field is added to show how the strings are
+marshaled. It has no influence on the result.<br>
+<br>
+<b>Note:</b><span style='mso-spacerun:yes'>   </span>Since this is intended to
+be only a sample, no error checking is done.<span style='mso-spacerun:yes'>  
+</span>Invalid input will crash the sample. </span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'><span style='mso-bookmark:version'><b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Verdana'>Step 1 -
+Using the COM loan class from managed code<u2:p></span></b></span></p>
+
+<span style='mso-bookmark:version'></span>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;line-height:normal;
+mso-list:l3 level1 lfo5;tab-stops:list .5in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Tahoma'>Open
+the <span class=SpellE>LoanLib.dsw</span> file in the <span class=SpellE><b>NETtoCOM\LoanLib</b></span>
+directory with Visual Studio 6.<span style='mso-spacerun:yes'>   </span>Choose
+Build\Rebuild All from the menu to build and register the COM server. <span
+style='mso-spacerun:yes'> </span><u2:p></span></p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;line-height:normal;
+mso-list:l3 level1 lfo5;tab-stops:list .5in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Tahoma'>Go to
+the <span class=SpellE><b>NETtoCOM\ConLoan</b></span> directory and type <span
+class=SpellE><b>nmake</b></span><b> all</b> at the prompt to build the .NET
+console client.<span style='mso-spacerun:yes'>  </span></span></p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;line-height:normal;
+mso-list:l3 level1 lfo5;tab-stops:list .5in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Tahoma'>Run <span
+class=SpellE>ConLoan</span> in the <span class=SpellE><b>NETtoCOM\ConLoan</b></span>
+directory with the following command line: <u2:p></span></p>
+
+<p class=NumberedList2 style='margin-top:0in;margin-right:0in;margin-bottom:
+12.0pt;margin-left:.75in;text-indent:0in;line-height:normal'><span
+class=SpellE><b><span style='mso-bidi-font-family:Tahoma'>ConLoan</span></b></span><b><span
+style='mso-bidi-font-family:Tahoma'><span style='mso-spacerun:yes'>  </span></span></b><i><span
+style='mso-bidi-font-family:Tahoma'><span
+style='mso-spacerun:yes'> </span>Balance Rate Term Payment <u2:p></span></i></p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;text-indent:0in;line-height:
+normal'>Three of the above values must be supplied.<span
+style='mso-spacerun:yes'>   </span>The fourth value must be zero.</p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;line-height:normal;
+mso-list:l3 level1 lfo5;tab-stops:list .5in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Go to the <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>NETtoCOM\WinLoan</b></span> directory and
+type <span class=SpellE><b style='mso-bidi-font-weight:normal'>nmake</b></span><b
+style='mso-bidi-font-weight:normal'> all </b>at the prompt to build the .NET
+Windows&nbsp;Forms client.<span style='mso-spacerun:yes'>  </span><o:p></o:p></p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;line-height:normal;
+mso-list:l3 level1 lfo5;tab-stops:list .5in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Tahoma'>Run
+WinLoan.exe in the <span class=SpellE><b>NETtoCOM\WinLoan</b></span> directory<u2:p>.</span></p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;text-indent:0in;line-height:
+normal'>First supply any three of the&nbsp;values and click Compute to
+calculate the fourth.<span style='mso-spacerun:yes'>  </span>Then click
+Amortize to generate the amortization schedule.</p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;line-height:normal;
+mso-list:l0 level1 lfo7;tab-stops:.5in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Tahoma'>Go to
+the <span class=SpellE><b>NETtoCOM\LoanWebService</b></span> directory and type
+<span class=SpellE><b>nmake</b></span><b> all</b> at the prompt to make the
+assembly needed for the <span class=SpellE>WebService</span> and to create the
+new virtual directory.<span style='mso-spacerun:yes'>  </span></span></p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;line-height:normal;
+mso-list:l0 level1 lfo7;tab-stops:.5in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Tahoma'>Click
+on this link <a href="http://localhost/NetSDK/LoanWebService/LoanLib.asmx"
+target="_new">http://localhost/NetSDK/LoanWebService/LoanLib.asmx</a> to see
+the Loan <span class=SpellE>WebService</span>.</span></p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;line-height:normal;
+mso-list:l0 level1 lfo7;tab-stops:.5in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Tahoma'>Click
+on Amortize or Calculate link, supply all four parameters (one must be zero),
+and click Invoke. The XML file with a result will be generated.</span></p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;line-height:normal;
+mso-list:l0 level1 lfo7;tab-stops:.5in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Tahoma'>Go to
+the <span class=SpellE><b>NETtoCOM\WebLoan</b></span> directory and type <span
+class=SpellE><b>nmake</b></span><b> all</b> at the prompt to make the assembly
+needed for the ASP.NET application and to create the new virtual
+directory.<span style='mso-spacerun:yes'>  </span></span></p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;line-height:normal;
+mso-list:l0 level1 lfo7;tab-stops:.5in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Tahoma'>Click
+on this link <a href="http://localhost/NetSDK/WebLoan/WebForm1.aspx"
+target="_new">http://localhost/NetSDK/WebLoan/WebForm1.aspx</a> to see the
+ASP.NET page.</span></p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;text-indent:0in;line-height:
+normal'>First supply Open Balance, Rate, and Term values and then click
+Calculate to calculate the fourth value and&nbsp;the amortization schedule.</p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;text-indent:0in;line-height:
+normal'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:Verdana'>Step 2 - Using the .NET loan
+class from unmanaged code<u2:p></span></b></p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;line-height:normal;
+mso-list:l3 level1 lfo5;tab-stops:list .5in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Tahoma'>Go to
+the <span class=SpellE><b>COMtoNET\LoanLib</b></span> directory and type <span
+class=SpellE><b>nmake</b></span><b> all</b> at the prompt to build the .NET
+server.<span style='mso-spacerun:yes'>   </span>It will also add the assembly
+to the global assembly cache, produce a COM type library, and register it with
+the system. <u2:p></span></p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;line-height:normal;
+mso-list:l3 level1 lfo5;tab-stops:list .5in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Tahoma'>Open
+the <span class=SpellE>ConLoan.dsw</span> file in the <span class=SpellE><b>COMtoNET\ConLoan</b></span>
+directory with Visual Studio 6.<span style='mso-spacerun:yes'>   </span>Choose
+Build\Rebuild All from the menu to build the C++ client. <span
+style='mso-spacerun:yes'> </span><u2:p></span></p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;line-height:normal;
+mso-list:l3 level1 lfo5;tab-stops:list .5in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Tahoma'>Run <span
+class=SpellE>ConLoan</span> in the <span class=SpellE><b>COMtoNET\ConLoan</b></span>
+directory with the following command line: <u2:p></span></p>
+
+<p class=NumberedList2 style='margin-top:0in;margin-right:0in;margin-bottom:
+12.0pt;margin-left:.75in;text-indent:0in;line-height:normal'><span
+class=SpellE><b><span style='mso-bidi-font-family:Tahoma'>ConLoan</span></b></span><b><span
+style='mso-bidi-font-family:Tahoma'><span style='mso-spacerun:yes'>  </span></span></b><i><span
+style='mso-bidi-font-family:Tahoma'><span
+style='mso-spacerun:yes'> </span>Balance Rate Term Payment <u2:p></span></i></p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;text-indent:0in;line-height:
+normal'>Three of the above values must be supplied.<span
+style='mso-spacerun:yes'>   </span>The fourth value must be zero.</p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;line-height:normal;
+mso-list:l3 level1 lfo5;tab-stops:list .5in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Tahoma'>Open
+the <span class=SpellE>VBLoan.vbp</span> file in the <span class=SpellE><b>COMtoNET\WinLoan</b></span>
+directory with Visual Basic 6.0. <span style='mso-spacerun:yes'> </span><u2:p></span></p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;line-height:normal;
+mso-list:l3 level1 lfo5;tab-stops:list .5in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Tahoma'>The
+reference to the <span class=SpellE>LoanLib</span> type library, produced in
+the previous step, is already added to the project. You can check this by
+selecting Project\References from the menu.<span style='mso-spacerun:yes'> 
+</span><span style='mso-spacerun:yes'> </span><u2:p></span></p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;line-height:normal;
+mso-list:l3 level1 lfo5;tab-stops:list .5in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-bidi-font-family:Tahoma'>Press
+F5 to run the project. Alternatively, select File\Make LoanApp.exe to create an
+executable and run this executable.<span style='mso-spacerun:yes'>  </span><span
+style='mso-spacerun:yes'> </span><u2:p></span></p>
+
+<p class=NumberedList2 style='margin-bottom:12.0pt;text-indent:0in;line-height:
+normal'>First supply any three of the following values and click Compute to
+calculate the fourth.<span style='mso-spacerun:yes'>   </span>Then click
+Amortize to generate the amortization schedule. <o:p></o:p></p>
+
+</div>
+
+<u2:p>
+</body>
+
+</html>

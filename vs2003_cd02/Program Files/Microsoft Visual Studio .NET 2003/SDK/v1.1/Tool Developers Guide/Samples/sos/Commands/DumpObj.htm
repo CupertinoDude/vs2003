@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">DumpObj</TD>
+					</TR>
+					<TR>
+						<TD>Dump an object on garbage-collected&nbsp;heap.</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!DumpObj &lt;addr&gt;</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="61" cellSpacing="1" cellPadding="1" width="708" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>&lt;addr&gt;<BR>
+										</STRONG><EM>Object address</EM></TD>
+									<TD vAlign="top">
+										Displays information about fields in the current object (including inherited 
+										fields)</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>
+0:000&gt; !DumpObj 00c41bd4 
+Name: MyDebugApp.myDerrivedClass 
+MethodTable 0x003e51a8
+EEClass 0x02e41150  
+Size 12(0xc) bytes 
+mdToken: 02000003 (C:\MyProjects\MyDebugApp\bin\Debug\MyDebugApp.exe)
+FieldDesc*: 003e515c
+      MT    Field   Offset                 Type       Attr    Value Name
+003e5110  4000001        4         System.Int32   instance        0 i
+003e51a8  4000002       20         System.Int32     static 00000005 j</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Comments</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<TABLE id="Table3" height="302" cellSpacing="1" cellPadding="1" width="699" border="1">
+								<TR>
+									<TD>Name</TD>
+									<TD>Class name</TD>
+								</TR>
+								<TR>
+									<TD>MethodTable</TD>
+									<TD>Method table.&nbsp; Use the DumpMT command to get more information, as shown in 
+										the following example.
+										<table>
+											<tr>
+												<td class="WinDBGOut"><pre>
+0:000&gt; !DumpMT 0x003e51a8
+EEClass : 02e41150
+Module : 0015eaa0
+Name: MyDebugApp.myDerrivedClass
+mdToken: 02000003  (C:\MyProjects\MyDebugApp\bin\Debug\MyDebugApp.exe)
+MethodTable Flags : 80000
+Number of IFaces in IFaceMap : 0
+Interface Map : 003e51f4
+Slots in VTable : 7</pre>
+												</td>
+											</tr>
+										</table>
+									</TD>
+								</TR>
+								<TR>
+									<TD>EEClass</TD>
+									<TD>EEClass address.&nbsp; For more detailed information, use the DumpClass 
+										command.</TD>
+								</TR>
+								<TR>
+									<TD>Size</TD>
+									<TD>Size of the class in bytes</TD>
+								</TR>
+								<TR>
+									<TD>mdToken</TD>
+									<TD>
+										Metadata token.&nbsp; For more information about using the metadata token, see 
+										the HowTo section.</TD>
+								</TR>
+								<TR>
+									<TD>FieldDesc</TD>
+									<TD>Address of the first fielddescription
+									</TD>
+								</TR>
+								<TR>
+									<TD>MT</TD>
+									<TD>Method table for the class this variable is a memeber of. &nbsp;Notice that in 
+										the following example, <STRONG>j</STRONG> is a member of 
+										MyDebugApp.myDerrivedClass while i is a member of MyDebugApp.myBaseClass<BR>
+										<BR>
+										<table>
+											<tr>
+												<td class="WinDBGOut">
+													<pre>
+0:000&gt; !DumpMT <STRONG>003e5110</STRONG>  
+EEClass : 02e410ec
+Module : 0015eaa0
+Name: <STRONG>MyDebugApp.myBaseClass</STRONG> 
+mdToken: 02000002 (C:\MyProjects\MyDebugApp\bin\Debug\MyDebugApp.exe)
+MethodTable Flags : 80000
+Number of IFaces in IFaceMap : 0
+Interface Map : 003e5154
+Slots in VTable : 6</pre>
+												</td>
+											</tr>
+										</table>
+									</TD>
+								</TR>
+								<TR>
+									<TD>Field</TD>
+									<TD>Meta data token (mdFieldDef) for the particular field</TD>
+								</TR>
+								<TR>
+									<TD>Offset</TD>
+									<TD><FONT color="#ff00ff"></FONT></TD>
+								</TR>
+								<TR>
+									<TD>Type</TD>
+									<TD>
+										<P>Type of field. This can be one of the following types
+										</P>
+										<TABLE id="Table4" height="297" cellSpacing="1" cellPadding="1" width="446" border="1">
+											<TR>
+												<TD>PTR</TD>
+											</TR>
+											<TR>
+												<TD>BYREF</TD>
+											</TR>
+											<TR>
+												<TD>VALUETYPE</TD>
+											</TR>
+											<TR>
+												<TD>CLASS</TD>
+											</TR>
+											<TR>
+												<TD>VAR</TD>
+											</TR>
+											<TR>
+												<TD>ARRAY</TD>
+											</TR>
+											<TR>
+												<TD>VALUEARRAY</TD>
+											</TR>
+											<TR>
+												<TD>Native Real</TD>
+											</TR>
+											<TR>
+												<TD>FNPTR</TD>
+											</TR>
+											<TR>
+												<TD>SZARRAY</TD>
+											</TR>
+											<TR>
+												<TD>GENERICARRAY</TD>
+											</TR>
+											<TR>
+												<TD>&lt;base type name&nbsp;ex. System.Int32 &gt;</TD>
+											</TR>
+										</TABLE>
+									</TD>
+								</TR>
+								<TR>
+									<TD>Attr</TD>
+									<TD>
+										<P>
+											Field attribute. Can be one of the following</P>
+										<P>
+											<TABLE id="Table7" cellSpacing="1" cellPadding="1" width="300" border="1">
+												<TR>
+													<TD>shared</TD>
+												</TR>
+												<TR>
+													<TD>shared static</TD>
+												</TR>
+												<TR>
+													<TD>static</TD>
+												</TR>
+												<TR>
+													<TD>instance</TD>
+												</TR>
+											</TABLE>
+										</P>
+										<P>
+											For shared static fields, you&nbsp;also get an extra line for each domain, 
+											except for the system and the shared domain
+											<table ID="Table5">
+												<tr>
+													<td class="WinDBGOut"><pre>0da689e4 4000bc8 8 CLASS shared static EventError <BR>
+    &gt;&gt; Domain:Value 00150718:NotInit  001a57b8:<STRONG><FONT color=red>050c7510</FONT></STRONG> &lt;&lt;</pre>
+													</td>
+												</tr>
+											</table>
+											<PRE></PRE>
+										<P>
+											Domain: is followed by all available domains and whether the variable is 
+											initialized in the specific domain.&nbsp;NotInit, FailInit or UnInit2 is 
+											displayed if the static field&nbsp;is not initialized in the specific domain. 
+											Use the DumpDomain command&nbsp;on the domain address to display information 
+											about the domain.
+											<BR>
+											<BR>
+											You can dump out the object using !DumpObj
+											<table ID="Table6">
+												<tr>
+													<td class="WinDBGOut"><pre>0:001&gt; !DumpObj <STRONG><FONT color=red>050c7510</FONT></STRONG> 
+Name: System.Object
+MethodTable 0x79b4dd80
+EEClass 0x79b4dde4
+Size 12(0xc) bytes
+mdToken: 02000002  (c:\windows\microsoft.net\framework\v1.0.3705\mscorlib.dll)
+Object</pre>
+													</td>
+												</tr>
+											</table>
+										</P>
+									</TD>
+								</TR>
+								<TR>
+									<TD>Value</TD>
+									<TD>Can be empty if it is an instance field, or static if it is an uninitialized 
+										shared variable.</TD>
+								</TR>
+								<TR>
+									<TD>Name</TD>
+									<TD>Name of field (member variable).</TD>
+								</TR>
+							</TABLE>
+							<P>
+								&nbsp;</P>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

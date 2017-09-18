@@ -1,0 +1,368 @@
+<VisualStudioProject>
+    <VisualBasic
+        ProjectType = "Web"
+        ProductVersion = "7.10.2169"
+        SchemaVersion = "2.0"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "Data"
+                AssemblyOriginatorKeyFile = ""
+                AssemblyOriginatorKeyMode = "None"
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Flow"
+                DefaultTargetSchema = "IE32Nav30"
+                DelaySign = "false"
+                OutputType = "Library"
+                OptionCompare = "Binary"
+                OptionExplicit = "On"
+                OptionStrict = "On"
+                RootNamespace = ""
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    BaseAddress = "0"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "true"
+                    DefineTrace = "true"
+                    DebugSymbols = "true"
+                    IncrementalBuild = "true"
+                    Optimize = "false"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+                <Config
+                    Name = "Release"
+                    BaseAddress = "0"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "false"
+                    DefineTrace = "true"
+                    DebugSymbols = "false"
+                    IncrementalBuild = "true"
+                    Optimize = "false"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                />
+                <Reference
+                    Name = "System.Design"
+                    AssemblyName = "System.Design"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                />
+                <Reference
+                    Name = "System.Web"
+                    AssemblyName = "System.Web"
+                />
+                <Reference
+                    Name = "System.Web.Services"
+                    AssemblyName = "System.Web.Services"
+                />
+                <Reference
+                    Name = "System.Management"
+                    AssemblyName = "System.Management"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                />
+                <Reference
+                    Name = "QSTools"
+                    AssemblyName = "QSTools"
+                    HintPath = "bin\QSTools.dll"
+                />
+            </References>
+            <Imports>
+                <Import Namespace = "Microsoft.VisualBasic" />
+                <Import Namespace = "System" />
+                <Import Namespace = "System.Data" />
+                <Import Namespace = "System.Collections" />
+                <Import Namespace = "System.Diagnostics" />
+                <Import Namespace = "System.Management" />
+            </Imports>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "data.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid1.1.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid1.1.aspx.vb"
+                    DependentUpon = "DataGrid1.1.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid1.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid1.aspx.vb"
+                    DependentUpon = "DataGrid1.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid1.aspx.resx"
+                    DependentUpon = "DataGrid1.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "DataGrid10.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid10.aspx.vb"
+                    DependentUpon = "DataGrid10.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid10.aspx.resx"
+                    DependentUpon = "DataGrid10.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "DataGrid11.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid11.aspx.vb"
+                    DependentUpon = "DataGrid11.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid12.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid12.aspx.vb"
+                    DependentUpon = "DataGrid12.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid13.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid13.aspx.vb"
+                    DependentUpon = "DataGrid13.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid13_Details.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid13_Details.aspx.vb"
+                    DependentUpon = "DataGrid13_Details.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid14.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid14.aspx.vb"
+                    DependentUpon = "DataGrid14.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid15.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid15.aspx.vb"
+                    DependentUpon = "DataGrid15.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid16.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid16.aspx.vb"
+                    DependentUpon = "DataGrid16.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid17.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid17.aspx.vb"
+                    DependentUpon = "DataGrid17.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid18.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid18.aspx.vb"
+                    DependentUpon = "DataGrid18.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid2.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid2.aspx.vb"
+                    DependentUpon = "DataGrid2.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid3.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid3.aspx.vb"
+                    DependentUpon = "DataGrid3.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid4.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid4.aspx.vb"
+                    DependentUpon = "DataGrid4.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid4.aspx.resx"
+                    DependentUpon = "DataGrid4.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "DataGrid5.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid5.aspx.vb"
+                    DependentUpon = "DataGrid5.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid5.aspx.resx"
+                    DependentUpon = "DataGrid5.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "DataGrid6.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid6.aspx.vb"
+                    DependentUpon = "DataGrid6.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid7.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid7.aspx.vb"
+                    DependentUpon = "DataGrid7.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid8.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid8.aspx.vb"
+                    DependentUpon = "DataGrid8.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid9.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DataGrid9.aspx.vb"
+                    DependentUpon = "DataGrid9.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DataGrid9.aspx.resx"
+                    DependentUpon = "DataGrid9.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "schema.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "schemadata.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Web.config"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "xmlgen.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "xmlgen.aspx.vb"
+                    DependentUpon = "xmlgen.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "xmlgen.aspx.resx"
+                    DependentUpon = "xmlgen.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+            </Include>
+        </Files>
+    </VisualBasic>
+</VisualStudioProject>
+

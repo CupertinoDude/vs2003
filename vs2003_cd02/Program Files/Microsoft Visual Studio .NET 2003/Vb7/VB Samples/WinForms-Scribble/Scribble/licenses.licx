@@ -1,0 +1,11 @@
+System.Windows.Forms.ToolBar, System.Windows.Forms, Version=1.0.2411.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Windows.Forms.StatusBar, System.Windows.Forms, Version=1.0.2411.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Windows.Forms.ImageList, System.Windows.Forms, Version=1.0.2411.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Drawing.Printing.PrintDocument, System.Drawing, Version=1.0.2411.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Windows.Forms.MenuItem, System.Windows.Forms, Version=1.0.2411.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Windows.Forms.MainMenu, System.Windows.Forms, Version=1.0.2411.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Windows.Forms.MdiClient, System.Windows.Forms, Version=1.0.2411.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Windows.Forms.Form, System.Windows.Forms, Version=1.0.2411.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Windows.Forms.HelpProvider, System.Windows.Forms, Version=1.0.2411.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Windows.Forms.Label, System.Windows.Forms, Version=1.0.2411.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Windows.Forms.ToolBarButton, System.Windows.Forms, Version=1.0.2411.0, Culture=neutral, PublicKeyToken=b77a5c561934e089

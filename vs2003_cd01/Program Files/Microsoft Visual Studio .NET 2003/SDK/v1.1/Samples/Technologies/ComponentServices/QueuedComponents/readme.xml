@@ -1,0 +1,140 @@
+﻿<?xml version='1.0'?> 
+<?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?> 
+<sample windowsforms="true"> 
+
+<title> Queued Components Sample</title>
+<title-short>Queued Components</title-short>
+
+<overview>
+<p class = "text">
+Queued Components is a COM+ feature built on top of Message Queueing Services (MSMQ) that provides a mechanism for invoking and executing components asynchronously. When a client makes a call to a queued object, the call is actually made to a recorder, which packages it as a message and places that message in a queue. A listener reads the message from the queue and passes it to the player. The player makes the actual method calls on the server object.
+</p>
+<p class = "text">
+In order for the server to receive queued messages, it must be activated in some way. Server components can be activated manually, using scripting in combination with the task scheduler, or programmatically. In this sample, we will activate the server component manually.
+</p>
+<p class = "text">
+The sample code consists of a client application and a managed object that is marked for InterfaceQueueing. The listener is enabled by means of a class attribute. On building the application, COM+ creates a queue whose name is the same as the specified COM+ application.
+</p>
+<p class = "text">
+The client application contains a single button. Clicking the button invokes the queued component recorder by means of a queue moniker. All calls through the returned reference are packaged and placed in the appropriate message queue. 
+</p>
+<p class = "text">
+Queued method calls will be unpackaged and delivered to the actual server component when it is activated in the Component Services administrative tool. The sample server displays a simple message box to show that the call has made it to the server.
+</p>
+</overview>
+
+<subdirectory>Technologies\ComponentServices\QueuedComponents</subdirectory>
+<buildsteps> 
+<step> 
+IMPORTANT: in order to build and execute this sample, MSMQ must be installed on your computer in Workgroup mode.
+</step>
+<step>
+Double-click My Computer\Control Panel\Add/Remove Programs.
+</step>
+<step>
+In the Add/Remove Programs dialog, click 'Add/Remove Windows Components' and check the item labeled 'Message Queuing Services'. Click 'Next'.
+</step>
+<step>
+Windows 2000 has additional steps to install MSMQ:<br/>
+In the subsequent 'Message Queuing Type' wizard page, click the checkbox labeled 'Manually select access mode to Active Directory'. Click 'Next'.
+</step>
+<step>
+In the subsequent 'Message Queuing Server' page, click the radio button labeled 'Message Queuing will not access a directory service'. Click 'Next' and setup will complete. Click 'Finished'.
+</step>
+<step>
+After installing MSMQ, build the sample code by typing <b>BuildAll.bat</b> from the command line.      
+<example> 
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\QueuedComponents>buildall.bat
+</example>
+</step>
+<step>
+If you're building the sample from Visual Studio 7, you will need to register the QCDemoSvr.dll assembly to setup the Message Queue before running the sample.  Note: The regsvcs.exe program is located in the <i>%systemroot%\Microsoft.NET\Framework\&lt;version&gt;</i> directory.
+<example>
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\QueuedComponents\CS>regsvcs QCDemoSvr.dll
+</example>
+you will also need to install the QCDemoSvr.dll assembly to the Global Assembly Cache before running the sample.  Note: The gacutil.exe program is located in the <i>SDK\v1.1</i>\Bin directory.  
+<example>
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\QueuedComponents\CS>gacutil -i QCDemoSvr.dll
+</example>
+</step>
+<step>
+The sample builds a C# and VB version of the client application and COM+ component. Source code for each language is stored in subdirectories named \CS and \VB. The C# component has 'CS' appended to its name as viewed in the Component Services administrative tool, 'QCDemoServerCS.QComponent'. The VB version is named 'QCDemoServerVB.QComponent'. When working with the sample code, be sure to observe and/or modify the version of the COM+ component that corresponds to the client application you launch.
+</step>
+<step>
+Review comments in the source code and build.bat files for more information on sample binary creation and registration steps.
+</step>
+</buildsteps>
+<runsteps> 
+
+<step>
+NOTE: The COM+ .NET samples require Windows 2000 or higher in order to build and run.
+</step>
+
+<step>
+Build the Queued Components sample code following the instructions above.
+</step>
+
+<step>
+Type <b>QCDemo.exe</b> from the command line (or launch qcdemo.exe from the Windows explorer).
+<example>
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\QueuedComponents\CS>qcdemo.exe
+</example>
+</step>
+<step>
+Click the button labeled 'Send Queued Msg'. Alter the string value in the text edit field, and click 'Send Queued Msg' a second time. This should place two packaged method calls in the queue.
+</step>
+<step>
+Next, examine the messages in the QCDemoSvr queue. Right-Click 'My Computer' and select 'Manage' from the pop-up menu. Expand 'Services and Applications\Message Queueing\Private Queues' in the Computer Management console. You should see a queue named 'qcdemosvr' in this node. The queue name corresponds to the name of the COM+ application that holds the queued component (we'll examine the application in a later step).
+</step>
+<step>
+Expand 'qcdemosvr' and select 'Queue messages'. You should see two messages in the right-hand pane, corresponding to the two queued component methods calls we made in the client application.
+</step>
+<step>
+Launch the Component Services administrative tool (also called the 'COM+ explorer'), by clicking 'Start\Settings\Control Panel' then double-clicking 'Administrative Tools\Component Services'.
+</step>
+<step>
+Locate the QCDemoSvr COM+ application by expanding Component Services\Computers\My Computer\COM+ Applications in the left-hand COM+ explorer pane.
+</step>
+<step>
+Right-click the QCDemoSvr application and select 'Start' from the popup menu. This activates the server component. The listener/player will pull messages from the qcdemosvr queue and call into the server. As a result, you should see two message boxes which contain the text strings from the original calls from the sample client application.
+</step>
+
+<step>
+You can return to the Computer Management console to observe that the qcdemosvr no longer contains queued messages. Subsequent calls from the client application are passed directly to the server and message boxes will appear immediately for each button click.
+</step>
+<step>
+NOTE: in order to return to queuing messages, you must shut down the QCDemoSvr COM+ application (by right-clicking the application in the COM+ explorer and selecting 'Shut down'). Due to a problem in Windows 2000, the QCDemo client .exe must be closed before the QCDemoSvr COM+ application will shut down. This problem will be fixed in a later version of Windows.
+</step>
+
+</runsteps>
+<uninstallsteps>
+<step>
+To uninstall this sample, run <b>buildall.bat -u.</b> or <b>build.bat -u.</b> The batch file will then call regsvcs and gacutil with the /u switch in order to remove the sample files from the COM+ catalog and Global Assembly Cache.
+</step>
+</uninstallsteps>
+
+<technologies> 
+<technology  name = "Queued Components" keyword ="Queued Components">COM+ feature that builds on Microsoft Message Queuing (MSMQ) in order to provide easy, asynchronous invocation and execution of server components.
+</technology>
+<technology  name = "Message Queuing" keyword ="MSMQ">Technology that enables applications running at different times to communicate across networks and systems that may be temporarily offline. Queues store messages generated by sending applications which can be retrieved later by receiving applications.
+</technology>
+<technology  name = "InterfaceQueuing attribute" keyword ="InterfaceQueuing">Attribute that enables queuing support for a specified interface. Calls on the interface will be queued using MSMQ.
+</technology>
+<technology name = "ApplicationQueuing attribute" keyword = "ApplicationQueuing">Attribute used to enable and configure queuing support for the marked assembly.
+</technology>
+<technology  name = "QueuingEnabled attribute" keyword ="QueuingEnabled">Indicates whether queued components is enabled for the application.
+</technology>
+<technology  name = "QueueListenerEnabled attribute" keyword ="QueueListenerEnabled">Indicates whether the queued components listener is enabled for the application.
+</technology>
+<technology  name = "Queue moniker" keyword ="Queue moniker">Used to invoke a queued component. Queue monikers also accept optional arguments that alter the properties of messages sent to MSMQ. See the Platform SDK documentation for more information.
+</technology>
+</technologies>
+
+
+<keywords> 
+<word name="Queued components" keyword="Queued components"/>
+<word name="QC" keyword="QC"/>
+<word name="InterfaceQueuing" keyword="InterfaceQueuing"/>
+<word name="COM+" keyword="COM+"/>
+</keywords>
+</sample>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Custom Attributes">
+	<Paragraph>
+		Many programming languages allow you to attribute your code. For example, on the line below, the Main method shown is adorned with two attributes- public and static:
+	</Paragraph>
+	<Paragraph>
+		<Code>
+class App {
+   public static void Main() {
+      ...
+   }
+}
+		</Code>
+	</Paragraph>
+	<Paragraph>
+		When compiled, the compiler emits these method attributes into the managed module’s metadata. At runtime, this metadata can be examined and based on the presence of these attributes the 			behavior of the application changes.
+	</Paragraph>
+	<Paragraph>
+		This ability to adorn types, methods, fields, delegates, and so on with attributes is an extremely handy device for programmers. Since this is such a useful mechanism, Microsoft designed the .NET 		Framework in such a way that it offers developers the opportunity to define their own attributes. Like the “built-in” attributes, these developer-defined (or “custom attributes”) can be examined at 		runtime and affect the way an application executes.	
+	</Paragraph>
+	<Paragraph>
+		So, in addition to all the attributes that the compiler understands natively (like public and static), the Framework Class Library ships with many custom attributes defined by Microsoft. While it is 		possible for you to define and create your own custom attributes, only developers that are implementing class libraries will typically do this. More likely, you will be using attributes that have 			already been designed by class library implementers. 	
+	</Paragraph>
+	<Paragraph>
+		In C# you apply an attribute immediately before the thing you wish to attribute and you enclose the attribute in square brackets ([]). Other languages that target the CLR will also expose attributes 		but the syntax may be different. VB for example, uses angle brackets (&lt;&gt;) instead of square brackets. 
+	</Paragraph>
+	<Paragraph>
+		The code below demonstrates how to apply a few custom attributes to an assembly, a type, and a method.	
+	</Paragraph>
+	<Paragraph>
+		<Sample Caption="Custom Attributes" Image="..\Images\Console.gif">
+			<CSPath>..\Samples\SpecialTypes\CustomAttributes\CS</CSPath>
+			<VBPath>..\Samples\SpecialTypes\CustomAttributes\VB</VBPath>
+		</Sample>
+	</Paragraph>
+	<Paragraph>
+		To learn which attributes exist in the Framework Class Library and to learn when and how to apply them, please refer to the .NET Framework SDK documentation.
+	</Paragraph>
+	<Navigation>
+		<Previous>Delegates.xml</Previous>
+		<Next>Type Members.xml</Next>
+	</Navigation>
+</Document>

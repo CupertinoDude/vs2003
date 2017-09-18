@@ -1,0 +1,5 @@
+C# Source:CS\ValidationReadingXML.cs,CS\ValidationReadingXML.aspx,CS\books.xml,CS\booksDTD.xml,CS\books.dtd,CS\booksDTDFail.xml,CS\booksSchema.xml,CS\schema.xsd,CS\booksSchemaFail.xml
+VB Source:VB\ValidationReadingXML.vb,VB\ValidationReadingXML.aspx,VB\books.xml,VB\booksDTD.xml,VB\books.dtd,VB\booksDTDFail.xml,VB\booksSchema.xml,VB\schema.xsd,VB\booksSchemaFail.xml
+C++ Source:CP\ValidationReadingXML.cpp,CP\books.xml,CP\booksDTD.xml,CP\books.dtd,CP\booksDTDFail.xml,CP\booksSchema.xml,CP\schema.xsd,CP\booksSchemaFail.xml
+
+

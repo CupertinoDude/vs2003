@@ -1,0 +1,44 @@
+package [!output NAMESPACE];
+
+import System.ComponentModel.*;
+import System.Drawing.*;
+import System.Windows.Forms.*;
+
+[!output CLASS_MODIFIER] class [!output SAFE_ITEM_NAME] extends [!output BASE_FULL_NAME]
+{
+	private System.ComponentModel.IContainer components = null;
+
+	public [!output SAFE_ITEM_NAME]()
+	{
+		// This call is required by the Windows Form Designer.
+		InitializeComponent();
+
+		// TODO: Add any initialization after the InitializeComponent call
+	}
+
+	/**
+	 * Clean up any resources being used.
+	 */
+	protected void Dispose(boolean disposing)
+	{
+		if (disposing)
+		{
+			if (components != null)
+			{
+				components.Dispose();
+			}
+		}
+		super.Dispose(disposing);
+	}
+
+	#region Designer generated code
+	/**
+	 * Required method for Designer support - do not modify
+	 * the contents of this method with the code editor.
+	 */
+	private void InitializeComponent()
+	{
+		components = new System.ComponentModel.Container();
+	}
+	#endregion
+}

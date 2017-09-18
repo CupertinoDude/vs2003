@@ -1,0 +1,46 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?>
+
+<sample>
+<title>Thread Join Synchronization Sample</title>
+<title-short>JoinThread</title-short>
+<overview>
+This sample demonstrates use of the Thread class. The sample creates a second thread and starts it running on a static method of the App class.  The primary thread then waits for the second thread to finish by calling the Join() method of the class.
+</overview>
+<subdirectory>Technologies\Threading\JoinThread</subdirectory>
+<buildsteps>
+   <step>
+      Type <richcontent bold="T">BUILD.bat</richcontent>
+      <richcontent> from the command line.</richcontent>      
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Threading\JoinThread\VB>Build.bat
+      </example>
+   </step>
+</buildsteps>
+<runsteps>
+   <step>
+      Type <richcontent bold="T">JoinThread.exe</richcontent><richcontent> from the command line.</richcontent>
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Threading\JoinThread\VB>JoinThread.exe
+      </example>
+   </step>   
+</runsteps>
+<technologies>
+   <technology name = "Thread Synchronization" keyword="T">
+      <class name = "Thread" keyword="T">
+         The sample first creates a new Thread object and starts the thread using the Start() method.  Then the sample uses the Join() method to wait for the new thread to terminate.  If the Join() method were not called by the main thread of this sample, a race condition would occur between the two threads.  If this were to happen, the second thread may not be able to finish processing before the application exits.
+      </class>  
+   </technology>    
+   <technology name = "Delegates" keyword="T">
+      <class name = "ThreadStart" keyword="T">
+         The ThreadStart delegate type is used by this sample to create a type-safe callback method for the Thread class to use. 
+      </class>      
+   </technology>
+</technologies>
+<keywords>
+   <word name="Threads" keyword="T"/>
+   <word name="Delegate" keyword="T"/>
+   <word name="Delegates" keyword="T"/>
+</keywords>
+</sample>
+

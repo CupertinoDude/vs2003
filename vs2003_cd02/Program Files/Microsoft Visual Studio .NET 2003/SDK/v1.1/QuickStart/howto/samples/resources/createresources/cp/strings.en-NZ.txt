@@ -1,0 +1,11 @@
+[strings]
+;prompts
+promptValidDeg = Please enter a viable outside temperature (-100 to 60).
+
+;distances
+dist1 = (in kilometres) ==>
+
+;degrees measurements
+degree1 = in Celsius ==>
+degree2 = -100
+degree3 = 60

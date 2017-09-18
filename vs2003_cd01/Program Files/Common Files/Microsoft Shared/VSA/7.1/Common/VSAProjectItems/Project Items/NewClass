@@ -1,0 +1,9 @@
+Attribute MyFile
+Version = "7.0"
+End Attribute
+Attribute MyClass
+    ModuleType = Class
+    Access = [Public]
+End Attribute
+
+Option Explicit

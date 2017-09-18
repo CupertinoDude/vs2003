@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META content="Microsoft Visual Studio 7.0" name="GENERATOR">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet"></HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">
+							DumpHeap</TD>
+					</TR>
+					<TR>
+						<TD>Dumps garbage-collected&nbsp;heap contents</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!DumpHeap [-stat] [-min 100] [-max 2000] [-mt 0x30000000] [-fix] 
+							[start [end]]</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="151" cellSpacing="1" cellPadding="1" width="752" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="131"><STRONG>-stat</STRONG></TD>
+									<TD vAlign="top">Show only statistics</TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="131"><STRONG>-min &lt;#&gt;</STRONG></TD>
+									<TD vAlign="top">Show only objects that are larger than # bytes</TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="131"><STRONG>-max &lt;#&gt;</STRONG></TD>
+									<TD vAlign="top">Show only objects that are smaller than # bytes</TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="131"><STRONG>-mt &lt;addr&gt;</STRONG></TD>
+									<TD vAlign="top">Show only objects with a particular method table</TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="131"><STRONG>-fix</STRONG></TD>
+									<TD vAlign="top"><FONT color="#ff00ff"></FONT></TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="131"><STRONG>start [end]</STRONG></TD>
+									<TD vAlign="top"><FONT color="#ff00ff"></FONT></TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>0:001&gt; !DumpHeap -stat -min 100
+total 1992 objects
+Statistics:
+      MT    Count TotalSize Class Name
+ d750604        1       116 System.Double[]
+  d0373c        1       140 System.Boolean[]
+ d9198dc        2       248 System.Web.HttpCachePolicy
+  d02edc        2       264 System.UInt64[]
+ de90094        2       280 System.Web.UI.HtmlTextWriter/TagStackEntry[]
+ d75f730        2       280 System.Web.Caching.ExpiresEntry[]
+ d8b8bb4        3       312 System.Configuration.ConfigXmlDocument
+ da6f2e8        1       332 System.Web.UI.HtmlTextWriter/AttributeInformation[]
+ d910fb4        3       444 System.Web.HttpApplication
+ d759914        2       472 System.Web.Caching.UsageEntry[]
+ d750088        1       492 System.Int64[]
+ da6fcd0        2       504 System.Web.UI.HtmlTextWriter/RenderStyle[]
+79b6e60c        5       600 System.Globalization.NumberFormatInfo
+ d75a5e8        5       620 System.Web.HttpContext
+ d75b3a4        5       640 System.Web.HttpResponse
+ da6f920        2       664 System.Web.UI.HtmlTextWriter/RenderAttribute[]
+ <FONT color=black>d8b5cc0</FONT>1       704 System.Int32[]
+ d75c59c        5       740 System.Web.HttpRequest
+ d8b3d64        6       744 System.Xml.XmlScanner
+ d91c5f4        1       760 System.Object[]
+ d753ebc        5       760 System.Web.Hosting.ISAPIWorkerRequestOutOfProc
+ d78b7d4        5      1060 ASP.Test1Page_aspx
+ da6ef40        1      1176 System.Web.UI.HtmlTextWriter/TagInformation[]
+ d91e8f8        5      1320 System.Web.UI.PageParser
+ d8b1ca8        6      1536 System.Xml.XmlTextReader
+ d91df84       21      2184 System.Text.RegularExpressions.RegexInterpreter
+  1546f8        4      8504      <STRONG><FONT color=#ff6666>Free</FONT></STRONG>
+ d8b59e4      126     14112 System.Xml.XmlNSAttributeTokenInfo
+  d03198        2     14728 System.Reflection.Cache.TypeNameStruct[]
+  d0209c      113     24752 System.Object[]
+  <FONT color=teal><STRONG>d026a0</STRONG></FONT>      241     49868 System.Int32[]
+  d02960      316     67272 System.Collections.Hashtable/bucket[]
+  d02364       22    106364 System.Char[]
+  d02c2c       78    249752 System.Byte[]
+79b4f3f8      995    331976 System.String
+Total 1992 objects
+large objects
+ Address       MT     Size
+ <STRONG><FONT color=blue>90d9350</FONT></STRONG> 79b4f3f8    87492 System.String
+ 90c3df8 79b4f3f8    87360 System.String
+ 90ae928 79b4f3f8    87224 System.String
+ 90994f0 79b4f3f8    87072 System.String
+ 90826d0 79b4f3f8    87492 System.String
+ 906d178 79b4f3f8    87360 System.String
+ 9057ca8 79b4f3f8    87224 System.String
+ 9042870 79b4f3f8    87072 System.String
+ 9040018   d0209c     2064 System.Object[]
+ 9040840   d0209c     4096 System.Object[]
+ 9041858   d0209c     4096 System.Object[]
+ 9097cb0   d0209c     2064 System.Object[]
+ 90984d8   d0209c     4096 System.Object[]
+ 90ee930   d0209c     2064 System.Object[]
+ 90ef158   d0209c     2064 System.Object[]
+ 90ef980   d0209c     2064 System.Object[]
+total 16 large objects</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Comments</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<P>TotalSize = Object size * number of objects.<BR>
+								<BR>
+								A large object is any object over 80KB in&nbsp;size. &nbsp;</P>
+							<P>Note: Free objects are objects that have yet to be compacted.</P>
+							<P>You can dump out the MethodTable with the DumpMT command, and the large objects 
+								with the DumpObj command.&nbsp;
+								<BR>
+								<table>
+									<tr>
+										<td class="WinDBGOut"><pre>
+0:000&gt; !DumpMT <FONT color=teal><STRONG>d026a0</STRONG></FONT>
+        
+EEClass : 00d02628
+Module : 79b38000
+Array: Rank 1, Type System.Int32
+Element Type: System.Int32<BR>        
+0:000&gt; !dumpobj <FONT color=#9966ff><STRONG><FONT color=blue>90d9350</FONT></STRONG> </FONT> 
+Name: System.String
+MethodTable 0x79b4f3f8
+EEClass 0x79b4f740
+Size 87492(0x155c4) bytes
+mdToken: 0200000f  (c:\windows\microsoft.net\framework\v1.0.3705\mscorlib.dll)
+String: &lt;configuration&gt;
+   &lt;mscorlib&gt;
+      &lt;security&gt;
+         &lt;policy&gt;
+            &lt;PolicyLevel version="1"&gt;
+...            
+            &lt;/PolicyLevel&gt;
+         &lt;/policy&gt;
+      &lt;/security&gt;
+   &lt;/mscorlib&gt;       
+&lt;/configuration&gt;
+
+FieldDesc*: 79b4f7a4
+      MT    Field   Offset                 Type       Attr    Value Name
+79b4f3f8  4000013        4         System.Int32   instance    43737 m_arrayLength
+79b4f3f8  4000014        8         System.Int32   instance    21885 m_stringLength
+79b4f3f8  4000015        c          System.Char   instance       3c m_firstChar
+79b4f3f8  4000016        0                CLASS     shared   static Empty
+    &gt;&gt; Domain:Value 00150718:05040200 001a57b8:05040200 &lt;&lt;
+79b4f3f8  4000017        4                CLASS     shared   static WhitespaceChars
+    &gt;&gt; Domain:Value 00150718:05040214 001a57b8:0105728c &lt;&lt;
+</pre>
+										</td>
+									</tr>
+								</table>
+								<BR>
+							</P>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

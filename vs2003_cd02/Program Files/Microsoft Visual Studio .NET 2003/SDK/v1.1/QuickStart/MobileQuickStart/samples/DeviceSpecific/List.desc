@@ -1,0 +1,9 @@
+A Templated List
+This sample demonstrates how to use a Template Set to customize a 
+List Mobile control. When an HTML device requests this page,
+the list is rendered using the templates defined on the page. For
+other devices, the list uses its default rendering. 
+<p>
+The list always uses the <b>OnItemCommand</b> event to report user interaction, 
+whether directly for its default rendering or by bubbling the event on the
+LinkButton Web Forms control in the template.

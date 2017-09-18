@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Grid", "Grid.vbproj", "{0B3244B8-A0C9-4BC0-A15C-042CE34741B9}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{0B3244B8-A0C9-4BC0-A15C-042CE34741B9}.Debug.ActiveCfg = Debug|.NET
+		{0B3244B8-A0C9-4BC0-A15C-042CE34741B9}.Debug.Build.0 = Debug|.NET
+		{0B3244B8-A0C9-4BC0-A15C-042CE34741B9}.Release.ActiveCfg = Release|.NET
+		{0B3244B8-A0C9-4BC0-A15C-042CE34741B9}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

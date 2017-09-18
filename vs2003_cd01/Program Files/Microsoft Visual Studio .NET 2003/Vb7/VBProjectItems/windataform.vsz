@@ -1,0 +1,10 @@
+VSWIZARD 7.0
+Wizard={5C0C15BD-0023-44FF-B39E-2DD32BE65A84}
+Param="EngineAssemblyName=Microsoft.VisualStudio.DataFormWizard"
+Param="Engine=Microsoft.VSWizards.DataFormWizard.DataFormWizardEngine"
+Param="InitializerAssemblyName=Microsoft.VisualStudio.DataFormWizard"
+Param="Initializer=Microsoft.VSWizards.DataFormWizard.DataFormWizardInitializer"
+Param="UIAssemblyName=Microsoft.VisualStudio.DataFormWizard"
+Param="UI=Microsoft.VSWizards.DataFormWizard.DataFormWizardUI"
+Param="ProjectType=WinForm"
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<myns:myrootelement xmlns="http://tempuri.org/mydefaultnamespace" xmlns:myns="http://tempuri.org/mynamespace" xmlns:yourns="http://tempuri.org/yournamespace">
+ <myns:part1>
+  <yourns:part1stuff>Some message</yourns:part1stuff>
+ </myns:part1>
+ <myns:part2>
+ <yourns:yoursubelement >
+  <test yourattr="testvalue" />
+  <yourns:yourothersubelement>Some other data</yourns:yourothersubelement>
+ </yourns:yoursubelement>
+ </myns:part2>
+</myns:myrootelement>

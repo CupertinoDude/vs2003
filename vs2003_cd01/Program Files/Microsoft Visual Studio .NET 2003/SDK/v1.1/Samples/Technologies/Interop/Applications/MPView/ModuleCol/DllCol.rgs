@@ -1,0 +1,25 @@
+HKCR
+{
+	ModuleCol.DllCol.1 = s 'DllCol Class'
+	{
+		CLSID = s '{287ED1AC-B3FE-4B3E-863B-AEE8674B015C}'
+	}
+	ModuleCol.DllCol = s 'DllCol Class'
+	{
+		CLSID = s '{287ED1AC-B3FE-4B3E-863B-AEE8674B015C}'
+		CurVer = s 'ModuleCol.DllCol.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {287ED1AC-B3FE-4B3E-863B-AEE8674B015C} = s 'DllCol Class'
+		{
+			ProgID = s 'ModuleCol.DllCol.1'
+			VersionIndependentProgID = s 'ModuleCol.DllCol'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+			}
+			'TypeLib' = s '{A6C5C541-0624-4897-9DED-039383BC2DF4}'
+		}
+	}
+}

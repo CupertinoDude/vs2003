@@ -1,0 +1,69 @@
+// ModuleCol.idl : IDL source for ModuleCol.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (ModuleCol.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(9CBCB913-67D6-4353-968A-98F26B22F7D8),
+		dual,
+		helpstring("IDllCol Interface"),
+		pointer_default(unique)
+	]
+	interface IDllCol : IDispatch
+	{
+		[id(DISPID_NEWENUM), propget]                     
+        HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
+        [id(DISPID_VALUE), propget]                      
+        HRESULT Item([in] long Index, [out, retval] BSTR* pVal);
+        [id(0x00000001), propget] 
+        HRESULT Count([out, retval] long* pVal);
+		[id(10), helpstring("method ProcName")] HRESULT ProcName([out, retval]BSTR * psName);
+	};
+
+	[
+		object,
+		uuid(D710E490-48FF-43AB-89F0-3A1D7EAA87E1),
+		dual,
+		helpstring("IProcCollection Interface"),
+		pointer_default(unique)
+	]
+	interface IProcCollection : IDispatch
+	{
+		[id(1), helpstring("method GetFirstProc")] HRESULT GetFirstProc([out] IDllCol ** pUnk, [out, retval] long * pHEnum);
+		[id(2), helpstring("method GetNextProc")] HRESULT GetNextProc([in] long nIndex, [out]IDllCol ** DllsCol, [out, retval] long * lNext);
+		[id(3), helpstring("method GetCount")] HRESULT GetCount([out, retval]long * pPCount);
+		[id(4), helpstring("method EnumerateProc")] HRESULT EnumerateProc([out, retval]long * pSuccess);
+
+	};
+
+[
+	uuid(A6C5C541-0624-4897-9DED-039383BC2DF4),
+	version(1.0),
+	helpstring("ModuleCol 1.0 Type Library")
+]
+library MODULECOLLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(DB5B1C2F-1576-4491-9748-2F049D8BF287),
+		helpstring("ProcCollection Class")
+	]
+	coclass ProcCollection
+	{
+		[default] interface IProcCollection;
+	};
+	[
+		uuid(287ED1AC-B3FE-4B3E-863B-AEE8674B015C),
+		helpstring("DllCol Class")
+	]
+	coclass DllCol
+	{
+		[default] interface IDllCol;
+	};
+};

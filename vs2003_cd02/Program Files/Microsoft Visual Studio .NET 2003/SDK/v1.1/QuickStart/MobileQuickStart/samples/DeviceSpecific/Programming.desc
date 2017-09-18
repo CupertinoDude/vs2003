@@ -1,0 +1,7 @@
+Device-Specific Programming
+This sample demonstrates how you can programmatically control
+the flow of an ASP.NET mobile Web Forms page on a device-specific basis.
+<p>
+The <b>OnItemCommand</b> event handler on the first form 
+evaluates device capability properties,
+and navigates to different forms based on the device.

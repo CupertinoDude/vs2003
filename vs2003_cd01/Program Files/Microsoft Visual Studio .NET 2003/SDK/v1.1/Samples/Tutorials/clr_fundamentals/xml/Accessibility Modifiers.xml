@@ -1,0 +1,161 @@
+﻿<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Accessibility Modifiers">
+	<Paragraph>
+		This section summarizes the accessibility modifiers that may be placed on types, fields, and methods (including properties and events). The CLR defines the set of possible modifiers but each 		language chooses the term that it wishes to use to expose the modifier to developers. For example, the CLR uses the term “Assembly” to indicate that a member is accessible to any code 			within the same assembly. However, C# and VB.NET use the terms “internal” and “Friend” respectively to expose “Assembly” accessibility.
+	</Paragraph>
+	<Paragraph>
+		The table below shows the accessibility modifiers that can be applied to a type, field, or method. Private is the most restrictive and Public is the least restrictive:
+	</Paragraph>
+	<Paragraph>
+		<Table>
+			<Row Header="true">
+				<Column>CLR Term</Column>
+				<Column>C# Term</Column>
+				<Column>VB Term</Column>
+				<Column Title="Description">Description</Column>
+			</Row>
+			<Row>
+				<Column>Private</Column>
+				<Column>private</Column>
+				<Column>Private</Column>
+				<Column Title="Description">
+					For types: Accessible only by referents that are part of the same source code module.  For fields and methods: Accessible only by referents that are part of the defining type
+				</Column>
+			</Row>
+			<Row>
+				<Column>Family</Column>
+				<Column>protected</Column>
+				<Column>Protected</Column>
+				<Column Title="Description">Accessible only to referents derived from the defining type</Column>
+			</Row>
+			<Row>
+				<Column>Family and Assembly</Column>
+				<Column>(not supported)</Column>
+				<Column>(not supported)</Column>
+				<Column Title="Description">Accessible only to referents in the same assembly if the referent is also derived from the defining type</Column>
+			</Row>
+			<Row>
+				<Column>Assembly</Column>
+				<Column>internal</Column>
+				<Column>Friend</Column>
+				<Column Title="Description">Accessible only to referents in the same assembly</Column>
+			</Row>
+			<Row>
+				<Column>Family or Assembly</Column>
+				<Column>protected internal</Column>
+				<Column>Protected Friend</Column>
+				<Column Title="Description">Accessible only to referents in the same assembly or by referents derived from the defining type</Column>
+			</Row>
+			<Row>
+				<Column>Public</Column>
+				<Column>public</Column>
+				<Column>Public</Column>
+				<Column Title="Description">Accessible to all referents</Column>
+			</Row>
+		</Table>
+	</Paragraph>
+	<Paragraph>
+		Below are the accessibility modifiers that may be applied to a type:
+	</Paragraph>
+	<Paragraph>
+		<Table>
+			<Row Header="true">
+				<Column>CLR Term</Column>
+				<Column>C# Term</Column>
+				<Column>VB</Column>
+				<Column Title="Description">Description</Column>
+			</Row>
+			<Row>
+				<Column>Abstract</Column>
+				<Column>abstract</Column>
+				<Column>MustInherit</Column>
+				<Column Title="Description">Type is incomplete and should only be used as a base class</Column>
+			</Row>
+			<Row>
+				<Column>Sealed</Column>
+				<Column>sealed</Column>
+				<Column>NotInheritable</Column>
+				<Column Title="Description">Type cannot be used as a base class</Column>
+			</Row>
+		</Table>
+	</Paragraph>
+	<Paragraph>
+		Below are the accessibility modifiers that may be applied to a data field:
+	</Paragraph>
+	<Paragraph>
+		<Table>
+			<Row Header="true">
+				<Column>CLR Term</Column>
+				<Column>C# Term</Column>
+				<Column>VB</Column>
+				<Column Title="Description">Description</Column>
+			</Row>
+			<Row>
+				<Column>Static</Column>
+				<Column>static</Column>
+				<Column>Shared</Column>
+				<Column Title="Description">Member is part of the type, not an instance of the type</Column>
+			</Row>
+			<Row>
+				<Column>InitOnly</Column>
+				<Column>readonly</Column>
+				<Column>ReadOnly</Column>
+				<Column Title="Description">The field can only be written to by a constructor</Column>
+			</Row>
+		</Table>
+	</Paragraph>
+	<Paragraph>
+		Below are the accessibility modifiers that may be applied to methods:
+	</Paragraph>
+	<Paragraph>
+		<Table>
+			<Row Header="true">
+				<Column>CLR Term</Column>
+				<Column>C# Term</Column>
+				<Column>VB</Column>
+				<Column Title="Description">Description</Column>
+			</Row>
+			<Row>
+				<Column>Abstract</Column>
+				<Column>abstract</Column>
+				<Column>MustOverride</Column>
+				<Column Title="Description">Method must be implemented in a derived type in order to construct an instance of the type</Column>
+			</Row>
+			<Row>
+				<Column>Final</Column>
+				<Column>sealed</Column>
+				<Column>NotOverridable</Column>
+				<Column Title="Description">Method cannot be overridden by a derived type</Column>
+			</Row>
+			<Row>
+				<Column>Static</Column>
+				<Column>static</Column>
+				<Column>Shared</Column>
+				<Column Title="Description">Method is part of the type, not an instance of the type</Column>
+			</Row>
+			<Row>
+				<Column>Virtual</Column>
+				<Column>virtual</Column>
+				<Column>Overridable</Column>
+				<Column Title="Description">Method is accessed even if object is cast to a base type</Column>
+			</Row>
+			<Row>
+				<Column>Newslot</Column>
+				<Column>new</Column>
+				<Column>Shadows</Column>
+				<Column Title="Description">Method should not override a virtual in base type; the method hides any inherited members with the same name</Column>
+			</Row>
+			<Row>
+				<Column>Override</Column>
+				<Column>override</Column>
+				<Column>Overrides</Column>
+				<Column Title="Description">Explicitly indicates that the method is overriding a virtual method in the base type</Column>
+			</Row>
+		</Table>
+	</Paragraph>
+	<Navigation>
+		<Previous>Type Members.xml</Previous>
+		<Next>Fields.xml</Next>
+	</Navigation>
+</Document>

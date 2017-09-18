@@ -1,0 +1,5 @@
+Client State
+This sample shows how you can create persistent client state. 
+When a client device first visits this page, the user is prompted to 
+enter a customer ID (a registration page would normally be provided here).
+The client is then taken to an alternate URL, which the user can then bookmark.

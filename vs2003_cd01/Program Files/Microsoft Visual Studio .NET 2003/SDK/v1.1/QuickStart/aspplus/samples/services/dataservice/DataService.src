@@ -1,0 +1,4 @@
+C# Source:CS\DataService.asmx
+VB Source:VB\DataService.asmx
+JScript Source:JS\DataService.asmx
+VS.NET:..\..\vstudio\services\DataService\CS\DataService.csproj,..\..\vstudio\services\DataService\VB\DataService.vbproj

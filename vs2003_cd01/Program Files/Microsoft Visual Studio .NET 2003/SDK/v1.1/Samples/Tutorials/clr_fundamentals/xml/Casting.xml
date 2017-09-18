@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Casting an Object from One Type to Another">
+	<Paragraph>
+		One of the most important features of the CLR is its type safety. The CLR always knows what type an object is. You can always discover an object's exact type by calling the GetType 			method. Since this method is non-virtual, a type cannot ever spoof another type: a Foo type cannot override the GetType method and return that it is a Bar type, for example. 	</Paragraph>
+	<Paragraph>
+		Programmers find it frequently necessary to cast an object from one type to another. Your programming language of choice decides how easy to expose casting operations to the developer. 			For example, C# doesn't require any special syntax to cast a type to any of its base types. However, C# does require that the developer explicitly cast a type to any of its derived types. The 			code below demonstrates:
+	</Paragraph>
+	<Paragraph>
+		<Code>
+// This type is implicitly derived from System.Object
+class SimpleType {
+}
+
+class App {
+   public static void Main() {
+      // No cast needed since new returns a SomeType
+      // and Object is a base of SomeType
+      Object o = new SimpleType();
+
+      // Cast required since SimpleType is derived from Object
+      // Other languages (like VB) may not require this cast to compile
+      SimpleType st = (SimpleType) o;
+   }
+}
+		</Code>
+	</Paragraph>
+	<Paragraph>
+		The text above discusses what is necessary for your compiler of choice to compile your code. We will now discuss what happens at runtime.	
+	</Paragraph>
+	<Paragraph>
+		At runtime, the CLR always checks casting operations to ensure that casts are always to the object's actual type or any of its base types. For example, the code below will throw an InvalidCastException at runtime:
+	</Paragraph>
+	<Paragraph>
+		<Code>
+public static void Main() {
+   // Construct a MyType object and pass it to SomeMethod
+   // A MyType IS a MyType: SomeMethod will not throw an exception
+   MyType mt = new MyType();
+   SomeMethod(mt);
+
+   // Construct a DateTime object and pass it to SomeMethod
+   // A DateTime is NOT derived from MyType: SomeMethod will throw
+   // an InvalidCastException exception. 
+   DateTime newYears = new DateTime(2001, 1, 1);
+   SomeMethod(newYears);
+}
+
+
+public void SomeMethod(Object o) {
+   // At this point, the compiler doesn't actually know exactly what
+   // type of object o refers to. So, the compiler allows the code to
+   // compile. However, at runtime, the CLR does actually know what
+   // type o refers to and the CLR checks if the object's type is
+   // MyType or any type that is derived from MyType.
+   MyType s = (MyType) o;
+   .
+   .
+   .
+}
+		</Code>
+	</Paragraph>
+	<Paragraph>
+		In the Main method above, a MyType object is constructed and this object is passed to SomeMethod. For example, calling SomeMethod is OK, since MyType is derived from Object which is 			what SomeMethod expects. Once inside SomeMethod, the CLR verifies that o refers to an object that is either a MyType or a type that is derived from MyType. Since MyType is a MyType, the 			CLR performs the cast and allows SomeMethod to continue executing.
+	</Paragraph>
+	<Paragraph>
+		After SomeMethod returns, the Main function constructs a DateTime object and passes it to SomeMethod. Again, a DateTime is derived from Object so the compiler compiles the code that calls SomeMethod. 			However, inside SomeMethod, the CLR verifies the cast and detects that o refers to a DateTime object that is not a MyType or any type derived from MyType. At this point, the CLR cannot allow 		the cast and instead, the CLR throws an InvalidCastException. 
+	</Paragraph>
+	<Paragraph>
+		If the CLR allowed the cast, then there is no type safety and types could easily spoof other types. Type spoofing is the cause of many security breaches and compromises an application's 			stability 	and robustness. Type safety is an extremely important part of the .NET Framework.
+	</Paragraph>
+	<Navigation>
+		<Previous>Object Base Type.xml</Previous>
+		<Next>Reference and Value Types.xml</Next>
+	</Navigation>
+</Document>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+            Microsoft ResX Schema 
+        
+            Version 1.3
+                
+            The primary goals of this format is to allow a simple XML format 
+            that is mostly human readable. The generation and parsing of the 
+            various data types are done through the TypeConverter classes 
+            associated with the data types.
+        
+            Example:
+        
+                ... ado.net/XML headers & schema ...
+                <resheader name="resmimetype">text/microsoft-resx</resheader>
+                <resheader name="version">1.3</resheader>
+                <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+                <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+                <data name="Name1">this is my long string</data>
+                <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+                <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+                    [base64 mime encoded serialized .NET Framework object]
+                </data>
+                <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+                    [base64 mime encoded string representing a byte array form of the .NET Framework object]
+                </data>
+        
+            There are any number of "resheader" rows that contain simple 
+            name/value pairs.
+            
+            Each data row contains a name, and value. The row also contains a 
+            type or mimetype. Type corresponds to a .NET class that support 
+            text/value conversion through the TypeConverter architecture. 
+            Classes that don't support this are serialized and stored with the 
+            mimetype set.
+                     
+            The mimetype is used for serialized objects, and tells the 
+            ResXResourceReader how to depersist the object. This is currently not 
+            extensible. For a given mimetype the value must be set accordingly:
+        
+            Note - application/x-microsoft.net.object.binary.base64 is the format 
+                   that the ResXResourceWriter will generate, however the reader can 
+                   read any of the formats listed below.
+        
+            mimetype: application/x-microsoft.net.object.binary.base64
+            value   : The object must be serialized with 
+                    : System.Serialization.Formatters.Binary.BinaryFormatter
+                    : and then encoded with base64 encoding.
+        
+            mimetype: application/x-microsoft.net.object.soap.base64
+            value   : The object must be serialized with 
+                    : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+                    : and then encoded with base64 encoding.
+            mimetype: application/x-microsoft.net.object.bytearray.base64
+            value   : The object must be serialized into a byte array 
+                    : using a System.ComponentModel.TypeConverter
+                    : and then encoded with base64 encoding.
+        -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="toolBar1.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="NewButton.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="OpenButton.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="SaveButton.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="PreviewButton.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="PrintButton.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="HelpButton1.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="ImageList1.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="ImageList1.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>246, 17</value>
+  </data>
+  <data name="ImageList1.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFpTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0xLjAuMzMw
+        MC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZT
+        eXN0ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMA
+        AAA+CwAAAk1TRnQBSQFMAgEBBgEAAQkBAAEEAQABEAEAARABAAT/AQkBEAj/AUIBTQE2AQQGAAE2AQQC
+        AAEoAwABQAMAATADAAEBAQABCAYAAQwYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAA4AD
+        AAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD/wEAAdIBJgHtBQABoAEJAgABEAMAAakBLAEhAgAB
+        BAIAAXABFwIAARQB4QESAQABXAEsASEBAAH0ASQBpQEAAawB4QESAQABPAHhARIBAAFgAWQBaQEAAVgB
+        8wFUAQABWAHzAVQBAAH4Av8NAAGQAQEKAAFNAQABUwEAASABAAFTAQABYQEAAW4BAAFzAQABIAEAAVMB
+        AAFlAQABcgEAAWkBAAFmEwABYAFkAWkFAAHzAS4BeAEAAYQB3QESAQABvgEbAecBAAEQAboBTwUAAQED
+        AAFgAWQBaQUAAfMBLgF4AQABawEyAXgBAAFcAd0BEgEAAQwBCAEKAQABmAHgARIBAAFUAQQGAAFYAfMB
+        VAEAAVwBOgF4AQABWAHzAVQBAAEBBwABYAFkAWkBAAHzAS4BeAEAAfMBLgF4AQABEAGGAbUBAAHgAd0B
+        EgEAAQ8BnQEbAQABEgMAASwB9QHCAQABpgHSASABAAGAAwABEAGGAbUFAAF3AVQBGwEAAWABZAFpAQAB
+        DAHeARIBAAEBBwABEAGGAbUBAAEQAYYBtQEAARAB3gESAgAB3gESAQABagEsAecBAAF8AQUBAwEAAVQB
+        BAYAAQEDAAF8AQUBAwEAASAB3gESAQABRgFZAegBAAHzAS4BeAEAAXwBBQEDAQABVAEEBgABAQcAAXgB
+        3gESAQABJAEzAYcBAAHzAS4BeAEAAXwBBQEDAQABVAEEBgABAQMAAVwB4AESAQABVAEEAgABYAFkAWkB
+        AAFcAeABEgEAAZgBQwEbAQABpAHeARIBAAHIASkBowEAASgB3gESAQABJAEzAYcBAAE7ATIBhwEAAbsB
+        KAGHAQABhAHeARIBAAF4Ad4BEgEAAWABZAFpAQAByAHeARIBAAHYAd4BEgEAATsBMgGHAQABuwEoAYcB
+        AAFcAeABEgkAAdgBcAE+AQABkQHPASABAAHUAd4BEgEAAQ8BnQEbAQABEgMAASwB9QHCAQABpgHSASAB
+        AAGAAwABEAGGAbUFAAF3AVQBGwEAAWABZAFpAgAB3wESAQABAQcAARABhgG1AQABEAGGAbUBAAEEAd8B
+        EgEAASYBGQEhAQABJAH1AcIBAAEuARkBIQEAAeQBQgE+AQABSAEyARsBAAEUAd8BEgIAAd8BEgEAAQED
+        AAFgAWQBaQkAAUAB3wESAQAB7QHEASsBAAE1AcUBKwEAAeQBQgE+AQABSAEyARsBAAGYAd8BEgEAAUgB
+        3wESAQABAQMAAWABZAFpCQABGAHyAWgBAAEkAfUBwgEAARwBWgHeAQABeAHfARIBAAF4Ad8BEgEAATgB
+        wQEiAQABJAH1AcIBAAHkAUIBPg0AAXgB3wESAQABdwFUARsBAAFgAWQBaQEAAbwB3wESCQABJAH1AcIB
+        AAGwAd8BEgEAAbEBTAH2AQABSAEFARMBAAEJAwABCAMAAWABZAFpAQAB9AHfARIBAAFgAWQBaQEAAUgB
+        MgEbAQAB9AHfARIBAAG8Ad8BEgEAAQEDAAFgAWQBaQUAAcQB3wESAQABygHQASABAAGoAVkB7QUAAdgB
+        3wESAQABNAHgARIBAAFnAW0BYgEAAagBWQHtAQABNAFbAd4BAAEcAVoB3gUAATQBWwHeAQABHAFaAd4B
+        AAFcAeABEgEAAVwB4AESAQABfAEFAQMBAAE0AeABEgEAAfABMQEbAQABEAHhARIBAAFVAVoB3wEAAcwB
+        ngHfAQABzwGeAd8BAAF8AQUBAwEAAfABNAHeAQABXAHgARIBAAE0AVsB3gEAARwBWgHeAQABNAFbAd4B
+        AAFUAQQPAAEGAgABCgEJAgAB7AEYAYcBAAGIAeABEgEAAaoBKAHwAwABEwEAAQgBAAEEAQABHAE6Ae0B
+        AAE+AVEB7QEAAUADAAEgAwABAQMAAQEHAAG4AZEBaQEAAaQB4AESAQABpAEcAXgBAAFA/wD/AP8A/wAH
+        AAIHC9QJBwLUCAcgAAEHAdQKBwEAAdQIBwIACAcgAAEIAZwKCAEAARwBCAYHARwBAAEcAgcD/AMHIQAG
+        CANKAwgBmAIIAQcBmgMHAZgBAAMHAwQDByEABgcBTgKZAwcBHAGYARwBBwIAAggBAAGYAwcDFAMHIQAG
+        BwMIAwcBHAEHARwBBwUABAcBHAF1ARwDByEACz4BAAEcAQcBHAEHCAABBwIEAcQDByAAARwBCAoHAQAB
+        CAIcAQcHAAEcAQcB/AIEAQgCByAAAQcBHAo+AQABHAEHAfQBBwYAARwDBwHUAQQB9wIHIAADBwEIBw8E
+        CAGcAQcFAAEcBQcBdQEEAfcBCCAAAwcBHAEPAQgEmgEPAR8BAAGYAQABHAEHBAABHAIHAhQDBwFAAQQB
+        wiAAAwcBCAEHBw8BnAEcAwcDAAGaAgcB/AEEAfcDBwH8AgQgAAQHAQgBBwUcAQcBDwEcAwcCAAGcAwcB
+        /AEEAfcDBwH8AgQgAAUHAQgHDwEIAwcBAAGYBAcB1AEsAQQBEwIHAfcBBAHCIAAFBwEcB9QBnAMHAdQG
+        BwHUAUABBAL3AQQB9wEIIAAgByAAAwcL1AIHC9QHBw3UAQcBAArUAZwCBwHUAQADBwHUCR8B1AIHAQAB
+        mAkDAdQFBwHUAgMGAAIHAQABAwEAAQcBAAoPAQgBBwHUAgADBwEICQ8BCAIHAQABCAoDAQgEBwEcAgMG
+        AAIHAQABAwEAAQcBAAYPAQcBAAGYAZwBmAMAAQgDBwEICQ8BCAIHAQABTgEHCgMBCAMHARwCAwYAAgcB
+        AAEDAQABBwEABg8BmAEIAgcBHAIAAQgEBwEICQ8BCAIHAQABTgELAQgJAwFrAQgCBwEcAgMGAAIHAQAB
+        AwEAAQcBAAYPAT4CBwEPAQYBmAE+BQcBCAkPAQgCBwEAA04BCAoDAQgBBwEcAgMGAAIcAQABAwEAAQcB
+        AAYPARwBHwIHAdQBBwEcBQcBCAkPAQgCBwEAAU4BHwFOAQsBCAkDAZgBBwEcDAMBAAEHAQAGDwEcAQ4B
+        HwEHARwBBwEcBQcBCAkPAQgCBwEABU4BCAEcAQMBHAEIAZoEHAEHARwCAwiYAgMBAAEHAQAGDwEAAqQB
+        HwEcAgAFBwEICQ8BCAIHAQABTgELAU4BHwFOAQsBTgEfAU4BCwEcBQcBHAEDAZgIBwHuAQMBAAEHAQAG
+        DwEIAT4B1AEHARwBAAEcBQcBCAkPAQgCBwEAAU4BHwFOAUoDCAFKAggBHAUHARwBAwGYCAcBAAEDAQAB
+        BwEABw8DHAGaARwGBwEIBg8DmgGYAgcBAAFOAR8BTgEABggBBwOYAdQBBwEcAQMBmAgHAQABAwEAAQcB
+        AAoPAQgHBwEIBg8BAAEPAQcBCAMHA5oJBwGYAQABHAEHARwBAwGYCAcBAAEDAQABBwEABw8DBwEcBwcB
+        CAYPAQABBwEICwcBnAQHARwBAAEcAQcBHAEDAZgIBwEAAQMBAAEHAQAHDwEAAggBnAcHAdQGHwEAAdQN
+        BwEcAgcBmAIHAdQBBwEcAQMBmAgHAQABmAEAAQcBAAcPAQABBwGYCAcI1A4HAQgC1AUHARwBmAHzCBwB
+        AAEcAQABBwEABw8BAAEcNgcJAAcHAUIBTQE+BwABPgMAASgDAAFAAwABMAMAAQEBAAEBBQABgAEBFgAD
+        //8AmAAL
+</value>
+  </data>
+  <data name="MenuItemOpen.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemNewWindow.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemExit.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemPrint.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemClose.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemCascade.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItem12.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemThickLine.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemFile.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemNew.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemSave.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemSaveAs.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemPreview.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="statusBar1.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemView.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemToolbar.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemStatusbar.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemClearAll.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="PrintDoc.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>351, 17</value>
+  </data>
+  <data name="PrintDoc.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemHelpTopics.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MainMenu1.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </data>
+  <data name="MainMenu1.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemEdit.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemPen.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemPenWidths.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemWindow.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemTile.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemHelp.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItem37.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="MenuItemAbout.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="HelpProvider1.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>125, 17</value>
+  </data>
+  <data name="HelpProvider1.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="mdiClient1.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Assembly</value>
+  </data>
+  <data name="$this.Name">
+    <value>MainWindow</value>
+  </data>
+</root>

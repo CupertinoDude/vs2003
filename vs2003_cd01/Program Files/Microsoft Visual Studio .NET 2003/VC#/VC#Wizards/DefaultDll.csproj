@@ -1,0 +1,36 @@
+<VisualStudioProject>
+    <CSHARP>
+        <Build>
+            <Settings
+                OutputType = "Library"
+                NoStandardLibraries = "false"
+            >
+                <Config
+                    Name = "Debug"
+                    DebugSymbols = "true"
+                    Optimize = "false"
+    		        OutputPath = ".\bin\Debug"
+	        	    EnableUnmanagedDebugging = "false"
+		            DefineConstants = "DEBUG;TRACE"
+                    WarningLevel = "4"
+					IncrementalBuild = "false"
+                />
+                <Config
+                    Name = "Release"
+                    DebugSymbols = "false"
+                    Optimize = "true"
+    		        OutputPath = ".\bin\Release"
+	        	    EnableUnmanagedDebugging = "false"
+           		    DefineConstants = "TRACE"
+                    WarningLevel = "4"
+					IncrementalBuild = "false"
+                />
+            </Settings>
+        </Build>
+        <Files>
+            <Include/>
+            <Exclude/>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>
+

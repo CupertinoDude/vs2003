@@ -1,0 +1,23 @@
+﻿<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Creating objects that require explicit cleanup">
+	<Paragraph>
+		The “Use objects that require proper cleanup” section demonstrated how to use an object that requires proper cleanup. In this section, you’ll see how to define a type that allows the application 		developer the ability to explicitly cleanup an object. If you are designing a type whose objects require explicit cleanup, your type should implement the System.IDisposable interface’s Dispose 		method. Put all your cleanup code in this Dispose method, call your base type’s Dispose method (if it defines one) and you should also call the System.GC type’s static SuppressFinalization method passing it the reference to the object being disposed (this). Calling SuppressFinalize informs the garbage collector that it does not have to call the object’s Finalize method since the object has been 		explicitly disposed of – this improves performance and memory usage.
+	</Paragraph>
+	<Paragraph>
+		If it makes more sense for your type to offer a Close method, then you should also define a Close method that internally calls your Dispose method. Finally, you should also override 				System.Object’s Finalize method.
+	</Paragraph>
+	<Paragraph>
+		The code below demonstrates all of the steps described above. You should also notice the use of C#’s using statement. This statement simplifies the code necessary to construct and cleanup an 		object. Note that the using statement is only useful for objects whose lifetime doesn’t extend beyond the method they are constructed in.
+	</Paragraph>
+	<Paragraph>
+		<Sample Caption="Creating Objects Requiring Cleanup" Image="..\Images\Console.gif">
+			<CSPath>..\Samples\MemoryManagement\DefiningCleanup\CS</CSPath>
+			<VBPath>..\Samples\MemoryManagement\DefiningCleanup\VB</VBPath>
+		</Sample>
+	</Paragraph>
+	<Navigation>
+		<Previous>Using Objects Requiring Proper Cleanup.xml</Previous>
+		<Next>Threading.xml</Next>
+	</Navigation>
+</Document>

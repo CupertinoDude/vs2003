@@ -1,0 +1,3 @@
+C# Source:CS\Client\WebServiceClient.cs,CS\DataSet\CustomersAndOrdersDataSet.cs,CS\SimpleCustomersWebService.asmx.cs,CS\SimpleCustomersWebService.WSDL
+VB Source:VB\Client\WebServiceClient.vb,VB\DataSet\CustomersAndOrdersDataSet.vb,VB\SimpleCustomersWebService.asmx.vb,VB\SimpleCustomersWebService.WSDL
+VS.NET:CS\WebService.csproj,CS\Client\WebServiceClient.csproj,CS\DataSet\DataSet.csproj,VB\WebService.vbproj,VB\Client\WebServiceClient.vbproj,VB\DataSet\DataSet.vbproj

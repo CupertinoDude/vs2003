@@ -1,0 +1,16 @@
+[!if IS_NAMESPACE_NAME]
+package [!output SAFE_NAMESPACE_NAME];
+[!endif]
+
+/**
+ * Summary description for [!output SAFE_CLASS_NAME].
+ */
+public class [!output SAFE_CLASS_NAME]
+{
+	public [!output SAFE_CLASS_NAME]()
+	{
+		//
+		// TODO: Add Constructor Logic here
+		//
+	}
+}

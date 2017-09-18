@@ -1,0 +1,55 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?>
+
+<sample>
+<title>Custom Attribute Sample</title>
+<title-short>CustomAttribute</title-short>
+<overview>
+The purpose of this sample is to introduce more advanced developers to .NET Framework custom attributes. This sample demonstrates how to create a custom attribute and associate the attribute with a type and member. Additionally the 
+sample demonstrates how to use reflection to determine if a type/member has a custom attribute associated with it.
+</overview>
+<subdirectory>Technologies\Reflection\CustomAttribute
+</subdirectory>
+<buildsteps>
+   <step>
+      Type <b>BUILD.bat</b> from the command line.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Reflection\CustomAttribute\VB>Build.bat
+      </example>
+   </step>
+</buildsteps>
+<runsteps>   
+   <step>
+      Type <B>CustAttr.exe</B> from the command line.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Reflection\CustomAttribute\VB>CustAttr.exe
+      </example>
+   </step>         
+</runsteps>
+<technologies>
+   <technology name = "Custom Attributes" keyword="T">
+      <class name = "Attribute" keyword="T">
+      When defining a custom attribute, you must derive from System.Attribute.  This sample derives a type named MyAttribute from Attribute.
+      </class>       
+      <class name = "ObsoleteAttribute" keyword="T">
+      This attribute is used to mark a code element as obsolute.  This informs users of the code that they should not rely on its availability in future versions.
+      </class>       
+   </technology>     
+   <technology name = "Reflection" keyword="T">
+      <class name = "Type" keyword="T">
+      Used to get custom attributes for the type, and also used to get an array of MemberInfo objects for the type.
+      </class>       
+      <class name = "MemberInfo" keyword="T">
+      Used to get an array of attributes for the member.
+      </class>       
+   </technology>
+</technologies>
+<keywords>
+   <word name="Dynamic code" keyword="T"/>   
+   <word name="Self-modifying" keyword="T"/>
+   <word name="AssemblyBuilderAccess" keyword="T"/>   
+   <word name="MethodAttributes" keyword="T"/>
+</keywords>
+
+</sample>
+

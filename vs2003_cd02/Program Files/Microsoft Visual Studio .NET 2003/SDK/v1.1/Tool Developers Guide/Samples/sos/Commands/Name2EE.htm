@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">Name2EE(done)</TD>
+					</TR>
+					<TR>
+						<TD>Finds the&nbsp;memory address of EE data given a class or method name.</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!Name2EE &lt;module name&gt; &lt;item name&gt;</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="45" cellSpacing="1" cellPadding="1" width="774" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="124"><STRONG>&lt;module name&gt;</STRONG></TD>
+									<TD vAlign="top">Name of .dll&nbsp;or .exe file that the class or method&nbsp;is 
+										defined in, including the file name extension.</TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="124"><STRONG>&lt;item name&gt;</STRONG></TD>
+									<TD vAlign="top">Fully qualified class name or fully qualified method name.</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>
+0:003&gt; !Name2EE basedebug.exe basedebug.MyClass
+--------------------------------------
+MethodTable: 003751a4
+EEClass: 031410ec
+Name: basedebug.MyClass
+
+0:003&gt; !name2ee basedebug.exe basedebug.MyClass.MyFunction
+--------------------------------------
+MethodDesc: 375190
+Name: [DEFAULT] [hasThis] String basedebug.MyClass.MyFunction()
+-----------------------</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Comments</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<P>This command&nbsp;is commonly used to get the MethodTable or EEClass addresses 
+								for a given class name.&nbsp; With these&nbsp;addresses you can use the DumpMT 
+								and DumpClass commands, respectively,&nbsp;to get additional information about 
+								the class.&nbsp;</P>
+							<P>When given a method name, the command&nbsp;is used to get the associated 
+								MethodDesc address for the method.&nbsp; With a MethodDesc address you can use 
+								the DumpMD command to get additional information about the method.</P>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

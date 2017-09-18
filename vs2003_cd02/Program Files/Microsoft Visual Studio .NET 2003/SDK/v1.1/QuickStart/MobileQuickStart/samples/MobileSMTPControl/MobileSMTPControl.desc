@@ -1,0 +1,5 @@
+SMTP Email Control
+This sample shows a composite control that presents a UI for
+sending an email message.  The use of the control shows it
+being used in three ways: 1) its simplest form, 2) through
+applying a style, and 3) with the use of property-overrides. 

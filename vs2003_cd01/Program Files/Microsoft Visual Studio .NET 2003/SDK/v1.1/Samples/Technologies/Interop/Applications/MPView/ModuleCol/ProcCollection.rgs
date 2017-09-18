@@ -1,0 +1,25 @@
+HKCR
+{
+	ModuleCol.ProcCollection.1 = s 'ProcCollection Class'
+	{
+		CLSID = s '{DB5B1C2F-1576-4491-9748-2F049D8BF287}'
+	}
+	ModuleCol.ProcCollection = s 'ProcCollection Class'
+	{
+		CLSID = s '{DB5B1C2F-1576-4491-9748-2F049D8BF287}'
+		CurVer = s 'ModuleCol.ProcCollection.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {DB5B1C2F-1576-4491-9748-2F049D8BF287} = s 'ProcCollection Class'
+		{
+			ProgID = s 'ModuleCol.ProcCollection.1'
+			VersionIndependentProgID = s 'ModuleCol.ProcCollection'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+			}
+			'TypeLib' = s '{A6C5C541-0624-4897-9DED-039383BC2DF4}'
+		}
+	}
+}

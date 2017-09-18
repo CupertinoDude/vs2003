@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">u</TD>
+					</TR>
+					<TR>
+						<TD>
+							Unassemble the&nbsp;code for a managed method.</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!u [&lt;MD&gt;] [&lt;IP&gt;]</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="79" cellSpacing="1" cellPadding="1" width="708" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>&lt;MD&gt;<BR>
+										</STRONG><EM>Method Description</EM></TD>
+									<TD vAlign="top">Unassembles a method based on the given method descriptor.</TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="81">
+										<P><STRONG>&lt;IP&gt;<BR>
+											</STRONG><EM>Instruction Pointer</EM></P>
+									</TD>
+									<TD vAlign="top">Unassembles the method containing the given instruction pointer.</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>0:004&gt; !u 031c1540
+Normal JIT generated code
+[DEFAULT] Void debugstuff.Class1.Main(SZArray String)
+Begin 031c1540, size 12
+031c1540 55               push    ebp
+031c1541 8bec             mov     ebp,esp
+031c1543 50               push    eax
+031c1544 894dfc           mov     [ebp-0x4],ecx
+031c1547 ff15d4503e00     call    dword ptr [003e50d4] (debugstuff.Class1.Go)
+031c154d 90               nop
+031c154e 8be5             mov     esp,ebp
+031c1550 5d               pop     ebp
+031c1551 c3               ret</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Comments</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">The output first displays the type of generated code. It will 
+							be one of the following values:
+							<br>
+							<br>
+							EJIT generated code<br>
+							Normal JIT generated code<br>
+							PreJIT generated code<br>
+							Unknown JIT<br>
+							<br>
+							Next, the output&nbsp;displays the method signature and then&nbsp;the resulting 
+							native instructions for the method.
+							<br>
+							<br>
+							You can pass a method descriptor address as shown in the following code 
+							example.<br>
+							<br>
+							<table ID="Table4">
+								<tr>
+									<td class="WinDBGOut">
+										<pre>0:004&gt; !Name2EE debugstuff.exe debugstuff.Class1.Main
+--------------------------------------
+MethodDesc: <STRONG><FONT color=red>3e5070</FONT></STRONG>
+Name: [DEFAULT] Void debugstuff.Class1.Main(SZArray String)
+-----------------------
+0:004&gt; !u <STRONG><FONT color=red>3e5070</FONT></STRONG>
+Normal JIT generated code
+[DEFAULT] Void debugstuff.Class1.Main(SZArray String)
+Begin 031c1540, size 12
+031c1540 55               push    ebp
+031c1541 8bec             mov     ebp,esp
+031c1543 50               push    eax
+031c1544 894dfc           mov     [ebp-0x4],ecx
+031c1547 ff15d4503e00     call    dword ptr [003e50d4] (debugstuff.Class1.Go)
+031c154d 90               nop
+031c154e 8be5             mov     esp,ebp
+031c1550 5d               pop     ebp
+031c1551 c3               ret</pre>
+									</td>
+								</tr>
+							</table>
+							<br>
+							You can also pass&nbsp;an address anywhere within the JIT-compiled&nbsp;code, 
+							as shown below.<br>
+							<br>
+							<table ID="Table5">
+								<tr>
+									<td class="WinDBGOut">
+										<pre>0:004&gt; !u <STRONG><FONT color=red>031c1547</FONT></STRONG>
+Normal JIT generated code
+[DEFAULT] Void debugstuff.Class1.Main(SZArray String)
+Begin 031c1540, size 12
+031c1540 55               push    ebp
+031c1541 8bec             mov     ebp,esp
+031c1543 50               push    eax
+031c1544 894dfc           mov     [ebp-0x4],ecx
+<STRONG><FONT color=red>031c1547</FONT></STRONG> ff15d4503e00     call    dword ptr [003e50d4] (debugstuff.Class1.Go)
+031c154d 90               nop
+031c154e 8be5             mov     esp,ebp
+031c1550 5d               pop     ebp
+031c1551 c3               ret</pre>
+									</td>
+								</tr>
+							</table>
+							<br>
+							This command can be useful to unassemble&nbsp;managed code when looking at a 
+							call stack, as shown in the following code example.<br>
+							<br>
+							<table ID="Table3">
+								<tr>
+									<td class="WinDBGOut">
+										<pre>0:000&gt; k
+ChildEBP RetAddr  
+0012f564 77f7f03f SharedUserData!SystemCallStub+0x4
+0012f568 77f53504 ntdll!ZwRequestWaitReplyPort+0xc
+0012f588 77e9760a ntdll!CsrClientCallServer+0x8a
+0012f678 77e97744 KERNEL32!ReadConsoleInternal+0x18e
+0012f6f0 77e976fe KERNEL32!ReadConsoleA+0x2b
+0012f748 003da1ae KERNEL32!ReadFile+0x64
+0012f7b8 031c3dd3 0x3da1ae
+0012f810 031c3bfd 0x31c3dd3
+0012f83c 031c3b79 0x31c3bfd
+0012f858 031c3b27 0x31c3b79
+0012f86c 031c3115 0x31c3b27
+0012f89c 031c1633 0x31c3115
+0012f8bc <STRONG><FONT color=red>031c154d</FONT></STRONG> 0x31c1633
+0012f8c8 791ec57b 0x31c154d
+0012f8d0 791eb5d6 mscorwks!CallDescrWorker+0x30
+0012f9e4 791f3e2e mscorwks!MethodDesc::CallDescr+0x19d
+0012fa90 791f3dec mscorwks!MethodDesc::CallDescr+0x3b
+0012fab8 79233aa2 mscorwks!MethodDesc::Call+0x95
+0012fb70 79233888 mscorwks!RunMain+0x197
+0012fc88 792336db mscorwks!ClassLoader::ExecuteMainMethod+0x4f9
+
+0:000&gt; !u <STRONG><FONT color=red>031c154d</FONT></STRONG> 
+Normal JIT generated code
+[DEFAULT] Void debugstuff.Class1.Main(SZArray String)
+Begin 031c1540, size 12
+031c1540 55               push    ebp
+031c1541 8bec             mov     ebp,esp
+031c1543 50               push    eax
+031c1544 894dfc           mov     [ebp-0x4],ecx
+031c1547 ff15d4503e00     call    dword ptr [003e50d4] (debugstuff.Class1.Go)
+031c154d 90               nop
+031c154e 8be5             mov     esp,ebp
+031c1550 5d               pop     ebp
+031c1551 c3               ret</pre>
+									</td>
+								</tr>
+							</table>
+							<br>
+							<B>Note:</B> If the method has not been JIT-compiled&nbsp;yet, it will display 
+							"Not jitted yet".
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

@@ -1,0 +1,88 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\readme.xsl"?>
+
+<sample>
+<title>Find Type Class Browser Sample</title>
+<title-short>FindType</title-short>
+<overview>
+This sample utility provides the user with a command line interface to provide information about types in their environment. Sometimes locating a specific type can be difficult (what namespace is it in, which DLL?) and once you have located the type - the documentation may be unavailable or it is out of date. This utility provides a simple way for a developer to determine what types are available, what module they are in and what interfaces, methods, fields, properties and events are available on the type. This sample also provides a peek into reflection.
+</overview>
+<subdirectory>Applications\TypeFinder</subdirectory>
+<buildsteps>
+   <step>
+      Type <richcontent bold="T">BUILD.bat</richcontent>
+      <richcontent> from the command line.</richcontent>      
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Applications\TypeFinder\VB>Build.bat
+      </example>
+   </step>   
+</buildsteps>
+<runsteps>   
+   <step>
+      Type <b>FindType.exe</b> from the command line for a complete list of command line options for the utility.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Applications\TypeFinder\VB>FindType.exe
+      </example>
+   </step>
+   <step>
+      To find the location of each type with a word in its name type <b>FindType.exe [word]</b> from the command line.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Applications\TypeFinder\VB>FindType.exe String         
+      </example>
+   </step>
+</runsteps>
+<technologies>
+   <technology name = "Reflection" keyword="T">      
+      <class name = "Assembly" keyword="T">
+      Used to load assemblies into the AppDomain so that they can be searched for types. 
+      </class> 
+      <class name = "Module" keyword="T">
+      Used to get types from the Assembly/Module for comparison to the search string. 
+      </class>
+      <class name = "Type" keyword="T">
+      Used to get type information such as its name, namespace, and members. 
+      </class> 
+      <class name = "PropertyInfo" keyword="T">
+      To find information about properties in types. 
+      </class> 
+      <class name = "EventInfo" keyword="T">
+      Used to find information about events in types. 
+      </class> 
+      <class name = "FieldInfo" keyword="T">
+      Finds information about fields in types. 
+      </class> 
+      <class name = "MethodInfo" keyword="T">
+      Used to finds information about methods in types. 
+      </class> 
+   </technology>
+   <technology name = "IO" keyword="T">
+      <class name = "TextWriter" keyword="T">
+      Used by the IndentedWriter sample type to output (to the console, by default) in a generic fashion. 
+      </class> 
+   </technology>
+   <technology name = "Text" keyword="T">
+      <class name = "StringBuilder" keyword="T">
+      Used by the IndentedWriter sample type create a string. 
+      </class> 
+      <class name = "String" keyword="T">
+      Used throughout the sample to find format strings, find sub-strings, upper-case strings etc. 
+      </class> 
+   </technology>
+   <technology name = "Collections" keyword="T">      
+      <class name = "ArrayList" keyword="T">
+      Used by the sample to manage a growable list of strings. 
+      </class> 
+   </technology>
+   <technology name = "Registry" keyword="T">      
+      <class name = "Registry" keyword="T">
+      Used to create an instance of the RegistryKey type for a subkey of the LocalMachine key.
+      </class> 
+      <class name = "RegistryKey" keyword="T">
+      Used to read values from a key in the registry.
+      </class> 
+   </technology>
+</technologies>
+</sample>
+
+
+

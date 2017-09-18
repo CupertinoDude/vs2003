@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<order xmlns="http://tempuri.org/myUSordersnamespace">
+ <orderID>DB09FEC6-9C9A-445d-A0A9-216E4F53FF3D</orderID>
+ <orderTracking>
+  <submitTime>2000-12-31T13:20:00</submitTime>
+  <processingTime>2000-12-31T13:21:00</processingTime>
+  <shipTime>2001-02-31T7:21:25</shipTime>
+ </orderTracking>
+ <myns:orderInstructions xmlns:myns="http://tempuri.org/myUSorderprocessornamespace">
+  <myns:Type>Buy</myns:Type>
+  <myns:BillTo>
+   <myns:name>John Smith</myns:name>
+   <myns:street>123 Elm Street</myns:street>
+   <myns:city>Seattle</myns:city>
+   <myns:state>WA</myns:state>
+   <myns:zip>98144</myns:zip>
+   <myns:zip>USA</myns:zip>
+  </myns:BillTo>
+  <myns:shipTo sameAsShipTo="true"/>
+  <myns:Payment>
+    <creditcardconfirmID>12345610</creditcardconfirmID>
+  </myns:Payment>
+ </myns:orderInstructions>
+ <myns:items xmlns:myns="http://tempuri.org/myUSorderprocessornamespace">
+  <yourns1:item xmlns:yourns1="http://tempuri.org/USvendor1namespace" >
+   <itemID>35DB84DD-AAC4-45be-959E-DB53A78F0291</itemID>
+   <quantity>1</quantity>
+   <price>500.00</price>
+   <currency>US</currency>
+   <description>CoffeeMaker.Net</description>
+   <fulfilled>true</fulfilled>
+  </yourns1:item>
+  <yourns2:item xmlns:yourns2="http://tempuri.org/USvendor2namespace">
+   <itemID>835D21BE-B6F8-4187-97F0-9308E53CA122</itemID>
+   <quantity>3</quantity>
+   <price>10.99</price>
+   <currency>US</currency>
+   <description>Coffee.Net FooBar Blend Extra Rich</description>
+   <fulfilled>true</fulfilled>
+  </yourns2:item>
+  <yourns2:item xmlns:yourns2="http://tempuri.org/USvendor2namespace">
+   <itemID>50C4D39A-F35D-4a2b-B9AC-179FC587AF0C</itemID>
+   <quantity>5</quantity>
+   <price>5.00</price>
+   <currency>US</currency>
+   <description>Coffee.Net Filters--100 filters</description>
+   <fulfilled>true</fulfilled>
+  </yourns2:item>
+ </myns:items>
+</order>
+

@@ -1,0 +1,4 @@
+C# Source:CS\DataTypesClient.aspx,CS\DataTypes.wsdl,CS\DataTypes.cs
+VB Source:VB\DataTypesClient.aspx,VB\DataTypes.wsdl,VB\DataTypes.vb
+JScript Source:JS\DataTypesClient.aspx,JS\DataTypes.wsdl,JS\DataTypes.js
+VS.NET:..\..\vstudio\services\DataTypes\CS\DataTypes.csproj,..\..\vstudio\services\DataTypes\VB\DataTypes.vbproj

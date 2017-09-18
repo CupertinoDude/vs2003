@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial"><STRONG>SOS - Son of Strike</STRONG></FONT></P>
+		<P><FONT face="Arial">SOS is an extension DLL that allows you to view internal CLR data 
+				structures from CDB and Windbg debuggers.&nbsp; (It's a revised version of a 
+				previous tool called "Strike"; thus the name).&nbsp; To use SOS follow these 
+				instructions </FONT>
+		</P>
+		<P><FONT face="Arial"> 1. Install the 32-bit version of "Debugging Tools for Windows"
+				<BR>
+				<BR>
+				&nbsp;&nbsp;&nbsp; This download&nbsp;is available from the Driver Development 
+				Kits Web site at: http://www.microsoft.com/ddk/debugging/installx86.asp
+				<BR>
+				2. Extend the PATH enviroment variable to include Windbg and CDB tools.</FONT></P>
+		<P><FONT face="Arial">3.&nbsp; Extend the PATH enviroment variable to include the 
+				location of SOS.DLL at: </FONT>
+		</P>
+		<P dir="ltr" style="MARGIN-RIGHT: 0px"><FONT color="#ff3300">&nbsp;&nbsp;&nbsp; 
+				%windir%\Microsoft.NET\Framework\&lt;version&gt; </FONT>
+			<BR>
+			<br>
+			4. Open a dump file with Windbg or CDB or attach to a process using the 
+			following commands:
+			<BR>
+			<BR>
+			&nbsp;&nbsp;&nbsp; <FONT color="#ff3300">cdb -z &lt;FULL file dump to path&gt;</FONT>
+			<BR>
+			<BR>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or, for live debugging:
+			<BR>
+			<br>
+			&nbsp;&nbsp;&nbsp; <FONT color="#ff3300">cdb -pn aspnet_wp.exe </FONT>
+			<BR>
+			<BR>
+			5. Load the SOS debug extension with the following command:
+		</P>
+		<pre>	<FONT color=#ff3300>0:00&gt; .load sos</FONT></pre>
+		<BR>
+		</FONT><FONT face="Arial"> </FONT>
+		<P></P>
+	</BODY>
+</HTML>

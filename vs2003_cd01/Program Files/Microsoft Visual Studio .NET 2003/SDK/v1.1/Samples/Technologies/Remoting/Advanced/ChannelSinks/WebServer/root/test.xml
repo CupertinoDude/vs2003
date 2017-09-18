@@ -1,0 +1,8 @@
+<test>
+<foo random="42">
+  <baz />
+</foo>
+<foo random="12">
+  <zap wham="hello" />
+</foo>
+</test>

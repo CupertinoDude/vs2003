@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostApp", "HostApp\HostApp.csproj", "{A987CE0C-7260-4C43-ACDA-94EB99B8DA15}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldControl", "Control\HelloWorldControl.csproj", "{24EFA417-155F-4E00-BA3B-A77647E0CA57}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{A987CE0C-7260-4C43-ACDA-94EB99B8DA15}.Debug.ActiveCfg = Debug|.NET
+		{A987CE0C-7260-4C43-ACDA-94EB99B8DA15}.Debug.Build.0 = Debug|.NET
+		{A987CE0C-7260-4C43-ACDA-94EB99B8DA15}.Release.ActiveCfg = Release|.NET
+		{A987CE0C-7260-4C43-ACDA-94EB99B8DA15}.Release.Build.0 = Release|.NET
+		{24EFA417-155F-4E00-BA3B-A77647E0CA57}.Debug.ActiveCfg = Debug|.NET
+		{24EFA417-155F-4E00-BA3B-A77647E0CA57}.Debug.Build.0 = Debug|.NET
+		{24EFA417-155F-4E00-BA3B-A77647E0CA57}.Release.ActiveCfg = Release|.NET
+		{24EFA417-155F-4E00-BA3B-A77647E0CA57}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

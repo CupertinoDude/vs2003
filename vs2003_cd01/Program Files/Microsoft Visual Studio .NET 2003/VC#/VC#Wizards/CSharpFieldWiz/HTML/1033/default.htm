@@ -1,0 +1,523 @@
+<!- (c) Microsoft Corporation -->
+<HTML DIR="LTR">
+	<HEAD>
+		<TITLE>
+			C# Add Field Wizard
+		</TITLE>
+		<META NAME="vs_targetSchema" CONTENT="http://schemas.microsoft.com/intellisense/ie5">
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+		<STYLE TYPE="text/css">
+			@import url();
+		</STYLE>
+		
+		<SCRIPT>
+		var strURL = "../../../";
+		strURL += window.external.GetHostLocale();
+		strURL += "/NewStyles.css";
+		document.styleSheets(0).imports(0).href = strURL;
+		</SCRIPT>
+		
+		<SYMBOL NAME="FIELD_TYPE" TYPE=text VALUE="">
+		</SYMBOL>
+		<SYMBOL NAME="FIELD_NAME" TYPE=text VALUE="">
+		</SYMBOL>
+		<SYMBOL NAME="MODIFIER_NONE" TYPE=checkbox VALUE=true>
+		</SYMBOL>
+		<SYMBOL NAME="STATIC" TYPE=checkbox VALUE=false>
+		</SYMBOL>
+		<SYMBOL NAME="CONSTANT" TYPE=checkbox VALUE=false>
+		</SYMBOL>
+		<SYMBOL NAME="FIELD_VALUE" TYPE=text VALUE="">
+		</SYMBOL>
+		<SYMBOL NAME="ACCESS" TYPE=select-one VALUE=1>
+		</SYMBOL>
+		<SYMBOL NAME="COMMENT" TYPE=text VALUE="">
+		</SYMBOL>
+	</HEAD>
+	<BODY BGCOLOR="BUTTONFACE" TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" ONLOAD="InitDocument(document);" ONKEYDOWN="if (!bValidating) OnKey();" ONKEYPRESS="if (!bValidating) OnPress();">
+		<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+			<COL WIDTH="100%">
+				<TR VALIGN="TOP">
+					<TD HEIGHT="79">
+						<!--OPEN OF ALL ENCOMPASSING TABLE ROW ONE//-->
+						<TABLE CLASS="TWO" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+							<COL WIDTH="12">
+								<COL>
+									<COL WIDTH="12">
+										<TR>
+											<TD VALIGN="TOP" HEIGHT="12" WIDTH="12">
+												&nbsp;
+											</TD>
+											<TD VALIGN="TOP" HEIGHT="12">
+												&nbsp;
+											</TD>
+											<TD VALIGN="TOP" HEIGHT="12" WIDTH="12">
+												&nbsp;
+											</TD>
+											<TD CLASS="IMAGE" VALIGN="BOTTOM" WIDTH="110" ROWSPAN="2">
+												<DIV CLASS="SMALLA" ID="Layer0">
+													<IMG CLASS="SMALLEST" SRC="..\..\Images\csharpfield.gif" WIDTH="63" HEIGHT="63" ALT="" BORDER="0">
+												</DIV>
+											</TD>
+											<TD VALIGN="TOP" HEIGHT="12" WIDTH="6" ROWSPAN="2">
+												&nbsp;
+											</TD>
+										</TR>
+										<TR>
+											<TD VALIGN="TOP" HEIGHT="65" WIDTH="12">
+												&nbsp;
+											</TD>
+											<TD VALIGN="TOP" HEIGHT="65">
+												<H4 CLASS="HEAD" ID="HEAD">Welcome to the C# Add Field Wizard</H4>
+												<P CLASS="SUBHEAD" ID="SUBHEAD">This wizard adds a field to your C# class.</P>
+											</TD>
+											<TD VALIGN="TOP" HEIGHT="65" WIDTH="12">
+												&nbsp;
+											</TD>
+										</TR>
+										<TR>
+											<TD VALIGN="TOP" CLASS="RULE" COLSPAN="5" HEIGHT="2">
+												<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+													<TR VALIGN="TOP">
+														<TD HEIGHT="1" WIDTH="100%" BGCOLOR="BUTTONSHADOW"></TD>
+														<TD HEIGHT="1" WIDTH="1" BGCOLOR="WINDOW"></TD>
+													</TR>
+												</TABLE>
+											</TD>
+										</TR>
+						</TABLE>
+						<!--CLOSE OF ALL ENCOMPASSING TABLE ROW ONE//-->
+					</TD>
+				</TR>
+				<TR VALIGN="TOP">
+					<TD HEIGHT="100%">
+						<!--OPEN OF ALL ENCOMPASSING TABLE ROW TWO//-->
+						<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+							<COL>
+								<TR>
+									<TD VALIGN="TOP" HEIGHT="100%">
+										<!--OPEN OF CONTENT AND BUTTON TABLE//-->
+										<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+											<COL WIDTH="100%">
+												<TR VALIGN="TOP">
+													<TD HEIGHT="100%">
+														<!--OPEN OF CONTENT//-->
+														<TABLE CLASS="CONTENT" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+															<COL WIDTH="12">
+																<COL WIDTH="185">
+																	<COL WIDTH="12">
+																		<COL WIDTH="185">
+																			<COL WIDTH="12">
+																				<COL WIDTH="185">
+																					<COL WIDTH="12">
+																						<TR>
+																							<TD VALIGN="TOP" HEIGHT="12" COLSPAN="7">
+																								&nbsp;
+																							</TD>
+																						</TR>
+																						<TR VALIGN="TOP">
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																							<TD VALIGN="TOP">
+																								<SPAN CLASS="itemTextTop" TITLE="">
+																									<LABEL FOR="ACCESS" ID="ACCESS_LABEL">
+																										Fie<U>l</U>d access:</LABEL>
+																									<BR>
+																									<SELECT CLASS="SideBtnThreeColumn" ID="ACCESS" SIZE="1" ACCESSKEY="L" TITLE="" VALUE="16">
+																										<-- vsCMAccessDefault = 16 -->
+																										<OPTION VALUE=1 ID="PUBLIC_OPTION" SELECTED>
+																											public
+																										</OPTION>
+																										<-- vsCMAccessPublic = 1 -->
+																										<OPTION VALUE=8 ID="PROTECTED_OPTION">
+																											protected
+																										</OPTION>
+																										<-- vsCMAccessProtected = 8 -->
+																										<OPTION VALUE=2 ID="PRIVATE_OPTION">
+																											private
+																										</OPTION>
+																										<-- vsCMAccessPrivate = 2 -->
+																										<OPTION VALUE=4 ID="INTERNAL_OPTION">
+																											internal
+																										</OPTION>
+																										<-- vsCMAccessProject = 4 -->
+																										<OPTION VALUE=12 ID="PROTECTED_INTERNAL_OPTION">
+																											protected internal
+																										</OPTION>
+																										<-- vsCMAccessProjectOrProtected = 12 -->
+																									</SELECT>
+																								</SPAN>
+																							</TD>
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																							<TD VALIGN="TOP">
+																								<SPAN CLASS="itemTextTop" TITLE="">
+																									<LABEL FOR="FieldTypes" ID="FIELD_TYPE_LABEL">
+																										Fi<U>e</U>ld type:</LABEL>
+																									<BR>
+																									<INPUT CLASS="sideBtnThreeColumn" ID="FIELD_TYPE" TYPE="hidden">
+																									</INPUT>
+																									<OBJECT CLASS="itemTextThreeColumn" ID="FieldTypes" ACCESSKEY="E" CLASSID="CLSID:BFD56283-7546-4dfe-8C5E-AE4FEDC08656" VIEWASTEXT>
+																									</OBJECT>
+																								</SPAN>
+																							</TD>
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																							<TD VALIGN="TOP">
+																								<SPAN CLASS="itemTextTop" TITLE="">
+																									<LABEL FOR="FIELD_NAME" ID="FIELD_NAME_LABEL">
+																										Field <U>n</U>ame:</LABEL>
+																									<BR>
+																									<INPUT CLASS="sideBtnThreeColumn" ID="FIELD_NAME" TYPE="TEXT" TITLE="" ACCESSKEY="N">
+																									</INPUT>
+																								</SPAN>
+																							</TD>
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																						</TR>
+																						<TR>
+																							<TD VALIGN="TOP" HEIGHT="15" COLSPAN="7">
+																								&nbsp;
+																							</TD>
+																						</TR>
+																						<TR VALIGN="TOP">
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																							<TD VALIGN="TOP" COLSPAN="5">
+																								<SPAN CLASS="itemText" TITLE="" STYLE="WIDTH:391PX;" ID="FIELD_MODIFIERS_SPAN">
+																									Field modifers:
+																									<P CLASS="Spacer">
+																										&nbsp;
+																									</P>
+																									<INPUT TYPE="radio" NAME="mod" ID="MODIFIER_NONE" ACCESSKEY="O" TITLE="" OnClick="OnModifier();">
+																									<SPAN TITLE="" CLASS="UpABit">
+																										<LABEL FOR="MODIFIER_NONE" ID="MODIFIER_NONE_LABEL">
+																											N<U>o</U>ne</LABEL>
+																									</SPAN>
+																									<INPUT TYPE="radio" NAME="mod" ID="STATIC" ACCESSKEY="I" TITLE="" OnClick="OnModifier();">
+																									<SPAN TITLE="" CLASS="UpABit">
+																										<LABEL FOR="STATIC" ID="STATIC_LABEL">
+																											Stat<U>i</U>c</LABEL>
+																									</SPAN>
+																									<INPUT TYPE="radio" NAME="mod" ID="CONSTANT" ACCESSKEY="A" TITLE="" OnClick="OnModifier();">
+																									<SPAN TITLE="" CLASS="UpABit">
+																										<LABEL FOR="CONSTANT" ID="CONSTANT_LABEL">
+																											Const<U>a</U>nt</LABEL>
+																									</SPAN>
+																								</SPAN>
+																							</TD>
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																						</TR>
+																						<TR VALIGN="TOP">
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																							<TD VALIGN="TOP" COLSPAN="5">
+																								<SPAN CLASS="itemText" ID="field_type_title" TITLE="">
+																									<NOBR>
+																										<LABEL FOR="FIELD_VALUE" ID="FIELD_VALUE_LABEL">
+																											Field val<U>u</U>e:</LABEL>
+																										<BR>
+																										<INPUT CLASS="COMMENT" TYPE="text" ID="FIELD_VALUE" ACCESSKEY="U" TITLE="">
+																									</NOBR>
+																								</SPAN>
+																							</TD>
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																						</TR>
+																						<TR>
+																							<TD VALIGN="TOP" HEIGHT="14" COLSPAN="7">
+																								&nbsp;
+																							</TD>
+																						</TR>
+																						<TR VALIGN="TOP">
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																							<TD VALIGN="TOP" COLSPAN="5">
+																								<SPAN CLASS="itemText" TITLE="">
+																									<NOBR>
+																										<LABEL FOR="COMMENT" ID="COMMENT_LABEL">
+																											Co<U>m</U>ment (// notation not required):</LABEL>
+																										<BR>
+																										<INPUT CLASS="COMMENT" TYPE="text" ID="COMMENT" ACCESSKEY="M" TITLE="">
+																									</NOBR>
+																								</SPAN>
+																							</TD>
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																						</TR>
+																						<TR>
+																							<TD VALIGN="TOP" HEIGHT="100%" COLSPAN="7">
+																								&nbsp;
+																							</TD>
+																						</TR>
+														</TABLE>
+														<!--CLOSE OF CONTENT//-->
+													</TD>
+												</TR>
+												<TR VALIGN="BOTTOM">
+													<TD HEIGHT="48">
+														<!--OPEN OF BUTTON HTML//-->
+														<TABLE HEIGHT="48" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+															<COL WIDTH="12">
+																<COL>
+																	<COL WIDTH="75">
+																		<COL WIDTH="4">
+																			<COL WIDTH="75">
+																				<COL WIDTH="4">
+																					<COL WIDTH="75">
+																						<COL WIDTH="12">
+																							<TR>
+																								<TD VALIGN="TOP" CLASS="RULE" COLSPAN="8" HEIGHT="2">
+																									<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+																										<TR VALIGN="TOP">
+																											<TD HEIGHT="1" WIDTH="100%" BGCOLOR="BUTTONSHADOW"></TD>
+																											<TD HEIGHT="1" WIDTH="1" BGCOLOR="WINDOW"></TD>
+																										</TR>
+																									</TABLE>
+																								</TD>
+																							</TR>
+																							<TR>
+																								<TD VALIGN="TOP" HEIGHT="11" COLSPAN="8">
+																									&nbsp;
+																								</TD>
+																							</TR>
+																							<TR>
+																								<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="12">
+																									&nbsp;
+																								</TD>
+																								<TD VALIGN="TOP" HEIGHT="23">
+																									&nbsp;
+																								</TD>
+																								<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+																									<BUTTON CLASS="BUTTONS" ID="FinishBtn" onClick="OnFinish(document);">
+																										Finish
+																									</BUTTON>
+																								</TD>
+																								<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="4">
+																									&nbsp;
+																								</TD>
+																								<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+																									<BUTTON CLASS="BUTTONS" ID="CancelBtn" onClick="window.external.Finish(document, 'cancel');">
+																										Cancel
+																									</BUTTON>
+																								</TD>
+																								<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="4">
+																									&nbsp;
+																								</TD>
+																								<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+																									<BUTTON CLASS="BUTTONS" ID="HelpBtn" onClick="window.external.OnHelp('vc.codewiz.field.cs.overview');">
+																										Help
+																									</BUTTON>
+																								</TD>
+																								<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="12">
+																									&nbsp;
+																								</TD>
+																							</TR>
+																							<TR>
+																								<TD VALIGN="TOP" HEIGHT="12" COLSPAN="8">
+																									&nbsp;
+																								</TD>
+																							</TR>
+														</TABLE>
+														<!--CLOSE OF BUTTON HTML//-->
+													</TD>
+												</TR>
+										</TABLE>
+										<!--CLOSE OF CONTENT AND BUTTON TABLE//-->
+									</TD>
+								</TR>
+						</TABLE>
+						<!--CLOSE OF ALL ENCOMPASSING TABLE ROW TWO//-->
+					</TD>
+				</TR>
+		</TABLE>
+	</BODY>
+</HTML>
+<SCRIPT LANGUAGE="JSCRIPT">
+
+var bIsStruct = false;
+var oClass = window.external.ParentObject;
+
+function InitDocument(document)
+{
+	setDirection();
+	
+	if (window.external.FindSymbol("DOCUMENT_FIRST_LOAD"))
+	{
+		var L_WizardDialogTitle_Text = "C# Field Wizard";
+		window.external.AddSymbol("WIZARD_DIALOG_TITLE", L_WizardDialogTitle_Text);
+		window.external.SetDefaults(document);
+	}
+
+	window.external.Load(document);
+	bIsStruct = (window.external.ParentObject.Kind == vsCMElementStruct);
+	
+	PopulateFieldTypes();
+
+	field_type_title.disabled = true;
+	FIELD_VALUE.disabled = true;
+	
+	if (bIsStruct) {
+		var L_WizardSubHead_Text = "This wizard adds a field to your C# struct.";
+		SUBHEAD.innerHTML = L_WizardSubHead_Text;
+	}
+	ACCESS.focus();
+}
+
+function Next(document, linkto)
+{
+	window.external.Next(document, linkto);
+}
+
+function OnFinish(document)
+{
+	if (CONSTANT.checked && !FIELD_VALUE.value.length)
+	{
+		L_Error1_Text = "You must enter a Field Value for the constant field";
+		window.external.ReportError(L_Error1_Text);
+		FIELD_VALUE.focus();
+		return;
+	}
+
+	FIELD_TYPE.value = FieldTypes.Value;
+
+	bValidating = true;
+	if (!ValidateInput())
+	{
+		bValidating = false;
+		return;
+	}
+
+	window.external.AddSymbol("FIELD_TYPE_STRING", FieldTypes.Value);
+	OnWizFinish(document);
+}
+
+function PopulateFieldTypes()
+{
+	FieldTypes.Clear();
+
+	FieldTypes.AddItem("bool");
+	FieldTypes.AddItem("byte");
+	FieldTypes.AddItem("char");
+	FieldTypes.AddItem("decimal");
+	FieldTypes.AddItem("double");
+	FieldTypes.AddItem("float");
+	FieldTypes.AddItem("int");
+	FieldTypes.AddItem("long");
+	FieldTypes.AddItem("object");
+	FieldTypes.AddItem("sbyte");
+	FieldTypes.AddItem("string");
+	FieldTypes.AddItem("short");
+	FieldTypes.AddItem("uint");
+	FieldTypes.AddItem("ulong");
+	FieldTypes.AddItem("ushort");
+
+	FieldTypes.ListIndex = 6;
+}
+
+function OnModifier()
+{
+	field_type_title.disabled = false;
+	FIELD_VALUE.disabled = false;
+
+	if (MODIFIER_NONE.checked || STATIC.checked)
+	{
+		field_type_title.disabled = true;
+		FIELD_VALUE.disabled = true;
+	}
+}
+
+function ValidateInput()
+{
+	var oInvalid = null;
+
+	if (!Validate(FIELD_NAME))
+		oInvalid = FIELD_NAME;
+
+	if (oInvalid == null)
+		if (!Validate(FieldTypes))
+			oInvalid = FieldTypes;
+
+	if (oInvalid != null)
+	{
+		oInvalid.focus();
+		return false;
+	}
+	return true;	
+}
+
+function Validate(obj)
+{
+	var bValid = true;
+	switch(obj.id)
+	{
+		case "FIELD_NAME":
+		{
+			var L_FieldName_TEXT = "Field name";
+			bValid = ValidateCSharpName(obj, L_FieldName_TEXT);
+			if(bValid)
+			{
+				try
+				{
+					var oVar = oClass.Members.Item(obj.value);
+					if(typeof(oVar) != "undefined")
+					{
+						L_DupName1_TEXT = "An element with the name \"";
+						L_DupName2_TEXT = "\" already exists.";
+						window.external.ReportError(L_DupName1_TEXT + obj.value + L_DupName2_TEXT);
+						bValid = false;					
+					}
+				}
+				catch (e)
+				{
+					//workaround. Because CodeModel returns E_*, if item not found.
+					bValid = true;
+				}
+			}
+		}
+		break;
+		case "FieldTypes":
+		{
+			var L_FieldType_TEXT = "Field type";
+			bValid = ValidateWizComboCSharpType(obj, L_FieldType_TEXT);
+		}
+		break;
+		default:
+			break;
+	}
+
+	if (typeof(bValid) == "undefined")
+		bValid = false;
+
+	return bValid;
+}
+
+</SCRIPT>
+<SCRIPT FOR="FieldTypes" EVENT="Change">
+</SCRIPT>
+<SCRIPT FOR="FieldTypes" EVENT="KeyDown(nKeyCode)">
+	OnWizComboKeyDown(nKeyCode);
+</SCRIPT>
+<SCRIPT ID="INCLUDE_SCRIPT" LANGUAGE="JSCRIPT">
+</SCRIPT>
+<SCRIPT ID="INCLUDE_COMMON" LANGUAGE="JSCRIPT">
+</SCRIPT>
+<SCRIPT>
+	var strPath = "../../../";
+	strPath += window.external.GetHostLocale();
+	var strScriptPath = strPath + "/Script.js";
+	var strCommonPath = strPath + "/Common.js";
+	document.scripts("INCLUDE_SCRIPT").src = strScriptPath;
+	document.scripts("INCLUDE_COMMON").src = strCommonPath;
+</SCRIPT>

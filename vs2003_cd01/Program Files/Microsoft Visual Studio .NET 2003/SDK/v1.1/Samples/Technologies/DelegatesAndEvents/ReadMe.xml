@@ -1,0 +1,48 @@
+﻿<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\readme.xsl"?>
+
+<sample>
+<title>Delegates and Events Sample</title>
+<title-short>Chat</title-short>
+<overview>
+The purpose of this sample is to introduce developers to delegates and events. Delegates and events are a type-safe method callback mechanism. The sample declares a “chat” server type that multiple “clients” can connect to. Each client registers a delegate (callback method) with the server. Then, when one client sends a string message to the server, the server forwards the message to all registered clients. This code has two implementations. The first uses delegates showing low-level callback mechanism. The second implementation uses events showing how events hide most of the low-level goo associated with delegates. 
+</overview>
+<subdirectory>Technologies\DelegatesAndEvents</subdirectory>
+<buildsteps>
+   <step>
+      Type <richcontent bold="T">BUILD.bat</richcontent>
+      <richcontent> from the command line.</richcontent>      
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\DelegatesAndEvents\VB>Build.bat
+      </example>
+   </step>
+</buildsteps>
+<runsteps>
+   <step>
+      Type <richcontent bold="T">Chat.exe</richcontent><richcontent> from the command line.</richcontent>
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\DelegatesAndEvents\VB>Chat.exe
+      </example>
+   </step>   
+</runsteps>
+<technologies>   
+   <technology name = "Delegates" keyword="T">
+      <class name = "Delegate" keyword="T">
+         The delegate class is used as the base class for derived delegate classes. Delegate classes are used to encapsulate a callback method in a type-safe way.
+      </class>            
+   </technology>
+   <technology name = "Garbage Collection" keyword="T">
+      <class name = "GC" keyword="T">
+         Used to suppress the execution of the finalize method on types that have already been "Disposed".
+      </class>  
+   </technology>    
+</technologies>
+<keywords>
+   <word name="Events" keyword="T"/>
+   <word name="Delegate" keyword="T"/>
+   <word name="Delegates" keyword="T"/>
+   <word name="Callbacks" keyword="T"/>
+   <word name="Callback Functions" keyword="T"/>
+</keywords>
+</sample>
+

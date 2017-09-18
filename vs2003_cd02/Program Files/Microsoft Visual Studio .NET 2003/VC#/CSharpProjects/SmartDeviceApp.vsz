@@ -1,0 +1,13 @@
+VSWIZARD 7.0
+Wizard=VsWizard.VsWizardEngine.7.1
+Param="WIZARD_NAME = SmartDeviceAppWiz"
+Param="PROJECT_TYPE = csdproj"
+Param="SCRIPT_COMMON_PROJECT_TYPE = CSPROJ"
+Param="RELATIVE_PATH = VC#Wizards"
+Param="FRAMEWORK = C#"
+Param="WINDOWS_APP = 10"
+Param="CLASS_LIB = 20"
+Param="CTL_LIB = 30"
+Param="CONSOLE_APP = 40"
+Param="EMPTY_PROJ = 50"
+Param="FALLBACK_LCID = 1033"

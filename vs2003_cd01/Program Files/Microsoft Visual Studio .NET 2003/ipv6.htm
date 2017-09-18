@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+    <HEAD>
+        <TITLE>IPv6 ReadMe</TITLE>
+        <META content="text/html; charset=Windows-1252" http-equiv="Content-Type">
+        <STYLE> <!-- BODY { BACKGROUND: #ffffff; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; MARGIN: 0px; PADDING: 0px; PADDING-BOTTOM: 12pt }
+    .banner { PADDING-TOP: 6pt; PADDING-BOTTOM: 6pt; PADDING-LEFT: 5px; PADDING-RIGHT: 0px; TEXT-ALIGN: left; FONT-SIZE: 10pt; WIDTH: 100%; BACKGROUND-COLOR: #CC9999; FONT-WEIGHT: bold }
+    .tblpara { MARGIN-LEFT: 5px }
+    H1 { FONT-SIZE: 13.5pt; FONT-WEIGHT: bold; MARGIN-BOTTOM: 6pt; MARGIN-LEFT: 5px; }
+    H2 { FONT-SIZE: 10pt; FONT-WEIGHT: bold; MARGIN-BOTTOM: 6pt; MARGIN-LEFT: 5px; }
+    TABLE { BACKGROUND-COLOR: #FFFFFF; FONT-SIZE: 100%; MARGIN-BOTTOM: 12pt; MARGIN-LEFT: 30px; MARGIN-RIGHT: 30px; BORDER: #CCCCCC 1px solid }
+    TH { FONT-SIZE: 10pt; FONT-WEIGHT: bold; TEXT-ALIGN: left; BACKGROUND: #cccccc; VERTICAL-ALIGN: top; PADDING-TOP: 6pt; PADDING-BOTTOM: 6pt; PADDING-LEFT: 5px }
+    TD { BACKGROUND: #ffffff; VERTICAL-ALIGN: top }
+    P { MARGIN-LEFT: 30px }
+    BLOCKQUOTE.dtBlock {MARGIN: 0.5em 1.5em 0.5em 2em}
+    A:link {COLOR: #0000ff}
+    A:visited {COLOR: #666699}
+    A:hover {COLOR: #3366ff}
+    OL {MARGIN: 0.5em 0em 0em 2em}
+    UL {MARGIN: 0.5em 0em 0em 2em}
+    LI {MARGIN-BOTTOM: 0.5em}
+    UL P {MARGIN-LEFT: 0em}
+    OL P {MARGIN-LEFT: 0em}
+    DL P {MARGIN-LEFT: 0em}
+    UL P.label {MARGIN-TOP: 0.5em}
+    OL P.label {MARGIN-TOP: 0.5em}
+    DL {MARGIN-TOP: 0em; PADDING-LEFT: 1px}
+    DD {MARGIN-BOTTOM: 0em; MARGIN-LEFT: 1.5em}
+    DT {MARGIN-TOP: 0.5em}
+    PRE {MARGIN-BOTTOM: 0.5em; MARGIN-TOP: 0.5em}
+    PRE {COLOR: #000066; FONT: 100% Courier New, Courier, mono}
+    CODE {COLOR: #000066; FONT: 100% Courier New, Courier, mono}
+    .code {COLOR: #000066; FONT: 100% Courier New, Courier, mono}
+    PRE B {LETTER-SPACING: 0.1em}
+    CODE B {LETTER-SPACING: 0.1em}
+    PRE.syntax {BACKGROUND: #cccccc; BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid; BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; COLOR: #000000; CURSOR: text; MARGIN-BOTTOM: 1em; MARGIN-TOP: 1em; PADDING-BOTTOM: 4px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; PADDING-TOP: 4px}
+    OL DIV.tablediv {MARGIN-TOP: 0em}
+    UL DIV.tablediv {MARGIN-TOP: 0em}
+ table.MsoNormalTable
+    {mso-style-parent:"";
+    font-size:10.0pt;
+    font-family:"Times New Roman"}
+    --></STYLE>
+    </HEAD>
+    <BODY>
+        <DIV class="banner"><font size="4">Configuring Internet Protocol version 6.0</font></DIV> <br>
+<font size="2" face="Verdana">Internet Protocol version 6 (IPv6) is the latest update to the Internet protocol that is used by the Windows operating system, .NET Framework 1.1, and Visual Studio .NET 2003 to enable the next generation of internet applications.
+</font>
+
+<h2><font face="Verdana" size="4">Prerequisites for using IPv6</font></h2>
+
+<font face="Verdana" size="2">&nbsp;&nbsp;&nbsp; You must have Windows Server 2003 or later or Windows XP SP1 or later in order to use IPv6.  The latest updates to Windows XP are available at:&nbsp;&nbsp;&nbsp;&nbsp; <a href=http://www.microsoft.com/windowsxp/pro/downloads/default.asp>http://www.microsoft.com/windowsxp/pro/downloads/default.asp</a>.
+</font>
+
+<h2><font face="Verdana" size="4">Enabling IPv6 in Windows</font></h2>
+
+<font face="Verdana" size="2" >&nbsp;&nbsp;&nbsp; By default, IPv6 is not installed and enabled in Windows XP SP1 or later or in Windows Server 2003 or later.  For instructions on how to configure IPv6, see the topic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "Checklist: Installing and Configuring IPv6" in Windows Help.
+</font>
+
+<h2><font face="Verdana" size="4">Enabling IPv6 in .NET applications</font></h2>
+
+<font face="Verdana" size="2">&nbsp;&nbsp;&nbsp; Visual Studio .NET and the .NET Framework support network application development on a machine with IPv6 installed. It is recommended that developers enable IPv6 on an&nbsp; application by application basis, which will ensure that other .NET applications do not change behavior.
+</font>
+<h3><font face="Verdana">&nbsp;To enable IPv6 for a single application</font></h3>
+<p><font face="Verdana" size="2">To enable IPv6 for a particular client or Web application, you must make the following changes to your Application configuration file (app.config) or your Web configuration file (web.config):
+</font>
+
+
+ <p><font face="Verdana" size="2">&lt;configuration&gt;
+
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;system.net&gt;
+
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;settings&gt;
+
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--
+
+                The following entry enables IPv6 support in the System.Net classes.
+
+                IPv6 support is predicated on availability of an IPv6 WinSock provider.
+
+                                                --&gt;
+
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ipv6 enabled="true" /&gt;
+
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/settings&gt;
+
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/system.net&gt;
+
+<br>&lt;/configuration&gt; </font>
+
+<h3><font face="Verdana">&nbsp;To enable IPv6 for all .NET applications on a machine</font></h3>
+<p><font face="Verdana" size="2">IPv6 can also be enabled for the entire machine by editing machine.config in the .NET Framework 1.1 directory <i>n</i>:\winnt\Microsoft.NET\Framework\<i>&lt;version&gt;</i>\config.  To do so, uncomment the ipv6 setting element shown below and change the corresponding enabled value from false to true:
+</font>
+<p> <font face="Verdana" size="2"> <b>Caution:</b> This change affects the behavior of every .NET application installed on this machine. You should only make this change after proper testing.
+</font>
+ <p><font face="Verdana" size="2">&lt;configuration&gt;
+
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;system.net&gt;
+
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;settings&gt;
+
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--
+                The following entry enables IPv6 support in the System.Net classes.
+
+                IPv6 support is predicated on availability of an IPv6 WinSock provider,
+
+                use of a supporting operating system, and the switch below being set to "true".
+
+            --&gt;
+
+                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- &lt;ipv6 enabled="false"/&gt; --&gt;
+
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/settings&gt;
+
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/system.net&gt;
+
+<br>&lt;/configuration&gt; </font>
+</p>
+
+
+<p><font face="Verdana" size="2">For more information about IPv6 support in the .NET Framework, see "Internet Protocol Version 6" and "IPv6 Addressing" in the .NET Framework portion of the MSDN Library.
+</font>
+
+</body>
+</html>

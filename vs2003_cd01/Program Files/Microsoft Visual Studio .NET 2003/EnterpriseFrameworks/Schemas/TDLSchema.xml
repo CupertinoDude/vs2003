@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Schema name="TDL_Schema"
+    xmlns="urn:schemas-microsoft-com:xml-data"
+    xmlns:dt="urn:schemas-microsoft-com:datatypes"
+    xmlns:vsef="urn:schemas-microsoft-com:xml-vsef"
+    xmlns:myExt="urn:myschema-extensions">
+
+    <ElementType name="NAME" content="textOnly" dt:type="string">
+        <myExt:requirescontent/>
+    </ElementType>
+    <ElementType name="VALUE" content="textOnly" dt:type="string">
+        <myExt:allowscript/>
+        <myExt:requirescontent/>
+    </ElementType>
+
+    <ElementType name="CTXTATTRIBUTE" content="eltOnly" model="closed" order="many">
+        <myExt:key>NAME</myExt:key>
+        <element type="NAME" minOccurs="1" maxOccurs="1"/>
+        <element type="VALUE" minOccurs="1" maxOccurs="1"/>
+    </ElementType>
+
+    <ElementType name="CTXTKEYWORD" content="textOnly" dt:type="string">
+        <myExt:requirescontent/>
+    </ElementType>
+
+    <ElementType name="CONTEXT" content="eltOnly" model="closed" order="many">
+        <element type="CTXTKEYWORD" minOccurs="1" maxOccurs="*"/>
+        <element type="CTXTATTRIBUTE" minOccurs="0" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="IDENTIFIERDATA" content="eltOnly" model="closed" order="many">
+        <myExt:key>NAME</myExt:key>
+        <element type="NAME" minOccurs="1" maxOccurs="1"/>
+        <element type="VALUE" minOccurs="1" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="TYPE" content="textOnly" dt:type="string">
+        <myExt:requirescontent/>
+    </ElementType>
+
+    <ElementType name="IDENTIFIER" content="eltOnly" model="closed" order="many">
+        <myExt:key>TYPE</myExt:key>
+        <element type="TYPE" minOccurs="1" maxOccurs="1"/>
+        <element type="IDENTIFIERDATA" minOccurs="0" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="IDENTIFIERS" content="eltOnly" model="closed" order="many">
+        <element type="IDENTIFIER" minOccurs="0" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="READONLY" content="textOnly" dt:type="boolean"/>
+    <ElementType name="DEFAULT" content="textOnly" dt:type="string"/>
+    <ElementType name="MINVALUE" content="textOnly" dt:type="string"/>
+    <ElementType name="MAXVALUE" content="textOnly" dt:type="string"/>
+    <ElementType name="LISTITEM" content="textOnly" dt:type="string"/>
+
+    <ElementType name="PROPERTYCONSTRAINT" content="eltOnly" model="closed" order="many">
+        <myExt:key>NAME</myExt:key>
+        <element type="NAME" minOccurs="1" maxOccurs="1"/>
+        <element type="READONLY" minOccurs="1" maxOccurs="1"/>
+        <element type="DEFAULT" minOccurs="0" maxOccurs="1"/>
+        <element type="MINVALUE" minOccurs="0" maxOccurs="1"/>
+        <element type="MAXVALUE" minOccurs="0" maxOccurs="1"/>
+        <element type="LISTITEM" minOccurs="0" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="PROPERTYCONSTRAINTS" content="eltOnly" model="closed" order="many">
+        <element type="PROPERTYCONSTRAINT" minOccurs="0" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="ID" content="textOnly" dt:type="string">
+        <myExt:requirescontent/>
+    </ElementType>
+    <ElementType name="ENABLED" content="textOnly" dt:type="boolean">
+        <myExt:requirescontent/>
+    </ElementType>
+    <ElementType name="VISIBLE" content="textOnly" dt:type="boolean">
+        <myExt:requirescontent/>
+    </ElementType>
+
+    <ElementType name="MENUCONSTRAINT" content="eltOnly" model="closed" order="many">
+        <myExt:key>ID</myExt:key>
+        <element type="ID" minOccurs="1" maxOccurs="1"/>
+        <element type="ENABLED" minOccurs="1" maxOccurs="1"/>
+        <element type="VISIBLE" minOccurs="0" maxOccurs="1"/>
+    </ElementType>
+
+    <ElementType name="MENUCONSTRAINTS" content="eltOnly" model="closed" order="many">
+        <element type="MENUCONSTRAINT" minOccurs="0" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="TOOLBOXCONSTRAINT" content="eltOnly" model="closed" order="many">
+        <myExt:key>ID</myExt:key> 
+        <element type="ID" minOccurs="1" maxOccurs="1" /> 
+        <element type="VISIBLE" minOccurs="0" maxOccurs="1" /> 
+        <element type="ENABLED" minOccurs="1" maxOccurs="1" /> 
+    </ElementType>
+
+    <ElementType name="TOOLBOXCONSTRAINTS" content="eltOnly" model="closed" order="many">
+        <element type="TOOLBOXCONSTRAINT" minOccurs="0" maxOccurs="*" /> 
+    </ElementType>
+
+    <ElementType name="CONSTRAINTS" content="eltOnly" model="closed" order="many">
+        <element type="PROPERTYCONSTRAINTS" minOccurs="0" maxOccurs="1" /> 
+        <element type="MENUCONSTRAINTS" minOccurs="0" maxOccurs="1" /> 
+        <element type="TOOLBOXCONSTRAINTS" minOccurs="0" maxOccurs="1" /> 
+    </ElementType>
+
+    <ElementType name="MEMBERCONSTRAINT" content="eltOnly" model="closed" order="many">
+        <myExt:key>ID</myExt:key> 
+        <element type="ID" minOccurs="1" maxOccurs="1" /> 
+        <element type="PROPERTYCONSTRAINTS" minOccurs="0" maxOccurs="1" /> 
+        <element type="MENUCONSTRAINTS" minOccurs="0" maxOccurs="1" /> 
+        <element type="TOOLBOXCONSTRAINTS" minOccurs="0" maxOccurs="1" /> 
+    </ElementType>
+
+    <ElementType name="MEMBERCONSTRAINTS" content="eltOnly" model="closed" order="many">
+        <element type="MEMBERCONSTRAINT" minOccurs="0" maxOccurs="*" /> 
+    </ElementType>
+
+    <ElementType name="DEFAULTACTION" content="textOnly" dt:type="string">
+        <myExt:requirescontent/>
+    </ElementType>
+    <ElementType name="ORDER" content="textOnly" dt:type="string">
+        <myExt:requirescontent/>
+    </ElementType>
+    <ElementType name="INCLUDE" content="textOnly" dt:type="string">
+        <myExt:requirescontent/>
+    </ElementType>
+    <ElementType name="EXCLUDE" content="textOnly" dt:type="string">
+        <myExt:requirescontent/>
+    </ElementType>
+
+    <ElementType name="ELEMENTSET" content="eltOnly" model="closed" order="many">
+        <element type="DEFAULTACTION" minOccurs="0" maxOccurs="1"/>
+        <element type="ORDER" minOccurs="0" maxOccurs="1"/>
+        <element type="INCLUDE" minOccurs="0" maxOccurs="*"/>
+        <element type="EXCLUDE" minOccurs="0" maxOccurs="*"/>
+        <element type="CONSTRAINTS" minOccurs="0" maxOccurs="1" /> 
+        <element type="MEMBERCONSTRAINTS" minOccurs="0" maxOccurs="1" /> 
+    </ElementType>
+
+    <ElementType name="PROTOTYPE" content="textOnly" dt:type="string">
+        <myExt:requirescontent/>
+    </ElementType>
+
+    <ElementType name="KEYWORD" content="textOnly" dt:type="string">
+        <myExt:requirescontent/>
+    </ElementType>
+
+    <ElementType name="PROTOTYPES" content="eltOnly" model="closed" order="many">
+        <element type="PROTOTYPE" minOccurs="0" maxOccurs="*"/>
+        <element type="KEYWORD" minOccurs="0" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="TOOLBOXLINK" content="textOnly" dt:type="string">
+        <myExt:requirescontent/>
+    </ElementType>
+
+    <ElementType name="TOOLBOXLINKS" content="eltOnly" model="closed" order="many">
+        <element type="TOOLBOXLINK" minOccurs="0" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="MENULINK" content="textOnly" dt:type="string">
+        <myExt:requirescontent/>
+    </ElementType>
+
+    <ElementType name="MENULINKS" content="eltOnly" model="closed" order="many">
+        <element type="MENULINK" minOccurs="0" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="FEATURELINKS" content="eltOnly" model="closed" order="many">
+        <element type="MENULINKS" minOccurs="0" maxOccurs="1"/>
+        <element type="TOOLBOXLINKS" minOccurs="0" maxOccurs="1"/>
+    </ElementType>
+
+    <ElementType name="ELEMENT" content="eltOnly" model="closed" order="many">
+        <myExt:key>ID</myExt:key>
+        <element type="ID" minOccurs="1" maxOccurs="1"/>
+        <element type="CONTEXT" minOccurs="0" maxOccurs="1"/>
+        <element type="IDENTIFIERS" minOccurs="0" maxOccurs="1"/>
+        <element type="ELEMENTSET" minOccurs="0" maxOccurs="1" /> 
+        <element type="CONSTRAINTS" minOccurs="0" maxOccurs="1" /> 
+        <element type="PROTOTYPES" minOccurs="0" maxOccurs="1" /> 
+        <element type="FEATURELINKS" minOccurs="0" maxOccurs="1" /> 
+    </ElementType>
+
+    <ElementType name="ELEMENTS" content="eltOnly" model="closed" order="many">
+        <element type="ELEMENT" minOccurs="0" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="CATEGORYMEMBER" content="textOnly" dt:type="string">
+        <myExt:requirescontent/>
+    </ElementType>
+
+    <ElementType name="CATEGORY" content="eltOnly" model="closed" order="many">
+        <myExt:key>ID</myExt:key>
+        <element type="ID" minOccurs="1" maxOccurs="1"/>
+        <element type="CATEGORYMEMBER" minOccurs="0" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="CATEGORIES" content="eltOnly" model="closed" order="many">
+        <element type="CATEGORY" minOccurs="0" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="POLICYMODE" content="textOnly" dt:type="string">
+        <myExt:requirescontent/>
+    </ElementType>
+
+    <ElementType name="DEFAULTSETTINGS" content="eltOnly" model="closed" order="many">
+        <element type="DEFAULTACTION" minOccurs="1" maxOccurs="1"/>
+        <element type="ORDER" minOccurs="1" maxOccurs="1"/>
+        <element type="POLICYMODE" minOccurs="1" maxOccurs="1"/>
+        <element type="CONSTRAINTS" minOccurs="0" maxOccurs="1"/>
+    </ElementType>
+
+    <ElementType name="CMDID" content="textOnly" dt:type="ui4">
+	   <myExt:requirescontent/>
+    </ElementType>
+    <ElementType name="GUID" content="textOnly" dt:type="uuid">
+        <myExt:requirescontent/>
+    </ElementType>
+
+    <ElementType name="MENU" content="eltOnly" model="closed" order="many">
+        <myExt:key>ID</myExt:key>
+        <element type="ID" minOccurs="1" maxOccurs="1"/>
+        <element type="CMDID" minOccurs="1" maxOccurs="1"/>
+        <element type="GUID" minOccurs="1" maxOccurs="1"/>
+    </ElementType>
+
+    <ElementType name="MENUS" content="eltOnly" model="closed" order="many">
+        <element type="MENU" minOccurs="0" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="DESCRIPTOR" content="textOnly" dt:type="string">
+        <myExt:requirescontent/>
+    </ElementType>
+
+    <ElementType name="TOOLBOXITEM" content="eltOnly" model="closed" order="many">
+        <myExt:key>ID</myExt:key>
+        <element type="ID" minOccurs="1" maxOccurs="1"/>
+        <element type="DESCRIPTOR" minOccurs="1" maxOccurs="1"/>
+    </ElementType>
+
+    <ElementType name="TOOLBOXITEMS" content="eltOnly" model="closed" order="many">
+        <element type="TOOLBOXITEM" minOccurs="0" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="FEATURES" content="eltOnly" model="closed" order="many">
+        <element type="MENUS" minOccurs="0" maxOccurs="1"/>
+        <element type="TOOLBOXITEMS" minOccurs="0" maxOccurs="1"/>
+    </ElementType>
+
+    <ElementType name="TDL" content="eltOnly" model="closed" order="many">
+        <element type="ELEMENTS" minOccurs="0" maxOccurs="1"/>
+        <element type="CATEGORIES" minOccurs="0" maxOccurs="1"/>
+        <element type="DEFAULTSETTINGS" minOccurs="1" maxOccurs="1"/>
+        <element type="FEATURES" minOccurs="0" maxOccurs="1"/>
+    </ElementType>
+</Schema>

@@ -1,0 +1,1 @@
+<%@ WebService Language="VB" Codebehind="SimpleCustomersWebService.asmx.vb" Class="Microsoft.Samples.Windows.Forms.Vb.WebServiceBinding.CustomersList"%>

@@ -1,0 +1,952 @@
+//-----------------------------------------------------------------------------
+// Microsoft VSEE
+//
+// Microsoft Confidential
+// Copyright 1995-2000 Microsoft Corporation. All Rights Reserved.
+//
+// @doc EXTERNAL
+// @module VSAAuto.idl-IDL source for Visual Studio Analyzer Automation |
+// IDL source for VS Analyzer automation compliant interfaces
+//
+//-----------------------------------------------------------------------------
+
+// Includes -------------------------------------------------------------------
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+import "vaevt.idl";
+
+interface VSAnalyzerMachine;
+interface VSAnalyzerEventLog;
+interface VSAnalyzerFilter;
+interface VSAnalyzerEvent;
+interface VSAnalyzerUserSelectionCallback;
+
+#include <olectl.h>
+
+enum __VSANALYZERPROJECTPROPERTIES
+{
+	VSANALYZERPROJECTID_Name = DISPID_Name,
+	VSANALYZERPROJECTID_AddMachine = 1,
+	VSANALYZERPROJECTID_RemoveMachine,
+	VSANALYZERPROJECTID_MachineCount,
+	VSANALYZERPROJECTID_Mahcines,
+	VSANALYZERPROJECTID_AddEventLog,
+	VSANALYZERPROJECTID_RemoveEventLog,
+	VSANALYZERPROJECTID_EventLogsCount,
+	VSANALYZERPROJECTID_EventLogs,
+	VSANALYZERPROJECTID_AddFilter,
+	VSANALYZERPROJECTID_RemoveFilter,
+	VSANALYZERPROJECTID_FiltersCount,
+	VSANALYZERPROJECTID_Filters,
+	VSANALYZERPROJECTID_StartRecording,
+	VSANALYZERPROJECTID_StopRecording,
+	VSANALYZERPROJECTID_PauseRecording,
+	VSANALYZERPROJECTID_ResumeRecording,
+	VSANALYZERPROJECTID_Recording,
+	VSANALYZERPROJECTID_Paused,
+	VSANALYZERPROJECTID_Activate,
+	VSANALYZERPROJECTID_Deactivate,
+	VSANALYZERPROJECTID_DynamicEventSourcesFrequency,
+	VSANALYZERPROJECTID_SetBlockOnOverflow,
+	VSANALYZERPROJECTID_SaveAll,
+	VSANALYZERPROJECTID_Close,
+	VSANALYZERPROJECTID_AttachUserSelectionCallback,
+	VSANALYZERPROJECTID_GetUserSelection,
+	VSANALYZERPROJECTID_SetUserSelection,
+	VSANALYZERPROJECTID_Project
+};
+
+enum __VSANALYZERMACHINEPROPERTIES
+{
+	VSANALYZERMACHINEID_Name = DISPID_Name,
+	VSANALYZERMACHINEID_Connected = DISPID_VALUE,
+	VSANALYZERMACHINEID_ProjectItem = 1,
+	VSANALYZERMACHINEID_Connect,
+	VSANALYZERMACHINEID_Disconnect
+};
+
+enum __VSANALYZEREVENTLOGPROPERTIES
+{
+	VSANALYZEREVENTLOGID_Name = DISPID_Name,
+	VSANALYZEREVENTLOGID_Count = DISPID_VALUE,
+	VSANALYZEREVENTLOGID_NewEnum = DISPID_NEWENUM,
+	VSANALYZEREVENTLOGID_Recording = 1,
+	VSANALYZEREVENTLOGID_Paused,
+	VSANALYZEREVENTLOGID_ProjectItem,
+	VSANALYZEREVENTLOGID_Item
+};
+
+enum __VSANALYZERFILTERPROPERTIES
+{
+	VSANALYZERFILTERID_Name = DISPID_Name,
+	VSANALYZERFILTERID_Expression = DISPID_VALUE,
+	VSANALYZERFILTERID_ProjectItem = 1,
+	VSANALYZERFILTERID_Active,
+	VSANALYZERFILTERID_EvaluateEvent,
+	VSANALYZERFILTERID_Applied
+};
+
+[
+	uuid(6c736d51-1510-11d2-8F88-00A0C90A6B00),
+	helpstring("Microsoft Visual Studio Analyzer 2002 Automation Model Type Library"),
+	lcid(0x0000),
+	version(1.0)
+]
+library MSVSAnalyzerAutomationLibrary
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	importlib("dte.tlb");
+
+//----------------------------------------------------------------------------- 
+// Name: VSAnalyzerProject 
+// 
+// @interface VSAnalyzerProject |
+// Automation methods to access VS Analyzer Project object.
+// 
+// @base public | IDispatch
+//----------------------------------------------------------------------------- 
+	[
+		object,
+		uuid(6c736d51-1510-11d2-8F88-00A0C90A6B01),
+		dual,
+		helpstring("VSAnalyzerProject Interface"),
+		pointer_default(unique)
+	]
+
+	interface VSAnalyzerProject : IDispatch
+	{
+
+		// @meth BSTR | Name | Get project name.
+		[propget, id(VSANALYZERPROJECTID_Name), helpstring("Retrieves the name of the project.")]
+		HRESULT Name
+			(
+			[out, retval] BSTR *pbstrName					// @parm Project name
+			);
+
+		// @meth VSAnalyzerMachine | AddMachine | Add a machine to the project.
+		[id(VSANALYZERPROJECTID_AddMachine), helpstring("Adds a computer to the project.")]
+		HRESULT AddMachine
+			(
+			[in] BSTR bstrMachineName,	// @parm Machine name.
+			[out, retval] VSAnalyzerMachine** ppMachine	// @parm Machine object.
+			);
+
+		// @meth HRESULT | RemoveMachine | Remove a machine from the project.
+		[id(VSANALYZERPROJECTID_RemoveMachine), helpstring("Removes a computer from the project.")]
+		HRESULT RemoveMachine
+			(
+			[in] BSTR bstrMachineName	// @parm Machine name.
+			);
+		
+		// @meth int | MachinesCount | Get number of machines in project.
+		[propget, id(VSANALYZERPROJECTID_MachineCount), helpstring("Retrieves the number of computers in the project.")]
+		HRESULT MachinesCount
+			(
+			[out, retval] int* pnCount	// @parm Machines count.
+			);
+
+		// @meth ProjectItems | Machines | Get collection of machines.
+		[id(VSANALYZERPROJECTID_Mahcines), helpstring("Retrieves a collection of the computers in the project.")]
+		HRESULT Machines
+			(
+			[out, retval] ProjectItems** ppMachines		// @parm Machines collection.
+			);
+
+
+
+		// @meth VSAnalyzerEventLog | AddEventLog | Add an event log to the project.
+		[id(VSANALYZERPROJECTID_AddEventLog), helpstring("Adds an event log to the project.")]
+		HRESULT AddEventLog
+			(
+			[in] BSTR bstrEventLogName,		// @parm Event Log name.
+			[out, retval] VSAnalyzerEventLog** ppEventLog		// @parm EventLog object.
+			);
+
+		// @meth HRESULT | RemoveEventLog | Remove an event log from the project.
+		[id(VSANALYZERPROJECTID_RemoveEventLog), helpstring("Removes an event log from the project.")]
+		HRESULT RemoveEventLog
+			(
+			[in] BSTR bstrEventLogName	// @parm Event Log name.
+			);
+
+		// @meth int | EventLogsCount | Get the number of event logs in project.
+		[propget, id(VSANALYZERPROJECTID_EventLogsCount), helpstring("Retrieves a collection of the event logs.")]
+		HRESULT EventLogsCount
+			(
+			[out, retval] int* pnCount	// @parm EventLogs count.
+			);
+
+		// @meth ProjectItems | EventLogs | Get collection of event logs.
+		[id(VSANALYZERPROJECTID_EventLogs), helpstring("Retrieves a collection of the event logs.")]
+		HRESULT EventLogs
+			(
+			[out, retval] ProjectItems** ppEventLogs	// @parm Event logs collection.
+			);
+
+
+
+		// @meth VSAnalyzerFilter | AddFilter | Add a filter to the project.
+		[id(VSANALYZERPROJECTID_AddFilter), helpstring("Adds a filter to the project.")]
+		HRESULT AddFilter
+			(
+			[in] BSTR bstrFilterName,	// @parm Filter name.
+			[in, defaultvalue(FALSE)] VARIANT_BOOL fOverwrite,	// @parm Flag indicating replace if already exists.
+			[out, retval] VSAnalyzerFilter** ppFilter		// @parm Filter object.
+			);
+
+		// @meth HRESULT | RemoveFilter | Remove a filter from the project.
+		[id(VSANALYZERPROJECTID_RemoveFilter), helpstring("Removes a filter from the project.")]
+		HRESULT RemoveFilter
+			(
+			[in] BSTR bstrFilterName		// @parm Filter name.
+			);
+
+		// @meth HRESULT | FiltersCount | Get the number of filters in project.
+		[propget, id(VSANALYZERPROJECTID_FiltersCount), helpstring("Retrieves the number of filters in project.")]
+		HRESULT FiltersCount
+			(
+			[out, retval] int* pnCount		// @parm Filters count.
+			);
+
+		// @meth ProjectItems | Filters | Get collection of filters.
+		[id(VSANALYZERPROJECTID_Filters), helpstring("Retrieves a collection of the filters in the project.")]
+		HRESULT Filters
+			(
+			[out, retval] ProjectItems** ppFilters		// @parm Filters collection.
+			);
+
+
+
+		// @meth HRESULT | StartRecording | Start recording events on events log.
+		[id(VSANALYZERPROJECTID_StartRecording), helpstring("Starts recording events to an event log.")] 
+		HRESULT StartRecording
+			(
+			[in] BSTR bstrEventLogName,		// @parm Event Log name.
+			[out, retval] VSAnalyzerEventLog** ppEventLog		// @parm EventLog object.
+			);
+
+		// @meth HRESULT | StopRecording | Stop recording events.
+		[id(VSANALYZERPROJECTID_StopRecording), helpstring("Stops recording events.")] 
+		HRESULT StopRecording
+			(
+			);
+
+		// @meth HRESULT | PauseRecording | Pause recording events.
+		[id(VSANALYZERPROJECTID_PauseRecording), helpstring("Pauses recording events.")] 
+		HRESULT PauseRecording
+			(
+			);
+
+		// @meth HRESULT | ResumeRecording | Resume recording events.
+		[id(VSANALYZERPROJECTID_ResumeRecording), helpstring("Resumes recording events.")] 
+		HRESULT ResumeRecording
+			(
+			);
+
+		// @meth VARIANT_BOOL | Recording | Get event recording state.
+		[propget, id(VSANALYZERPROJECTID_Recording), helpstring("Retrieves the event recording state.")] 
+		HRESULT Recording
+			(
+			[out, retval] VARIANT_BOOL *pfRecordingState	// @parm Event recording state.
+			);
+
+		// @meth VARIANT_BOOL | Paused | Get paused state.
+		[propget, id(VSANALYZERPROJECTID_Paused), helpstring("Retrieves the paused state.")] 
+		HRESULT RecordingPaused
+			(
+			[out, retval] VARIANT_BOOL *pfPausedState	// @parm Paused state.
+			);
+
+		// @meth HRESULT | Activate | Activate filter for event collection.
+		[id(VSANALYZERPROJECTID_Activate), helpstring("Activate a filter for event collection.")] 
+		HRESULT ActivateFilter
+			(
+			[in] BSTR bstrFilterName	// @parm Filter name.
+			);
+
+		// @meth HRESULT | Deactivate | Deactivate filter for event collection.
+		[id(VSANALYZERPROJECTID_Deactivate), helpstring("Deactivates the currently active filter.")] 
+		HRESULT DeactivateFilter
+			(
+			);
+
+
+		// @meth HRESULT | DynamicEventSourcesFrequency | Set the frequency for collection of dynamic events.
+		[propput, id(VSANALYZERPROJECTID_DynamicEventSourcesFrequency), helpstring("Sets the frequency for collection of dynamic events.")]
+		HRESULT DynamicEventSourcesFrequency
+			(
+			[in] int nMilliseconds	// @parm Frequency.
+			);
+
+		// @meth int | DynamicEventSourcesFrequency | Get the frequency for collection of dynamic events.
+		[propget, id(VSANALYZERPROJECTID_DynamicEventSourcesFrequency), helpstring("Retrieves the frequency for collection of dynamic events.")]
+		HRESULT DynamicEventSourcesFrequency
+			(
+			[out, retval] int* pnMilliseconds	// @parm Frequency.
+			);
+
+		// @meth HRESULT | SetBlockOnOverflow | Block event firing when buffers overflow.
+		[propput, id(VSANALYZERPROJECTID_SetBlockOnOverflow), helpstring("Sets a block on event firing when buffers overlow.")]
+		HRESULT BlockOnOverflow
+			(
+			[in, defaultvalue(TRUE)] VARIANT_BOOL fBlockOnOverflow	// @parm Flag indicating BlockOnOverflow.
+			);
+
+		// @meth VARIANT_BOOL | BlockOnOverflow | Get the BlockOnOverflow flag.
+		[propget, id(VSANALYZERPROJECTID_SetBlockOnOverflow), helpstring("Retrieves a value that indicates whether event collecting will be blocked on overflow.")]
+		HRESULT BlockOnOverflow
+			(
+			[out, retval] VARIANT_BOOL* pfBlockOnOverflow	// @parm Flag indicating BlockOnOverflow.
+			);
+
+		// @meth HRESULT | SaveAll | Save project.
+		[id(VSANALYZERPROJECTID_SaveAll), helpstring("Saves the entire project.")]
+		HRESULT SaveAll
+			(
+			);
+
+		// @meth HRESULT | Close | Close project with or without saving.
+		[id(VSANALYZERPROJECTID_Close), helpstring("Closes the project, optionally saving its contents.")]
+		HRESULT Close
+			(
+			[in, defaultvalue(TRUE)] VARIANT_BOOL fSaveAll	// @parm Flag to save or not save.
+			);
+
+		// @meth HRESULT | AttachUserSelectionCallback | Selection notification callback.
+		[id(VSANALYZERPROJECTID_AttachUserSelectionCallback), helpstring("Sets a callback object.")] 
+		HRESULT AttachUserSelectionCallback
+			(
+			[in] VSAnalyzerUserSelectionCallback* pCallbackObject
+			);
+
+		// @meth HRESULT | GetUserSelection | Get selected event.
+		// If there is a current selection, the return is S_OK and a pointer to the event
+		//     object that is selected.
+		// If no current event is selected, then the call will return S_FALSE and a null 
+		//     pointer.
+		[id(VSANALYZERPROJECTID_GetUserSelection), helpstring("Retrieves a callback object.")]
+		HRESULT GetUserSelection
+			(
+			[out, retval] VSAnalyzerEvent** ppEventObject
+			);
+
+		// @meth HRESULT | SetUserSelection | Set selected event.
+		// This method changes the user selected event, given the timestamp of the 
+		// event (performance counter on the firing machine)
+		[id(VSANALYZERPROJECTID_SetUserSelection), helpstring("Sets the user-selected event.")] 
+		HRESULT SetUserSelection
+			(
+			[in] BSTR bstrEventLogName,		// @parm Event log name.
+			[in] DWORD dwStartTimeLow,		// @parm Start time.
+			[in] DWORD dwStartTimeHigh,
+			[in] DWORD dwEndTimeLow,		// @parm End time.
+			[in] DWORD dwEndTimeHigh
+			);
+
+		// @meth Project | Project | Obtain the Project object.
+		[propget, id(VSANALYZERPROJECTID_Project), helpstring("Retrieves the Project object.")] 
+		HRESULT Project
+			(
+			[out, retval] Project **ppProject	// @parm Project object.
+			);
+	};
+
+
+
+//----------------------------------------------------------------------------- 
+// Name: VSAnalyzerMachine 
+// 
+// @interface VSAnalyzerMachine |
+// Automation methods to access VS Analyzer Machine object.
+// 
+// @base public | IDispatch
+//----------------------------------------------------------------------------- 
+	[
+		object,
+		uuid(6c736d51-1510-11d2-8F88-00A0C90A6B03),
+		dual,
+		helpstring("VSAnalyzerMachine Interface"),
+		pointer_default(unique)
+	]
+
+	interface VSAnalyzerMachine : IDispatch
+	{
+		// @meth BSTR | Name | Get machine name.
+		[propget, id(VSANALYZERMACHINEID_Name), helpstring("Retrieves the name of the machine.")]
+		HRESULT Name
+			(
+			[out, retval] BSTR *pbstrName					// @parm Machine name
+			);
+
+		// @meth VARIANT_BOOL | Connected | Is this machine currently connected?
+		[propget, id(VSANALYZERMACHINEID_Connected), helpstring("Indicates whether the computer is connected.")] 
+		HRESULT Connected
+			(
+			[out, retval] VARIANT_BOOL *pfVal	// @parm Flag indicating connection state.
+			);
+
+		// @meth ProjectItem | ProjectItem | Obtain the ProjectItem object.
+		[propget, id(VSANALYZERMACHINEID_ProjectItem), helpstring("Retrieves the ProjectItem object.")] 
+		HRESULT ProjectItem
+			(
+			[out, retval] ProjectItem **ppProjectItem	// @parm ProjectItem object.
+			);
+
+		// @meth HRESULT | Connect | Connect machine.
+		[id(VSANALYZERMACHINEID_Connect), helpstring("Connects the computer to the project.")] 
+		HRESULT Connect
+			(
+			);
+
+		// @meth HRESULT | Disconnect | Disconnect machine.
+		[id(VSANALYZERMACHINEID_Disconnect), helpstring("Disconnects the computer from the project.")] 
+		HRESULT Disconnect
+			(
+			);
+	};
+
+
+
+//----------------------------------------------------------------------------- 
+// Name: VSAnalyzerEventLog
+// 
+// @interface VSAnalyzerEventLog |
+// Automation methods to access VS Analyzer EventLog object.
+// 
+// @base public | IDispatch
+//----------------------------------------------------------------------------- 
+	[
+		object,
+		uuid(6c736d51-1510-11d2-8F88-00A0C90A6B05),
+		dual,
+		helpstring("VSAnalyzerEventLog Interface"),
+		pointer_default(unique)
+	]
+
+	interface VSAnalyzerEventLog : IDispatch
+	{
+
+		// @meth BSTR | Name | Get event log name.
+		[propget, id(VSANALYZEREVENTLOGID_Name), helpstring("Retrieves the name of the event log.")]
+		HRESULT Name
+			(
+			[out, retval] BSTR *pbstrName					// @parm Event log name
+			);
+
+		// @meth VARIANT_BOOL | Recording | Get event recording state.
+		[propget, id(VSANALYZEREVENTLOGID_Recording), helpstring("Retrieves the event recording state.")] 
+		HRESULT Recording
+			(
+			[out, retval] VARIANT_BOOL *pfRecordingState	// @parm Event recording state.
+			);
+
+		// @meth VARIANT_BOOL | Paused | Get paused state.
+		[propget, id(VSANALYZEREVENTLOGID_Paused), helpstring("Retrieves the paused state.")] 
+		HRESULT Paused
+			(
+			[out, retval] VARIANT_BOOL *pfPausedState	// @parm Paused state.
+			);
+
+		// @meth ProjectItem | ProjectItem | Obtain the ProjectItem object.
+		[propget, id(VSANALYZEREVENTLOGID_ProjectItem), helpstring("Retrieves the ProjectItem object.")] 
+		HRESULT ProjectItem
+			(
+			[out, retval] ProjectItem **ppProjectItem	// @parm ProjectItem object.
+			);
+
+		// @meth int | Count | Get the number of events in this event log.
+		[propget, id(VSANALYZEREVENTLOGID_Count), helpstring("Retrieves the number of events in this event log.")]
+		HRESULT Count
+			(
+			[out, retval] int *pnEventsCount		// @parm Number of events.
+			);
+
+		// @meth VSAnalyzerEvent | Item | Get event at specified index.
+		[id(VSANALYZEREVENTLOGID_Item), helpstring("Retrieves event at specified index.")]
+		HRESULT Item
+			(
+			[in] VARIANT vIndex,	// @parm Index.
+			[out, retval] VSAnalyzerEvent** ppVSAnalyzerEvent	// @parm Event.
+			);
+
+		// @meth IUnknown | _NewEnum | Get enumeration object.
+		[propget, id(VSANALYZEREVENTLOGID_NewEnum), helpstring("Retrieves the enumeration object.")]
+		HRESULT _NewEnum
+			(
+			[out, retval] IUnknown** ppunk
+			);
+	};
+
+
+
+//----------------------------------------------------------------------------- 
+// Name: VSAnalyzerFilter
+// 
+// @interface VSAnalyzerFilter |
+// Automation methods to access VS Analyzer Filter object.
+// 
+// @base public | IDispatch
+//----------------------------------------------------------------------------- 
+	[
+		object,
+		uuid(6c736d51-1510-11d2-8F88-00A0C90A6B07),
+		dual,
+		helpstring("VSAnalyzerFilter Interface"),
+		pointer_default(unique)
+	]
+
+	interface VSAnalyzerFilter : IDispatch
+	{
+		// @meth BSTR | Name | Get filter name.
+		[propget, id(VSANALYZERFILTERID_Name), helpstring("Retrieves the name of the filter.")]
+		HRESULT Name
+			(
+			[out, retval] BSTR *pbstrName					// @parm Filter name
+			);
+
+		// @meth BSTR | Expression | Get filter expression.
+		[propget, id(VSANALYZERFILTERID_Expression), helpstring("Retrieves the filter expression.")] 
+		HRESULT Expression
+			(
+			[out, retval] BSTR *pbstrFilterExpression	// @parm Filter expression.
+			);
+
+		// @meth HRESULT | Expression | Set filter expression.
+		[propput, id(VSANALYZERFILTERID_Expression), helpstring("Sets the filter expression.")] 
+		HRESULT Expression
+			(
+			[in] BSTR bstrFilterExpression	// @parm Filter expression.
+			);
+
+		// @meth ProjectItem | ProjectItem | Obtain the ProjectItem object.
+		[propget, id(VSANALYZERFILTERID_ProjectItem), helpstring("Retrieves the ProjectItem object.")] 
+		HRESULT ProjectItem
+			(
+			[out, retval] ProjectItem **ppProjectItem	// @parm ProjectItem object.
+			);
+
+		// @meth VARIANT_BOOL | Active | Get active status.
+		[propget, id(VSANALYZERFILTERID_Active), helpstring("Retrieves the active status for the filter.")] 
+		HRESULT Active
+			(
+			[out, retval] VARIANT_BOOL *pfActiveState	// @parm Active state.
+			);
+
+		// @meth VARIANT_BOOL | EvaluateEvent | Evaluate this event with this filter. Returns TRUE if event passes filter.
+		[id(VSANALYZERFILTERID_EvaluateEvent), helpstring("Evaluates an event against the filter.")] 
+		HRESULT EvaluateEvent
+			(
+			[in] VSAnalyzerEvent* pVSAnalyzerEvent,		// @parm Event to evaluate.
+			[out, retval] VARIANT_BOOL* pfPassesFilter	// @parm Flag indicating if event passed filter.
+			);
+
+		// @meth VARIANT_BOOL | View | Get view status.
+		[propget, id(VSANALYZERFILTERID_Applied), helpstring("Retrieves the view status.")]
+		HRESULT Applied
+			(
+			[out, retval] VARIANT_BOOL *pfAppliedState // @parm Applied state.
+			);
+	};
+
+
+
+//----------------------------------------------------------------------------- 
+// Name: VSAnalyzerConstants
+// 
+// @interface VSAnalyzerConstants |
+// Constants for VS Analyzer automation
+//
+//----------------------------------------------------------------------------- 
+
+	[ 
+		uuid(6c736d51-1510-11d2-8F88-00A0C90A6B20),
+		helpstring ("Analyzer constants")
+	] 
+	module VSAnalyzerConstants 
+	{
+		const LPWSTR VSAnalyzerProjectsKindVSA		= L"{6c736d51-1510-11d2-8F88-00A0C90A6B21}";
+		const LPWSTR VSAnalyzerProjectKindVSA		= L"{6c736d51-1510-11d2-8F88-00A0C90A6B22}";
+		const LPWSTR VSAnalyzerProjectItemsKindVSA	= L"{6c736d51-1510-11d2-8F88-00A0C90A6B23}";
+
+		const LPWSTR VSAnalyzerProjectItemKindEventLog	= L"{6c736d51-1510-11d2-8F88-00A0C90A6B24}";
+		const LPWSTR VSAnalyzerProjectItemKindFilter	= L"{6c736d51-1510-11d2-8F88-00A0C90A6B25}";
+		const LPWSTR VSAnalyzerProjectItemKindMachine	= L"{6c736d51-1510-11d2-8F88-00A0C90A6B26}";
+
+		const LPWSTR VSAnalyzerProjectItemsKindEventLogs	= L"{6c736d51-1510-11d2-8F88-00A0C90A6B27}";
+		const LPWSTR VSAnalyzerProjectItemsKindFilters		= L"{6c736d51-1510-11d2-8F88-00A0C90A6B28}";
+		const LPWSTR VSAnalyzerProjectItemsKindMachines	= L"{6c736d51-1510-11d2-8F88-00A0C90A6B29}";
+
+		const LPWSTR VSAnalyzerProjectItemsKindEventLogsList	= L"{6c736d51-1510-11d2-8F88-00A0C90A6B2A}";
+		const LPWSTR VSAnalyzerProjectItemsKindFiltersList		= L"{6c736d51-1510-11d2-8F88-00A0C90A6B2B}";
+		const LPWSTR VSAnalyzerProjectItemsKindMachinesList	= L"{6c736d51-1510-11d2-8F88-00A0C90A6B2C}";
+
+
+		// Event fields.
+		const LPWSTR VSAnalyzerEventFieldEventId			= L"EventId";
+		const LPWSTR VSAnalyzerEventFieldSessionName		= L"SessionName";
+		const LPWSTR VSAnalyzerEventFieldType				= L"Type";
+		const LPWSTR VSAnalyzerEventFieldTypeId				= L"TypeId";
+		const LPWSTR VSAnalyzerEventFieldSourceName			= L"SourceName";
+		const LPWSTR VSAnalyzerEventFieldSourceGUID			= L"SourceGUID";
+		const LPWSTR VSAnalyzerEventFieldEventName			= L"EventName";
+		const LPWSTR VSAnalyzerEventFieldEventGUID			= L"EventGUID";
+		const LPWSTR VSAnalyzerEventFieldCategoryName		= L"CategoryName";
+		const LPWSTR VSAnalyzerEventFieldFullCategoryName	= L"FullCategoryName";
+		const LPWSTR VSAnalyzerEventFieldCategoryGUID		= L"CategoryGUID";
+		const LPWSTR VSAnalyzerEventFieldEventTime			= L"EventTime";
+		const LPWSTR VSAnalyzerEventFieldLoggedTime			= L"LoggedTime";
+		const LPWSTR VSAnalyzerEventFieldDuration			= L"Duration";
+		const LPWSTR VSAnalyzerEventFieldSourceMachine		= L"SourceMachine";
+		const LPWSTR VSAnalyzerEventFieldSourceProcessId	= L"SourceProcessId";
+		const LPWSTR VSAnalyzerEventFieldSourceThread		= L"SourceThread";
+		const LPWSTR VSAnalyzerEventFieldSourceComponent	= L"SourceComponent";
+		const LPWSTR VSAnalyzerEventFieldSourceSession		= L"SourceSession";
+		const LPWSTR VSAnalyzerEventFieldTargetMachine		= L"TargetMachine";
+		const LPWSTR VSAnalyzerEventFieldTargetProcessId	= L"TargetProcessId";
+		const LPWSTR VSAnalyzerEventFieldTargetThread		= L"TargetThread";
+		const LPWSTR VSAnalyzerEventFieldTargetComponent	= L"TargetComponent";
+		const LPWSTR VSAnalyzerEventFieldTargetSession		= L"TargetSession";
+		const LPWSTR VSAnalyzerEventFieldSecurityIdentity	= L"SecurityIdentity";
+		const LPWSTR VSAnalyzerEventFieldCausalityID		= L"CausailtyID";
+		const LPWSTR VSAnalyzerEventFieldSourceProcessName	= L"SourceProcessName";
+		const LPWSTR VSAnalyzerEventFieldTargetProcessName	= L"TargetProcessName";
+		const LPWSTR VSAnalyzerEventFieldSourceHandle		= L"SourceHandle";
+		const LPWSTR VSAnalyzerEventFieldTargetHandle		= L"TargetHandle";
+		const LPWSTR VSAnalyzerEventFieldArguments			= L"Arguments";
+		const LPWSTR VSAnalyzerEventFieldReturnValue		= L"ReturnValue";
+		const LPWSTR VSAnalyzerEventFieldException			= L"Exception";
+		const LPWSTR VSAnalyzerEventFieldCorrelationID		= L"CorrelationID";
+		const LPWSTR VSAnalyzerEventFieldDynamicEventData	= L"DynamicEventData";
+		const LPWSTR VSAnalyzerEventFieldEventLogId			= L"EventLogId";
+		const LPWSTR VSAnalyzerEventFieldEventLogName		= L"EventLogName";
+
+		typedef 
+		[
+			v1_enum,
+			helpstring("Event fields in Analyzer UI")
+		] enum VSAnalyzerUIEventField 
+		{
+			VSAnalyzerUIEventFieldFirst = 1,			// *** FIRST ***
+
+			VSAnalyzerUIEventFieldEventId = 1,
+			VSAnalyzerUIEventFieldSessionName = 2,
+			VSAnalyzerUIEventFieldType = 3,
+			VSAnalyzerUIEventFieldTypeId = 4,
+			VSAnalyzerUIEventFieldSourceName = 5,
+			VSAnalyzerUIEventFieldSourceGUID = 6,
+			VSAnalyzerUIEventFieldEventName = 7,
+			VSAnalyzerUIEventFieldEventGUID = 8,
+			VSAnalyzerUIEventFieldCategoryName = 9,
+			VSAnalyzerUIEventFieldFullCategoryName = 10,
+			VSAnalyzerUIEventFieldCategoryGUID = 11,		
+			VSAnalyzerUIEventFieldEventTime = 12,
+			VSAnalyzerUIEventFieldLoggedTime = 13,			
+			VSAnalyzerUIEventFieldDuration = 14,		
+			VSAnalyzerUIEventFieldSourceMachine = 15,
+			VSAnalyzerUIEventFieldSourceProcessId = 16,
+			VSAnalyzerUIEventFieldSourceThread = 17,	
+			VSAnalyzerUIEventFieldSourceComponent = 18,
+			VSAnalyzerUIEventFieldSourceSession = 19,	
+			VSAnalyzerUIEventFieldTargetMachine = 20,		
+			VSAnalyzerUIEventFieldTargetProcessId = 21,
+			VSAnalyzerUIEventFieldTargetThread = 22,	
+			VSAnalyzerUIEventFieldTargetComponent = 23,
+			VSAnalyzerUIEventFieldTargetSession = 24,	
+			VSAnalyzerUIEventFieldSecurityIdentity = 25,
+			VSAnalyzerUIEventFieldCausalityID = 26,	
+			VSAnalyzerUIEventFieldSourceProcessName = 27,
+			VSAnalyzerUIEventFieldTargetProcessName = 28,
+			VSAnalyzerUIEventFieldSourceHandle = 29,	
+			VSAnalyzerUIEventFieldTargetHandle = 30,		
+			VSAnalyzerUIEventFieldArguments = 31,		
+			VSAnalyzerUIEventFieldReturnValue = 32,
+			VSAnalyzerUIEventFieldException = 33,		
+			VSAnalyzerUIEventFieldCorrelationID = 34,
+			VSAnalyzerUIEventFieldDynamicEventData = 35,
+			VSAnalyzerUIEventFieldEventLogId = 36,	
+			VSAnalyzerUIEventFieldEventLogName = 37,
+
+			VSAnalyzerUIEventFieldLast = 37				// *** LAST ***
+		} VSAnalyzerUIEventField;
+	}
+
+
+
+
+//----------------------------------------------------------------------------- 
+// Name: VSAnalyzerEventField
+// 
+// @interface VSAnalyzerEventField |
+// 
+// @base public | IDispatch
+//----------------------------------------------------------------------------- 
+	[
+		object,
+		uuid(6c736d51-1510-11d2-8F88-00A0C90A6B08),
+		dual,
+		helpstring("VSAnalyzerEventField Interface"),
+		pointer_default(unique)
+	]
+
+	interface VSAnalyzerEventField : IDispatch
+	{
+		// @meth BSTR | FieldName | Get Field Name.
+		[propget, id(1), helpstring("property FieldName")] 
+		HRESULT FieldName
+			(
+			[out, retval] BSTR * bstrFieldName
+			);
+
+		// @meth VARIANT | FieldValue | Get Field Value.
+		[propget, id(DISPID_VALUE), helpstring("property FieldValue")] 
+		HRESULT FieldValue
+			(
+			[out, retval] VARIANT * varFieldValue
+			);
+	}
+
+
+
+//----------------------------------------------------------------------------- 
+// Name: VSAnalyzerEvent
+// 
+// @interface VSAnalyzerEvent |
+// Automation methods to access VS Analyzer Event object.
+// 
+// @base public | IDispatch
+//----------------------------------------------------------------------------- 
+	[
+		object,
+		uuid(6c736d51-1510-11d2-8F88-00A0C90A6B09),
+		dual,
+		helpstring("VSAnalyzerEvent Interface"),
+		pointer_default(unique)
+	]
+
+	interface VSAnalyzerEvent : IDispatch
+	{
+		// @meth int | Count | Get the total number of fields in this event.
+		[propget, id(1), helpstring("Total number of fields in this event")] 
+		HRESULT Count
+			(
+			[out, retval] int *pnCount	// @parm Count.
+			);
+
+		// @meth VSAnalyzerEventField | Item | Get event field at index.
+		[id(DISPID_VALUE), helpstring("Get event field at index")]
+		HRESULT Item
+			(
+			[in] VARIANT varIndex,
+			[out, retval] VSAnalyzerEventField **ppVSAnalyzerEventField  
+			);
+
+		// @meth IUnknown | _NewEnum | VB compatible enumeration.
+		[propget, id(DISPID_NEWENUM), helpstring("Obtain enumeration object")]
+		HRESULT _NewEnum
+			(
+			[out, retval] IUnknown **punk 
+			);
+
+		// @meth HRESULT | ItemByStandardParameterEnum | Get event field.
+		[id(2), helpstring("Get event field")]
+		HRESULT ItemByStandardParameterEnum
+			(
+			[in] VSAStandardParameters nParameterEnum,
+			[out, retval] VSAnalyzerEventField **ppVSAnalyzerEventField  
+			);
+
+		// @meth HRESULT | EventTimeRaw | Get event time.
+		[id(3), helpstring("property EventTimeRaw")] 
+		HRESULT EventTimeRaw
+			(
+			[out] DWORD *pdwDataLow,		// @parm Event time.
+			[out] DWORD *pdwDataHigh
+			);
+
+		// @meth HRESULT | LoggedTimeRaw | Get event logged time.
+		[id(4), helpstring("property LoggedTimeRaw")] 
+		HRESULT LoggedTimeRaw
+			(
+			[out] DWORD *pdwDataLow,		// @parm Logged time.
+			[out] DWORD *pdwDataHigh
+			);
+
+		// @meth HRESULT | Duration | Get event duration.
+		[id(5), helpstring("property DurationRaw")] 
+		HRESULT DurationRaw
+			(
+			[out] DWORD *pdwDataLow,		// @parm Duration.
+			[out] DWORD *pdwDataHigh
+			);
+
+		// @meth HRESULT | DynamicEventData | Get event dynamic data.
+		[id(6), helpstring("property DynamicEventDataRaw")] 
+		HRESULT DynamicEventDataRaw
+			(
+			[out] DWORD *pdwDataLow,		// @parm Dynamic event data.
+			[out] DWORD *pdwDataHigh
+			);
+	};
+
+
+
+//----------------------------------------------------------------------------- 
+// Name: VSAnalyzerProjectItems
+// 
+// @interface VSAnalyzerProjectItems |
+// Interface for accessing VS Analyzer project items
+// 
+// @base public | IDispatch
+//----------------------------------------------------------------------------- 
+	[
+		object,
+		uuid(6c736d51-1510-11d2-8F88-00A0C90A6B0B),
+		dual,
+		helpstring("VSAnalyzerProjectItems Interface"),
+		pointer_default(unique)
+	]
+
+	interface VSAnalyzerProjectItems : IDispatch
+	{
+	};
+
+
+
+//----------------------------------------------------------------------------- 
+// Name: VSAnalyzerItemsList
+// 
+// @interface VSAnalyzerItemsList |
+// Interface for getting list of project items
+// 
+// @base public | IDispatch
+//----------------------------------------------------------------------------- 
+	[
+		object,
+		uuid(6c736d51-1510-11d2-8F88-00A0C90A6B0D),
+		dual,
+		helpstring("VSAnalyzerItemsList Interface"),
+		pointer_default(unique)
+	]
+
+	interface VSAnalyzerItemsList : IDispatch
+	{
+	};
+
+
+
+//----------------------------------------------------------------------------- 
+// Name: VSAnalyzerProjects
+// 
+// @interface VSAnalyzerProjects |
+// 
+// @base public | IDispatch
+//----------------------------------------------------------------------------- 
+	[
+		object,
+		uuid(6c736d51-1510-11d2-8F88-00A0C90A6B0F),
+		dual,
+		helpstring("VSAnalyzerProjects Interface"),
+		pointer_default(unique)
+	]
+
+	interface VSAnalyzerProjects : IDispatch
+	{
+	};
+
+
+
+//----------------------------------------------------------------------------- 
+// Name: VSAnalyzerEventLogsItem
+// 
+// @interface VSAnalyzerEventLogsItem |
+// Interface for accessing VS Analyzer project items
+// 
+// @base public | IDispatch
+//----------------------------------------------------------------------------- 
+	[
+		object,
+		uuid(6c736d51-1510-11d2-8F88-00A0C90A6C00),
+		dual,
+		helpstring("VSAnalyzerEventLogsItem Interface"),
+		pointer_default(unique)
+	]
+
+	interface VSAnalyzerEventLogsItem : IDispatch
+	{
+	};
+
+
+
+//----------------------------------------------------------------------------- 
+// Name: VSAnalyzerFiltersItem
+// 
+// @interface VSAnalyzerFiltersItem |
+// Interface for accessing VS Analyzer project items
+// 
+// @base public | IDispatch
+//----------------------------------------------------------------------------- 
+	[
+		object,
+		uuid(6c736d51-1510-11d2-8F88-00A0C90A6C01),
+		dual,
+		helpstring("VSAnalyzerFiltersItem Interface"),
+		pointer_default(unique)
+	]
+
+	interface VSAnalyzerFiltersItem : IDispatch
+	{
+	};
+
+
+
+//----------------------------------------------------------------------------- 
+// Name: VSAnalyzerMachinesItem
+// 
+// @interface VSAnalyzerMachinesItem |
+// Interface for accessing VS Analyzer project items
+// 
+// @base public | IDispatch
+//----------------------------------------------------------------------------- 
+	[
+		object,
+		uuid(6c736d51-1510-11d2-8F88-00A0C90A6C02),
+		dual,
+		helpstring("VSAnalyzerMachinesItem Interface"),
+		pointer_default(unique)
+	]
+
+	interface VSAnalyzerMachinesItem : IDispatch
+	{
+	};
+
+
+
+//----------------------------------------------------------------------------- 
+// Name: VSAnalyzerUserSelectionCallback
+// 
+// @interface VSAnalyzerUserSelectionCallback |
+// Interface for receiving notifications of user selection changes.
+// 
+// @base public | IDispatch
+//----------------------------------------------------------------------------- 
+	[
+		object,
+		uuid(6c736d51-1510-11d2-8F88-00A0C90A6C03),
+		dual,
+		helpstring("VSAnalyzerUserSelectionCallback Interface"),
+		pointer_default(unique)
+	]
+
+	interface VSAnalyzerUserSelectionCallback : IDispatch
+	{
+		// @meth HRESULT | UserSelectionChanged | User selection changed on Event Log Id.
+		[id(1), helpstring("method UserSelectionChanged")] 
+		HRESULT UserSelectionChanged
+			(
+			[in] BSTR bstrEventLogName
+			);
+	}
+};

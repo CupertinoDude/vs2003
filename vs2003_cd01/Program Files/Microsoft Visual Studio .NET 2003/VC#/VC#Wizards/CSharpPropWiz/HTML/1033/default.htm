@@ -1,0 +1,491 @@
+<!- (c) Microsoft Corporation -->
+<HTML DIR="LTR">
+
+<HEAD>
+	<TITLE>C# Add Property Wizard</TITLE>
+	<META NAME="vs_targetSchema" CONTENT="http://schemas.microsoft.com/intellisense/ie5">
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+	<STYLE TYPE="text/css">@import url();</STYLE>
+	<SCRIPT>
+		var strURL = "../../../";
+		strURL += window.external.GetHostLocale();
+		strURL += "/NewStyles.css";
+		document.styleSheets(0).imports(0).href = strURL;
+	</SCRIPT>
+
+	<SYMBOL NAME="PROP_TYPE" TYPE="text" VALUE="string"></SYMBOL>
+	<SYMBOL NAME="PROP_NAME" TYPE="text" VALUE=""></SYMBOL>
+	<SYMBOL NAME="GET" TYPE="radio" VALUE="false"></SYMBOL>
+	<SYMBOL NAME="SET" TYPE="radio" VALUE="false"></SYMBOL>
+	<SYMBOL NAME="GET_SET" TYPE="radio" VALUE="true"></SYMBOL>
+	<SYMBOL NAME="MODIFIER_NONE" TYPE="checkbox" VALUE="true"></SYMBOL>
+	<SYMBOL NAME="STATIC" TYPE="checkbox" VALUE="false"></SYMBOL>
+	<SYMBOL NAME="VIRTUAL" TYPE="checkbox" VALUE="false"></SYMBOL>
+	<SYMBOL NAME="ABSTRACT" TYPE="checkbox" VALUE="false"></SYMBOL>
+	<SYMBOL NAME="ACCESS" TYPE="select-one" VALUE="1"></SYMBOL>
+	<SYMBOL NAME="COMMENT" TYPE="text" VALUE=""></SYMBOL>
+</HEAD>
+
+<BODY BGCOLOR="BUTTONFACE" TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" ONLOAD="InitDocument(document);" ONKEYDOWN="if (!bValidating) OnKey();" ONKEYPRESS="if (!bValidating) OnPress()">
+
+<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+<COL WIDTH="100%">
+  <TR VALIGN="TOP">
+	<TD HEIGHT="79">
+	<!--OPEN OF ALL ENCOMPASSING TABLE ROW ONE//-->
+	 <TABLE CLASS="TWO" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+	 <COL WIDTH="12"><COL><COL WIDTH="12">
+	  <TR>
+	   <TD VALIGN="TOP" HEIGHT="12" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+  
+	   <TD VALIGN="TOP" HEIGHT="12">
+	  	&nbsp;
+	   </TD>
+  
+	   <TD VALIGN="TOP" HEIGHT="12" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+  
+	   <TD CLASS="IMAGE" VALIGN="BOTTOM" WIDTH="110" ROWSPAN="2">
+		<DIV ID="Layer0">
+		 <IMG CLASS="SMALLEST" SRC="..\..\Images\CSProp.gif" WIDTH="63" HEIGHT="63" ALT="" BORDER="0">
+		</DIV>
+	   </TD>
+	  
+	   <TD VALIGN="TOP" HEIGHT="12" WIDTH="6" ROWSPAN="2">
+	  	&nbsp;
+	   </TD>
+	  </TR>
+	 
+	  <TR>
+	   <TD VALIGN="TOP" HEIGHT="65" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+	  
+	   <TD VALIGN="TOP" HEIGHT="65">
+		<H4 CLASS="HEAD" ID="HEAD">Welcome to the C# Add Property Wizard</H4>
+		<P CLASS="SUBHEAD" ID="SUBHEAD">This wizard adds a property to your C# class.</P>
+	   </TD>
+	  
+	   <TD VALIGN="TOP" HEIGHT="65" WIDTH="12">
+	  	&nbsp;
+	   </TD>
+	  </TR>
+	 
+	  <TR>
+	   <TD VALIGN="TOP" CLASS="RULE" COLSPAN="5" HEIGHT="2">
+		<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+	  	 <TR VALIGN="TOP">
+	  	  <TD HEIGHT="1" WIDTH="100%" BGCOLOR="BUTTONSHADOW"></TD>
+	  	  <TD HEIGHT="1" WIDTH="1" BGCOLOR="WINDOW"></TD>
+	  	 </TR>
+		</TABLE>
+	   </TD>
+	  </TR>
+	 </TABLE>
+	 
+	<!--CLOSE OF ALL ENCOMPASSING TABLE ROW ONE//-->
+	</TD>
+	</TR>
+	<TR VALIGN="TOP">
+	<TD HEIGHT="100%">
+	<!--OPEN OF ALL ENCOMPASSING TABLE ROW TWO//-->
+	
+	 <TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+	 <COL>
+	  <TR>
+	   <TD VALIGN="TOP" HEIGHT="100%">
+	   <!--OPEN OF CONTENT AND BUTTON TABLE//-->
+	   
+	   	<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+		<COL WIDTH="100%">
+		 <TR VALIGN="TOP">
+		  <TD HEIGHT="100%">
+	   	  <!--OPEN OF CONTENT//-->
+		  
+		  	<TABLE CLASS="CONTENT" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+			<COL WIDTH="12"><COL WIDTH="185"><COL WIDTH="12"><COL WIDTH="185"><COL WIDTH="12"><COL WIDTH="185"><COL WIDTH="12">
+ 			 <TR>
+  			  <TD VALIGN="TOP" HEIGHT="12" COLSPAN="7">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+ 			 <TR VALIGN="TOP">
+ 			 <TD VALIGN="TOP" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="TOP">
+ 				<SPAN CLASS="itemTextTop" TITLE="">
+	  		 		 <LABEL FOR="ACCESS" ID="ACCESS_LABEL">Property <U>a</U>ccess:</LABEL>
+	  	 			 <BR>
+	  	 			 <SELECT CLASS="sideBtnThreeColumn" ID="ACCESS" SIZE="1" ACCESSKEY="a" TITLE="" VALUE="1" TABINDEX="1" OnChange="OnAccess(this);"> 
+					  <-- vsCMAccessDefault = 16 -->
+					  <OPTION VALUE="1" ID="PUBLIC_OPTION" SELECTED>public</OPTION>
+					  <-- vsCMAccessPublic  = 1 -->
+					  <OPTION VALUE="8" ID="PROTECTED_OPTION">protected</OPTION>
+					  <-- vsCMAccessProtected = 8 -->
+					  <OPTION VALUE="2" ID="PRIVATE_OPTION">private</OPTION>
+					  <-- vsCMAccessPrivate = 2 -->
+					  <OPTION VALUE="4" ID="INTERNAL_OPTION">internal</OPTION>
+					  <-- vsCMAccessProject = 4 -->
+					  <OPTION VALUE="12" ID="PROTECTED_INTERNAL_OPTION">protected internal</OPTION>
+					  <-- vsCMAccessProjectOrProtected = 12 -->
+					 </SELECT>
+				</SPAN>
+					 
+				<P CLASS="ElementSpacer8">&nbsp;</P>
+					 
+				<SPAN CLASS="itemText" TITLE="" STYLE="WIDTH:391PX;" ID="ACCESSORS_SPAN">Accessors:
+					 <P CLASS="Spacer">&nbsp;</P>
+					 
+					 <INPUT TYPE="radio" NAME="get_set" ID="GET" ACCESSKEY="G" TITLE="" TABINDEX="4">
+					 <SPAN TITLE="" CLASS="UpABit">
+					  <LABEL FOR="GET" ID="GET_LABEL"><U>g</U>et</LABEL>
+					 </SPAN>
+					 
+					 <INPUT TYPE="radio" NAME="get_set" ID="SET" ACCESSKEY="S" TITLE="" TABINDEX="4">
+					 <SPAN TITLE="" CLASS="UpABit">
+					  <LABEL FOR="SET" ID="SET_LABEL"><U>s</U>et</LABEL>
+					 </SPAN>
+					 
+					 <INPUT TYPE="radio" NAME="get_set" ID="GET_SET" ACCESSKEY="E" TITLE="" TABINDEX="4">
+					 <SPAN TITLE="" CLASS="UpABit">
+					  <LABEL FOR="GET_SET" ID="GET_SET_LABEL">g<u>e</u>t/set</LABEL>
+					 </SPAN>
+				</SPAN>
+					 
+				<P CLASS="ElementSpacer17">&nbsp;</P>
+					 
+				<SPAN CLASS="itemText" TITLE="" STYLE="WIDTH:391PX;" ID="PROPERTY_MODIFIERS_SPAN">Property modifiers:
+					 <P CLASS="Spacer">&nbsp;</P>
+					 
+					 <INPUT TYPE="radio" NAME="mod" ID="MODIFIER_NONE" ACCESSKEY="O" TITLE="" " TABINDEX="5">
+					 <SPAN TITLE="" CLASS="UpABit">
+					  <LABEL FOR="MODIFIER_NONE" ID="MODIFIER_NONE_LABEL">N<u>o</u>ne</LABEL>
+					 </SPAN>
+					 
+					 <INPUT TYPE="radio" NAME="mod" ID="STATIC" ACCESSKEY="I" TITLE="" " TABINDEX="5">
+					 <SPAN TITLE="" CLASS="UpABit">
+					  <LABEL FOR="STATIC" ID="STATIC_LABEL">Stat<U>i</U>c</LABEL>
+					 </SPAN>
+					 
+					 <INPUT TYPE="radio" NAME="mod" ID="VIRTUAL" ACCESSKEY="V" TITLE="" " TABINDEX="5">
+					 <SPAN TITLE="" ID="virtual_title" CLASS="UpABit">
+					  <LABEL FOR="VIRTUAL" ID="VIRTUAL_LABEL"><U>V</U>irtual</LABEL>
+					 </SPAN>
+					 
+					 <INPUT TYPE="radio" NAME="mod" ID="ABSTRACT" ACCESSKEY="B" TITLE="" " TABINDEX="5">
+					 <SPAN TITLE="" ID="abstract_title" CLASS="UpABit">
+					  <LABEL FOR="ABSTRACT" ID="ABSTRACT_LABEL">A<U>b</U>stract</LABEL>
+					 </SPAN>
+				</SPAN>
+										 
+				<P CLASS="ElementSpacer12">&nbsp;</P>
+					
+				<SPAN CLASS="itemText" TITLE="">
+				    <NOBR>
+					 <LABEL FOR="COMMENT" ID="COMMENT_LABEL">Co<U>m</U>ment (// notation not required): </LABEL>
+					 <BR>
+					 <INPUT CLASS="COMMENT" TYPE="text" ID="COMMENT" ACCESSKEY="m" TITLE="">
+					</NOBR>
+				</SPAN>
+			  </TD>
+  
+  		  	  <TD VALIGN="TOP" WIDTH="12">
+  				&nbsp;
+  		  	  </TD>
+			  
+			  <TD VALIGN="TOP"> 
+ 				<SPAN CLASS="itemTextTop" TITLE="">
+	  		 		 <LABEL FOR="PropTypes" ID="PropTypes_LABEL"><U>P</U>roperty type:</LABEL>
+	  	 			 <BR>
+	  	 			 <INPUT CLASS="sideBtnThreeColumn" ID="PROP_TYPE" TYPE="hidden"></INPUT>
+					 <OBJECT CLASS="itemTextThreeColumn" ID="PropTypes" ACCESSKEY="p" CLASSID="CLSID:BFD56283-7546-4dfe-8C5E-AE4FEDC08656" TABINDEX="2" VIEWASTEXT>
+					 </OBJECT>
+				</SPAN>
+  		  	  </TD>
+  
+  		  	  <TD VALIGN="TOP" WIDTH="12">
+  				&nbsp;
+  		  	  </TD>
+			  
+			  <TD VALIGN="TOP"> 
+ 				<SPAN CLASS="itemTextTop" TITLE="">
+	  		 		 <LABEL ACCESSKEY="n" FOR="PROP_NAME" ID="PROP_NAME_LABEL">Property <U>n</U>ame:</LABEL>
+	  	 			 <BR>
+	  	 			 <INPUT CLASS="sideBtnThreeColumn" ID="PROP_NAME" ACCESSKEY="n" TITLE="" TYPE="text" TABINDEX="3">
+				</SPAN>
+  		  	  </TD>
+  
+  		  	  <TD VALIGN="TOP" WIDTH="12">
+  				&nbsp;
+  		  	  </TD>
+ 		  	 </TR>
+		 	</TABLE>
+			
+	   	  <!--CLOSE OF CONTENT//-->
+		  </TD>
+		 </TR>
+		 <TR VALIGN="BOTTOM">
+		  <TD HEIGHT="48">
+	   	  <!--OPEN OF BUTTON HTML//-->
+		  
+		  	<TABLE HEIGHT="48" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+			<COL WIDTH="12"><COL><COL WIDTH="75"><COL WIDTH="4"><COL WIDTH="75"><COL WIDTH="4"><COL WIDTH="75"><COL WIDTH="12">
+			 <TR>
+  			  <TD VALIGN="TOP" CLASS="RULE" COLSPAN="8" HEIGHT="2">
+				<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+  	 			 <TR VALIGN="TOP">
+  	  			  <TD HEIGHT="1" WIDTH="100%" BGCOLOR="BUTTONSHADOW"></TD>
+  	  			  <TD HEIGHT="1" WIDTH="1" BGCOLOR="WINDOW"></TD>
+  	 			 </TR>
+				</TABLE>
+  			  </TD>
+ 			  </TR>
+ 
+ 			  <TR>
+  			  <TD VALIGN="TOP" HEIGHT="11" COLSPAN="8">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+ 
+ 			<TR>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="TOP" HEIGHT="23">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+  				<BUTTON CLASS="BUTTONS" ID="FinishBtn" onClick="OnFinish(document);">Finish</BUTTON>
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="4">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+  				<BUTTON CLASS="BUTTONS" ID="CancelBtn" onClick="window.external.Finish(document, 'cancel');">Cancel</BUTTON>
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="4">
+  				&nbsp;
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+  				<BUTTON CLASS="BUTTONS" ID="HelpBtn" onClick="window.external.OnHelp('vc.codewiz.prop.cs.overview');">Help</BUTTON>
+  			  </TD>
+  			  <TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="12">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+ 
+ 			 <TR>
+  			  <TD VALIGN="TOP" HEIGHT="12" COLSPAN="8">
+  				&nbsp;
+  			  </TD>
+ 			 </TR>
+			</TABLE>
+			
+	   	  <!--CLOSE OF BUTTON HTML//-->
+		  </TD>
+		 </TR>
+		</TABLE>
+	
+	   <!--CLOSE OF CONTENT AND BUTTON TABLE//-->
+	   </TD>
+	  </TR>
+	 </TABLE>
+	
+	<!--CLOSE OF ALL ENCOMPASSING TABLE ROW TWO//-->
+	</TD>
+  </TR>
+</TABLE>
+
+</BODY>
+</HTML>
+
+<SCRIPT LANGUAGE="JSCRIPT">
+
+var bAbstractClass = window.external.ParentObject.IsAbstract;
+var oClass = window.external.ParentObject;
+var bIsStruct = false;
+
+function InitDocument(document)
+{
+	setDirection();
+	
+	if (window.external.FindSymbol("DOCUMENT_FIRST_LOAD"))
+	{
+		var L_WizardDialogTitle_Text = "C# Property Wizard";
+		window.external.AddSymbol("WIZARD_DIALOG_TITLE", L_WizardDialogTitle_Text);
+		window.external.SetDefaults(document);
+	}
+
+	window.external.Load(document);
+	bIsStruct = (window.external.ParentObject.Kind == vsCMElementStruct);
+	
+	PopulatePropTypes();
+
+	if (!bAbstractClass)
+	{
+		abstract_title.disabled = true;
+		ABSTRACT.disabled = true;
+	}
+	if (bIsStruct) {
+		var L_WizardSubHead_Text = "This wizard adds a property to your C# struct.";
+		SUBHEAD.innerHTML = L_WizardSubHead_Text;
+		ABSTRACT.disabled = true;
+		abstract_title.disabled = true;
+		VIRTUAL.disabled = true;
+		virtual_title.disabled = true;
+	}
+	ACCESS.focus();
+}
+
+function Next(document, linkto)
+{
+	window.external.Next(document, linkto);
+}
+
+function OnFinish(document)
+{
+	PROP_TYPE.value = PropTypes.Value;
+
+	bValidating = true;
+	if (!ValidateInput())
+	{
+		bValidating = false;
+		return;
+	}
+
+	window.external.AddSymbol("PROP_TYPE_STRING", PropTypes.Value);
+	OnWizFinish(document);
+}
+
+function PopulatePropTypes()
+{
+	PropTypes.Clear();
+
+	PropTypes.AddItem("bool");
+	PropTypes.AddItem("byte");
+	PropTypes.AddItem("char");
+	PropTypes.AddItem("decimal");
+	PropTypes.AddItem("double");
+	PropTypes.AddItem("float");
+	PropTypes.AddItem("int");
+	PropTypes.AddItem("long");
+	PropTypes.AddItem("object");
+	PropTypes.AddItem("sbyte");
+	PropTypes.AddItem("string");
+	PropTypes.AddItem("short");
+	PropTypes.AddItem("uint");
+	PropTypes.AddItem("ulong");
+	PropTypes.AddItem("ushort");
+
+	PropTypes.ListIndex = 6;
+}
+
+function ValidateInput()
+{
+	var oInvalid = null;
+
+	if (!Validate(PROP_NAME))
+		oInvalid = PROP_NAME;
+
+	if (oInvalid == null)
+		if (!Validate(PropTypes))
+			oInvalid = PropTypes;
+
+	if (oInvalid != null)
+	{
+		oInvalid.focus();
+		return false;
+	}
+	return true;
+}
+
+function Validate(obj)
+{
+	var bValid = true;
+	switch(obj.id)
+	{
+		case "PROP_NAME":
+		{
+			L_PropName_TEXT = "Property name";
+			bValid = ValidateCSharpName(obj, L_PropName_TEXT);
+			if(bValid)
+			{
+				try
+				{
+					var oVar = oClass.Members.Item(obj.value);
+					if(typeof(oVar) != "undefined")
+					{
+						L_DupName1_TEXT = "An element with the name \"";
+						L_DupName2_TEXT = "\" already exists.";
+						window.external.ReportError(L_DupName1_TEXT + obj.value + L_DupName2_TEXT);
+						bValid = false;					
+					}
+				}
+				catch (e)
+				{
+					//workaround. Because CodeModel returns E_*, if item not found.
+					bValid = true;
+				}
+			}		
+		}
+		break;
+		case "PropTypes":
+		{
+			L_PropType_TEXT = "Property type";
+			bValid = ValidateWizComboCSharpType(obj, L_PropType_TEXT);
+		}
+		break;
+		default:
+			break;
+	}
+
+	if (typeof(bValid) == "undefined")
+		bValid = false;
+
+	return bValid;
+}
+
+function OnAccess(obj)
+{
+	if (bAbstractClass)
+	{
+		abstract_title.disabled = false;
+		ABSTRACT.disabled = false;
+	}
+	virtual_title.disabled = false;
+	VIRTUAL.disabled = false;
+
+	if (obj.options[obj.selectedIndex].text == "private")
+	{
+		if (ABSTRACT.checked || VIRTUAL.checked)
+			MODIFIER_NONE.checked = true;
+
+		abstract_title.disabled = true;
+		ABSTRACT.disabled = true;
+		virtual_title.disabled = true;
+		VIRTUAL.disabled = true;
+	}
+}
+
+
+</SCRIPT>
+
+<SCRIPT FOR="PropTypes" EVENT="Change"></SCRIPT>
+<SCRIPT ID="INCLUDE_SCRIPT" LANGUAGE="JSCRIPT"></SCRIPT>
+<SCRIPT ID="INCLUDE_COMMON" LANGUAGE="JSCRIPT"></SCRIPT>
+<SCRIPT>
+	var strPath = "../../../";
+	strPath += window.external.GetHostLocale();
+	var strScriptPath = strPath + "/Script.js";
+	var strCommonPath = strPath + "/Common.js";
+	document.scripts("INCLUDE_SCRIPT").src = strScriptPath;
+	document.scripts("INCLUDE_COMMON").src = strCommonPath;
+</SCRIPT>
+
+<SCRIPT FOR="PropTypes" EVENT="KeyDown(nKeyCode)">
+	OnWizComboKeyDown(nKeyCode);
+</SCRIPT>

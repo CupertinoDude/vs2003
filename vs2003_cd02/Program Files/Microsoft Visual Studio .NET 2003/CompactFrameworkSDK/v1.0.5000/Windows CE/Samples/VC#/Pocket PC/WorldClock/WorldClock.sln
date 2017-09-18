@@ -1,0 +1,31 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{20D4826A-C6FA-45DB-90F4-C717570B9F32}") = "WorldClock", "WorldClock\WorldClock.CSDPROJ", "{07B0389A-7A37-42CB-82E7-3CDC540F8F19}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{20D4826A-C6FA-45DB-90F4-C717570B9F32}") = "ClockControl", "ClockControl\ClockControl.CSDPROJ", "{BABB255D-903D-4DF2-A140-2A7A4B66BE0E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{07B0389A-7A37-42CB-82E7-3CDC540F8F19}.Debug.ActiveCfg = Debug|Pocket PC
+		{07B0389A-7A37-42CB-82E7-3CDC540F8F19}.Debug.Build.0 = Debug|Pocket PC
+		{07B0389A-7A37-42CB-82E7-3CDC540F8F19}.Debug.Deploy.0 = Debug|Pocket PC
+		{07B0389A-7A37-42CB-82E7-3CDC540F8F19}.Release.ActiveCfg = Release|Pocket PC
+		{07B0389A-7A37-42CB-82E7-3CDC540F8F19}.Release.Build.0 = Release|Pocket PC
+		{07B0389A-7A37-42CB-82E7-3CDC540F8F19}.Release.Deploy.0 = Release|Pocket PC
+		{BABB255D-903D-4DF2-A140-2A7A4B66BE0E}.Debug.ActiveCfg = Debug|Pocket PC
+		{BABB255D-903D-4DF2-A140-2A7A4B66BE0E}.Release.ActiveCfg = Release|Pocket PC
+		{BABB255D-903D-4DF2-A140-2A7A4B66BE0E}.Release.Build.0 = Release|Pocket PC
+		{BABB255D-903D-4DF2-A140-2A7A4B66BE0E}.Release.Deploy.0 = Release|Pocket PC
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

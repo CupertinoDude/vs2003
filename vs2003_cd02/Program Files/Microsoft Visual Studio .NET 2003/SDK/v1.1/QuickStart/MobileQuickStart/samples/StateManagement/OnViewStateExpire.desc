@@ -1,0 +1,3 @@
+Handling OnViewStateExpire
+This sample demonstrates using the OnViewStateExpire method to re-create
+state lost when the associated Session expires.  

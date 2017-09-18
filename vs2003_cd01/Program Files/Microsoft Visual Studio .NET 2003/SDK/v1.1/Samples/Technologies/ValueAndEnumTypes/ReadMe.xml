@@ -1,0 +1,48 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\readme.xsl"?>
+
+<sample>
+<title>Value and Enumeration Types Sample</title>
+<title-short>ValueAndEnumTypes</title-short>
+<overview>
+   The purpose of this sample is to introduce developers to the .NET Framework value and enumerated types. This sample demonstrates how to create and work with value and enumerated types. The sample derives the types from the System.ValueType and System.Enum classes. Each of these classes provide features that enables the developer to easily work with them.
+</overview>
+<subdirectory>Technologies\ValueAndEnumTypes</subdirectory>
+<buildsteps>
+   <step>
+      Type <b>BUILD.bat</b> from the command line.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ValueAndEnumTypes\VB>Build.bat
+      </example>
+   </step>
+</buildsteps>
+<runsteps>
+   <step>
+      Type <b>ValueEnum.exe</b> from the command line.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ValueAndEnumTypes\VB>ValueEnum.exe
+      </example>
+   </step>   
+</runsteps>
+<technologies>
+   <technology name = "Value and Reference Types" keyword="T">      
+      <class name = "ValueType" keyword="T">
+         All value types are implicitly derived from System.ValueType.
+      </class>
+      <class name = "Object" keyword="T">
+         All types are implicitly derived from System.Object.  In this sample the GetHashCode and Equals virtual functions are overloaded. 
+      </class>
+   </technology>
+   <technology name = "Enumerated Types" keyword="T">
+      <class name = "Enum" keyword="T">
+         All enumerated types are derived from System.Enum.  System.Enum implements ToString() and Parse() among other helper methods used in this sample.
+      </class>
+   </technology>
+   <technology name = "Custom Attributes" keyword="T">
+      <class name = "FlagsAttribute" keyword="T">
+         The FlagsAttribute type can be assigned to enumerated types to indicates that the types entries are flag values.  The System.Enum type reflects over its derived types in search of this flag to decide how ToString() and Parse() should behave.
+      </class>
+   </technology>   
+</technologies>
+</sample>
+

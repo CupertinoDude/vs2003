@@ -1,0 +1,12 @@
+;
+;
+;
+
+[strings]
+greeting=Willkommen !
+more=Weiter ...
+article1=Dies ist ein deutscher Text.
+article2=Dies ist ein weiterer deutscher Text.
+article3=Dies ist kein deutscher Text.
+
+

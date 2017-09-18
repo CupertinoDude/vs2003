@@ -1,0 +1,8 @@
+
+====
+Welcome to the Microsoft Visual Basic .NET samples!
+
+In the VB Samples directory you will find sample projects that demonstrate various programming tasks.  Abstracts for these samples are located in the Visual Basic documentation, accessible through the developer environment or the external MSDN viewer.  The  sample abstracts include links for opening the sample in the development environment and for copying the sample's source files to  your hard drive. You can find more samples at Program Files\Microsoft Visual Studio.NET\FrameworkSDK\Samples.
+
+Copyright (C) Microsoft Corporation.  All rights reserved.
+========

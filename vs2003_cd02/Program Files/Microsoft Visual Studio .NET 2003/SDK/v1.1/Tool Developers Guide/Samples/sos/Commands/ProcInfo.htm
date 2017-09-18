@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">ProcInfo</TD>
+					</TR>
+					<TR>
+						<TD>
+							Displays the process information.</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!ProcInfo [-env] [-time] [-mem]</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="79" cellSpacing="1" cellPadding="1" width="708" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>-env</STRONG></TD>
+									<TD vAlign="top">Displays environment variables.</TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>-time</STRONG></TD>
+									<TD vAlign="top">Displays process time.&nbsp; This parameter&nbsp;works only on 
+										live debugs.</TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>-mem</STRONG></TD>
+									<TD vAlign="top">
+										Displays memory usage.&nbsp; This parameter works only&nbsp;on live debugs.</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>
+0:010&gt; !ProcInfo
+---------------------------------------
+<STRONG>Environment
+</STRONG>ALLUSERSPROFILE=F:\Documents and Settings\All Users
+ASPNETENABLE3GB=1
+AVENGINE=F:\PROGRA~1\CA\Common\SCANEN~1
+CommonProgramFiles=F:\Program Files\Common Files
+COMPUTERNAME=SEVENXPBETA
+ComSpec=F:\WINDOWS\system32\cmd.exe
+INCLUDE=F:\Program Files\Microsoft Visual Studio .NET\Vc7\include\;F:\Program Files\Microsoft Visual Studio .NET\FrameworkSDK\include\
+INOCULAN=F:\PROGRA~1\CA\eTrust\ANTIVI~1
+LIB=F:\Program Files\Microsoft Visual Studio .NET\Vc7\lib\;F:\Program Files\Microsoft Visual Studio .NET\FrameworkSDK\Lib\
+NUMBER_OF_PROCESSORS=1
+OS=Windows_NT
+Path=F:\Program Files\Microsoft Visual Studio .NET\FrameworkSDK\Bin\;F:\Program Files\Microsoft Visual Studio .NET\Common7\IDE\;F:\WINDOWS\Microsoft.NET\Framework\v1.0.3705\;F:\Program Files\Microsoft Visual Studio .NET\Vc7\bin\;F:\WINDOWS\system32;F:\WINDOWS;F:\WINDOWS\System32\Wbem;F:\PROGRA~1\CA\Common\SCANEN~1;F:\PROGRA~1\CA\eTrust\ANTIVI~1;F:\Program Files\Microsoft SQL Server\80\Tools\Binn\
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.VBS
+PROCESSOR_ARCHITECTURE=x86
+PROCESSOR_IDENTIFIER=x86 Family 15 Model 1 Stepping 2, GenuineIntel
+PROCESSOR_LEVEL=15
+PROCESSOR_REVISION=0102
+ProgramFiles=F:\Program Files
+SystemDrive=F:
+SystemRoot=F:\WINDOWS
+TEMP=F:\WINDOWS\TEMP
+TMP=F:\WINDOWS\TEMP
+USERPROFILE=F:\Documents and Settings\LocalService
+VSCOMNTOOLS="F:\Program Files\Microsoft Visual Studio .NET\Common7\Tools\"
+windir=F:\WINDOWS
+_NT_SYMBOL_PATH=F:\dotnet\symbols\3705
+---------------------------------------
+<STRONG>Process Times</STRONG>
+Process Started at: 2002 Apr 15 14:23:57.30
+Kernel CPU time   : 0 days 00:00:00.35
+User   CPU time   : 0 days 00:00:02.56
+Total  CPU time   : 0 days 00:00:02.91
+---------------------------------------
+<STRONG>Process Memory
+</STRONG>
+WorkingSetSize: 	18568 KB 	PeakWorkingSetSize: 	18568 KB <BR>VirtualSize:		94260 KB 	PeakVirtualSize: 	94280 KB
+PagefileUsage: 		10492 KB 	PeakPagefileUsage: 	10536 KB<BR>
+--------------------------------------- <BR> 51        percent         of
+memory is        in         use.
+</pre>
+							<PRE>Memory Availability (Numbers in MB)<BR>             <BR>			Total	Avail
+Physical Memory         1023	494
+Page File        	2462	2102
+Virtual Memory		2047	1890
+</PRE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Comments</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<P>&nbsp;</P>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

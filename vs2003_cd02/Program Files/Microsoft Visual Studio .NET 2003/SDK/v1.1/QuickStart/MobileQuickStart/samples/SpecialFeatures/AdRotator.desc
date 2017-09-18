@@ -1,0 +1,6 @@
+Using the AdRotator
+This sample demonstrates how you can get the equivalent of the ASP.NET AdRotator
+control for use on mobile devices.  The mobile version of the AdRotator differs from
+the desktop version in that a separate <b>ImageKey</b> attribute may be specified for
+different preferred image formats, allowing the same advertisement file to be used
+across multiple image formats.

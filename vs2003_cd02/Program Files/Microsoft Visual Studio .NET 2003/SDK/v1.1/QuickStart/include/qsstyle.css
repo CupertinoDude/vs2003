@@ -1,0 +1,90 @@
+.TODO   { color:red; }
+.issues { color: 4455aa }
+.table1 { width:95% ; font-size: x-small; }
+.td1    { width:50%; background-color:eeeeee; }
+.th1    { width:50%; text-align:left; background-color:cccccc; }
+
+hr { text-align:left; }
+h1 { font-size:medium }
+h4 { FONT: bold small; FONT-FAMILY: Verdana, Arial, Helvetica; }
+h5 { font-size:x-small;font-weight:bold  }
+h6 { color:darkblue; font-size:x-small }
+
+body     {  font: x-small verdana, tahoma; background-color: white; color: black; }
+body div {  font: x-small verdana, tahoma; }
+
+pre  { font-size:x-small }
+code { color:darkred; font-size:x-small; }
+img  { border-color:black }
+
+table.reference            { width:90%;font: xx-small verdana;padding:1,1,1,1 }
+table.reference td a       { color:black; }
+table.reference td a:hover { color:darkred; }
+table.reference td         { width:25%; text-indent:5; padding-bottom:2 }
+table.outer                { font-family:Verdana; font-size:xx-small; }
+table.srcview              { width="90%"; }
+table.table                { font-family:tahoma;font-size:xx-small;cell-padding:1 }
+table.table td             { padding:5,5,5,5;font-family:verdana,tahoma;
+                             background-color:eeeeee; font-size:xx-small; 
+                             vertical-align:top; width:50% }
+table.table pre            { font-family:Verdana; }
+table.table th             { background-color:cccccc; text-align:left; 
+                             font-size:xx-small; }
+table.table2               { font-family:verdana,tahoma, sans-serif; 
+                             font-size:xx-small;cell-padding:1 }
+table.table2 td            { font-family:verdana,tahoma, sans-serif; 
+                             background-color:eeeeee; font-size:xx-small; 
+                             vertical-align:top; padding:5,5,5,5 }
+table.table2 pre           { font-family:Verdana, sans-serif; }
+table.table2 th            { background-color:cccccc; text-align:left; 
+                             font-size:xx-small; }
+
+table td     { font: x-small verdana; }
+td.caption   { font-family:verdana,tahoma;font-size:x-small; color:darkgreen; 
+               font-weight:600; margin-top:5 }
+td.code      { padding-left:25; color:darkred; font-family:"courier new"; }
+td.toc       { font-family:Verdana; font-size:x-small; background-color:f1e0c6; }
+td.toolbar   { background-color:darkred;color:#ffffff;font-size:7.5pt;
+               font-family:Verdana, Arial;font-weight:bold; }
+td.mstoolbar { background-color:#000000;color:#ffffff;font-size:7.5pt;
+               font-family:Verdana, Arial;vertical-align:middle;height:20;
+               text-align:right;font-weight:bold}
+
+div.aside      { background-color:eeeeee; width:90% }
+div.body       { margin-top:20px; margin-left: 15px; margin-right:15px; 
+                 font-family: Verdana, Tahoma, Arial, Helvetica; }
+div.buffer-top { padding:7,0,0,0 }
+div.caption    { font-family:verdana, tahoma;font-size:x-small; 
+                 color:darkgreen; font-weight:600; margin-top:5 }
+div.code       { padding-left:25; color:darkred; font-family:"courier new";
+                 font-size:small; }
+div.comment    { font-family:Times; background-color:ffffcc; 
+                 padding:10,10,10,10; width="90%"; margin-left:5}
+div.indent     { padding-left:25; font-size:x-small;}
+div.toc        { margin-top:20px; margin-left: 10px; 
+                 font-family: Verdana, Arial, Helvetica;font-size:x-small; }
+
+a:hover           { color: red }
+a.outer           { color:black }
+a.outer:hover     { color:darkred }
+a.srcview         { font-size:x-small;}
+a.toc2            { color:black }
+a.toc2:hover      { color:darkred }
+a.toolbar         { color:#ffffff;text-decoration:none;font-size:7.5pt;
+                    font-family:Verdana, Arial, Helvetica, sans-serif;
+                    font-weight:bold; }
+a.toolbar:hover   { color:#ffffff }
+a.mstoolbar       { color:#ffffff;text-decoration:none;font-size:7.5pt;
+                    font-family:Verdana, Arial, Helvetica, sans-serif; }
+a.mstoolbar:hover { color:#ffffff }
+
+bak_span.subhead { color:black;font-weight:600;font-size:x-small }
+bak_h5           { color:black;font-weight:600;font-size:x-small; }
+
+span.subhead { font-size:x-small;font-weight:bold }
+span.header  { FONT: bold small; FONT-FAMILY: Verdana, Arial, Helvetica; }
+span.caption { font-family:tahoma,verdana;font-size:x-small; color:black; 
+               font-weight:600; margin-top:5 }
+
+bogus.div.code { width="100%" background-color:cccccc; color:darkred; 
+                 font-family:"courier new";padding:10,10,10,10; }

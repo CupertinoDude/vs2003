@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<definitions xmlns:s="http://www.w3.org/1999/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://tempuri.org/" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema targetNamespace="http://tempuri.org/" attributeFormDefault="qualified" elementFormDefault="qualified">
+      <s:element name="TestHeaders">
+        <s:complexType derivedBy="restriction"/>
+      </s:element>
+      <s:element name="TestHeadersResult">
+        <s:complexType derivedBy="restriction">
+          <s:all>
+            <s:element name="result" type="s:string" nullable="true"/>
+          </s:all>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" type="s:string" nullable="true"/>
+    </s:schema>
+  </types>
+  <message name="TestHeadersHttpGetIn"/>
+  <message name="TestHeadersHttpGetOut">
+    <part name="Body" element="s0:string"/>
+  </message>
+  <portType name="TestItHttpGet">
+    <operation name="TestHeaders">
+      <input message="s0:TestHeadersHttpGetIn"/>
+      <output message="s0:TestHeadersHttpGetOut"/>
+    </operation>
+  </portType>
+  <binding name="TestItHttpGet" type="s0:TestItHttpGet">
+    <http:binding verb="GET"/>
+    <operation name="TestHeaders">
+      <http:operation location="/QuickStart/aspplus/samples/services/TextMatching/JS/MatchServer.html"/>
+      <input>
+        <http:urlEncoded/>
+      </input>
+      <output>
+	     <text xmlns="http://microsoft.com/wsdl/mime/textMatching/">
+          <match name='Title' pattern='TITLE&gt;(.*?)&lt;'/>
+          <match name='H1' pattern='H1&gt;(.*?)&lt;'/>
+         </text>
+      </output>
+    </operation>
+  </binding>
+  <service name="TestIt">
+    <port name="TestItHttpGet" binding="s0:TestItHttpGet">
+      <http:address location="http://localhost" />
+    </port>
+  </service>
+</definitions>

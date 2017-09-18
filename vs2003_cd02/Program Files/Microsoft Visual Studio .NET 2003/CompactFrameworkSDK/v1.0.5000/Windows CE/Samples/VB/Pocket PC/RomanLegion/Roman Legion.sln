@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{CB4CE8C6-1BDB-4DC7-A4D3-65A1999772F8}") = "Roman Legion", "Roman Legion.vbdproj", "{4674692E-2F6F-4422-9E2E-0E9348719FBE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{4674692E-2F6F-4422-9E2E-0E9348719FBE}.Debug.ActiveCfg = Debug|Pocket PC
+		{4674692E-2F6F-4422-9E2E-0E9348719FBE}.Debug.Build.0 = Debug|Pocket PC
+		{4674692E-2F6F-4422-9E2E-0E9348719FBE}.Debug.Deploy.0 = Debug|Pocket PC
+		{4674692E-2F6F-4422-9E2E-0E9348719FBE}.Release.ActiveCfg = Release|Pocket PC
+		{4674692E-2F6F-4422-9E2E-0E9348719FBE}.Release.Build.0 = Release|Pocket PC
+		{4674692E-2F6F-4422-9E2E-0E9348719FBE}.Release.Deploy.0 = Release|Pocket PC
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

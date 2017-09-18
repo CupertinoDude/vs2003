@@ -1,0 +1,25 @@
+HKCR
+{
+	ComputerInfo.FileInfo.1 = s 'FileInfo Class'
+	{
+		CLSID = s '{A54E14E9-29BB-4AA5-B4FE-2189A9002213}'
+	}
+	ComputerInfo.FileInfo = s 'FileInfo Class'
+	{
+		CLSID = s '{A54E14E9-29BB-4AA5-B4FE-2189A9002213}'
+		CurVer = s 'ComputerInfo.FileInfo.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {A54E14E9-29BB-4AA5-B4FE-2189A9002213} = s 'FileInfo Class'
+		{
+			ProgID = s 'ComputerInfo.FileInfo.1'
+			VersionIndependentProgID = s 'ComputerInfo.FileInfo'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+			}
+			'TypeLib' = s '{72C4542B-1223-4076-AFCD-0944CD072034}'
+		}
+	}
+}

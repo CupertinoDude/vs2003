@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Performing Asynchronous Operations (Thread pool)">
+	<Paragraph>
+		Many applications have the need to perform some asynchronous operations. Historically, applications would do this by creating a thread and having the thread execute some function. However, 		the overhead of threads and especially the overhead of creating and destroying threads is quite significant and should be avoided whenever possible. To this end, the .NET Framework includes a 		thread pool that automatically manages the creating and destruction of threads. It is strongly recommended that applications take advantage of the thread pool in favor of creating their own 			threads.
+	</Paragraph>
+	<Paragraph>
+		This sample demonstrates how to have a thread pool thread perform some asynchronous operation. As an added bonus, developers should also note that code that works with the thread pool is 		usually much simpler to write since the developer does not have to write code that creates a new thread. 
+	</Paragraph>
+	<Paragraph>
+		<Sample Caption="Asynchronous Operations" Image="..\Images\Console.gif">
+			<CSPath>..\Samples\Threading\Asynchronous\CS</CSPath>
+			<VBPath>..\Samples\Threading\Asynchronous\VB</VBPath>
+		</Sample>
+	</Paragraph>
+	<Navigation>
+		<Previous>Threading.xml</Previous>
+		<Next>Timed Operations.xml</Next>
+	</Navigation>
+</Document>

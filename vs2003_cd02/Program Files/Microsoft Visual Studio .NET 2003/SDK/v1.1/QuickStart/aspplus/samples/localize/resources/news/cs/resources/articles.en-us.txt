@@ -1,0 +1,11 @@
+;
+; Lines beginning with a semicolon can be used for comments.
+;
+
+[strings]
+greeting=Welcome !
+more=Read more ...
+article1=This is an english text.
+article2=This is also english text.
+article3=This is more english text.
+

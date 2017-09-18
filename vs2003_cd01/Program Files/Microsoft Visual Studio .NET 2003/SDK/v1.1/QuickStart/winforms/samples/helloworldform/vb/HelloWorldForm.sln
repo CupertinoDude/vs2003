@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HelloWorldForm", "HelloWorldForm.vbproj", "{EF0D691F-6777-4A5B-8583-017F88FECC20}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{EF0D691F-6777-4A5B-8583-017F88FECC20}.Debug.ActiveCfg = Debug|.NET
+		{EF0D691F-6777-4A5B-8583-017F88FECC20}.Debug.Build.0 = Debug|.NET
+		{EF0D691F-6777-4A5B-8583-017F88FECC20}.Release.ActiveCfg = Release|.NET
+		{EF0D691F-6777-4A5B-8583-017F88FECC20}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

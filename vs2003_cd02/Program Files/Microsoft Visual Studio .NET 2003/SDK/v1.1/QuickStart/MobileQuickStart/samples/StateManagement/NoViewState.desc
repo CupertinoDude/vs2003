@@ -1,0 +1,5 @@
+Turning Off Viewstate
+This sample illustrates how to write ASP.NET mobile Web Forms pages that do not
+rely on viewstate. Rather, data is always bound on every response.
+The GetWeather method in this sample is a placeholder - in a real application
+scenario, this method would perform custom data access.

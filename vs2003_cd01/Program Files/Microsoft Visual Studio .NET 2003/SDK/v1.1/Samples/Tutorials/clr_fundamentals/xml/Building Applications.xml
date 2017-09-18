@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Building Applications and Types for the .NET Framework">
+	<Paragraph>
+		When building applications or re-usable types (components) for the .NET Framework, you must first select a programming language that you intend to write your source code in. Fortunately, the 		.NET Framework supports many different programming languages including C#, C++ with Managed Extensions, Visual Basic .NET, Cobol, APL, Perl, and many more. The language you choose will 		determine how you express your intentions to the .NET Framework.	
+	</Paragraph>
+	<Paragraph>
+		Once you've written your source code, you run it through the corresponding language compiler and the compiler produces an assembly. An assembly is a file that contains Microsoft Intermediate 		Language (MSIL) and metadata.  Normally, compilers produce binary CPU instructions specific to the CPU you intend to run your code on. However, MSIL is an intermediate language that is CPU-		independent. That is, at runtime the CLR compiles the MSIL code into native CPU code. If you are running the application on a Pentium machine, then the CLR produces native x86 code. If you are running 		the 	application on an Itanium machine, then the CLR produces native IA64 code.
+	</Paragraph>
+	<Paragraph>
+		In addition to the MSIL, the assembly file also contains metadata. Metadata is a set of tables that are embedded in the assembly file. These tables are produced by the compiler and contain a great 		deal of information about the application. For example, metadata has tables that describe all of the types, methods, and fields that were defined by the application's source code. In addition, 			metadata also includes tables that describe all of the types, methods, and fields that are referenced by methods in the application's source code. Metadata is very complete and is always 			embedded in the assembly file ensuring that the metadata and the MSIL it describes are always in sync with one another.
+	</Paragraph>
+	<Navigation>
+		<Previous>Introduction.xml</Previous>
+		<Next>Type Fundamentals.xml</Next>
+	</Navigation>
+</Document>

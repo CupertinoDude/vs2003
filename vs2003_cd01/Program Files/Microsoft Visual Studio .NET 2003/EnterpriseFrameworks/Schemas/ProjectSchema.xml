@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Schema name="Enterprise_Frameworks_Project_File_Schema"
+    xmlns="urn:schemas-microsoft-com:xml-data"
+    xmlns:dt="urn:schemas-microsoft-com:datatypes"
+    xmlns:vsef="urn:schemas-microsoft-com:xml-vsef"
+    xmlns:myExt="urn:myschema-extensions">
+
+    <ElementType name="BANNER" content="textOnly" dt:type="string"/>
+    <ElementType name="VERSION" content="textOnly" dt:type="string"/>
+
+    <ElementType name="LOCALPATH" content="textOnly" dt:type="string"/>
+    <ElementType name="AUXPATH" content="textOnly" dt:type="string"/>
+    <ElementType name="PROJECTNAME" content="textOnly" dt:type="string"/>
+    <ElementType name="PROVIDER" content="textOnly" dt:type="string"/>
+
+    <ElementType name="SOURCECONTROLSETTINGS" content="eltOnly" model="closed" order="many">
+        <element type="LOCALPATH" minOccurs="1" maxOccurs="1"/>
+        <element type="AUXPATH" minOccurs="1" maxOccurs="1"/>
+        <element type="PROJECTNAME" minOccurs="1" maxOccurs="1"/>
+        <element type="PROVIDER" minOccurs="1" maxOccurs="1"/>
+    </ElementType>
+
+    <ElementType name="FILE" content="textOnly" dt:type="string"/>
+    <ElementType name="UNLOADED" content="textOnly" dt:type="string"/>
+    <ElementType name="REQUIRESURL" content="textOnly" dt:type="boolean"/>
+    <ElementType name="GUIDPROJECTID" content="textOnly" dt:type="string"/>
+
+    <ElementType name="REFERENCE" content="eltOnly" model="closed" order="many">
+        <myExt:key>FILE</myExt:key>
+        <element type="FILE" minOccurs="1" maxOccurs="1"/>
+        <element type="UNLOADED" maxOccurs="*"/>
+        <element type="REQUIRESURL" maxOccurs="1"/>
+        <element type="GUIDPROJECTID" maxOccurs="1"/>
+    </ElementType>
+
+    <ElementType name="REFERENCES" content="eltOnly" model="closed" order="many">
+        <element type="REFERENCE" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="FOLDERNAME" content="textOnly" dt:type="string"/>
+
+    <ElementType name="FOLDER" content="eltOnly" model="closed" order="many">
+        <myExt:key>FOLDERNAME</myExt:key>
+        <element type="FOLDERNAME" minOccurs="1" maxOccurs="1"/>
+        <element type="FILE" maxOccurs="*"/>
+        <element type="FOLDER" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="PREFERREDSTARTUP" content="textOnly" dt:type="string"/>
+
+    <ElementType name="PROJECTEXPLORER" content="eltOnly" model="closed" order="many">
+        <element type="PREFERREDSTARTUP" minOccurs="0" maxOccurs="1"/>
+        <element type="FOLDER" maxOccurs="*"/>
+        <element type="FILE" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="VIEWS" content="eltOnly" model="closed" order="many">
+        <element type="PROJECTEXPLORER" maxOccurs="1"/>
+    </ElementType>
+
+    <ElementType name="WIZARD" content="eltOnly" model="closed" order="many">
+        <myExt:key>FILE</myExt:key>
+        <element type="FILE" minOccurs="1" maxOccurs="1"/>
+        <element type="REQUIRESURL" maxOccurs="1"/>
+    </ElementType>
+
+    <ElementType name="SUBPROJECTWIZARDS" content="eltOnly" model="closed" order="many">
+        <element type="WIZARD" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="GENERAL" content="eltOnly" model="closed" order="many">
+        <element type="BANNER" minOccurs="1" maxOccurs="1"/>
+        <element type="VERSION" minOccurs="1" maxOccurs="1"/>
+        <element type="SOURCECONTROLSETTINGS" minOccurs="0" maxOccurs="1"/>
+        <element type="REFERENCES" minOccurs="0" maxOccurs="1"/>
+        <element type="VIEWS" minOccurs="0" maxOccurs="1"/>
+        <element type="SUBPROJECTWIZARDS" minOccurs="0" maxOccurs="1"/>
+    </ElementType>
+
+    <ElementType name="TDLELEMENT" content="textOnly" dt:type="string"/>
+    <ElementType name="HANDLERDATA" content="eltOnly"/>
+
+    <ElementType name="NAME" content="textOnly" dt:type="string"/>
+    <ElementType name="VALUE" content="textOnly" dt:type="string"/>
+
+    <ElementType name="GLOBALENTRY" content="eltOnly" model="closed" order="many">
+        <myExt:key>NAME</myExt:key>
+        <element type="NAME" minOccurs="1" maxOccurs="1"/>
+        <element type="VALUE" minOccurs="1" maxOccurs="1"/>
+    </ElementType>
+
+    <ElementType name="GLOBALS" content="eltOnly" model="closed" order="many">
+        <element type="GLOBALENTRY" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="SERVICEGUID" content="textOnly" dt:type="string"/>
+
+    <ElementType name="STARTUPSERVICES" content="eltOnly" model="closed" order="many">
+        <element type="SERVICEGUID" maxOccurs="*"/>
+    </ElementType>
+
+    <ElementType name="EFPROJECT" content="eltOnly" model="closed" order="many">
+        <element type="GENERAL" maxOccurs="1"/>
+        <element type="GLOBALS" maxOccurs="1"/>
+        <element type="STARTUPSERVICES" maxOccurs="1"/>
+    </ElementType>
+</Schema>

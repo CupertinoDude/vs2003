@@ -1,0 +1,63 @@
+﻿<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\readme.xsl"?>
+
+<sample>
+<title>Word Count Sample</title>
+<title-short>WordCount</title-short>
+<overview>
+This sample offers a nice introduction to the base class library. It shows how to create an application that opens multiple files (specified on the command line) and counts each file’s bytes, characters, words, and lines. The results from each file and the total of all files are displayed.
+</overview>
+<subdirectory>Applications\WordCount</subdirectory>
+<buildsteps>
+   <step>
+      Type <b>BUILD.bat</b> from the command line.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Applications\WordCount\VB>Build.bat
+      </example>
+   </step>   
+</buildsteps>
+<runsteps>   
+   <step>
+      Type <b>WordCount.exe</b> from the command line for a complete list of command line options for the utility.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Applications\WordCount\VB>WordCount.exe
+      </example>
+   </step>
+   <step>
+      To count the words in a file, type <b>WordCount.exe [filename]</b> from the command line.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Applications\WordCount\VB>WordCount.exe ArgParser.vb 
+      </example>
+   </step>
+</runsteps>
+<technologies>
+   <technology name = "I/O" keyword="T">      
+      <class name = "FileStream" keyword="T">      
+      The sample uses this type for its file access.  This class is used to read to and write from files.
+      </class>
+      <class name = "StreamWriter" keyword="T">      
+      The sample uses the StreamWriter when the command-line arguments request that the output be sent to a file. The StreamWriter is used in conjunction with a FileStream instance to format text output to a file.
+      </class>
+      <class name = "StreamReader" keyword="T">      
+      The sample uses the StreamReader to read the contents of a file for which it is counting words. The StreamReader is used in conjunction with a FileStream instance to read text from a file.
+      </class>
+   </technology>          
+   <technology name = "Collections" keyword="T">      
+      <class name = "ArrayList" keyword="T">      
+      Used by the sample as a general collection class for storing sets of objects.
+      </class>
+      <class name = "SortedList" keyword="T">      
+      Used by the sample as a collection class for storing sets of objects in a sorted manner.
+      </class>
+      <class name = "IEnumerator" keyword="T">      
+      This sample uses this interface directly to enumerate over sets of objects.
+      </class>
+      <class name = "IDictionaryEnumerator" keyword="T">      
+      This sample uses this interface directly to enumerate over indexed sets of objects.
+      </class>
+   </technology>
+</technologies>
+</sample>
+
+
+

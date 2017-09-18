@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Index Properties">
+	<Paragraph>
+		Just as Properties are smart fields, Index Properties are smart arrays. Index properties (referred to as Indexers by C#) are just a way to access information using array notation. For example, the 		String class offers an index property allowing you to access the individual characters of the string. Many of the collection types also offer an index property so that you can easily access the 		elements stored within the collection.
+	</Paragraph>
+	<Paragraph>
+		The code below shows how to implement a BitArray type that offers an index property making it easy for any user of the type to get/set individual bits within the array.
+	</Paragraph>
+	<Paragraph>
+		<Sample Caption="Properties" Image="..\Images\Console.gif">
+			<CSPath>..\Samples\TypeMembers\IndexProperties\CS</CSPath>
+			<VBPath>..\Samples\TypeMembers\IndexProperties\VB</VBPath>
+		</Sample>
+	</Paragraph>
+	<Navigation>
+		<Previous>Properties.xml</Previous>
+		<Next>Events.xml</Next>
+	</Navigation>
+</Document>

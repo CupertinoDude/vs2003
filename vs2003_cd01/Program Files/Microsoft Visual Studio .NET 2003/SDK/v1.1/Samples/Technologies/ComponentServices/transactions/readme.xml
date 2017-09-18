@@ -1,0 +1,124 @@
+﻿<?xml version='1.0'?> 
+<?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?> 
+<sample windowsforms="true"> 
+
+<title>COM+ Transactions</title>
+<title-short>COM+ Transactions</title-short>
+
+<overview>
+<p class = "text">
+This sample demonstrates some aspects of COM+ Transactions in a .NET Framework application. The sample retrieves a value from the database, 
+then it allows the user to update the value. After the user specifies a new value and selects AutoCompletePost or Post the sample updates
+the database. Then the sample checks to see if the value entered is permitted (it must be a number =&gt;0 and &lt;=10). If the value is
+not permitted, the sample aborts the transaction and otherwise commits. Finally the sample shows what the new value in the database is.
+</p>
+</overview>
+
+
+<subdirectory>Technologies\ComponentServices\Transactions</subdirectory>
+<buildsteps> 
+<step> 
+Type <b>BuildAll.bat</b> from the command line.      
+<example> 
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\Transactions>buildall.bat
+</example>
+</step>
+<step>
+You'll also need to setup the database yourself when building from Visual Studio 7.
+<example>
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\Transactions\CS>osql -E -S (local)\NetSDK -i TxDB.sql
+</example>
+</step>
+<step>
+If you're building the sample from Visual Studio 7, you will need to install the TxDemoSvr.dll assembly to the Global Assembly Cache before running the sample.  Note: The gacutil.exe program is located in the <i>SDK\v1.1</i>\Bin directory.  
+<example>
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\Transactions\CS>gacutil -i TxDemoSvr.dll
+</example>
+</step>
+<step>
+The sample builds a C# and VB version of the client application and COM+ component. Source code for each language is stored in subdirectories named \CS and \VB. The C# component has 'CS' appended to its name as viewed in the Component Services administrative tool, 'TxDemoServerCS.TxObject'. The VB version is named 'TxDemoServerVB.TxObject'. When working with the sample code, be sure to observe and/or modify the version of the COM+ component that corresponds to the client application you launch.
+</step>
+<step>
+Review comments in the source code and build.bat files for more information on sample binary creation and registration steps.
+</step>
+</buildsteps>
+<runsteps> 
+
+<step>
+NOTE: The COM+ .NET samples require Windows 2000 or higher in order to build and run.
+</step>
+
+<step>
+Build the Transactions sample code following the instructions above.
+</step>
+
+<step>
+Type <b>TxDemo.exe</b> from the command line.
+<example>
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\Transactions\CS>txdemo.exe
+</example>
+</step>
+<step>
+The current value is read from the database and displayed.
+</step>
+<step>
+Enter a number =&gt;0 and &lt;=10 in the 'New value' field. Click on the button named 'Post'.
+</step>
+<step>
+The message 'About to commit the transaction' should appear. Click on 'OK'. The 'Current value' field is now updated with the value you entered.
+</step>
+<step>
+Enter a number =&gt;0 or &lt;=10 in the 'New value' field. Click on the button named 'Post'.
+</step>
+<step>
+The message 'About to abort the transaction because the new value (&lt;yourvalue&gt;) is either &lt;0 or &gt;10.' should appear. Press OK, the 'Current value' field doesn't change.
+This is because during the transaction the current value did change, but when the transaction was rolled back, the value was changed back to its original value. 
+</step>
+<step>
+Now try the same data with the 'AutoPost' button. You'll notice when the demo aborts the transaction it will throw an COMException. This is to notify the AutoComplete 
+to do an abort.
+</step>
+</runsteps>
+
+<uninstallsteps>
+<step>
+To uninstall this sample, run <b>buildall.bat -u.</b> or <b>build.bat -u.</b> The batch file will then call regsvcs and gacutil with the /u switch in order to remove the sample files from the COM+ catalog and Global Assembly Cache.
+</step>
+</uninstallsteps>
+
+<technologies> 
+<technology name = "ContextUtil" keyword ="ContextUtil">The ContextUtil class is used to tell the system either to abort or complete the transaction.
+</technology>
+<technology name = "COM+" keyword ="COM+">COM+ is the underlying system which automates the transactions in .NET.
+</technology>
+<technology name = "Transaction" keyword ="Transaction">An transaction is a set of operations that belong together, they should either 
+all be performed or all not be performed. Whenever one of the operations in the transaction fails, all prior operations should rollback to ensure 
+there is no inconsistency.
+</technology>
+<technology name = "SetAbort" keyword ="SetAbort">Method in ContextUtil that can be called to manually abort the transaction.
+</technology>
+<technology name = "SetComplete" keyword ="SetComplete">Method in ContextUtil that can be called to manually commit the transaction.
+</technology>
+<technology name = "AutoCompleteAttribute" keyword ="AutoCompleteAttribute">Attribute that enables automatic transactions on a method.
+</technology>
+<technology name = "TransactionAttribute" keyword ="TransactionAttribute">Attribute that enables transactions on a class.
+</technology>
+<technology name = "ServicedComponent" keyword ="ServicedComponent">Abstract class that implements the features to let a .NET class enrole in COM+.
+</technology>
+
+</technologies>
+
+<keywords> 
+<word name="COM+" keyword="COM+"/>
+<word name="Transaction" keyword="Transaction"/>
+<word name="Transactions" keyword="Transactions"/>
+<word name="SetAbort" keyword="SetAbort"/>
+<word name="SetComplete" keyword="SetComplete"/>
+<word name="ContextUtil" keyword="ContextUtil"/>
+<word name="AutoCompleteAttribute" keyword="AutoCompleteAttribute"/>
+<word name="TransactionAttribute" keyword="TransactionAttribute"/>
+<word name="TransactionOption" keyword="TransactionOption"/>
+<word name="TransactionOptions" keyword="TransactionOptions"/>
+<word name="ServicedComponent" keyword="ServicedComponent"/>
+</keywords>
+</sample>

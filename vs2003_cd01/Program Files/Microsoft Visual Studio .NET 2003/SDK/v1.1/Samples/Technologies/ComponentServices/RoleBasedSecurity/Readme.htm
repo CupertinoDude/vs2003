@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root xmlns:dt="urn:schemas-microsoft-com:datatypes" xmlns:d2="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?><HTML><HEAD><TITLE>COM+ Role-Based Security Sample</TITLE><STYLE>
+    .Title{FONT-FAMILY: Verdana;FONT-SIZE: large;COLOR: #808080}
+    </STYLE><STYLE>
+    .Heading{FONT-FAMILY: Verdana;FONT-SIZE: large}
+    </STYLE><STYLE>
+    .SectionBreak{FONT-SIZE: small;MARGIN-BOTTOM: 2em}
+    </STYLE><STYLE>
+    .SmallBreak{FONT-SIZE: small;MARGIN-BOTTOM: 1.5em}
+    </STYLE><STYLE>
+    .Text{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedHeading{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedText{MARGIN-LEFT: 3ex;FONT-FAMILY: Lucida Console;FONT-SIZE: x-small;FONT-WEIGHT: Bold}
+    </STYLE><STYLE>
+    .ListSansBullets {list-style-type: none;FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE></HEAD><BODY><table><tr><td><h2 class="Title">COM+ Role-Based Security Sample</h2></td><td valign="baseline" class="Text">
+               
+              
+                  (Windows Forms Application)
+                </td></tr></table><p class="Text">
+    This document contains the release information for the .NET Framework COM+ Role-Based Security sample. You will find the following sections below: 
+    </p><ul class="Text"><li><a href="#_Sample_Overview">Overview</a></li><li><a href="#_Sample_Topics">Topics</a></li><li><a href="#_Location_of_Sample">Location</a></li><li><a href="#_Building_the_Sample">Building the sample</a></li><li><a href="#_Running_the_Sample">Running the sample</a></li><li><a href="#_Uninstalling_the_Sample">Uninstalling the sample</a></li><li><a href="#_sdkvars">Notes</a></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Overview" />
+    Overview
+    </h4><p class="Text"><p class="text">
+This sample demonstrates some aspects of COM+ Role-Based Security in a .NET Framework application. The sample code accesses security-related methods on the ContextUtil class to retrieve run-time information about the security environment. The sample also calls into a SecurityCallContext object in order to retrieve the account information of the current caller.
+</p><p class="text">
+Information retrieved by the sample application includes: 1) whether COM+ security is enabled, 2) whether the current caller is a member of a security role created by the sample, and 3) the account name of the current caller. 
+</p><p class="text">
+The sample also demonstrates how to enable security at the application or component level and create security roles by means of attributes.
+</p><p class="text">
+NOTE: COM+ Security interoperability in .NET is provided for application developers who might wish to write managed code that extends an existing application which uses COM+ 1.0 security services. .NET provides its own role-based security. This mechanism and that provided by COM+ are independent and only one should be used within a single application.
+</p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Topics" />
+  Topics
+  </h4><p class="Text">
+  The following bullets briefly describe the technologies used by this sample.
+  </p><ul class="Text"><li><b>Role-Based Security (COM+) - </b>This sample uses the managed code interoperability features for integrating with COM+ role-based security.
+</li><li><b>ContextUtil - </b>The ContextUtil class is used to retrieve information about COM+ object contexts, including important security-related information.
+</li><li><b>SecurityCallContext - </b>The SecurityCallContext class describes the chain of callers leading up to the current method call.
+</li><li><b>ApplicationAccessControl attribute - </b>Assembly attribute that allows configuration of security for the housing COM+ application.
+</li><li><b>ComponentAccessControl attribute - </b>Class attribute that enables security checking on calls to a component.
+</li><li><b>SecurityRole attribute - </b>Attribute that can be used to add COM+ roles to an application and to associate them with components.
+</li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Location_of_Sample" />
+    Location
+    </h4><p class="Text">
+    This sample is located in the <a href="." title="Jump to Folder" target="_blank">Technologies\ComponentServices\RoleBasedSecurity</a> subdirectory of the .NET Framework SDK samples directory.
+    </p><p class="FixedHeading">
+    For Example:
+      <p class="FixedText">
+      C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\RoleBasedSecurity</p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Building_the_Sample" />
+    Building the Sample
+    </h4><p class="Text">
+    In order to properly build and run this sample, the following steps need to be performed.
+    </p><p class="Text"> 
+Type <b>BuildAll.bat</b> from the command line.      
+<p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText"> 
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\RoleBasedSecurity&gt;buildall.bat
+</p></p><p class="Text">
+If you're building the sample from Visual Studio 7, you will need to install the OCDemoSvr.dll assembly to the Global Assembly Cache before running the sample.  Note: The gacutil.exe program is located in the <i>SDK\v1.1</i>\Bin directory.  
+<p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\RoleBasedSecurity\CS&gt;gacutil -i RBSecDemoSvr.dll
+</p></p><p class="Text">
+The sample builds a C# and VB version of the client application and COM+ component. Source code for each language is stored in subdirectories named \CS and \VB. The C# component has 'CS' appended to its name as viewed in the Component Services administrative tool, 'RBSecDemoServerCS.RBSecurityObject'. The VB version is named 'RBSecDemoServerVB.RBSecurityObject'. When working with the sample code, be sure to observe and/or modify the version of the COM+ component that corresponds to the client application you launch.
+</p><p class="Text">
+Review comments in the source code and build.bat files for more information on sample binary creation and registration steps.
+</p><p class="SectionBreak" /><h4 class="Heading"><a name="_Running_the_Sample" />
+    Running the Sample
+    </h4><p class="Text">
+    In order to run this sample, follow the instructions listed below.
+    </p><span class="Text"><ul class="Text"><li>
+NOTE: The COM+ .NET samples require Windows 2000 or higher in order to build and run.
+</li></ul><ul class="Text"><li>
+Build the Role-Based Security sample code following the instructions above.
+</li></ul><ul class="Text"><li>
+Type <b>RBSecDemo.exe</b> from the command line.
+<p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\RoleBasedSecurity\CS&gt;rbsecdemo.exe
+</p></li></ul><ul class="Text"><li>
+Click the button labeled 'Display Logged On User'. The current logged on user account name should appear in the application window.
+</li></ul><ul class="Text"><li>
+Click the button labeled 'Is Caller in Demo Role?'. The message 'You ARE in RBSecurityDemoRole' should appear.
+</li></ul><ul class="Text"><li>
+Launch the Component Services administrative tool (also called the 'COM+ explorer'), by clicking 'Start\Settings\Control Panel' then double-clicking 'Administrative Tools\Component Services'. Locate the RBSecDemoSvr COM+ application by expanding Component Services\Computers\My Computer\COM+ Applications in the left-hand COM+ explorer pane.
+</li></ul><ul class="Text"><li>
+Next, right-click the RBSecDemoSvr application and select 'Properties'. This will invoke the Properties dialog for the application. 
+</li></ul><ul class="Text"><li>
+Click the 'Security' tab. The information here corresponds to the settings specified by means of the ApplicationAccessControl attribute. Uncheck the 'Enforce access checks for this application' checkbox. IMPORTANT: this will disable COM+ security for all components contained in the application. Click 'OK' to dismiss the properties dialog.
+</li></ul><ul class="Text"><li>
+Return to the RBSecDemo client application. Click 'Display Logged On User'. The message 'Unknown caller (Security is not enabled)' should appear. Click 'Is Caller In Demo Role?'. The client still reports that the user is in the RBSecurityDemoRole. This is because when security is disabled, all calls into ContextUtil::IsCallerInRole return true.
+</li></ul><ul class="Text"><li>
+Return to the COM+ explorer and invoke the RBSecDemoSvr properties page once more by right-clicking the application and selecting 'Properties'. Click the tab labeled 'Security' and recheck the 'Enforce access checks for this application' checkbox. Security is enabled again for the application. Click 'OK' to dismiss the properties dialog.
+</li></ul><ul class="Text"><li>
+Locate the RBSecDemoServerCS.RBSecurityObject or RBSecDemoServerVB.RBSecurityObject component by expanding 'RBSecDemoSvr\Components'. Right-click the 'RBSecDemoServerCS.RBSecurityObject' or 'RBSecDemoServerVB.RBSecurityObject' component and select 'Properties' from the popup menu.
+</li></ul><ul class="Text"><li>
+Click the 'Security' tab. The Authorization setting here corresponds to the ComponentAccessControl attribute specified in the sample code. You should see a role labeled 'RBSecurityDemoRole' listed as a role explicitly associated with the component. This role was created and bound to the sample component by means of the SecurityRole attribute in the sample code. Click 'OK' to dismiss the properties dialog.
+</li></ul><ul class="Text"><li>
+In the COM+ explorer, expand the Roles folder located beneath the RBSecDemoSvr application. You should see the RBSecurityDemoRole here. Expand RBSecurityDemoRole/Users. You should see a single account ('Everyone') in the Users folder. Right-click 'Everyone' and select 'Delete' from the pop-up menu. Confirm the delete in the subsequent dialog.
+</li></ul><ul class="Text"><li>
+COM+ caches security settings related to roles, so we must shut down the RBSecDemoSvr application before we can observe the results of making the change above. In the COM+ explorer, right-click the application and select 'Shut down' from the pop-up menu.
+</li></ul><ul class="Text"><li>
+Now return to the RBSecDemo client application. On clicking either button, you should see a MessageBox reporting that 'Access is denied'. An access denied security exception was thrown on object creation because the component RBSecurityDemoRole does not contain the current caller.
+</li></ul></span><p class="SectionBreak" /><h4 class="Heading"><a name="_Uninstalling_the_Sample" />			
+			Uninstalling the Sample
+		</h4><p class="Text">
+			In order to uninstall this sample, follow the instructions listed below.
+		</p><span class="Text"><ul class="Text"><li>
+To uninstall this sample, run <b>buildall.bat -u.</b> or <b>build.bat -u.</b> The batch file will then call regsvcs and gacutil with the /u switch in order to remove the sample files from the COM+ catalog and Global Assembly Cache.
+</li></ul></span><p class="SectionBreak" /><h4 class="Heading"><a name="_sdkvars" />
+    Notes
+    </h4><p class="Text">
+    For the .Net Framework samples to function properly, your Path, Include, and Lib environment variables must be set correctly. 
+    In many cases, the SDK install program updates these environment variables for you. However, if you installed the .Net Framework SDK 
+    using Visual Studio .NET, or unselected "register environment variables" during setup, these environment variables will not be updated. 
+    You can set the Path, Include and Lib environment variables by running SDKVars.bat, located in the <i>&lt;SDKRoot&gt;\Bin</i> directory. 
+    SDKVars.bat must be executed in every command shell.
+    </p></BODY></HTML></root>

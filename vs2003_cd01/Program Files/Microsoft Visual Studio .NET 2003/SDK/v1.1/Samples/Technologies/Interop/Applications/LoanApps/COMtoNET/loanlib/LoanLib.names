@@ -1,0 +1,21 @@
+AddRef
+ComputeOpeningBalance
+ComputePayment
+ComputeRate
+ComputeTerm
+GetFirstPmtDistribution
+GetIDsOfNames
+GetNextPmtDistribution
+GetTypeInfo
+GetTypeInfoCount
+ILoan		# bfef333d-a0d3-3c92-99d2-b2b052fa2ab8
+Invoke
+Loan		# 4d5dbdcf-ae7e-30d9-882e-9ee9bba6ec51
+LoanLib		# c95b71e4-d546-3f23-b6a4-8f8f5060bb88
+OpeningBalance
+Payment
+QueryInterface
+Rate
+Release
+RiskRating
+Term

@@ -1,0 +1,62 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\readme.xsl"?>
+
+<sample>
+<title>Code Access Security Sample</title>
+<title-short>Permissions</title-short>
+<overview>
+The purpose of this sample is to introduce developers to the mechanics of code access security. Code access security is a mechanism that grants/denies access to resources within a method call. For example, code written by Microsoft may be allowed to write to the disk while code from another company may be forbidden from accessing the disk. This control is enforced even if the code from both companies is used within a single application. This sample repeatedly attempts to access a disk file and an environment variable. Before each attempt, the code access permissions are changed to see the affect.
+</overview>
+<subdirectory>Technologies\Permissions</subdirectory>
+<buildsteps>
+   <step>
+      Type <b>BUILD.bat</b> from the command line.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Permissions\VB>Build.bat
+      </example>
+   </step>   
+</buildsteps>
+<runsteps>
+   <step>
+      Type <b>Permissions.exe</b> from the command line to run the sample.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Permissions\VB>Permissions.exe
+      </example>
+   </step>         
+</runsteps>
+<technologies>
+   <technology name = "Security" keyword="T">
+      <class name = "PermissionSet" keyword="T">
+      Used by the sample to manage a set of permissions, as well as to Assert and Deny the permission in the stack.
+      </class>
+      <class name = "CodeAccessPermission" keyword="T">
+      Used for static methods RevertDeny() and RevertAssert() which revert the affects of Assert and Deny functions.
+      </class>                 
+      <class name = "FileIOPermission" keyword="T">
+      Used to indicate permission to make file requests like read and write.
+      </class>      
+      <class name = "EnvironmentPermission" keyword="T">
+      Used to indicate permission to access environment variables.
+      </class>
+   </technology>     
+   <technology name = "I/O" keyword="T">
+      <class name = "FileStream" keyword="T">
+      Used to open, read, write files in the sample.
+      </class>
+      <class name = "Path" keyword="T">
+      Used to get the full path name of a file. This can be particularly important when dealing with FileIOPermissions, because the system bases the security on the full path name of a file.
+      </class>                 
+   </technology>     
+   <technology name = "Environment Variables" keyword="T">
+      <class name = "Environment" keyword="T">
+      The sample uses this type to read the environment variables for the process.
+      </class>           
+   </technology>     
+</technologies>
+<keywords>
+   <word name="Security" keyword="T"/>   
+   <word name="Access Control" keyword="T"/>
+   <word name="Code Access" keyword="T"/>      
+</keywords>
+</sample>
+

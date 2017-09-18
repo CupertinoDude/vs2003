@@ -1,0 +1,72 @@
+package $NAMESPACE$;
+
+import System.Collections.*;
+import System.ComponentModel.*;
+import System.Web.*;
+import System.Web.SessionState.*;
+
+/**
+ * Summary description for $CLASSNAME$.
+ */
+public class $CLASSNAME$ extends System.Web.HttpApplication
+{
+	/**
+	 * Required designer variable.
+	 */
+	private System.ComponentModel.IContainer components = null;
+
+	public $CLASSNAME$()
+	{
+		InitializeComponent();
+	}	
+		
+	protected void Application_Start(Object sender, System.EventArgs e)
+	{
+
+	}
+
+	protected void Session_Start(Object sender, System.EventArgs e)
+	{
+
+	}
+
+	protected void Application_BeginRequest(Object sender, System.EventArgs e)
+	{
+
+	}
+
+	protected void Application_EndRequest(Object sender, System.EventArgs e)
+	{
+
+	}
+	protected void Application_AuthenticateRequest(Object sender, System.EventArgs e)
+	{
+
+	}
+
+	protected void Application_Error(Object sender, System.EventArgs e)
+	{
+
+	}
+
+	protected void Session_End(Object sender, System.EventArgs e)
+	{
+
+	}
+
+	protected void Application_End(Object sender, System.EventArgs e)
+	{
+
+	}
+			
+	#region Web Form Designer generated code
+	/**
+	 * Required method for Designer support - do not modify
+	 * the contents of this method with the code editor.
+	 */
+	private void InitializeComponent()
+	{    
+		this.components = new System.ComponentModel.Container();
+	}
+	#endregion
+}

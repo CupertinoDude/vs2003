@@ -1,0 +1,23 @@
+﻿<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Accessing a resource in a mutually exclusive fashion">
+	<Paragraph>
+		In a multithreaded environment, multiple threads may access an object simultaneously. For most objects, concurrent access will corrupt the state of the object causing subtle bugs that are very 		difficult to reproduce and predict. To ensure that objects work correctly when accessed concurrently, it is best to employ some form of thread synchronization. The .NET Framework offers a very 		simple and effective mechanism that allows mutually exclusive access to an object. 
+	</Paragraph>
+	<Paragraph>
+		This mechanism employs the use of the System.Threading.Monitor type’s Enter and Leave methods. The Enter method allows just one thread at a time to access an object. The Leave method is 		called to indicate when another thread may access the object. To simplify the use of Enter/Leave, many compilers will offer special syntax. For example, C# offers the lock keyword which causes 		the compiler to automatically emit calls to Monitor’s Enter and Exit methods within an exception handling frame.
+	</Paragraph>
+	<Paragraph>
+		The sample demonstrates how to use the lock keyword to obtain mutual exclusive access to an object.
+	</Paragraph>
+	<Paragraph>
+		<Sample Caption="Exclusive Operations" Image="..\Images\Console.gif">
+			<CSPath>..\Samples\Threading\Exclusive\CS</CSPath>
+			<VBPath>..\Samples\Threading\Exclusive\VB</VBPath>
+		</Sample>
+	</Paragraph>
+	<Navigation>
+		<Previous>Timed Operations.xml</Previous>
+		<Next>Strings.xml</Next>
+	</Navigation>
+</Document>

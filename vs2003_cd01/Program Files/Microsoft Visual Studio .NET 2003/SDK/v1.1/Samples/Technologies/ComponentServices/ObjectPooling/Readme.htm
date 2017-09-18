@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root xmlns:dt="urn:schemas-microsoft-com:datatypes" xmlns:d2="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?><HTML><HEAD><TITLE> Object Pooling/Just In Time Activation Sample</TITLE><STYLE>
+    .Title{FONT-FAMILY: Verdana;FONT-SIZE: large;COLOR: #808080}
+    </STYLE><STYLE>
+    .Heading{FONT-FAMILY: Verdana;FONT-SIZE: large}
+    </STYLE><STYLE>
+    .SectionBreak{FONT-SIZE: small;MARGIN-BOTTOM: 2em}
+    </STYLE><STYLE>
+    .SmallBreak{FONT-SIZE: small;MARGIN-BOTTOM: 1.5em}
+    </STYLE><STYLE>
+    .Text{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedHeading{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedText{MARGIN-LEFT: 3ex;FONT-FAMILY: Lucida Console;FONT-SIZE: x-small;FONT-WEIGHT: Bold}
+    </STYLE><STYLE>
+    .ListSansBullets {list-style-type: none;FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE></HEAD><BODY><table><tr><td><h2 class="Title"> Object Pooling/Just In Time Activation Sample</h2></td><td valign="baseline" class="Text">
+               
+              
+                  (Windows Forms Application)
+                </td></tr></table><p class="Text">
+    This document contains the release information for the .NET Framework  Object Pooling/Just In Time Activation sample. You will find the following sections below: 
+    </p><ul class="Text"><li><a href="#_Sample_Overview">Overview</a></li><li><a href="#_Sample_Topics">Topics</a></li><li><a href="#_Location_of_Sample">Location</a></li><li><a href="#_Building_the_Sample">Building the sample</a></li><li><a href="#_Running_the_Sample">Running the sample</a></li><li><a href="#_Uninstalling_the_Sample">Uninstalling the sample</a></li><li><a href="#_sdkvars">Notes</a></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Overview" />
+    Overview
+    </h4><p class="Text"><p class="text">
+This sample demonstrates the use of Just In Time Activation and Object Pooling in a .NET environment. A simple pooled object writes strings out to a log file. Several client apps instantiate and call into the pooled object class. With Just-In-Time Activation enabled and a maximum pool size of one object, all client calls are routed through a single object instance. The result is a single log file that documents COM+ activity to manage the pool and also shows multiple clients calling into pooled object. An object construction string is used to specify the log file name and (potentially) fully qualified path.
+</p><p class="text">
+Just In Time Activation is a COM+ service that permits clients to create and hold on to an object reference for indefinite lengths of time without requiring that an actual object instance exist behind it. COM+ will activate an object just in time for a consumer when it calls through its object reference. This activation might consist of creating a new object instance or, when used in combination with COM+ Object Pooling, passing the caller a reference to a pooled object. COM+ deactivates an object based on the doneness bit on the object context. For .NET ServicedComponents,  the AutoComplete attribute can be applied to class methods, indicating that the object can be deactivated on exit from the method.
+</p><p class="text">
+COM+ Object Pooling is a service that will maintain a pool of active objects, ready to be used by a client that requests a component configured for pooling. The pool can be configured administratively and by means of the ObjectPooling attribute. Pool attributes include a minimum and maximum size of the pool and an object creation request timeout value.
+</p><p class="text">
+JITA- and Object Pooling-enabled components can control how they are reused by implementing the IObjectControl interface. IObjectControl methods are called by COM+ (and COM+ only) in order to indicate key events in the object activation/deactivation process or to ask the object whether it can be returned to the object pool. This sample implements IObjectControl in order to demonstrate the interface being used by COM+ but does nothing meaningful in its implementation.
+</p><p class="text">
+See the Platform SDK documentation for important advantages and considerations for using both Just In Time Activation and Object Pooling.
+</p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Topics" />
+  Topics
+  </h4><p class="Text">
+  The following bullets briefly describe the technologies used by this sample.
+  </p><ul class="Text"><li><b>Just In Time Activation - </b>COM+ service that permits COM+ to deactivate objects despite the existence of outstanding object references. This can result in more efficient use of server resource, such as memory. When an object reference holder calls into a deactivated object, COM+ will activate and provide an actual object for the caller, <I>just in time</I>.
+    </li><li><b>JustInTimeActivation attribute - </b>Attribute for enabling Just In Time component Activation.
+    </li><li><b>Object Pooling - </b>COM+ service that pools object in order to reduce the overhead of creating each object from scratch. When an object is activated, it is pulled from the pool. When an object is deactivated, it is placed back into the pool to await the next caller.
+    </li><li><b>ObjectPooling attribute - </b>Attribute used to enable and configure Object Pooling for .NET components.
+    </li><li><b>IObjectControl - </b>System.EnterpriseServices component attribute that can be used to enable Object Construction strings and specify a default value for the constructor string.
+    </li><li><b>Object Construction - </b>COM+ service that passes a persistent string value to a class instance on construction of the instance. See the sdk Object Construction sample for more information.
+    </li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Location_of_Sample" />
+    Location
+    </h4><p class="Text">
+    This sample is located in the <a href="." title="Jump to Folder" target="_blank">Technologies\ComponentServices\ObjectPooling</a> subdirectory of the .NET Framework SDK samples directory.
+    </p><p class="FixedHeading">
+    For Example:
+      <p class="FixedText">
+      C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\ObjectPooling</p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Building_the_Sample" />
+    Building the Sample
+    </h4><p class="Text">
+    In order to properly build and run this sample, the following steps need to be performed.
+    </p><p class="Text"> 
+Type <b>BuildAll.bat</b> from the command line.      
+<p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText"> 
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\ObjectPooling&gt;buildall.bat
+</p></p><p class="Text">
+If you're building the sample from Visual Studio 7, you will need to install the OPDemoSvr.dll assembly to the Global Assembly Cache before running the sample.  Note: The gacutil.exe program is located in the <i>SDK\v1.1</i>\Bin directory.
+<p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\ObjectPooling\CS&gt;gacutil -i OPDemoSvr.dll
+</p></p><p class="Text">
+The sample builds a C# and VB version of the client application and COM+ component. Source code for each language is stored in subdirectories named \CS and \VB. The C# component has 'CS' appended to its name as viewed in the Component Services administrative tool, 'OPDemoServerCS.PooledLogFile'. The VB version is named 'OPDemoServerVB.PooledLogFile'. When working with the sample code, be sure to observe and/or modify the version of the COM+ component that corresponds to the client application you launch.
+</p><p class="Text">
+Review comments in the source code and build.bat files for more information on sample binary creation and registration steps.
+</p><p class="SectionBreak" /><h4 class="Heading"><a name="_Running_the_Sample" />
+    Running the Sample
+    </h4><p class="Text">
+    In order to run this sample, follow the instructions listed below.
+    </p><span class="Text"><ul class="Text"><li>
+NOTE: The COM+ .NET samples require Windows 2000 or higher in order to build and run.
+</li></ul><ul class="Text"><li>
+Build the Object Pooling/JITA sample code following the instructions above.
+</li></ul><ul class="Text"><li>
+Launch the Component Services administrative tool (also called the 'COM+ explorer'), by clicking 'Start\Settings\Control Panel' then double-clicking 'Administrative Tools\Component Services'.
+</li></ul><ul class="Text"><li>
+Locate the OPDemoSvr COM+ application by expanding Component Services\Computers\My Computer\COM+ Applications in the left-hand COM+ explorer pane.
+</li></ul><ul class="Text"><li>
+Locate the OPDemoServerCS.PooledLogFile or OPDemoServerVB.PooledLogFile component by expanding 'OPDemoSvr\Components'. Right-click the 'OPDemoServerCS.PooledLogFile' or 'OPDemoServerVB.PooledLogFile' component and select 'Properties' from the popup menu.
+</li></ul><ul class="Text"><li>
+Click the 'Activation' tab and note that Object Pooling is enabled. The component has also been configured with a minimum pool size of zero and a maximum pool size of one. This means that, at most, a single pooled object will exist at any time, no matter how many objects are instantiated from client code. These attributes are set explicitly in the sample code by means of the ObjectPooling attribute. The 60 second creation timeout is a default value that is applied because the sample code does not explicitly request a different value.
+</li></ul><ul class="Text"><li>
+Now, note the contents of the Object Construction edit field. This field contains the name of the disk-based log file which will be created by the sample pooled object. Its default value is 'OPSvrLogCS.txt' or 'OPSvrLogVB.txt'. You can change the name (or not) or add path information to file name (eg, "C:\OPSvrLogCS.txt"). If you do not add path information to the file name, the file will be created in the current System32 directory.
+</li></ul><ul class="Text"><li>
+Click 'OK' to dismiss the OPDemoServer component properties dialog.
+</li></ul><ul class="Text"><li>
+Next, start three copies of OPDemo.exe from the Windows explorer or the command line.
+<p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\ObjectPooling\CS&gt;start opdemo.exe
+</p></li></ul><ul class="Text"><li>
+From each client application, press the 'Start Writing' button. You will see a blinking asterisk on the client window which indicates entries are being written to the log file specified in the OPDemoServer component object construction string (by default, System32\OPSvrLogCS.txt).
+</li></ul><ul class="Text"><li>
+Once all client applications are writing, wait several seconds. Then click the 'Stop Writing' button in each client application.
+</li></ul><ul class="Text"><li>
+Locate and open the log file in notepad.exe or some other text editor. You should see a sequence of statements indicating COM+ calls to IObjectControl. In the middle of these calls, you will find written messages from each client application (identified by their process ID), demonstrating the fact that COM+ has coordinated calls through three object references against a single instantiated object. See the sample code comments and the Platform SDK for more information on the IObjectControl interface.
+</li></ul><ul class="Text"><li>
+NOTE: in order to rename or delete the log file, you must exit all instances of the client application and shutdown the OPDemoSvr application in the Component Services administrative tool. In order to do so, right-click the COM+ application in the explorer left-hand pane and select 'Shut Down' from the popup menu. 
+</li></ul></span><p class="SectionBreak" /><h4 class="Heading"><a name="_Uninstalling_the_Sample" />			
+			Uninstalling the Sample
+		</h4><p class="Text">
+			In order to uninstall this sample, follow the instructions listed below.
+		</p><span class="Text"><ul class="Text"><li>
+To uninstall this sample, run <b>buildall.bat -u.</b> or <b>build.bat -u.</b> The batch file will then call regsvcs and gacutil with the /u switch in order to remove the sample files from the COM+ catalog and Global Assembly Cache.
+</li></ul></span><p class="SectionBreak" /><h4 class="Heading"><a name="_sdkvars" />
+    Notes
+    </h4><p class="Text">
+    For the .Net Framework samples to function properly, your Path, Include, and Lib environment variables must be set correctly. 
+    In many cases, the SDK install program updates these environment variables for you. However, if you installed the .Net Framework SDK 
+    using Visual Studio .NET, or unselected "register environment variables" during setup, these environment variables will not be updated. 
+    You can set the Path, Include and Lib environment variables by running SDKVars.bat, located in the <i>&lt;SDKRoot&gt;\Bin</i> directory. 
+    SDKVars.bat must be executed in every command shell.
+    </p></BODY></HTML></root>

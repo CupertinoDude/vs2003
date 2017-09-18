@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Properties">
+	<Paragraph>
+		The CLR offers "smart" fields called properties. Properties allow a type to expose its fields while ensuring that the fields are always manipulated in a safe, consistent way so that the object's 			state never becomes corrupted. The nice thing about properties is that code to access a property is identical in syntax to code that accesses a field. Under the covers, the compiler generates 		code to call a method that performs additional logic.	
+	</Paragraph>
+	<Paragraph>
+		The code below shows how to properly create an Employee type that exposes the employee's name and age fields as properties.
+	</Paragraph>
+	<Paragraph>
+		<Sample Caption="Properties" Image="..\Images\Console.gif">
+			<CSPath>..\Samples\TypeMembers\Properties\CS</CSPath>
+			<VBPath>..\Samples\TypeMembers\Properties\VB</VBPath>
+		</Sample>
+	</Paragraph>
+	<Navigation>
+		<Previous>Constructors.xml</Previous>
+		<Next>Index Properties.xml</Next>
+	</Navigation>
+</Document>

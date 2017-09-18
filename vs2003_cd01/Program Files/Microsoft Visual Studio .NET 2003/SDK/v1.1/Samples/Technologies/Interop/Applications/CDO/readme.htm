@@ -1,0 +1,454 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./readme_files/filelist.xml">
+<title>CDO Interoperability Sample</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>438</o:TotalTime>
+  <o:Created>2000-09-25T18:58:00Z</o:Created>
+  <o:LastSaved>2001-02-13T23:37:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>282</o:Words>
+  <o:Characters>1610</o:Characters>
+  <o:Company>Microsoft</o:Company>
+  <o:Lines>13</o:Lines>
+  <o:Paragraphs>3</o:Paragraphs>
+  <o:CharactersWithSpaces>1977</o:CharactersWithSpaces>
+  <o:Version>9.4305</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>90</w:Zoom>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536871559 0 0 0 415 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-font-kerning:0pt;}
+h2
+	{mso-style-parent:"Heading 1";
+	mso-style-next:"Text\,t";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:24.0pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:22.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Verdana;
+	mso-bidi-font-family:Tahoma;
+	color:gray;
+	mso-font-kerning:12.0pt;
+	mso-bidi-font-weight:normal;}
+h4
+	{mso-style-parent:"Heading 1";
+	mso-style-next:"Text\,t";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:20.0pt;
+	mso-pagination:widow-orphan;
+	mso-outline-level:4;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Verdana;
+	mso-bidi-font-family:Tahoma;
+	mso-font-kerning:12.0pt;
+	mso-bidi-font-weight:normal;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.25in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:Tahoma;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.Text, li.Text, div.Text
+	{mso-style-name:"Text\,t";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.NumberedList2, li.NumberedList2, div.NumberedList2
+	{mso-style-name:"Numbered List 2\,nl2";
+	mso-style-parent:"Text\,t";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	tab-stops:.5in list .75in;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.TextinList1, li.TextinList1, div.TextinList1
+	{mso-style-name:"Text in List 1\,t1";
+	mso-style-parent:"Text\,t";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:467281849;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1389775872 854327556 1026309256 -1359574590 1117712888 1287159878 1995765350 1424930378 -678791962 362807472;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:1851261782;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1505935564 67698689 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=purple style="tab-interval: .5in">
+
+<h2 style="LINE-HEIGHT: 24pt; mso-line-height-rule: exactly" class=Section1><span
+ style="FONT-FAMILY: Tahoma">CDO Interoperability Sample</span></h2>
+
+<p class=MsoNormal><span style="FONT-SIZE:
+ 10pt; FONT-FAMILY: Verdana; mso-bidi-font-size: 12.0pt">This document contains the release information for the CDO
+Interoperability sample.<span style="mso-spacerun: yes">&nbsp; </span>You will find
+the following sections below: </span><span style="FONT-SIZE:
+ 10pt; FONT-FAMILY: Verdana; mso-bidi-font-family: Tahoma"><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style="FONT-SIZE:
+ 10pt; FONT-FAMILY: Verdana; mso-bidi-font-size: 12.0pt"><span style="mso-spacerun: yes">&nbsp;</span></span><span
+ style="FONT-SIZE: 10pt; FONT-FAMILY: Verdana; mso-bidi-font-family: Tahoma"><o:p></o:p></span></p>
+<DIV class=Section1>
+
+<ul type=disc>
+ <li class=MsoNormal style="tab-stops:
+     list .5in; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo3" 
+ ><span style="FONT-SIZE:
+     10pt; FONT-FAMILY: Verdana; mso-bidi-font-size: 12.0pt" 
+ ><A href="#SampleOverview">Sample
+     Overview</A></span> 
+  <LI class=MsoNormal 
+  style="tab-stops: list .5in; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo3"><FONT 
+  face=Verdana><FONT size=2><A href="#Req">Requirements <span style="FONT-SIZE:
+     10pt; FONT-FAMILY: Verdana; mso-bidi-font-family: Tahoma" 
+ ><o:p></o:p></span></A></FONT></FONT>
+ <li class=MsoNormal style="tab-stops:
+     list .5in; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo3" 
+ ><a name=version></a><A
+     href="#Loc"><span style="mso-bookmark: version"><span
+     
+  style="FONT-SIZE: 10pt; FONT-FAMILY: Verdana; mso-bidi-font-size: 12.0pt" 
+ >Location
+     of the sample</span></span><span style="mso-bookmark: version"></span></A><span
+     
+  style="mso-bookmark: version"> </span><span style="mso-bookmark: version"><span
+     
+  style="FONT-SIZE: 10pt; FONT-FAMILY: Verdana; mso-bidi-font-family: Tahoma" 
+ ><o:p></o:p></span></span>
+ <li class=MsoNormal style="tab-stops:
+     list .5in; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo3" 
+ ><span style="mso-bookmark:
+     version"></span><A href="#Building"><span style="mso-bookmark:
+     version"><span style="FONT-SIZE:
+     10pt; FONT-FAMILY: Verdana; mso-bidi-font-size: 12.0pt" 
+ >Building the sample</span></span><span
+     
+  style="mso-bookmark: version"></span></A><span style="mso-bookmark: version">
+     </span><span style="mso-bookmark: version"><span style="FONT-SIZE:
+     10pt; FONT-FAMILY: Verdana; mso-bidi-font-family: Tahoma" 
+ ><o:p></o:p></span></span>
+ <li class=MsoNormal style="tab-stops:
+     list .5in; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; mso-list: l0 level1 lfo3" 
+ ><span style="mso-bookmark:
+     version"></span><A href="#Running"><span style="mso-bookmark:
+     version"><span style="FONT-SIZE:
+     10pt; FONT-FAMILY: Verdana; mso-bidi-font-size: 12.0pt" 
+ >Running the sample</span></span><span
+     
+  style="mso-bookmark: version"></span></A><span style="mso-bookmark: version"><span
+     
+  style="FONT-SIZE: 10pt; FONT-FAMILY: Verdana; mso-bidi-font-family: Tahoma" 
+ ><o:p></o:p></span></span></li>
+</ul></DIV>
+
+<h4><span style="mso-bookmark: version"><a name="_What_this_sample"></a></span>&nbsp;</h4>
+
+<h4><span style="mso-bookmark: version"><a name="_What_this_sample_1"></a><a
+ name="_Sample_Overview"></a><A name=#SampleOverview><SPAN 
+style="mso-bookmark: version"></SPAN></A>Sample Overview</span></h4>
+
+<p class=MsoNormal style="MARGIN-BOTTOM: 12pt"><span style="mso-bookmark: version"><a
+ name="_Getting_Started"></a><a name="_Location_of_Sample"></a><span
+ style="FONT-SIZE: 10pt; FONT-FAMILY: Verdana; mso-bidi-font-size: 12.0pt">This
+sample demonstrates the use of an existing unmanaged COM component
+(Collaborative Data Objects 1.2.1) from managed code.<span style="mso-spacerun:
+ yes">&nbsp; </span>This sample contains two graphical projects.<span
+ style="mso-spacerun: yes">&nbsp; </span></span></span></p>
+<H4 class=MsoNormal style="MARGIN-BOTTOM: 12pt"><SPAN 
+style="mso-bookmark: version"><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: Verdana; mso-bidi-font-size: 12.0pt"><SPAN 
+style="mso-spacerun: yes"></SPAN></SPAN></SPAN><span style="mso-bookmark: version"><A name=#Req><SPAN 
+style="mso-bookmark: version"></SPAN></A>Requirements</span></H4>
+<P class=MsoNormal style="MARGIN-BOTTOM: 12pt"><SPAN 
+style="mso-bookmark: version"></SPAN><span style="mso-bookmark: version"><FONT face=Verdana size=2>This sample requires <STRONG>Microsoft 
+Windows&nbsp;2000</STRONG>
+or above, <b>Collaborative Data Objects (CDO) 1.2.1</b> and a Microsoft
+Exchange profile to function properly.<span style="mso-spacerun: yes">&nbsp;
+</span>CDO is installed with Microsoft Outlook 2000 by selecting the Custom
+Installation feature.<span style="mso-spacerun: yes">&nbsp; </span>Select CDO to run from your system.<BR>      
+<BR></FONT>   
+  </span></P>
+
+<h4><span style="mso-bookmark: version"><A name=#Loc><SPAN 
+style="mso-bookmark: version"></SPAN></A>Location of the Sample<span
+ style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></h4>
+
+<p class=MsoNormal style="MARGIN-BOTTOM: 12pt"><span style="mso-bookmark: version"><span
+ style="FONT-SIZE: 10pt; FONT-FAMILY: Verdana; mso-bidi-font-size: 12.0pt">This
+sample is located in the <b>Interop\Applications\CDO</b> directory of the .NET Framework
+SDK samples directory.</span></span><span style="mso-bookmark: version"><span
+ style="FONT-SIZE: 10pt; FONT-FAMILY: Verdana; mso-bidi-font-family: Tahoma"><o:p></o:p></span></span></p>
+
+<p class=TextinList1 style="MARGIN-BOTTOM: 12pt; LINE-HEIGHT: normal"><span
+ style="mso-bookmark: version"><span style="mso-bidi-font-family: Tahoma"><STRONG>For Example:</STRONG> </span></span></p>
+
+<p class=TextinList1 style="LINE-HEIGHT: normal"><span style="mso-bookmark: version"><span
+ style="FONT-FAMILY: 'Courier New'"><FONT 
+face=Verdana></p>
+<P class=TextinList1 style="MARGIN-BOTTOM: 12pt; LINE-HEIGHT: normal"><A 
+name=version><SPAN 
+style="mso-bidi-font-family: 'Courier New'"><STRONG>C:\Program 
+Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Interop\Applications\CDO</STRONG></SPAN></A><STRONG><SPAN 
+style="mso-bookmark: version"><SPAN 
+style="FONT-FAMILY: 'Courier New'">&nbsp;</SPAN></SPAN></STRONG><STRONG>&nbsp;<o:p></o:p></STRONG></FONT></SPAN></SPAN></P>
+
+<p class=Text style="MARGIN-BOTTOM: 12pt; LINE-HEIGHT: normal"><span
+ style="mso-bookmark: version"><span style="mso-bidi-font-size: 12.0pt">This
+sample is contained in two subdirectories:</span></span><span style="mso-bookmark:
+ version"><span style="mso-bidi-font-size: 12.0pt; mso-bidi-font-family: Tahoma"><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style="MARGIN:
+ 0in 0in 12pt 0.25in"><span style="mso-bookmark: version"><b style="mso-bidi-font-weight:
+ normal"><span style="FONT-SIZE:
+ 10pt; FONT-FAMILY: Verdana; mso-bidi-font-size: 12.0pt">InboxViewer </span></b></span><span style="mso-bookmark: version"><span
+ style="FONT-SIZE: 10pt; FONT-FAMILY: Verdana; mso-bidi-font-size: 12.0pt">– Using
+CDO from a C# form</span></span><span style="mso-bookmark: version"><span
+ style="FONT-SIZE: 10pt; FONT-FAMILY: Verdana; mso-bidi-font-family: Tahoma"><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style="MARGIN:
+ 0in 0in 12pt 0.25in"><span style="mso-bookmark: version"><b><span
+ style="FONT-SIZE: 10pt; FONT-FAMILY: Verdana; mso-bidi-font-size: 12.0pt">InboxViewer2
+</span></b></span><span style="mso-bookmark: version"><span style="FONT-SIZE:
+ 10pt; FONT-FAMILY: Verdana; mso-bidi-font-size: 12.0pt">– Using CDO from a VB6 form, passing data back and forth 
+between a C# server<BR>     
+         </span></span><span
+ style="mso-bookmark: version"><b><span style="FONT-FAMILY: 'Courier New'">&nbsp;<o:p></o:p></span></b></span></p>
+
+<h4><span style="mso-bookmark: version"><a name="_Building_the_Sample"></a><A 
+name=#Building><SPAN style="mso-bookmark: version"></SPAN></A>Building
+the Sample</span></h4><span style="mso-bookmark: version"><span
+ style="FONT-SIZE: 10pt; FONT-FAMILY: Verdana; mso-bidi-font-size: 12.0pt">
+<P class=MsoNormal style="MARGIN-BOTTOM: 12pt"><SPAN 
+style="FONT-FAMILY: Verdana"><FONT size=2><SPAN 
+style="mso-bookmark: version"><SPAN 
+style="FONT-SIZE: 10pt; FONT-FAMILY: Verdana; mso-bidi-font-size: 12.0pt"></P>
+<P class=MsoNormal style="MARGIN-BOTTOM: 12pt"><SPAN 
+style="FONT-FAMILY: Verdana"><FONT size=2>In order to properly build this 
+sample:</FONT></SPAN></P>
+<OL>
+  <LI>
+  <DIV class=NumberedList2 
+  style="MARGIN-BOTTOM: 12pt; LINE-HEIGHT: normal; tab-stops: .25in list .5in; mso-list: l2 level1 lfo32"><SPAN 
+  style="mso-bidi-font-family: Tahoma">At the command line enter the 
+  following:</SPAN></DIV>
+  <UL>
+    <LI>
+    <DIV class=NumberedList2 
+    style="MARGIN-BOTTOM: 12pt; LINE-HEIGHT: normal; tab-stops: .25in list .5in; mso-list: l2 level1 lfo32"><SPAN 
+    style="mso-bidi-font-family: Tahoma"></SPAN><B><SPAN 
+    style="mso-bidi-font-family: 'Courier New'">NMAKE All</SPAN></B><B><SPAN 
+    style="FONT-FAMILY: 'Courier New'"><o:p></o:p></SPAN></B></DIV></LI></UL></LI></OL>
+<P class=MsoNormal style="MARGIN-BOTTOM: 12pt"><SPAN 
+style="FONT-FAMILY: Verdana"><FONT size=2><o:p></o:p></FONT></SPAN></P>
+<H4 class=MsoNormal style="MARGIN-BOTTOM: 12pt"> 
+             
+      </span></span></H4>
+<P class=MsoNormal style="MARGIN-BOTTOM: 12pt"></FONT></SPAN></SPAN></SPAN><![if !supportLists]><![endif]><span style="mso-bookmark: version"><span
+ style="FONT-SIZE: 10pt; FONT-FAMILY: Verdana; mso-bidi-font-family: Tahoma">&nbsp;<o:p></o:p></span></span></P>
+
+<h4><span style="mso-bookmark: version"><a name="_Running_the_Sample"></a><A 
+name=#Running><SPAN style="mso-bookmark: version"></SPAN></A>Running
+the Sample</span></h4>
+
+<p class=MsoNormal style="MARGIN-BOTTOM: 12pt"><span style="mso-bookmark: version"><span
+ style="FONT-SIZE: 10pt; FONT-FAMILY: Verdana; mso-bidi-font-size: 12.0pt">In order
+to run this sample, follow the instructions listed below.<o:p></o:p></span></span></p>
+
+<p class=MsoNormal style="MARGIN-BOTTOM: 12pt"><span style="mso-bookmark: version"><b><span
+ style="FONT-SIZE: 10pt; FONT-FAMILY: Verdana; mso-bidi-font-size: 12.0pt">Step 1:</span></b></span><span
+ style="mso-bookmark: version"><b><span style="FONT-SIZE:
+ 10pt; FONT-FAMILY: Verdana; mso-bidi-font-family: Tahoma"><o:p></o:p></span></b></span></p>
+
+<span style="mso-bookmark: version"></span>
+
+<p class=NumberedList2 style="MARGIN-BOTTOM:
+ 12pt; LINE-HEIGHT: normal; tab-stops: list .5in; mso-list: l1 level1 lfo5"><![if !supportLists]><span
+ style="FONT-FAMILY: Symbol; mso-bidi-font-family: Tahoma">·<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style="mso-bidi-font-family: Tahoma">Change to
+appropriate InboxViewer directory.<o:p></o:p></span></p>
+
+<p class=NumberedList2 style="MARGIN-BOTTOM:
+ 12pt; LINE-HEIGHT: normal; tab-stops: list .5in; mso-list: l1 level1 lfo5"><![if !supportLists]><span
+ style="FONT-FAMILY: Symbol; mso-bidi-font-family: Tahoma">·<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style="mso-bidi-font-family: Tahoma">Type
+InboxViewer from the command line.<o:p></o:p></span></p>
+
+<p class=NumberedList2 style="MARGIN-BOTTOM:
+ 12pt; TEXT-INDENT: 0in; LINE-HEIGHT: normal; tab-stops: .25in .5in list .75in"><b><span style="mso-bidi-font-family:
+ Tahoma">For Example:<o:p></o:p></span></b></p>
+
+<p class=TextinList1 style="MARGIN:
+ 0in 0in 12pt 1in; LINE-HEIGHT: normal"><b><span style="FONT-FAMILY: 'Courier New'"><FONT face=Verdana>cd
+InboxViewer2<o:p></o:p></FONT></span></b></p>
+
+<p class=TextinList1 style="MARGIN:
+ 0in 0in 12pt 1in; LINE-HEIGHT: normal"><b><span style="FONT-FAMILY: 'Courier New'"><FONT 
+face=Verdana>InboxViewer</FONT></span></b><b><span style="FONT-FAMILY: 'Courier New'"><FONT 
+face=Verdana>&nbsp;<o:p></o:p></FONT></span></b></p>
+
+<p class=TextinList1 style="MARGIN:
+ 0in 0in 12pt; LINE-HEIGHT: normal"><b><span style="mso-bidi-font-family: 'Courier New'">Step
+2:<o:p></o:p></span></b></p>
+
+<p class=TextinList1 style="MARGIN:
+ 0in 0in
+ 12pt 0.5in; TEXT-INDENT: -0.25in; LINE-HEIGHT: normal; tab-stops: list .5in; mso-list: l1 level1 lfo5"><![if !supportLists]><span style="FONT-FAMILY:
+ Symbol; mso-bidi-font-family: 'Courier New'; mso-bidi-font-weight: bold">·<span
+ style  ="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>The InboxViewer samples populate a ListView control with
+messages from the user’s inbox.<span style="mso-spacerun: yes">&nbsp; </span>To view
+a message, double-click on an item in the list.<b><span style="FONT-FAMILY:
+ 'Courier New'"><o:p></o:p></span></b></p>
+
+<p class=TextinList1 style="MARGIN:
+ 0in 0in
+ 12pt 0.5in; TEXT-INDENT: -0.25in; LINE-HEIGHT: normal; tab-stops: list .5in; mso-list: l1 level1 lfo5"><![if !supportLists]><span style="FONT-FAMILY:
+ Symbol; mso-bidi-font-family: 'Courier New'; mso-bidi-font-weight: bold">·<span
+ style  ="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b>Note:</b> A “Choose Profile” dialog may appear at
+the start of the applications.&nbsp; Select OK and continue.<b><span
+ style="FONT-FAMILY: 'Courier New'"><o:p></o:p></span></b></p>
+
+<p class=TextinList1 style="MARGIN:
+ 0in 0in 12pt 0.5in; LINE-HEIGHT: normal"><b><span style="FONT-FAMILY: 'Courier New'">&nbsp;<o:p></o:p></span></b></p>
+
+<p class=TextinList1 style="MARGIN:
+ 0in 0in 12pt 0.5in; LINE-HEIGHT: normal"><b><span style="FONT-FAMILY: 'Courier New'">&nbsp;<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style="FONT-FAMILY: Verdana">&nbsp;<o:p></o:p></span></p>
+
+</body>
+
+</html>

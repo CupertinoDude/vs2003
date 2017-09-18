@@ -1,0 +1,54 @@
+<?xml version='1.0'?> 
+<?xml-stylesheet type="text/xsl" href="..\..\..\..\readme.xsl"?> 
+<sample> 
+<title> Remoting Serialization Sample</title>
+
+<title-short>Using Serializers with .NET remoting</title-short>
+
+<overview> 
+This sample shows how to use the different formatters to serialize a class to a
+file and read it back into memory.  There are five different executables.
+</overview>
+
+<subdirectory>Technologies\Remoting\Advanced\Serialization
+
+<directory name = "BinaryFormatter">
+The source and makefile for ToFile.exe
+</directory>
+
+<directory name = "ISerializable">
+The source and makefile for ISerializableClient.exe
+</directory>
+
+<directory name = "SoapFormatter">
+The source and makefile for ToFile.exe
+</directory>
+
+<directory name = "SoapMessage">
+The source and makefile for SoapMessageClient.exe and PlanetEarth.exe
+</directory>
+</subdirectory>
+
+<buildsteps> 
+<step> 
+Type <b>nmake -a all</b> from the command line.      
+<example> 
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\Advanced\Serialization> nmake -a all
+</example>
+</step>
+</buildsteps>
+
+<runsteps> 
+<step>
+Run the executables described above from a console window.
+</step>
+</runsteps>
+
+<keywords> 
+<word name="Remoting" keyword="R"/>
+<word name="Collections" keyword="C"/>
+<word name="MBR" keyword="M"/>
+</keywords>
+</sample>
+
+

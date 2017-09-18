@@ -1,0 +1,101 @@
+<?xml version='1.0'?> 
+	<?xml-stylesheet type="text/xsl" href="..\..\..\..\..\readme.xsl"?> 
+	<sample> 
+	<title> Remoting Objects Sample</title>
+    
+	<title-short>Using Client Activated objects .NET remoting</title-short>
+    
+	<overview> 
+    This sample shows how to create a client activated object, publish
+    it as a service and use a client to activate the object and make
+    a number of method calls.  It demonstrates how to:<p></p>
+
+    1) activate a sample using a constructor with parameters<p></p> 
+    2) use set and get to access a public property<p></p> 
+    3) store state between calls<p></p> 
+    4) use methods to change state<p></p> 
+    5) call overloaded methods on remote objects<p></p> 
+
+    This sample uses SOAP over HTTP on port 80.
+	</overview>
+    
+	<subdirectory>Technologies\Remoting\VB\Basic\RemotingObjects
+
+    <directory name = "bin">
+    Contains the CAOLibrary.dll required when the service is accessed using IIS.  The service
+    should be registered with IIS before calling this service from the client in 
+    Client/ConsoleClient.
+	</directory>
+
+    <directory name = "Service">
+    The source file CAOLibrary.cs and associated build.bat is stored here.  The build.bat
+    creates CAOLibrary.dll and copies this file to the bin directory.
+	</directory>
+
+    <directory name = "Client">
+    Contains the ConsoleClient directory.
+	</directory>
+
+    <directory name = "Client\ConsoleClient">
+    Contains the source and associated build.bat to build client.exe.  The client
+    uses client.exe.config to configure itself.
+	</directory>
+
+	</subdirectory>
+    
+    <customsection  name = "Registering the service in IIS">
+    <li>Compile the service to a DLL and copy this DLL to a bin directory
+    where the service will be loaded from.  For this sample we create
+    the bin subdirectory under RemotingObjects and copy the CAILibrary.dll there.</li><p></p>
+
+    <li>Start Internet Services Manager and select Default Web Site
+    under the server node.  Select Action, New, Virtual Directory on the
+    menu and click Next to continue.</li><p></p> 
+
+    <li>Enter RemotingObjects as the alias and press Next.</li><p></p> 
+
+    <li>Enter the directory where the service is located.  Enter the full path
+    up to but excluding the bin directory where the DLL in step 1 was copied to.
+    For example<p></p> 
+
+      <b>C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\VB\Basic\RemotingObjects</b></li><p></p>
+  
+    <li>Press Next.  Accept the defaults presented and press Next again.  Press Finish.  The service
+    has now been registered and will appear under the list of Default Web Sites in the Internet Services
+    Manager window.</li><p></p> 
+
+    <li>Check that there is a web.config file in the directory where the service was registered.  This
+    file describes our service and will automatically be loaded when a client attempts to access our
+    service with a browser or client using the HTTP channel on port 80.</li> 
+
+	</customsection>
+    
+    <customsection  name = "Requirements">
+    This sample will only operate correctly on any version of Windows with the Common Language Runtime and Internet Information Server (IIS) installed.  
+    </customsection>
+
+	<buildsteps> 
+	<step> 
+	Type <b>BuildAll.bat</b> from the command line.      
+	<example> 
+	C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\VB\Basic\RemotingObjects> BuildAll.bat
+	</example>
+	</step>
+	</buildsteps>
+    
+	<runsteps> 
+	<step>
+    Ensure that RemotingObjects is registered as a service in IIS and run client.exe
+    in the Client/ConsoleClient directory
+	</step>
+	</runsteps>
+    
+	<keywords> 
+	<word name="Remoting" keyword="R"/>
+	<word name="Collections" keyword="C"/>
+	<word name="MBR" keyword="M"/>
+	<word name="Client Activated" keyword="A"/>
+	</keywords>
+	</sample>
+
+

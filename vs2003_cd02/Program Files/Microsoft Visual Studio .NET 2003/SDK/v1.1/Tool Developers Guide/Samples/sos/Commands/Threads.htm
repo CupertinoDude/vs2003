@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">Threads</TD>
+					</TR>
+					<TR>
+						<TD>
+							Lists managed threads.</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!Threads</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">None</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>
+0:001&gt; !Threads
+ThreadCount: 6
+UnstartedThread: 0
+BackgroundThread: 6
+PendingThread: 0
+DeadThread: 0
+                             PreEmptive   GC Alloc               Lock     
+       ID ThreadOBJ    State     GC       Context       Domain   Count APT Exception
+  1    70 00150c98   200a220 Enabled  010a513c:010a6228 001a57b8     1 MTA
+  8   e5c 0015e338      b220 Enabled  00000000:00000000 00150718     0 MTA (Finalizer)
+  9   e90 00164ba8   1800220 Enabled  0108c3cc:0108e1f0 00150718     0 MTA (Threadpool Worker)
+  4   4cc 001ad5f0   2000220 Enabled  010abc64:010ac228 001a57b8     1 MTA
+ 11   e38 001d6598   2000220 Enabled  051a69e4:051a6fa8 001a57b8     1 MTA
+ 13   98c 0020e8b8   1800220 Enabled  0519f574:051a0fa8 00150718     0 MTA (Threadpool Worker)
+										</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Output</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<P>
+								<TABLE id="Table2" height="325" cellSpacing="1" cellPadding="1" width="752" border="1">
+									<TR>
+										<TD>ThreadCount</TD>
+										<TD>Number of managed threads</TD>
+									</TR>
+									<TR>
+										<TD>UnstartedThread</TD>
+										<TD>Number of unstarted managed threads</TD>
+									</TR>
+									<TR>
+										<TD>BackgroundThread</TD>
+										<TD>Number of managed background threads</TD>
+									</TR>
+									<TR>
+										<TD>PendingThread</TD>
+										<TD>Number of pending managed threads</TD>
+									</TR>
+									<TR>
+										<TD>DeadThread</TD>
+										<TD>Number of dead threads</TD>
+									</TR>
+									<TR>
+										<TD>ID</TD>
+										<TD>Thread ID (hex).</TD>
+									</TR>
+									<TR>
+										<TD>ThreadObj</TD>
+										<TD>
+											<P>Address of thread object pertaining to current thread.</P>
+										</TD>
+									</TR>
+									<TR>
+										<TD>State</TD>
+										<TD>Bitmasked DWORD of thread states</TD>
+									</TR>
+									<TR>
+										<TD height="21">PreEmptive GC</TD>
+										<TD height="21">Enabled or Disabled.&nbsp; Indicates whether garbage collections 
+											is&nbsp;scheduled cooperatively with this thread.</TD>
+									</TR>
+									<TR>
+										<TD>GC Alloc Context</TD>
+										<TD>
+											<P>Start and end of address space allocated for garbage collection.</P>
+										</TD>
+									</TR>
+									<TR>
+										<TD>Domain</TD>
+										<TD>Address of domain this thread belongs to. Use the DumpDomain command for 
+											information about the domain.</TD>
+									</TR>
+									<TR>
+										<TD>Lock Count</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD>APT</TD>
+										<TD>Apartment threading model. This can be STA, MTA, NTA (neutral) or Unk 
+											(unknown).</TD>
+									</TR>
+									<TR>
+										<TD>Exception</TD>
+										<TD>
+											<P>Describes the type of thread if it is a thread used by the runtime. The possible 
+												values are shown below.</P>
+											<P>
+												<TABLE id="Table3" cellSpacing="1" cellPadding="1" width="300" border="1">
+													<TR>
+														<TD>finalizer</TD>
+													</TR>
+													<TR>
+														<TD>GC</TD>
+													</TR>
+													<TR>
+														<TD>Theadpool Worker</TD>
+													</TR>
+													<TR>
+														<TD>Threadpool Completion Port</TD>
+													</TR>
+												</TABLE>
+											</P>
+										</TD>
+									</TR>
+								</TABLE>
+							</P>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

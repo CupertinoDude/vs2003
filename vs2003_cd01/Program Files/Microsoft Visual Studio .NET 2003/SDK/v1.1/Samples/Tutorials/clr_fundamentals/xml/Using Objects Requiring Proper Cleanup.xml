@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Using Objects that Require Proper Cleanup">
+	<Paragraph>
+		When your application code no longer maintains a reference to an object, the garbage collector detects this and automatically frees the object. However, garbage collections are not performed 		continuously; instead, they are usually performed when it has been determined that memory usage has reached some threshold. This means that the application developer cannot know exactly 		when a garbage collection will run and when no-longer-used objects will be freed.
+	</Paragraph>
+	<Paragraph>
+		For most object types (like Points, Rectangles, or Strings), this is fine. However, some types are wrappers over operating system resources such as files, network connections, database 			connection, bitmaps, and so on. In many cases, the application needs to have explicit control over when objects of these types are cleaned-up. To allow the developer this control, these types 		offer a method that can be called directly. This method is called Close or Dispose depending on the type. For example, you would Close a FileStream object but you would Dispose of a bitmap.
+	</Paragraph>
+	<Paragraph>
+		This sample shows how to properly control the lifetime of a FileStream object.	
+	</Paragraph>
+	<Paragraph>
+		<Sample Caption="Using Objects Requiring Cleanup" Image="..\Images\Console.gif">
+			<CSPath>..\Samples\MemoryManagement\UsingCleanup\CS</CSPath>
+			<VBPath>..\Samples\MemoryManagement\UsingCleanup\VB</VBPath>
+		</Sample>
+	</Paragraph>
+	<Navigation>
+		<Previous>Memory Management.xml</Previous>
+		<Next>Creating Object Requiring Explicit Cleanup.xml</Next>
+	</Navigation>
+</Document>

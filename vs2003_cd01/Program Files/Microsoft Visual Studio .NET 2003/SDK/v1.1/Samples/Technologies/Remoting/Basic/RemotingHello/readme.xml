@@ -1,0 +1,166 @@
+<?xml version='1.0'?> 
+	<?xml-stylesheet type="text/xsl" href="..\..\..\..\readme.xsl"?> 
+	<sample> 
+	<title> Remoting Hello Sample</title>
+    
+	<title-short>Hosting remote objects</title-short>
+    
+	<overview> 
+    This sample shows how to build a simple service that
+    manipulates a string passed to it as a parameter and
+    return the result back to the caller.  It is important
+    to note that the service must be hosted before it can be
+    called by a client.  This can be achieved by compiling the
+    service as a DLL and registering the service in IIS or by
+    loading the service from the DLL using the console
+    application provided for this purpose.
+	</overview>
+    
+	<subdirectory>Technologies\Remoting\Basic\RemotingHello
+
+    <directory name = "bin">
+    Contains the Hello.dll required when the service is accessed using IIS.  The service should be registered with
+    IIS before calling this service from the clients in the Client/ConsoleClient, Client/ConsoleClientAll and
+    Client/RemotingHelloWebClient directories.
+    </directory>
+    
+    <directory name = "Service">
+    The source code for the HelloService and associated build.bat are stored here.  The build.bat file creates
+    Hello.dll and copies the file to the bin directory.
+    </directory>
+
+    <directory name = "Service\DirectHostService">
+    The source code for hosting this service in a console application and associated build.bat.  The service
+    should be started by running runme.bat before calling the service from the clients in the Client/ConsoleClientDirect
+    directory.
+    </directory>
+
+    <directory name = "Client">
+    Contains a buildall.bat to build all the clients in the subdirectories
+    </directory>
+
+    <directory name = "Client\ConsoleClient">
+    Contains the HelloNew client and associated build.bat.  Hello.dll is copied from the bin directory
+    because the compiler needs to reference the metadata of the service when compiling the client.  The RemotingHello
+    service should be registered in IIS before running this client.
+    </directory>
+
+    <directory name = "Client\ConsoleClientAll">
+    Contains the source files and associated build.bat files to build the following executables:
+    HelloAsync.exe, HelloAsync2.exe, HelloGetObj.exe. HelloGetObj2.exe, HelloNew.exe, HellowNew2.exe and
+    HelloNew3.exe.  Each executable has its own config file.  The RemotingHello service should be registered in
+    IIS before running these clients.
+    </directory>
+
+    <directory name = "Client\ConsoleClientDirect">
+    Contains the source files and associated build.bat files to build the following executables:
+    HelloAsync.exe, HelloAsync2.exe, HelloGetObj.exe. HelloGetObj2.exe, HelloNew.exe, HellowNew2.exe and
+    HelloNew3.exe.  Each executable has its own config file.  The HelloService in Service/DirectHostService should
+    be running before running these clients.
+    </directory>
+ 
+    <directory name = "Client\RemotingHelloWebClient">
+    Contains the config and the aspx files required to access the service from a web browser.
+    Please ensure that a HelloWebClient is registered with IIS at the directory samples\technologies\remoting\Basic\RemotingHello\Client\RemotingHelloWebClient.
+    For example<p></p>
+
+      C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\technologies\remoting\Basic\RemotingHello\Client\RemotingHelloWebClient
+    </directory>
+    </subdirectory>
+    
+    <customsection  name = "Registering the service in IIS">
+    <li>Compile the service to a DLL and copy this DLL to a bin directory
+    where the service will be loaded from.  For this sample we create
+    the bin subdirectory under RemotingHello and copy Hello.dll there.</li><p></p>
+
+    <li>Start Internet Services Manager and select Default Web Site
+    under the server node.  Select Action, New, Virtual Directory on the
+    menu and click Next to continue.</li><p></p> 
+
+    <li>Enter RemotingHello as the alias and press Next</li><p></p> 
+
+    <li>Enter the directory where the service is located.  Enter the full
+    path up to but excluding the bin directory where the dll in step 1
+    was copied to.  For example</li><p></p> 
+
+      C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\Basic\RemotingHello<p></p> 
+
+    <li>Press Next.  Accept the defaults presented and press Next again.  Press Finish.  The service
+    has now been registered and will appear under the list of Default Web Sites in the Internet Services
+    Manager window.</li><p></p> 
+
+    <li>Check that there is a web.config file in the directory where the service was registered.  This
+    file describes our service and will automatically be loaded when a client attempts to access our
+    service with a browser or client using the HTTP channel on port 80.</li>
+	</customsection>
+    
+    <customsection  name = "Registering the web client in IIS">
+    <li>Compile the service to a DLL and copy this DLL to a bin directory
+    where the client will be loaded from.  For this sample we create
+    the bin subdirectory under RemotingHello\Client\RemotingHelloWebClient and copy Hello.dll there.</li><p></p>
+
+    <li>Start Internet Services Manager and select Default Web Site
+    under the server node.  Select Action, New, Virtual Directory on the
+    menu and click Next to continue.</li><p></p> 
+
+    <li>Enter HelloWebClient as the alias and press Next</li><p></p> 
+
+    <li>Enter the directory where the service is located.  Enter the full
+    path up to but excluding the bin directory where the dll in step 1
+    was copied to.  For example</li><p></p> 
+
+      C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\Basic\RemotingHello\Client\RemotingHelloWebClient<p></p> 
+
+    <li>Press Next.  Accept the defaults presented and press Next again.  Press Finish.  The service
+    has now been registered and will appear under the list of Default Web Sites in the Internet Services
+    Manager window.</li><p></p> 
+
+    <li>Check that there is a web.config file in the directory where the client was registered.  This
+    file describes our client and will automatically be loaded when the page is loaded.</li>
+	</customsection>
+    
+    <customsection  name = "Hosting the service in a console application">
+    <li>Copy the service dll to the same directory as the hosting executable</li><p></p>
+    <li>Create a configuration file that describes the service and channels we intend using</li><p></p> 
+    <li>Call RemotingConfiguration.Configure to register the config file</li><p></p> 
+    <li>Pause the application to prevent it from quitting</li>
+	</customsection>
+    
+    <customsection  name = "Requirements">
+    This sample will only operate correctly on any version of Windows with the Common Language Runtime and Internet Information Server (IIS) installed.  
+    </customsection>
+
+	<buildsteps> 
+	<step> 
+	Type <b>BUILDALL.bat</b> from the command line.      
+	<example> 
+	C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\Basic\RemotingHello> BUILDALL.bat
+	</example>
+	</step>
+	</buildsteps>
+    
+	<runsteps> 
+	<step>
+    Ensure that the HelloService host is running (see DirectHostService above) and run all the executables
+    in Client/ConsoleClientDirect.
+	</step>
+
+	<step>
+    Ensure that the HelloService is registered with IIS (see Registering the service in IIS above) and run all the
+    executables in the Client/ConsoleClient and Client/ConsoleClientAll directories.
+	</step>
+
+	<step>
+    Ensure that the HelloWebClient is registered with IIS as described above and run
+    the sample from a browser by connecting to http://localhost/HelloWebClient
+	</step>
+	</runsteps>
+    
+	<keywords> 
+	<word name="Remoting" keyword="R"/>
+	<word name="Channels" keyword="C"/>
+	<word name="MBR" keyword="M"/>
+	</keywords>
+	</sample>
+
+

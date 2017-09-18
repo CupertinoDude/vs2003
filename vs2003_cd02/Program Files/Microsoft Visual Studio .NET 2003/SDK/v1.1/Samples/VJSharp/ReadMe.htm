@@ -1,0 +1,336 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"
+	xmlns="http://www.w3.org/TR/REC-html40">
+	<head>
+		<title>Visual J# .NET Samples </title>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<meta name="ProgId" content="FrontPage.Editor.Document">
+		<meta name="Generator" content="Microsoft FrontPage 5.0">
+		<meta name="Originator" content="Microsoft Word 10"> <!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Marjan Badiei</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Marjan Badiei</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>50</o:TotalTime>
+  <o:Created>2002-09-16T21:02:00Z</o:Created>
+  <o:LastSaved>2002-09-16T21:02:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>593</o:Words>
+  <o:Characters>3382</o:Characters>
+  <o:Company>Microsoft Corporation</o:Company>
+  <o:Lines>28</o:Lines>
+  <o:Paragraphs>7</o:Paragraphs>
+  <o:CharactersWithSpaces>3968</o:CharactersWithSpaces>
+  <o:Version>10.3501</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->  <!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackRevisions/>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+		<style> <!-- /* Font Definitions */ @font-face {font-family:Tahoma; panose-1:2 11 6 4 3 5 4 4 2 4; mso-font-alt:"?? ??"; mso-font-charset:0; mso-generic-font-family:swiss; mso-font-pitch:variable; mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+	@font-face {font-family:Verdana; panose-1:2 11 6 4 3 5 4 4 2 4; mso-font-charset:0; mso-generic-font-family:swiss; mso-font-pitch:variable; mso-font-signature:536871559 0 0 0 415 0;}
+	@font-face {font-family:"Lucida Console"; panose-1:2 11 6 9 4 5 4 2 2 4; mso-font-charset:0; mso-generic-font-family:modern; mso-font-pitch:fixed; mso-font-signature:-2147482993 6144 0 0 31 0;}
+	/* Style Definitions */ p.MsoNormal, li.MsoNormal, div.MsoNormal {mso-style-parent:""; margin-bottom:.0001pt; mso-pagination:widow-orphan; font-size:12.0pt; font-family:"Times New Roman"; mso-fareast-font-family:"Times New Roman"; margin-left:0in; margin-right:0in; margin-top:0in}
+	h1 {mso-margin-top-alt:auto; margin-right:0in; mso-margin-bottom-alt:auto; margin-left:0in; mso-pagination:widow-orphan; mso-outline-level:1; font-size:24.0pt; font-family:"Times New Roman"; font-weight:bold;}
+	h4 {mso-margin-top-alt:auto; margin-right:0in; mso-margin-bottom-alt:auto; margin-left:0in; mso-pagination:widow-orphan; mso-outline-level:4; font-size:12.0pt; font-family:"Times New Roman"; font-weight:bold;}
+	a:link, span.MsoHyperlink {color:blue; text-decoration:underline; text-underline:single;}
+	a:visited, span.MsoHyperlinkFollowed {color:purple; text-decoration:underline; text-underline:single;}
+	p {mso-margin-top-alt:auto; margin-right:0in; mso-margin-bottom-alt:auto; margin-left:0in; mso-pagination:widow-orphan; font-size:12.0pt; font-family:"Times New Roman"; mso-fareast-font-family:"Times New Roman";}
+	p.topicstatus, li.topicstatus, div.topicstatus {mso-style-name:topicstatus; mso-margin-top-alt:auto; margin-right:0in; mso-margin-bottom-alt:auto; margin-left:0in; mso-pagination:widow-orphan; font-size:12.0pt; font-family:"Times New Roman"; mso-fareast-font-family:"Times New Roman";}
+	p.text, li.text, div.text {mso-style-name:text; mso-margin-top-alt:auto; margin-right:0in; mso-margin-bottom-alt:auto; margin-left:0in; mso-pagination:widow-orphan; font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:"Times New Roman"; mso-bidi-font-family:"Times New Roman";}
+	p.fixedheading, li.fixedheading, div.fixedheading {mso-style-name:fixedheading; mso-margin-top-alt:auto; margin-right:0in; mso-margin-bottom-alt:auto; margin-left:0in; mso-pagination:widow-orphan; font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:"Times New Roman"; mso-bidi-font-family:"Times New Roman";}
+	p.fixedtext, li.fixedtext, div.fixedtext {mso-style-name:fixedtext; mso-margin-top-alt:auto; margin-right:0in; mso-margin-bottom-alt:auto; margin-left:.25in; mso-pagination:widow-orphan; font-size:10.0pt; font-family:"Lucida Console"; mso-fareast-font-family:"Times New Roman"; mso-bidi-font-family:"Times New Roman"; font-weight:bold;}
+	ins {mso-style-type:export-only; text-decoration:none;}
+	span.msoIns {mso-style-type:export-only; mso-style-name:""; text-decoration:underline; text-underline:single}
+	span.msoDel {mso-style-type:export-only; mso-style-name:""; text-decoration:line-through; color:red}
+	span.SpellE {mso-style-name:""; mso-spl-e:yes}
+	span.GramE {mso-style-name:""; mso-gram-e:yes}
+	@page Section1 {size:8.5in 11.0in; margin:1.0in 1.25in 1.0in 1.25in; mso-header-margin:.5in; mso-footer-margin:.5in; mso-paper-source:0;}
+	div.Section1 {page:Section1;}
+	/* List Definitions */ @list l0 {mso-list-id:976765277; mso-list-template-ids:-2056992022;}
+	@list l0:level1 {mso-level-number-format:bullet; mso-level-text:\F0B7; mso-level-tab-stop:.5in; mso-level-number-position:left; text-indent:-.25in; mso-ansi-font-size:10.0pt; font-family:Symbol;}
+	ol {margin-bottom:0in;}
+	ul {margin-bottom:0in;}
+	--></style>
+		<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+        </style>
+<![endif]-->
+	</head>
+	<body lang="EN-US" link="blue" vlink="purple" style='tab-interval:.5in'>
+		<div class="Section1">
+			<h1><a name="vjlrfvisualjsamples"></a><font face="Verdana">Visual J# .NET Samples</font></h1>
+			<p class="text">Visual J# .NET samples consist of application and technology 
+				samples and are provided in a compressed file named VJSharpSamples.exe in the 
+				\Samples\VJSharp directory. To install these samples, you must first <a href=VJSharpSamples.Exe>unzip this 
+				file</a> by double clicking on it. To run each sample, <a href=".">proceed to the appropriate 
+				directory</a> and consult the provided readme file. To run Visual J# samples, 
+				Visual J# .NET Redistributable Package 1.1 must be installed. For more 
+				information&nbsp;go to&nbsp;<A href="http://msdn.microsoft.com/vjsharp">http://msdn.microsoft.com/vjsharp</A>.</p>
+			<p class="MsoNormal" style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b style='mso-bidi-font-weight:normal'><font face="Verdana">Application 
+						Samples </font>
+					<o:p></o:p></b></p>
+			<p class="MsoNormal" style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>
+				<font face="Verdana" size="2">Samples that are modeled after complete applications 
+					that you can develop. </font>
+			</p>
+			<p class="MsoNormal" style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>
+				&nbsp;</p>
+			<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="100%" style='WIDTH:100%;mso-cellspacing:0in'>
+				<tr style='mso-yfti-irow:0'>
+					<td width="34%" valign="top" align="center" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<b><font size="2" face="Verdana">Sample</font></b></td>
+					<td width="66%" valign="top" align="center" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<b><font size="2" face="Verdana">Description</font></b></td>
+				</tr>
+				<tr style='mso-yfti-irow:0'>
+					<td width="34%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal"><font face="Verdana" size="2">TypeFinder</font></p>
+					</td>
+					<td width="66%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal"><font face="Verdana" size="2">Provides a command-line interface to 
+								get information about types from user's environment. This sample also provides 
+								general information about reflection.</font></p>
+					</td>
+				</tr>
+				<tr style='mso-yfti-irow:1'>
+					<td width="34%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal"><font face="Verdana" size="2">WinTalk</font></p>
+					</td>
+					<td width="66%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal"><font face="Verdana" size="2">Offers a brief introduction to 
+								Windows Forms and sockets, including other .NET Framework class library topics. 
+								The sample is a simple sockets chat application.</font></p>
+					</td>
+				</tr>
+				<tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+					<td width="34%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal"><font face="Verdana" size="2">WordCount</font></p>
+					</td>
+					<td width="66%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal"><font face="Verdana" size="2">Offers an introduction to the .NET 
+								Framework class library. Provides an application that counts words in a text 
+								file and organizes the results according to command-line arguments.</font></p>
+					</td>
+				</tr>
+			</table>
+			<p class="MsoNormal" style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>
+				<font face="Verdana"><b style='mso-bidi-font-weight:normal'>
+						<o:p>&nbsp;</o:p></b></font></p>
+			<p class="MsoNormal" style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><b style='mso-bidi-font-weight:normal'><font face="Verdana">Technology 
+						Samples</font><o:p></o:p></b></p>
+			<p class="MsoNormal" style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>
+				<font face="Verdana" size="2">The samples in this section illustrate the various 
+					technologies and features in the .NET Framework and Visual J#. They instruct on 
+					a single technology or a few related technologies. These samples are not 
+					strictly useful as complete applications and tend to exhibit limited error 
+					handling and object-oriented development. </font>
+			</p>
+			<p class="MsoNormal" style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>
+				&nbsp;</p>
+			<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="100%" style='WIDTH:100%;mso-cellspacing:0in'>
+				<tr style='mso-yfti-irow:0'>
+					<td width="30%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal" align="center" style='TEXT-ALIGN:center'><b> <font face="Verdana" size="2">
+									Sample</font><o:p></o:p></b></p>
+					</td>
+					<td width="70%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal" align="center" style='TEXT-ALIGN:center'><b> <font face="Verdana" size="2">
+									Description</font><o:p></o:p></b></p>
+					</td>
+				</tr>
+				<tr style='mso-yfti-irow:1'>
+					<td width="30%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal"><font face="Verdana" size="2">CLS Extender</font></p>
+					</td>
+					<td width="70%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal"><font face="Verdana" size="2">Shows the authoring of .NET 
+								Framework properties, events, and delegates.</font></p>
+					</td>
+				</tr>
+				<tr style='mso-yfti-irow:2'>
+					<td width="30%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal"><font face="Verdana" size="2">Cross language</font></p>
+					</td>
+					<td width="70%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal"><font face="Verdana" size="2">Shows how Java-language syntax can 
+								be used in Visual J# to access classes written in other languages and how other 
+								languages can access Visual J# classes. Also shows how other languages can 
+								catch Java-language exceptions thrown by components written in the Java 
+								language. </font>
+						</p>
+					</td>
+				</tr>
+				<tr style='mso-yfti-irow:3'>
+					<td width="30%" valign="bottom" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal" style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>
+							<span style='FONT-SIZE:10pt;COLOR:black;FONT-FAMILY:Verdana'>PInvoke</span></p>
+					</td>
+					<td width="70%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal"><font face="Verdana" size="2">Demonstrates how Visual J# can use 
+								the platform invoke services provided by the common language runtime to call 
+								unmanaged APIs. </font>
+						</p>
+					</td>
+				</tr>
+				<tr style='mso-yfti-irow:4'>
+					<td width="30%" valign="bottom" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal" style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>
+							<span style='FONT-SIZE:10pt;COLOR:black;FONT-FAMILY:Verdana'>RemotingSample</span></p>
+					</td>
+					<td width="70%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal"><font face="Verdana" size="2"><span class="msoIns"><ins cite="mailto:krishnat" datetime="2002-09-16T14:45"><span style="TEXT-DECORATION: none">Shows how to use Visual J# to build a
+  <span class="SpellE">remoting</span> service. This simple service manipulates a
+  string passed to it as a parameter and returns the result back to the caller.
+  It is important to note that the service must be hosted before a client can
+  call it, which can be achieved by compiling the service as a DLL and
+  registering the service in Internet Information Services (IIS)..</ins>
+								</span></SPAN></font></p>
+					</td>
+				</tr>
+				<tr style='mso-yfti-irow:5'>
+					<td width="30%" valign="bottom" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal" style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>
+							<span style='FONT-SIZE:10pt;COLOR:black;FONT-FAMILY:Verdana'>Attributes</span></p>
+					</td>
+					<td width="70%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal"><font face="Verdana" size="2">Demonstrates how language 
+								applications compiled and run on Visual J# can use the .NET Framework 
+								attributes to provide enhanced functionality. Any attribute available in the 
+								.NET Framework can be attached to Visual J# programs. However, the Visual J# 
+								compiler does not support authoring (defining) attributes in Visual J# 
+								programs.</font></p>
+					</td>
+				</tr>
+				<tr style='mso-yfti-irow:6'>
+					<td width="30%" valign="bottom" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal" style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>
+							<span style='FONT-SIZE:10pt;COLOR:black;FONT-FAMILY:Verdana'>Enums</span></p>
+					</td>
+					<td width="70%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal"><font face="Verdana" size="2">Demonstrates the use of .NET 
+								Framework enumerations. There is support to consume .NET Framework enumerations 
+								from Visual J#, but there is no support to author (define) enumerations.</font></p>
+					</td>
+				</tr>
+				<tr style='mso-yfti-irow:7'>
+					<td width="30%" valign="bottom" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal" style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>
+							<span style='FONT-SIZE:10pt;COLOR:black;FONT-FAMILY:Verdana'>EventsAndDelegates</span></p>
+					</td>
+					<td width="70%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal"><font face="Verdana" size="2"> <a href="ms-help://MS.VSCC/MS.VJSharp/dv_vjsample/html/vjsamjavacallscom2sampleexposecomobjectstomanagedcomponents.htm">
+									<span style="TEXT-DECORATION: none">
+										<font color="#000000">Shows</font></span><span style='TEXT-DECORATION:none;text-underline:none'><font color="#000000">
+											the use of .NET Framework delegates and events. You can consume .NET Framework 
+											delegates in Visual J#. The
+											<span style='mso-prop-change:krishnat 20020916T1400'>delegate</span>
+											or
+											<span style='mso-prop-change:krishnat 20020916T1400'>multicast</span>
+											keywords create delegates of type
+											<span style='mso-prop-change:krishnat 20020916T1400'>com.ms.lang.Delegate</span>
+											rather than of
+											<span style='mso-prop-change:krishnat 20020916T1400'>System.Delegate</span>.</font></span></a></font></p>
+					</td>
+				</tr>
+				<tr style='mso-yfti-irow:8'>
+					<td width="30%" valign="bottom" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal" style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>
+							<span style='FONT-SIZE:10pt;COLOR:black;FONT-FAMILY:Verdana'>Minesweeper</span></p>
+					</td>
+					<td width="70%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p><font face="Verdana" size="2">Demonstrates how applications can target and consume 
+								the following .NET Framework features: </font>
+						</p>
+						<p class="MsoNormal" style="MARGIN-LEFT:0.5in;TEXT-INDENT:-0.5in;mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-text-indent-alt:-.25in;mso-list:l0 level1 lfo1;mso-list-change:&#61623;'Marjan Badiei' 20020916T1401;tab-stops:list .5in"><![if 
+							!supportLists]><span style='mso-list:Ignore'><font face="Verdana">
+									<span style='FONT-SIZE:10pt;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;mso-bidi-font-size:12.0pt'>·</span></font><span style='FONT-WEIGHT:normal; FONT-STYLE:normal; FONT-FAMILY:Verdana; FONT-VARIANT:normal; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol; mso-bidi-font-size:12.0pt'><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</font>
+								</span>
+							</span><![endif]><font face="Verdana" size="2">Events </font>
+						</p>
+						<p class="MsoNormal" style="MARGIN-LEFT:0.5in;TEXT-INDENT:-0.5in;mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-text-indent-alt:-.25in;mso-list:l0 level1 lfo1;mso-list-change:&#61623;'Marjan Badiei' 20020916T1401;tab-stops:list .5in"><![if 
+							!supportLists]><span style='mso-list:Ignore'><font face="Verdana">
+									<span style='FONT-SIZE:10pt;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;mso-bidi-font-size:12.0pt'>·</span></font><span style='FONT-WEIGHT:normal; FONT-STYLE:normal; FONT-FAMILY:Verdana; FONT-VARIANT:normal; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol; mso-bidi-font-size:12.0pt'><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</font>
+								</span>
+							</span><![endif]><font face="Verdana" size="2">Delegates </font>
+						</p>
+						<p class="MsoNormal" style="MARGIN-LEFT:0.5in;TEXT-INDENT:-0.5in;mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-text-indent-alt:-.25in;mso-list:l0 level1 lfo1;mso-list-change:&#61623;'Marjan Badiei' 20020916T1401;tab-stops:list .5in"><![if 
+							!supportLists]><span style='mso-list:Ignore'><font face="Verdana">
+									<span style='FONT-SIZE:10pt;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;mso-bidi-font-size:12.0pt'>·</span></font><span style='FONT-WEIGHT:normal; FONT-STYLE:normal; FONT-FAMILY:Verdana; FONT-VARIANT:normal; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol; mso-bidi-font-size:12.0pt'><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</font>
+								</span>
+							</span><![endif]><font face="Verdana" size="2">Value types </font>
+						</p>
+						<p class="MsoNormal" style="MARGIN-LEFT:0.5in;TEXT-INDENT:-0.5in;mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-text-indent-alt:-.25in;mso-list:l0 level1 lfo1;mso-list-change:&#61623;'Marjan Badiei' 20020916T1401;tab-stops:list .5in"><![if 
+							!supportLists]><span style='mso-list:Ignore'><font face="Verdana">
+									<span style='FONT-SIZE:10pt;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;mso-bidi-font-size:12.0pt'>·</span></font><span style='FONT-WEIGHT:normal; FONT-STYLE:normal; FONT-FAMILY:Verdana; FONT-VARIANT:normal; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol; mso-bidi-font-size:12.0pt'><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</font>
+								</span>
+							</span><![endif]><font face="Verdana" size="2">Properties </font>
+						</p>
+						<p class="MsoNormal" style="MARGIN-LEFT:0.5in;TEXT-INDENT:-0.5in;mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-text-indent-alt:-.25in;mso-list:l0 level1 lfo1;mso-list-change:&#61623;'Marjan Badiei' 20020916T1401;tab-stops:list .5in"><![if 
+							!supportLists]><span style='mso-list:Ignore'><font face="Verdana">
+									<span style='FONT-SIZE:10pt;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;mso-bidi-font-size:12.0pt'>·</span></font><span style='FONT-WEIGHT:normal; FONT-STYLE:normal; FONT-FAMILY:Verdana; FONT-VARIANT:normal; mso-fareast-font-family:Symbol; mso-bidi-font-family:Symbol; mso-bidi-font-size:12.0pt'><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</font>
+								</span>
+							</span><![endif]><font face="Verdana" size="2">Attributes </font>
+						</p>
+					</td>
+				</tr>
+				<tr style='mso-yfti-irow:9'>
+					<td width="30%" valign="bottom" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal" style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>
+							<span style='FONT-SIZE:10pt;COLOR:black;FONT-FAMILY:Verdana'>Properties</span></p>
+					</td>
+					<td width="70%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal"><font face="Verdana" size="2">Demonstrates the use of properties 
+								supported by the .NET Framework. There is support to get and set properties 
+								using the <b>get_</b> and <b>set_</b> property accessor methods.</font></p>
+					</td>
+				</tr>
+				<tr style='mso-yfti-irow:10;mso-yfti-lastrow:yes'>
+					<td width="30%" valign="bottom" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal" style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'>
+							<span style='FONT-SIZE:10pt;COLOR:black;FONT-FAMILY:Verdana'>ValueTypes</span></p>
+					</td>
+					<td width="70%" valign="top" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+						<p class="MsoNormal"><font face="Verdana" size="2">Demonstrates the use of value types 
+								supported by the .NET Framework. Visual J# does not support authoring 
+								(defining) value types. However, there is support to use the value types 
+								defined in the .NET Framework class library.</font></p>
+					</td>
+				</tr>
+			</table>
+			<p><font face="Verdana"><o:p>&nbsp;</o:p></font></p>
+			<p><font face="Verdana" size="2">© 2002 Microsoft Corporation. All rights reserved.</font></p>
+			<p class="MsoNormal" style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span style='FONT-SIZE:10pt;COLOR:navy;FONT-FAMILY:Arial'></span>&nbsp;</p>
+			<p class="MsoNormal" style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto'><span style='FONT-SIZE:10pt;COLOR:navy;FONT-FAMILY:Arial'></span>&nbsp;</p>
+			<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+		</div>
+	</body>
+</html>

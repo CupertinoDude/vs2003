@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathService", "MathService.csproj", "{4C70D3BA-585A-45AD-8D5E-93BC96DC6DF3}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{4C70D3BA-585A-45AD-8D5E-93BC96DC6DF3}.Debug.ActiveCfg = Debug|.NET
+		{4C70D3BA-585A-45AD-8D5E-93BC96DC6DF3}.Debug.Build.0 = Debug|.NET
+		{4C70D3BA-585A-45AD-8D5E-93BC96DC6DF3}.Release.ActiveCfg = Release|.NET
+		{4C70D3BA-585A-45AD-8D5E-93BC96DC6DF3}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

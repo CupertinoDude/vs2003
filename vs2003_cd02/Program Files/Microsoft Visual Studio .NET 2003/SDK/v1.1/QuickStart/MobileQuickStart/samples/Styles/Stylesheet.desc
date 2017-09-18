@@ -1,0 +1,12 @@
+Using a StyleSheet
+This sample demonstrates how you can use a StyleSheet mobile control 
+and <b>&lt;Style&gt;</b> elements to define common style properties for a
+single mobile page in one place. Controls can refer to styles in a StyleSheet 
+using a <b>StyleReference</b> property, and styles themselves can refer to
+other styles using a <b>StyleReference</b> property. You can also override
+built-in styles in your StyleSheet, as demonstrated by the "Title" style
+defined in this sample.
+<p>
+This sample is identical to the "Style Properties" sample earlier, but
+uses a StyleSheet instead of setting individual style properties.
+

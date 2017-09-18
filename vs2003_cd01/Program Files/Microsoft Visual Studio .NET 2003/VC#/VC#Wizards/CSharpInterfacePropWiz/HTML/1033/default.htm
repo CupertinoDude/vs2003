@@ -1,0 +1,423 @@
+<!- (c) Microsoft Corporation -->
+<HTML DIR="ltr">
+	<HEAD>
+		<TITLE>
+			C# Add Interface Property Wizard
+		</TITLE>
+		<META NAME="vs_targetSchema" CONTENT="http://schemas.microsoft.com/intellisense/ie5">
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+		<STYLE TYPE="text/css">
+			@import url();
+		</STYLE>
+		
+		<SCRIPT>
+		var strURL = "../../../";
+		strURL += window.external.GetHostLocale();
+		strURL += "/NewStyles.css";
+		document.styleSheets(0).imports(0).href = strURL;
+		</SCRIPT>
+		
+		<SYMBOL NAME="PROP_TYPE" TYPE=text VALUE="">
+		</SYMBOL>
+		<SYMBOL NAME="PROP_NAME" TYPE=text VALUE="">
+		</SYMBOL>
+		<SYMBOL NAME="GET" TYPE=radio VALUE=false>
+		</SYMBOL>
+		<SYMBOL NAME="SET" TYPE=radio VALUE=false>
+		</SYMBOL>
+		<SYMBOL NAME="GET_SET" TYPE=radio VALUE=true>
+		</SYMBOL>
+		<SYMBOL NAME="COMMENT" TYPE=text VALUE="">
+		</SYMBOL>
+		<SYMBOL NAME="PROP_TEXT" TYPE=text VALUE="">
+		</SYMBOL>
+	</HEAD>
+	<BODY BGCOLOR="buttonface" TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" ONLOAD="InitDocument(document);" ONKEYDOWN="if (!bValidating) OnKey();" ONKEYPRESS="if (!bValidating) OnPress();">
+		<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+			<colgroup>
+				<COL WIDTH="100%">
+					<TR VALIGN="TOP">
+						<TD HEIGHT="79">
+							<!--OPEN OF ALL ENCOMPASSING TABLE ROW ONE//-->
+							<TABLE CLASS="TWO" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+								<colgroup>
+									<COL WIDTH="12">
+										<COL>
+											<COL WIDTH="12">
+												<TR>
+													<TD VALIGN="TOP" HEIGHT="12" WIDTH="12">
+														&nbsp;
+													</TD>
+													<TD VALIGN="TOP" HEIGHT="12">
+														&nbsp;
+													</TD>
+													<TD VALIGN="TOP" HEIGHT="12" WIDTH="12">
+														&nbsp;
+													</TD>
+													<TD CLASS="IMAGE" VALIGN="bottom" WIDTH="110" ROWSPAN="2">
+														<DIV CLASS="SMALLA" ID="Layer0">
+															<IMG CLASS="SMALLEST" SRC="..\..\Images\CSIProp.gif" WIDTH="63" HEIGHT="63" ALT="" BORDER="0">
+														</DIV>
+													</TD>
+													<TD VALIGN="TOP" HEIGHT="12" WIDTH="6" ROWSPAN="2">
+														&nbsp;
+													</TD>
+												</TR>
+												<TR>
+													<TD VALIGN="TOP" HEIGHT="65" WIDTH="12">
+														&nbsp;
+													</TD>
+													<TD VALIGN="TOP" HEIGHT="65">
+														<H4 CLASS="HEAD" ID="HEAD">Welcome to the C# Add Interface Property Wizard</H4>
+														<P CLASS="SUBHEAD" ID="SUBHEAD">
+															This wizard adds a property to your C# interface.
+														</P>
+													</TD>
+													<TD VALIGN="TOP" HEIGHT="65" WIDTH="12">
+														&nbsp;
+													</TD>
+												</TR>
+												<TR>
+													<TD VALIGN="TOP" CLASS="RULE" COLSPAN="5" HEIGHT="2">
+														<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+															<TR VALIGN="TOP">
+																<TD HEIGHT="1" WIDTH="100%" BGCOLOR="buttonshadow"></TD>
+																<TD HEIGHT="1" WIDTH="1" BGCOLOR="window"></TD>
+															</TR>
+														</TABLE>
+													</TD>
+												</TR>
+							</TABLE>
+							<!--CLOSE OF ALL ENCOMPASSING TABLE ROW ONE//-->
+						</TD>
+					</TR>
+					<TR VALIGN="TOP">
+						<TD HEIGHT="100%">
+							<!--OPEN OF ALL ENCOMPASSING TABLE ROW TWO//-->
+							<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+								<colgroup>
+									<COL>
+										<TR>
+											<TD VALIGN="TOP" HEIGHT="100%">
+												<!--OPEN OF CONTENT AND BUTTON TABLE//-->
+												<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+													<colgroup>
+														<COL WIDTH="100%">
+															<TR VALIGN="TOP">
+																<TD HEIGHT="100%">
+																	<!--OPEN OF CONTENT//-->
+																	<TABLE CLASS="CONTENT" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+																		<COL WIDTH="12">
+																			<COL WIDTH="185">
+																				<COL WIDTH="12">
+																					<COL WIDTH="185">
+																						<COL WIDTH="12">
+																							<COL WIDTH="185">
+																								<COL WIDTH="12">
+																									<TR>
+																										<TD VALIGN="TOP" HEIGHT="12" COLSPAN="7">
+																											&nbsp;
+																										</TD>
+																									</TR>
+																									<TR VALIGN="TOP">
+																										<TD VALIGN="TOP" WIDTH="12">
+																											&nbsp;
+																										</TD>
+																										<TD VALIGN="TOP" COLSPAN="5">
+																											<TABLE CLASS="fixedSize" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+																												<COL WIDTH="283">
+																													<COL WIDTH="12">
+																														<COL WIDTH="283">
+																															<TR VALIGN="TOP">
+																																<TD VALIGN="TOP">
+																																	<SPAN CLASS="itemTextTop">
+																																		<LABEL FOR="PropTypes" ID="PROP_TYPE_LABEL">
+																																			<U>P</U>roperty type:</LABEL>
+																																		<BR>
+																																		<INPUT ID="PROP_TYPE" TYPE="hidden">
+																																		</INPUT>
+																																		<OBJECT CLASS="itemTextTwoColumnLong" ID="PropTypes" ACCESSKEY="P" CLASSID="CLSID:BFD56283-7546-4dfe-8C5E-AE4FEDC08656" VIEWASTEXT>
+																																		</OBJECT>
+																																	</SPAN>
+																																</TD>
+																																<TD VALIGN="TOP" WIDTH="12">
+																																	&nbsp;
+																																</TD>
+																																<TD VALIGN="TOP">
+																																	<SPAN CLASS="itemTextTop">
+																																		<LABEL ACCESSKEY="N" FOR="PROP_NAME" ID="PROP_NAME_LABEL">
+																																			Property <U>n</U>ame:</LABEL>
+																																		<BR>
+																																		<INPUT CLASS="itemTextTwoColumnLong" ID="PROP_NAME" ACCESSKEY="N" TITLE="" TYPE="text">
+																																	</SPAN>
+																																</TD>
+																															</TR>
+																											</TABLE>
+																										</TD>
+																										<TD VALIGN="TOP" WIDTH="12">
+																											&nbsp;
+																										</TD>
+																									</TR>
+																									<TR>
+																										<TD VALIGN="TOP" HEIGHT="15" COLSPAN="7">
+																											&nbsp;
+																										</TD>
+																									</TR>
+																									<TR>
+																										<TD VALIGN="TOP" WIDTH="12">
+																											&nbsp;
+																										</TD>
+																										<TD VALIGN="TOP">
+																											<SPAN CLASS="itemText" TITLE="" STYLE="WIDTH:391px" ID="ACCESSORS_SPAN">
+																												Accessors:
+																												<P CLASS="Spacer">
+																													&nbsp;
+																												</P>
+																												<INPUT TYPE="radio" NAME="get_set" ID="GET" ACCESSKEY="G" TITLE="">
+																												<SPAN TITLE="" CLASS="UpABit">
+																													<LABEL FOR="GET" ID="GET_LABEL">
+																														<U>g</U>et</LABEL>
+																												</SPAN>
+																												<input type="radio" name=get_set id=SET ACCESSKEY="S" TITLE="">
+																												<SPAN TITLE="" CLASS="UpABit">
+																													<LABEL FOR="SET" ID="SET_LABEL">
+																														<U>s</U>et</LABEL>
+																												</SPAN>
+																												<input type="radio" name=get_set id=GET_SET ACCESSKEY="E" TITLE="">
+																												<SPAN TITLE="" CLASS="UpABit">
+																													<LABEL FOR="GET_SET" ID="GET_SET_LABEL">
+																														g<U>e</U>t/set</LABEL>
+																												</SPAN>
+																											</SPAN>
+																										</TD>
+																										<TD VALIGN="TOP" WIDTH="12">
+																											&nbsp;
+																										</TD>
+																										<TD VALIGN="TOP">
+																											&nbsp;
+																										</TD>
+																										<TD VALIGN="TOP" WIDTH="12">
+																											&nbsp;
+																										</TD>
+																										<TD VALIGN="TOP">
+																											&nbsp;
+																										</TD>
+																										<TD VALIGN="TOP" WIDTH="12">
+																											&nbsp;
+																										</TD>
+																									</TR>
+																									<TR VALIGN="TOP">
+																										<TD VALIGN="TOP" WIDTH="12">
+																											&nbsp;
+																										</TD>
+																										<TD VALIGN="TOP" COLSPAN="5">
+																											<SPAN CLASS="itemText">
+																												<NOBR>
+																													<LABEL FOR="COMMENT" ID="COMMENT_LABEL">
+																														Co<U>m</U>ment (// notation not required):</LABEL>
+																													<BR>
+																													<INPUT CLASS="COMMENT" TYPE="text" ID="COMMENT" ACCESSKEY="M" TITLE="">
+																												</NOBR>
+																											</SPAN>
+																										</TD>
+																										<TD VALIGN="TOP" WIDTH="12">
+																											&nbsp;
+																										</TD>
+																									</TR>
+																									<TR>
+																										<TD VALIGN="TOP" HEIGHT="100%" COLSPAN="7">
+																											&nbsp;
+																										</TD>
+																									</TR>
+																	</TABLE>
+																	<!--CLOSE OF CONTENT//-->
+																</TD>
+															</TR>
+															<TR VALIGN="bottom">
+																<TD HEIGHT="48">
+																	<!--OPEN OF BUTTON HTML//-->
+																	<TABLE HEIGHT="48" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+																		<colgroup>
+																			<COL WIDTH="12">
+																				<COL>
+																					<COL WIDTH="75">
+																						<COL WIDTH="4">
+																							<COL WIDTH="75">
+																								<COL WIDTH="4">
+																									<COL WIDTH="75">
+																										<COL WIDTH="12">
+																											<TR>
+																												<TD VALIGN="TOP" CLASS="RULE" COLSPAN="8" HEIGHT="2">
+																													<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+																														<TR VALIGN="TOP">
+																															<TD HEIGHT="1" WIDTH="100%" BGCOLOR="buttonshadow"></TD>
+																															<TD HEIGHT="1" WIDTH="1" BGCOLOR="window"></TD>
+																														</TR>
+																													</TABLE>
+																												</TD>
+																											</TR>
+																											<TR>
+																												<TD VALIGN="TOP" HEIGHT="11" COLSPAN="8">
+																													&nbsp;
+																												</TD>
+																											</TR>
+																											<TR>
+																												<TD VALIGN="center" HEIGHT="23" WIDTH="12">
+																													&nbsp;
+																												</TD>
+																												<TD VALIGN="TOP" HEIGHT="23">
+																													&nbsp;
+																												</TD>
+																												<TD VALIGN="center" HEIGHT="23" WIDTH="75">
+																													<BUTTON CLASS="BUTTONS" ID="FinishBtn" onClick="OnFinish(document);" type=button>
+																														Finish
+																													</BUTTON>
+																												</TD>
+																												<TD VALIGN="center" HEIGHT="23" WIDTH="4">
+																													&nbsp;
+																												</TD>
+																												<TD VALIGN="center" HEIGHT="23" WIDTH="75">
+																													<BUTTON CLASS="BUTTONS" ID="CancelBtn" onClick="window.external.Finish(document, 'cancel');" type=button>
+																														Cancel
+																													</BUTTON>
+																												</TD>
+																												<TD VALIGN="center" HEIGHT="23" WIDTH="4">
+																													&nbsp;
+																												</TD>
+																												<TD VALIGN="center" HEIGHT="23" WIDTH="75">
+																													<BUTTON CLASS="BUTTONS" ID="HelpBtn" onClick="window.external.OnHelp('vc.codewiz.interface.prop.cs.overview');" type=button>
+																														Help
+																													</BUTTON>
+																												</TD>
+																												<TD VALIGN="center" HEIGHT="23" WIDTH="12">
+																													&nbsp;
+																												</TD>
+																											</TR>
+																											<TR>
+																												<TD VALIGN="TOP" HEIGHT="12" COLSPAN="8">
+																													&nbsp;
+																												</TD>
+																											</TR>
+																	</TABLE>
+																	<!--CLOSE OF BUTTON HTML//-->
+																</TD>
+															</TR>
+												</TABLE>
+												<!--CLOSE OF CONTENT AND BUTTON TABLE//-->
+											</TD>
+										</TR>
+							</TABLE>
+							<!--CLOSE OF ALL ENCOMPASSING TABLE ROW TWO//-->
+						</TD>
+					</TR>
+		</TABLE>
+		<SCRIPT LANGUAGE="JSCRIPT">
+		
+var oInterface = window.external.ParentObject;
+function InitDocument(document)
+{
+	setDirection();
+	
+	if (window.external.FindSymbol("DOCUMENT_FIRST_LOAD"))
+	{
+		var L_WizardDialogTitle_Text = "C# Interface Property Wizard";
+		window.external.AddSymbol("WIZARD_DIALOG_TITLE", L_WizardDialogTitle_Text);
+		window.external.SetDefaults(document);
+	}
+
+	window.external.Load(document);
+	PopulatePropTypes();
+	PropTypes.focus();
+}
+
+function OnFinish(document)
+{
+	bValidating = true;
+	var L_PropName_TEXT = "Property name";
+	if(!ValidateCSharpName(PROP_NAME, L_PropName_TEXT))
+	{
+		bValidating = false;
+		PROP_NAME.focus();
+		return;
+	}
+	if(PROP_NAME.value == window.external.ParentObject.Name)
+	{
+		var L_DUPNAME_TEXT = "Property name cannot be the same as interface name.";
+		window.external.ReportError(L_DUPNAME_TEXT);
+		bValidating = false;
+		PROP_NAME.focus();
+		return;
+	}
+	try
+	{
+		var oVar = oInterface.Members.Item(PROP_NAME.value);
+		if(typeof(oVar) != "undefined")
+		{
+			L_DupName1_TEXT = "An element with the name \"";
+			L_DupName2_TEXT = "\" already exists.";
+			window.external.ReportError(L_DupName1_TEXT + PROP_NAME.value + L_DupName2_TEXT);
+			bValidating = false;
+			PROP_NAME.focus();
+			return;		
+		}
+	}
+	catch (e)
+	{
+		//workaround. Because CodeModel returns E_*, if item not found.
+	}	
+
+	var L_PropType_TEXT = "Property type";
+	if(!ValidateWizComboCSharpType(PropTypes, L_PropType_TEXT))
+	{
+		bValidating = false;
+		PropTypes.focus();
+		return;
+	}	
+
+	window.external.AddSymbol("PROP_TYPE_STRING", PropTypes.Value);
+	OnWizFinish(document);
+}
+
+function PopulatePropTypes()
+{
+	PropTypes.Clear();
+
+	PropTypes.AddItem("bool");
+	PropTypes.AddItem("byte");
+	PropTypes.AddItem("char");
+	PropTypes.AddItem("decimal");
+	PropTypes.AddItem("double");
+	PropTypes.AddItem("float");
+	PropTypes.AddItem("int");
+	PropTypes.AddItem("long");
+	PropTypes.AddItem("object");
+	PropTypes.AddItem("sbyte");
+	PropTypes.AddItem("string");
+	PropTypes.AddItem("short");
+	PropTypes.AddItem("uint");
+	PropTypes.AddItem("ulong");
+	PropTypes.AddItem("ushort");
+
+	PropTypes.ListIndex = 6;
+}
+
+		</SCRIPT>
+		<SCRIPT ID="INCLUDE_SCRIPT" LANGUAGE="JSCRIPT">
+		</SCRIPT>
+		<SCRIPT ID="INCLUDE_COMMON" LANGUAGE="JSCRIPT">
+		</SCRIPT>
+		<SCRIPT>
+	var strPath = "../../../";
+	strPath += window.external.GetHostLocale();
+	var strScriptPath = strPath + "/Script.js";
+	var strCommonPath = strPath + "/Common.js";
+	document.scripts("INCLUDE_SCRIPT").src = strScriptPath;
+	document.scripts("INCLUDE_COMMON").src = strCommonPath;
+		</SCRIPT>
+		<SCRIPT FOR="PropTypes" EVENT="Change">
+		</SCRIPT>
+		<SCRIPT FOR="PropTypes" EVENT="KeyDown(nKeyCode)">
+	OnWizComboKeyDown(nKeyCode);
+		</SCRIPT>
+	</BODY>
+</HTML>

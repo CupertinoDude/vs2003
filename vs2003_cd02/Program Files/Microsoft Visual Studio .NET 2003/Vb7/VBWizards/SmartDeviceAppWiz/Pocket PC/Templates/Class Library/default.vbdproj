@@ -1,0 +1,133 @@
+	<VisualStudioProject>
+    <VisualBasic>
+        <Build>
+            <Settings
+                OutputType = "Library"
+                StartupObject = ""
+	        >
+                <Config
+                    Name = "Debug"
+                    DebugSymbols = "true"
+                    DefineDebug = "true"
+                    DefineTrace = "true"
+                    IncrementalBuild = "true"
+                    OutputPath = "bin"
+                />
+                <Config
+                    Name = "Release"
+                    DebugSymbols = "false"
+                    DefineDebug = "false"
+                    DefineTrace = "true"
+                    IncrementalBuild = "false"
+                    OutputPath = "bin"
+                />
+            </Settings>
+            <References>
+                <Reference Name = "System" />
+                <Reference Name = "System.Data" />
+                <Reference Name = "System.XML" />
+            </References>
+            <Imports>
+                <Import Namespace = "Microsoft.VisualBasic" />
+                <Import Namespace = "System" />
+                <Import Namespace = "System.Collections" />
+                <Import Namespace = "System.Data" />
+                <Import Namespace = "System.Diagnostics" />
+            </Imports>
+        </Build>
+        <Files>
+            <Include>
+            </Include>
+        </Files>
+    </VisualBasic>
+    <EVisualBasic>
+        <Build>
+            <Settings
+                OutputType = "Library"
+                StartupObject = ""
+                OutputFileFolder = "\Windows"
+	        >
+                <Platform Name = "Pocket PC" />
+		<Config
+                    Name = "Debug|Pocket PC"
+                    DebugSymbols = "true"
+		    DefineDebug = "true"
+                    DefineTrace = "true"
+	                MarkExeNativePocketPC = "false"
+                    IncrementalBuild = "false"
+    	    	    OutputPath = ".\bin\Debug\"
+                />
+                <Config
+                    Name = "Release|Pocket PC"
+                    DebugSymbols = "false"
+		    DefineDebug = "false"
+                    DefineTrace = "true"
+	                MarkExeNativePocketPC = "false"
+                    IncrementalBuild = "false"
+		    OutputPath = ".\bin\Release\"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    Private = "False"
+		    Platform  = "Pocket PC"
+		    AssemblyName = "System"
+                />
+                <Reference
+                    Name = "System.Data"
+                    Private = "False"
+		    Platform  = "Pocket PC"
+		    AssemblyName = "System.Data"
+                />
+                <Reference
+                    Name = "System.XML"
+                    Private = "False"
+		    Platform  = "Pocket PC"
+		    AssemblyName = "System.XML"
+                />
+                <Reference
+                    Name = "System.CF.Design"
+                    Private = "False"
+                    Platform = "Pocket PC-Designer"
+                    AssemblyName = "System.CF.Design"
+                />
+                <Reference
+                    Name = "System.CF.Design.UI"
+                    Private = "False"
+                    Platform = "Pocket PC-Designer"
+                    AssemblyName = "System.CF.Design.UI"
+                />
+                <Reference
+                    Name = "System.CF.Windows.Forms"
+                    Private = "False"
+                    Platform = "Pocket PC-Designer"
+                    AssemblyName = "System.CF.Windows.Forms"
+                />
+		<Reference
+                    Name = "System.CF.Drawing"
+                    Private = "False"
+                    Platform = "Pocket PC-Designer"
+                    AssemblyName = "System.CF.Drawing"
+                />
+		<Reference
+                    Name = "System"
+                    Private = "False"
+                    Platform = "Pocket PC-Designer"
+                    AssemblyName = "System"
+                />
+            </References>
+            <Imports>
+                <Import Namespace = "Microsoft.VisualBasic" />
+                <Import Namespace = "System" />
+                <Import Namespace = "System.Collections" />
+                <Import Namespace = "System.Configuration" />
+                <Import Namespace = "System.Diagnostics" />
+            </Imports>
+        </Build>
+        <Files>
+            <Include>
+            </Include>
+        </Files>
+    </EVisualBasic>
+</VisualStudioProject>

@@ -1,0 +1,264 @@
+<VisualStudioProject>
+    <ECSHARP
+        ProjectType = "Local"
+        ProductVersion = "7.10.2234"
+        SchemaVersion = "1.0"
+        ProjectGuid = "{FCA3B4B9-2600-4844-8BEB-B8ABDD015A4C}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "Roman Legion"
+                AssemblyOriginatorKeyFile = ""
+                DelaySign = "false"
+                OutputType = "WinExe"
+                OutputFileFolder = "\Program Files\.NETCF Samples\C#\Roman Legion\"
+                RootNamespace = "Space_Invaders"
+                StartupObject = ""
+            >
+                <Platform Name = "Windows CE" />
+                <Config
+                    Name = "Debug|Windows CE"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "0"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    Optimize = "false"
+                    OutputPath = "bin\Debug\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release|Windows CE"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "0"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    Optimize = "true"
+                    OutputPath = "bin\Release\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Platform = "Windows CE"
+                    Name = "MSCorLib"
+                    AssemblyName = "mscorlib"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Windows CE"
+                    Name = "System"
+                    AssemblyName = "System"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Windows CE"
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Windows CE"
+                    Name = "System.Windows.Forms"
+                    AssemblyName = "System.Windows.Forms"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Windows CE"
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Windows CE"
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Windows CE-Designer"
+                    Name = "System.CF.Design"
+                    AssemblyName = "System.CF.Design"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Windows CE-Designer"
+                    Name = "System.CF.Windows.Forms"
+                    AssemblyName = "System.CF.Windows.Forms"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Windows CE-Designer"
+                    Name = "System.CF.Drawing"
+                    AssemblyName = "System.CF.Drawing"
+                    Private = "False"
+                />
+                <Reference
+                    Platform = "Windows CE-Designer"
+                    Name = "System"
+                    AssemblyName = "System"
+                    Private = "False"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "Arrow.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Barbarian.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "BaseObj.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Game.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Game.resx"
+                    DependentUpon = "Game.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Legion.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Roman.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Score.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Images\Arrow.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\Arrow1.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\Barbarian.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\PPCBackground.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\PPCPause.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\PPCSplash.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\PPCWon.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanA0.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanA1.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanA2.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanA3.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanA4.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanA5.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanB0.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanB1.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanB2.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanB3.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanB4.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\RomanB5.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Images\WCEBackground.bmp"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Images\WCEPause.bmp"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Images\WCESplash.bmp"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Images\WCEWon.bmp"
+                    BuildAction = "None"
+                />
+            </Include>
+        </Files>
+    </ECSHARP>
+</VisualStudioProject>
+

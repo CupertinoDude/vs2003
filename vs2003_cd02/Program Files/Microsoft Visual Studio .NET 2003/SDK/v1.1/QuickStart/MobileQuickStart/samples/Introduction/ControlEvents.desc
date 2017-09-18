@@ -1,0 +1,5 @@
+Responding to Control Events
+This sample demonstrates how you can respond to a control action event 
+raised from a Command control, and programmatically switch to another
+form. When the new form is activated, you can respond to a control action
+event from the form, and change the text of the form.

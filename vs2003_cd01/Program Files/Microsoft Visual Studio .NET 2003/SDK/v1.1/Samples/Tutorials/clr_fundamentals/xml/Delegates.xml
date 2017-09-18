@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Delegates">
+	<Paragraph>
+		A core tenant of the CLR is the ability for an application to register a callback function with a component and have this component invoke this callback function when a special event happens. 			For example, you might want to register a callback function that gets called when the user selects a menu item or when an unhandled exception is thrown or you might want a function to be 			called when an asynchronous operation completes its execution. In the runtime, all of these mechanisms and more are handled using delegates. Simply stated, a delegate is a type safe 			reference to a function or method.
+	</Paragraph>
+	<Paragraph>
+		The Framework Class Library (FCL) defines several delegate types. Here is the delegate definition for a thread function:	
+	</Paragraph>
+	<Paragraph>
+		<Code>delegate void ThreadStart();</Code>
+	</Paragraph>
+	<Paragraph>
+		This means that there is a type defined in the FCL called ThreadStart. Each instance of this type refers to a method that takes no parameters and returns void. When creating a new thread you 		must pass an instance of a ThreadStart object that identifies the function or method that should be executed by the new thread. This thread function must take no parameters and must return 			void.	
+	</Paragraph>
+	<Paragraph>
+		The code below demonstrates how to create an instance of this delegate type so that a new thread can be created. 
+	</Paragraph>
+	<Paragraph>
+		<Sample Caption="Delegates" Image="..\Images\Console.gif">
+			<CSPath>..\Samples\SpecialTypes\Delegates\CS</CSPath>
+			<VBPath>..\Samples\SpecialTypes\Delegates\VB</VBPath>
+		</Sample>
+	</Paragraph>
+	<Paragraph>
+		Delegates offer many more features than shown here. For example, delegates can be used on static methods (as shown in the sample) and can also be used to call instance methods on 			objects. Delegates can also be chained together into a linked-list so that calling through a delegate actually calls all the callback methods in the linked-list chain. Please refer to the .NET 			Framework SDK documentation for more details about delegates.
+	</Paragraph>
+	<Navigation>
+		<Previous>Interfaces.xml</Previous>
+		<Next>Custom Attributes.xml</Next>
+	</Navigation>
+</Document>

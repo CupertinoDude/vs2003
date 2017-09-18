@@ -1,0 +1,31 @@
+<VisualStudioProject AllowExistingFolder = "true">
+    <CSHARP>
+        <Build>
+	    <Settings
+		OutputType = "Library"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    DebugSymbols = "true"
+                    DefineDebug = "true"
+                    DefineTrace = "true"
+                    OutputPath = "bin"
+					IncrementalBuild = "false"
+                />
+                <Config
+                    Name = "Release"
+                    DebugSymbols = "false"
+                    DefineDebug = "false"
+                    DefineTrace = "true"
+                    OutputPath = "bin"
+					IncrementalBuild = "false"
+                />
+	    </Settings>
+        </Build>
+        <Files>
+            <Include>
+            </Include>
+        </Files>
+    </VisualBasic>
+</VisualStudioProject>

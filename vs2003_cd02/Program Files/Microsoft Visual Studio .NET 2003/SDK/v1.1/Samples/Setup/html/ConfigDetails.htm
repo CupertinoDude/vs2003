@@ -1,0 +1,534 @@
+﻿<html>
+	<head>
+		<title>Microsoft .NET Framework SDK Samples Configuration Details</title>
+		<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<style>
+        a:hover { color:#ff0000; }
+        div.Section1
+	{page:Section1;}
+        </style>
+	</head>
+	<body leftMargin="0" topMargin="0">
+		<div style="FONT: x-small Verdana, Arial, Helvetica; MARGIN-LEFT: 10px; MARGIN-RIGHT: 10px">
+			<p><span style="FONT: bold medium Verdana, Arial, Helvetica" align="left">Microsoft .NET Framework SDK QuickStart Configuration Details</span>
+			<p>
+			This page provides a detailed listing of the configuration steps performed by 
+			the .NET Framework QuickStart configuration program.&nbsp; It also contains 
+			solutions to common problems related to the samples setup.<P>
+				<ul>
+					<li>
+						<a href="#SQL">SQL Server / MSDE Information</a><li>
+                    <a href="#WebConfig">Modifying 
+							web.config </a>
+					<li>
+						<a href="#NetSamplePath">Setting the NetSamplePath Environment Variable</a><li>
+						<a href="#Compile">Compiling the QuickStarts</a><li><a href="#InstallIIS"> Installing 
+							IIS</a><li><a href="#IIS">Creating the IIS Virtual Directories </a>
+					<LI>
+						<A href="#RemoveVRoot">Removing the IIS Virtual Directories </A>
+					</LI>
+					<LI>
+						<a href="#WindowsServer">Running the QuickStarts on the Windows Server 2003 family</a></LI>
+					<LI>
+						<a href="#Installing Additional Fonts">Installing 
+                        Additional Fonts</a></LI>
+				</ul>
+			<p>&nbsp;</p>
+			<span style="FONT: small Verdana, Arial, Helvetica" align="left">
+				<p><span style="FONT: bold small Verdana, Arial, Helvetica" align="left"><a name="SQL">General 
+							SQL Server/MSDE Information</a></span>
+				<p><font size="2">In order for the database access samples to 
+                function properly, a named instance of Microsoft SQL Server 2000 Desktop Engine (MSDE) is 
+						required.&nbsp;  To download and install the Microsoft 
+                SQL Server 2000 Desktop Engine, please follow the instructions on 
+                the Microsoft .NET Framework SDK MSDE
+                <a href="http://go.microsoft.com/fwlink/?LinkId=13294" target="_blank">help 
+                page</a>.&nbsp; </font>
+				<p><font size="2">The  MSDE instance name used by the SDK samples is 
+						'NetSDK'.&nbsp; To access the database, use the server name: 
+						(local)\NetSDK.</font>
+				<p>
+					<br>
+					<A name=AddingSQLServer><strong>Adding the SQL Server Databases</strong></A>
+			</span><font size="3"><strong> to SQL Server</strong></font>
+			<p>Four databases are used throughout the QuickStarts: The two SQL 
+            demo databases: Pubs and NorthWind; And two custom databases: 
+            GrocerToGo and Portal.&nbsp; The SQL scripts to install these 
+            database are provided in the &lt;SDK&gt;\Samples\Setup directory.&nbsp; 
+            To manually install these four databases, run the following commands 
+            from the command line.&nbsp; Note: The path to the osql.exe command 
+            must be located in your PATH environment variable.</p>
+			<blockquote dir="ltr" style="MARGIN-RIGHT: 0px">
+				<p>osql -E -S (local)\NetSDK -i InstPubs.sql<br>
+					osql -E -S (local)\NetSDK -i InstNwnd.sql<br>
+					osql -E -S (local)\NetSDK -i Portal.sql<br>
+					osql -E -S (local)\NetSDK -i Grocer.sql<br>
+					&nbsp;</p>
+			</blockquote>
+			<span style="FONT: small Verdana, Arial, Helvetica" align="left">
+			<span style="FONT: small Verdana, Arial, Helvetica" align="left">
+				<p>
+					<br>
+					<A name=AddingASPNETUser><strong>Granting Access to the ASPNET user</strong></A></span>
+			</span>
+			<span style="font-style:normal; font-variant:normal; font-weight:normal; font-family:Verdana, Arial, Helvetica" align="left">
+			<p>The ASP.NET process runs under a specific account.&nbsp; 
+            In order for the data access samples to access the database, this 
+            account must be granted r<font size="2">ights to the sample databases.&nbsp;
+	    If the operating system is part of the Windows Server 2003 family the ASP.NET process runs under NT AUTHORITY\NETWORK SERVICE
+	    account.&nbsp;In all other cases it runs under MACHINENAME\ASPNET account.
+	    <br>
+            To manually grant access to the ASPNET user run the following commands from 
+            the command line.</p>
+	    <ul>
+		<li>
+			For Windows Server 2003 family systems running IIS 6.0 replace &lt;ASP.NET User Account&gt; with 'NT AUTHORITY\NETWORK SERVICE'
+			in the following commands.
+		<li>
+			For all other cases replace &lt;ASP.NET User Account&gt; with 'MACHINENAME\ASPNET' where MACHINENAME is the name 
+			of your computer.
+	    </ul>
+            <blockquote dir="ltr" style="MARGIN-RIGHT: 0px">
+				<p>osql -E -S (local)\NetSDK -Q &quot;sp_grantlogin &lt;ASP.NET User Account&gt;&quot;<br>
+                <br>
+                osql -E -S (local)\NetSDK -d Pubs -Q &quot;sp_grantdbaccess &lt;ASP.NET User Account&gt;&quot;<br>
+                osql -E -S (local)\NetSDK -d Pubs -Q &quot;sp_addrolemember 'db_owner', 
+                &lt;ASP.NET User Account&gt;&quot;<br>
+                <br>
+                osql -E -S (local)\NetSDK -d NorthWind -Q &quot;sp_grantdbaccess &lt;ASP.NET User Account&gt;&quot;<br>
+                osql -E -S (local)\NetSDK -d NorthWind -Q &quot;sp_addrolemember 'db_owner', 
+                &lt;ASP.NET User Account&gt;&quot;<br>
+                <br>
+                osql -E -S (local)\NetSDK -d Portal -Q &quot;sp_grantdbaccess &lt;ASP.NET User Account&gt;&quot;<br>
+                osql -E -S (local)\NetSDK -d Portal -Q &quot;sp_addrolemember 'db_owner', 
+                &lt;ASP.NET User Account&gt;&quot;<br>
+                <br>
+                osql -E -S (local)\NetSDK -d GrocerToGo -Q &quot;sp_grantdbaccess &lt;ASP.NET User Account&gt;&quot;<br>
+                osql -E -S (local)\NetSDK -d GrocerToGo -Q &quot;sp_addrolemember 'db_owner', 
+                &lt;ASP.NET User Account&gt;&quot;<br>
+					&nbsp;</font></p>
+			</blockquote>
+		<p></font>Note: The path to the osql.exe 
+             command must be located in your PATH environment variable.<font size="2"></P>
+			</font>
+			</span>
+			<font size="2">
+			<span style="FONT: small Verdana, Arial, Helvetica" align="left">
+				<p>
+					<span style="FONT-WEIGHT:700; FONT-SIZE:small; FONT-STYLE:normal; FONT-FAMILY:Verdana, Arial, Helvetica; FONT-VARIANT:normal" align="left">
+Starting MSDE</span>
+				</span>
+				<p>
+			<span style="FONT-WEIGHT:normal; FONT-STYLE:normal; FONT-FAMILY:Verdana, Arial, Helvetica; FONT-VARIANT:normal" align="left">
+				<font size="2">The QuickStart Tutorials that demonstrate database access require 
+					that MSDE is started.&nbsp; If MSDE is stopped, most samples will throw a, "<i>Timeout 
+						expired</i>" or "<i>SQL Sever does not exist or access denied</i>" 
+					error.&nbsp; To start MSDE:</font></span>
+			<span style="FONT: small Verdana, Arial, Helvetica" align="left">
+				<blockquote> <font size="2">
+						<ol>
+							<li>
+								From the command line, type:
+								<ul>
+									<br>
+									net start MSSQL$NetSDK
+								</ul>
+							</li>
+						</ol>
+					</font></blockquote>
+			</span>
+			<br>
+			<span style="FONT-WEIGHT:700; FONT-SIZE:small; FONT-STYLE:normal; FONT-FAMILY:Verdana, Arial, Helvetica; FONT-VARIANT:normal" align="left">
+Pre-Existing Data Files</span><span style="FONT-WEIGHT:normal; FONT-STYLE:normal; FONT-FAMILY:Verdana, Arial, Helvetica; FONT-VARIANT:normal" align="left"><p>
+					<font size="2">If database files with the same filename already exist on the hard 
+						drive, the samples configuration utility will not overwrite/replace these 
+						files.&nbsp; </font>
+			</span></SPAN><font size="2">
+				<span style="FONT-WEIGHT:normal; FONT-STYLE:normal; FONT-FAMILY:Verdana, Arial, Helvetica; FONT-VARIANT:normal" align="left">The</span></font><span style="FONT: small Verdana, Arial, Helvetica" align="left"><span style="FONT-WEIGHT:normal; FONT-SIZE:small; FONT-STYLE:normal; FONT-FAMILY:Verdana, Arial, Helvetica; FONT-VARIANT:normal" align="left"><font size="2">re 
+						are two ways to correct this problem:</font></span>
+				<span style="FONT-WEIGHT:normal; FONT-STYLE:normal; FONT-FAMILY:Verdana, Arial, Helvetica; FONT-VARIANT:normal" align="left"><span style="FONT-WEIGHT:normal; FONT-STYLE:normal; FONT-FAMILY:Verdana, Arial, Helvetica; FONT-VARIANT:normal" align="left">
+						<blockquote> <font size="2">1.&nbsp; Delete or rename the following files from the 
+								C:\Program Files\Microsoft SQL Server\MSSQL$NetSDK\Data directory.</font><ul>
+								<li>
+									<font size="2">Pubs.mdf</font>
+								<li>
+									<font size="2">Pubs_log.ldf</font>
+								<li>
+									<font size="2">northwind.mdf</font>
+								<li>
+									<font size="2">northwind.ldf</font>
+								<li>
+									<font size="2">GrocerToGo.mdf</font>
+								<li>
+									<font size="2">GrocerToGo.ldf</font>
+								<li>
+									<font size="2">Portal.mdf</font>
+								<li>
+									<font size="2">Portal_log.ldf </font>
+					</span></LI></UL>
+  <font size="2">
+						<span style="FONT-STYLE:normal; FONT-FAMILY:Verdana, Arial, Helvetica; FONT-VARIANT:normal" align="left">
+  <p>2a.&nbsp; Complete the instructions outlined in the <A href=#AddingSQLServer>Adding the SQL Server Databases to SQL Server</A> and 
+								<A href=#AddingASPNETUser>Granting Access to the ASPNET user</A> sections above.<br>
+								2b.&nbsp; Or, run the <a href="../ConfigSamples.exe">samples configuration utility</a>
+								again.<br>
+								&nbsp;</p></BLOCKQUOTE>
+</span>
+					</font></span>
+			</span>
+			
+			
+				<span style="FONT: small Verdana, Arial, Helvetica" align="left">
+				<p><strong><a name="WebConfig">Modifying Web.Config</a></strong>
+			</span></SPAN>
+			<P>
+			Modify the&nbsp;sourceview node of the Web.Config file in the QuickStart 
+			subdirectory to reflect the samples installation directory.
+			<p>
+				<ul>
+					<p>. . .<BR>
+					&lt;sourceview&gt;<br>
+					&nbsp;&nbsp;&nbsp; &lt;add key="root" value="C:\Program 
+					Files\Microsoft.NET\SDK\v1.1\QuickStart" /&gt;<br>
+					&lt;/sourceview&gt;
+					<BR>
+					. . .
+					<br>
+					&nbsp;</p>
+              </ul>
+			<p>
+				<span style="FONT-WEIGHT: 700; FONT-SIZE: small">
+					<a name="NetSamplePath">Setting the NetSamplePath Environment Variable</a></span>
+			<p>
+			The NetSamplePath environment variable is required to compile the QuickStart 
+			samples.&nbsp; Set the NetSamplePath environment variable to 
+			&lt;SDK&gt; directory.&nbsp; The &lt;SDK&gt;
+			directory name must be in the short form (no spaces).&nbsp; For an example of 
+			what NetSamplePath should be set to, see the SDKVars.bat file located in the 
+			&lt;SDK&gt;\Bin directory.<p>
+			The process of setting an environment variable varies depending on your 
+			operating system.&nbsp; In general, the command is:<p>
+				<UL>
+					<p>SET NetSamplePath=D:\PROGRA~1\MICROS~1.NET\SDK\v1.1\<BR>
+						&nbsp;</p>
+				</UL>
+			<p>
+				<span style="FONT-WEIGHT: 700; FONT-SIZE: small">
+					<a name="Compile">Compiling the QuickStarts</a></span>
+			<p>Most of the QuickStart tutorials are shipped with compiled exe's and 
+				dll's.&nbsp; However, there are a few samples that require compilation on the 
+				local computer.&nbsp; Specifically, these are samples that register components, 
+				install assemblies into the Global Assembly Cache, or demonstrate COM 
+				Interop.&nbsp; To compile these samples, run the Register.bat command located 
+				in the &lt;SDK&gt;\QuickStart directory.&nbsp;
+				<br>
+				&nbsp;</p>
+			<p>
+				<span style="FONT-WEIGHT: 700; FONT-SIZE: small">
+					<a name="InstallIIS">Installing IIS and ASP.NET</a></span>
+			<p>The QuickStart tutorials are written in ASP.NET and require IIS.&nbsp; If IIS 
+				was not installed prior to installing the SDK, ASP.NET pages will not display 
+				properly.&nbsp; To install IIS and ASP.NET, complete the 
+				following steps:</p>
+			<ol>
+				<li>
+					From the Add/Remove Programs applet in the Windows Control Panel, select 
+					Add/Remove Windows Components.&nbsp;
+					<br>
+					Select Internet Information Services and complete the installation process.<br>
+				&nbsp;
+				<li>
+					From the command line, navigate to the .NET version directory.&nbsp; For 
+					example:<br>
+					&nbsp;&nbsp;&nbsp; C:\Winnt\Microsoft.NET\Framework\v1.0.XXXX<br>
+				&nbsp;
+				<li>
+					Run the following command:<br>
+					&nbsp;&nbsp;&nbsp; aspnet_regiis.exe -i<br>
+				&nbsp;
+				<li>
+					Run the following command:<br>
+					&nbsp;&nbsp;&nbsp; iisreset.exe<br>
+				&nbsp;
+				<li>
+					Return to the <a href="../../StartSamples.htm">StartSamples.htm</a> page and 
+					re-run the QuickStart setup.<br>
+					&nbsp;</li>
+			</ol>
+			<p>
+			
+			<p><span style="FONT: bold small Verdana, Arial, Helvetica" align="left"><a name="IIS">Creating 
+						the IIS Virtual Directories</a></span>
+			<p>
+			The QuickStart configuration program creates several IIS virtual 
+			directories/web applications.&nbsp; If you would like to manually create these, 
+			a complete list is provided below. The paths for the virtual directories all 
+			stem from the &lt;SDK&gt; directory.&nbsp;
+			<p></p>
+			<p>For example:<br>
+				<b>C:\Program Files\Microsoft.NET\SDK\v1.1\QuickStart</b>
+			</p>
+			<p>All the virtual roots/web applications are created with IIS IP security 
+				restrictions.&nbsp; You will only be able to browse the virtual directories via 
+				localhost (i.e. <a href="http://localhost/quickstart">http://localhost/quickstart</a>).&nbsp; 
+				To turn off this restriction, modify the&nbsp;virtual directory's IP 
+				Security&nbsp;property in Internet Services Manager.&nbsp; Note:&nbsp; Windows 
+				2000/XP Professional users, this functionality is disabled in Internet Services 
+				Manager.&nbsp; Use the WebIPSetting.exe tool located in the 
+				&lt;SDK&gt;\Samples\Setup\Tools folder to reset your IP security 
+				settings.
+				<ul>
+					<p><i><b>Virtual Directories</b></i><br>
+						QuickStart<br>
+						MobileQuickStart<br>
+						<BR>
+						<i><b>Web Applications</b></i><u><BR>
+						</u>QuickStart\ASPPlus
+						<br>
+						QuickStart\WinForms
+						<br>
+						QuickStart\HowTo
+						<br>
+						QuickStart\ASPPlus\Samples\grocertogo\CS
+						<br>
+						QuickStart\ASPPlus\Samples\grocertogo\VB
+						<br>
+						QuickStart\ASPPlus\Samples\grocertogo\JS
+						<br>
+						QuickStart\ASPPlus\Samples\portal\CS
+						<br>
+						QuickStart\ASPPlus\Samples\portal\VB
+						<br>
+						QuickStart\ASPPlus\Samples\portal\JS
+						<br>
+						QuickStart\ASPPlus\Samples\apps\application1\CS
+						<br>
+						QuickStart\ASPPlus\Samples\apps\application1\JS
+						<br>
+						QuickStart\ASPPlus\Samples\apps\application1\VB
+						<br>
+						QuickStart\ASPPlus\Samples\apps\application2\JS
+						<br>
+						QuickStart\ASPPlus\Samples\apps\application2\CS
+						<br>
+						QuickStart\ASPPlus\Samples\apps\application2\VB
+						<br>
+						QuickStart\ASPPlus\Samples\apps\session1\CS
+						<br>
+						QuickStart\ASPPlus\Samples\apps\session1\JS
+						<br>
+						QuickStart\ASPPlus\Samples\apps\session1\VB
+						<br>
+						QuickStart\ASPPlus\Samples\security\cookieauth\CS
+						<br>
+						QuickStart\ASPPlus\Samples\security\cookieauth\VB
+						<br>
+						QuickStart\ASPPlus\Samples\security\cookieauth\JS
+						<br>
+						QuickStart\ASPPlus\Samples\security\userauth\CS
+						<br>
+						QuickStart\ASPPlus\Samples\security\userauth\VB
+						<br>
+						QuickStart\ASPPlus\Samples\security\userauth\JS
+						<br>
+						QuickStart\ASPPlus\Samples\security\windowsauth\CS
+						<br>
+						QuickStart\ASPPlus\Samples\security\windowsauth\VB
+						<br>
+						QuickStart\ASPPlus\Samples\security\windowsauth\JS
+						<br>
+						QuickStart\ASPPlus\Samples\localize\resources
+						<br>
+						QuickStart\ASPPlus\Samples\localize\resources\News\CS
+						<br>
+						QuickStart\ASPPlus\Samples\localize\resources\News\VB
+						<br>
+						QuickStart\ASPPlus\Samples\localize\resources\News\JS
+						<br>
+						QuickStart\ASPPlus\Samples\vstudio\security\cookieauth\CS
+						<br>
+						QuickStart\ASPPlus\Samples\vstudio\security\cookieauth\VB
+						<br>
+						QuickStart\ASPPlus\Samples\vstudio\services\dataservice\CS
+						<br>
+						QuickStart\ASPPlus\Samples\vstudio\services\dataservice\VB
+						<br>
+						QuickStart\ASPPlus\Samples\vstudio\services\datatypes\CS
+						<br>
+						QuickStart\ASPPlus\Samples\vstudio\services\datatypes\VB
+						<br>
+						QuickStart\ASPPlus\Samples\vstudio\services\intrinsics\CS
+						<br>
+						QuickStart\ASPPlus\Samples\vstudio\services\intrinsics\VB
+						<br>
+						QuickStart\ASPPlus\Samples\vstudio\services\mathservice\CS
+						<br>
+						QuickStart\ASPPlus\Samples\vstudio\services\mathservice\VB
+						<br>
+						QuickStart\ASPPlus\Samples\vstudio\webforms\customize\CS
+						<br>
+						QuickStart\ASPPlus\Samples\vstudio\webforms\customize\VB
+						<br>
+						QuickStart\ASPPlus\Samples\vstudio\webforms\data\CS
+						<br>
+						QuickStart\ASPPlus\Samples\vstudio\webforms\data\VB
+						<br>
+						QuickStart\ASPPlus\Samples\vstudio\webforms\pagelets\CS
+						<br>
+						QuickStart\ASPPlus\Samples\vstudio\webforms\pagelets\VB
+						<br>
+						QuickStart\ASPPlus\Samples\vstudio\webforms\validate\CS
+						<br>
+						QuickStart\ASPPlus\Samples\vstudio\webforms\validate\VB
+						<br>
+						QuickStart\WinForms\Samples\Data\MasterDetails\CS
+						<br>
+						QuickStart\WinForms\Samples\Data\MasterDetails\VB
+						<br>
+						QuickStart\WinForms\Samples\Data\Update\CS
+						<br>
+						QuickStart\WinForms\Samples\Data\Update\VB
+						<br>
+						QuickStart\WinForms\Samples\Data\WebServiceBinding\CS
+						<br>
+						QuickStart\WinForms\Samples\Data\WebServiceBinding\VB
+						<br>
+						MobileQuickStart\samples\security\VB
+						<br>
+						MobileQuickStart\samples\security\CS
+						<br>
+						MobileQuickStart\samples\security\JS						
+						<BR>
+						<BR>
+						<BR>
+					</p>
+				</ul>
+			<P><SPAN style="FONT: bold small Verdana, Arial, Helvetica" align="left"><A name="RemoveVRoot">Removing 
+						the IIS Virtual Directories</A></SPAN>
+			<P>Uninstalling the SDK will not remove the IIS Virtual Directories created by the 
+				Samples Configuration Tool.&nbsp; To remove the virtual directories, complete 
+				the following steps:
+			</P>
+			<OL>
+				<LI>
+				Open the Administrative Tools folder in the Windows Control Panel.
+				<LI>
+				Open the Internet Services Manager
+				<LI>
+				Locate the QuickStart virtual directory in the default web site.
+				<LI>
+				Delete the virtual directory.
+				<LI>
+				Locate the MobileQuickStart virtual directory in the default web site.
+				<LI>
+				Delete the virtual directory.</LI></OL>
+			</font><font size="3">
+			<p><b>Switching Between the v1.0 and v1.1 QuickStarts</b></p>
+			<p><font face="Verdana" size="2">Because the v1.0 and v1.1 
+            QuickStarts share the same IIS Virtual Directory, they can not be 
+            run concurrently (side-by-side).&nbsp; To switch between the v1.0 and the 
+            v1.1 QuickStarts, perform the following steps:</font></p>
+			<p><font face="Verdana" size="2">The example below presumes 
+            switching FROM v1.1 TO v1.0.</font></p>
+            <ol>
+              <font size="2">
+				<LI>
+				<font face="Verdana" size="2">Locate the path to QuickStart 
+                files you wish to switch to (v1.0).&nbsp; i.e.&nbsp; C:\Program Files\Microsoft.NET\FrameworkSDK\Samples\QuickStart.<br>
+&nbsp;</font><LI>
+				<font face="Verdana" size="2"><span style="FONT-SIZE: 10pt">Set 
+                the NETSAMPLEPATH environment variable to the QuickStart root 
+                directory.&nbsp; The path provided must be in the short (8.3) 
+                format.&nbsp; <br>
+                <br>
+                NOTE:&nbsp; The following command sets the NETSAMPLEPATH environment 
+                variable for the current console session only.&nbsp; To preserve this 
+                environment variable setting, set NETSAMPLEPATH via My Computer.<br>
+                <br>
+                </span>&nbsp;&nbsp;&nbsp;&nbsp; </font><span style="FONT-SIZE: 10pt">
+                <font size="2" face="Verdana">For Example:</font><font face="Tahoma" size="2"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;</font></span><font face="Courier New"><span style="FONT-FAMILY: 'Courier New'"> 
+                SET NETSAMPLEPATH=C:\Progra~1\Microsoft.NET\FrameworkSDK\Samples\<br>
+&nbsp;</span></font><LI>
+				<font face="Verdana" size="2">Re-map the IIS virtual directories 
+                by running ConfigSamples.exe from the …\Samples\Setup directory.<br>
+                </font><font size="3"><font face="Verdana" size="2"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp; For Example:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp; </font><font size="2" face="Courier New">C:\Program Files\Microsoft.NET\FrameworkSDK\Samples\Setup&gt; 
+                ConfigSamples.exe<br>
+&nbsp;</font></font><LI>
+				<font face="Verdana" size="2">Locate the path to the .NET 
+                Framework version directory that corresponds to the version of 
+                the QuickStarts you are switching to.<br>
+                <br>
+                </font><font size="2" face="Courier New">For Example:&nbsp; 
+                C:\Windows\Microsoft.NET\Framework\v1.0.3705<br>
+&nbsp;</font><LI>
+				<font size="3"><font face="Verdana" size="2">Install this 
+                version ASP.NET to the QuickStart IIS virtual directories by 
+                running the following command: </font>
+                <font size="2" face="Courier New">aspnet_regiis.exe -s 
+                W3SVC/1/ROOT/QuickStart<br>
+                <br>
+                </font><font size="3"><font face="Verdana" size="2">&nbsp;&nbsp;&nbsp;&nbsp;
+                </font></font><font face="Verdana" size="2">For Example:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp; </font><font size="2" face="Courier New">C:\Windows\Microsoft.NET\Framework\v1.0.3705&gt; 
+                aspnet_regiis.exe -s W3SVC/1/ROOT/QuickStart</font></font></font></ol>
+            <p><font face="Verdana" size="2">If you have installed the v1.0 
+            version of the Microsoft Mobile Internet Toolkit (MMIT) QuickStarts 
+            and want to switch to the v1.0 MMIT QuickStarts, follow the 
+            following steps:</font></p>
+			<OL>
+				<font size="2">
+				<LI>
+				<font face="Verdana" size="2">Manually re-map the &#39;MobileQuickStart&#39; 
+                IIS virtual directory to the v1.0 MMIT QuickStarts using the 
+                Internet Information Services Manager (inetmgr.exe).&nbsp; <br>
+&nbsp;</font><LI>
+				<font face="Verdana" size="2">From the .NET Framework version 
+                directory (see Step 3 above), run the following command:<br>
+                <br>
+                </font><font size="2" face="Courier New">aspnet_regiis.exe -s 
+                W3SVC/1/ROOT/MobileQuickStart</font></font></OL>
+			</font>
+
+<font size="2">
+			<p><font size="3"><b><a name="WindowsServer">Running the QuickStarts on the Windows Server 2003 family</a></b></font></p>
+				<p>Note: If you are installing the QuickStarts on a Windows Server 2003 family machine, ASP.NET Web Server
+					Extensions must be 'Allowed' for the QuickStarts to work.  See the 'Enabling and Disabling Dynamic Content'
+					section of the IIS help documentation for more information.
+				</p>
+
+
+<font size="2">
+			<p><font size="3"><b><a name="Installing Additional Fonts">Installing 
+            Additional Fonts</a></b></font></p>
+            <p>The ASP.NET Quickstart Localization samples require several fonts 
+            (e.g. Japanese) 
+            to view the samples correctly.&nbsp; 
+            The installation procedure for these fonts may require the original Windows CD. To 
+            install new fonts, complete the following 
+            steps:</p>
+            <p>On Windows 2000</p>
+            <ul>
+              <li>Open Control Panel</li>
+              <li>Open Regional Options / General </li>
+              <li>Check the desired language setting in the &#39;Language setting for the system&#39; listbox. 
+              e.g. Japanese (additional languages can be selected at this point as 
+              well)</li>
+            </ul>
+            <p>On Windows XP</p>
+            <ul>
+              <li>Open Control Panel</li>
+              <li>Open Regional and Language Options</li>
+              <li>Select Languages tab</li>
+              <li>Check the desired language setting.&nbsp; e.g. &#39;Install files for East Asian Languages&#39;</li>
+            </ul>
+			<HR>
+			<span style="FONT: 8pt Verdana, Arial, Helvetica">Copyright © 2002 Microsoft Corporation. All rights reserved.
+</span>
+			<br>
+			<P></P>
+		</div>
+	</body>
+</html>

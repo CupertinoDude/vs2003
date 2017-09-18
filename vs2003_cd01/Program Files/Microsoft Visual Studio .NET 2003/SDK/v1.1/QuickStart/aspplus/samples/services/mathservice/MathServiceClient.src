@@ -1,0 +1,4 @@
+C# Source:CS\MathServiceClient.aspx,CS\MathService.wsdl,CS\MathService.cs
+VB Source:VB\MathServiceClient.aspx,VB\MathService.wsdl,VB\MathService.vb
+JScript Source:JS\MathServiceClient.aspx,JS\MathService.wsdl,JS\MathService.js
+VS.NET:..\..\vstudio\services\MathService\CS\MathService.csproj,..\..\vstudio\services\MathService\VB\MathService.vbproj

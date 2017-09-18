@@ -1,0 +1,31 @@
+<html>
+
+<script>
+
+function ChangeText() {
+	simpleControl1.Text = text1.value;
+}
+
+</script>
+
+<body>
+
+<p>Simple Control
+<br>
+<br>
+</body>
+
+<object id="simpleControl1"
+
+classid="http:../../WritingControls/SimpleControl/VB/SimpleControlVB.dll#Microsoft.Samples.WinForms.VB.SimpleControl.SimpleControl" 
+height="300" width="300" VIEWASTEXT>
+	<param name="Text" value="Simple Control">
+</object>
+
+<br>
+<br>
+
+<input type="text" id="text1">
+<input type="button" value="Change Text" onclick="ChangeText()">
+
+</html>

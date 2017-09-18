@@ -1,0 +1,4 @@
+VSWIZARD 6.0
+Wizard=VIDWiz.FrameSetSelector71
+Param=LocalizedTemplateDir:..\VC#\VC#Wizards\csharpframesettemplates
+Param=LocalizedDLL:FSWizUI.DLL

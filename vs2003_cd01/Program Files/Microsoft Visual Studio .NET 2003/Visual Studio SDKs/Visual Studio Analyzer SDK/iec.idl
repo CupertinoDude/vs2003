@@ -1,0 +1,136 @@
+
+//-----------------------------------------------------------------------------
+// Microsoft VSEE
+//
+// Microsoft Confidential
+// Copyright 1995-2000 Microsoft Corporation. All Rights Reserved.
+//
+// @doc EXTERNAL
+// @module IEC.idl-IDL source for Visual Studio Analyzer IEC |
+//
+//-----------------------------------------------------------------------------
+
+// Includes -------------------------------------------------------------------
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "vaevt.idl";
+import "RuntimeVariables.idl";
+
+#include "vaids.h"
+
+//----------------------------------------------------------------------------- 
+// Name: ISystemDebugEventShutdown
+// 
+// @interface ISystemDebugEventShutdown |
+// Shutdown interface.
+// 
+// @base public | IUnknown
+//----------------------------------------------------------------------------- 
+
+[
+	uuid(6c736dcf-ab0d-11D0-a2ad-00A0C90f27e8),
+]
+interface ISystemDebugEventShutdown : IUnknown
+{
+	/*
+	The LEC calls this IEC member when the LEC is about to be destroyed 
+	*/
+	HRESULT Shutdown(
+	);
+
+};
+
+
+//----------------------------------------------------------------------------- 
+// Name: ISystemDebugReadRuntimeVariablesSettings
+// 
+// @interface ISystemDebugReadRuntimeVariablesSettings |
+// Runtime variables interface.
+// 
+// @base public | IUnknown
+//----------------------------------------------------------------------------- 
+
+[uuid(6c736d02-1222-11d3-BA1D-00105AA31A58)]
+interface ISystemDebugReadRuntimeVariablesSettings : IUnknown
+{
+	/*
+	Read the value of a runtime variable
+	*/
+	HRESULT GetRuntimeVariable(
+		[in] REFGUID guidSourceID,
+		[in] LPCOLESTR strVariableName,
+		[out] BSTR* pbstrVariableValue
+	);
+
+	/*
+	Get the runtime variables enumerator
+	*/
+	HRESULT GetRuntimeVariablesEnumerator(
+		[in] REFGUID guidSourceID,
+		[out] ISystemDebugRuntimeVariablesEnum** ppISystemDebugRuntimeVariablesEnum
+	);
+};
+
+
+
+//----------------------------------------------------------------------------- 
+// Name: IECLib
+// 
+// Revision History
+// Revision 1: First public release
+// 	Added optional icons for register event
+//	Added correlation id text and item
+// Revision 2
+//	Added event categories
+//	Fixed a few typos
+// Revision 3
+//  Split off installation stuff
+//  Defined default events
+//	No longer using BOOL pointers for active status
+//	Added event types
+//	Documented custom parameter key conventions
+// Revision 4
+//	Stock events added; now two install time event routines
+//	Moved time stuff to numeric
+// Revision 5
+// Revision 6
+//	Moved interface to VSEvFire.idl for sharing
+// Revision 7
+//	Renamed file
+// Revision 8
+//	Added IEC interface
+//----------------------------------------------------------------------------- 
+
+[
+	uuid(6c736d48-B50A-11D0-A2AE-00A0C90F27E8),
+	version(1.0),
+//	lcid(0x409),
+	helpstring("Microsoft Visual Studio Analyzer 2002 In-process Event Creator Type Library")
+]
+library IECLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	
+	[
+		uuid(CLSID_VSA_IEC_S),
+		helpstring("Microsoft Visual Studio Analyzer Inprocess Event Creator")
+	]
+	coclass IECObj
+	{
+		[default] interface ISystemDebugEventFire;
+		interface ISystemDebugEventShutdown;
+	};
+
+
+	[
+		uuid(CLSID_VSA_RUNTIMEVARIABLES_S),
+		helpstring("Microsoft Visual Studio Analyzer Runtime Variables Object")
+	]
+	coclass VSAnalyzerRuntimeVariablesObject
+	{
+		[default] interface ISystemDebugReadRuntimeVariablesSettings;
+	};
+}
+

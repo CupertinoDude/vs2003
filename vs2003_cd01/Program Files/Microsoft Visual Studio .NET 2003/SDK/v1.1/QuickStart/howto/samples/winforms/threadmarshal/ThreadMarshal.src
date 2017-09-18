@@ -1,0 +1,4 @@
+C# Source:CS\ThreadMarshal.cs
+VB Source:VB\ThreadMarshal.vb
+VS.NET:CS\ThreadMarshal.csproj,VB\ThreadMarshal.vbproj
+C++ Source:CP\ThreadMarshal.cpp,CP\AssemblyInfo.cpp,CP\stdafx.cpp

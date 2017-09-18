@@ -1,0 +1,33 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TxFormCS", "TxFormCS.csproj", "{D65887E2-E73D-4606-8B53-F232C624EE81}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D05D4AE5-16AD-43B5-967B-6A1756F9C0E9} = {D05D4AE5-16AD-43B5-967B-6A1756F9C0E9}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TxObjCS", "TxObjCS.csproj", "{D05D4AE5-16AD-43B5-967B-6A1756F9C0E9}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{D65887E2-E73D-4606-8B53-F232C624EE81}.Debug.ActiveCfg = Debug|.NET
+		{D65887E2-E73D-4606-8B53-F232C624EE81}.Debug.Build.0 = Debug|.NET
+		{D65887E2-E73D-4606-8B53-F232C624EE81}.Release.ActiveCfg = Release|.NET
+		{D65887E2-E73D-4606-8B53-F232C624EE81}.Release.Build.0 = Release|.NET
+		{D05D4AE5-16AD-43B5-967B-6A1756F9C0E9}.Debug.ActiveCfg = Debug|.NET
+		{D05D4AE5-16AD-43B5-967B-6A1756F9C0E9}.Debug.Build.0 = Debug|.NET
+		{D05D4AE5-16AD-43B5-967B-6A1756F9C0E9}.Release.ActiveCfg = Release|.NET
+		{D05D4AE5-16AD-43B5-967B-6A1756F9C0E9}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(SolutionItems) = postSolution
+		..\readme.htm = ..\readme.htm
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

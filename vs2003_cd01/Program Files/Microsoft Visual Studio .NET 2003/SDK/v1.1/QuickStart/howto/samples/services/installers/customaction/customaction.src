@@ -1,0 +1,3 @@
+C# Source:CS\CustomAction.cs,CS\CustomInstaller.cs,CS\ProjectInstaller.cs
+VB Source:VB\CustomAction.vb,VB\CustomInstaller.vb,VB\ProjectInstaller.vb
+C++ Source:CP\CustomAction.cpp,CP\CustomInstaller.cpp,CP\ProjectInstaller.cpp

@@ -1,0 +1,26 @@
+HKCR
+{
+	LoanLib.Loan.1 = s 'Loan Class'
+	{
+		CLSID = s '{0A7366CB-9628-4D03-AAB7-87C316CE0737}'
+	}
+	LoanLib.Loan = s 'Loan Class'
+	{
+		CLSID = s '{0A7366CB-9628-4D03-AAB7-87C316CE0737}'
+		CurVer = s 'LoanLib.Loan.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {0A7366CB-9628-4D03-AAB7-87C316CE0737} = s 'Loan Class'
+		{
+			ProgID = s 'LoanLib.Loan.1'
+			VersionIndependentProgID = s 'LoanLib.Loan'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{FF8076FE-F48E-464B-BCB2-E84F3262D9E5}'
+		}
+	}
+}

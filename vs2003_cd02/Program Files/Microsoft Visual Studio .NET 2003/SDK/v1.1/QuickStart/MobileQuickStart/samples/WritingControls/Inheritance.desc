@@ -1,0 +1,7 @@
+Using Inheritance
+This sample illustrates how to use inheritance to build 
+custom behavior on top of an existing mobile control. The control 
+shown here inherits from the List mobile control to create a
+menu. The menu is automatically generated from other forms in the
+page, and provides its own command handling, navigating to the 
+selected form.

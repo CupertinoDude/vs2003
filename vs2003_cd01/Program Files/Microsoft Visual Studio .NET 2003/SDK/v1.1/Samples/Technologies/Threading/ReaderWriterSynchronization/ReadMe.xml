@@ -1,0 +1,58 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?>
+
+<sample>
+<title>ReaderWriterLock Synchronization Sample</title>
+<title-short>ReaderWriterSynchronization</title-short>
+<overview>
+   This sample demonstrates use of the ReaderWriterLock thread synchronization class. The sample queues up 10 asynchronous "reader" methods and 10 asynchronous "writer" methods.  Each method grabs the appropriate lock, writes to the console, sleeps, and then writes to the console a second time. The functionality of the ReaderWriterLock type allows the developer to write code that enforces exclusive access to a shared resource while a thread is writing or modifying the resource, while allowing non-exclusive access when reading or querying the resource.
+</overview>
+<subdirectory>Technologies\Threading\ReaderWriterSynchronization</subdirectory>
+<buildsteps>
+   <step>
+      Type <richcontent bold="T">BUILD.bat</richcontent>
+      <richcontent> from the command line.</richcontent>      
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Threading\ReaderWriterSynchronization\VB>Build.bat
+      </example>
+   </step>
+</buildsteps>
+<runsteps>
+   <step>
+      Type <richcontent bold="T">ReaderWriter.exe</richcontent><richcontent> from the command line.</richcontent>
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Threading\ReaderWriterSynchronization\VB>ReaderWriter.exe
+      </example>
+   </step>
+   <step>
+      Notice that the "Start Writing" and "Stop Writing" output for each writer is output one after the other.  This is because the writers hold exclusive access to the resource, unlike the readers.
+   </step>
+</runsteps>
+<technologies>
+   <technology name = "Thread Synchronization" keyword="T">
+      <class name = "ReaderWriterLock" keyword="T">
+         This sample uses the ReaderWriterLock type to protect a "logical" resource which is implemented as a call to Thread.Sleep().  Threads using the ReaderWriterLock type can hold the lock in two different ways.  First, a thread can hold a read-lock, which is non-exclusive and will allow other threads to gain a read-lock for the class.  Second, a thread can request a "write" lock, which is exclusive, and will not be granted until currently held read and write locks are released.
+      </class>
+      <class name = "AutoResetEvent" keyword="T">
+         The sample's main thread waits on an AutoResetEvent object until it is set, which indicates that the last of the asynchronous functions are finished doing their work.
+      </class>
+      <class name = "Interlocked" keyword="T">
+         The sample uses the static Increment() and Decrement() methods of the Interlocked class to asynchronously access a counter variable to indicate when the AutoResetEvent should be set.
+      </class>
+   </technology>
+   <technology name = "Threading" keyword="T">
+      <class name = "ThreadPool" keyword="T">
+         When writing managed code, it is suggested that whenever possible, developers use the QueueUserWorkItem() method of the ThreadPool class to implement asynchronous method calls. This sample uses this approach to execute code that contends for a logical resource.
+      </class>
+   </technology>
+   <technology name = "Delegates" keyword="T">
+      <class name = "WaitCallback" keyword="T">
+         The WaitCallback delegate type is used by this sample to create a type-safe callback method for the ThreadPool class to use. 
+      </class>      
+   </technology>
+</technologies>
+<keywords>
+   <word name="Threads" keyword="T"/>
+</keywords>
+</sample>
+

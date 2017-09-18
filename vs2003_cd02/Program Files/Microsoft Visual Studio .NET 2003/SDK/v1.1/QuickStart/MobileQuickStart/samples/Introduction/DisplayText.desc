@@ -1,0 +1,6 @@
+Displaying Text
+This sample demonstrates how you can display a large amount of text
+on a form, using the TextView control. If you set the Paginate property of the 
+form to True, the form automatically paginates the text according to the 
+characteristics of the target device.
+

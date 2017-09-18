@@ -1,0 +1,488 @@
+BODY
+{
+	background: white;
+	font-family: Verdana, Sans-Serif;
+	font-size: 70%;
+	color: #000000;
+	margin: 0;
+	cursor: default;
+}
+
+A
+{
+	font-size: 70%;
+	color: #336699;
+}
+
+A:hover
+{
+	color: #ff9933;
+}
+
+.clsTabTblCell A
+{
+	color: #336699;
+	text-decoration: none;
+}
+
+.clsTabTblCell A:hover
+{
+	color: #ff9933;
+	text-decoration: none;
+}
+
+.clsTabTblCellUp A
+{
+	color: #336699;
+	text-decoration: none;
+	cursor: default;
+}
+
+.clsTabTblCellUp A:hover
+{
+	color: #336699;
+	text-decoration: none;
+}
+
+.clsLeftNav 
+{
+	background: #6699cc;
+	border-left-style: solid;
+	border-left-color: #6699cc;
+	border-left-width: 5;
+}
+
+.clsPopupDisplay
+{
+	position: absolute;
+	display: none;
+	border: #336699 1px solid;
+}
+
+.clsSmallLogo
+{
+	position: absolute;
+	top: 10;
+	left: 230;
+	color: #ffffff;
+	width: 300px;
+	padding-left: 15px;
+	font-size: 18pt;
+	cursor: default;
+	font-weight: bold;
+}
+
+.clsSmallLogoEx
+{
+	position: absolute;
+	top: 10;
+	left: 100;
+	color: #ffffff;
+	width: 300px;
+	padding-left: 15px;
+	font-size: 18pt;
+	cursor: default;
+	font-weight: bold;
+}
+
+.clsSmallLogoCell
+{
+	color: #ffffff;
+	width: 100%;
+	height: 47px;
+	padding-left: 15px;
+	font-size: 1.2em;
+	cursor: default;
+	font-weight: bold;
+}
+
+.leftNav
+{
+	background: #6699cc;
+	cursor: default;
+}
+
+.clsLogo
+{
+	background-color: #6699cc;
+}
+
+.clsTabList
+{
+	background-color: #6699cc;
+	margin-top: 20;
+	border-left: #6699cc 6px solid;
+}
+
+
+.clsTabContent
+{
+	background-color: #ffffff;
+	padding-left: 30;
+}
+
+.clsTabToolbar
+{
+	background-color: #6699cc;
+	background-repeat: no-repeat;
+	padding-left: 15;
+}
+
+.clsTabToolbarItem
+{
+	background-color: #6699cc;
+	font-size: 70%;
+	font-weight: normal;
+	color: #ffffff;
+}
+
+.clsTabItem
+{
+	background-color: #6699cc;
+	color: #ffffff;
+	font-size: 70%;
+	font-weight: normal;
+	border-right: #6699cc 1px solid;
+	padding-left: 5;
+	padding-bottom: 4px;
+	padding-top: 4px;
+	text-decoration: none;
+	cursor: hand;
+}
+
+.clsTabItemOver
+{
+	color: #ff9933;
+	text-decoration: underline;
+	padding-left: 5;
+	padding-bottom: 4px;
+	padding-top: 4px;
+	cursor: hand;
+}
+
+.clsTabItemSelected
+{
+	background: white;
+	color: black;
+	font-size: 70%;
+	font-weight: bold;
+	border-right: 1px solid white;
+	padding-left: 5;
+	padding-bottom: 4px;
+	padding-top: 4px;
+	cursor: default;
+}
+
+.clsChxBoxen
+{
+	font-size: 8pt;
+	color: #ff9933;
+	cursor: hand;
+}
+
+.homepagerule
+{
+	line-height:2.5em;
+	height: 1px;
+	color: #999999;
+	z-index: 9;
+}
+
+.homepageimage
+{
+	margin-right: 10px;
+	border: 0;
+}
+
+.homePageActive
+{
+	font-size: 70%;
+	line-height: 1.5em;
+	color: #336699;
+	text-decoration: underline;
+	cursor: hand;
+}
+
+.homePageActiveHlt
+{
+	font-size: 70%;
+	line-height: 1.5em;
+	color: #ff9933;
+	text-decoration: underline;
+	cursor: hand;
+}
+
+.homepageinactive
+{
+	font-size: 70%;
+	line-height: 1.5em;
+}
+
+.homePageStatic
+{
+	font-size: 70%;
+	line-height: 1.5em;
+	color: black;
+	text-decoration: none;
+	cursor: default;
+}
+
+.homePageTitle
+{
+	font-size: 70%;
+	color: black;
+	font-weight: bold;
+	cursor: default;
+	vertical-align: baseline;
+}
+
+LABEL
+{
+	line-height: 2em;
+	color: #336699;
+	font-size: 70%;
+	text-decoration: none;
+	cursor: default;
+	vertical-align: baseline;
+}
+
+SELECT
+{
+	font-size: 70%;
+	font-family: Verdana, Sans-Serif;
+	margin-right: 4px;
+	margin-left: 2px;
+}
+
+INPUT
+{
+	font-size: 70%;
+	font-family: Verdana, Sans-Serif;
+	margin-right: 4px;
+	margin-left: 2px;
+}
+
+#MruListTable
+{
+	border: #999999 1px solid;
+	width: 100%;
+}
+
+#MruListTable THEAD TD
+{
+	cursor: default;
+	color: white;
+	background-color: #999999;
+	padding: 2px;
+	cursor: default;
+}
+
+#MruListTable TBODY TR
+{
+	cursor: default;
+	color: #000000;
+	padding: 2px;
+}
+
+#MruListTable .clsGray
+{
+	background: #ececec;
+}
+
+#MruListTable A
+{
+	color: #336699;
+}
+
+#MruListTable A:Hover
+{
+	color: #ff9933;
+}
+
+.clsGray
+{
+	background: #ececec;
+	color: #000000;
+}
+
+
+.clsTblHlt
+{
+	background: #999999;
+}
+
+.clsChipSpan
+{
+	margin: 5px;
+	height: 10pt;
+	border: black 1px solid;
+}
+
+.clsChipTaglbl
+{
+	margin: 5px;
+	height: 12pt;
+	border: #999999 1px solid;
+	font-size: 10pt;
+	padding: 2px;
+}
+
+.clsChipSpan .clsComboLabel
+{
+	color: #003366;
+	background: white;
+	width: 200px;
+	height: 12pt;
+	border-right: #999999 1px solid;
+	font-size: 10pt;
+	padding: 2px;
+}
+
+.clsChipSpan .clsComboThumb
+{
+	color: #003366;
+	padding: 2px;
+	height: 12pt;
+	font-size: 10pt;
+	font-family: marlett;
+}
+
+.clsCombo
+{
+	border: #999999 1px solid;
+	background: #bbddff;
+}
+
+.clsComboLabel
+{
+	color: #003366;
+	background: white;
+	height: 100%;
+	width: 200px;
+	border-right: #999999 1px solid;
+	font-size: 70%;
+	padding: 4px;
+}
+
+.clsComboThumb
+{
+	color: #003366;
+	height: 100%;
+	padding: 2px;
+	font-size: 70%;
+	font-family: marlett;
+}
+
+.clsTabTblHead 
+{
+	width: 100%;
+}
+
+.clsTabTblCell 
+{
+	padding-left: 10px;
+	padding-right: 10px;
+	border-top: #999999 1px solid;
+	border-right: 0px solid white;
+	border-left: #999999 1px solid;
+	border-bottom: #999999 1px solid;
+	background: #ececec;
+}
+
+.clsTabTblCellRo
+{
+	border-right: #999999 0px solid;
+	padding-right: 10px;
+	border-top: #999999 1px solid;
+	padding-left: 10px;
+	border-bottom: #999999 1px solid;
+}
+
+.clsTabTblCellUp
+{
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 5px;
+	border-top: #999999 1px solid;
+	border-right: #999999 0px solid;
+	border-left: #999999 1px solid;
+	background: white;
+}
+
+.clsTabTblCellFillTab
+{
+	width: 100%;
+	font-family: Verdana, Sans-Serif;
+	border-bottom: #999999 1px solid;
+	background: white;
+}
+
+.clsTabTblDispCell
+{
+	background: white;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 15px;
+	padding-right: 10px;
+	border-bottom: #999999 1px solid;
+	border-right: #999999 1px solid;
+	border-left: #999999 1px solid;
+}
+
+.clsSubPgTlBar
+{
+	display: inline;
+}
+
+.clsSubPgTlBarHidden
+{
+	display: none;
+}
+
+.bugbugspc
+{
+	margin-top: 5px;
+}
+
+.clsHidden
+{
+	display: none;
+}
+
+.clsBtnFlat
+{
+	border: #999999 1px solid;
+	padding: 4px;
+	font-size: 0.7em;
+	background: #ececec;
+	color: #336699;
+	line-height: 0.7em;
+	font-family: Verdana, Sans-Serif;
+	font-weight: bold;
+	text-align: center;
+	cursor: hand;
+	margin-right: 4px;
+}
+
+.clsVsToolBtn
+{
+	background: #ececec;
+	font-family: Verdana, Sans-Serif;
+	font-weight: bold;
+	padding: 4px;
+	border: #999999 1px solid;	
+	color: #336699;
+	font-size: 0.7em;
+	line-height: 0.7em;
+	text-align: center;
+	cursor: hand;
+	margin-right: 4px;
+}
+
+.clsVsSectionHeader
+{
+	font-weight: bold;
+	font-size: 70%;
+	line-height: 1.5em;
+	text-decoration: none;
+}

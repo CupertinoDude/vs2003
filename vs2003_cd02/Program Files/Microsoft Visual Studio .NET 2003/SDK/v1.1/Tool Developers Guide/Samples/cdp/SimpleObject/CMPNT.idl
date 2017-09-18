@@ -1,0 +1,88 @@
+import "oaidl.idl";
+import "ocidl.idl";
+import "unknwn.idl"; 
+
+//
+// Server.idl - IDL source for Server.dll
+//
+//   The MIDL compiler generates proxy/stub code and a type library
+//   from this file.
+//
+
+#define PROPERTY_RW(type, name)							\
+        [propget]										\
+        HRESULT name([out, retval] type * pRetVal);		\
+														\
+        [propput]										\
+        HRESULT name([in] type NewVal)
+
+#define PROPERTY_RO(type, name)  						\
+        [propget]										\
+        HRESULT name([out, retval] type * pRetVal) 
+
+#define PROPERTY_WO(type, name)							\
+        [propput]										\
+        HRESULT name([in] type NewVal)
+
+// Interface CDPTests
+[
+	object,
+	uuid(00000abc-b41b-11cf-a6bb-0080c7b2d682),
+	helpstring("ICDPTests Interface"),
+	pointer_default(unique)
+]
+interface ICDPTests : IUnknown
+{
+	PROPERTY_RW(BOOL, AllowQIOfBrokenIMarshal);
+	PROPERTY_RW(BOOL, FailAllQIs);
+};
+
+// Interface CDPTests
+[
+	object,
+	uuid(000F00F0-0F00-11cf-a6bb-0080c7b2d684),
+	helpstring("ICDPTests Interface"),
+	pointer_default(unique)
+]
+interface IFoo : IUnknown
+{	
+	HRESULT Foo();
+};
+
+// Interface CDPTests
+[
+	object,
+	uuid(56823962-6326-3651-a632-626690873284),
+	helpstring("Universal Marshaler Interface"),
+	pointer_default(unique)
+]
+interface IUniversalMarshaler : IUnknown
+{	
+};
+
+//
+// Component descriptions
+//
+[
+	uuid(00000abc-b997-11cf-a6bb-0080c7b2d682),
+	version(1.0),
+	helpstring("Component1.0 Type Library")
+]
+library ServerLib
+{
+	importlib("stdole32.tlb");
+
+	[
+		uuid(00000abc-882c-11cf-a6bb-0080c7b2d684),
+		helpstring("Simple Object")
+	]
+	coclass CDPObject
+	{
+		[default] interface ICDPTests;
+		interface IMarshal;
+		interface IFoo;
+		interface IUniversalMarshaler;
+	};
+};
+
+  

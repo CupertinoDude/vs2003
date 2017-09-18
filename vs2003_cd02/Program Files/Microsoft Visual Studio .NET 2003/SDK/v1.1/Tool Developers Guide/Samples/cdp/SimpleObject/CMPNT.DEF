@@ -1,0 +1,18 @@
+EXPORTS
+                DllGetClassObject   	PRIVATE
+                DllCanUnloadNow     	PRIVATE
+                DllRegisterServer   	PRIVATE
+                DllUnregisterServer 	PRIVATE
+
+				SetDelegate
+				CallDelegate
+				
+				CdeclCall
+				StdCall
+				ThisCall
+				
+				CoInitialize=CoInitializeD
+				CoInitializeEx=CoInitializeExD
+				CoUninitialize=CoUninitializeD
+				CoCreateInstance=CoCreateInstanceD
+

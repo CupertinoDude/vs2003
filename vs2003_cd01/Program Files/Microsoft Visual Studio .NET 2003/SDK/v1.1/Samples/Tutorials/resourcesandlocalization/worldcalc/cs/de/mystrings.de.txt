@@ -1,0 +1,5 @@
+﻿Math_Greeting = Guten Tag - Ganzzahl Taschenrechner
+Math_Formula_Label = Formel und Ergebnisse:
+Math_Clear_Button = Löschen
+Math_Calc_Button = Berechnen
+Math_Calc_Error = Ungultige Formel. Bitte versuchen Sie es noch einmal.

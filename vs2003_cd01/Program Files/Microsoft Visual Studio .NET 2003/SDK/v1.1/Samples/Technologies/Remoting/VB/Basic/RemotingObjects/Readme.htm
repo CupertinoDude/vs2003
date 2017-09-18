@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root xmlns:dt="urn:schemas-microsoft-com:datatypes" xmlns:d2="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><?xml-stylesheet type="text/xsl" href="..\..\..\..\..\readme.xsl"?><HTML><HEAD><TITLE> Remoting Objects Sample</TITLE><STYLE>
+    .Title{FONT-FAMILY: Verdana;FONT-SIZE: large;COLOR: #808080}
+    </STYLE><STYLE>
+    .Heading{FONT-FAMILY: Verdana;FONT-SIZE: large}
+    </STYLE><STYLE>
+    .SectionBreak{FONT-SIZE: small;MARGIN-BOTTOM: 2em}
+    </STYLE><STYLE>
+    .SmallBreak{FONT-SIZE: small;MARGIN-BOTTOM: 1.5em}
+    </STYLE><STYLE>
+    .Text{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedHeading{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedText{MARGIN-LEFT: 3ex;FONT-FAMILY: Lucida Console;FONT-SIZE: x-small;FONT-WEIGHT: Bold}
+    </STYLE><STYLE>
+    .ListSansBullets {list-style-type: none;FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE></HEAD><BODY><table><tr><td><h2 class="Title"> Remoting Objects Sample</h2></td><td valign="baseline" class="Text">
+               
+              
+                  (Console Application)
+                </td></tr></table><p class="Text">
+    This document contains the release information for the .NET Framework Using Client Activated objects .NET remoting sample. You will find the following sections below: 
+    </p><ul class="Text"><li><a href="#_Sample_Overview">Overview</a></li><li><a HREF="#Registering the service in IIS">Registering the service in IIS</a></li><li><a HREF="#Requirements">Requirements</a></li><li><a href="#_Location_of_Sample">Location</a></li><li><a href="#_Building_the_Sample">Building the sample</a></li><li><a href="#_Running_the_Sample">Running the sample</a></li><li><a href="#_sdkvars">Notes</a></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Overview" />
+    Overview
+    </h4><p class="Text"> 
+    This sample shows how to create a client activated object, publish
+    it as a service and use a client to activate the object and make
+    a number of method calls.  It demonstrates how to:<p></p>
+
+    1) activate a sample using a constructor with parameters<p></p> 
+    2) use set and get to access a public property<p></p> 
+    3) store state between calls<p></p> 
+    4) use methods to change state<p></p> 
+    5) call overloaded methods on remote objects<p></p> 
+
+    This sample uses SOAP over HTTP on port 80.
+	</p><p class="SectionBreak" /><p class="SectionBreak" /><h4 class="Heading"><a name="#Registering the service in IIS"></a>Registering the service in IIS</h4><span class="Text"><p class="Text"><li>Compile the service to a DLL and copy this DLL to a bin directory
+    where the service will be loaded from.  For this sample we create
+    the bin subdirectory under RemotingObjects and copy the CAILibrary.dll there.</li><p></p><li>Start Internet Services Manager and select Default Web Site
+    under the server node.  Select Action, New, Virtual Directory on the
+    menu and click Next to continue.</li><p></p><li>Enter RemotingObjects as the alias and press Next.</li><p></p><li>Enter the directory where the service is located.  Enter the full path
+    up to but excluding the bin directory where the DLL in step 1 was copied to.
+    For example<p></p><b>C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\VB\Basic\RemotingObjects</b></li><p></p><li>Press Next.  Accept the defaults presented and press Next again.  Press Finish.  The service
+    has now been registered and will appear under the list of Default Web Sites in the Internet Services
+    Manager window.</li><p></p><li>Check that there is a web.config file in the directory where the service was registered.  This
+    file describes our service and will automatically be loaded when a client attempts to access our
+    service with a browser or client using the HTTP channel on port 80.</li></p></span><p class="SectionBreak" /><h4 class="Heading"><a name="#Requirements"></a>Requirements</h4><span class="Text"><p class="Text">
+    This sample will only operate correctly on any version of Windows with the Common Language Runtime and Internet Information Server (IIS) installed.  
+    </p></span><p class="SectionBreak" /><h4 class="Heading"><a name="_Location_of_Sample" />
+    Location
+    </h4><p class="Text">
+    This sample is located in the <a href="." title="Jump to Folder" target="_blank">Technologies\Remoting\VB\Basic\RemotingObjects
+
+    </a> subdirectory of the .NET Framework SDK samples directory.
+    </p><p class="FixedHeading">
+    For Example:
+      <p class="FixedText">
+      C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\VB\Basic\RemotingObjects
+
+    </p></p><p class="SmallBreak" /><p class="Text">
+      This sample contains the following directory structure:
+      
+      <ul><li class="ListSansBullets"><b>\bin</b> -- 
+     
+    Contains the CAOLibrary.dll required when the service is accessed using IIS.  The service
+    should be registered with IIS before calling this service from the client in 
+    Client/ConsoleClient.
+	</li></ul><ul><li class="ListSansBullets"><b>\Service</b> -- 
+     
+    The source file CAOLibrary.cs and associated build.bat is stored here.  The build.bat
+    creates CAOLibrary.dll and copies this file to the bin directory.
+	</li></ul><ul><li class="ListSansBullets"><b>\Client</b> -- 
+     
+    Contains the ConsoleClient directory.
+	</li></ul><ul><li class="ListSansBullets"><b>\Client\ConsoleClient</b> -- 
+     
+    Contains the source and associated build.bat to build client.exe.  The client
+    uses client.exe.config to configure itself.
+	</li></ul></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Building_the_Sample" />
+    Building the Sample
+    </h4><p class="Text">
+    In order to properly build and run this sample, the following steps need to be performed.
+    </p><p class="Text"> 
+	Type <b>BuildAll.bat</b> from the command line.      
+	<p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText"> 
+	C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\VB\Basic\RemotingObjects&gt; BuildAll.bat
+	</p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Running_the_Sample" />
+    Running the Sample
+    </h4><p class="Text">
+    In order to run this sample, follow the instructions listed below.
+    </p><span class="Text"><ul class="Text"><li>
+    Ensure that RemotingObjects is registered as a service in IIS and run client.exe
+    in the Client/ConsoleClient directory
+	</li></ul></span><p class="SectionBreak" /><h4 class="Heading"><a name="_sdkvars" />
+    Notes
+    </h4><p class="Text">
+    For the .Net Framework samples to function properly, your Path, Include, and Lib environment variables must be set correctly. 
+    In many cases, the SDK install program updates these environment variables for you. However, if you installed the .Net Framework SDK 
+    using Visual Studio .NET, or unselected "register environment variables" during setup, these environment variables will not be updated. 
+    You can set the Path, Include and Lib environment variables by running SDKVars.bat, located in the <i>&lt;SDKRoot&gt;\Bin</i> directory. 
+    SDKVars.bat must be executed in every command shell.
+    </p></BODY></HTML></root>

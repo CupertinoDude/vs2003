@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META content="Microsoft Visual Studio 7.0" name="GENERATOR">
+		<LINK href="..\commands\HelpStyle.css" type="text/css" rel="stylesheet"></HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="HowDoI">Get the address of a module using !DumpDomain</TD>
+					</TR>
+					<TR>
+						<TD class="Comment">
+							<table class="Comments2" id="Table4">
+								<tr>
+									<td vAlign="top"><b>Comments:</b></td>
+									<td>To call the DumpModule command, you need to know the address of the module. You 
+										can find the address of a module in several ways. This technique uses the 
+										DumpDomain command to list all the modules that are loaded;&nbsp;you can search 
+										the output and choose the module you are looking for.
+									</td>
+								</tr>
+							</table>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="Step">Step 1: List the modules loaded in the domain</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax"><pre>0:003&gt; !dumpdomain
+--------------------------------------
+System Domain: 793abdb8
+LowFrequencyHeap: 793abe1c
+HighFrequencyHeap: 793abe70
+StubHeap: 793abec4
+Name: 
+Assembly: 001439c0 [mscorlib]
+ClassLoader: 00143df8
+  Module Name
+001440c0 f:\winnt\microsoft.net\framework\v1.0.3705\mscorlib.dll
+--------------------------------------
+Shared Domain: 793ad1e8
+LowFrequencyHeap: 793ad24c
+HighFrequencyHeap: 793ad2a0
+StubHeap: 793ad2f4
+Assembly: 60296f38
+...
+Assembly: 60265478--------------------------------------
+Domain 1: 13a2b8
+LowFrequencyHeap: 0013a31c
+HighFrequencyHeap: 0013a370
+StubHeap: 0013a3c4
+Name: basedebug.exe
+Assembly: 0014c620 [basedebug]
+ClassLoader: 0014c6f8
+  Module Name
+<STRONG><FONT color=red>0014ea50</FONT></STRONG> G:\Projects\VC\basedebug\bin\Debug\basedebug.exe</pre>
+							<table class="Notes" id="Table2">
+								<tr>
+									<td vAlign="top"><b>Notes:</b></td>
+									<td>
+										Review&nbsp;the output for&nbsp;the module you are looking for.&nbsp; You can 
+										then use the DumpModule command with the corresponding address.
+									</td>
+								</tr>
+							</table>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="Step">Step 2: Dump the module information</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax"><pre>0:003&gt; !dumpmodule <STRONG><FONT color=red>0014ea50</FONT></STRONG> 
+Name G:\Projects\VC\basedebug\bin\Debug\basedebug.exe
+dwFlags 00003280
+Attribute PEFile Edit&amp;Continue 
+Assembly 0014c620
+LoaderHeap* 0014ead8
+TypeDefToMethodTableMap* 03150010
+TypeRefToMethodTableMap* 0315001c
+MethodDefToDescMap* 03150060
+FieldDefToDescMap* 03150090
+MemberRefToDescMap* 03150098
+FileReferencesMap* 031500e0
+AssemblyReferencesMap* 031500e4
+MetaData starts at 00402204 (0x658 bytes)</pre>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0"?>
+<definitions xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2000/10/XMLSchema" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <xsd:import namespace="http://www.w3.org/2000/10/XMLSchema"/>
+      <xsd:element name="Save">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="customersDataSet" nullable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element ref="xsd:schema"/>
+                  <xsd:any/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SaveResult">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nullable="true">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element ref="xsd:schema"/>
+                  <xsd:any/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="SaveSoapIn">
+    <part name="parameters" xmlns:q1="http://tempuri.org/" element="q1:Save"/>
+  </message>
+  <message name="SaveSoapOut">
+    <part name="parameters" xmlns:q2="http://tempuri.org/" element="q2:SaveResult"/>
+  </message>
+  <portType name="UpdateCustomersSoap">
+    <operation name="Save">
+      <input xmlns:q3="http://tempuri.org/" message="q3:SaveSoapIn"/>
+      <output xmlns:q4="http://tempuri.org/" message="q4:SaveSoapOut"/>
+    </operation>
+  </portType>
+  <portType name="UpdateCustomersHttpGet"/>
+  <portType name="UpdateCustomersHttpPost"/>
+  <binding name="UpdateCustomersSoap" xmlns:q5="http://tempuri.org/" type="q5:UpdateCustomersSoap">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    <operation name="Save">
+      <operation soapAction="http://tempuri.org/Save" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      <input>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </input>
+      <output>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="UpdateCustomersHttpGet" xmlns:q6="http://tempuri.org/" type="q6:UpdateCustomersHttpGet">
+    <binding verb="GET" xmlns="http://schemas.xmlsoap.org/wsdl/http/"/>
+  </binding>
+  <binding name="UpdateCustomersHttpPost" xmlns:q7="http://tempuri.org/" type="q7:UpdateCustomersHttpPost">
+    <binding verb="POST" xmlns="http://schemas.xmlsoap.org/wsdl/http/"/>
+  </binding>
+  <service name="UpdateCustomers">
+    <port name="UpdateCustomersSoap" xmlns:q8="http://tempuri.org/" binding="q8:UpdateCustomersSoap">
+      <address location="http://localhost/quickstart/winforms/samples/data/update/cs/UpdateCustomers.asmx" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+    </port>
+    <port name="UpdateCustomersHttpGet" xmlns:q9="http://tempuri.org/" binding="q9:UpdateCustomersHttpGet">
+      <address location="http://localhost/quickstart/winforms/samples/data/update/cs/UpdateCustomers.asmx" xmlns="http://schemas.xmlsoap.org/wsdl/http/"/>
+    </port>
+    <port name="UpdateCustomersHttpPost" xmlns:q10="http://tempuri.org/" binding="q10:UpdateCustomersHttpPost">
+      <address location="http://localhost/quickstart/winforms/samples/data/update/cs/UpdateCustomers.asmx" xmlns="http://schemas.xmlsoap.org/wsdl/http/"/>
+    </port>
+  </service>
+</definitions>

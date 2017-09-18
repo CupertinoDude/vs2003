@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Constant Fields and Read-Only Fields">
+	<Paragraph>
+		Constant fields identify fields whose value is determined at compile time. In C#, constants are always considered to be static. That is, a constant cannot be initialized to the result of calling some 		runtime method or function.
+	</Paragraph>
+	<Paragraph>
+		Read-only fields identify fields whose value is determined when an object is constructed. So read-only fields are set during object construction and no other method can change the value of a 		read-only field.	
+	</Paragraph>
+	<Paragraph>
+		The code below demonstrates how to create and use constant and read-only fields.
+	</Paragraph>
+	<Paragraph>
+		<Sample Caption="Fields" Image="..\Images\Console.gif">
+			<CSPath>..\Samples\TypeMembers\Fields\CS</CSPath>
+			<VBPath>..\Samples\TypeMembers\Fields\VB</VBPath>
+		</Sample>
+	</Paragraph>
+	<Paragraph>
+		Of course, the CLR also supports fields that may be read and written to by any method.
+	</Paragraph>
+	<Navigation>
+		<Previous>Accessibility Modifiers.xml</Previous>
+		<Next>Constructors.xml</Next>
+	</Navigation>
+</Document>

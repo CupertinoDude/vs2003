@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META content="Microsoft Visual Studio 7.0" name="GENERATOR">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet"></HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">
+							Token2EE</TD>
+					</TR>
+					<TR>
+						<TD>Finds the&nbsp;memory address of common language runtime&nbsp;data for metadata 
+							token.</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!Token2EE &lt;module name&gt; &lt;mdToken&gt;</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="33" cellSpacing="1" cellPadding="1" width="715" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="155"><STRONG>&lt;module name&gt;</STRONG></TD>
+									<TD vAlign="top">Module name, including the .dll or .exe extension.</TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="155"><STRONG>&lt;mdToken&gt;</STRONG></TD>
+									<TD vAlign="top">You can find the mdToken using DumpMD or DumpMT command.</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>0:000&gt; !Token2EE debug.dll 06000001 
+--------------------------------------
+MethodDesc: 3e52e0
+Name: [DEFAULT] [hasThis] String debug.MyClass.get_MyPropertyDll1()
+
+0:000&gt; !token2ee debug.dll 02000002  
+--------------------------------------
+MethodTable: 003e5344
+EEClass: 031e3280
+Name: debug.MyClass</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Comments</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							Token2EE supports mdtMethodDef, mdtTypeDef and mdtTypeRef tokens.
+							<br>
+							<br>
+							For mdtMethodDef tokens it displays the method descriptor address and the 
+							method signature. Use the DumpMD command to get information about the method 
+							descriptor.<br>
+							<br>
+							For mdtTypeDef and mdtTypeRef tokens, it displays the method table address, the 
+							EEClass address, and the class name.&nbsp; Use the DumpMT command&nbsp;to get 
+							information about the method table and use the DumpClass command to get 
+							information about the EEClass.
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

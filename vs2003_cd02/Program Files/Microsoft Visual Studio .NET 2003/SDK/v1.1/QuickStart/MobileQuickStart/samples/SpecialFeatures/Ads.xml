@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<Advertisements>
+    <Ad>
+        <ImageUrl>buyred.gif</ImageUrl>
+        <BmpImageUrl>buyred.bmp</BmpImageUrl>
+        <WBmpImageUrl>buyred.wbmp</WBmpImageUrl>
+        <NavigateUrl>http://www.microsoft.com/dummy/BuyRed.aspx</NavigateUrl>
+        <AlternateText>Buy Red!</AlternateText>
+        <Impressions>80</Impressions>
+    </Ad>
+    <Ad>
+        <ImageUrl>buygreen.gif</ImageUrl>
+        <BmpImageUrl>buygreen.bmp</BmpImageUrl>
+        <WBmpImageUrl>buygreen.wbmp</WBmpImageUrl>
+        <NavigateUrl>http://www.microsoft.com/dummy/BuyGreen.aspx</NavigateUrl>
+        <AlternateText>Buy Green!</AlternateText>
+        <Impressions>80</Impressions>
+    </Ad>
+    <Ad>
+        <ImageUrl>buyblue.gif</ImageUrl>
+        <BmpImageUrl>buyblue.bmp</BmpImageUrl>
+        <WBmpImageUrl>buyblue.wbmp</WBmpImageUrl>
+        <NavigateUrl>http://www.microsoft.com/dummy/BuyBlue.aspx</NavigateUrl>
+        <AlternateText>Buy Blue!</AlternateText>
+        <Impressions>80</Impressions>
+    </Ad>
+</Advertisements>
+
+
+
+
+

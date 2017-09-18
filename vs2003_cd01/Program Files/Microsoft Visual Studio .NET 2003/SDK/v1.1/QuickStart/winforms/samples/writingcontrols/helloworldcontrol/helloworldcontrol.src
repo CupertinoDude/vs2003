@@ -1,0 +1,3 @@
+C# Source:CS\Control\HelloWorldControl.cs,CS\HostApp\HostApp.cs
+VB Source:VB\Control\HelloWorldControl.vb,VB\HostApp\HostApp.vb
+VS.NET:CS\Control\HelloWorldControl.csproj,CS\HostApp\HostApp.csproj,VB\Control\HelloWorldControl.vbproj,VB\HostApp\HostApp.vb

@@ -1,0 +1,51 @@
+﻿<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\readme.xsl"?>
+
+<sample>
+<title>Garbage Collection Sample</title>
+<title-short>GarbageCollection</title-short>
+<overview>
+The purpose of this sample is to introduce developers to the garbage collector in .NET Framework. The garbage-collected heap manages all class objects. This heap monitors the lifetime of objects and frees them only when no part of the program references the objects. This ensures that objects never leak and references to objects are always valid. This sample demonstrates how the garbage collector works. In addition, this sample shows how to properly design classes that work well in a garbage-collected environment. Finally, the sample shows how an 
+application can control some of the garbage collector’s behavior. For example, the sample shows how to force collections, how to promote objects, and how to work with weak references to objects. 
+</overview>
+<subdirectory>Technologies\GarbageCollection</subdirectory>
+<buildsteps>
+   <step>
+      Type <b>BUILD.bat</b> from the command line.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\GarbageCollection\VB>Build.bat
+      </example>
+   </step>   
+</buildsteps>
+<runsteps>   
+   <step>
+      Type <b>GarbageCollection.exe</b> from the command line.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\GarbageCollection\VB>GarbageCollection.exe
+      </example>
+   </step>         
+</runsteps>
+<technologies>
+   <technology name = "Memory Management" keyword="T">
+      <class name = "GC" keyword="T">
+      Used to affect the Common Language Runtime garbage collector. This type performs such tasks as forcing a collection and surpressing finalization.
+      </class>      
+      <class name = "WeakReference" keyword="T">
+      Used to maintain a reference to an object, while still allowing the object to be cleaned up by the Garbage Collector. Once an object has been cleaned up, the sample shows that the WeakReference refers to null.
+      </class>            
+   </technology>        
+   <technology name = "Threading" keyword="T">
+      <class name = "Thread" keyword="T">
+      Used by this sample to retrieve the hash code of threads to prove that finalization happens on a special thread.
+      </class>
+   </technology>
+</technologies>
+<keywords>
+   <word name="Generations" keyword="T"/>   
+   <word name="Promotion" keyword="T"/>
+   <word name="Weak References" keyword="T"/>      
+   <word name="Leak" keyword="T"/>
+   <word name="Dispose" keyword="T"/>
+</keywords>
+</sample>
+

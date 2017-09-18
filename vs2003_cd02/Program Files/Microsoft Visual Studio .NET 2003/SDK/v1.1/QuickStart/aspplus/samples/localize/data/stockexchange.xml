@@ -1,0 +1,14 @@
+<stockexchange culture="en-us">
+<name>New York Stock Exchange</name>
+<index>DOW</index>
+</stockexchange>
+
+<stockexchange culture="de">
+<name>Frankfurter BÅˆrse</name>
+<index>DOW</index>
+</stockexchange>
+
+<stockexchange culture="ja">
+<name>Tokyo Stock Exchange</name>
+<index>NIKKEI</index>
+</stockexchange>

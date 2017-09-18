@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Managed", "Managed\Managed.csproj", "{33FF04AD-D474-4DE9-B402-57A83C5D8A79}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleObject", "SimpleObject\SimpleObject.vcproj", "{9C8F2F9B-FA1A-4DBF-8A79-E0E8467BEE36}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Inproc = Inproc
+		Proxy = Proxy
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{33FF04AD-D474-4DE9-B402-57A83C5D8A79}.Inproc.ActiveCfg = Debug|.NET
+		{33FF04AD-D474-4DE9-B402-57A83C5D8A79}.Inproc.Build.0 = Debug|.NET
+		{33FF04AD-D474-4DE9-B402-57A83C5D8A79}.Proxy.ActiveCfg = Debug|.NET
+		{33FF04AD-D474-4DE9-B402-57A83C5D8A79}.Proxy.Build.0 = Debug|.NET
+		{9C8F2F9B-FA1A-4DBF-8A79-E0E8467BEE36}.Inproc.ActiveCfg = Inproc|Win32
+		{9C8F2F9B-FA1A-4DBF-8A79-E0E8467BEE36}.Inproc.Build.0 = Inproc|Win32
+		{9C8F2F9B-FA1A-4DBF-8A79-E0E8467BEE36}.Proxy.ActiveCfg = Proxy|Win32
+		{9C8F2F9B-FA1A-4DBF-8A79-E0E8467BEE36}.Proxy.Build.0 = Proxy|Win32
+	EndGlobalSection
+	GlobalSection(SolutionItems) = postSolution
+		Managed\ReadMe.txt = Managed\ReadMe.txt
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

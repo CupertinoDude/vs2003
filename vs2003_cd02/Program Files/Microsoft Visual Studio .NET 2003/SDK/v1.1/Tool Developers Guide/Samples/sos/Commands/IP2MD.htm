@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">
+							IP2MD</TD>
+					</TR>
+					<TR>
+						<TD>Finds MethodDesc from IP.</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!IP2MD</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="63" cellSpacing="1" cellPadding="1" width="708" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>&lt;addr&gt;<BR>
+										</STRONG><EM>Instruction Pointer</EM></TD>
+									<TD vAlign="top">This can be obtained using the&nbsp;ClrStack command.</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>
+0:001&gt; !IP2MD 0de608c5 
+MethodDesc: 0x0d78b480
+Jitted by normal JIT
+Method Name : [DEFAULT] [hasThis] Void Test1Page.Test1.Button1_Click(Object,Class System.EventArgs)
+MethodTable d78b4d4
+Module: 1e7248
+mdToken: 06000004 (c:\windows\microsoft.net\framework\v1.0.3705\temporary asp.net files\netdebugginglabs\2af95e23\6f3d7bc7\assembly\dl\07078db3\000eeb74_5fd3c101\test1page.dll)
+Flags : 0
+Method VA : 0de607e0</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Output</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<TABLE id="Table3" height="93" cellSpacing="1" cellPadding="1" width="1025" border="1">
+								<TR>
+									<TD>MethodDesc</TD>
+									<TD>Method description</TD>
+								</TR>
+								<TR>
+									<TD>JIT information</TD>
+									<TD>Information about how the method was JIT-compiled<BR>
+										<TABLE id="Table4" cellSpacing="1" cellPadding="1" width="300" border="1">
+											<TR>
+												<TD>JIT-compiled&nbsp;by EJIT.</TD>
+											</TR>
+											<TR>
+												<TD>JIT-compiled&nbsp;by normal JIT.</TD>
+											</TR>
+											<TR>
+												<TD>JIT-compiled by ngen.</TD>
+											</TR>
+										</TABLE>
+									</TD>
+								</TR>
+							</TABLE>
+							The rest of the information is the same information displayed with 
+							the&nbsp;DumpMD command. &nbsp;See the DumpMD command for more information.
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

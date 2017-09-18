@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBinding", "SimpleBinding.csproj", "{90A9F3AD-A7EB-4F42-AADE-C8E0D0FF408E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{90A9F3AD-A7EB-4F42-AADE-C8E0D0FF408E}.Debug.ActiveCfg = Debug|.NET
+		{90A9F3AD-A7EB-4F42-AADE-C8E0D0FF408E}.Debug.Build.0 = Debug|.NET
+		{90A9F3AD-A7EB-4F42-AADE-C8E0D0FF408E}.Release.ActiveCfg = Release|.NET
+		{90A9F3AD-A7EB-4F42-AADE-C8E0D0FF408E}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

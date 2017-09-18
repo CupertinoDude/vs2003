@@ -1,0 +1,1553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+                                                       Microsoft ResX Schema 
+
+                                                       Version 1.3
+
+                                                       The primary goals of this format is to allow a simple XML format 
+                                                       that is mostly human readable. The generation and parsing of the 
+                                                       various data types are done through the TypeConverter classes 
+                                                       associated with the data types.
+
+                                                       Example:
+
+                                                       ... ado.net/XML headers & schema ...
+                                                       <resheader name="resmimetype">text/microsoft-resx</resheader>
+                                                       <resheader name="version">1.3</resheader>
+                                                       <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+        <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+        <data name="Name1">this is my long string</data>
+                   <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+        <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+                   [base64 mime encoded serialized .NET Framework object]
+                   </data>
+                   <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+                                                                                              [base64 mime encoded string representing a byte array form of the .NET Framework object]
+                                                                                              </data>
+
+                                                                                              There are any number of "resheader" rows that contain simple 
+                                                                                              name/value pairs.
+
+                                                                                              Each data row contains a name, and value. The row also contains a 
+                                                                                              type or mimetype. Type corresponds to a .NET class that support 
+                                                                                              text/value conversion through the TypeConverter architecture. 
+                                                                                              Classes that don't support this are serialized and stored with the 
+                                                                                              mimetype set.
+
+                                                                                              The mimetype is used forserialized objects, and tells the 
+                                                                                                  ResXResourceReader how to depersist the object. This is currently not 
+                                                                                                  extensible. For a given mimetype the value must be set accordingly:
+
+                                                                                                  Note - application/x-microsoft.net.object.binary.base64 is the format 
+                                                                                                  that the ResXResourceWriter will generate, however the reader can 
+                                                                                                  read any of the formats listed below.
+
+                                                                                                  mimetype: application/x-microsoft.net.object.binary.base64
+                                                                                                  value   : The object must be serialized with 
+                                                                                                  : System.Serialization.Formatters.Binary.BinaryFormatter
+                                                                                                  : and then encoded with base64 encoding.
+
+                                                                                                  mimetype: application/x-microsoft.net.object.soap.base64
+                                                                                                  value   : The object must be serialized with 
+                                                                                                  : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+                                                                                                  : and then encoded with base64 encoding.
+                                                                                                  mimetype: application/x-microsoft.net.object.bytearray.base64
+                                                                                                  value   : The object must be serialized into a byte array 
+                                                                                                  : using a System.ComponentModel.TypeConverter
+                                                                                                  : and then encoded with base64 encoding.
+                                                                                                  -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label11.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Family</value>
+  </data>
+  <data name="label11.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label11.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label11.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Top, Left</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </data>
+  <data name="label11.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>None</value>
+  </data>
+  <data name="label11.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="label11.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label11.Image" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label11.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label11.ImageIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>-1</value>
+  </data>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>408, 160</value>
+  </data>
+  <data name="label11.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>72, 16</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>4</value>
+  </data>
+  <data name="label11.Text">
+    <value>Label11</value>
+  </data>
+  <data name="label11.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>TopLeft</value>
+  </data>
+  <data name="label11.Visible" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label11.Name">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder">
+    <value>1</value>
+  </data>
+  <data name="label10.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Family</value>
+  </data>
+  <data name="label10.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label10.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label10.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Top, Left</value>
+  </data>
+  <data name="label10.AutoSize" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </data>
+  <data name="label10.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>None</value>
+  </data>
+  <data name="label10.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="label10.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label10.Image" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label10.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label10.ImageIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>-1</value>
+  </data>
+  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>216, 168</value>
+  </data>
+  <data name="label10.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>24, 16</value>
+  </data>
+  <data name="label10.TabIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>13</value>
+  </data>
+  <data name="label10.Text">
+    <value>100</value>
+  </data>
+  <data name="label10.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>TopLeft</value>
+  </data>
+  <data name="label10.Visible" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label10.Name">
+    <value>label10</value>
+  </data>
+  <data name="&gt;&gt;label10.Type">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label10.Parent">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label10.ZOrder">
+    <value>2</value>
+  </data>
+  <data name="VScrollBar1.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Family</value>
+  </data>
+  <data name="VScrollBar1.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="VScrollBar1.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="VScrollBar1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Top, Left</value>
+  </data>
+  <data name="VScrollBar1.BackgroundImage" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="VScrollBar1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>None</value>
+  </data>
+  <data name="VScrollBar1.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="VScrollBar1.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="VScrollBar1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="VScrollBar1.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>200, 24</value>
+  </data>
+  <data name="VScrollBar1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="VScrollBar1.Size" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>16, 152</value>
+  </data>
+  <data name="VScrollBar1.TabIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>2</value>
+  </data>
+  <data name="VScrollBar1.Visible" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;VScrollBar1.Name">
+    <value>VScrollBar1</value>
+  </data>
+  <data name="&gt;&gt;VScrollBar1.Type">
+    <value>System.Windows.Forms.VScrollBar, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VScrollBar1.Parent">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;VScrollBar1.ZOrder">
+    <value>12</value>
+  </data>
+  <data name="label12.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Family</value>
+  </data>
+  <data name="label12.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label12.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label12.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Top, Left</value>
+  </data>
+  <data name="label12.AutoSize" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </data>
+  <data name="label12.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>None</value>
+  </data>
+  <data name="label12.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="label12.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label12.Image" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label12.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label12.ImageIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>-1</value>
+  </data>
+  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>408, 184</value>
+  </data>
+  <data name="label12.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>72, 16</value>
+  </data>
+  <data name="label12.TabIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>7</value>
+  </data>
+  <data name="label12.Text">
+    <value>label12</value>
+  </data>
+  <data name="label12.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>TopLeft</value>
+  </data>
+  <data name="label12.Visible" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label12.Name">
+    <value>label12</value>
+  </data>
+  <data name="&gt;&gt;label12.Type">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label12.Parent">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label12.ZOrder">
+    <value>0</value>
+  </data>
+  <data name="comboBox1.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Family</value>
+  </data>
+  <data name="comboBox1.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="comboBox1.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="comboBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Top, Left</value>
+  </data>
+  <data name="comboBox1.BackgroundImage" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="comboBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>None</value>
+  </data>
+  <data name="comboBox1.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="comboBox1.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="comboBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="comboBox1.IntegralHeight" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="comboBox1.ItemHeight" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>13</value>
+  </data>
+  <data name="comboBox1.Items">
+    <value>20</value>
+  </data>
+  <data name="comboBox1.Items1">
+    <value>10</value>
+  </data>
+  <data name="comboBox1.Items2">
+    <value>5</value>
+  </data>
+  <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>136, 24</value>
+  </data>
+  <data name="comboBox1.MaxDropDownItems" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>8</value>
+  </data>
+  <data name="comboBox1.MaxLength" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>0</value>
+  </data>
+  <data name="comboBox1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>96, 21</value>
+  </data>
+  <data name="comboBox1.TabIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>0</value>
+  </data>
+  <data name="comboBox1.Text">
+    <value />
+  </data>
+  <data name="comboBox1.Visible" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Name">
+    <value>comboBox1</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Type">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Parent">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.ZOrder">
+    <value>3</value>
+  </data>
+  <data name="HScrollBar1.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Family</value>
+  </data>
+  <data name="HScrollBar1.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="HScrollBar1.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="HScrollBar1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Top, Left</value>
+  </data>
+  <data name="HScrollBar1.BackgroundImage" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="HScrollBar1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>None</value>
+  </data>
+  <data name="HScrollBar1.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="HScrollBar1.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="HScrollBar1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="HScrollBar1.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>16, 176</value>
+  </data>
+  <data name="HScrollBar1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="HScrollBar1.Size" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>184, 16</value>
+  </data>
+  <data name="HScrollBar1.TabIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>3</value>
+  </data>
+  <data name="HScrollBar1.Visible" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;HScrollBar1.Name">
+    <value>HScrollBar1</value>
+  </data>
+  <data name="&gt;&gt;HScrollBar1.Type">
+    <value>System.Windows.Forms.HScrollBar, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;HScrollBar1.Parent">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;HScrollBar1.ZOrder">
+    <value>11</value>
+  </data>
+  <data name="groupBox1.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Family</value>
+  </data>
+  <data name="groupBox1.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="groupBox1.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Top, Left</value>
+  </data>
+  <data name="groupBox1.BackgroundImage" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>None</value>
+  </data>
+  <data name="groupBox1.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="groupBox1.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="groupBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>264, 16</value>
+  </data>
+  <data name="groupBox1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>248, 264</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>5</value>
+  </data>
+  <data name="groupBox1.Text">
+    <value>HScrollBar and VScrollBar</value>
+  </data>
+  <data name="groupBox1.Visible" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder">
+    <value>10</value>
+  </data>
+  <data name="label7.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Family</value>
+  </data>
+  <data name="label7.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label7.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Top, Left</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </data>
+  <data name="label7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>None</value>
+  </data>
+  <data name="label7.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="label7.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label7.Image" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label7.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label7.ImageIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>-1</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>16, 168</value>
+  </data>
+  <data name="label7.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>92, 16</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>2</value>
+  </data>
+  <data name="label7.Text">
+    <value>VScrollBar.value</value>
+  </data>
+  <data name="label7.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>TopLeft</value>
+  </data>
+  <data name="label7.Visible" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label7.Name">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder">
+    <value>0</value>
+  </data>
+  <data name="label6.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Family</value>
+  </data>
+  <data name="label6.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label6.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Top, Left</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </data>
+  <data name="label6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>None</value>
+  </data>
+  <data name="label6.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="label6.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label6.Image" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label6.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label6.ImageIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>-1</value>
+  </data>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>16, 144</value>
+  </data>
+  <data name="label6.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>92, 32</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>3</value>
+  </data>
+  <data name="label6.Text">
+    <value>HScrollBar.value</value>
+  </data>
+  <data name="label6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>TopLeft</value>
+  </data>
+  <data name="label6.Visible" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label6.Name">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder">
+    <value>1</value>
+  </data>
+  <data name="comboBox2.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Family</value>
+  </data>
+  <data name="comboBox2.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="comboBox2.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="comboBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Top, Left</value>
+  </data>
+  <data name="comboBox2.BackgroundImage" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="comboBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>None</value>
+  </data>
+  <data name="comboBox2.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="comboBox2.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="comboBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="comboBox2.IntegralHeight" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="comboBox2.ItemHeight" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>13</value>
+  </data>
+  <data name="comboBox2.Items">
+    <value>5</value>
+  </data>
+  <data name="comboBox2.Items1">
+    <value>2</value>
+  </data>
+  <data name="comboBox2.Items2">
+    <value>1</value>
+  </data>
+  <data name="comboBox2.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>136, 48</value>
+  </data>
+  <data name="comboBox2.MaxDropDownItems" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>8</value>
+  </data>
+  <data name="comboBox2.MaxLength" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>0</value>
+  </data>
+  <data name="comboBox2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="comboBox2.Size" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>96, 21</value>
+  </data>
+  <data name="comboBox2.TabIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>1</value>
+  </data>
+  <data name="comboBox2.Text">
+    <value />
+  </data>
+  <data name="comboBox2.Visible" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;comboBox2.Name">
+    <value>comboBox2</value>
+  </data>
+  <data name="&gt;&gt;comboBox2.Type">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox2.Parent">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;comboBox2.ZOrder">
+    <value>2</value>
+  </data>
+  <data name="pictureBox1.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Family</value>
+  </data>
+  <data name="pictureBox1.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="pictureBox1.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="pictureBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Top, Left</value>
+  </data>
+  <data name="pictureBox1.BackgroundImage" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="pictureBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>None</value>
+  </data>
+  <data name="pictureBox1.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="pictureBox1.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        Qk02KAAAAAAAADYEAAAoAAAAYAAAAGAAAAABAAgAAAAAAAAAAABhDwAAYQ8AAAABAAAAAQAA1pwY/96c
+        GP/epRj/1pwh/96cIf/nnCH/3qUh/+elIf/epSn/56Up/96tKf/nrSn/3qUx/+elMf/erTH/560x/+el
+        Of/erTn/5605/++tOf/etTn/57U5/++1Of/erUL/561C/961Qv/ntUL/77VC/961Sv/ntUr/77VK/969
+        Sv/nvUr/771K/+e1Uv/vtVL/3r1S/+e9Uv/vvVL/3sZS/+fGUv/evVr/571a/++9Wv/exlr/58Za/+/G
+        Wv/nxmP/78Zj/97OY//nzmP/785j/+fGa//vxmv/585r/+/Oa//n1mv/585z/+/Oc//3znP/59Zz/+/W
+        c//31nP/5857/+/Oe//n1nv/79Z7//fWe//n1oT/79aE//fWhP/v3oT/996E/+fWjP/v1oz/99aM/+fe
+        jP/v3oz/996M//fnjP/v3pT/996U/+/nlP/355T/796c//fenP/v55z/9+ec/+/vnP/375z/7+el//fn
+        pf/v76X/9++l/+/3pf/3563/7++t//fvrf/v963/9/et/+/vtf/377X//++1/+/3tf/397X/9++9/+/3
+        vf/3973///e9//f/vf///73/7/fG//f3xv//98b/9//G////xv/3/87////O////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////wwM
+        DBERFxwkKi86QkpQWmFka3BwcHBwcHBwcGtkYFpaVlBMRD86Ly8nJCAaGBISEQ4ODg4RERgaHR0dHR0d
+        HR0cHCIlJSUlJSIiJSUiIh0dHRwXFxgSEg4MDAwMDAwMDAwODBISFxwkKi86QkpQWmBka3BwcHBwcHBw
+        cGtoYF9aVlBMRUA6NC8lJSAaGBIRERERERERGBgaHR0dHR0dHR0iIiIlJSUlJSUlJSUlIh0dHRwXFxgS
+        EQ4MDAwMDAwMDAgMDxISFxwkKi86QkpQWlxka3BwcHBwcHBwcGtoZGBaVlBNRUI6NTQtKiUdHRgXERER
+        FxcYGh0dHR0dHSIiIiUkJCUlJSUlKioqJSUlIiIdHRwXFxgSEQ4MDAwMDAgMCAgIDRISGB0lKi86QkpQ
+        Wlpka3BwcHBwcHBwcGtnZGBfVlBNRUVAOjUvLyolIh0dHBoaHR0dHR0dIiIiJSUlJSUlJSUlKioqKioq
+        KiolJSUiHRwXFxISEQwMDAwMCAgICAgIDQ0RFx0gKi85QkpQWlpka3BwcHBwcHBwcGpqZGBhVlZQTUVF
+        QDk0NC8qKiUkJCIiJSIiIiIiKioqKioqKiopKSkqKioqLSoqKioqJSUkHR0ZFxISEQwMDAwICAgICAgI
+        CA0SGBogKS85QkpQWlxka3BwcHBwcHBwcGtqaGFhWlZWUE1FRD85NDQvKikpKSoqKioqKioqKioqKioq
+        KioqKi0tLS8vLy8vKioqKiUkHR0ZFxISEQwMCAgICAgICAYICAwMERodKS80P0pQWmFka3BwcHBwcHBw
+        cGpqaGVhXFpWUlBMREQ/OTk0NC8vMS8vLy80NDQvLy8vLy8vLy8vLy8vLy8vLy8vLyoqKSQkHR0ZFxIS
+        DgwICAgIBAQGBgMGCAwMERodJCk0P0pQWmFka3BwcHBwcHBwcHBqZ2VhXFxWVlBQSURBQT85OTY2NjY2
+        NjY2NjQ0Ly8vLy8vLzAvLy8vLy8vLy8vLy8qKikkHR0ZFxISDgwICAgIBAQEBAYGCAgMERcZJC82P0pQ
+        WmFra3BwcHBwcm9wcHBvampqZGBgWlpUUFBNR0REREREREBAQEBAQDo5OTk5OTQ0NDU0NDQ0NDQ0NDQ0
+        NC8vLyoqIiIdFxcRDAwICAgEBAQEBAMGCAgMERcZJC82P0pQWmFra3BwcHBwcm9wcHBwa2prZGRgX1pW
+        VFRQTU1NSkpKSkpKRUVFRUBAPz85OTk6NTU6NDQ0NDQ0NDQ0NDQvLyoqIiIdGhcRDAwICAgEBAQEBAMG
+        CAgMERcZJC82P0pQWmFra3BwcHBwcnBwcHBwcGtraGVlYV9bW1tXVlZUUFBQUFBQUE1NSkpKRUVCQEA6
+        Ojo6Ojk5OTk5OTQ2NDQ0Ly8qJSIdGRcRDAwICAYEBAQEAQMECAgMERcZJC82P0pQWmFra3BwcHBwcnBw
+        cHBwcHBra2toZWFhX1tbW1taW1pbW1ZWVlZUUFBQTUVFRUJAQEA6Ojk5OTk5OTk5OTY2NC8vKiUdHBcR
+        DgwICAQEAwEBAQMDBggMERcZJC82P0pQWmFra3BwcHBwcnBwcHBwcHBra2traGVlZWVgYGFhYV9fX1pa
+        WlpWVlRQTU1NRUVFQkBAOTk5OTk5OTk5OTk2NC8vKiUcHBkRDgwICAQEAwABAQADBggMERcZJC82P0pQ
+        WmFra3BwcHBwcm9wcHBwcHBra2tqa2tlZWVkZGRkZGBgYGBgWlpaVlZUUFBNTUVFRUVBPz8/Pz8/P0E/
+        OTk5NDQvKiUkHBkRDgwIBgQDAwAAAQADBAgMERcZJC82P0pQWmFra3BwcHBwcm9wcHBwcHBrampqampq
+        ampkZGdnZ2RkZGFgXVxaWlZWUFBMTEpFRURBQT8/Pz8/P0E/Pzk5NDQvLSkkHBkREQwIBgMDAwAAAQAD
+        BAgMERcZJC82P0pQWmFra3BwcHBwcm9wcHBwcHBrampqampqampnZ2dnZ2dkZGFhYV1aWlZWUFBMTElE
+        RURBPz8/Pz8/P0FBQTk5NDQvLCkkHBkREQwIBAMDAAAAAQQECAwMERccKi83QkpQW2Foa3BwcHBwcnBw
+        cHBybXJtcHBwcGtra2tra2tra2VlZGRlZWFdW1pXVFRQUE1FRUVCQEBAQEBAQEFCQjo5NDQ0LyolHR0Y
+        EQwICAgEAwQEBAQECAwMERccKi80QEVQWltkaHBwcHBvb3BwcHBwcGtrcHBra2tra2hra2tra2VkZGRl
+        ZWFdW1tWVFRQUE1FRUVCQD8/Pz8/P0FCQDo6OTQ0LyolHR0YEQwICAgEBAQEBAQICAwRFxkdKS80QERK
+        VFtgZGtwcG9vb3BwcHBwampqa2tqa2trZWVra2tra2tlZGVkZWFdW1taVFRQUE1FRUVCQkA/Pz8/QEFB
+        QkA5OTQ0Ly0qIh0aEhEMCAgIBAQEBAgIDBERFxwdKi82OUFKUFdgYGVpcG9vcGpqampqampqa2tra2tr
+        ZWVra2tra2pnZ2RlZWFdWlpaVlRQUE1KRUVFRUE/Pz8/QUFBQkA6OTQ0Ly8qJR0aGBEMDAwICAgGBggM
+        DBERFx0dKi82OkJFUFNaWmBlaWlqampqampqampqaGhoa2tra2tra2tra2tqamRkZGBgWlpaVlRQUE1J
+        REVFRUVBP0FBQUREQkJAOTk0Ly8qJR0dGhcRDgwICAgICAwMEREXHBwiKS80OT9ETVBQVlpfYWBgYGBg
+        YGBgZGRkZGRlZGVla2tqampqampqamRkZGFgWlpaVlZQUE1NRURFREREQUFEREREREJAPzk5NC8qKiUd
+        GhcREQwMDAgICAwOEREXHB0lJC0vNjk/RE1MTVRWWlpaWlZWWlpaWl9fYGBgYGRkZWpqampra2pqamRk
+        ZGBgXFpaVlZQUExMRERFRUREREREREREREVCQDk5NC8vKiUdHRcREREMDAwMDA4RERcXHCIlJCkvNDY5
+        QUVER1BQVFRUVlJSVlZWWlpaWlpaYGRkZGRqampqampqamRkZGBgXFpaVlZQUExMRERFRERERERERERE
+        REVCQD85NDQvKiUlHRkREREMDAwMDBEXFxkcHR0lKiovNDQ5P0BCRUVHTU1NTU1NTVBQUFZWVlpbYWFh
+        ZWhra2twcHBwb2trZWVhYVpaWlZUUFBQTUpFRUVFRUVFRUVFRUVFQT8/OjQ0LyolIh0dGhcXERERERcX
+        Gh0dHSIlKiovLzQ0OUBBQkJFRUVEREdHTU1NUFBWVlpaWmBgZWhra2twcHBwb2trZWVhYVpaWlZUUFBQ
+        TUpFRUVFRUVFRUVFRUVFRT8/Ojo0LyoqIh0dHBcXFxERERccHR0dHSUlKiovLy80NDk5OT8/QD8/P0JC
+        RUVFSU1QUFZaWlpgZGVra2twcHBwb2trZGRlYVpaWlZUUFBQTUpFRUVFRUVFRUpKSkVFRUE/QDk0Ly8q
+        JSUdHRwZFxcYGB0dHR0iIiUlKiovLy8vNDQ0OTk5OTk5OTo6QEA/REpKUFBWWlpgYGRra2twcHBwb2tr
+        ZWRlYVxaWlZUUFBQTU1FRUVFRUVFRUpKTU1FRUVBQDk0NC8vKiUdHR0cGRoaGh0dJSUlJCUqKiovLy8v
+        Ly80NDQ0NDQ0NDQ1Ojo/QEVFSU1QVlpaYGRra2twcHBwb2tqZ2RkYFxaWlZUVFBQTU1FRUVFRUVFRUpN
+        TU1NRUVEQDk5NC8vKiolJRwcHR0dHRwlJSUlJCoqKiovLyovLy8vLy8vNDQ0NC80NDQ5OUJFRE1QVlpa
+        YGRra2twcHBwb2pqZ2RkYGBaWlZWVFBQTUxFRURERERFRUpKTU1KRUVEPz85NDQvLSolJSQcHR0dIBwk
+        JSUkKSoqKiovLyovLzAsLC8vLy8vLy8vLzQ0OUBCREpQVlpaYGRra2twcHBwb2pqamRkYGBaWlpWVFBQ
+        TExKRUVEREVFSklJSkpKRUVEPz85NDQvLyolJSQcHBwgIBwkJSQkKSoqKiovLy8vLzAsLCwsLy8vLyks
+        Ly80OTlCREVNVlpaZGRra2twcHBwb2pqamRkYGBaWlpWVFJQTExJRERERERESUlJSkpKSUVEPz85NDQv
+        LyokJSQkHB0gJSUlKioqKioqLy8vLy8vLy8vLy8vLy8vLyovLzQ0OUBCREpQVlZaYGBqamtwcHBwcHBr
+        a2VlZWFgWlpWVlBQTU1JSUlJSkpKSk1NTU1KSkREQT85OTU1MC8qKiUiIiIlJSoqKioqLzAwLy8vLy8v
+        Ly8vLy8vLy8vLy8vLzQ0OUBCRUpQVlZaYGdqamtwcHBwcHBra2VlZWFgWlpWVFBQTU1FRUVFRUVKTU1N
+        TU1KRUVEQT85OTQ0MC8qKiUlJSUlJSoqLy8vMDAwLy8vLy8vLy8vLy8vLy8vLy8vNDQ0OUBCRE1QVlpc
+        YGRqamtwcHBwcHBramVlYWFgWlpWVlBQTUlFRUVFRUVFSk1NTU1KRUVEQkE5OTQ0Ly8uLSoqKioqKi8v
+        Ly8vNDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NC80NDQ5OT9FSk1QVlpcYGdqamtwcHBwcHBramVlYWBaWlZWUFBQ
+        TUVFRUVFRUVFRUVFRUVFRUVEQkE5OTk0Ly8vLy8tLS0vLy8vNDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0
+        OTk5P0FFTVBWVlpgYGdqamtwcHBwcHBramRlYWBaWlZQUFBNSkRFRURERERERUVFRUVFRUREQjk5OTk0
+        NC8vLy8vLy8vLzQ0NDQ0NDQ0OTk5OTk5OTk0NDQ0NDQ0NDY2OTk/P0RFTVBWWlpgZGdqamtwcHBwcHBr
+        amRlYGBaVlZQUE1NRURFRUE/Pz8/QUVFRUVFQT8/PDk5OTk5NDQvNDQ0NDQvLzY2OTk5OTk5OTk5OTk5
+        OTk5OTk5OTk5OTk5OT8/QUVNUFBWWlpgZGdqamtwcHBwcHBramRlYFpaVlZQUE1NRUQ/Pz8/Pz8/Pz8/
+        Pz8/Pz8/OTk5OTk5OTQ0NDQ0NDQ0NDk5OTk5Pz8/OTk5OTk5OTk5OTk5OTk5OTk6QEFBREVNUFBWWlxg
+        ZGdqamtwcHBwcHBramRlYFpaVlZQUE1NRUQ/Pz8/Pz8/Pz8/Pz8/Pz8/OTk5OTk5OTk2NjY2NjY2Nj8/
+        QkJCQkJCQEBAQEA/Pz9AQEBAQkJCQj9ERERESU1QVFRaWmBkZGtwcHBwcHBwcGtra2VlYVpaVlZQTU1F
+        RUI/QD8/OTo6OkBAQDo6Ojo6OTk5OTk5OTk5OTk5OTk5OT8/QUFBQUFBRUVFRUVFRUVCRUVFRUVFRURE
+        RURJTVBQVFRaX2BkZGtra3BwcnBwcGtra2VlX1paVlZQTU1FRUI/Pz8/OTk5Ojo6OTk5OTk5OTk5OTk5
+        OTk5OTk5OTlAQEVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRURESk1MTVBSVlpaX2BkZWtra3BwcHBwa2tr
+        ZWVhX1paVlZQTU1FRUI/Pz85OTk5OTk5OTk5OTk5OTk5OTk5OTk/QEBAQkJCQkRERUVFRUVFRUVFRUVF
+        RUVKSkpNTU1NTUlNTVBQUFZWWlpaYWVka2tqa2twcHBra2traGVhX1paVlBQTU1FRUA/Pzk5OTQ0NDk5
+        OTk5OTk5OTk5OTk5OTlAQEVFRUVFRUVFRUVFRUVFSkpNTU1NTU1NTU1NTU1NTU1QUFBQVFZWWlpgYGRk
+        ZWtqamtra2tra2toZWBhWlpaVlBQTU1FRUA/OTk5NDQ0NDQ0NDQ5OTk5OTk5OTk5OjpFRUVFRUVFRURE
+        RUVFSkpNTU1NTU1NTU1QUFBQUFBQUFBQUFZUVlZaWlxgYGRkZWtqamtra2tramhoZGBgWlpWVlBQTEpF
+        RUA/OTk5NDQ0NDQ0NDY2NjY2OTk5OTk6QEBEREVFRUVFRURERUVFSk1NTExNTU1NUFBQUFBQUFBQUFBQ
+        VFZWVlpaWlxgYGRkZWtqampra2tqamhnZGBcWlpWVlBQTEpFRT85OTk5NjQ0NDQ0NjY2NjY5OTk5OTlA
+        QEI/P0FBRUVFRURERERKSkpKTExNTVBQUFBQUFBQUFBQUFBUVlZWVlpaWlxgYGBkZGVnZ2pra2tqamhn
+        ZGBcWlZWVlBMTEpFRT8/OTk5NjQ0NDQ0NjY2NjY2OTk5OTpAQkJBQUFBQUFBREFERERESUlJSU1QUFBQ
+        UFJUVFRWVlZWVlZWVlpaWlpaXGBgYGVlaGhpa2tra2tra2hoZWFhW1taVlZQTU1KRUU/QD85OTk5OTk5
+        OTk5OTk5OTk/Pz9AQEA/Pz9AQkVFRUE/P0RERElJSkpNUFBQUFBQVFRWVlZWVlZWVlpaWlpaXGBgYGVl
+        aGhra2tra2tra2VkZWFhWlpaVlZQTU1KRUU/Pz85OTk5OTk5OTk5OTk5OTk5OTk5Pz8/Pz8/QEBAQjk5
+        OT8/RERERUpNTU1QUFBQUFBWVlZWVlZWVlpaWlpaXGBgYGBkZWhra2tra2tra2RkZGBdWlpWVlZQTU1F
+        RUI/OTk5NDQ0NDQ0NDQ0NDQ0NDQ0NDk5OTk5OTk5OTk5OTQ2Njk5Pz9ARUVNTU1QUFBQUFBWVlZWVlZW
+        VlpaWlpaXGBgYGBkZGRlZWtra2tra2RkZGBdWlpWVlJQTU1FRUI6OTk0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0
+        NDQ0NDQ0NDQ0Ny8vLzQ2OTpAQkVFTU1QUFBQUFBWVlZWVlZWVlpaWlpaYGBgYGBkZGRkZWVra2tra2Vk
+        ZWFhWlpaUlBNTUVFQj86Ojc0NC8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLyotLS8vNDc6P0JFRU1Q
+        UFRQUFBQVlZWVlZWVlpaWlpaYGBgYGBkZGRkZGhoaGhoaGVkZWFhWlpaUlBNRUVCQDk3NDQ0Ly8vLy0t
+        LS0tLS0tKioqKioqKioqKioqKioqKiQkJCotLy81OTlCRUpMUFBQUFBQVlZWVlZWVlpaWlpaYGBgYGBk
+        ZGRkZGRoaGhoZGRkZGBdWlpWUE1NREQ/OTk0NC8vKioqKioqKioqKioqKioqKioqKiolJSUlJSUlJRwc
+        JCUqKi8vNDk/QURJUFBQUFBQVlZWVlZWVlpaWlpaYGBgYGBkZGRkZGdoaGhnZ2RkYGBaWlZWUE1JREE/
+        OTkvLy8qKiopJSQkJCQkJCQkJSUlJCQkJCQiIiIcHBwcHBkZGh0dJCotNDQ6QEVFTU1QUFRWVlZWVFZU
+        VlpaWlpaX19gYGBgYGBkZWVlZWVpaWVkYGFdWlZUUE1FREA6OjQvLyoqJSUlJSUlJSUiIhwcHR0dHR0d
+        HR0cHRkaGRoaGhEXGBgdHCUqLzQ6QEJFTU1QUFRWVlpWWlZWVlpaWlpaX19gYGBgYGBkZGVlZWVpaWVk
+        YGBdWlZQUE1EREA6NDQvKiolJB0dHSIiHR0dHR0dHB0dHR0dHR0ZGRcXGBcSEhEREhIXFx0lKi80OUBF
+        TU1QUFRWVlpaWlZWWlpaWlpgYGBgYGBgYGBgZGRlZWVlZWVkYGBbWlZQUE1FQUA6NC8qKioiHR0dHR0d
+        HR0dHR0dHBoaGBgYGBgXFxcSERIREgwMDQ0QGBgdJCovND9BRU1QUFZWWlpaWlZaWlpaWmBgYGBgYGBg
+        YGBgYGBkZWVlZWVkYGBbWlZQTU1EQTk5NC8qJSIdHBoYGBgYGBgYGBgYGBgYGBgYGBgRERERDQ0NDQgI
+        CA0NEBgaIiUvNDk/RElQVFZWWlpaWlpaWlpaYGBgYGBgYGBgYGBgYGBgZGVlZWVkYGBaWlZQTUpEPzk0
+        Ly8lJSIdGhgYGBgYGBgYGBgYGBgSEhISEhISEQ0MDQwICAYICAgMDBIaHCUqLzk/RERQVFZaWlpaWlpa
+        WlpaYGBgYGBgYGBhYWFgYGBgYGRkZWVkYGBaWlZQTUVEPzk0LyolJR0cGRkXEhEREhISEhgYERERERIS
+        EhEMDAwMCAgICAMGBgYIDA4RGR0qLzY/RExQVFZaWlpaWlxaXFpcYGBgYGBgYGBhYWFgYGBgYGRkZGRk
+        YGBaWlRQTUVBPzk0LyokHxwZFxEREREREREREREREREREREREREMDAgICAgGBgADAwMECAwOFxwlLzZB
+        R01QVlZaWlpaWlxcXFxcYGBgYGBgYGBhYWFgYGBgYGBkZGRgYGBaWlRQTUVBOTk0KiofHBwZERERERER
+        EREREREREREREREODg4ICAgICAMDAwYGCAgIDBISGiUqLzlBRE1UVlpbYWFgYGBgYGRkZGRkYGBgYWFh
+        ZWVhYGFgYGRkZGRgYFpaVlRQTUpFPzo0LyolJR0dGBgXFxgYGBgYFxcXGBgYEhEREQ4MCAgICAgIBAYG
+        CAgIDBISHSUqLzlBRU1UVFpaYWFgYGBgYGBkZGRkYGBgYWFhYWFhYGFgYGRkZGRgYF9aVlRQTUpFPzo0
+        LyolJR0dGBgXFxgYGBgYGBcXGBgYFxEREREODAwMCAgICAgICAgMERIYHSUqNDk/RU1UVFpbX2BgYGBg
+        YGBgYGBgYGBgYWBhYV9dYGFgYWRkZGRgYGBaWlRQTUpEQDk0LyolJR0dHRgYFxgYGBgXGhkcGBgYFxcR
+        EREREREMDA0NDA4ODhESGBodJCovNDlBRU1UVFpaWl9gYGBgYGBgYGBgYGBgYGBfX1pdYGBgYWRlZGRk
+        YGBaWlZQUEpFPzk2Ly8lJSIdHRgXGRoaGhocHRwcHR0cGRkXFxcYGBgYEhAQEBEZGhkZHR0lKS80OT9E
+        Sk1UVFZaWlpfYFxcYGBgYGBgYGBgYGBaWlpaYGBgYWRlZGRkYGBcWlZQUE1EQTk2Ly8lJSIdHRoaGRoa
+        Gh0dHB0dHR0dHBwcHBwdHR0aGBgXFxwcHyQkJSoqLzQ5Pz9ESkpQUFRWVlpaWlpaXGBhYWFhXFxcWlpa
+        WlpaYGBgYWRlZGRkYGBcWlZUUE1FQTk2Ly8kJSIdHR0cGRodHR0dHCIiHyQkJCQlJSUiIiIiIiIiIiQq
+        KiovLzQ0NDk5QkVFSkpNTVBQUFJWVlZaWlpaYGBgWlpaWlpaWlpaYGBgYWVlZWdkYGBcWlZUUE1EQTk2
+        Ly8kJCUdHR0dHR0dHR0iJCUlJSUlJSoqKioqKioqKiotLS8vNDQ0OTk5OTlBQkVFSkpNTExMTFBSUlZW
+        VlpaWlpaWlpaWlpaWlpaYGBgYWVlZWdkYGBcWlZWUE1EQTk2Ly8kJCQdHR0dHRwdHR0lJSUlJCUlKioq
+        Ki8tLy8vLy8vL0BAQEBBRERESkVFRUVFRUVKSkpLTU1QUFBSV1paWlpfWlpaWlpaWlpaXWFhZGRqamdk
+        ZGBhWlpUUE1JQT82NC8vKiUiHR0dGR0dHR0kJCoqKi0vLy8vLzQ0Ojo5OTk/P0pKSk1NTU1NSkpKSkVF
+        RUVFRUpKSkpNTFBQVFZWWlpaWlpaWlpaWlpaXWFhZGVqampkZGRhW1pUUE1JRT82NC8tKiIiHR0dGR0d
+        HR0kJSoqKi8vLzQ0NjY5QEBAQERFRVdXV1dWVlZWUFBNSkpKRUVEREVFRURERElNUFBUVFZaWlpaWlpa
+        WlpaWmFhZGVqampnZGRhXVpWUE1KRUA6NC8qKiIdHR0aGR0dHSUlJSoqLy80NDk5P0BFRUVKSk1QUF9f
+        X19aWlpaVlZQTU1KRUU/Pz8/Pz8/QURKTVBQVFZaVlZWVlpaWlpaWmFhZGVqa2pqZGVhXVpWUFBKRUA6
+        NC8tKiUdHR0aGRodHSUlKiovNDQ1OkBARUVKSlBQVFZaXGRkZWRkYGBgWlZWUE1KRUA/Pzk5OTk/P0RF
+        Sk1QUFZWVlZWVlZaWlpaWmBhZGVra2pqZGVhXVpWUE1KRUA6NC8tKiUdHR0aGRkaHR0lKiovNDQ6QEBF
+        Sk1KUFRWWmBgZGpwa2traGRgXFpWUE1KRUA8OTk5NDk5OT9ERUpNUFBWVFRWVlZWVlZaWmBhZGtra2pn
+        ZGRhXVpWUE1JQT82NC8tKiUdHRoaGRcZHR0kKiovLzQ6P0BFSk1QUFZaYGBka29wcHBra2hkXFpWUE1F
+        RUA5OTY0NDQ0Njk/REVKTVBQUFRUVlZWVlZaWmBhZGtra2pkZGRhW1pUUE1EPz82Ly8qJRwdGhoZGRcZ
+        HB0kJSovLzQ5Pz9ETU1QVltbYGRqam9vcHBra2hkYFpWUE1FRUA5NjQvLy80NDk/P0RFSlBQUFBQVlZW
+        V1daWmBhZGtra2dkZGBhWlpUUEpEPzk0Ly8kJBwcGhkXERcXHBwcJSovLzQ2OUFESUxSV1tdYWdrcG9v
+        cHBra2dkYFpUUFBKRT85OTQ0Ly80N0BARUVKTVBQUFBSVlZWVlZWWl1hYWVnZ2RkZGBcVlZSUE1FQDo1
+        Ly8lJR0dGhgSERISGBodJSUtLy83OT9FTVBQVlpcYGRra2pqa2traGRkYVpUUFBKRT85OTk0NDQ3OkBC
+        RUVNTVBQUFBQUFRWVlZWVlpgYWRkZGRkYGBaVlJQTUpFPzo0LyolJR0cGRcRERISGBodJSUlLy80OT9E
+        Sk1QVlpaYGRka2Vla2hlZGBgXFpUUE1NRT9AQDk5OTo6Q0FERUpNUFBQUFBQUFBUVFZWVlpaX2BgYGBf
+        WlpWVFBQSkQ/OTQvKiolJR0cFxERERISGBodHSUlKi8vOT8/RUpQUFRaWl9kZWFhYV9fWlpaVlZQUE1K
+        RURCQEBAQEBCRURKTU1QUFBQUFBQUFBQUFZUVlZaWlpaWlpaWlZQUEpKRT85OTQvKiolIhwcFxERERIR
+        ERkcHSUlKi0vNDk/RUVKTVBUVFpaX1dXV1ZWVlZUUlBQTU1NSkRFRUVFRUpKSkxQUFBQUFBQUFBQUFBQ
+        UFBQUFBQVFRUVFRUUFBNSkVFQD85NDQvKiolHBwZFxERERERFxkcHR0lKiovNDY5QEJFSkpQUFBUVk5N
+        UFBQUFBQTU1NTU1MTExKSkpNTVBQUFRUVlZWVlZWUFBQUFBNTU1NTUpKTU1NTU1NRUVFQkBAOTk0Ly8v
+        KiocHBwcGRcSEhERGRkcHR0iKiovLzQ0OTk/QEVFRUVKTUJCRUVFRU1NREdNTE1MUFBQUFBQVlZWVlZW
+        WlpWVlZWUFBQTU1JRURFRERBQUFEQUFBQT85OTk2NDQvLyoqKiQcHBwcGhoaGhkZGRkdHR0iJCoqKi8v
+        NDQ5OTk5Pz9CQjk5OTlBQUFERERHTE1MUFBSUlZWWlpaWlpaWlpaWlZWUFBQTElERERBQT8/OTk5OTk5
+        OTY2NjQ0NC8vKioqJSQcHBwcGhoaGhkZGRkdHR0iJCQpKikpLy80NDY2Njk5OS8vNjQ0OTlBQEBFRUpQ
+        VFRWWlxgYGBgYGBgYGBaWlpbUlBNSkVFRT85OTY0NC8vLy8vLy8vLy8vLy8tKiUlJSUiIh0dHR0aGh0d
+        HR0dHR0cJSUlJSkqKiovLy8vLy8vLyktLy8vLzQ5OkBFRUpQVFZWWmBkZGRnaGRkYGBfWltaUlBNSkVF
+        QD86NDQvLy8tKi8tKioqKioqKioqKiUlJR0iIh0dHR0aGh0dHR0dHB0cHR0lJSUkKikqKioqKiopKSQk
+        JSoqKi8vOTlCRUpQVFpaYGVra2tra2pnaGVhX1paUlBNSkVCPzk0Ly8qKiolIiUiIiIiIiUlJSUlJSUd
+        HR0dHR0dHR0dHR0dHR0dHBwcHR0dHR0iIiIdHR0dHBwcHBwdHSIiKiovNDlARUpQVltgZGtwcHBwcmtr
+        a2hlYFpaVlBNRUVAOTQvLyoqJR0dHR0dHR0dHR0dHBwcHR0dHR0dHR0dHR0dHR0dHR0cHBwcHR0dHR0c
+        HBwaGhoaGhkaGhcXGB0dIiUqLzQ5RU1QWltka3BwcHBwcHBwa2tlYFpaVlBNRUI5NDQvKiUiHR0YGBcX
+        FxcYGBoaHR0dHR0dHSUdHR0dHR0dHSUlHR0dHBwcHR0dGhoYGBcSEhISEhISEg4REhgYHR0lLy85QU1Q
+        Wl1ka3BwcG9vb29va2toYFxaVlBNRD85NC8tKiUdHRgYEhEREREREhoaGhodHR0dHSUdHR0dJSQlJSUl
+        JB0cHBwcHR0aGhoXEhEREREODg4ODAwMERESGh0lKi82QUlQWmBkampwcG9vb29vampnYFpaVlBNREA5
+        NC8kJBwcGRgSEgwODg4RERIVGhoaHR0dHRwdHR0dJCUlJSQkJB8cHRwdGRkZFxcREREMDAwMDAwMDAwO
+        DhISGSAgLS82QUlQWmBkZ2pwcG9ycm9vb2pnYFpaVFBJRD82Ly8kJBwZFxERDAwMDAwODhERGhoaGR0c
+        HBwdHR0lJSUkJCQkJCQdHR0dGRkZFxEREQ4MDAwMDAwMDA==
+</value>
+  </data>
+  <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>64, 32</value>
+  </data>
+  <data name="pictureBox1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>96, 96</value>
+  </data>
+  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>StretchImage</value>
+  </data>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>6</value>
+  </data>
+  <data name="pictureBox1.Text">
+    <value>pictureBox1</value>
+  </data>
+  <data name="pictureBox1.Visible" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder">
+    <value>13</value>
+  </data>
+  <data name="label4.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Family</value>
+  </data>
+  <data name="label4.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label4.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Top, Left</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </data>
+  <data name="label4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>None</value>
+  </data>
+  <data name="label4.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="label4.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label4.Image" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label4.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label4.ImageIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>-1</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>184, 192</value>
+  </data>
+  <data name="label4.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>24, 16</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>9</value>
+  </data>
+  <data name="label4.Text">
+    <value>100</value>
+  </data>
+  <data name="label4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>TopLeft</value>
+  </data>
+  <data name="label4.Visible" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label4.Name">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder">
+    <value>6</value>
+  </data>
+  <data name="label5.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Family</value>
+  </data>
+  <data name="label5.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label5.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Top, Left</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </data>
+  <data name="label5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>None</value>
+  </data>
+  <data name="label5.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="label5.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label5.Image" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label5.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label5.ImageIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>-1</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>112, 200</value>
+  </data>
+  <data name="label5.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>32, 16</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>10</value>
+  </data>
+  <data name="label5.Text">
+    <value>0</value>
+  </data>
+  <data name="label5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>TopLeft</value>
+  </data>
+  <data name="label5.Visible" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label5.Name">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder">
+    <value>5</value>
+  </data>
+  <data name="label8.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Family</value>
+  </data>
+  <data name="label8.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label8.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Top, Left</value>
+  </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </data>
+  <data name="label8.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>None</value>
+  </data>
+  <data name="label8.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="label8.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label8.Image" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label8.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label8.ImageIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>-1</value>
+  </data>
+  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>224, 24</value>
+  </data>
+  <data name="label8.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>32, 16</value>
+  </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>11</value>
+  </data>
+  <data name="label8.Text">
+    <value>-100</value>
+  </data>
+  <data name="label8.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>TopLeft</value>
+  </data>
+  <data name="label8.Visible" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label8.Name">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder">
+    <value>4</value>
+  </data>
+  <data name="label9.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Family</value>
+  </data>
+  <data name="label9.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label9.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label9.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Top, Left</value>
+  </data>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </data>
+  <data name="label9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>None</value>
+  </data>
+  <data name="label9.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="label9.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label9.Image" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label9.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label9.ImageIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>-1</value>
+  </data>
+  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>224, 96</value>
+  </data>
+  <data name="label9.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>16, 16</value>
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>12</value>
+  </data>
+  <data name="label9.Text">
+    <value>0</value>
+  </data>
+  <data name="label9.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>TopLeft</value>
+  </data>
+  <data name="label9.Visible" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label9.Name">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;label9.Type">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder">
+    <value>3</value>
+  </data>
+  <data name="label2.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Family</value>
+  </data>
+  <data name="label2.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label2.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Top, Left</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </data>
+  <data name="label2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>None</value>
+  </data>
+  <data name="label2.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="label2.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label2.Image" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label2.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label2.ImageIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>-1</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>280, 64</value>
+  </data>
+  <data name="label2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>92, 16</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>1</value>
+  </data>
+  <data name="label2.Text">
+    <value>Small Change</value>
+  </data>
+  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>TopLeft</value>
+  </data>
+  <data name="label2.Visible" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label2.Name">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder">
+    <value>8</value>
+  </data>
+  <data name="label3.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Family</value>
+  </data>
+  <data name="label3.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label3.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Top, Left</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </data>
+  <data name="label3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>None</value>
+  </data>
+  <data name="label3.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="label3.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label3.Image" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label3.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label3.ImageIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>-1</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>8, 200</value>
+  </data>
+  <data name="label3.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>32, 16</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>8</value>
+  </data>
+  <data name="label3.Text">
+    <value>-100</value>
+  </data>
+  <data name="label3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>TopLeft</value>
+  </data>
+  <data name="label3.Visible" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label3.Name">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder">
+    <value>7</value>
+  </data>
+  <data name="label1.Modifiers" type="System.CodeDom.MemberAttributes, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Family</value>
+  </data>
+  <data name="label1.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label1.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Top, Left</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </data>
+  <data name="label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>None</value>
+  </data>
+  <data name="label1.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label1.Image" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="label1.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label1.ImageIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>-1</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>280, 40</value>
+  </data>
+  <data name="label1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>92, 16</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>0</value>
+  </data>
+  <data name="label1.Text">
+    <value>Large Change</value>
+  </data>
+  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>TopLeft</value>
+  </data>
+  <data name="label1.Visible" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label1.Name">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder">
+    <value>9</value>
+  </data>
+  <data name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>(Default)</value>
+  </data>
+  <data name="$this.Name">
+    <value>ScrollBarCtl</value>
+  </data>
+  <data name="$this.Localizable" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="$this.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="$this.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="$this.AutoScaleBaseSize" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>5, 13</value>
+  </data>
+  <data name="$this.AutoScroll" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </data>
+  <data name="$this.AutoScrollMargin" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </data>
+  <data name="$this.AutoScrollMinSize" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </data>
+  <data name="$this.BackgroundImage" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>520, 277</value>
+  </data>
+  <data name="$this.Enabled" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </data>
+  <data name="$this.Font" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="$this.Icon" type="System.Resources.ResXNullRef, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value />
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="$this.Location" type="System.Drawing.Point, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </data>
+  <data name="$this.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>Inherit</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>WindowsDefaultLocation</value>
+  </data>
+  <data name="$this.Text">
+    <value>VScrollBar</value>
+  </data>
+  <data name="&gt;&gt;$this.Name">
+    <value>ScrollBarCtl</value>
+  </data>
+  <data name="&gt;&gt;$this.Type">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

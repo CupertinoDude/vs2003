@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root xmlns:dt="urn:schemas-microsoft-com:datatypes" xmlns:d2="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><?xml-stylesheet type="text/xsl" href="..\..\..\..\readme.xsl"?><HTML><HEAD><TITLE> Remoting ChannelSinks Sample</TITLE><STYLE>
+    .Title{FONT-FAMILY: Verdana;FONT-SIZE: large;COLOR: #808080}
+    </STYLE><STYLE>
+    .Heading{FONT-FAMILY: Verdana;FONT-SIZE: large}
+    </STYLE><STYLE>
+    .SectionBreak{FONT-SIZE: small;MARGIN-BOTTOM: 2em}
+    </STYLE><STYLE>
+    .SmallBreak{FONT-SIZE: small;MARGIN-BOTTOM: 1.5em}
+    </STYLE><STYLE>
+    .Text{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedHeading{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedText{MARGIN-LEFT: 3ex;FONT-FAMILY: Lucida Console;FONT-SIZE: x-small;FONT-WEIGHT: Bold}
+    </STYLE><STYLE>
+    .ListSansBullets {list-style-type: none;FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE></HEAD><BODY><table><tr><td><h2 class="Title"> Remoting ChannelSinks Sample</h2></td><td valign="baseline" class="Text">
+               
+              
+                  (Console Application)
+                </td></tr></table><p class="Text">
+    This document contains the release information for the .NET Framework Writing your own Channel Sinks .NET remoting sample. You will find the following sections below: 
+    </p><ul class="Text"><li><a href="#_Sample_Overview">Overview</a></li><li><a href="#_Location_of_Sample">Location</a></li><li><a href="#_Building_the_Sample">Building the sample</a></li><li><a href="#_Running_the_Sample">Running the sample</a></li><li><a href="#_sdkvars">Notes</a></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Overview" />
+    Overview
+    </h4><p class="Text"> 
+This sample contains 3 different executables that demonstrate how to create your
+own channel sinks for use with remoting.  The IPFilterSink sample shows how a
+channel sink can be used to accept or reject calls coming from specified IP addresses.  The Logging sink shows how a sink might log all traffic passing through it while the WebServer sample shows how a sink might be used to server files to a browser.  The configuration files used with these samples demonstrate how these sinks and their
+providers are configured.
+</p><p class="SectionBreak" /><p class="SectionBreak" /><h4 class="Heading"><a name="_Location_of_Sample" />
+    Location
+    </h4><p class="Text">
+    This sample is located in the <a href="." title="Jump to Folder" target="_blank">Technologies\Remoting\Advanced\ChannelSinks
+
+</a> subdirectory of the .NET Framework SDK samples directory.
+    </p><p class="FixedHeading">
+    For Example:
+      <p class="FixedText">
+      C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\Advanced\ChannelSinks
+
+</p></p><p class="SmallBreak" /><p class="Text">
+      This sample contains the following directory structure:
+      
+      <ul><li class="ListSansBullets"><b>\IPFilter</b> -- 
+     
+Contains the source for the sink, client and server together with the associated
+makefile.
+</li></ul><ul><li class="ListSansBullets"><b>\Logging</b> -- 
+     
+Contains the source for the sink, client and server together with the associated
+makefile.
+</li></ul><ul><li class="ListSansBullets"><b>\WebServer</b> -- 
+     
+Contains the source for the sink as server as well as the associated makefile.  Note that the files provided by this service are stored in the root directory under WebServer.
+</li></ul></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Building_the_Sample" />
+    Building the Sample
+    </h4><p class="Text">
+    In order to properly build and run this sample, the following steps need to be performed.
+    </p><p class="Text"> 
+Type <b>nmake -a all</b> from the command line (note: will throw warnings)      
+<p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText"> 
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\Advanced\ChannelSinks&gt; nmake -a all
+</p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Running_the_Sample" />
+    Running the Sample
+    </h4><p class="Text">
+    In order to run this sample, follow the instructions listed below.
+    </p><span class="Text"><ul class="Text"><li>
+For IPFilter:  Start the service by running server.exe form a console window.  Run the
+client by executing client.exe from a console window.
+</li></ul><ul class="Text"><li>
+For Logging: Start the service by running server.exe from a console window.  Run the
+client by executing client.exe from a console window.
+</li></ul><ul class="Text"><li>
+For WebServer: Start the server by running server.exe from a console window.  Connect
+to this service from your browser as follows
+</li></ul><ul class="Text"><li>
+http://localhost:9000/MyServer/index.html
+</li></ul><ul class="Text"><li>
+http://localhost:9000/MyServer/dotnet.gif
+</li></ul><ul class="Text"><li>
+http://localhost:9000/MyServer/test.xml
+</li></ul></span><p class="SectionBreak" /><h4 class="Heading"><a name="_sdkvars" />
+    Notes
+    </h4><p class="Text">
+    For the .Net Framework samples to function properly, your Path, Include, and Lib environment variables must be set correctly. 
+    In many cases, the SDK install program updates these environment variables for you. However, if you installed the .Net Framework SDK 
+    using Visual Studio .NET, or unselected "register environment variables" during setup, these environment variables will not be updated. 
+    You can set the Path, Include and Lib environment variables by running SDKVars.bat, located in the <i>&lt;SDKRoot&gt;\Bin</i> directory. 
+    SDKVars.bat must be executed in every command shell.
+    </p></BODY></HTML></root>

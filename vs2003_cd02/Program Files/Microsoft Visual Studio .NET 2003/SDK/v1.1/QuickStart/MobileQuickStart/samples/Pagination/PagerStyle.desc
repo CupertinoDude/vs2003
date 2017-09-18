@@ -1,0 +1,8 @@
+Customizing Pagination UI
+This sample demonstrates how you can customize the UI rendered by a form
+for navigation between pages.
+The text used for the links includes the number of the target page,
+and style properties are used so that the navigation UI is rendered differently
+from the rest of the form. 
+
+

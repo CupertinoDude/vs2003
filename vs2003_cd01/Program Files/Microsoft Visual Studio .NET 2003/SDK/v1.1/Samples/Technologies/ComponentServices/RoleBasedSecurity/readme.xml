@@ -1,0 +1,127 @@
+﻿<?xml version='1.0'?> 
+<?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?> 
+<sample windowsforms="true"> 
+
+<title>COM+ Role-Based Security Sample</title>
+<title-short>COM+ Role-Based Security</title-short>
+
+<overview>
+<p class = "text">
+This sample demonstrates some aspects of COM+ Role-Based Security in a .NET Framework application. The sample code accesses security-related methods on the ContextUtil class to retrieve run-time information about the security environment. The sample also calls into a SecurityCallContext object in order to retrieve the account information of the current caller.
+</p>
+<p class = "text">
+Information retrieved by the sample application includes: 1) whether COM+ security is enabled, 2) whether the current caller is a member of a security role created by the sample, and 3) the account name of the current caller. 
+</p>
+<p class = "text">
+The sample also demonstrates how to enable security at the application or component level and create security roles by means of attributes.
+</p>
+<p class = "text">
+NOTE: COM+ Security interoperability in .NET is provided for application developers who might wish to write managed code that extends an existing application which uses COM+ 1.0 security services. .NET provides its own role-based security. This mechanism and that provided by COM+ are independent and only one should be used within a single application.
+</p>
+</overview>
+
+
+<subdirectory>Technologies\ComponentServices\RoleBasedSecurity</subdirectory>
+<buildsteps> 
+<step> 
+Type <b>BuildAll.bat</b> from the command line.      
+<example> 
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\RoleBasedSecurity>buildall.bat
+</example>
+</step>
+<step>
+If you're building the sample from Visual Studio 7, you will need to install the OCDemoSvr.dll assembly to the Global Assembly Cache before running the sample.  Note: The gacutil.exe program is located in the <i>SDK\v1.1</i>\Bin directory.  
+<example>
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\RoleBasedSecurity\CS>gacutil -i RBSecDemoSvr.dll
+</example>
+</step>
+<step>
+The sample builds a C# and VB version of the client application and COM+ component. Source code for each language is stored in subdirectories named \CS and \VB. The C# component has 'CS' appended to its name as viewed in the Component Services administrative tool, 'RBSecDemoServerCS.RBSecurityObject'. The VB version is named 'RBSecDemoServerVB.RBSecurityObject'. When working with the sample code, be sure to observe and/or modify the version of the COM+ component that corresponds to the client application you launch.
+</step>
+<step>
+Review comments in the source code and build.bat files for more information on sample binary creation and registration steps.
+</step>
+</buildsteps>
+<runsteps> 
+
+<step>
+NOTE: The COM+ .NET samples require Windows 2000 or higher in order to build and run.
+</step>
+
+<step>
+Build the Role-Based Security sample code following the instructions above.
+</step>
+
+<step>
+Type <b>RBSecDemo.exe</b> from the command line.
+<example>
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\ComponentServices\RoleBasedSecurity\CS>rbsecdemo.exe
+</example>
+</step>
+<step>
+Click the button labeled 'Display Logged On User'. The current logged on user account name should appear in the application window.
+</step>
+<step>
+Click the button labeled 'Is Caller in Demo Role?'. The message 'You ARE in RBSecurityDemoRole' should appear.
+</step>
+<step>
+Launch the Component Services administrative tool (also called the 'COM+ explorer'), by clicking 'Start\Settings\Control Panel' then double-clicking 'Administrative Tools\Component Services'. Locate the RBSecDemoSvr COM+ application by expanding Component Services\Computers\My Computer\COM+ Applications in the left-hand COM+ explorer pane.
+</step>
+<step>
+Next, right-click the RBSecDemoSvr application and select 'Properties'. This will invoke the Properties dialog for the application. 
+</step>
+<step>
+Click the 'Security' tab. The information here corresponds to the settings specified by means of the ApplicationAccessControl attribute. Uncheck the 'Enforce access checks for this application' checkbox. IMPORTANT: this will disable COM+ security for all components contained in the application. Click 'OK' to dismiss the properties dialog.
+</step>
+<step>
+Return to the RBSecDemo client application. Click 'Display Logged On User'. The message 'Unknown caller (Security is not enabled)' should appear. Click 'Is Caller In Demo Role?'. The client still reports that the user is in the RBSecurityDemoRole. This is because when security is disabled, all calls into ContextUtil::IsCallerInRole return true.
+</step>
+<step>
+Return to the COM+ explorer and invoke the RBSecDemoSvr properties page once more by right-clicking the application and selecting 'Properties'. Click the tab labeled 'Security' and recheck the 'Enforce access checks for this application' checkbox. Security is enabled again for the application. Click 'OK' to dismiss the properties dialog.
+</step>
+<step>
+Locate the RBSecDemoServerCS.RBSecurityObject or RBSecDemoServerVB.RBSecurityObject component by expanding 'RBSecDemoSvr\Components'. Right-click the 'RBSecDemoServerCS.RBSecurityObject' or 'RBSecDemoServerVB.RBSecurityObject' component and select 'Properties' from the popup menu.
+</step>
+<step>
+Click the 'Security' tab. The Authorization setting here corresponds to the ComponentAccessControl attribute specified in the sample code. You should see a role labeled 'RBSecurityDemoRole' listed as a role explicitly associated with the component. This role was created and bound to the sample component by means of the SecurityRole attribute in the sample code. Click 'OK' to dismiss the properties dialog.
+</step>
+<step>
+In the COM+ explorer, expand the Roles folder located beneath the RBSecDemoSvr application. You should see the RBSecurityDemoRole here. Expand RBSecurityDemoRole/Users. You should see a single account ('Everyone') in the Users folder. Right-click 'Everyone' and select 'Delete' from the pop-up menu. Confirm the delete in the subsequent dialog.
+</step>
+<step>
+COM+ caches security settings related to roles, so we must shut down the RBSecDemoSvr application before we can observe the results of making the change above. In the COM+ explorer, right-click the application and select 'Shut down' from the pop-up menu.
+</step>
+<step>
+Now return to the RBSecDemo client application. On clicking either button, you should see a MessageBox reporting that 'Access is denied'. An access denied security exception was thrown on object creation because the component RBSecurityDemoRole does not contain the current caller.
+</step>
+</runsteps>
+<uninstallsteps>
+<step>
+To uninstall this sample, run <b>buildall.bat -u.</b> or <b>build.bat -u.</b> The batch file will then call regsvcs and gacutil with the /u switch in order to remove the sample files from the COM+ catalog and Global Assembly Cache.
+</step>
+</uninstallsteps>
+
+<technologies> 
+<technology  name = "Role-Based Security (COM+)" keyword ="Role-Based Security (COM+)">This sample uses the managed code interoperability features for integrating with COM+ role-based security.
+</technology>
+<technology name = "ContextUtil" keyword ="ContextUtil">The ContextUtil class is used to retrieve information about COM+ object contexts, including important security-related information.
+</technology>
+<technology  name = "SecurityCallContext" keyword ="SecurityCallContext">The SecurityCallContext class describes the chain of callers leading up to the current method call.
+</technology>
+<technology  name = "ApplicationAccessControl attribute" keyword ="ApplicationAccessControl">Assembly attribute that allows configuration of security for the housing COM+ application.
+</technology>
+<technology  name = "ComponentAccessControl attribute" keyword ="ComponentAccessControl">Class attribute that enables security checking on calls to a component.
+</technology>
+<technology  name = "SecurityRole attribute" keyword = "SecurityRole">Attribute that can be used to add COM+ roles to an application and to associate them with components.
+</technology>
+</technologies>
+
+<keywords> 
+<word name="Security" keyword="Security"/>
+<word name="Role Based Security" keyword="Role Based Security"/>
+<word name="COM+" keyword="COM+"/>
+<word name="SecurityCallContext" keyword="SecurityCallContext"/>
+<word name="ContextUtil" keyword="ContextUtil"/>
+<word name="SecurityRoleAttribute" keyword="SecurityRoleAttribute"/>
+</keywords>
+</sample>

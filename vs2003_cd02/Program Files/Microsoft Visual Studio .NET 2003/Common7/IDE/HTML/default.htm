@@ -1,0 +1,45 @@
+<HTML>
+    <HEAD>
+        <TITLE>Start Page</TITLE>
+        <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+        <LINK href="vsHome.css" type="text/css" rel="StyleSheet">
+        <SCRIPT language="JavaScript" src="vsHome.js"></SCRIPT>
+    </HEAD>
+    <BODY>
+        <!-- These spans are used as style bags in vshome.js since we can't assign classes (flashing problem) -->
+        <span ID="SpanClsTabItem" class="clsTabItem" style="DISPLAY:none"></span><span ID="SpanClsTabItemOver" class="clsTabItemOver" style="DISPLAY:none">
+        </span><span ID="SpanClsTabItemSelected" class="clsTabItemSelected" style="DISPLAY:none">
+        </span>
+        <table height="100%" cellSpacing="0" cellPadding="0" width="100%" border="0">
+            <tr align="left">
+                <td id="tdSubLogo" class="clsLogo" vAlign="top" align="left" height="30" background="vs:/start2.gif"
+                    style="background-repeat: no-repeat"></td>
+                <td id="tdTabFill" align="right" noWrap class="clsTabToolbar">
+                    <span id="selHelpFilterList" style="DISPLAY: none"><span class="clsTabToolbarItem" id="chipSelectTitle">
+                            Filter: </span>
+                        <select id="inptChipSelect" onchange="fnSetHelpFilter(this.options(this.selectedIndex).value);"
+                            name="inptChipSelect" class="">
+                        </select>
+                    </span>
+                    <div class="clsSubPgTlBarHidden" id="spnSubPageToolbar">
+                    </div>
+                </td>
+            </tr>
+            <tr height="100%" width="100%">
+                <td id="tdMenu" class="clsLeftNav" vAlign="top" width="151">
+                    <TABLE id="tblTabEnum" class="clsTabList" height="100%" cellSpacing="0" cellPadding="5"
+                        width="100%">
+                        <tbody>
+                            <!-- filled in by fnEnumMenu --></tbody>
+                    </TABLE>
+                </td>
+                <TD id="tdContentCell" vAlign="top" class="clsTabContent">
+                    <script>fnEnumMenu();</script>
+                    &nbsp;
+                </TD>
+            </tr>
+        </table>
+        <div class="clsPopupDisplay" id="divPopupDisplay">
+        </div>
+    </BODY>
+</HTML>

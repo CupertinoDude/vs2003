@@ -1,0 +1,5 @@
+List Styles
+This sample demonstrates some of the styles available to the List mobile control
+when rendering to richer clients. 
+<b>Note:</b> Most of these styles are not visible when rendering on text-only
+devices such as WML-based cellular phones.

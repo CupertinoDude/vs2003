@@ -1,0 +1,37 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "http://localhost/quickstart/winforms/samples/data/WebServiceBinding/CS/WebService.csproj", "{5FCA6DF8-8A04-4B8C-9727-66A903C44FA0}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataSet", "DataSet\DataSet.csproj", "{1A4FAF2C-893F-485B-8B0D-8951DFA3C7BF}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceClient", "Client\WebServiceClient.csproj", "{A4619E90-1C79-444B-B77B-9FCE46E8AB2B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{5FCA6DF8-8A04-4B8C-9727-66A903C44FA0}.Debug.ActiveCfg = Debug|.NET
+		{5FCA6DF8-8A04-4B8C-9727-66A903C44FA0}.Debug.Build.0 = Debug|.NET
+		{5FCA6DF8-8A04-4B8C-9727-66A903C44FA0}.Release.ActiveCfg = Release|.NET
+		{5FCA6DF8-8A04-4B8C-9727-66A903C44FA0}.Release.Build.0 = Release|.NET
+		{1A4FAF2C-893F-485B-8B0D-8951DFA3C7BF}.Debug.ActiveCfg = Debug|.NET
+		{1A4FAF2C-893F-485B-8B0D-8951DFA3C7BF}.Debug.Build.0 = Debug|.NET
+		{1A4FAF2C-893F-485B-8B0D-8951DFA3C7BF}.Release.ActiveCfg = Release|.NET
+		{1A4FAF2C-893F-485B-8B0D-8951DFA3C7BF}.Release.Build.0 = Release|.NET
+		{A4619E90-1C79-444B-B77B-9FCE46E8AB2B}.Debug.ActiveCfg = Debug|.NET
+		{A4619E90-1C79-444B-B77B-9FCE46E8AB2B}.Debug.Build.0 = Debug|.NET
+		{A4619E90-1C79-444B-B77B-9FCE46E8AB2B}.Release.ActiveCfg = Release|.NET
+		{A4619E90-1C79-444B-B77B-9FCE46E8AB2B}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

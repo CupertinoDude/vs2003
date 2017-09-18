@@ -1,0 +1,6 @@
+Custom Pagination and Chunking
+This sample demonstrates how to use <b>Custom Pagination</b> with a 
+List control. The sample shows the first 20,000 numbers, listing whether each
+one is prime or not. However, it does not calculate this information at the beginning.
+Instead, it calculates one page at a time, and responds to the <b>OnLoadItems</b> 
+event to provide the list with more items.

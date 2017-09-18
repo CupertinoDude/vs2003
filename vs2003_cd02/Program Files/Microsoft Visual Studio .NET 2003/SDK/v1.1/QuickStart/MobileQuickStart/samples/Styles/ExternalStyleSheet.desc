@@ -1,0 +1,11 @@
+Using an External StyleSheet
+This sample demonstrates how you can use a "user control" in a
+separate file containing a StyleSheet in order to define common style
+properties to be used by multiple mobile pages in a site.
+<p>
+This sample is identical to the "StyleSheet" sample earlier, but
+references an External StyleSheet instead of a StyleSheet embedded in a
+single mobile page.  It does this by definining a StyleSheet with a
+ReferencePath attribute pointing to the file containing the external
+stylesheet.
+<p>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2000/10/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://localhost/quickstart/aspplus/samples/vstudio/services/dataservice/cs/dataservice.disco" filename="Web References\localhost\dataservice.disco"/>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://localhost/quickstart/aspplus/samples/vstudio/services/dataservice/cs/DataService.asmx?wsdl" filename="Web References\localhost\DataService.wsdl"/>
+  </Results>
+</DiscoveryClientResultsFile>

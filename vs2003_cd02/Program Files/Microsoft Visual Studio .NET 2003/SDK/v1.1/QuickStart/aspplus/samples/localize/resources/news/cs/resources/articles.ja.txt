@@ -1,0 +1,11 @@
+﻿;
+;
+;
+
+[strings]
+greeting=ようこそ
+more=詳細 ...
+article1=これは日本語の文章です。
+article2=これも日本語の文章です。 
+article3=これも日本語の文章です。 
+

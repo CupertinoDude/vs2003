@@ -1,0 +1,4 @@
+Choosing a date from a calendar
+This sample demonstrates a simple use of a Calendar control along with an event handler to
+display the selected date.
+

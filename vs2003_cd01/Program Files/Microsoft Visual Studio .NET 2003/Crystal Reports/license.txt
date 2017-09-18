@@ -1,0 +1,102 @@
+
+CRYSTAL REPORTS FOR VISUAL STUDIO .NET LICENSE AGREEMENT
+
+-IMPORTANT-Read This Carefully Before Installing the Software.
+
+THIS IS A LEGAL AGREEMENT BETWEEN YOU AND CRYSTAL DECISIONS, INC. ("Crystal Decisions").   YOUR USE OF CRYSTAL REPORTS FOR VISUAL STUDIO .NET IS GOVERNED BY THE TERMS OF THIS LICENSE AGREEMENT.  IF YOU DO NOT ACCEPT THE TERMS AND CONDITIONS OF THE SOFTWARE LICENSE, YOU MAY NOT INSTALL OR USE CRYSTAL REPORTS FOR VISUAL STUDIO .NET.
+
+If you have any questions regarding this product or the following licensing terms and conditions, please visit http://www.crystaldecisions.com/net/licensing.
+
+1. DEFINITIONS.
+
+1.1 "Access" means connected to the Server Software either directly or indirectly through any middle tier application(s).
+
+1.2 "Client Application" means a purpose-specific Windows application that utilizes the Runtime Software and is installed fully on an end user's machine, with all report processing local to that machine.  Software programs consisting of more than one related module(s) or component(s) shall be considered one Client Application. 
+
+1.3 "Report" means any work or document created using a Crystal Decisions product, regardless of resulting file format. 
+
+1.4 "Report Distribution System" means any process or system that is used to automatically deliver, share or distribute Report(s) without providing any Access to the Server Software: (a) to greater than fifty (50) end users directly, or (b) to a location that is accessible to greater than fifty (50) end users.  A Report Distribution System shall not include:  (a) distribution of Reports in hard copy form; (b) manual or ad hoc distribution; or (c) distribution of Client Applications.  For purposes of calculating the number of end users, you do not need to include any end user who otherwise has a valid license to use the Software or any of Crystal Decisions' other products (other than any product offered free of charge).
+
+1.5 "Runtime Software" means files listed in the Runtime Licensing section of license.txt file provided with the Software, individually, collectively or in any combination 
+
+1.6 "Server/Web Application" means a purpose-specific software program that utilizes the Runtime Software and allows multiple users Access to the Runtime Software in a Server Environment.  Software programs consisting of more than one related module(s) or components shall be considered one Server/Web Application.
+
+1.7 "Server Environment" is defined as any server system, licensed from Crystal Decisions or any other entity, that consists of one or more server software processes, operating independently or otherwise, including but not limited to ASP .NET, Citrix servers, report servers, web servers, database servers, terminal servers, mail servers, application servers or transaction servers, facilitated by an internet, intranet, extranet, client/server network, wide-area network, or any other multi-user network.
+
+1.8 "Software" means the Crystal Reports for Visual Studio .NET software provided on your software media in object code form and associated documentation, any updates, additional modules, or additional software provided by Crystal Decisions in connection therewith.
+
+2. GRANT OF LICENSE.  Crystal Decisions grants you a nonexclusive and limited license to use the Crystal Reports for Visual Studio .NET Software accompanying this License Agreement, solely in accordance with the terms and conditions of this License Agreement.  The Software is licensed, not sold, to you.
+
+3. INSTALLATION AND USE.
+
+3.1 Use of the Software.  Your use of the Software is governed by the terms of this Agreement. You may install and use each licensed copy of the Software only on a single computer, except that the primary user of the computer on which the Software is installed may make a second copy for his or her exclusive use on a portable computer. Licenses for the Software are individual named user licenses. No license may be shared, in any capacity, by more than one individual end user.  Your use and distribution of the Runtime Software is governed by Section 4.
+
+3.2 Mandatory Activation.  You may not be able to exercise your rights to the Software under this License Agreement after a finite number of product launches unless you activate your copy of the Software in the manner described during the launch sequence.
+
+3.3 Creation of Report Distribution Systems.  You may not use the Software or Runtime Software, together or separately or in combination with Server Environments, as part of a Report Distribution System, without obtaining an additional license from Crystal Decisions.  For more information, please visit the Crystal Decisions' web site at http://www.crystaldecisions.com/net/licensing. 
+
+4. USE AND DISTRIBUTION OF RUNTIME SOFTWARE.
+
+4.1 Deployment and Distribution of Client Applications.  Crystal Decisions grants you a personal, nonexclusive, limited license to deploy, reproduce and distribute Client Applications to end users, if you comply with all of the terms of this license agreement, including section 4.4.
+
+4.2 Deployment Within Your Organization of Server/Web Applications.  After you have activated your copy of the Software, you may install and use Server/Web Applications in one or more Server Environments owned or operated by you for your internal business purposes.  You may not use the Software or a Server/Web Application on a rental or timesharing basis or to operate a service bureau facility for the benefit of third-parties unless you first acquire an Application Service Provider License from Crystal Decisions.   The Runtime Software may be installed on only one server in each Server Environment, and only one instance of the Runtime Software per Server/Web Application may be utilized on that Server at any one time.  While you may allow Access to the Runtime Software by an unlimited number of users, the version of the Runtime Software provided with Visual Studio .NET is a performance limited edition intended for development purposes and use with Server/Web Applications accessed by small groups.  If multiple users are simultaneously accessing the Runtime Software, performance will be affected and users may be unable to access the Runtime Software.  If you want to deploy the Runtime Software in a production environment or extend the performance of the version of the Runtime Software provided with Visual Studio .NET, you may purchase additional licensing from Crystal Decisions as a stand-alone offering.  For more information, please visit the Crystal Decisions' web site at http://www.crystaldecisions.com/net/licensing.
+
+4.3 Distribution to Third Parties of Server/Web Applications. This license agreement does not in itself give you any right to distribute Server/Web Applications to third parties.  If you want to distribute Server/Web Applications to third parties, you must obtain written authorization from Crystal Decisions to do so.  If you obtain written authorization from Crystal Decisions to distribute Server/Web Applications to third parties, you may reproduce and distribute copies of Server/Web Applications to end users of Server/Web Applications so long as you comply with all of the terms of this license agreement, including section 4.4. For more information, please visit the Crystal Decisions' web site at http://www.crystaldecisions.com/net/licensing.
+
+4.4 Runtime Software Distribution Requirements.  If you distribute the Runtime Software to Third Parties pursuant to sections 4.1 or 4.3, you agree to comply with the following requirements:
+
+4.4.1. You distribute copies of the Runtime Software solely as a part of specific-purpose application programs written using an authorized copy of the Software;
+
+4.4.2. You remain solely responsible for support, service, upgrades, and technical or other assistance, required or requested by anyone receiving such Runtime Software copies or sample applications;
+
+4.4.3. You do not use the name, logo, or trademark of Crystal Decisions, or the Software, without written permission from Crystal Decisions;
+
+4.4.4. You do not alter, disassemble, decompile, translate, adapt or reverse-engineer the Runtime Software;
+
+4.4.5. You do not alter, disassemble, decompile, translate, adapt, reverse-engineer, or convert the report file (.RPT) format to an alternative format, including but not limited to report file formats of general purpose report writer or database querying products that are not property of Crystal Decisions, except as permitted by the Software, without written permission from Crystal Decisions; 
+
+4.4.6. You do not use the Client Application or the Server/Web Application on a rental or timesharing basis or to operate a service bureau facility for the benefit of third-parties unless you first acquire an Application Service Provider License from Crystal Decisions.
+
+4.4.7. You will defend, indemnify and hold Crystal Decisions harmless against any claims or liabilities arising out of the use, reproduction or distribution of Runtime Software;
+
+4.4.8. You shall secure the end user's consent to terms substantially similar to the following:  
+
+End User agrees not to alter, disassemble, decompile, translate, adapt or reverse-engineer the Runtime Software or the report file (.RPT) format;
+
+End User agrees not to use, distribute or integrate the Runtime Software with any general-purpose report writing or report delivery product that is generally competitive with Crystal Decisions product offerings;
+
+End User agrees not to use the Software on a rental or timesharing basis or to operate a service bureau facility for the benefit of third-parties unless End User first acquires an Application Service Provider License from Crystal Decisions;
+
+End User may not use the Software or Runtime Software, together or separately or in combination with Server Environments, as part of a Report Distribution System, without obtaining an additional license from Crystal Decisions;
+
+	CRYSTAL DECISIONS AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT OF THIRD PARTY RIGHTS.  CRYSTAL DECISIONS AND ITS SUPPLIERS SHALL HAVE NO LIABILITY WHATSOEVER UNDER THIS AGREEMENT OR IN CONNECTION WITH THE SOFTWARE. 
+
+5. COMPETITIVE PRODUCT RESTRICTIONS.  You may not use, distribute or integrate the Runtime Software with any general-purpose report writing or report delivery product that is generally competitive with Crystal Decisions product offerings; nor may you use the Software or Runtime Software to create a product that is generally competitive with Crystal Decisions product offerings. 
+
+6. OWNERSHIP.  You agree that Crystal Decisions and/or its suppliers retain all right, title and interest in and to the Software and all copies at all times, regardless of the form or media in or on which the original or other copies may subsequently exist.  You agree that you neither own nor hereby acquire any claim or right of ownership to the Software or to any related patents, copyrights, trademarks or other intellectual property.  You agree to use reasonable efforts to prevent and protect the contents of the Software from unauthorized disclosure or use.  Crystal Decisions and/or its suppliers reserve all rights not expressly granted to you.  Crystal Decisions' suppliers are the intended third party beneficiaries of this License Agreement and have the express right to rely upon and directly enforce the terms set forth herein.  Any data, content or information accessed through the Software is the property of the applicable data/content/information owner and may be protected by applicable copyright law.  This License Agreement gives you no rights to such data, content or information
+
+7. COPYRIGHT. The Software is copyrighted by Crystal Decisions and/or its suppliers and is protected by United States copyright and patent laws and international treaty provisions.  You may not copy the Software except:  (a) to provide a backup copy; or (b) to install the Software components licensed by you, as set forth in Sections 3, 4 and 5, on to computers as part of executing the Software.  Solely with respect to the documentation included with the Software, you may make a reasonable number of copies (either in hardcopy or electronic form), provided that such copies shall be used only by licensed end users in conjunction with their use of the Software and are not republished or distributed to any third party.  You must reproduce and include all copyright notices, trademarks or other proprietary legends of Crystal Decisions and its suppliers on any copy of the Software or documentation made by you.  Any and all other copies of the Software and/or the documentation made by you are in violation of this License Agreement. 
+
+8. OTHER RESTRICTIONS.  Except as expressly permitted by this License Agreement, you hereby acknowledge and agree that (a) you will not use the Software on a timesharing basis or to operate a service bureau facility for the benefit of third-parties unless you first acquire an Application Service Provider License from Crystal Decisions; (b) you will not modify or translate the Software except as necessary to configure the Software using the menus, options and tools provided for such purposes and contained in the Software; (c) you will not in any way reverse engineer, disassemble or decompile the Software or any portion thereof except to the extent and for the express purposes authorized by applicable law notwithstanding this limitation; (d) you will not transmit, or provide Access to, the Software over a network except as expressly described in the associated documentation; (e) you will provide access to the Software only as allowed in this Agreement; and (f) you will not sublicense, assign, rent, sell, lease, distribute or otherwise transfer the Software or any of the rights granted by this License Agreement, unless you obtain a separate license from Crystal Decisions for such purposes.  If you want to distribute the Software, you must obtain a Software distribution license from Crystal Decisions, e.g., an OEM or reseller license.
+
+9. NO WARRANTY.  
+
+	TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE IS PROVIDED BY CRYSTAL DECISIONS AND ITS SUPPLIERS "AS IS" WITHOUT ANY CONDITION OR WARRANTY WHATSOEVER.  ALL CONDITIONS AND WARRANTIES, WHETHER EXPRESS OR IMPLIED, ARE DISCLAIMED BY CRYSTAL DECISIONS AND ITS SUPPLIERS, INCLUDING, WITHOUT LIMITATION, THE IMPLIED CONDITIONS AND/OR WARRANTIES OF MERCHANTABILITY, TITLE, NONINFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE.  CRYSTAL DECISIONS AND ITS SUPPLIERS SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL OR OTHER DAMAGES INCLUDING COST OF SUBSTITUTE GOODS OR SERVICES.
+
+10. AUDIT.  During the term of this Agreement and for three (3) years after termination or expiration, you will maintain complete records regarding your use and distribution of the Software.  Upon reasonable notice to you, Crystal Decisions may audit, at Crystal Decisions' expense, your books and records to determine your compliance hereunder.  In the event any such audit reveals that you have underpaid Crystal Decisions by an amount greater than five percent (5%) of the amounts due Crystal Decisions in the period being audited, or that you have knowingly breached any material obligation hereunder, then, in addition to such other remedies as Crystal Decisions may have, you shall pay or reimburse to Crystal Decisions the cost of the audit.
+
+11. TERMINATION.  This License Agreement is effective until terminated.  You may terminate this License Agreement at any time by providing Crystal Decisions with written notice, provided that you have complied with the return and/or destruction policy set forth below.  This License Agreement may be terminated by Crystal Decisions if you fail to comply with any of the terms and conditions set forth in this License Agreement and do not remedy such failure within thirty (30) days after receiving notice thereof.  Upon any termination of this License Agreement, you agree to:  (i) immediately cease all use of the Software, including the use and distribution of any Custom Applications incorporating the Software; and (ii) notify all third parties using the Software through you to comply with the foregoing.  Sections 5, 6, 7,8, 9, 10, 12, 13 and 14 shall survive any termination of this License Agreement.  
+
+12. GENERAL.  Except as otherwise preempted by United States federal law, this License Agreement is governed by the laws of the State of California, United States, without reference to conflict of laws provisions or the United Nations 1980 Convention on Contracts for the International Sale of Goods and any amendments thereto.  If any provision of this License Agreement is ruled invalid, such invalidity shall not affect the validity of the remaining portions of this License Agreement.  This License Agreement constitutes the entire agreement between you and Crystal Decisions, and supersedes any prior agreement, whether written or oral, relating to the subject matter of this License Agreement.  This License Agreement may not be modified except by an instrument in writing duly signed by an authorized representative of each of the parties.  If you are acquiring the Software on behalf of an entity, you represent and warrant that you have the legal capacity to bind such entity to this License Agreement.  All terms of any purchase order or other ordering document submitted by you shall be superseded by this License Agreement.  The product name for the Software is a trademark or registered trademark of Crystal Decisions.  Should you have questions concerning this License Agreement, please contact your local Crystal Decisions sales office or authorized reseller, or write to:  Crystal Decisions Legal Department, 895 Emerson St., Palo Alto, California 94301. 
+
+13. U.S. GOVERNMENT RESTRICTED RIGHTS.  The Software is a "commercial item," as that term is defined at 48 C.F.R. 2.101 (Oct. 1995), consisting of "commercial computer software" and "commercial computer software documentation," as such terms are used in 48 C.F.R. 12.212 (Sept. 1995).  Consistent with 48 C.F.R. 12.212 and 48 C.F.R. 227.7202-1 through 227.7202-4 (June 1995) (or an equivalent provision, e.g., in supplements of various U.S. government agencies, as applicable), all U.S. Government users acquire the Software with only those rights set forth herein.  Manufacturer is Crystal Decisions Information Management Group Holdings, Inc., 895 Emerson St., Palo Alto, CA  94301. 
+
+You must affix the following legend to each copy of the Software:
+
+"Use, duplication, reproduction, or transfer of this commercial software and accompanying documentation is restricted in accordance with FAR 12.212 and DFARS 227.7202 and by a license agreement.  Contact:  Crystal Decisions, Inc., Attn: Legal Department, 895 Emerson St., Palo Alto, CA  94301."
+
+14. EXPORT CONTROLS.  You acknowledge that the Software is of U.S. origin.  You agree to comply with all applicable international and national laws that apply to the Software, including the U.S. Export Administration Regulations, as well as end-user, end-use and destination restrictions issued by U.S. and other governments.
+
+ 
+
+

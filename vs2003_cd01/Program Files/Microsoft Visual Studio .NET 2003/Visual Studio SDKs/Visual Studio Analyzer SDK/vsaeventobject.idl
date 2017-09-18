@@ -1,0 +1,54 @@
+//-----------------------------------------------------------------------------
+// Microsoft VSEE
+//
+// Microsoft Confidential
+// Copyright 1995-2000 Microsoft Corporation. All Rights Reserved.
+//
+// @doc EXTERNAL
+// @module VSAEventObject.idl-IDL source for VS Analyzer Event Object |
+//
+//-----------------------------------------------------------------------------
+
+// Includes -------------------------------------------------------------------
+
+#ifndef _VSAEventObject_IDL_
+#define _VSAEventObject_IDL_
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+#include "vsaeventobjectinterface.idl"
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Classes....
+//
+////////////////////////////////////////////////////////////////////////////////
+
+[
+	uuid(6c736dA4-30AF-11d3-B2BE-005004775988),
+	version(1.0),
+	helpstring("Microsoft Visual Studio Analyzer 2002 Event Object Type Library")
+]
+library VSAnalyzerEventsLib
+{
+	importlib("stdole2.tlb");
+	importlib("stdole32.tlb");
+
+	[
+		uuid(6c736dA5-30AF-11d3-B2BE-005004775988),
+		helpstring("AnalyzerEvents class")
+	]
+	coclass VSAnalyzerEvents
+	{
+		interface IVSAnalyzerEventBuffer;
+		interface IVSAnalyzerEventInit;
+		interface IPersistStreamInit;
+		interface IEnumEvents;
+		[default] interface IEventsAuto;
+	};
+};
+
+
+#endif // _VSAEventObject_IDL_

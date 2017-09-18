@@ -1,0 +1,71 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?>
+
+<sample>
+<title>Dynamic Type Resolution Sample</title>
+<title-short>DynamicTypeResolve</title-short>
+<overview>
+This sample demonstrates how hosts can participate in the type resolution process by supplying an event handler that returns an assembly containing the requested type. The sample attempts to instantiate a type that doesn't exist. However, the sample also handles type-load failures, and dynamically creates the necessary type, avoiding a FileNotFoundException. This is an advanced technique, most likely to be utilized by distributed applications in order to facilitate flexibility and fault-tolerance. 
+</overview>
+<subdirectory>Technologies\Reflection\DynamicTypeResolve</subdirectory>
+<buildsteps>
+   <step>
+      Type <richcontent bold="T">BUILD.bat</richcontent>
+      <richcontent> from the command line.</richcontent>      
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Reflection\DynamicTypeResolve\VB>Build.bat
+      </example>
+   </step>   
+</buildsteps>
+<runsteps>   
+   <step>
+      Type <richcontent bold="T">TypeResolve.exe</richcontent><richcontent> from the command line.</richcontent>
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Reflection\DynamicTypeResolve\VB>TypeResolve.exe
+      </example>
+   </step>         
+</runsteps>
+<technologies>
+   <technology name = "Reflection" keyword="T">
+      <class name = "AppDomain" keyword="T">
+      The AssemblyResolve event property of this class is used to add an event-handler that is called when a type load fails.
+      </class>      
+      <class name = "Activator" keyword="T">
+      Is used to create instances of a type whose name is not necessary known at compile time.
+      </class>      
+      <class name = "MethodInfo" keyword="T">
+      Used to invoke a method on a type, where the method name is not necessarily known at compile time.
+      </class> 
+      <class name = "AssemblyBuilder" keyword="T">
+      Used to emit a dynamic assembly at run-time.
+      </class>           
+      <class name = "AssemblyName" keyword="T">
+      This type is used to define the unique identity of an assembly. This sample uses this type in the simplest possible way by giving the dynamic assembly a text name.
+      </class>
+      <class name = "ModuleBuilder" keyword="T">
+      Used to build a dynamic module in the dynamic assembly.
+      </class>
+      <class name = "TypeBuilder" keyword="T">
+      This Type-derived type is used to build a type dynamically. From it you can request instances of the FieldBuilder, ConstrutorBuilder, and MethodBuilder types. Using these types the sample generates a complete type.
+      </class>      
+      <class name = "MethodBuilder" keyword="T">
+      Used to define a method in a dynamic type.
+      </class>           
+      <class name = "ILGenerator" keyword="T">
+      The MethodBuilder type implements a method called GetILGenerator() which returns an instance of the ILGenerator type. This type is used to dynamically generate IL-code.
+      </class>
+   </technology>     
+   <technology name = "Delegates and Events" keyword="T">
+      <class name = "ResolveEventHandler" keyword="T">
+      Used to indicate a callback method to be called when a type-resolution fails.
+      </class>
+   </technology>
+</technologies>
+<keywords>
+   <word name="Dynamic code" keyword="T"/>   
+   <word name="Self-modifying" keyword="T"/>
+   <word name="AssemblyBuilderAccess" keyword="T"/>   
+   <word name="MethodAttributes" keyword="T"/>
+</keywords>
+</sample>
+

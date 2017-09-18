@@ -1,0 +1,3 @@
+C# Source:CS\Control\SimpleControl.cs,CS\Control\DrawingMode.cs,CS\HostApp\HostApp.cs
+VB Source:VB\Control\SimpleControl.vb,VB\Control\DrawingMode.vb,VB\HostApp\HostApp.vb
+VS.NET:CS\Control\SimpleControl.csproj,CS\HostApp\HostApp.csproj,VB\Control\SimpleControl.vbproj,VB\HostApp\HostApp.vbproj

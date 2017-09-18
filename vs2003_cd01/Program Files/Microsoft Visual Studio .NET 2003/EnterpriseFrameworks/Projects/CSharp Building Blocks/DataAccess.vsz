@@ -1,0 +1,7 @@
+VSWIZARD 7.0
+Wizard=VSWizard.VsWizardEngine.7.1
+Param="WIZARD_UI = FALSE"
+Param="WIZARD_NAME = CSharpDataAccess"
+Param="PROJECT_TYPE = ETPROJ"
+Param="SCRIPT_COMMON_PROJECT_TYPE = CSPROJ"
+Param="EFT_PROTOTYPE = DataAccess.csproj"

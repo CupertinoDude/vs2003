@@ -1,0 +1,8 @@
+Timer Form
+This sample shows a complex control that inherits from Form, and
+provides the ability to raise events or perform other actions
+after a given timer interval. The control includes its own
+device adapters, that customize the behavior of existing Form
+device adapters.  Client-side markup is used to cause the browser to perform
+the desired timed action.  Note that the device adapters are specified in the
+web.config files.

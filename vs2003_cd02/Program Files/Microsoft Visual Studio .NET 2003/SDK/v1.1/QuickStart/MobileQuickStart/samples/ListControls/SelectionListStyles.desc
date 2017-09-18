@@ -1,0 +1,5 @@
+Selection List Styles
+This sample demonstrates some of the styles available to the SelectionList mobile control
+when rendering to richer clients. Select a style to see how a SelectionList 
+is rendered in that style.
+<b>Note:</b> Many of these styles may not be visible depending on the device.

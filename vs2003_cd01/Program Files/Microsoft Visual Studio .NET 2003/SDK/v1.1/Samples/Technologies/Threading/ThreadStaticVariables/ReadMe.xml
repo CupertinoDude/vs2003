@@ -1,0 +1,53 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?>
+
+<sample>
+<title>Thread Static Variables Sample</title>
+<title-short>ThreadStaticVariables</title-short>
+<overview>
+This sample demonstrates how to use the ThreadStaticAttribute type to create static variables backed by thread local storage. Each thread to access the type will receive its own "thread-local" copy of any static variable marked as [ThreadStatic]. 
+</overview>
+<subdirectory>Technologies\Threading\ThreadStaticVariables</subdirectory>
+<buildsteps>
+   <step>
+      Type <richcontent bold="T">BUILD.bat</richcontent>
+      <richcontent> from the command line.</richcontent>      
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Threading\ThreadStaticVariables\VB>Build.bat
+      </example>
+   </step>
+</buildsteps>
+<runsteps>
+   <step>
+      Type <richcontent bold="T">ThreadStaticVariables.exe</richcontent><richcontent> from the command line.</richcontent>
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Threading\ThreadStaticVariables\VB>ThreadStaticVariables.exe
+      </example>
+   </step>   
+   <step>
+      The output of this example demonstrates two things. First, it shows that each of the three threads is incrementing its own copy of the static variable. This is evident, because there is no logic in the sample to reset the variable value to zero.  Second, it shows that only one thread received a thread-local copy of the variable initialized to a starting value of 10.  This is because only one thread calls the static constructor for the type, which is used to initialize static members.
+   </step>   
+</runsteps>
+<technologies>
+   <technology name = "Threading" keyword="T">
+      <class name = "Thread" keyword="T">
+         The sample creates two instances of the Thread type and starts each on the same static method. The sample also uses the Join() method to wait for the threads to terminate.
+      </class>  
+      <class name = "ThreadStaticAttribute" keyword="T">
+         This sample uses the ThreadStaticAttribute to attribute a static member variable. Each thread in the sample then accesses its own copy of the static variable.
+      </class>
+   </technology>    
+   <technology name = "Delegates" keyword="T">
+      <class name = "ThreadStart" keyword="T">
+         The ThreadStart delegate type is used by this sample to create a type-safe callback method for the Thread class to use. 
+      </class>      
+   </technology>
+</technologies>
+<keywords>
+   <word name="Threads" keyword="T"/>
+   <word name="Delegate" keyword="T"/>
+   <word name="TLS" keyword="T"/>
+   <word name="Thread-local storage" keyword="T"/>
+</keywords>
+</sample>
+

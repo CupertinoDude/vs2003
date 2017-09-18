@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<EFPROJECT>
+    <GENERAL>
+        <BANNER>Microsoft Visual Studio Distributed Application Template FILE</BANNER>
+        <VERSION>1.00</VERSION>
+        <REFERENCES>
+         </REFERENCES>
+        <VIEWS>
+        </VIEWS>
+    </GENERAL>
+    <GLOBALS>
+        <GLOBALENTRY>
+            <NAME>TDLFILE</NAME>
+            <VALUE>DAP.tdl</VALUE>
+        </GLOBALENTRY>
+        <GLOBALENTRY>
+            <NAME>TDLELEMENTTYPE</NAME>
+            <VALUE>DataAccessProjects</VALUE>
+        </GLOBALENTRY>
+    </GLOBALS>
+</EFPROJECT>

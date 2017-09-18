@@ -1,0 +1,11 @@
+;
+; template for other locales/cultures
+;
+
+[strings]
+greeting=
+more=
+article1=
+article2=
+article3=
+

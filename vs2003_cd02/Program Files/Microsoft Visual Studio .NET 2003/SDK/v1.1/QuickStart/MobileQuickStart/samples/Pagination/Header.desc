@@ -1,0 +1,7 @@
+Using Headers and Footers
+This sample demonstrates how you can use a header template on a
+paginated form.
+This sample is similar to the paginated list sample in an earlier section,
+but includes the title on every page of the form.
+
+

@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial"><STRONG>Common Terms</STRONG></FONT></P>
+		<P><FONT face="Arial"><STRONG>assembly:&nbsp;</STRONG>A reusable, versionable, and 
+				self-describing building block of a common language runtime application</FONT></P>
+		<FONT face="Arial">
+			<P><FONT face="Arial"><STRONG>domain: </STRONG>(From the Visual Studio .NET Help files) 
+					Application domains provide a secure and versatile unit of processing that the 
+					common language runtime can use to provide isolation between applications. You 
+					can run several application domains in a single process with the same level of 
+					isolation that would exist in separate processes, but without incurring the 
+					additional overhead of making cross-process calls or switching between 
+					processes. The ability to run multiple applications within a single process 
+					dramatically increases server scalability.</FONT></P>
+			<FONT face="Arial"><FONT face="Arial">
+					<P><STRONG>execution engine (EE):&nbsp;</STRONG>
+					The common language runtime (CLR)&nbsp; </FONT></FONT></FONT></P><FONT face="Arial"><FONT face="Arial"><FONT face="Arial">
+					<P><STRONG>EEClass: </STRONG>A managed class.</P>
+					<P><STRONG>EJIT (EconoJIT): </STRONG>An early JIT compiler, originally targetted 
+						at&nbsp;dynamic assemblies, ASP.NET pages and embedded script. This JIT 
+						compiler was optimized for compilation speed, but few optimizations were 
+						applied to the generated native code.&nbsp; Now of historical interest, it was 
+						not shipped with the .NET&nbsp;Framework.</P>
+					<P>
+				</FONT><STRONG>field declarations (mdFieldDef): </STRONG>Declarations of data 
+				members as members of classes or interfaces or as global module-level data 
+				members. </P><STRONG>
+					<P><FONT face="Arial">HighFrequencyHeap:</FONT></P>
+					<P><FONT face="Arial">LowFrequencyHeap:</FONT></P>
+					<P>
+					mdToken:</STRONG> A metadata token.&nbsp; A metadata token is a 4-byte 
+				value.&nbsp; The most-significant byte specifies what type of token this 
+				is.&nbsp; For example, a value of 1 indicates&nbsp;it’s a TypeDef token, 
+				and&nbsp;a value of 4 indicates it’s a FieldDef token.&nbsp; (For the full list 
+				of tokens and&nbsp;their values, see the CorTokenType enumeration in 
+				CorHdr.h)&nbsp; The lower&nbsp;three bytes give the index of the row, within a 
+				MetaData table, that the token refers to.&nbsp;&nbsp; These&nbsp;lower 3 bytes 
+				are called the RID, or Record IDentifier.&nbsp; So, for example, the metadata 
+				token with value 0x01000007 is a ‘shorthand’ way to refer to row number 7 in 
+				the TypeDef table, in the current scope.&nbsp; Similarly, token 0x0400001A 
+				refers to row number 26 (decimal) in the FieldDef table in the current 
+				scope.&nbsp; Nothing is ever stored&nbsp;in row zero of a metadata table: a a 
+				metadata token, whose RID is zero, is called&nbsp;a “nil” token.&nbsp; The 
+				metadata API defines a host of such nil tokens – one for each token type (for 
+				example, mdTypeDefNil, with value 0x01000000).&nbsp;</P>
+				<P><STRONG>member references (mdMemberRef):</STRONG> References to methods and 
+					fields.&nbsp; A member reference is generated in metadata for every method 
+					invocation or field access that is made by any implementation in this module 
+					and a token is persisted in the MSIL stream.&nbsp; (Note that there is no 
+					runtime support for property or event references)
+				</P>
+				<P><STRONG>MethodDesc. (MD):</STRONG>
+			</FONT></P><FONT face="Arial">
+				<P><STRONG>method definitions (mdMethodDef):</STRONG> Definitions of methods as 
+					members of classes or interfaces or as global module-level methods.
+				</P>
+				<P><STRONG>MethodTable (MT):</STRONG>
+			</FONT></P>
+			<P><STRONG>Module:</STRONG>
+		</FONT></P><FONT face="Arial">
+			<P><FONT face="Arial"><STRONG>Normal JIT: </STRONG>Used for normal 
+					operation;&nbsp;provides the best load/performance ratio. The load time of 
+					assemblies is a bit slower than using ngen'd assemblies, but the JIT compiler 
+					performs optimizations on the generated native code, taking into account, 
+					the&nbsp;current security policies and configuration.</FONT></P>
+			<FONT face="Arial">
+				<P><STRONG>ngen (</STRONG>formerly called <STRONG>Pre-JIT): </STRONG>Used for fast 
+					load time. This option is sometimes&nbsp;used for large local applications upon 
+					installation.</P>
+				<P><STRONG>RVA (Relative Virtual Address):</STRONG> An RVA is the address of an 
+					item after it has been&nbsp;loaded into memory, with the base address of the 
+					image file subtracted from it (i.e. the offset from the base address where the 
+					file is loaded). The RVA of an item will almost always differ from its position 
+					within the file on disk.
+				</P>
+				<P><STRONG>StubHeap:</STRONG>
+			</FONT></P>
+			<P><STRONG>type declarations (mdTypeDef):</STRONG> Declarations of runtime 
+				reference types -- classes and interfaces – and of value types.
+			</P>
+			<P><STRONG>type references (mdTypeRef):</STRONG> References to runtime reference 
+				types and value types, such as might occur when declaring variables as runtime 
+				reference or value types or in declaring inheritance or implementation 
+				hierarchies.&nbsp; In a very real sense, the collection of type references in a 
+				module is the collection of compile-time import dependencies.
+			</P>
+		</FONT>
+	</BODY>
+</HTML>

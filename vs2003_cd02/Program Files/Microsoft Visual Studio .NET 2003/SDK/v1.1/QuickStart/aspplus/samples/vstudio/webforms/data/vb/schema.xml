@@ -1,0 +1,26 @@
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ProductID" type="xs:int" minOccurs="0" />
+                <xs:element name="CategoryID" type="xs:int" minOccurs="0" />
+                <xs:element name="ProductName" type="xs:string" minOccurs="0" />
+                <xs:element name="ProductDescription" type="xs:string" minOccurs="0" />
+                <xs:element name="UnitPrice" type="xs:decimal" minOccurs="0" />
+                <xs:element name="ImagePath" type="xs:string" minOccurs="0" />
+                <xs:element name="ServingSize" type="xs:string" minOccurs="0" />
+                <xs:element name="Servings" type="xs:int" minOccurs="0" />
+                <xs:element name="Quantity" type="xs:int" minOccurs="0" />
+                <xs:element name="MinOnHand" type="xs:int" minOccurs="0" />
+                <xs:element name="MaxOnHand" type="xs:int" minOccurs="0" />
+                <xs:element name="Manufacturer" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>

@@ -1,0 +1,87 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?>
+
+<sample>
+<title>Reflection-Emit Sample</title>
+<title-short>ReflectionEmit</title-short>
+<overview>
+This sample demonstrates how to use reflection-emit. Reflection-emit is a runtime feature that allows code to create dynamic assemblies, modules and types. These types can be created for the purpose of instantiating them dynamically and using them, or reflection-emit can be used to generate an assembly and persist it to disk as an EXE or DLL. This sample consists of two executables. The first executable, EmitAssembly.exe, will generate a dynamic type, and test it, or it will generate a dynamic type and persist it to disk as a DLL. The second executable, TestEmittedAssembly.exe, simply tests the assembly dynamically emitted by the EmitAssembly.exe. The type emitted by EmitAssembly.exe is a simple class called "HelloWorld" whose constructor takes a single string parameter. The type also implements a GetGreeting() method which returns the string passed to the instance constructor.
+</overview>
+<subdirectory>Technologies\Reflection\ReflectionEmit</subdirectory>
+<buildsteps>
+   <step>
+      Type <b>BUILD.bat</b> from the command line.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Reflection\ReflectionEmit\VB>Build.bat
+      </example>
+   </step>
+   <step>
+      Note that BUILD.bat actually builds two executable files: EmitAssembly.exe and TestEmittedAssembly.exe. However, in order to build TestEmittedAssembly.exe, the compiler needs to be able to open the referenced assembly "EmmittedAssembly.dll". After building EmitAssembly.exe, the BUILD.bat file executes EmitAssembly with the command line parameter "2" indicating that the sample should emit the dynamic assembly.
+   </step>
+</buildsteps>
+<runsteps>
+   <step>
+      EmitAssembly accepts a command line parameter indicating which test you would like to execute.
+   </step>
+   <step>
+      Type <b>EmitAssembly.exe 1</b> from the command line to have the sample emit the dynamic type into its AppDomain, and test the code using static code in the sample.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Reflection\ReflectionEmit\VB>EmitAssembly.exe 1
+      </example>
+   </step>   
+   <step>
+      Type <b>EmitAssembly.exe 2</b> from the command line to have the sample emit the dynamic type into an assembly and persist the assembly to disk in the form of a .DLL and a .MOD file. After doing this, you might want to run TestEmittedAssembly.exe or ILDasm.exe to test the emitted code.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Reflection\ReflectionEmit\VB>TestEmittedAssembly.exe
+      </example>
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Reflection\ReflectionEmit\VB>ILDasm EmittedModule.mod
+      </example>
+   </step>   
+   <step>
+      Type <b>EmitAssembly.exe 3</b> from the command line to have the sample emit the dynamic type into an assembly and emit a second dynamic type which tests the code of the first dynamic type.
+   </step>   
+</runsteps>
+<technologies>
+   <technology name = "Reflection-Emit" keyword="T">
+      <class name = "AppDomain" keyword="T">
+      The sample uses the AppDomain type to create a dynamic assembly in the sample's AppDomain. It does this by calling DefineDynamicAssembly().
+      </class>
+      <class name = "AssemblyBuilder" keyword="T">
+      The AssemblyBuilder type is used to build a dynamic assembly. It can be used to create an assembly for immediate use, or a dynamic assembly can be persisted to an assembly DLL or EXE file.
+      </class>           
+      <class name = "AssemblyName" keyword="T">
+      This type is used to define the unique identity of an assembly. This sample uses this type in the simplest possible way by giving the dynamic assembly the text name "EmmittedAssembly".
+      </class>
+      <class name = "ModuleBuilder" keyword="T">
+      The module builder type is used to build a dynamic module in the dynamic assembly.
+      </class>
+      <class name = "TypeBuilder" keyword="T">
+      This Type-derived type is used to build a type dynamically. From it you can request instances of the FieldBuilder, ConstrutorBuilder, and MethodBuilder types. Using these types the sample generates a complete type.
+      </class>
+      <class name = "FieldBuilder" keyword="T">
+      The FieldBuilder type is used to create a field in a dynamic type.
+      </class>
+      <class name = "ConstructorBuilder" keyword="T">
+      Used to define a constructor in a dynamic type.
+      </class>      
+      <class name = "MethodBuilder" keyword="T">
+      Used to define a method in a dynamic type.
+      </class>           
+      <class name = "ILGenerator" keyword="T">
+      Both MethodBuilder and ConstructorBuilder implement a method called GetILGenerator(). These methods return an instance of the ILGenerator type which is used to dynamically generate IL-code for a type.
+      </class> 
+      <class name = "Thread" keyword="T">
+      The static member function GetDomain() is used to get an instance of the AppDomain type for the current thread.
+      </class> 
+   </technology>     
+</technologies>
+<keywords>
+   <word name="Dynamic code" keyword="T"/>   
+   <word name="Self-modifying" keyword="T"/>
+   <word name="AssemblyBuilderAccess" keyword="T"/>   
+   <word name="MethodAttributes" keyword="T"/>
+</keywords>
+
+</sample>
+

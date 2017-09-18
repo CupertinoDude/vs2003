@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+	</HEAD>
+	<BODY>
+		<pre>
+// The following text shows the hierarchy of frames:
+//
+//    Frame                   - The root class. There are no actual instances
+//    |                         of Frames.
+//    |
+//    +-ComPrestubMethodFrame - Prestub frame for calls from COM to COM+.
+//    |
+//    |
+//    +-GCFrame               - This frame doesn't represent a method call.
+//    |                         Its sole purpose is to let the common language
+//    |                         runtime protect object references, that it is
+//    |                         manipulating, from garbage collection.
+//    |
+//    +-HijackFrame           - If a method's return address is hooked, we
+//    |                         construct this frame to allow stack crawling back
+//    |                         to where the return should have gone.
+//    |
+//    +-InlinedCallFrame      - If a call to unmanaged code is hoisted into
+//    |                         a JIT-compiled caller, the calling method keeps
+//    |                         this frame linked throughout its activation.
+//    |
+//    +-ResumableFrame        - This frame provides the context necessary to
+//    | |                       allow garbage collection during handling of
+//    | |                       a resumable exception (such as during edit-and-continue,
+//    | |                       or under GCStress4).
+//    | |
+//    | +-RedirectedThreadFrame - This frame is used for redirecting threads during suspension.
+//    |
+//    +-TransitionFrame       - This frame represents a transition from
+//    | |                       one or more nested frameless method calls
+//    | |                       to either a common language runtime helper function or
+//    | |                       a framed method.
+//    | |
+//    | +-ExceptionFrame        - This frame has caused an exception.
+//    | | |
+//    | | |
+//    | | +- FaultingExceptionFrame - This frame was placed on a method that faulted
+//    | |                             to save additional state information.
+//    | |
+//    | +-FuncEvalFrame         - This frame is for debugger function evaluation.
+//    | |
+//    | |
+//    | +-HelperMethodFrame     - This frame is used allow stack crawling inside 
+//    | |                         JIT helpers and fcalls.
+//    | |
+//    | |
+//    | +-FramedMethodFrame   - This frame represents a call to a method
+//    |   |                     that generates a full-fledged frame.
+//    |   |
+//    |   +-ECallMethodFrame     - This frame represents a direct call to the common
+//    |   |                        language runtime.
+//    |   |
+//    |   +-FCallMethodFrame     - This frame represents a fast direct call to the
+//    |   |                        common language runtime.
+//    |   |
+//    |   +-NDirectMethodFrame   - This frame represents a PInvoke call.
+//    |   | |
+//    |   | +-NDirectMethodFrameEx - This frame represents a PInvoke call with cleanup.
+//    |   |
+//    |   +-ComPlusMethodFrame   - This frame represents a COM+ to COM call.
+//    |   | |
+//    |   | +-ComPlusMethodFrameEx - This frame represents a COM+ to COM call with cleanup.
+//    |   |
+//    |   +-PrestubFrame         - This frame represents a call to a prestub.
+//    |   |
+//    |   +-CtxCrossingFrame     - This frame marks a call across a context
+//    |   |                        boundary.
+//    |   |
+//    |   +-MulticastFrame       - This frame protects arguments to a MulticastDelegate
+//    |   |                        Invoke() call while calling each subscriber.
+//    |   |
+//    |   +-PInovkeCalliFrame   - This frame represents a calli to an unmanaged target.
+//    |  
+//    |  
+//    +-UnmanagedToManagedFrame - This frame represents a transition from
+//    | |                         unmanaged code back to managed code. Its
+//    | |                         main functions are to stop COM+ exception
+//    | |                         propagation and to expose unmanaged parameters.
+//    | |
+//    | +-UnmanagedToManagedCallFrame - This frame is used when the target
+//    |   |                             is a COM+ function or method call. It
+//    |   |                             adds the capability to promote callee
+//    |   |                             arguments for garbage collections 
+//    |   |                             during marshaling.
+//    |   |
+//    |   +-ComMethodFrame      - This frame represents a transition from
+//    |   |                       COM to COM+.
+//    |   |
+//    |   +-UMThunkCallFrame    - This frame represents an unmanaged to managed
+//    |                           transition through PInvoke.
+//    |
+//    +-CtxMarshaledFrame  - This frame represent a cross-context marshalled call
+//    |                      (cross-thread, inter-process, or cross-machine scenarios).
+//    |
+//    +-CtxByValueFrame    - This frame is used to support protection of a by-
+//    |                      value marshaling session, even though the thread is
+//    |                      not pushing a call across a context boundary.
+//    |
+//    +-ContextTransitionFrame - This frame is used to mark an appdomain transition.
+//    |
+//    +-NativeClientSecurityFrame -  This frame is used to capture the security 
+//       |                           context in a native to managed call.  The code 
+//       |                           acess security stack walk uses caller 
+//       |                           information in  this frame to apply 
+//       |                           security policy to the  native client.
+//       |
+//       +-ComClientSecurityFrame -  This frame is the Security frame for COM clients. 
+//                                   VBScript, JScript, IE ..</pre>
+	</BODY>
+</HTML>

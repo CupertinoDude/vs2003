@@ -1,0 +1,8 @@
+
+LIBRARY      "rpcrt4.dll"
+
+DESCRIPTION  'rpcrt4 DLL'
+
+EXPORTS
+	CreateProxyFromTypeInfo	@1
+    CreateStubFromTypeInfo	@2

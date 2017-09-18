@@ -1,0 +1,5 @@
+A Composite Control
+This sample illustrates how to write a custom mobile control composed
+of other controls. The control shown here includes its own UI for entering
+a user name and password. It also shows how to raise custom events from
+the control.

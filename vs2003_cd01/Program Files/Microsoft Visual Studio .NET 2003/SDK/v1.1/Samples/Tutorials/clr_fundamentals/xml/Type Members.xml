@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Type Members">
+	<Paragraph Title="Introduction">
+		In any object-oriented system, types can have fields and methods. The fields are used to represent an object's state while the methods expose actions or operations that alter an object's state. 		Since all object-oriented developers should be well aware of fields and methods, this section will not explore them. Instead, this section explores the special members that a CLR type can expose.
+	</Paragraph>
+	<Navigation>
+		<Previous>Custom Attributes.xml</Previous>
+		<Next>Accessibility Modifiers.xml</Next>
+	</Navigation>
+</Document>

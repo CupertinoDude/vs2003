@@ -1,0 +1,1 @@
+After building this directory contains the generated resource file.

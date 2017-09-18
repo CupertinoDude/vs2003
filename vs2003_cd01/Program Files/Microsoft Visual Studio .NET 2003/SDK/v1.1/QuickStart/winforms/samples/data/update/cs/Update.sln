@@ -1,0 +1,37 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateWebService", "UpdateWebService.csproj", "{2D864CF2-3374-4DCC-BC11-1D9C99A2F692}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomersDataSet", "CustomersDataSet\CustomersDataSet.csproj", "{46DB52C8-4848-4F76-9E30-EA79C03242E2}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Update", "Client\Update.csproj", "{5BD3878C-7FA4-4F27-BD66-30DC953C9FFB}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{2D864CF2-3374-4DCC-BC11-1D9C99A2F692}.Debug.ActiveCfg = Debug|.NET
+		{2D864CF2-3374-4DCC-BC11-1D9C99A2F692}.Debug.Build.0 = Debug|.NET
+		{2D864CF2-3374-4DCC-BC11-1D9C99A2F692}.Release.ActiveCfg = Release|.NET
+		{2D864CF2-3374-4DCC-BC11-1D9C99A2F692}.Release.Build.0 = Release|.NET
+		{46DB52C8-4848-4F76-9E30-EA79C03242E2}.Debug.ActiveCfg = Debug|.NET
+		{46DB52C8-4848-4F76-9E30-EA79C03242E2}.Debug.Build.0 = Debug|.NET
+		{46DB52C8-4848-4F76-9E30-EA79C03242E2}.Release.ActiveCfg = Release|.NET
+		{46DB52C8-4848-4F76-9E30-EA79C03242E2}.Release.Build.0 = Release|.NET
+		{5BD3878C-7FA4-4F27-BD66-30DC953C9FFB}.Debug.ActiveCfg = Debug|.NET
+		{5BD3878C-7FA4-4F27-BD66-30DC953C9FFB}.Debug.Build.0 = Debug|.NET
+		{5BD3878C-7FA4-4F27-BD66-30DC953C9FFB}.Release.ActiveCfg = Release|.NET
+		{5BD3878C-7FA4-4F27-BD66-30DC953C9FFB}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

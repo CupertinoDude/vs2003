@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<LINK href="..\commands\HelpStyle.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="HowDoI">Set a breakpoint in managed code if the method has not been 
+							JIT-compiled</TD>
+					</TR>
+					<TR>
+						<TD class="Comment">
+							<table class="Comments2" ID="Table4">
+								<tr>
+									<td valign="top"><b>Comments:</b></td>
+									<td>
+										If you need to set a breakpoint on the first time through a&nbsp;function, this 
+										might present a problem, because the code will not be JIT-compiled until right 
+										before it is executed.&nbsp;&nbsp;To work around this issue, follow these 
+										steps.
+									</td>
+								</tr>
+							</table>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="Step">Step 1: Find the MethodDesc for a given function</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">
+							<pre>
+0:003&gt; !Name2EE basedebug.exe basedebug.MyMain.MyFunction
+--------------------------------------
+MethodDesc: <FONT color=red><STRONG>375080</STRONG></FONT>
+Name: [DEFAULT] String basedebug.MyMain.MyFunction()
+-----------------------</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="Step">Step 2: Dump the MethodDesc for the function.</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">
+							<pre>
+0:003&gt; !DumpMD <FONT color=red><STRONG>375080</STRONG></FONT>
+Method Name : [DEFAULT] String basedebug.MyMain.MyFunction()
+MethodTable 375098
+Module: 14ea50
+mdToken: 06000002 (G:\Projects\VC\basedebug\bin\Debug\basedebug.exe)
+Flags : 10
+<FONT color=maroon><FONT color=black>IL RVA :</FONT> <STRONG>00002088</STRONG></FONT></pre>
+							<table class="Notes">
+								<tr>
+									<td valign="top"><b>Note:</b></td>
+									<td>The DumpMD command&nbsp;outputs&nbsp;"IL RVA : 00002088", which&nbsp;means that 
+										this method has not yet been JIT-compiled.&nbsp; You cannot actually set a 
+										breakpoint until the method has been&nbsp;JIT-compiled,&nbsp;because 
+										you&nbsp;do not&nbsp;have a memory address for the breakpoint.
+									</td>
+								</tr>
+							</table>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="Step">Step 3: Set a breakpoint for when the method gets JIT'ed</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">
+							<pre>
+0:003&gt; ba w4 <STRONG><FONT color=red>375080</FONT><FONT color=maroon>+4</FONT></STRONG></pre>
+							<table class="Notes" ID="Table2">
+								<tr>
+									<td valign="top"><b>Note:</b></td>
+									<td>
+										If you dump out the MethodDesc structure:<pre>0:003&gt; dt MethodDesc 375080
+   +0x000 m_wSlotNumber    : 5
+   +0x002 m_wFlags         : 0x10
+   <FONT color=maroon><STRONG>+0x004 m_CodeOrIL       : 0x80002088</STRONG></FONT></pre>
+										the m_CodeOrIL member field indicates&nbsp;whether the code has 
+										been&nbsp;JIT-compiled.&nbsp; When the code is JIT-compiled, the member 
+										field&nbsp;is set to the address of the JIT-compiled code. This is why you 
+										must&nbsp;set a breakpoint when you&nbsp;write to this memory address.
+									</td>
+								</tr>
+							</table>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="Step">Step 4: Once your code&nbsp;hits this breakpoint, the method 
+							should&nbsp;have be JIT-compiled.</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">
+							<pre>
+0:003&gt; g
+Breakpoint 0 hit
+eax=031241a8 ebx=00000000 ecx=0012f778 edx=00000014 esi=00375080 edi=0014f0f8
+eip=791e83d0 esp=0012f674 ebp=0012f788 iopl=0         nv up ei pl zr na po nc
+cs=001b  ss=0023  ds=0023  es=0023  fs=0038  gs=0000             efl=00000246
+mscorwks!MakeJitWorker+458:
+791e83d0 895f24           mov     [edi+0x24],ebx    ds:0023:0014f11c=00000001
+
+0:000&gt; !DumpMD <FONT color=red><STRONG>375080</STRONG></FONT>
+Method Name : [DEFAULT] String basedebug.MyMain.MyFunction()
+MethodTable 375098
+Module: 14ea50
+mdToken: 06000002 (G:\Projects\VC\basedebug\bin\Debug\basedebug.exe)
+Flags : 10
+Method VA : <FONT color=blue><STRONG>031241a8</STRONG></FONT></pre>
+							<table class="Notes" ID="Table3">
+								<tr>
+									<td valign="top"><b>Note:</b></td>
+									<td>When you use the&nbsp;DumpMD command, note that it now outputs&nbsp;"Method VA 
+										: 031241a8". This indicates&nbsp;that the&nbsp;method has been JIT-compiled and 
+										you can set a breakpoint on this memory address.
+									</td>
+								</tr>
+							</table>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="Step">Step 5: Set the breakpoint</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">
+							<pre>
+0:003&gt; bp <FONT color=blue><STRONG>031241a8</STRONG></FONT></pre>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

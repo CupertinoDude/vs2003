@@ -1,0 +1,9 @@
+REGEDIT4
+
+[HKEY_CLASSES_ROOT\CLSID\{4A79114D-19E4-11D3-B86B-00C04F79F802}\InprocServer32]
+"Class"="Microsoft.VisualStudio.VSHelp.DExploreAppObjClass"
+"Assembly"="Microsoft.VisualStudio.VSHelp, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+"RuntimeVersion"="COMPLUS"
+
+[HKEY_CLASSES_ROOT\TypeLib\{83285928-227C-11D3-B870-00C04F79F802}\1.0]
+"PrimaryInteropAssemblyName"="Microsoft.VisualStudio.VSHelp, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"

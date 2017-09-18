@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">
+							SyncBlk</TD>
+					</TR>
+					<TR>
+						<TD>
+							List synchronization blocks.</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!SyncBlk [-all|&lt;#&gt;]</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="38" cellSpacing="1" cellPadding="1" width="708" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>-all</STRONG></TD>
+									<TD vAlign="top">
+										Shows all&nbsp;synchronization blocks.&nbsp; (By default, only synchronization 
+										blocks with locks appear.)</TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>#</STRONG></TD>
+									<TD vAlign="top">Shows only a specific synchronization block.</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>
+0:001&gt; !SyncBlk
+Index SyncBlock MonitorHeld Recursion   Thread  ThreadID     Object Waiting
+   46 001655e0            1         1   150c98    70   1   050a5060 System.Web.HttpApplication
+  294 00165664            1         1   1ad5f0   4cc   4   010a7a64 System.Web.HttpApplication
+  299 00164f84            1         1   1d6598   e38  11   051a27e4 System.Web.HttpApplication
+-----------------------------
+Total           374
+ComCallWrapper  4
+ComPlusWrapper  1
+ComClassFactory 0
+Free            169</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Comments</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<P>
+								<TABLE id="Table3" height="325" cellSpacing="1" cellPadding="1" width="732" border="1">
+									<TR>
+										<TD>Index</TD>
+										<TD>Synchronization block index.</TD>
+									</TR>
+									<TR>
+										<TD>SyncBlock</TD>
+										<TD>Address of synchronization block .
+										</TD>
+									</TR>
+									<TR>
+										<TD>MonitorHeld</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD>Recursion</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD>Thread</TD>
+										<TD>
+											<P>Address of thread object&nbsp;waiting on the object this synchronization block 
+												is mapped to.</P>
+											<P>
+												Use the Threads command to get more information about the thread.</P>
+										</TD>
+									</TR>
+									<TR>
+										<TD>ThreadID</TD>
+										<TD>ID (hex) of thread waiting on this synchronization block.</TD>
+									</TR>
+									<TR>
+										<TD>Thread Number</TD>
+										<TD>Thread number as shown in the Threads command of the thread&nbsp;waiting on 
+											this synchronization block.</TD>
+									</TR>
+									<TR>
+										<TD>Object</TD>
+										<TD>Address of the object waiting on this synchronization block.&nbsp; Use the 
+											DumpObj command to get information about this object.</TD>
+									</TR>
+									<TR>
+										<TD>Waiting</TD>
+										<TD>Class of the&nbsp;object that is waiting for this synchronization block.&nbsp; 
+											If the synchronization block is no longer in use, this displays free.</TD>
+									</TR>
+									<TR>
+										<TD>Total</TD>
+										<TD>Total number of synchronization blocks.</TD>
+									</TR>
+									<TR>
+										<TD>ComCallWrapper</TD>
+										<TD>Number of Com Call wrappers.</TD>
+									</TR>
+									<TR>
+										<TD>ComPlusWrapper</TD>
+										<TD>Number of ComPlus wrappers.</TD>
+									</TR>
+									<TR>
+										<TD>ComClassFactory</TD>
+										<TD>Number of ComClass Factories.</TD>
+									</TR>
+									<TR>
+										<TD>Free</TD>
+										<TD>Number of free synchronization blocks.</TD>
+									</TR>
+								</TABLE>
+							</P>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

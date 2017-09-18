@@ -1,0 +1,8 @@
+<configuration>
+
+	<globalization 
+	   culture="de"
+	   uiculture="de"
+	/>
+    
+</configuration>

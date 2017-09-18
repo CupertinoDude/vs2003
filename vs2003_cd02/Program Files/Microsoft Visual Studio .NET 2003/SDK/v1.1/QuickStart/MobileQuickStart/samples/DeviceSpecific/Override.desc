@@ -1,0 +1,9 @@
+Property Overrides
+This sample demonstrates how to use &lt;DevicdSpecific&gt;
+and &lt;Choice&gt; tags to override properties in a style on
+a device-specific basis.
+<p>
+When viewed from an HTML browser, the form makes use of
+typeface, color, and size to highlight content. 
+On a WML phone, which doesn't have font features, 
+the form uses italicized text.

@@ -1,0 +1,153 @@
+BODY
+{
+    FONT-SIZE: smaller;
+    COLOR: black;
+    FONT-FAMILY: Verdana
+}
+.document_body
+{
+    FONT-SIZE: smaller;
+    COLOR: black;
+    FONT-FAMILY: Verdana
+}
+.toc_body
+{
+    FONT-SIZE: smaller;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    BACKGROUND-COLOR: #336699
+}
+.code
+{
+    FONT-SIZE: small;
+    COLOR: navy;
+    FONT-FAMILY: Lucida Console
+}
+.document_title
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: small;
+    COLOR: black;
+    FONT-FAMILY: Verdana
+}
+.paragraph_caption
+{
+    FONT-WEIGHT: bold;
+    COLOR: black;
+    FONT-FAMILY: Verdana
+}
+.toc_topic
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: smaller;
+    COLOR: white;
+    FONT-FAMILY: Verdana;
+    TEXT-DECORATION: none
+}
+.toc_item
+{
+    FONT-SIZE: smaller;
+    COLOR: white;
+    FONT-FAMILY: Verdana;
+    TEXT-DECORATION: none
+}
+.sample_link
+{
+    FONT-WEIGHT: normal;
+    COLOR: blue;
+    FONT-FAMILY: Verdana;
+    TEXT-DECORATION: none
+}
+.sample_caption
+{
+    FONT-WEIGHT: bold
+}
+.table_header
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: smaller;
+    COLOR: white;
+    BACKGROUND-COLOR: #336699;
+    TEXT-ALIGN: center
+}
+.table_row
+{
+    BORDER-RIGHT: black;
+    BORDER-TOP: black;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: smaller;
+    BORDER-LEFT: black;
+    TEXT-ALIGN: left
+}
+.table
+{
+    BORDER-RIGHT: black 1px solid;
+    PADDING-RIGHT: 0px;
+    BORDER-TOP: black 1px solid;
+    PADDING-LEFT: 0px;
+    PADDING-BOTTOM: 0px;
+    MARGIN: 0px;
+    BORDER-LEFT: black 1px solid;
+    WIDTH: 600px;
+    PADDING-TOP: 0px;
+    BORDER-BOTTOM: black 1px solid
+}
+A.navigation_link:link
+{
+    COLOR: blue;
+    TEXT-DECORATION: none
+}
+A.navigation_link:visited
+{
+    COLOR: blue;
+    TEXT-DECORATION: none
+}
+A.navigation_link:hover
+{
+    COLOR: red;
+    TEXT-DECORATION: none
+}
+A.sample_link:link
+{
+    COLOR: blue;
+    TEXT-DECORATION: none
+}
+A.sample_link:visited
+{
+}
+A.sample_link:hover
+{
+    COLOR: red;
+    TEXT-DECORATION: none
+}
+A.toc_item:link
+{
+    COLOR: white;
+    TEXT-DECORATION: none
+}
+A.toc_item:visited
+{
+}
+A.toc_item:hover
+{
+    COLOR: yellow;
+    TEXT-DECORATION: none
+}
+A.toc_topic:link
+{
+    COLOR: white;
+    TEXT-DECORATION: none
+}
+A.toc_topic:visited
+{
+}
+A.toc_topic:hover
+{
+    COLOR: yellow;
+    TEXT-DECORATION: none
+}
+.table_column
+{
+    BORDER-LEFT: 1pt;
+    WIDTH: 100px
+}

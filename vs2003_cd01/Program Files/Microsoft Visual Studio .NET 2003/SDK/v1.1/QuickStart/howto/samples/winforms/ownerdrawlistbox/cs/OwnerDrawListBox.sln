@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OwnerDrawListBox", "OwnerDrawListBox.csproj", "{CC827D37-A53B-46A4-A7CA-657866913FAC}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{CC827D37-A53B-46A4-A7CA-657866913FAC}.Debug.ActiveCfg = Debug|.NET
+		{CC827D37-A53B-46A4-A7CA-657866913FAC}.Debug.Build.0 = Debug|.NET
+		{CC827D37-A53B-46A4-A7CA-657866913FAC}.Release.ActiveCfg = Release|.NET
+		{CC827D37-A53B-46A4-A7CA-657866913FAC}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

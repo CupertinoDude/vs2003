@@ -1,0 +1,4 @@
+C# Source:CS\DataServiceClient.aspx,CS\DataService.wsdl,CS\DataService.cs
+VB Source:VB\DataServiceClient.aspx,VB\DataService.wsdl,VB\DataService.vb
+JScript Source:JS\DataServiceClient.aspx,JS\DataService.wsdl,JS\DataService.js
+VS.NET:..\..\vstudio\services\DataService\CS\DataService.csproj,..\..\vstudio\services\DataService\VB\DataService.vbproj

@@ -1,0 +1,3 @@
+C# Source:CS\Client\CustomersForm.cs,CS\DataSet\CustomersAndOrdersDataSet.cs,CS\DataSet\CustomersAndOrdersDataSet.xsd,CS\CustomersAndOrdersWebService.asmx.cs,CS\CustomersAndOrdersWebService.WSDL
+VB Source:VB\Client\CustomersForm.vb,VB\DataSet\CustomersAndOrdersDataSet.vb,VB\DataSet\CustomersAndOrdersDataSet.xsd,VB\CustomersAndOrdersWebService.asmx.vb,VB\CustomersAndOrdersWebService.WSDL
+VS.NET:CS\MasterDetailsService.csproj,CS\Client\MasterDetails.csproj,CS\DataSet\CustomersAndOrdersDataSet.csproj,VB\MasterDetailsWebService.vbproj,VB\Client\MasterDetails.vbproj,VB\DataSet\CustomersAndOrdersDataSet.vbproj

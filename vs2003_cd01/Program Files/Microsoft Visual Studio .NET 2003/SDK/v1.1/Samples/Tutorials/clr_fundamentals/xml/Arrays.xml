@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Arrays">
+	<Paragraph>
+		Arrays are always allocated on the garbage-collected heap. Arrays can be single dimension, multi-dimension, and you can also have arrays of arrays (called jagged arrays). It is highly 			recommended that each rank of an array always be zero based because this gives the best performance and is also required when passing arrays between programming languages. Defining an 		array defines a type that inherits from the System.Array type. This means that all arrays inherit all the methods exposed by this type. You can also use the static methods of the System.Array type 		to manipulate an array. The code below demonstrates some of the operations that you can perform with arrays.
+	</Paragraph>
+	<Paragraph>
+		<Sample Caption="Arrays" Image="..\Images\Console.gif">
+			<CSPath>..\Samples\SpecialTypes\Arrays\CS</CSPath>
+			<VBPath>..\Samples\SpecialTypes\Arrays\VB</VBPath>
+		</Sample>
+	</Paragraph>
+	<Navigation>
+		<Previous>EnumeratedTypes.xml</Previous>
+		<Next>Interfaces.xml</Next>
+	</Navigation>
+</Document>

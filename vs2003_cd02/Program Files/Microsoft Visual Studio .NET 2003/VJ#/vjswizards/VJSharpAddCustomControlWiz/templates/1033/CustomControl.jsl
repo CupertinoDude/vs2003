@@ -1,0 +1,64 @@
+[!if IS_NAMESPACE_NAME]
+package [!output SAFE_NAMESPACE_NAME];
+[!endif]
+
+import System.Collections.*;
+import System.ComponentModel.*;
+import System.Drawing.*;
+import System.Data.*;
+import System.Windows.Forms.*;
+
+/**
+ * Summary description for [!output SAFE_CLASS_NAME].
+ */
+public class [!output SAFE_CLASS_NAME] extends System.Windows.Forms.Control
+{
+	/**
+	 * Required designer variable.
+	 */
+	private System.ComponentModel.Container components = null;
+
+	public [!output SAFE_CLASS_NAME]()
+	{
+		// Required for Windows.Forms Class Composition Designer support
+		InitializeComponent();
+
+		//
+		// TODO: Add any constructor code after InitializeComponent call
+		//
+	}
+
+	/**
+	 * Clean up any resources being used.
+	 */
+	protected void Dispose(boolean disposing)
+	{
+		if (disposing)
+		{
+			if (components != null)
+			{
+				components.Dispose();
+			}
+		}
+		super.Dispose(disposing);
+	}
+
+	#region Component Designer generated code
+	/**
+	 * Required method for Designer support - do not modify
+	 * the contents of this method with the code editor.
+	 */
+	private void InitializeComponent()
+	{
+		components = new System.ComponentModel.Container();
+	}
+	#endregion
+
+	protected void OnPaint(PaintEventArgs pe)
+	{
+		// TODO: Add Custom Paint Code Here
+
+		// Calling the base class OnPaint
+		super.OnPaint(pe);
+	}
+}

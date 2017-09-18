@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Performing Timed Operations (Thread Pool Timers)">
+	<Paragraph>
+		The thread pool supports the ability to call a method at fixed periodic intervals. This sample shows how to create a thread pool timer, set the timer, and processes the periodic notifications. Thread 		pool timers are frequently used to handle network request timeouts. 	
+	</Paragraph>
+	<Paragraph>
+		<Sample Caption="Timed Operations" Image="..\Images\Console.gif">
+			<CSPath>..\Samples\Threading\Timed\CS</CSPath>
+			<VBPath>..\Samples\Threading\Timed\VB</VBPath>
+		</Sample>
+	</Paragraph>
+	<Navigation>
+		<Previous>Asynchronous Operations.xml</Previous>
+		<Next>Exclusive Operations.xml</Next>
+	</Navigation>
+</Document>

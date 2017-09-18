@@ -1,0 +1,49 @@
+
+//-----------------------------------------------------------------------------
+// Microsoft VSEE
+//
+// Microsoft Confidential
+// Copyright 1995-2000 Microsoft Corporation. All Rights Reserved.
+//
+// @doc EXTERNAL
+// @module RuntimeVariablesInfo.idl-IDL source for Visual Studio Analyzer Runtime variables |
+//
+//-----------------------------------------------------------------------------
+
+// Includes -------------------------------------------------------------------
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+
+//----------------------------------------------------------------------
+// SystemDebugRuntimeVariable
+
+struct SystemDebugRuntimeVariable
+{
+	BSTR strVariableName;
+	BSTR strVariableValue;	
+};
+
+
+//----------------------------------------------------------------------
+// SystemDebugRuntimeVariableValue
+
+struct SystemDebugRuntimeVariableValue
+{
+	BSTR strVariableValue;	
+	BSTR strVariableTarget;
+};
+
+
+// Interface definition for no purpose other than to get an _i.c file
+// generated so that the idl doesn't recompile on every build.
+[
+uuid(1471DA61-1ACD-11d3-BA25-00105AA31A58),
+version(1.0),
+pointer_default(unique)
+]
+interface I1471DA611ACD11d3BA2500105AA31A58 : IUnknown
+{
+	HRESULT Reserved();
+}

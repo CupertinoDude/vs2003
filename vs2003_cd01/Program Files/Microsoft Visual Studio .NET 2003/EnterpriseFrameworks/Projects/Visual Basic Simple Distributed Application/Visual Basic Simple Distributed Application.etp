@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<EFPROJECT>
+    <GENERAL>
+        <BANNER>Microsoft Visual Studio Distributed Application Template File</BANNER>
+        <VERSION>1.00</VERSION>
+        <SUBPROJECTWIZARDS>
+            <WIZARD>
+                <FILE>..\visual basic building blocks\BusinessFacade.vsz</FILE>
+            </WIZARD>
+            <WIZARD>
+                <FILE>..\Visual Basic Building Blocks\BusinessRules.vsz</FILE>
+            </WIZARD>
+            <WIZARD>
+                <FILE>..\Visual Basic Building Blocks\WebService.vsz</FILE>
+		<REQUIRESURL>1</REQUIRESURL>
+            </WIZARD>
+            <WIZARD>
+                <FILE>..\Visual Basic Building Blocks\WebUI.vsz</FILE>
+		<REQUIRESURL>1</REQUIRESURL>
+            </WIZARD>
+            <WIZARD>
+                <FILE>..\Visual Basic Building Blocks\DataAccess.vsz</FILE>
+            </WIZARD>
+            <WIZARD>
+                <FILE>..\Visual Basic Building Blocks\WinUI.vsz</FILE>
+            </WIZARD>
+            <WIZARD>
+                <FILE>..\Visual Basic Building Blocks\SystemFrameworks.vsz</FILE>
+            </WIZARD>
+         </SUBPROJECTWIZARDS>
+        <VIEWS>
+            <PROJECTEXPLORER>
+                <PREFERREDSTARTUP>..\Visual Basic Building Blocks\WinUI.vsz</PREFERREDSTARTUP>
+            </PROJECTEXPLORER>
+        </VIEWS>
+    </GENERAL>
+    <GLOBALS>
+        <GLOBALENTRY>
+            <NAME>TDLFILE</NAME>
+            <VALUE>DAP.tdl</VALUE>
+        </GLOBALENTRY>
+        <GLOBALENTRY>
+            <NAME>TDLELEMENTTYPE</NAME>
+            <VALUE>DistributedApplicationSimple</VALUE>
+        </GLOBALENTRY>
+    </GLOBALS>
+</EFPROJECT>

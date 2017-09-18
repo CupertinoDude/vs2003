@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExceptionsVC", "ExceptionsVC.vcproj", "{BCCA400F-0E3C-4593-8FF1-C1CAB6381DAB}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{BCCA400F-0E3C-4593-8FF1-C1CAB6381DAB}.Debug.ActiveCfg = Debug|Win32
+		{BCCA400F-0E3C-4593-8FF1-C1CAB6381DAB}.Debug.Build.0 = Debug|Win32
+		{BCCA400F-0E3C-4593-8FF1-C1CAB6381DAB}.Release.ActiveCfg = Release|Win32
+		{BCCA400F-0E3C-4593-8FF1-C1CAB6381DAB}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionItems) = postSolution
+		..\Readme.htm = ..\Readme.htm
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

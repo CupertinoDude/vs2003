@@ -1,0 +1,640 @@
+<!- (c) Microsoft Corporation -->
+<HTML DIR="LTR">
+	<HEAD>
+		<TITLE>
+			C# Add Interface Method Wizard
+		</TITLE>
+		<META NAME="vs_targetSchema" CONTENT="http://schemas.microsoft.com/intellisense/ie5">
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+		<STYLE TYPE="text/css">
+			@import url();
+		</STYLE>
+		
+		<SCRIPT>
+		var strURL = "../../../";
+		strURL += window.external.GetHostLocale();
+		strURL += "/NewStyles.css";
+		document.styleSheets(0).imports(0).href = strURL;
+		</SCRIPT>
+		
+		<SYMBOL NAME="RETURN_TYPE" TYPE=text VALUE="void">
+		</SYMBOL>
+		<SYMBOL NAME="METHOD_NAME" TYPE=text VALUE="">
+		</SYMBOL>
+		<SYMBOL NAME="METHOD_FULLNAME" TYPE=text VALUE="">
+		</SYMBOL>
+		<SYMBOL NAME="PARAMETER_TYPE" TYPE=text VALUE="">
+		</SYMBOL>
+		<SYMBOL NAME="PARAMETER_NAME" TYPE=text VALUE="">
+		</SYMBOL>
+		<SYMBOL NAME="PARAMETER_MODIFIER" TYPE="select-one" VALUE=1>
+		</SYMBOL>
+		<SYMBOL NAME="MODIFIER_NONE" TYPE=radio VALUE=true>
+		</SYMBOL>
+		<SYMBOL NAME="COMMENT" TYPE=text VALUE="">
+		</SYMBOL>
+		<SYMBOL NAME="METHOD_SIGNATURE" TYPE=text VALUE="">
+		</SYMBOL>
+		<SYMBOL NAME="PARAMETER_MODIFIER" TYPE="select-one" VALUE=1>
+		</SYMBOL>
+	</HEAD>
+	<BODY BGCOLOR="buttonface" TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" ONLOAD="InitDocument(document);" ONKEYDOWN="if (!bValidating) OnKey();" ONKEYPRESS="if (!bValidating) OnPress();">
+		<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+			<COL WIDTH="100%">
+				<TR VALIGN="top">
+					<TD HEIGHT="79">
+						<!--OPEN OF ALL ENCOMPASSING TABLE ROW ONE//-->
+						<TABLE CLASS="TWO" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+							<COL WIDTH="12">
+								<COL>
+									<COL WIDTH="12">
+										<TR>
+											<TD VALIGN="top" HEIGHT="12" WIDTH="12">
+												&nbsp;
+											</TD>
+											<TD VALIGN="top" HEIGHT="12">
+												&nbsp;
+											</TD>
+											<TD VALIGN="top" HEIGHT="12" WIDTH="12">
+												&nbsp;
+											</TD>
+											<TD CLASS="IMAGE" VALIGN="bottom" WIDTH="110" ROWSPAN="2">
+												<DIV CLASS="SMALLA" ID="Layer0">
+													<IMG CLASS="SMALLEST" SRC="..\..\Images\CSIMeth.gif" WIDTH="63" HEIGHT="63" ALT="" BORDER="0">
+												</DIV>
+											</TD>
+											<TD VALIGN="top" HEIGHT="12" WIDTH="6" ROWSPAN="2">
+												&nbsp;
+											</TD>
+										</TR>
+										<TR>
+											<TD VALIGN="top" HEIGHT="65" WIDTH="12">
+												&nbsp;
+											</TD>
+											<TD VALIGN="TOP" HEIGHT="65">
+												<H4 CLASS="HEAD" ID="HEAD">Welcome to the C# Add Interface Method Wizard</H4>
+												<P CLASS="SUBHEAD" ID="SUBHEAD">This wizard adds a method to your C# interface.</P>
+											</TD>
+											<TD VALIGN="top" HEIGHT="65" WIDTH="12">
+												&nbsp;
+											</TD>
+										</TR>
+										<TR>
+											<TD VALIGN="top" CLASS="RULE" COLSPAN="5" HEIGHT="2">
+												<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+													<TR VALIGN="top">
+														<TD HEIGHT="1" WIDTH="100%" BGCOLOR="buttonshadow"></TD>
+														<TD HEIGHT="1" WIDTH="1" BGCOLOR="window"></TD>
+													</TR>
+												</TABLE>
+											</TD>
+										</TR>
+						</TABLE>
+						<!--CLOSE OF ALL ENCOMPASSING TABLE ROW ONE//-->
+					</TD>
+				</TR>
+				<TR VALIGN="top">
+					<TD HEIGHT="100%">
+						<!--OPEN OF ALL ENCOMPASSING TABLE ROW TWO//-->
+						<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+							<COL>
+								<TR>
+									<TD VALIGN="top" HEIGHT="100%">
+										<!--OPEN OF CONTENT AND BUTTON TABLE//-->
+										<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+											<COL WIDTH="100%">
+												<TR VALIGN="top">
+													<TD HEIGHT="100%">
+														<!--OPEN OF CONTENT//-->
+														<TABLE CLASS="CONTENT" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+															<COL WIDTH="12">
+																<COL WIDTH="185">
+																	<COL WIDTH="12">
+																		<COL WIDTH="185">
+																			<COL WIDTH="12">
+																				<COL WIDTH="185">
+																					<COL WIDTH="12">
+																						<TR>
+																							<TD VALIGN="TOP" HEIGHT="12" COLSPAN="7">
+																								&nbsp;
+																							</TD>
+																						</TR>
+																						<TR VALIGN="TOP">
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																							<TD VALIGN="TOP">
+																								<SPAN CLASS="itemTextTop">
+																									<LABEL FOR="ReturnTypes" ID="RETURN_TYPE_LABEL">
+																										R<U>e</U>turn type:</LABEL>
+																									<BR>
+																									<INPUT CLASS="sideBtnThreeColumn" ID="RETURN_TYPE" TYPE="HIDDEN">
+																									</INPUT>
+																									<OBJECT CLASS="itemTextThreeColumn" ID="ReturnTypes" onBlur="SetMethodSignature();" ACCESSKEY="E" CLASSID="CLSID:BFD56283-7546-4dfe-8C5E-AE4FEDC08656" TABINDEX="1" VIEWASTEXT>
+																									</OBJECT>
+																								</SPAN>
+																								<P CLASS="ElementSpacer12">
+																									&nbsp;
+																								</P>
+																								<SPAN CLASS="itemText">
+																									<LABEL FOR="PARAMETER_MODIFIER" ID="PARAMETER_MODIFIER_LABEL">
+																										M<U>o</U>difier:</LABEL>
+																									<BR>
+																									<SPAN CLASS="SideBtn">
+																										<SELECT ID="PARAMETER_MODIFIER" SIZE="1" ACCESSKEY="O" TITLE="" TABINDEX="3">
+																											<OPTION VALUE="1" ID="NONE_OPTION" SELECTED>
+																												None
+																											</OPTION>
+																											<OPTION VALUE="2" ID="REF_OPTION">
+																												ref
+																											</OPTION>
+																											<OPTION VALUE="3" ID="OUT_OPTION">
+																												out
+																											</OPTION>
+																										</SELECT>
+																									</SPAN>
+																								</SPAN>
+																								<SPAN CLASS="itemTextSpecial" TITLE="">
+																									<LABEL FOR="ParamTypes" ID="PARAMETER_TYPE_LABEL">
+																										Parameter t<U>y</U>pe:</LABEL>
+																									<BR>
+																									<SPAN CLASS="SideBtnSpecial">
+																										<INPUT ID="PARAMETER_TYPE" TYPE="HIDDEN">
+																										</INPUT>
+																										<SPAN CLASS="CustomObjectIndent">
+																											<OBJECT CLASS="itemText" ID="ParamTypes" STYLE="WIDTH:115PX;" ACCESSKEY="Y" TABINDEX="4" CLASSID="CLSID:BFD56283-7546-4dfe-8C5E-AE4FEDC08656" VIEWASTEXT>
+																											</OBJECT>
+																										</SPAN>
+																									</SPAN>
+																								</SPAN>
+																								<P CLASS="ElementSpacer16">
+																									&nbsp;
+																								</P>
+																								<SPAN CLASS="itemText">
+																									<NOBR>
+																										<LABEL FOR="COMMENT" ID="COMMENT_LABEL">
+																											Co<U>m</U>ment (// notation not required):</LABEL>
+																										<BR>
+																										<INPUT CLASS="COMMENT" TYPE="TEXT" ID="COMMENT" ACCESSKEY="M" TITLE="" TABINDEX="9">
+																									</NOBR>
+																								</SPAN>
+																								<P CLASS="ElementSpacer12">
+																									&nbsp;
+																								</P>
+																								<SPAN CLASS="itemText" DISABLED>
+																									<NOBR>
+																										<LABEL FOR="METHOD_SIGNATURE" ID="METHOD_SIGNATURE_LABEL">
+																											Method signature:
+																										</LABEL>
+																										<BR>
+																										<INPUT CLASS="COMMENT" TYPE="TEXT" ID="METHOD_SIGNATURE" ACCESSKEY="M" TITLE="" READONLY>
+																									</NOBR>
+																								</SPAN>
+																							</TD>
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																							<TD VALIGN="TOP">
+																								<SPAN CLASS="itemTextTop">
+																									<LABEL FOR="METHOD_NAME" ID="METHOD_NAME_LABEL">
+																										Metho<U>d</U> name:</LABEL>
+																									<BR>
+																									<INPUT CLASS="sideBtnThreeColumn" ID="METHOD_NAME" ACCESSKEY="D" TITLE="" TYPE="TEXT" onPropertyChange="OnMethodName();" TABINDEX="2">
+																								</SPAN>
+																								<P CLASS="ElementSpacer12">
+																									&nbsp;
+																								</P>
+																								<SPAN CLASS="itemText" TITLE="">
+																									<LABEL FOR="PARAMETER_NAME" ID="PARAMETER_NAME_LABEL">
+																										Parame<U>t</U>er name:</LABEL>
+																									<BR>
+																									<INPUT CLASS="sideBtnThreeColumn" ID="PARAMETER_NAME" ACCESSKEY="T" TITLE="" TYPE="TEXT" TABINDEX="5">
+																									<BUTTON ID="AddBtn" TITLE="Add parameter" CLASS="buttonClass2" ACCESSKEY="A" onClick="AddParameter();" TYPE="BUTTON" TABINDEX="6">
+																										<U>A</U>dd</BUTTON>
+																									<BUTTON ID="RemoveBtn" TITLE="Remove parameter" CLASS="buttonClass2" ACCESSKEY="R" onClick="RemoveParameter();" TYPE="BUTTON" TABINDEX="7">
+																										<U>R</U>emove</BUTTON>
+																								</SPAN>
+																							</TD>
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																							<TD VALIGN="TOP">
+																								<!--THIS DOES NOTHING BUT APPLY APPROPRIATE SPACING - DO NOT DELETE------------------------------->
+																								<SPAN CLASS="itemTextTop" STYLE="VISIBILITY:HIDDEN;">
+																									<LABEL>
+																										&nbsp;
+																									</LABEL>
+																									<BR>
+																									<INPUT CLASS="sideBtnThreeColumn" TITLE="" TYPE="TEXT">
+																								</SPAN>
+																								<P CLASS="ElementSpacer12">
+																									&nbsp;
+																								</P>
+																								<!--THIS DOES NOTHING BUT APPLY APPROPRIATE SPACING - DO NOT DELETE------------------------------->
+																								<SPAN CLASS="itemText">
+																									<LABEL FOR="PARAMETER_LIST" ID="PARAMETER_LIST_LABEL">
+																										Parameter <U>l</U>ist:</LABEL>
+																									<BR>
+																									<SELECT CLASS="sideBtnThreeColumn" SIZE="3" ID="PARAMETER_LIST" ACCESSKEY="L" TITLE="" VALUE="VOID" TABINDEX="8">
+																									</SELECT>
+																								</SPAN>
+																							</TD>
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																						</TR>
+														</TABLE>
+														<!--CLOSE OF CONTENT//-->
+													</TD>
+												</TR>
+												<TR VALIGN="bottom">
+													<TD HEIGHT="48">
+														<!--OPEN OF BUTTON HTML//-->
+														<TABLE HEIGHT="48" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+															<COL WIDTH="12">
+																<COL>
+																	<COL WIDTH="75">
+																		<COL WIDTH="4">
+																			<COL WIDTH="75">
+																				<COL WIDTH="4">
+																					<COL WIDTH="75">
+																						<COL WIDTH="12">
+																							<TR>
+																								<TD VALIGN="TOP" CLASS="RULE" COLSPAN="8" HEIGHT="2">
+																									<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+																										<TR VALIGN="top">
+																											<TD HEIGHT="1" WIDTH="100%" BGCOLOR="buttonshadow"></TD>
+																											<TD HEIGHT="1" WIDTH="1" BGCOLOR="window"></TD>
+																										</TR>
+																									</TABLE>
+																								</TD>
+																							</TR>
+																							<TR>
+																								<TD VALIGN="top" HEIGHT="11" COLSPAN="8">
+																									&nbsp;
+																								</TD>
+																							</TR>
+																							<TR>
+																								<TD VALIGN="center" HEIGHT="23" WIDTH="12">
+																									&nbsp;
+																								</TD>
+																								<TD VALIGN="top" HEIGHT="23">
+																									&nbsp;
+																								</TD>
+																								<TD VALIGN="center" HEIGHT="23" WIDTH="75">
+																									<BUTTON CLASS="BUTTONS" ID="FinishBtn" onClick="OnFinish(document);" type=button>
+																										Finish
+																									</BUTTON>
+																								</TD>
+																								<TD VALIGN="center" HEIGHT="23" WIDTH="4">
+																									&nbsp;
+																								</TD>
+																								<TD VALIGN="center" HEIGHT="23" WIDTH="75">
+																									<BUTTON CLASS="BUTTONS" ID="CancelBtn" onClick="window.external.Finish(document, 'cancel');" type=button>
+																										Cancel
+																									</BUTTON>
+																								</TD>
+																								<TD VALIGN="center" HEIGHT="23" WIDTH="4">
+																									&nbsp;
+																								</TD>
+																								<TD VALIGN="center" HEIGHT="23" WIDTH="75">
+																									<BUTTON CLASS="BUTTONS" ID="HelpBtn" onClick="window.external.OnHelp('vc.codewiz.interface.method.cs.overview');" type=button>
+																										Help
+																									</BUTTON>
+																								</TD>
+																								<TD VALIGN="center" HEIGHT="23" WIDTH="12">
+																									&nbsp;
+																								</TD>
+																							</TR>
+																							<TR>
+																								<TD VALIGN="top" HEIGHT="12" COLSPAN="8">
+																									&nbsp;
+																								</TD>
+																							</TR>
+														</TABLE>
+														<!--CLOSE OF BUTTON HTML//-->
+													</TD>
+												</TR>
+										</TABLE>
+										<!--CLOSE OF CONTENT AND BUTTON TABLE//-->
+									</TD>
+								</TR>
+						</TABLE>
+						<!--CLOSE OF ALL ENCOMPASSING TABLE ROW TWO//-->
+					</TD>
+				</TR>
+		</TABLE>
+		<SCRIPT LANGUAGE="JSCRIPT">
+
+var strParameters = "";
+
+function InitDocument(document)
+{
+	setDirection();
+	
+	if (window.external.FindSymbol("DOCUMENT_FIRST_LOAD"))
+	{
+		var L_WizardDialogTitle_Text = "C# Interface Method Wizard";
+		window.external.AddSymbol("WIZARD_DIALOG_TITLE", L_WizardDialogTitle_Text);
+		window.external.SetDefaults(document);
+	}
+
+	window.external.Load(document);
+	PopulateReturnTypes();
+	PopulateParamTypes();
+	
+	RemoveBtn.disabled = true;
+	ReturnTypes.focus();
+}
+
+function OnFinish(document)
+{
+	bValidating = true;
+	if (!ValidateInput())
+	{
+		bValidating = false;
+		return;
+	}
+	bValidating = false;
+
+	window.external.AddSymbol("RETURN_TYPE_STRING", ReturnTypes.Value);
+	var Params = document.all.tags("SELECT").item("PARAMETER_LIST");
+	var strParam = "";
+	for(var index=0; index < Params.options.length; index++)
+	{
+		strParam += Params.options[index].value;
+		strParam += "|";	
+	}
+
+	window.external.AddSymbol("PARAMETER_LIST_STRING", strParam);
+	OnWizFinish(document);
+}
+
+function PopulateReturnTypes()
+{
+	ReturnTypes.Clear();
+
+	ReturnTypes.AddItem("bool");
+	ReturnTypes.AddItem("byte");
+	ReturnTypes.AddItem("char");
+	ReturnTypes.AddItem("decimal");
+	ReturnTypes.AddItem("double");
+	ReturnTypes.AddItem("float");
+	ReturnTypes.AddItem("int");
+	ReturnTypes.AddItem("long");
+	ReturnTypes.AddItem("object");
+	ReturnTypes.AddItem("sbyte");
+	ReturnTypes.AddItem("string");
+	ReturnTypes.AddItem("short");
+	ReturnTypes.AddItem("uint");
+	ReturnTypes.AddItem("ulong");
+	ReturnTypes.AddItem("ushort");
+	ReturnTypes.AddItem("void");
+
+	ReturnTypes.ListIndex = 15;
+}
+
+function PopulateParamTypes()
+{
+	ParamTypes.Clear();
+
+	ParamTypes.AddItem("bool");
+	ParamTypes.AddItem("byte");
+	ParamTypes.AddItem("char");
+	ParamTypes.AddItem("decimal");
+	ParamTypes.AddItem("double");
+	ParamTypes.AddItem("float");
+	ParamTypes.AddItem("int");
+	ParamTypes.AddItem("long");
+	ParamTypes.AddItem("object");
+	ParamTypes.AddItem("sbyte");
+	ParamTypes.AddItem("string");
+	ParamTypes.AddItem("short");
+	ParamTypes.AddItem("uint");
+	ParamTypes.AddItem("ulong");
+	ParamTypes.AddItem("ushort");
+
+	ParamTypes.ListIndex = 6;
+}
+
+function OnMethodName()
+{
+	SetMethodSignature();
+}
+
+function OnModifier(obj)
+{
+	SetMethodSignature();
+}
+
+function OnReturnType()
+{
+	SetMethodSignature();
+}
+
+function SetMethodSignature()
+{
+	var strVal = "";
+	strVal += ReturnTypes.Value;
+
+	if (strParameters == "")
+	{
+		strVal += " " + METHOD_NAME.value + "(void)" + "{\r\n\t}";
+	}
+	else
+	{
+		strVal += " " + METHOD_NAME.value + "(" + strParameters + ")" + "{\r\n\t}";
+	}
+	METHOD_SIGNATURE.value = strVal;
+}
+
+function OnParamType()
+{
+	SetMethodSignature();
+}
+
+function OnParamName()
+{
+	SetMethodSignature();
+}
+
+function AddParameter()
+{
+	var L_ParaName_TEXT = "Parameter name";
+	if(!ValidateCSharpName(PARAMETER_NAME, L_ParaName_TEXT))
+	{
+		PARAMETER_NAME.focus();
+		return;
+	}
+	
+	var L_ParaType_TEXT = "Parameter type";	
+	if(!ValidateWizComboCSharpType(ParamTypes, L_ParaType_TEXT))
+	{
+		ParamTypes.focus();
+		return;
+	}	
+	
+	var strParam = "";
+	if(PARAMETER_MODIFIER.value == 2)
+		strParam = "ref "
+	if(PARAMETER_MODIFIER.value == 3)
+		strParam = "out "
+
+	strParam += ParamTypes.Value + " " + PARAMETER_NAME.value;
+	if (strParameters == "")
+		strParameters = strParam
+	else
+		strParameters += (", " + strParam);
+
+	PARAMETER_NAME.value = "";
+	ParamTypes.ListIndex = 6;
+
+	var Params = document.all.tags("SELECT").item("PARAMETER_LIST");
+	var Opt = document.createElement("OPTION");
+	Opt.value = strParam;
+	Opt.text = strParam;
+	Params.add(Opt);
+
+	Params.selectedIndex = Params.length - 1;
+
+	RemoveBtn.disabled = false;
+
+	SetMethodSignature();
+}
+
+function ExtractParamNames()
+{
+	var strParamNames = "";
+	var Params = document.all.tags("SELECT").item("PARAMETER_LIST");
+	for(var index=0; index < Params.options.length; index++)
+	{
+		var strParam = Params.options[index].value;	
+		for(var nParam=0; nParam < oParamTypes.options.length; nParam++)
+		{
+			var strTypeString = oParamTypes.options[nParam].value + " ";
+			if(strParam.indexOf(strTypeString)==0)
+			{
+				if(index!=0)
+					strParamNames += ","
+				strParamNames += strParam.substr(strTypeString.length);
+				break;
+			}
+		}
+	}
+	return strParamNames;
+}
+
+function RemoveParameter()
+{
+	var Params = document.all.tags("SELECT").item("PARAMETER_LIST");
+	var len = Params.options.length;
+	if (!len)
+		return;
+
+	if (Params.selectedIndex == -1)
+		Params.selectedIndex = 0;
+
+	var strParam = Params.options[Params.selectedIndex].value;
+
+	var nIndex = strParameters.indexOf(strParam);
+	var bFirstParam = false;
+	if (nIndex == 0)
+		bFirstParam = true;
+
+	var strPart1 = strParameters.substr(0, nIndex);
+	if (strPart1.charAt(strPart1.length-2) == ',')
+	{
+		strPart1 = strPart1.substr(0, strPart1.length-2);
+	}
+	nIndex += strParam.length;
+	var strPart2 = strParameters.substr(nIndex, strParameters.length);
+	if (strPart2.charAt(0) == ',' && bFirstParam)
+	{
+		strPart2 = strPart2.substr(2, strPart2.length);
+	}
+	strParameters = strPart1 + strPart2;
+
+	Params.remove(Params.selectedIndex);
+
+	if (Params.options.length == 0)
+	{
+		RemoveBtn.disabled = true;
+	}
+	else
+		Params.selectedIndex = (nIndex < Params.length) ? nIndex : Params.length-1;
+
+	SetMethodSignature();
+}
+
+function ValidateInput()
+{
+	var oInvalid = null;
+
+	if (!Validate(METHOD_NAME))
+		oInvalid = METHOD_NAME;
+		
+	if (!Validate(ReturnTypes))
+		oInvalid = ReturnTypes;
+
+	if (oInvalid != null)
+	{
+		oInvalid.focus();
+		return false;
+	}
+	return true;
+}
+
+function Validate(obj)
+{
+	var bValid = true;
+	switch(obj.id)
+	{
+		case "METHOD_NAME":
+		{
+			var L_MethodName_TEXT = "Method name";
+			bValid = ValidateCSharpName(obj, L_MethodName_TEXT);
+		}
+		break;
+		case "ReturnTypes":
+		{
+			var L_MethodType_TEXT = "Return type";
+			bValid = ValidateWizComboCSharpType(obj, L_MethodType_TEXT);
+		}
+		break;		
+		default:
+			break;
+	}
+
+	if (typeof(bValid) == "undefined") 
+		bValid = false;
+	
+	return bValid;
+}
+
+		</SCRIPT>
+		<SCRIPT ID="INCLUDE_SCRIPT" LANGUAGE="JSCRIPT">
+		</SCRIPT>
+		<SCRIPT ID="INCLUDE_COMMON" LANGUAGE="JSCRIPT">
+		</SCRIPT>
+		<SCRIPT>
+	var strPath = "../../../";
+	strPath += window.external.GetHostLocale();
+	var strScriptPath = strPath + "/Script.js";
+	var strCommonPath = strPath + "/Common.js";
+	document.scripts("INCLUDE_SCRIPT").src = strScriptPath;
+	document.scripts("INCLUDE_COMMON").src = strCommonPath;
+		</SCRIPT>
+		<SCRIPT FOR="ReturnTypes" EVENT="Change">
+	SetMethodSignature();
+		</SCRIPT>
+		<SCRIPT FOR="ParamTypes" EVENT="Change">
+	SetMethodSignature();
+		</SCRIPT>
+		<SCRIPT FOR="ReturnTypes" EVENT="KeyDown(nKeyCode)">
+	OnWizComboKeyDown(nKeyCode);
+		</SCRIPT>
+		<SCRIPT FOR="ParamTypes" EVENT="KeyDown(nKeyCode)">
+	OnWizComboKeyDown(nKeyCode);
+		</SCRIPT>
+	</BODY>
+</HTML>

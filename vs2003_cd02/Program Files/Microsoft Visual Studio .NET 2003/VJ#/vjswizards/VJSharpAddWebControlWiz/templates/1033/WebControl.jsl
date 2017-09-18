@@ -1,0 +1,44 @@
+[!if IS_NAMESPACE_NAME]
+package [!output SAFE_NAMESPACE_NAME];
+[!endif]
+
+import System.Web.UI.*;
+import System.Web.UI.WebControls.*;
+import System.ComponentModel.*;
+
+/**
+ * Summary description for [!output SAFE_CLASS_NAME].
+ */
+/** 
+ * @attribute DefaultProperty("Text")
+ * @attribute ToolboxData("<{0}:[!output SAFE_CLASS_NAME] runat=server></{0}:[!output SAFE_CLASS_NAME]>") 
+ */
+public class [!output SAFE_CLASS_NAME] extends System.Web.UI.WebControls.WebControl
+{
+	private String text = "";
+
+	/** 
+	 * @attribute Bindable(true) 
+	 * @attribute Category("Appearance") 
+	 * @attribute DefaultValue("") 
+	 * @property
+	 */
+	public String get_Text() 
+	{
+		return text;
+	}
+
+	/** @property */
+	public void set_Text(String t) 
+	{
+		text = t;
+	}
+
+	/**
+	 * Render this control to the output parameter specified.
+	 */
+	protected void Render(HtmlTextWriter output)
+	{
+		output.Write(text);
+	}
+}

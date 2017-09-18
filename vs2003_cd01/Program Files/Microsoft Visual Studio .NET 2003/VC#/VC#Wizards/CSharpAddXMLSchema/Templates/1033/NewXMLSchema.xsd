@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<xs:schema id="[!output SAFE_ITEM_NAME]" 
+                  targetNamespace="http://tempuri.org/[!output SAFE_ITEM_NAME].xsd"
+                  elementFormDefault="qualified"
+                  xmlns="http://tempuri.org/[!output SAFE_ITEM_NAME].xsd"
+                  xmlns:mstns="http://tempuri.org/[!output SAFE_ITEM_NAME].xsd"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+</xs:schema>

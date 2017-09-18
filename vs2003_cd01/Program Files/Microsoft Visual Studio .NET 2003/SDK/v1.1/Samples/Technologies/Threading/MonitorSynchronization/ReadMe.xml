@@ -1,0 +1,58 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?>
+
+<sample>
+<title>Monitor Synchronization Sample</title>
+<title-short>MonitorSynchronization</title-short>
+<overview>
+   This sample demonstrates how to use the Monitor class for thread synchronization. The sample queues up 5 asynchronous method calls.  Each method grabs the lock for <richcontent bold="T">this</richcontent><richcontent>, writes to the console, sleeps, and then writes to the console a second time. The Monitor type's static functions are used to enforce mutually exclusive access to a protected block of code.</richcontent>
+</overview>
+<subdirectory>Technologies\Threading\MonitorSynchronization</subdirectory>
+<buildsteps>
+   <step>
+      Type <richcontent bold="T">BUILD.bat</richcontent>
+      <richcontent> from the command line.</richcontent>      
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Threading\MonitorSynchronization\VB>Build.bat
+      </example>
+   </step>
+</buildsteps>
+<runsteps>
+   <step>
+      Type <richcontent bold="T">Monitor.exe</richcontent><richcontent> from the command line.</richcontent>
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Threading\MonitorSynchronization\VB>Monitor.exe
+      </example>
+   </step>
+   <step>
+      Notice that the "Start Writing" and "Stop Writing" output for each writer is output one after the other without overlap from threads with different ID's.  This is because the threads hold exclusive access to the resource.
+   </step>
+</runsteps>
+<technologies>
+   <technology name = "Thread Synchronization" keyword="T">
+      <class name = "Monitor" keyword="T">
+         The Monitor class consists of static functions for entering and exiting a protected block of code. You cannot instantiate an instance of the Monitor type. Instead, you pass to its static functions a reference to any object-derived type that you wish to use as a single node of synchronization. <richcontent bold="T">Note:</richcontent><richcontent> Both Visual Basic and C# implement special keywords to take advantage of the Monitor type's static functions.  C# uses the </richcontent><richcontent bold="T">lock</richcontent><richcontent> keyword, and Visual Basic implements the </richcontent><richcontent bold="T">SyncLock</richcontent><richcontent>keyword.</richcontent>
+      </class>
+      <class name = "AutoResetEvent" keyword="T">
+         The sample's main thread waits on an AutoResetEvent object until it is set, which indicates that the last of the asynchronous functions are finished doing their work.
+      </class>
+      <class name = "Interlocked" keyword="T">
+         The sample uses the static Decrement() method of the Interlocked class to asynchronously access a counter variable to indicate when the AutoResetEvent should be set.
+      </class>
+   </technology>
+   <technology name = "Threading" keyword="T">
+      <class name = "ThreadPool" keyword="T">
+         When writing managed code, it is suggested that whenever possible, developers use the QueueUserWorkItem() method of the ThreadPool class to implement asynchronous method calls. This sample uses this approach to execute code that contends for a logical resource.
+      </class>
+   </technology>
+   <technology name = "Delegates" keyword="T">
+      <class name = "WaitCallback" keyword="T">
+         The WaitCallback delegate type is used by this sample to create a type-safe callback method for the ThreadPool class to use. 
+      </class>      
+   </technology>
+</technologies>
+<keywords>
+   <word name="Threads" keyword="T"/>
+</keywords>
+</sample>
+

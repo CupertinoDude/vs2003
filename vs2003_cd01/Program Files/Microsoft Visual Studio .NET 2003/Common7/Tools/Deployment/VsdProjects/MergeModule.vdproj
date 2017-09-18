@@ -1,0 +1,25 @@
+"DeployProject"
+{
+	ProjectType = "8:{DD7A5B58-C2F9-40FF-B2EF-0773356FB978}"
+	DeploymentTemplate = "8:{1F28176F-7C47-4A7D-9FCD-AA075F5DE2A5}"
+	InitialEditor = "8:FileSystemEditor"
+
+	"Configurations"
+	{
+		"Debug"
+		{
+			DisplayName = "8:Debug"
+			IsDebugOnly = "11:TRUE"
+			IsReleaseOnly = "11:FALSE"
+		}
+		"Release"
+		{
+			DisplayName = "8:Release"
+			IsDebugOnly = "11:FALSE"
+			IsReleaseOnly = "11:TRUE"
+		}
+	}
+	"Deployable"
+	{
+	}
+}

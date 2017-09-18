@@ -1,0 +1,7 @@
+Paginating a List
+This sample demonstrates how to make use of the automatic pagination
+features in a form containing a List mobile control. The sample 
+programatically fills the list with all prime numbers lower than 500. 
+Because the form's <b>Paginate</b> property has been set to True, 
+the form is automatically paginated according to the target device.
+

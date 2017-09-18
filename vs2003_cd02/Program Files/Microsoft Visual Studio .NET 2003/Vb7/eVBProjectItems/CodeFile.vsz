@@ -1,0 +1,7 @@
+VSWIZARD 6.0
+Wizard=VsWizard.VsWizardEngine.7.1
+Param="WIZARD_NAME = eCodeFile"
+Param="WIZARD_UI = FALSE"
+Param="PROJECT_TYPE = vbdproj"
+Param="SCRIPT_COMMON_PROJECT_TYPE = VBPROJ"
+Param="RELATIVE_PATH = VBWizards"

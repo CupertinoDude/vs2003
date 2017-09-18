@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Working with Strings">
+	<Paragraph>
+		The .NET Framework Class Library offers two types that developers can use to work with strings: System.String and System.Text.StringBuilder. Of the two, String is the more commonly used 		type. The String type identifies an immutable string. That is, once you create a String, you cannot change it in anyway. The String type offers several methods including Insert, Remove, Replace, 		SubString, and more. Since String objects are immutable, all of these methods operate on an existing String object and return a new String object. 
+	</Paragraph>
+	<Paragraph>
+		If you need to perform many dynamic operations on a string of characters, then you should not use the String types – you should use the StringBuilder type instead. The StringBuilder wraps a 		dynamically sizing array of characters. The StringBuilder type offers several methods including Append, Insert, Remove, Replace, and more. All of these methods manipulate the dynamic array of 		characters in place. That is, because each operation does not create a new object, string manipulations have better performance.  You can easily obtain a String object from a StringBuilder object by 		calling the StringBuilder’s ToString method.
+	</Paragraph>
+	<Navigation>
+		<Previous>Exclusive Operations.xml</Previous>
+		<Next>Streams.xml</Next>
+	</Navigation>
+</Document>

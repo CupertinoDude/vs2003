@@ -1,0 +1,74 @@
+// ComputerInfo.idl : IDL source for ComputerInfo.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (ComputerInfo.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(4B2767D9-7F6A-4CCB-801F-963967243C3B),
+		dual,
+		helpstring("IMachineInfo Interface"),
+		pointer_default(unique)
+	]
+	interface IMachineInfo : IDispatch
+	{
+		[propget, id(1), helpstring("property ComputerName")] HRESULT ComputerName([out, retval] BSTR *pVal);
+		[propget, id(2), helpstring("property ProcessorArchitecture")] HRESULT ProcessorArchitecture([out, retval] BSTR *pVal);
+		[propget, id(3), helpstring("property PageSize")] HRESULT PageSize([out, retval] long *pVal);
+		[propget, id(4), helpstring("property MinAppAddress")] HRESULT MinAppAddress([out, retval] long *pVal);
+		[propget, id(5), helpstring("property ProcessorMask")] HRESULT ProcessorMask([out, retval] long *pVal);
+		[propget, id(6), helpstring("property NumberOfProcessors")] HRESULT NumberOfProcessors([out, retval] long *pVal);
+		[propget, id(7), helpstring("property AllocationGranularity")] HRESULT AllocationGranularity([out, retval] long *pVal);
+		[propget, id(8), helpstring("property ProcessorLevel")] HRESULT ProcessorLevel([out, retval] BSTR *pVal);
+		[propget, id(9), helpstring("property MachineType")] HRESULT MachineType([out, retval] BSTR *pVal);
+		[propget, id(10), helpstring("property PlatForm")] HRESULT PlatForm([out, retval] BSTR *pVal);
+		[propget, id(11), helpstring("property ServicePack")] HRESULT ServicePack([out, retval] BSTR *pVal);
+		[propget, id(12), helpstring("property MaxAppAddress")] HRESULT MaxAppAddress([out, retval] long *pVal);
+	};
+		
+	[
+		object,
+		uuid(411140A9-A591-49C9-8A63-A55D0525E5F9),
+		dual,
+		helpstring("IFileInfo Interface"),
+		pointer_default(unique)
+	]
+	interface IFileInfo : IDispatch
+	{
+		[propget, id(2), helpstring("property FileSize")] HRESULT FileSize([out, retval] long *pVal);
+		[propget, id(3), helpstring("property CreationTime")] HRESULT CreationTime([out, retval] BSTR *pVal);
+		[propget, id(4), helpstring("property AccessTime")] HRESULT AccessTime([out, retval] BSTR *pVal);
+		[propget, id(5), helpstring("property ModifyTime")] HRESULT ModifyTime([out, retval] BSTR *pVal);
+		[id(7), helpstring("method QueryFileInfo")] HRESULT QueryFileInfo([in]BSTR sFileName, [in, out] VARIANT_BOOL * bSuccess);
+	};
+
+[
+	uuid(72C4542B-1223-4076-AFCD-0944CD072034),
+	version(1.0),
+	helpstring("ComputerInfo 1.0 Type Library")
+]
+library COMPUTERINFOLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(B9645D48-7260-4092-B058-F9830C3E4746),
+		helpstring("MachineInfo Class")
+	]
+	coclass MachineInfo
+	{
+		[default] interface IMachineInfo;
+	};
+	[
+		uuid(A54E14E9-29BB-4AA5-B4FE-2189A9002213),
+		helpstring("FileInfo Class")
+	]
+	coclass FileInfo
+	{
+		[default] interface IFileInfo;
+	};
+};

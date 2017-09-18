@@ -1,0 +1,1 @@
+The EXEs and DLLs in this directory are constructed by running BuildAll.bat located in the CompTest directory.

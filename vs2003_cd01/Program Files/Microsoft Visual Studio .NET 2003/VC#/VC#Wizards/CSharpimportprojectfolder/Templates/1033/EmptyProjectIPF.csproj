@@ -1,0 +1,32 @@
+<VisualStudioProject AllowExistingFolder = "true">
+    <CSHARP>
+        <Build>
+            <Settings 
+		OutputType = "Exe"
+	    >
+                <Config
+                    Name = "Debug"
+                    EnableASPXDebugging = "false"
+                    DebugSymbols = "true"
+                    DefineDebug = "true"
+                    DefineTrace = "true"
+                    OutputPath = ".\bin\Debug"
+					IncrementalBuild = "false"
+                />
+                <Config
+                    Name = "Release"
+                    EnableASPXDebugging = "false"
+                    DebugSymbols = "false"
+                    DefineDebug = "false"
+                    DefineTrace = "true"
+                    OutputPath = ".\bin\Release"
+					IncrementalBuild = "false"
+                />
+            </Settings>
+        </Build>
+        <Files>
+            <Include>
+            </Include>
+        </Files>
+    </VisualBasic>
+</VisualStudioProject>

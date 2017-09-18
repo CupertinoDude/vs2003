@@ -1,0 +1,68 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?>
+
+<sample>
+<title>Reflection-Invoke Sample</title>
+<title-short>Invoke</title-short>
+<overview>
+This sample demonstrates how to implement late binding. From the command line you select an assembly, type, method, and parameters. The sample will attempt to load the assembly, locate the type and method, and invoke the method with the passed parameters. The sample even attempts to do the necessary type conversions for method calls that take parameters that are not strings. The reflection classes make this advanced functionality surprisingly simple.  A simple DLL project named Tester.dll is included with this sample.  The tester project is provided to include a simple type with some methods to try with the Invoke sample.
+</overview>
+<subdirectory>Technologies\Reflection\Invoke</subdirectory>
+<buildsteps>
+   <step>
+      Type <b>BUILD.bat</b> from the command line.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Reflection\Invoke\VB>Build.bat
+      </example>
+   </step>
+   <step>
+      Note that BUILD.bat actually builds two PE files: Invoke.exe and Tester.dll. 
+   </step>
+</buildsteps>
+<runsteps>
+   <step>
+      Invoke.exe accepts command line parameters indicating what you would like to invoke.  Sample usage is displayed if run with no parameters.
+   </step>
+   <step>
+      Type <b>Invoke.exe [Assembly] [Type] [Method] [Parameters...]</b> from the command line to have the sample load an assembly and call a method on a type.  In the following example, the <i>ShowMessage</i> method on type <i>SomeType</i> is called with three parameters.
+      <example>
+         ..\Invoke\VB>Invoke.exe Tester.dll SomeType ShowMessage "Is this cool or what?" "Question:" 4
+      </example>
+   </step>         
+</runsteps>
+<technologies>
+   <technology name = "Reflection" keyword="T">
+      <class name = "Assembly" keyword="T">
+      This class is used by this sample to load an assembly and to lookup a type in that assembly.
+      </class>
+      <class name = "Type" keyword="T">
+      The sample uses the Type class to obtain an array of MemberInfo objects, as well as to refer to a type when creating an instance if needed.
+      </class>           
+      <class name = "MethodInfo" keyword="T">
+      Used to find out information for a single method, including parameters and method name.  The sample compares information from this type with the information provided on the command line.  Method info is also used to invoke a method.
+      </class>
+      <class name = "ParameterInfo" keyword="T">
+      The ParameterInfo type is primarily used to find the type of the parameters so that the sample can convert the command line arguments appropriately.
+      </class>
+      <class name = "Activator" keyword="T">
+      This type is used to create an instance of a type if the sample finds that a call to an instance method is needed.
+      </class>       
+   </technology>     
+   <technology name = "System" keyword="T">
+      <class name = "Array" keyword="T">
+      The sample uses the Array type to copy a portion of one array to another array.
+      </class>
+      <class name = "Convert" keyword="T">
+      This sample makes use of the Convert type to attempt to modify the command line arguments of type String into whatever type is needed by the parameters of the various methods in a type.
+      </class>       
+   </technology>
+</technologies>
+<keywords>
+   <word name="Dynamic code" keyword="T"/>   
+   <word name="Self-modifying" keyword="T"/>
+   <word name="AssemblyBuilderAccess" keyword="T"/>   
+   <word name="MethodAttributes" keyword="T"/>
+</keywords>
+
+</sample>
+

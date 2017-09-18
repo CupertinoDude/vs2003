@@ -1,0 +1,6 @@
+Showing a menu
+This sample demonstrates how you can use a List control to show a menu
+of choices. When the user clicks on a menu item, the <b>OnItemCommand</b> command handler
+for the menu sets the text of labels on a second form, and programmatically
+navigates to this form.
+

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Exception Handling">
+	<Paragraph>
+		In the .NET Framework, all error handling is accomplished via exceptions. That is, when you call a method, that method will throw an exception if it fails for some reason. If the method returns 			normally, then no error occurred. Dealing with errors this way makes it very easy to write your code because all of the error handling and cleanup code is taken out of the normal flow of control 		and is separated into specific error handling and cleanup code blocks.	</Paragraph>
+	<Paragraph>
+		The code below shows how to create a method that, when it detects an error, throws an exception. The code also demonstrates how to call a method isolating the error handling and cleanup into 		separate catch and finally code blocks.	
+	</Paragraph>
+	<Paragraph>
+		<Sample Caption="Exceptions" Image="..\Images\Console.gif">
+			<CSPath>..\Samples\Exceptions\CS</CSPath>
+			<VBPath>..\Samples\Exceptions\VB</VBPath>
+		</Sample>
+	</Paragraph>
+	<Navigation>
+		<Previous>Events.xml</Previous>
+		<Next>Memory Management.xml</Next>
+	</Navigation>
+</Document>

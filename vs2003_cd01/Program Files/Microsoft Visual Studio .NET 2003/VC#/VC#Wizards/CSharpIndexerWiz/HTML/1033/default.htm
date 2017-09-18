@@ -1,0 +1,654 @@
+<!- (c) Microsoft Corporation -->
+<HTML DIR="LTR">
+	<HEAD>
+		<TITLE>
+			C# Add Indexer Wizard
+		</TITLE>
+		<META NAME="vs_targetSchema" CONTENT="http://schemas.microsoft.com/intellisense/ie5">
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+		<STYLE TYPE="text/css">
+			@import url();
+		</STYLE>
+		
+		<SCRIPT>
+		var strURL = "../../../";
+		strURL += window.external.GetHostLocale();
+		strURL += "/NewStyles.css";
+		document.styleSheets(0).imports(0).href = strURL;
+		</SCRIPT>
+		
+		<SYMBOL NAME="INDEXER_TYPE" TYPE="text" VALUE="">
+		</SYMBOL>
+		<SYMBOL NAME="PARAMETER_TYPE" TYPE="text" VALUE="">
+		</SYMBOL>
+		<SYMBOL NAME="PARAMETER_NAME" TYPE="text" VALUE="">
+		</SYMBOL>
+		<SYMBOL NAME="ACCESS" TYPE="select-one" VALUE="1">
+		</SYMBOL>
+		<SYMBOL NAME="COMMENT" TYPE="text" VALUE="">
+		</SYMBOL>
+		<SYMBOL NAME="MODIFIER_NONE" TYPE="checkbox" VALUE="true">
+		</SYMBOL>
+		<SYMBOL NAME="VIRTUAL" TYPE="checkbox" VALUE="false">
+		</SYMBOL>
+		<SYMBOL NAME="ABSTRACT" TYPE="checkbox" VALUE="false">
+		</SYMBOL>
+	</HEAD>
+	<BODY BGCOLOR="BUTTONFACE" TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0" BOTTOMMARGIN="0" ONLOAD="InitDocument(document);" ONKEYDOWN="if (!bValidating) OnKey();" ONKEYPRESS="if (!bValidating) OnPress()">
+		<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+			<COL WIDTH="100%">
+				<TR VALIGN="TOP">
+					<TD HEIGHT="79">
+						<!--OPEN OF ALL ENCOMPASSING TABLE ROW ONE//-->
+						<TABLE CLASS="TWO" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+							<COL WIDTH="12">
+								<COL>
+									<COL WIDTH="12">
+										<TR>
+											<TD VALIGN="TOP" HEIGHT="12" WIDTH="12">
+												&nbsp;
+											</TD>
+											<TD VALIGN="TOP" HEIGHT="12">
+												&nbsp;
+											</TD>
+											<TD VALIGN="TOP" HEIGHT="12" WIDTH="12">
+												&nbsp;
+											</TD>
+											<TD CLASS="IMAGE" VALIGN="BOTTOM" WIDTH="110" ROWSPAN="2">
+												<DIV CLASS="SMALLA" ID="Layer0">
+													<IMG CLASS="SMALLEST" SRC="..\..\Images\CSIndexer.gif" WIDTH="63" HEIGHT="63" ALT="" BORDER="0">
+												</DIV>
+											</TD>
+											<TD VALIGN="TOP" HEIGHT="12" WIDTH="6" ROWSPAN="2">
+												&nbsp;
+											</TD>
+										</TR>
+										<TR>
+											<TD VALIGN="TOP" HEIGHT="65" WIDTH="12">
+												&nbsp;
+											</TD>
+											<TD VALIGN="TOP" HEIGHT="65">
+												<H4 CLASS="HEAD" ID="HEAD">Welcome to the C# Add Indexer Wizard</H4>
+												<P CLASS="SUBHEAD" ID="SUBHEAD">This wizard adds an indexer to your C# class.</P>
+											</TD>
+											<TD VALIGN="TOP" HEIGHT="65" WIDTH="12">
+												&nbsp;
+											</TD>
+										</TR>
+										<TR>
+											<TD VALIGN="TOP" CLASS="RULE" COLSPAN="5" HEIGHT="2">
+												<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+													<TR VALIGN="TOP">
+														<TD HEIGHT="1" WIDTH="100%" BGCOLOR="BUTTONSHADOW"></TD>
+														<TD HEIGHT="1" WIDTH="1" BGCOLOR="WINDOW"></TD>
+													</TR>
+												</TABLE>
+											</TD>
+										</TR>
+						</TABLE>
+						<!--CLOSE OF ALL ENCOMPASSING TABLE ROW ONE//-->
+					</TD>
+				</TR>
+				<TR VALIGN="TOP">
+					<TD HEIGHT="100%">
+						<!--OPEN OF ALL ENCOMPASSING TABLE ROW TWO//-->
+						<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+							<COL>
+								<TR>
+									<TD VALIGN="TOP" HEIGHT="100%">
+										<!--OPEN OF CONTENT AND BUTTON TABLE//-->
+										<TABLE CLASS="ONE" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+											<COL WIDTH="100%">
+												<TR VALIGN="TOP">
+													<TD HEIGHT="100%">
+														<!--OPEN OF CONTENT//-->
+														<TABLE CLASS="CONTENT" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+															<COL WIDTH="12">
+																<COL WIDTH="185">
+																	<COL WIDTH="12">
+																		<COL WIDTH="185">
+																			<COL WIDTH="12">
+																				<COL WIDTH="185">
+																					<COL WIDTH="12">
+																						<TR>
+																							<TD VALIGN="TOP" HEIGHT="12" COLSPAN="7">
+																								&nbsp;
+																							</TD>
+																						</TR>
+																						<TR VALIGN="TOP">
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																							<TD VALIGN="TOP">
+																								<SPAN CLASS="itemTextTop" TITLE="">
+																									<LABEL FOR="ACCESS" ID="ACCESS_LABEL">
+																										Inde<U>x</U>er access:</LABEL>
+																									<BR>
+																									<SELECT CLASS="SideBtnThreeColumn" ID="ACCESS" SIZE="1" ACCESSKEY="X" TITLE="" VALUE="16" OnChange="OnAccess(this);">
+																										<-- vsCMAccessDefault = 16 -->
+																										<OPTION VALUE="1" ID="PUBLIC_OPTION" SELECTED>
+																											public
+																										</OPTION>
+																										<-- vsCMAccessPublic = 1 -->
+																										<OPTION VALUE="8" ID="PROTECTED_OPTION">
+																											protected
+																										</OPTION>
+																										<-- vsCMAccessProtected = 8 -->
+																										<OPTION VALUE="2" ID="PRIVATE_OPTION">
+																											private
+																										</OPTION>
+																										<-- vsCMAccessPrivate = 2 -->
+																										<OPTION VALUE="4" ID="INTERNAL_OPTION">
+																											internal
+																										</OPTION>
+																										<-- vsCMAccessProject = 4 -->
+																										<OPTION VALUE="12" ID="PROTECTED_INTERNAL_OPTION">
+																											protected internal
+																										</OPTION>
+																										<-- vsCMAccessProjectOrProtected = 12 -->
+																									</SELECT>
+																								</SPAN>
+																							</TD>
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																							<TD VALIGN="TOP">
+																								<SPAN CLASS="itemTextTop" TITLE="">
+																									<LABEL FOR="IndexerTypes" ID="IndexerTypes_LABEL">
+																										<U>I</U>ndexer type:</LABEL>
+																									<BR>
+																									<INPUT CLASS="sideBtnThreeColumn" ID="INDEXER_TYPE" TYPE="hidden">
+																									</INPUT>
+																									<OBJECT CLASS="itemTextThreeColumn" ID="IndexerTypes" ACCESSKEY="I" CLASSID="CLSID:BFD56283-7546-4dfe-8C5E-AE4FEDC08656" VIEWASTEXT>
+																									</OBJECT>
+																								</SPAN>
+																							</TD>
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																							<TD VALIGN="TOP">
+																								&nbsp;
+																							</TD>
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																						</TR>
+																						<TR>
+																							<TD VALIGN="TOP" HEIGHT="15" COLSPAN="7">
+																								&nbsp;
+																							</TD>
+																						</TR>
+																						<TR VALIGN="TOP">
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																							<TD VALIGN="TOP">
+																								<SPAN CLASS="itemText" TITLE="">
+																									<LABEL FOR="ParamTypes" ID="ParamTypes_LABEL">
+																										Parameter t<U>y</U>pe:</LABEL>
+																									<BR>
+																									<INPUT CLASS="SideBtnThreeColumn" ID="PARAMETER_TYPE" TYPE="hidden">
+																									</INPUT>
+																									<OBJECT CLASS="itemTextThreeColumn" ID="ParamTypes" ACCESSKEY="Y" CLASSID="CLSID:BFD56283-7546-4dfe-8C5E-AE4FEDC08656" VIEWASTEXT>
+																									</OBJECT>
+																								</SPAN>
+																							</TD>
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																							<TD VALIGN="TOP">
+																								<SPAN CLASS="itemText" TITLE="">
+																									<LABEL FOR="PARAMETER_NAME" ID="PARAMETER_NAME_LABEL">
+																										Parameter <U>n</U>ame:</LABEL>
+																									<BR>
+																									<INPUT CLASS="sideBtnThreeColumn" ID="PARAMETER_NAME" ACCESSKEY="n" TITLE="" TYPE="text">
+																									<BUTTON ID="AddBtn" TITLE="Add parameter" CLASS="buttonClass2" ACCESSKEY="a" onClick="AddParameter();">
+																										<U>A</U>dd</BUTTON>
+																									<SPAN CLASS="Spacer8">
+																									</SPAN>
+																									<BUTTON ID="RemoveBtn" TITLE="Remove parameter" CLASS="buttonClass2" ACCESSKEY="r" onClick="RemoveParameter();">
+																										<U>R</U>emove</BUTTON>
+																								</SPAN>
+																							</TD>
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																							<TD VALIGN="TOP">
+																								<SPAN CLASS="itemText" ID="PARAMETER_LIST_SPAN" TITLE="">
+																									<LABEL FOR="PARAMETER_LIST" ID="PARAMETER_LIST_LABEL">
+																										Parameter <U>l</U>ist:</LABEL>
+																									<BR>
+																									<SELECT CLASS="SideBtnThreeColumn" SIZE="3" ID="PARAMETER_LIST" ACCESSKEY="L" TITLE="" VALUE="void">
+																									</SELECT>
+																								</SPAN>
+																							</TD>
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																						</TR>
+																						<TR VALIGN="TOP">
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																							<TD VALIGN="TOP" COLSPAN="5">
+																								<SPAN CLASS="itemText" TITLE="" STYLE="WIDTH:391PX;" ID="INDEXER_MODIFIERS_SPAN">
+																									Indexer modifers:
+																									<P CLASS="Spacer">
+																										&nbsp;
+																									</P>
+																									<INPUT TYPE="radio" NAME="mod" ID="MODIFIER_NONE" ACCESSKEY="O" TITLE="">
+																									<SPAN TITLE="" CLASS="UpABit">
+																										<LABEL FOR="MODIFIER_NONE" ID="MODIFIER_NONE_LABEL">
+																											N<U>o</U>ne</LABEL>
+																									</SPAN>
+																									<INPUT TYPE="radio" NAME="mod" ID="VIRTUAL" ACCESSKEY="V" TITLE="">
+																									<SPAN TITLE="" ID="virtual_title" CLASS="UpABit">
+																										<LABEL FOR="VIRTUAL" ID="VIRTUAL_LABEL">
+																											<U>V</U>irtual</LABEL>
+																									</SPAN>
+																									<INPUT TYPE="radio" NAME="mod" ID="ABSTRACT" ACCESSKEY="B" TITLE="">
+																									<SPAN TITLE="" ID="abstract_title" CLASS="UpABit">
+																										<LABEL FOR="ABSTRACT" ID="ABSTRACT_LABEL">
+																											A<U>b</U>stract</LABEL>
+																									</SPAN>
+																								</SPAN>
+																							</TD>
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																						</TR>
+																						<TR VALIGN="TOP">
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																							<TD VALIGN="TOP" COLSPAN="5">
+																								<SPAN CLASS="itemText" TITLE="">
+																									<NOBR>
+																										<LABEL FOR="COMMENT" ID="COMMENT_LABEL">
+																											Co<U>m</U>ment (// notation not required):</LABEL>
+																										<BR>
+																										<INPUT CLASS="COMMENT" TYPE="text" ID="COMMENT" ACCESSKEY="M" TITLE="">
+																									</NOBR>
+																								</SPAN>
+																							</TD>
+																							<TD VALIGN="TOP" WIDTH="12">
+																								&nbsp;
+																							</TD>
+																						</TR>
+																						<TR>
+																							<TD VALIGN="TOP" HEIGHT="100%" COLSPAN="7">
+																								&nbsp;
+																							</TD>
+																						</TR>
+														</TABLE>
+														<!--CLOSE OF CONTENT//-->
+													</TD>
+												</TR>
+												<TR VALIGN="BOTTOM">
+													<TD HEIGHT="48">
+														<!--OPEN OF BUTTON HTML//-->
+														<TABLE HEIGHT="48" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+															<COL WIDTH="12">
+																<COL>
+																	<COL WIDTH="75">
+																		<COL WIDTH="4">
+																			<COL WIDTH="75">
+																				<COL WIDTH="4">
+																					<COL WIDTH="75">
+																						<COL WIDTH="12">
+																							<TR>
+																								<TD VALIGN="TOP" CLASS="RULE" COLSPAN="8" HEIGHT="2">
+																									<TABLE BORDER="0" WIDTH="100%" HEIGHT="1" CELLPADDING="0" CELLSPACING="0">
+																										<TR VALIGN="TOP">
+																											<TD HEIGHT="1" WIDTH="100%" BGCOLOR="BUTTONSHADOW"></TD>
+																											<TD HEIGHT="1" WIDTH="1" BGCOLOR="WINDOW"></TD>
+																										</TR>
+																									</TABLE>
+																								</TD>
+																							</TR>
+																							<TR>
+																								<TD VALIGN="TOP" HEIGHT="11" COLSPAN="8">
+																									&nbsp;
+																								</TD>
+																							</TR>
+																							<TR>
+																								<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="12">
+																									&nbsp;
+																								</TD>
+																								<TD VALIGN="TOP" HEIGHT="23">
+																									&nbsp;
+																								</TD>
+																								<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+																									<BUTTON CLASS="BUTTONS" ID="FinishBtn" onClick="OnFinish(document);">
+																										Finish
+																									</BUTTON>
+																								</TD>
+																								<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="4">
+																									&nbsp;
+																								</TD>
+																								<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+																									<BUTTON CLASS="BUTTONS" ID="CancelBtn" onClick="window.external.Finish(document, 'cancel');">
+																										Cancel
+																									</BUTTON>
+																								</TD>
+																								<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="4">
+																									&nbsp;
+																								</TD>
+																								<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="75">
+																									<BUTTON CLASS="BUTTONS" ID="HelpBtn" onClick="window.external.OnHelp('vc.codewiz.indexer.cs.overview');">
+																										Help
+																									</BUTTON>
+																								</TD>
+																								<TD VALIGN="MIDDLE" HEIGHT="23" WIDTH="12">
+																									&nbsp;
+																								</TD>
+																							</TR>
+																							<TR>
+																								<TD VALIGN="TOP" HEIGHT="12" COLSPAN="8">
+																									&nbsp;
+																								</TD>
+																							</TR>
+														</TABLE>
+														<!--CLOSE OF BUTTON HTML//-->
+													</TD>
+												</TR>
+										</TABLE>
+										<!--CLOSE OF CONTENT AND BUTTON TABLE//-->
+									</TD>
+								</TR>
+						</TABLE>
+						<!--CLOSE OF ALL ENCOMPASSING TABLE ROW TWO//-->
+					</TD>
+				</TR>
+		</TABLE>
+	</BODY>
+</HTML>
+<SCRIPT LANGUAGE="JSCRIPT">
+
+var bAbstractClass = window.external.ParentObject.IsAbstract;
+var bIsStruct = false;
+var strParameters = "";
+
+function InitDocument(document)
+{
+	setDirection();
+	
+	if (window.external.FindSymbol("DOCUMENT_FIRST_LOAD"))
+	{
+		var L_WizardDialogTitle_Text = "C# Indexer Wizard";
+		window.external.AddSymbol("WIZARD_DIALOG_TITLE", L_WizardDialogTitle_Text);
+		window.external.SetDefaults(document);
+	}
+
+	window.external.Load(document);
+	bIsStruct = (window.external.ParentObject.Kind == vsCMElementStruct);
+	
+	PopulateIndexerTypes();
+	PopulateParamTypes();
+
+	if (!bAbstractClass)
+	{
+		abstract_title.disabled = true;
+		ABSTRACT.disabled = true;
+	}
+	if (bIsStruct) {
+		var L_WizardSubHead_Text = "This wizard adds an indexer to your C# struct.";
+		SUBHEAD.innerHTML = L_WizardSubHead_Text;
+		ABSTRACT.disabled = true;
+		abstract_title.disabled = true;
+		VIRTUAL.disabled = true;
+		virtual_title.disabled = true;
+	}
+	
+	ACCESS.focus();
+}
+
+function Next(document, linkto)
+{
+	window.external.Next(document, linkto);
+}
+
+function OnFinish(document)
+{
+	INDEXER_TYPE.value = IndexerTypes.Value;
+
+	bValidating = true;
+	if (!ValidateInput())
+	{
+		bValidating = false;
+		return;
+	}
+
+	window.external.AddSymbol("PROP_TYPE_STRING", IndexerTypes.Value);
+
+	var Params = document.all.tags("SELECT").item("PARAMETER_LIST");
+	var strParam = "";
+	for(var index=0; index < Params.options.length; index++)
+	{
+		strParam += Params.options[index].value;
+		if(index < (Params.options.length - 1))
+			strParam += ", ";	
+	}
+	if(strParam.length != 0)
+		window.external.AddSymbol("PARAMETER_LIST_STRING", strParam);
+	else
+	{
+		L_Error1_Text = "Need to have at least one parameter.";
+		window.external.ReportError(L_Error1_Text);
+		return;
+	}
+
+	OnWizFinish(document);
+}
+
+function ValidateInput()
+{
+	var oInvalid = null;
+
+	if (!Validate(IndexerTypes))
+		oInvalid = IndexerTypes;
+
+	if (oInvalid != null)
+	{
+		oInvalid.focus();
+		return false;
+	}
+	return true;
+}
+
+function Validate(obj)
+{
+	var bValid = true;
+	switch(obj.id)
+	{
+		case "IndexerTypes":
+		{
+			L_IndexType_TEXT = "Indexer type";
+			bValid = ValidateWizComboCSharpType(obj, L_IndexType_TEXT);
+		}
+		break;
+		default:
+			break;
+	}
+
+	if (typeof(bValid) == "undefined")
+		bValid = false;
+
+	return bValid;
+}
+
+function PopulateIndexerTypes()
+{
+	IndexerTypes.Clear();
+
+	IndexerTypes.AddItem("bool");
+	IndexerTypes.AddItem("byte");
+	IndexerTypes.AddItem("char");
+	IndexerTypes.AddItem("decimal");
+	IndexerTypes.AddItem("double");
+	IndexerTypes.AddItem("float");
+	IndexerTypes.AddItem("int");
+	IndexerTypes.AddItem("long");
+	IndexerTypes.AddItem("object");
+	IndexerTypes.AddItem("sbyte");
+	IndexerTypes.AddItem("string");
+	IndexerTypes.AddItem("short");
+	IndexerTypes.AddItem("uint");
+	IndexerTypes.AddItem("ulong");
+	IndexerTypes.AddItem("ushort");
+
+	IndexerTypes.ListIndex = 6;
+}
+
+function PopulateParamTypes()
+{
+	ParamTypes.Clear();
+
+	ParamTypes.AddItem("bool");
+	ParamTypes.AddItem("byte");
+	ParamTypes.AddItem("char");
+	ParamTypes.AddItem("decimal");
+	ParamTypes.AddItem("double");
+	ParamTypes.AddItem("float");
+	ParamTypes.AddItem("int");
+	ParamTypes.AddItem("long");
+	ParamTypes.AddItem("object");
+	ParamTypes.AddItem("sbyte");
+	ParamTypes.AddItem("string");
+	ParamTypes.AddItem("short");
+	ParamTypes.AddItem("uint");
+	ParamTypes.AddItem("ulong");
+	ParamTypes.AddItem("ushort");
+
+	ParamTypes.ListIndex = 6;
+}
+
+function AddParameter()
+{
+	if (PARAMETER_NAME.value == "")
+	{
+		L_Error3_Text = "Parameter name cannot be empty.";
+		window.external.ReportError(L_Error3_Text);
+		PARAMETER_NAME.focus();
+		return;
+	}
+	if(!window.external.ValidateCLRIdentifier(PARAMETER_NAME.value))
+	{
+		PARAMETER_NAME.focus();
+		L_VALIDATEPARAMNAME_Text = "Invalid parameter name!";
+		window.external.ReportError(L_VALIDATEPARAMNAME_Text);	
+		return;
+	}
+	
+	L_ParamType_TEXT = "Parameter type";
+	if(!ValidateWizComboCSharpType(ParamTypes, L_ParamType_TEXT))
+	{
+		ParamTypes.focus();
+		return;
+	}
+
+	var strParam = ParamTypes.Value + " " + PARAMETER_NAME.value;
+	if (strParameters == "")
+		strParameters = strParam
+	else
+		strParameters += (", " + strParam);
+
+	PARAMETER_NAME.value = "";
+	ParamTypes.ListIndex = 6;
+
+	var Params = document.all.tags("SELECT").item("PARAMETER_LIST");
+	var Opt = document.createElement("OPTION");
+	Opt.value = strParam;
+	Opt.text = strParam;
+	Params.add(Opt);
+
+	Params.selectedIndex = Params.length - 1;
+
+	RemoveBtn.disabled = false;
+}
+
+function RemoveParameter()
+{
+	var Params = document.all.tags("SELECT").item("PARAMETER_LIST");
+	var len = Params.options.length;
+	if (!len)
+		return;
+
+	if (Params.selectedIndex == -1)
+		Params.selectedIndex = 0;
+
+	var strParam = Params.options[Params.selectedIndex].value;
+
+	var nIndex = strParameters.indexOf(strParam);
+	var bFirstParam = false;
+	if (nIndex == 0)
+		bFirstParam = true;
+
+	var strPart1 = strParameters.substr(0, nIndex);
+	if (strPart1.charAt(strPart1.length-2) == ',')
+	{
+		strPart1 = strPart1.substr(0, strPart1.length-2);
+	}
+	nIndex += strParam.length;
+	var strPart2 = strParameters.substr(nIndex, strParameters.length);
+	if (strPart2.charAt(0) == ',' && bFirstParam)
+	{
+		strPart2 = strPart2.substr(2, strPart2.length);
+	}
+	strParameters = strPart1 + strPart2;
+
+	Params.remove(Params.selectedIndex);
+
+	if (Params.options.length == 0)
+	{
+		RemoveBtn.disabled = true;
+	}
+	else
+		Params.selectedIndex = (nIndex < Params.length) ? nIndex : Params.length-1;
+}
+
+function OnAccess(obj)
+{
+	if (bAbstractClass)
+	{
+		abstract_title.disabled = false;
+		ABSTRACT.disabled = false;
+	}
+	virtual_title.disabled = false;
+	VIRTUAL.disabled = false;
+
+	if (obj.options[obj.selectedIndex].text == "private")
+	{
+		if (ABSTRACT.checked || VIRTUAL.checked)
+			MODIFIER_NONE.checked = true;
+
+		abstract_title.disabled = true;
+		ABSTRACT.disabled = true;
+		virtual_title.disabled = true;
+		VIRTUAL.disabled = true;
+	}
+}
+
+</SCRIPT>
+<SCRIPT FOR="IndexerTypes" EVENT="Change">
+</SCRIPT>
+<SCRIPT FOR="ParamTypes" EVENT="Change">
+</SCRIPT>
+<SCRIPT FOR="ParamTypes" EVENT="KeyDown(nKeyCode)">
+	OnWizComboKeyDown(nKeyCode);
+</SCRIPT>
+<SCRIPT FOR="IndexerTypes" EVENT="KeyDown(nKeyCode)">
+	OnWizComboKeyDown(nKeyCode);
+</SCRIPT>
+<SCRIPT ID="INCLUDE_SCRIPT" LANGUAGE="JSCRIPT">
+</SCRIPT>
+<SCRIPT ID="INCLUDE_COMMON" LANGUAGE="JSCRIPT">
+</SCRIPT>
+<SCRIPT>
+	var strPath = "../../../";
+	strPath += window.external.GetHostLocale();
+	var strScriptPath = strPath + "/Script.js";
+	var strCommonPath = strPath + "/Common.js";
+	document.scripts("INCLUDE_SCRIPT").src = strScriptPath;
+	document.scripts("INCLUDE_COMMON").src = strCommonPath;
+</SCRIPT>

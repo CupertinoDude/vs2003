@@ -1,0 +1,92 @@
+<?xml version='1.0'?> 
+<?xml-stylesheet type="text/xsl" href="..\..\..\..\readme.xsl"?> 
+<sample> 
+<title> Remoting Collections Sample</title>
+
+<title-short>Using collections with .NET remoting</title-short>
+
+<overview> 
+This sample shows how to return collections by value to a calling client.
+Depending on the method called, the service returns a <I>Stack</I>, <I>ArrayList</I> and
+<I>Hashtable</I> to the caller.  This sample uses HTTP over port 80 and requires
+the service to be registered with IIS before a client can call this service.
+</overview>
+
+<subdirectory>Technologies\Remoting\Basic\RemotingCollections
+  <directory name = "bin"> 
+    Contains the CollectionLibrary.dll required when the services are accessed using IIS.  The
+    service should be registered with IIS before calling this service from the client in
+    Client/ConsoleClient.
+  </directory>
+
+  <directory name = "Service">
+    The source code for the CollectionLibrary and associated makefile are stored here.  The
+    makefile copies the CollectionLibrary.dll to the bin directory.
+  </directory>
+
+  <directory name = "Client">
+    Contains the makefile to build the client in the ConsoleClient subdirectory.
+  </directory>
+
+  <directory name = "Client\ConsoleClient">
+    Contains client.cs as well as the associated makefile for building the client
+    executable.
+  </directory>
+</subdirectory>
+
+<customsection  name = "Registering the service in IIS">
+<li>Compile the service to a DLL and copy this DLL to a bin directory where
+the service will be loaded from.  For this sample we create
+the bin subdirectory under RemotingCollections and copy the CollectionLibrary.dll
+there.  Building the sample by running nmake will accomplish this.</li><p></p>
+
+<li>Start Internet Services Manager and select Default Web Site
+under the server node.  Select Action, New, Virtual Directory on the
+menu and click Next to continue.</li><p></p>
+
+<li>Enter RemotingCollections as the alias and press Next.</li><p></p>
+
+<li>Enter the directory where the service is located.  Enter the full
+path up to but excluding the bin directory where the dll in step 1
+was copied to.  For example:<p></p>
+
+  <b>C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\Basic\RemotingCollections</b></li><p></p>
+
+<li>Press Next.  Accept the defaults presented and press Next again.  Press Finish.  The service
+has now been registered and will appear under the list of Default Web Sites in the Internet Services
+Manager window.</li><p></p>
+
+<li>Check that there is a web.config file in the directory where the service was registered.  This
+file describes our service and will automatically be loaded when a client attempts to access our
+service with a browser or client using the HTTP channel on port 80.</li>
+</customsection>
+
+<customsection  name = "Requirements">
+This sample will only operate correctly on any version of Windows with the Common Language Runtime and Internet Information Server (IIS) installed.  
+</customsection>
+
+<buildsteps> 
+  <step> 
+    Type <b>nmake -a all</b> from the command line.      
+    <example>
+      C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\Basic\RemotingCollections> nmake -a all
+    </example>
+  </step>
+</buildsteps>
+
+<runsteps> 
+  <step>
+    Ensure that <b>RemotingCollections</b> is registered with IIS (see Registering 
+    the service in IIS above) and run the executable <b>client.exe</b> from the 
+    <b>ConsoleClient</b> directory.
+  </step>
+</runsteps>
+
+<keywords> 
+  <word name="Remoting" keyword="R"/>
+  <word name="Collections" keyword="C"/>
+  <word name="MBR" keyword="M"/>
+</keywords>
+</sample>
+
+

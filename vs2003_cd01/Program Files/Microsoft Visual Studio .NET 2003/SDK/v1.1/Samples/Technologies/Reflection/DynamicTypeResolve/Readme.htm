@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root xmlns:dt="urn:schemas-microsoft-com:datatypes" xmlns:d2="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?><HTML><HEAD><TITLE>Dynamic Type Resolution Sample</TITLE><STYLE>
+    .Title{FONT-FAMILY: Verdana;FONT-SIZE: large;COLOR: #808080}
+    </STYLE><STYLE>
+    .Heading{FONT-FAMILY: Verdana;FONT-SIZE: large}
+    </STYLE><STYLE>
+    .SectionBreak{FONT-SIZE: small;MARGIN-BOTTOM: 2em}
+    </STYLE><STYLE>
+    .SmallBreak{FONT-SIZE: small;MARGIN-BOTTOM: 1.5em}
+    </STYLE><STYLE>
+    .Text{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedHeading{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedText{MARGIN-LEFT: 3ex;FONT-FAMILY: Lucida Console;FONT-SIZE: x-small;FONT-WEIGHT: Bold}
+    </STYLE><STYLE>
+    .ListSansBullets {list-style-type: none;FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE></HEAD><BODY><table><tr><td><h2 class="Title">Dynamic Type Resolution Sample</h2></td><td valign="baseline" class="Text">
+               
+              
+                  (Console Application)
+                </td></tr></table><p class="Text">
+    This document contains the release information for the .NET Framework DynamicTypeResolve sample. You will find the following sections below: 
+    </p><ul class="Text"><li><a href="#_Sample_Overview">Overview</a></li><li><a href="#_Sample_Topics">Topics</a></li><li><a href="#_Location_of_Sample">Location</a></li><li><a href="#_Building_the_Sample">Building the sample</a></li><li><a href="#_Running_the_Sample">Running the sample</a></li><li><a href="#_sdkvars">Notes</a></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Overview" />
+    Overview
+    </h4><p class="Text">
+This sample demonstrates how hosts can participate in the type resolution process by supplying an event handler that returns an assembly containing the requested type. The sample attempts to instantiate a type that doesn't exist. However, the sample also handles type-load failures, and dynamically creates the necessary type, avoiding a FileNotFoundException. This is an advanced technique, most likely to be utilized by distributed applications in order to facilitate flexibility and fault-tolerance. 
+</p><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Topics" />
+  Topics
+  </h4><p class="Text">
+  The following bullets briefly describe the classes and technologies used by this sample.
+  </p><ul class="Text"><li><b>Reflection - </b><ul class="Text"><li><b>AppDomain - </b>
+      The AssemblyResolve event property of this class is used to add an event-handler that is called when a type load fails.
+      </li></ul><ul class="Text"><li><b>Activator - </b>
+      Is used to create instances of a type whose name is not necessary known at compile time.
+      </li></ul><ul class="Text"><li><b>MethodInfo - </b>
+      Used to invoke a method on a type, where the method name is not necessarily known at compile time.
+      </li></ul><ul class="Text"><li><b>AssemblyBuilder - </b>
+      Used to emit a dynamic assembly at run-time.
+      </li></ul><ul class="Text"><li><b>AssemblyName - </b>
+      This type is used to define the unique identity of an assembly. This sample uses this type in the simplest possible way by giving the dynamic assembly a text name.
+      </li></ul><ul class="Text"><li><b>ModuleBuilder - </b>
+      Used to build a dynamic module in the dynamic assembly.
+      </li></ul><ul class="Text"><li><b>TypeBuilder - </b>
+      This Type-derived type is used to build a type dynamically. From it you can request instances of the FieldBuilder, ConstrutorBuilder, and MethodBuilder types. Using these types the sample generates a complete type.
+      </li></ul><ul class="Text"><li><b>MethodBuilder - </b>
+      Used to define a method in a dynamic type.
+      </li></ul><ul class="Text"><li><b>ILGenerator - </b>
+      The MethodBuilder type implements a method called GetILGenerator() which returns an instance of the ILGenerator type. This type is used to dynamically generate IL-code.
+      </li></ul></li><li><b>Delegates and Events - </b><ul class="Text"><li><b>ResolveEventHandler - </b>
+      Used to indicate a callback method to be called when a type-resolution fails.
+      </li></ul></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Location_of_Sample" />
+    Location
+    </h4><p class="Text">
+    This sample is located in the <a href="." title="Jump to Folder" target="_blank">Technologies\Reflection\DynamicTypeResolve</a> subdirectory of the .NET Framework SDK samples directory.
+    </p><p class="FixedHeading">
+    For Example:
+      <p class="FixedText">
+      C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Reflection\DynamicTypeResolve</p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Building_the_Sample" />
+    Building the Sample
+    </h4><p class="Text">
+    In order to properly build and run this sample, the following steps need to be performed.
+    </p><p class="Text">
+      Type <b>BUILD.bat</b> from the command line.<p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Reflection\DynamicTypeResolve\VB&gt;Build.bat
+      </p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Running_the_Sample" />
+    Running the Sample
+    </h4><p class="Text">
+    In order to run this sample, follow the instructions listed below.
+    </p><span class="Text"><ul class="Text"><li>
+      Type <b>TypeResolve.exe</b> from the command line.<p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText">
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Reflection\DynamicTypeResolve\VB&gt;TypeResolve.exe
+      </p></li></ul></span><p class="SectionBreak" /><h4 class="Heading"><a name="_sdkvars" />
+    Notes
+    </h4><p class="Text">
+    For the .Net Framework samples to function properly, your Path, Include, and Lib environment variables must be set correctly. 
+    In many cases, the SDK install program updates these environment variables for you. However, if you installed the .Net Framework SDK 
+    using Visual Studio .NET, or unselected "register environment variables" during setup, these environment variables will not be updated. 
+    You can set the Path, Include and Lib environment variables by running SDKVars.bat, located in the <i>&lt;SDKRoot&gt;\Bin</i> directory. 
+    SDKVars.bat must be executed in every command shell.
+    </p></BODY></HTML></root>

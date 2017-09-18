@@ -1,0 +1,38 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\readme.xsl"?>
+
+<sample>
+<title>Cross-Language Development Sample</title>
+<title-short>CrossDevLanguage</title-short>
+<overview>
+   This sample demonstrates the use different development languages in a single project. This sample creates two assemblies. The first is a library or DLL assembly that defines a simple base class written in managed extensions for C++. The second assembly is an executable assembly that defines three derived classes written in C#, VB, and IL (Intermediate Language). These types derive from each other and ultimately from the base class written in managed C++. Finally, the executable creates instances of each of the derived types and calls a virtual method for each. The .NET Framework is an environment where various developers can work together seamlessly while developing in their language of choice.
+</overview>
+<subdirectory>Technologies\CrossDevLanguage</subdirectory>
+<buildsteps>
+   <step>
+      Type <richcontent bold="T">BUILD.bat</richcontent>
+      <richcontent> from the command line.</richcontent>      
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\CrossDevLanguage>Build.bat
+      </example>
+   </step>
+</buildsteps>
+<runsteps>
+   <step>
+      Type <richcontent bold="T">CrossLang.exe</richcontent><richcontent> from the command line.</richcontent>
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\CrossDevLanguage>CrossLang.exe
+      </example>
+   </step>
+   <step>
+      Notice that for each object instantiated, code is called that was written in at least two different development languages.
+   </step>
+</runsteps>
+<keywords>
+   <word name="ILAsm" keyword="T"/>
+   <word name="IL" keyword="T"/>
+   <word name="Assembly" keyword="T"/>
+   <word name="Module" keyword="T"/>
+</keywords>
+</sample>
+

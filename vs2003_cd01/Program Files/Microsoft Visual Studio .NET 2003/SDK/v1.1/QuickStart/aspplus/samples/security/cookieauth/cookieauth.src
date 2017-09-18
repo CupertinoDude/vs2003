@@ -1,0 +1,4 @@
+C# Source:CS\default.aspx,CS\login.aspx,CS\web.config
+VB Source:VB\default.aspx,VB\login.aspx,VB\web.config
+JScript Source:JS\default.aspx,JS\login.aspx,JS\web.config
+VS.NET:..\..\vstudio\security\CookieAuth\CS\CookieAuth.csproj,..\..\vstudio\security\CookieAuth\VB\CookieAuth.vbproj

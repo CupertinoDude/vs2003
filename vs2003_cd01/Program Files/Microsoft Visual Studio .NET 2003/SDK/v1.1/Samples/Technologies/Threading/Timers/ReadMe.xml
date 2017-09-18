@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?>
+
+<sample>
+<title>Thread Timer Sample</title>
+<title-short>Timers</title-short>
+<overview>
+   This sample demonstrates the use of the Timer class to generate a periodic callback to a method. The sample creates a Timer object and passes to it a delegate object. When the Timer fires, the delegate is invoked, and a static method is called asynchronously by a worker thread in the thread pool.
+</overview>
+<subdirectory>Technologies\Threading\Timers</subdirectory>
+<buildsteps>
+   <step>
+      Type <richcontent bold="T">BUILD.bat</richcontent>
+      <richcontent> from the command line.</richcontent>      
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Threading\Timers\VB>Build.bat
+      </example>
+   </step>
+</buildsteps>
+<runsteps>
+   <step>
+      Type <richcontent bold="T">TimedCallback.exe</richcontent><richcontent> from the command line.</richcontent>
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Threading\Timers\VB>TimedCallback.exe
+      </example>
+   </step>   
+</runsteps>
+<technologies>
+   <technology name = "Thread Timers" keyword="T">
+      <class name = "Timer" keyword="T">
+         The Timer class can be used to create periodic or singleton timers for relative or absolute times.  This sample creates a periodic timer that invokes a delegate every two seconds until the application exits.
+      </class>
+   </technology>   
+   <technology name = "Thread Pools" keyword="T">
+      Although the ThreadPool class is not explicitly referenced by this sample, the Timer class uses the thread pool managed by the Common Language Runtime to asynchronously invoke delegates in response to timer events. A worker thread in the pool is utilized every two seconds by the timer in this sample.      
+   </technology>
+   <technology name = "Delegates" keyword="T">
+      <class name = "TimerCallback" keyword="T">
+         The TimerCallback delegate type is used by this sample to create a type-safe callback method for the Timer class to use. 
+      </class>      
+   </technology>
+</technologies>
+<keywords>
+   <word name="Threads" keyword="T"/>
+   <word name="Timing" keyword="T"/>
+   <word name="Pooling" keyword="T"/>
+</keywords>
+</sample>
+

@@ -1,0 +1,101 @@
+//-----------------------------------------------------------------------
+//  This file is part of the Microsoft .NET SDK Code Samples.
+// 
+//  Copyright (C) Microsoft Corporation.  All rights reserved.
+// 
+//This source code is intended only as a supplement to Microsoft
+//Development Tools and/or on-line documentation.  See these other
+//materials for detailed information regarding Microsoft code samples.
+// 
+//THIS CODE AND INFORMATION ARE PROVIDED AS IS WITHOUT WARRANTY OF ANY
+//KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+//IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+//PARTICULAR PURPOSE.
+//-----------------------------------------------------------------------
+
+namespace Microsoft.Samples.WinForms.Cs.PrintingExample5 {
+    using System;
+    using System.ComponentModel;
+    using System.Windows.Forms;
+    using System.Drawing;
+    using System.Drawing.Printing;
+    using System.IO;
+
+    public class PrintForm : System.Windows.Forms.Form {
+        /// <summary>
+        ///    Required designer variable.
+        /// </summary>
+        private System.ComponentModel.Container components;
+        protected internal System.Windows.Forms.Button printButton;
+        protected internal System.Windows.Forms.Button pageSetupButton;
+        protected internal System.Windows.Forms.Button printPreviewButton;
+
+        private PageSettings storedPageSettings = null ;
+
+        public PrintForm() {
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
+
+            //
+            // Add any constructor code after InitializeComponent call
+            //
+
+            // Wire up event handlers for print buttons
+            printButton.Click += new System.EventHandler(printButton_Click);
+            pageSetupButton.Click += new System.EventHandler(pageSetupButton_Click);
+            printPreviewButton.Click += new System.EventHandler(printPreviewButton_Click);
+        }
+
+        //Event fired when the user presses the page setup button
+        private void pageSetupButton_Click(object sender, EventArgs e) {
+
+            try {
+                PageSetupDialog psDlg = new PageSetupDialog() ;
+
+                if (storedPageSettings == null) {
+                    storedPageSettings =  new PageSettings();
+                }
+
+                psDlg.PageSettings = storedPageSettings ;
+                psDlg.ShowDialog();
+
+            } catch(Exception ex) {
+                MessageBox.Show("An error occurred - " + ex.Message);
+            }
+
+        }
+
+
+        //Event fired when the user presses the print button
+        private void printButton_Click(object sender, EventArgs e) {
+            try {
+
+                StreamReader streamToPrint = new StreamReader ("PrintMe.Txt");
+                try {
+                    TextFilePrintDocument pd = new TextFilePrintDocument(streamToPrint); //Assumes the default printer
+
+                    if (storedPageSettings != null) {
+                        pd.DefaultPageSettings = storedPageSettings ;
+                    }
+
+                    PrintDialog dlg = new PrintDialog() ;
+                    dlg.Document = pd;
+                    DialogResult result = dlg.ShowDialog();
+
+                    if (result == DialogResult.OK) {
+                        pd.Print();
+                    }
+
+                } finally {
+                    streamToPrint.Close() ;
+                }
+
+            } catch(Exception ex) {
+                MessageBox.Show("An error occurred printing the file - " + ex.Message);
+            }
+        }
+
+
+

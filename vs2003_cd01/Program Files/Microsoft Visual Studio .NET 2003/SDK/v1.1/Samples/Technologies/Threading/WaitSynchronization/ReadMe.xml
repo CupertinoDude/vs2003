@@ -1,0 +1,61 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\readme.xsl"?>
+
+<sample>
+<title>Wait Synchronization Sample</title>
+<title-short>WaitSynchronization</title-short>
+<overview>
+   This sample demonstrates how to use the WaitHandle class for thread synchronization. The sample queues up 5 asynchronous method calls.  Each method then waits to own the resource, writes to the console, sleeps, and then writes to the console a second time. The WaitHandle derived-type Mutex is used to enforce mutually exclusive access to a protected block of code.
+</overview>
+<subdirectory>Technologies\Threading\WaitSynchronization</subdirectory>
+<buildsteps>
+   <step>
+      Type <richcontent bold="T">BUILD.bat</richcontent>
+      <richcontent> from the command line.</richcontent>      
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Threading\WaitSynchronization\VB>Build.bat
+      </example>
+   </step>
+</buildsteps>
+<runsteps>
+   <step>
+      Type <richcontent bold="T">Mutex.exe</richcontent><richcontent> from the command line.</richcontent>
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Threading\WaitSynchronization\VB>Mutex.exe
+      </example>
+   </step>   
+</runsteps>
+<technologies>
+   <technology name = "Thread Synchronization" keyword="T">
+      <class name = "Mutex" keyword="T">
+         The Mutex class is derived from WaitHandle and provides mutual exclusion for thread synchronization. 
+      </class>
+      <class name = "AutoResetEvent" keyword="T">
+         The sample's main thread waits on an AutoResetEvent object until it is set, which indicates that the last of the asynchronous functions are finished doing their work.
+      </class>
+      <class name = "WaitHandle" keyword="T">
+         The WaitHandle class is the base class from which both Mutex and AutoResetEvent (amongst others) are derived. This type implements methods to "wait" for the various derived types to go "signaled".
+      </class>
+      <class name = "Interlocked" keyword="T">
+         The sample uses the static Decrement() method of the Interlocked class to asynchronously access a counter variable to indicate when the AutoResetEvent should be set.
+      </class>
+   </technology>
+   <technology name = "Threading" keyword="T">
+      <class name = "ThreadPool" keyword="T">
+         When writing managed code, it is suggested that whenever possible, developers use the QueueUserWorkItem() method of the ThreadPool class to implement asynchronous method calls. This sample uses this approach to execute code that contends for a logical resource.
+      </class>
+   </technology>
+   <technology name = "Delegates" keyword="T">
+      <class name = "WaitCallback" keyword="T">
+         The WaitCallback delegate type is used by this sample to create a type-safe callback method for the ThreadPool class to use. 
+      </class>      
+   </technology>
+</technologies>
+<keywords>
+   <word name="Threads" keyword="T"/>
+   <word name="WaitForMultipleObjects" keyword="T"/>
+   <word name="WaitForMultipleObjectsEx" keyword="T"/>
+   <word name="WaitForSingleObject" keyword="T"/>
+</keywords>
+</sample>
+

@@ -1,0 +1,893 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./readme_files/filelist.xml">
+<title>DirectMusic Interoperability Sample</title>
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536871559 0 0 0 415 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-parent:"";
+	mso-style-next:"Text\,t";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:24.0pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:22.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Verdana;
+	mso-bidi-font-family:Tahoma;
+	mso-font-kerning:12.0pt;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-parent:"Heading 1";
+	mso-style-next:"Text\,t";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:24.0pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:22.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Verdana;
+	mso-bidi-font-family:Tahoma;
+	color:gray;
+	mso-font-kerning:12.0pt;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+h3
+	{mso-style-parent:"Heading 1";
+	mso-style-next:"Text\,t";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:24.0pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:22.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Verdana;
+	mso-bidi-font-family:Tahoma;
+	color:silver;
+	mso-font-kerning:12.0pt;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+h4
+	{mso-style-parent:"Heading 1";
+	mso-style-next:"Text\,t";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:20.0pt;
+	mso-pagination:widow-orphan;
+	mso-outline-level:4;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Verdana;
+	mso-bidi-font-family:Tahoma;
+	mso-font-kerning:12.0pt;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+h5
+	{mso-style-parent:"Heading 1";
+	mso-style-next:"Text\,t";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:16.0pt;
+	mso-pagination:widow-orphan;
+	mso-outline-level:5;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Verdana;
+	mso-bidi-font-family:Tahoma;
+	mso-font-kerning:12.0pt;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+h6
+	{mso-style-parent:"Heading 1";
+	mso-style-next:"Text\,t";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-bidi-font-family:Tahoma;
+	mso-font-kerning:12.0pt;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.25in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:Tahoma;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{margin-right:0in;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";}
+p.Text, li.Text, div.Text
+	{mso-style-name:"Text\,t";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.Figure, li.Figure, div.Figure
+	{mso-style-name:"Figure\,fig";
+	mso-style-parent:"Text\,t";
+	mso-style-next:"Text\,t";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.Code, li.Code, div.Code
+	{mso-style-name:"Code\,c";
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	line-height:15.0pt;
+	mso-pagination:widow-orphan;
+	tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in 2.0in 2.25in;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.Label, li.Label, div.Label
+	{mso-style-name:"Label\,l";
+	mso-style-parent:"Text\,t";
+	mso-style-next:"Text\,t";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:navy;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.NumberedList1, li.NumberedList1, div.NumberedList1
+	{mso-style-name:"Numbered List 1\,nl1";
+	mso-style-parent:"Text\,t";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l0 level1 lfo2;
+	tab-stops:.25in list .5in;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.LabelSpecial, li.LabelSpecial, div.LabelSpecial
+	{mso-style-name:"Label Special\,ls";
+	mso-style-parent:"Text\,t";
+	mso-style-next:"Numbered List 1\,nl1";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:maroon;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.NumberedList2, li.NumberedList2, div.NumberedList2
+	{mso-style-name:"Numbered List 2\,nl2";
+	mso-style-parent:"Text\,t";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l1 level1 lfo4;
+	tab-stops:.5in list .75in;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.Syntax, li.Syntax, div.Syntax
+	{mso-style-name:"Syntax\,s";
+	mso-style-parent:"Text\,t";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.TableSpacingAfter, li.TableSpacingAfter, div.TableSpacingAfter
+	{mso-style-name:"Table Spacing After\,tsa";
+	mso-style-parent:"Text\,t";
+	mso-style-next:"Text\,t";
+	margin:0in;
+	margin-bottom:.0001pt;
+	line-height:6.0pt;
+	mso-pagination:widow-orphan;
+	font-size:6.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:olive;}
+p.CodeinList2, li.CodeinList2, div.CodeinList2
+	{mso-style-name:"Code in List 2\,c2";
+	mso-style-parent:"Code\,c";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:15.0pt;
+	mso-pagination:widow-orphan;
+	tab-stops:.75in 1.0in 1.25in 1.5in 1.75in 2.0in 2.25in 2.5in 2.75in;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.TextinList2, li.TextinList2, div.TextinList2
+	{mso-style-name:"Text in List 2\,t2";
+	mso-style-parent:"Text\,t";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.FigureinList2, li.FigureinList2, div.FigureinList2
+	{mso-style-name:"Figure in List 2\,fig2";
+	mso-style-parent:"Figure\,fig";
+	mso-style-next:"Text in List 2\,t2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.5in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.FigureEmbedded, li.FigureEmbedded, div.FigureEmbedded
+	{mso-style-name:"Figure Embedded\,fige";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:olive;}
+p.TextinList1, li.TextinList1, div.TextinList1
+	{mso-style-name:"Text in List 1\,t1";
+	mso-style-parent:"Text\,t";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.LabelinList1, li.LabelinList1, div.LabelinList1
+	{mso-style-name:"Label in List 1\,l1";
+	mso-style-parent:"Label\,l";
+	mso-style-next:"Text in List 1\,t1";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:navy;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.CodeinList1, li.CodeinList1, div.CodeinList1
+	{mso-style-name:"Code in List 1\,c1";
+	mso-style-parent:"Code\,c";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	line-height:15.0pt;
+	mso-pagination:widow-orphan;
+	tab-stops:.5in .75in 1.0in 1.25in 1.5in 1.75in 2.0in 2.25in 2.5in;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.FigureinList1, li.FigureinList1, div.FigureinList1
+	{mso-style-name:"Figure in List 1\,fig1";
+	mso-style-parent:"Figure\,fig";
+	mso-style-next:"Text in List 1\,t1";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.25in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.AlertText, li.AlertText, div.AlertText
+	{mso-style-name:"Alert Text\,at";
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.AlertTextinList1, li.AlertTextinList1, div.AlertTextinList1
+	{mso-style-name:"Alert Text in List 1\,at1";
+	mso-style-parent:"Alert Text\,at";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.AlertTextinList2, li.AlertTextinList2, div.AlertTextinList2
+	{mso-style-name:"Alert Text in List 2\,at2";
+	mso-style-parent:"Alert Text\,at";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.RevisionHistory, li.RevisionHistory, div.RevisionHistory
+	{mso-style-name:"Revision History\,rh";
+	mso-style-parent:"Text\,t";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:purple;
+	display:none;
+	mso-hide:all;}
+p.BulletedList1, li.BulletedList1, div.BulletedList1
+	{mso-style-name:"Bulleted List 1\,bl1";
+	mso-style-parent:"Text\,t";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l4 level1 lfo6;
+	tab-stops:list .25in .5in;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.TextIndented, li.TextIndented, div.TextIndented
+	{mso-style-name:"Text Indented\,ti";
+	mso-style-parent:"Text\,t";
+	margin-top:0in;
+	margin-right:.25in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.BulletedList2, li.BulletedList2, div.BulletedList2
+	{mso-style-name:"Bulleted List 2\,bl2";
+	mso-style-parent:"Text\,t";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l3 level1 lfo8;
+	tab-stops:list .5in;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.Definition, li.Definition, div.Definition
+	{mso-style-name:"Definition\,d";
+	mso-style-parent:"Text\,t";
+	mso-style-next:"Defined Term\,dt";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.DefinedTerm, li.DefinedTerm, div.DefinedTerm
+	{mso-style-name:"Defined Term\,dt";
+	mso-style-parent:"Text\,t";
+	mso-style-next:"Definition\,d";
+	margin:0in;
+	margin-bottom:.0001pt;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.GlueLinkText, li.GlueLinkText, div.GlueLinkText
+	{mso-style-name:"Glue Link Text\,glt";
+	mso-style-parent:"Text\,t";
+	mso-style-next:"Text\,t";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.IndexTag, li.IndexTag, div.IndexTag
+	{mso-style-name:"Index Tag\,it";
+	mso-style-parent:"Text\,t";
+	margin-top:0in;
+	margin-right:1.0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	background:#DDFFFF;
+	mso-shading:windowtext;
+	mso-pattern:gray-25 aqua;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	display:none;
+	mso-hide:all;}
+p.Copyright, li.Copyright, div.Copyright
+	{mso-style-name:"Copyright\,copy";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:olive;}
+p.PrintDivisionTitle, li.PrintDivisionTitle, div.PrintDivisionTitle
+	{mso-style-name:"Print Division Title\,pdt";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:olive;}
+p.PrintDivisionNumber, li.PrintDivisionNumber, div.PrintDivisionNumber
+	{mso-style-name:"Print Division Number\,pdn";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:olive;}
+p.PrintMSCorp, li.PrintMSCorp, div.PrintMSCorp
+	{mso-style-name:"Print MS Corp\,pms";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:olive;}
+p.LabelinList2, li.LabelinList2, div.LabelinList2
+	{mso-style-name:"Label in List 2\,l2";
+	mso-style-parent:"Label\,l";
+	mso-style-next:"Text in List 2\,t2";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	line-height:12.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:navy;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.TableFootnote, li.TableFootnote, div.TableFootnote
+	{mso-style-name:"Table Footnote\,tf";
+	margin-right:0in;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";}
+p.TableFootnoteinList1, li.TableFootnoteinList1, div.TableFootnoteinList1
+	{mso-style-name:"Table Footnote in List 1\,tf1";
+	mso-style-parent:"Table Footnote\,tf";
+	mso-style-next:"Text in List 1\,t1";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	line-height:9.0pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-top-alt:solid windowtext .5pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.TableFootnoteinList2, li.TableFootnoteinList2, div.TableFootnoteinList2
+	{mso-style-name:"Table Footnote in List 2\,tf2";
+	mso-style-parent:"Table Footnote\,tf";
+	mso-style-next:"Text in List 2\,t2";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	line-height:9.0pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-top-alt:solid windowtext .5pt;
+	padding:0in;
+	mso-padding-alt:1.0pt 0in 0in 0in;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+span.LinkText
+	{mso-style-name:"Link Text\,lt";
+	color:blue;
+	text-decoration:underline;
+	text-underline:double;}
+span.LinkID
+	{mso-style-name:"Link ID\,lid";
+	color:red;
+	display:none;
+	mso-hide:all;}
+span.Bold
+	{mso-style-name:"Bold\,b";
+	font-weight:bold;}
+span.BoldItalic
+	{mso-style-name:"Bold Italic\,bi";
+	font-weight:bold;
+	font-style:italic;}
+span.Italic
+	{mso-style-name:"Italic\,i";
+	font-style:italic;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:356852170;
+	mso-list-template-ids:-516918242;}
+@list l1
+	{mso-list-id:358627395;
+	mso-list-template-ids:759335382;}
+@list l2
+	{mso-list-id:467281849;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1389775872 854327556 1026309256 -1359574590 1117712888 1287159878 1995765350 1424930378 -678791962 362807472;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3
+	{mso-list-id:671183883;
+	mso-list-template-ids:858027426;}
+@list l4
+	{mso-list-id:876819360;
+	mso-list-template-ids:1791795658;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=purple style="tab-interval: .25in">
+
+<h2 style="LINE-HEIGHT: 24pt; mso-line-height-rule: exactly" class=Section1><span
+ style="FONT-FAMILY: Tahoma">DirectX 7 Interoperability Sample – Using DirectMusic</span></h2>
+
+<p class=MsoNormal><span style="FONT-FAMILY: Verdana">This document contains the
+release information for the DirectX Interoperability Sample – Using
+DirectMusic.<span style="mso-spacerun: yes">&nbsp; </span>You will find the following
+sections below: <o:p></o:p></span></p>
+<DIV class=Section1>
+
+<ul type=disc>
+ <li class=MsoNormal style="mso-margin-top-alt:
+     auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l2 level1 lfo11" 
+ ><span style="FONT-FAMILY:
+     Verdana"><A href="#_Sample_Overview">Sample Overview</A><o:p></o:p></span> 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l2 level1 lfo11"><FONT 
+  face=Verdana><U><A href="#Requirements">Requirements</A></U></FONT>
+ <li class=MsoNormal style="mso-margin-top-alt:
+     auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l2 level1 lfo11" 
+ ><a name=version></a><A
+     href="#_Location_of_Sample"><span style="mso-bookmark: version" 
+ ><span
+     style="FONT-FAMILY: Verdana" 
+ >Location of the Sample</span></span><span
+     
+  style="mso-bookmark: version"></span></A><span style="mso-bookmark: version"><span
+     
+  style="FONT-FAMILY: Verdana"><o:p></o:p></span></span> 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l2 level1 lfo11"><A 
+  href="#Building">Building the Sample</A> 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l2 level1 lfo11"><A href="#_Building_the_Sample"><span style="mso-bookmark:
+     version"><span style="FONT-FAMILY: Verdana">  Running the Sample</span></span><span
+       
+  style="mso-bookmark: version"></span></A><span style="mso-bookmark: version" 
+ ><span
+       
+  style="FONT-FAMILY: Verdana"><o:p></o:p></span></span> </LI>
+</ul></DIV>
+
+<h4><span style="mso-bookmark: version"><a name="_What_this_sample"></a><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></span></h4>
+
+<h4><span style="mso-bookmark: version"><a name="_What_this_sample_1"></a><a
+ name="_Sample_Overview"></a>Sample Overview</span></h4>
+
+<p class=MsoNormal style="MARGIN-BOTTOM: 12pt"><span style="mso-bookmark: version"><span
+ style="FONT-FAMILY: Verdana">This sample demonstrates the use of an existing
+unmanaged COM component (DirectX 7) from managed code.<span
+ style="mso-spacerun: yes">&nbsp; </span>This sample contains one C# project that serves as a "jukebox", playing the tunes selected by the user.
+Although DirectX 7 is not the most recent version of DirectX, it is used since Windows 2000 already has it installed.<span
+ style="mso-spacerun: yes">&nbsp; </span></span></span><span style="mso-bookmark: version"><b></b></span></p>
+<P class=MsoNormal style="MARGIN-BOTTOM: 12pt"><SPAN 
+style="mso-bookmark: version"><B></B></SPAN>&nbsp;</P>
+<H4 class=MsoNormal style="MARGIN-BOTTOM: 12pt"><SPAN 
+style="mso-bookmark: version"><A name=Requirements><SPAN 
+style="mso-bookmark: version"></SPAN></A>Requirements</SPAN><SPAN 
+style="mso-bookmark: version"></SPAN></H4>
+<P class=MsoNormal style="MARGIN-BOTTOM: 12pt"><FONT 
+face=Verdana><SPAN 
+style="mso-bookmark: version">This
+samples requires <b>DirectX 7 </b>(which is already installed with Windows
+2000) to function properly.<br style="mso-special-character: line-break"><![if !supportLineBreakNewLine]><![endif]></SPAN></FONT></P>
+<P class=MsoNormal style="MARGIN-BOTTOM: 12pt"><SPAN 
+style="mso-bookmark: version"><![if !supportEmptyParas]><![endif]>&nbsp;</P></SPAN>
+
+<h4><span style="mso-bookmark: version"><a name="_Getting_Started"></a><a
+ name="_Location_of_Sample"></a>Location of the Sample</span></h4><span style="mso-bookmark: version"><span
+ style="FONT-FAMILY: Verdana">
+<P class=MsoNormal style="MARGIN-BOTTOM: 12pt"><SPAN 
+style="mso-bookmark: version"><SPAN 
+style="FONT-FAMILY: Verdana; FONT-SIZE: 10pt; mso-bidi-font-size: 12.0pt">This 
+sample is located in the </SPAN></SPAN><STRONG><SPAN 
+style="mso-bookmark: version"><SPAN 
+style="FONT-FAMILY: 'Courier New'; FONT-SIZE: 10pt; mso-bidi-font-size: 12.0pt">Interop\Basic\</SPAN></SPAN></STRONG><SPAN 
+style="mso-bookmark: version"><SPAN 
+style="FONT-FAMILY: Verdana; FONT-SIZE: 10pt; mso-bidi-font-size: 12.0pt"><STRONG><FONT 
+face="Courier New">DirectX</FONT></STRONG> directory of the .NET Framework SDK 
+samples directory.</SPAN></SPAN><SPAN style="mso-bookmark: version"><SPAN 
+style="FONT-FAMILY: Verdana; FONT-SIZE: 10pt; mso-bidi-font-family: Tahoma"><o:p></o:p></SPAN></SPAN></P>
+<P class=TextinList1 style="LINE-HEIGHT: normal; MARGIN-BOTTOM: 12pt"><SPAN 
+style="mso-bookmark: version"><B><SPAN style="mso-bidi-font-family: Tahoma">For 
+Example:<o:p></o:p></SPAN></B></SPAN></P>
+<P class=TextinList1 style="LINE-HEIGHT: normal; MARGIN-BOTTOM: 12pt"><SPAN 
+style="mso-bookmark: version"><B><SPAN 
+style="FONT-FAMILY: 'Courier New'">C:\Program 
+Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Interop\Basic\DirectX\DirectMusic</SPAN></B></SPAN></P>
+<P class=TextinList1 style="LINE-HEIGHT: normal; MARGIN-BOTTOM: 12pt"><SPAN 
+style="mso-bookmark: version"><B><SPAN 
+style="FONT-FAMILY: 'Courier New'">&nbsp;<o:p></o:p></SPAN></B></SPAN>     
+  </span></span><span style="mso-bookmark: version"><b
+ style="mso-bidi-font-weight: normal"><span style="FONT-FAMILY: Verdana">PlayStyles
+</span></b></span><span style="mso-bookmark: version"><span style="FONT-FAMILY:
+ Verdana">subdir – Demonstrates playing 
+the various DirectMusic musical styles.</span></span></P>
+<P class=MsoNormal style="MARGIN-BOTTOM: 12pt"><SPAN 
+style="mso-bookmark: version"><SPAN style="FONT-FAMILY: Verdana">       <o:p></o:p></SPAN></SPAN>&nbsp;</P>
+<H4><span style="mso-bookmark: version"><a name="_Building_the_Sample"></a>
+<H4><SPAN style="mso-bookmark: version"><A name=_Building_the_Sample></A><A 
+name=Building><SPAN style="mso-bookmark: version"></SPAN></A>Building the 
+Sample</SPAN></H4></H4>
+<P class=MsoNormal style="MARGIN-BOTTOM: 12pt"><SPAN 
+style="mso-bookmark: version"><SPAN 
+style="FONT-FAMILY: Verdana; FONT-SIZE: 10pt; mso-bidi-font-size: 12.0pt">In 
+order to properly build this sample, the following steps need to be performed 
+prior to running the sample:</SPAN></SPAN></P>
+<P class=NumberedList2 
+style="LINE-HEIGHT: normal; MARGIN-BOTTOM: 12pt; tab-stops: list .5in; mso-list: l1 level1 lfo5"><SPAN 
+style="mso-bookmark: version"><SPAN 
+style="FONT-FAMILY: Symbol; mso-bidi-font-family: Tahoma">·<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN style="mso-bidi-font-family: Tahoma">Type <STRONG>nmake all 
+</STRONG>from the command line.<o:p></o:p></SPAN></SPAN></P>
+<P class=NumberedList2 
+style="LINE-HEIGHT: normal; MARGIN-BOTTOM: 12pt; TEXT-INDENT: 0in; tab-stops: .25in .5in list .75in"><STRONG><SPAN 
+style="mso-bookmark: version"><SPAN style="mso-bidi-font-family: Tahoma">For 
+Example:<o:p></o:p></SPAN></SPAN></STRONG></P>
+<P class=TextinList1 style="LINE-HEIGHT: normal; MARGIN: 0in 0in 12pt 1in"><SPAN 
+style="mso-bookmark: version"><SPAN 
+style="FONT-FAMILY: 'Courier New'"><STRONG>Nmake all</STRONG></SPAN></SPAN></P>
+<P class=TextinList1 style="LINE-HEIGHT: normal; MARGIN: 0in 0in 12pt 1in"><SPAN 
+style="mso-bookmark: version"><SPAN 
+style="FONT-FAMILY: 'Courier New'"></SPAN></SPAN>&nbsp;</P>
+<H4 class=MsoNormal style="MARGIN-BOTTOM: 12pt"></SPAN><SPAN 
+style="mso-bookmark: version">Running the Sample</SPAN></H4>
+
+<p class=MsoNormal style="MARGIN-BOTTOM: 12pt"><span style="mso-bookmark: version"><span
+ style="FONT-FAMILY: Verdana">       In order to run this sample, follow the instructions listed below.
+</span></span></p>
+<UL>
+  <LI>
+  <DIV class=MsoNormal style="MARGIN-BOTTOM: 12pt"><SPAN 
+  style="mso-bookmark: version"><SPAN style="FONT-FAMILY: Verdana">Open the 
+  "PlayStyles.exe" executable in the PlayStyles sub-directory. 
+  </SPAN></SPAN></DIV>
+  <LI>
+  <DIV class=MsoNormal style="MARGIN-BOTTOM: 12pt"><span
+ style="FONT-FAMILY: Verdana"> Click on the desired style.<o:p></o:p></span></DIV></LI></UL>
+
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+﻿greeting=ようこそ！
+article1=これは最初の文です。
+article2=これは二番目の文です。
+article3=そして、これが最後の文です。

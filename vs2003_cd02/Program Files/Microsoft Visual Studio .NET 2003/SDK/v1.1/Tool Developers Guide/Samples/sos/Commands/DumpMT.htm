@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">DumpMT</TD>
+					</TR>
+					<TR>
+						<TD>
+							Dumps MethodTable information.</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!DumpMT [-MD] &lt;addr&gt;</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="83" cellSpacing="1" cellPadding="1" width="727" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>-MD</STRONG></TD>
+									<TD vAlign="top">Show all methods in method table</TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>&lt;addr&gt;<BR>
+										</STRONG><EM>Method Table</EM></TD>
+									<TD vAlign="top">Method table to display information about. Can be obtained using 
+										the&nbsp;DumpMD&nbsp;or DumpClass command.</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>0:003&gt; !DumpMT 3750d8
+EEClass : 03651088
+Module : 0014fc18
+Name: basedebug.MyMain
+mdToken: 02000002  (G:\Projects\VC\basedebug\bin\Debug\basedebug.exe)
+MethodTable Flags : 80000
+Number of IFaces in IFaceMap : 0
+Interface Map : 00375130
+Slots in VTable : 11
+
+0:003&gt; !DumpMT -md 3750d8
+EEClass : 03651088
+Module : 0014fc18
+Name: basedebug.MyMain
+mdToken: 02000002  (G:\Projects\VC\basedebug\bin\Debug\basedebug.exe)
+MethodTable Flags : 80000
+Number of IFaces in IFaceMap : 0
+Interface Map : 00375130
+Slots in VTable : 11
+--------------------------------------
+MethodDesc Table
+  Entry  MethodDesc   JIT   Name
+79bc5f03 79bc5f08    None   [DEFAULT] [hasThis] String System.Object.ToString()
+79bc5e8b 79bc5e90    None   [DEFAULT] [hasThis] Boolean System.Object.Equals(Object)
+79bc5ea3 79bc5ea8    None   [DEFAULT] [hasThis] I4 System.Object.GetHashCode()
+79bc5f43 79bc5f48    None   [DEFAULT] [hasThis] Void System.Object.Finalize()
+0037506b 00375070    None   [DEFAULT] Void basedebug.MyMain.Main(SZArray String)
+0037507b 00375080    None   [DEFAULT] String basedebug.MyMain.MyFunction()
+0037508b 00375090    None   [DEFAULT] String basedebug.MyMain.MyFunction2()
+0037509b 003750a0    None   [DEFAULT] String basedebug.MyMain.MyFunction3()
+003750ab 003750b0    None   [DEFAULT] String basedebug.MyMain.MyFunction4()
+003750bb 003750c0    None   [DEFAULT] String basedebug.MyMain.MyFunction5()
+003750cb 003750d0    None   [DEFAULT] [hasThis] Void basedebug.MyMain..ctor()</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Output</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<TABLE id="Table3" height="141" cellSpacing="1" cellPadding="1" width="816" border="1">
+								<TR>
+									<TD class="outputname">EEClass</TD>
+									<TD class="outputcontents">Class containing the method table.&nbsp; Use the 
+										DumpClass command&nbsp;to get information on the class.
+									</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">Module</TD>
+									<TD class="outputcontents">Module containing the method table.&nbsp; Use the 
+										DumpModule command&nbsp;to get information on the module.
+									</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">Name</TD>
+									<TD class="outputcontents">
+										Name of the class containing the method table.
+									</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">mdToken</TD>
+									<TD class="outputcontents">Meta data token for the method table.
+									</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">MethodTable Flags</TD>
+									<TD class="outputcontents">
+										Flags associated with the method table.&nbsp; Bit-masked DWORD.
+									</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">Number of elements in array</TD>
+									<TD class="outputcontents">
+									</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">Number of IFaces in IFaceMap</TD>
+									<TD class="outputcontents">Number of interfaces the class implements.
+									</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">Interface Map</TD>
+									<TD class="outputcontents">Pointer to the location of the method tables for the 
+										implemented interfaces. For example,&nbsp; <STRONG>System.String</STRONG> implements 
+										the following interfaces:<br>
+										<br>
+										<STRONG>System.IComparable<br>
+											System.ICloneable<br>
+											System.IConvertible<br>
+											System.Collections.IEnumerable<br>
+										</STRONG>
+										<br>
+										<table ID="Table4">
+											<tr>
+												<td class="WinDBGOut">
+													<pre>0:003&gt; !Name2EE mscorlib.dll System.String
+--------------------------------------
+MethodTable: <FONT color=red><STRONG>79bc73f8</STRONG></FONT>
+EEClass: 79bc7740
+Name: System.String
+
+0:003&gt; !DumpMT <STRONG><FONT color=red>79bc73f8</FONT></STRONG>
+EEClass : 79bc7740
+Module : 79bb0000
+Name: System.String
+mdToken: 0200000f  (f:\winnt\microsoft.net\framework\v1.0.3705\mscorlib.dll)
+MethodTable Flags : 2000000
+Number of elements in array: 2
+Number of IFaces in IFaceMap : 4
+Interface Map : <STRONG><FONT color=blue>79bc7720</FONT></STRONG>
+Slots in VTable : 189
+
+0:003&gt; dd <FONT color=blue><STRONG>79bc7720</STRONG></FONT>
+79bc7720  <STRONG><FONT color=green>79bc6f78</FONT></STRONG> 00140000 <STRONG><FONT color=green>79bc60e8</FONT></STRONG> 00150000
+79bc7730  <STRONG><FONT color=green>79bc7058</FONT></STRONG> 00280000 <FONT color=green><STRONG>79bc61c8</STRONG></FONT> 00270000
+79bc7740  79bc5de4 00bd0039 00040000 79bc70dc
+79bc7750  00000000 00000000 ffffffff 00020003
+79bc7760  00020000 0000000a 00143f18 79bc73f8
+79bc7770  79bc77a4 00102101 03000801 00440fca
+79bc7780  10300c68 00000000 0200000f 79bc77e0
+79bc7790  00000000 00000000 00000000 00000000
+
+0:003&gt; !DumpMT <STRONG><FONT color=green>79bc6f78</FONT></STRONG> 
+EEClass : 79bc6fbc
+Module : 79bb0000
+Name: System.IComparable
+mdToken: 0200000d  (f:\winnt\microsoft.net\framework\v1.0.3705\mscorlib.dll)
+MethodTable Flags : 2080000
+Number of IFaces in IFaceMap : 0
+Interface Map : 79bc6fa8
+Slots in VTable : 1
+
+0:003&gt; !DumpMT <STRONG><FONT color=green>79bc60e8</FONT></STRONG> 
+EEClass : 79bc612c
+Module : 79bb0000
+Name: System.ICloneable
+mdToken: 02000003  (f:\winnt\microsoft.net\framework\v1.0.3705\mscorlib.dll)
+MethodTable Flags : 2080000
+Number of IFaces in IFaceMap : 0
+Interface Map : 79bc6118
+Slots in VTable : 1
+
+0:003&gt; !DumpMT <STRONG><FONT color=green>79bc7058</FONT></STRONG> 
+EEClass : 79bc70dc
+Module : 79bb0000
+Name: System.IConvertible
+mdToken: 0200000e  (f:\winnt\microsoft.net\framework\v1.0.3705\mscorlib.dll)
+MethodTable Flags : 2080000
+Number of IFaces in IFaceMap : 0
+Interface Map : 79bc70c8
+Slots in VTable : 17
+
+0:003&gt; !DumpMT <STRONG><FONT color=green>70bc61c8</FONT></STRONG> 
+EEClass : 79bc620c
+Module : 79bb0000
+Name: System.Collections.IEnumerable
+mdToken: 02000004  (f:\winnt\microsoft.net\framework\v1.0.3705\mscorlib.dll)
+MethodTable Flags : 2080000
+Number of IFaces in IFaceMap : 0
+Interface Map : 79bc61f8
+Slots in VTable : 1</pre>
+												</td>
+											</tr>
+										</table>
+									</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">Slots in VTable</TD>
+									<TD class="outputcontents">Number of methods in the method table.
+									</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">MethodDesc Table</TD>
+									<TD class="outputcontents">Displays the methods in the method table. It has the 
+										following columns:<br>
+										<br>
+										<table>
+											<tr>
+												<td>Entry</td>
+												<td><FONT color="fuchsia"></FONT></td>
+											</tr>
+											<tr>
+												<td>MethodDesc</td>
+												<td>Method descriptor for the method. Use the DumpMD command on this address to get 
+													more information.</td>
+											</tr>
+											<tr>
+												<td>JIT</td>
+												<td>
+													Type of generated code.&nbsp; Can be&nbsp;JIT, EJIT, PreJIT or&nbsp;None</td>
+											</tr>
+											<tr>
+												<td>Name</td>
+												<td>Method signature</td>
+											</tr>
+										</table>
+									</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

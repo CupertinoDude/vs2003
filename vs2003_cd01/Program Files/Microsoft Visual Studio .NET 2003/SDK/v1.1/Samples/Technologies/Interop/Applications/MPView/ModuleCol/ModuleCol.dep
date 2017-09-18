@@ -1,0 +1,39 @@
+# Microsoft Developer Studio Generated Dependency File, included by ModuleCol.mak
+
+.\DllCol.cpp : \
+	".\DllCol.h"\
+	".\ModuleCol.h"\
+	".\VCUE_Copy.h"\
+	".\VCUE_CopyString.h"\
+	
+
+.\ModuleCol.cpp : \
+	".\DLink.h"\
+	".\DllCol.h"\
+	".\dlldatax.h"\
+	".\ModuleCol.h"\
+	".\ModuleCol_i.c"\
+	".\ProcCollection.h"\
+	".\VCUE_Copy.h"\
+	".\VCUE_CopyString.h"\
+	
+
+.\ModuleCol.rc : \
+	".\DllCol.rgs"\
+	".\ProcCollection.rgs"\
+	
+
+.\ProcCollection.cpp : \
+	".\DLink.h"\
+	".\DllCol.h"\
+	".\ModuleCol.h"\
+	".\ProcCollection.h"\
+	".\Psapi.h"\
+	".\VCUE_Copy.h"\
+	".\VCUE_CopyString.h"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	"c:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	

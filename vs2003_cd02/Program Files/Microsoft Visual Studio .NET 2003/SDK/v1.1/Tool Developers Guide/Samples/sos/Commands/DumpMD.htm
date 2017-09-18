@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META content="Microsoft Visual Studio 7.0" name="GENERATOR">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet"></HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">DumpMD</TD>
+					</TR>
+					<TR>
+						<TD>Dump Method Description information</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!DumpMD &lt;addr&gt;</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="53" cellSpacing="1" cellPadding="1" width="708" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="81">
+										<P><STRONG>&lt;addr&gt;<BR>
+											</STRONG><EM>Method Descr.</EM></P>
+									</TD>
+									<TD vAlign="top">Method descriptor address to dump information about</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>0:001&gt; !DumpMD 0xda6a0b0 
+Method Name : [DEFAULT] [hasThis] Void System.Web.UI.WebControls.Button.OnClick(Class System.EventArgs)
+MethodTable da6a130
+Module: 1433e0
+mdToken: 060012d6 (c:\windows\assembly\gac\system.web\1.0.3300.0__b03f5f7f11d50a3a\system.web.dll)
+Flags : 80
+Method VA : 0de8cdf8										</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Output</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<TABLE id="Table3" height="141" cellSpacing="1" cellPadding="1" width="816" border="1">
+								<TR>
+									<TD class="outputname">Method Name</TD>
+									<TD class="outputcontents">
+										<P>Method name including parameters. [hasThis] indicates that the method requires 
+											an instance of the class to be called. The calling convention can be one of the 
+											following values</P>
+										<P>
+											[DEFAULT]<br>
+											[C]<br>
+											[STDCALL]<br>
+											[THISCALL]<br>
+											[FASTCALL]<br>
+											[VARARG]<br>
+											[FIELD]<br>
+											[LOCALSIG]<br>
+											[PROPERTY]<br>
+											[UNMANAGED]<br>
+										</P>
+									</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">MethodTable</TD>
+									<TD class="outputcontents">Method table the&nbsp;method descriptor&nbsp;is 
+										in.&nbsp; Use the DumpMT command&nbsp;to get more information about the method 
+										table.</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">Module</TD>
+									<TD class="outputcontents">Module the method descriptor is in.&nbsp; Use the 
+										DumpModule command to get more information about the module.</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">mdToken</TD>
+									<TD class="outputcontents">
+										Metadata token for the method descriptor.</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">Flags</TD>
+									<TD class="outputcontents">Flags associated with the method descriptor.&nbsp; 
+										Bit-masked DWORD.
+									</TD>
+								</TR>
+								<TR>
+									<TD class="outputname">
+										Method VA<br>
+										or<br>
+										IL RVA
+									</TD>
+									<TD class="outputcontents">If Method VA (Virtual Address) is displayed this&nbsp;is 
+										the location in native code that the method has been 
+										JIT-compiled&nbsp;to.&nbsp; You can use the&nbsp;<STRONG>u</STRONG> command on 
+										this address to display the assembly.&nbsp; If IL RVA (Intermediate Language 
+										Relative Virtual Address) is displayed, the method has not been 
+										JIT-compiled&nbsp;yet.</TD>
+								</TR>
+							</TABLE>
+							<P></P>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Comments</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<P>A&nbsp;method descriptor&nbsp; address can be obtained using the&nbsp;DumpStack, 
+								DumpMT, Name2EE or&nbsp;IP2MD commands.</P>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		<P></P>
+	</BODY>
+</HTML>

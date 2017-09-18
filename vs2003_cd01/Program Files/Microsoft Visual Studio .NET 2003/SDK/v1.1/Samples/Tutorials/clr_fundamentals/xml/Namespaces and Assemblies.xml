@@ -1,0 +1,30 @@
+﻿<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Namespaces and Assemblies">
+	<Paragraph>
+		Namespaces allow for the logical grouping of related types. For example, the System.Collections namespace defines a bunch of collection types and the System.IO namespace defines a bunch of 		types for performing I/O operations. To avoid typing the full names of classes like System.Collections.Hashtable and System.IO.FileStream, many compilers will offer mechanisms to reduce 			programmer typing. The C# compiler exposes this mechanism with the “using” directive while VB.NET exposes this mechanism via the “Imports” statement.
+	</Paragraph>
+	<Paragraph>
+		<Code>
+// Include some namespaces in our C# application:
+using System;
+using System.Collections;
+using SystemIO;
+
+...
+		</Code>
+	</Paragraph>
+	<Paragraph>
+		Be aware that there is no necessary relationship between a namespace and an assembly (the file that implements a type). In particular, types defined within a single namespace may be 			implemented in different assemblies. For example, the System.Collections.ArrayList type is implemented in the MSCorLib.dll assembly while the System.Collections.StringCollection type is 			implemented in the System.dll assembly. In fact, there is no System.Collections.dll assembly at all.	</Paragraph>
+	<Paragraph>
+		Also note that a single assembly may house types in different namespaces. For example, the System.Int32 and System.Collections.ArrayList types are both in the MSCorLib.dll assembly.	</Paragraph>
+	<Paragraph>
+		When you look up a type in the .NET Framework SDK documentation, the documentation will clearly indicate the namespace that the type is defined in and will also indicate what assembly the type 		is implemented in. In the Requirements section (below), you can see that the Int32 type is part of the System namespace but is implemented in the MSCorLib.dll assembly:	</Paragraph>
+	<Paragraph>
+		<Image Src="..\Images\Int32.bmp"/>
+	</Paragraph>
+	<Navigation>
+		<Previous>Boxing and Unboxing.xml</Previous>
+		<Next>Special Types.xml</Next>
+	</Navigation>
+</Document>

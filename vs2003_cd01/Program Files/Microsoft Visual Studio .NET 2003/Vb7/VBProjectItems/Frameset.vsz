@@ -1,0 +1,4 @@
+VSWIZARD 6.0
+Wizard=VIDWiz.FrameSetSelector71
+Param=LocalizedTemplateDir:VBWizards\FramesetTemplates
+Param=LocalizedDLL:FSWizUI.DLL

@@ -1,0 +1,11 @@
+<configuration>
+
+	<globalization 
+	   fileencoding="us-ascii"
+	   requestencoding="iso-8859-1"
+	   responseencoding="utf-8" 
+	   culture="en-us"
+	   uiculture="de"
+	/>
+    
+</configuration>

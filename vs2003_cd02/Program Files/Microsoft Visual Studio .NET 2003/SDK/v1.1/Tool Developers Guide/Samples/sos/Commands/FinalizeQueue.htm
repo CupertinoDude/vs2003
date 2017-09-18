@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">FinalizeQueue</TD>
+					</TR>
+					<TR>
+						<TD>
+							Shows information about objects that are ready to be&nbsp;cleaned up.</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!FinalizeQueue [-detail]</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="16" cellSpacing="1" cellPadding="1" width="708" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>-detail</STRONG></TD>
+									<TD vAlign="top">
+										Gives additional information for COM objects to be cleaned up if available.</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>
+0:001&gt; !FinalizeQueue
+SyncBlock to be cleaned up: 0
+----------------------------------
+MTA interfaces to be released: 0
+Total STA interfaces to be released: 0
+----------------------------------
+generation 0 has 188 finalizable objects  (002151d8-&gt;00215478)  (00156db8-&gt;00156e08) 
+generation 1 has 12 finalizable objects  (<STRONG><FONT color=red>002151d0</FONT></STRONG>-&gt;<STRONG><FONT color=red>002151d8</FONT></STRONG>)  (<STRONG><FONT color=blue>00156d90</FONT></STRONG>-&gt;<STRONG><FONT color=blue>00156db8</FONT></STRONG>) 
+generation 2 has 100 finalizable objects  (00215050-&gt;002151d0)  (00156d80-&gt;00156d90) 
+generation 3 has 0 finalizable objects 
+generation 4 has 0 finalizable objects 
+Ready for finalization 0 objects
+ (00154f68-&gt;000b0004)  (00154f68-&gt;000b0004) 
+Statistics:
+      MT    Count TotalSize Class Name
+79ba4188        1        16 System.Threading.AutoResetEvent
+79b7cfc4        1        16 System.Threading.ManualResetEvent
+ d9189a8        1        16 System.Web.Security.FileSecurityDescriptorWrapper
+79ba849c        1        28 System.Security.Principal.WindowsIdentity
+79ba5850        3        36 System.Security.Cryptography.RNGCryptoServiceProvider
+79ba3dcc        1        40 System.Runtime.Remoting.Lifetime.LeaseManager
+79b89c0c        1        52 System.IO.StreamWriter
+ d91fb68        2        56 System.Web.Compilation.CompilationMutex
+ d91f29c        1        56 System.Web.RegularExpressions.RunatServerRegex
+ d91f214        1        56 System.Web.RegularExpressions.ServerTagsRegex
+ d91f18c        1        56 System.Web.RegularExpressions.LTRegex
+ d91f104        1        56 System.Web.RegularExpressions.GTRegex
+ d91f07c        1        56 System.Web.RegularExpressions.TextRegex
+ d91eff4        1        56 System.Web.RegularExpressions.IncludeRegex
+ d91ef6c        1        56 System.Web.RegularExpressions.CommentRegex
+ d91eee4        1        56 System.Web.RegularExpressions.DatabindExprRegex
+ d91ee5c        1        56 System.Web.RegularExpressions.AspExprRegex
+ d91edd4        1        56 System.Web.RegularExpressions.AspCodeRegex
+ d91ed4c        1        56 System.Web.RegularExpressions.EndTagRegex
+ d91ecc4        1        56 System.Web.RegularExpressions.DirectiveRegex
+ d91ec3c        1        56 System.Web.RegularExpressions.TagRegex
+79ba4324        5       120 System.Threading.Timer
+79b977c4        2       120 System.Runtime.Remoting.Contexts.Context
+ d75da6c        6       120 System.Web.NativeDirMonCompletion
+79b7edd8        3       192 System.IO.FileStream
+79b7deec        7       196 Microsoft.Win32.RegistryKey
+79bad27c        5       200 System.Security.Cryptography.HMACSHA1
+79bad90c       10       320 System.Security.Cryptography.SHA1CryptoServiceProvider
+79b687ec        5       320 System.Threading.Thread
+79bac3a4       10       640 System.Security.Cryptography.CryptoStream
+79b7e870      152      2432 System.WeakReference
+  d05704       71      3976 System.Text.RegularExpressions.Regex
+Total 300 objects
+										</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Comments</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<P>Generation 0&nbsp;contains the most recently created objects. If an object 
+								survives the next garbage&nbsp;collection, it&nbsp;is promoted&nbsp;into 
+								Generation 1, 2, and so forth. Generation 0 objects are garbage-collected most 
+								frequently.</P>
+							<P>The finalize queue results contain the number of synchronization blocks, COM 
+								interfaces, and managed objects that are ready to be garbage collected, 
+								followed by a range of addresses&nbsp;containing addresses of these objects.
+								<BR>
+								<BR>
+								<FONT face="Courier New" size="2">For example:&nbsp; generation 1 has 12 
+									finalizable objects&nbsp; (002151d0-&gt;002151d8)&nbsp; (00156d90-&gt;00156db8) </FONT>
+							<P>To get the actual objects dump out this memory using dd, as shown in the 
+								following example.<BR>
+								<br>
+								<table>
+									<tr>
+										<td class="windbgout">
+											<pre>
+0:001&gt; dd <STRONG><FONT color=red>002151d0</FONT></STRONG> <STRONG><FONT color=red>002151d8</FONT></STRONG>
+002151d0  <FONT color=black>050c22b0</FONT> 050c7bd0 050e3fd4
+0:001&gt; dd <STRONG><FONT color=blue>00156d90</FONT></STRONG> <STRONG><FONT color=blue>00156db8</FONT></STRONG>
+00156d90  0107c43c 0107c854 0107c874 0107c8b4
+00156da0  0107c9a4 <STRONG><FONT color=green>0107c9c4</FONT></STRONG> 0107ca04 0107cb08
+00156db0  0107cb28 0107d254 0519efb4
+</pre>
+										</td>
+									</tr>
+								</table>
+							</P>
+							<P>and dump out the individual objects using the DumpObj command, as shown in the 
+								following example.<BR>
+								<br>
+								<table>
+									<tr>
+										<td class="windbgout">
+											<pre>
+0:001&gt; !DumpObj <STRONG><FONT color=green>0107c9c4</FONT></STRONG> 
+Name: System.WeakReference
+MethodTable 0x79b7e870
+EEClass 0x79b7e8d4
+Size 16(0x10) bytes
+mdToken: 020000bc  (c:\windows\microsoft.net\framework\v1.0.3705\mscorlib.dll)
+FieldDesc*: 79b7e938
+      MT    Field   Offset                 Type       Attr    Value Name
+79b7e870  40002f5        4         System.Int32   instance 225907768 m_handle
+79b7e870  40002f6        8       System.Boolean   instance        0 m_IsLongReference
+</pre>
+										</td>
+									</tr>
+								</table>
+							</P>
+							<P><FONT color="black">The statistics contain the number of items of each object type 
+									that are&nbsp;ready to finalize, and the combined size of those objects.</FONT></P>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

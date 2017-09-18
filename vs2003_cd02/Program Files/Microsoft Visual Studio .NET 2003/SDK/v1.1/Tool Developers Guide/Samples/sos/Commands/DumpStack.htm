@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">DumpStack</TD>
+					</TR>
+					<TR>
+						<TD>Lists the call stack for the current thread (including both managed and native 
+							calls)</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!DumpStack [-EE] [-smart] [&lt;top stack&gt; [&lt;bottom 
+							stack&gt;]]</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="123" cellSpacing="1" cellPadding="1" width="771" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="121"><STRONG>-EE</STRONG></TD>
+									<TD vAlign="top">Shows only managed calls</TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="121"><STRONG>-smart</STRONG></TD>
+									<TD vAlign="top"></TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="121"><STRONG>&lt;top stack&gt;</STRONG></TD>
+									<TD vAlign="top"></TD>
+								</TR>
+								<TR>
+									<TD vAlign="top" width="121"><STRONG>&lt;bottom stack&gt;</STRONG></TD>
+									<TD vAlign="top"></TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>
+0:001&gt; !DumpStack -smart
+Current frame: 7ffe0304
+ChildEBP RetAddr  Caller,Callee
+EIP:7ffe0304 EBP:75f804 ESP:75f768 -- EIP:0 EBP:0 ESP:0<BR><BR>
+0:001&gt; !DumpStack
+Current frame: 7ffe0304
+ChildEBP RetAddr  Caller,Callee
+0075f764 77f7f49f ntdll!NtWaitForMultipleObjects+0xc [D:\xpclient\base\ntdll\daytona\obj\i386\usrstubs.asm:2283]
+0075f768 77e74bd8 kernel32!WaitForMultipleObjectsEx+0x12c [d:\xpclient\base\win32\client\synch.c:1572], calling ntdll!ZwWaitForMultipleObjects [D:\xpclient\base\ntdll\daytona\obj\i386\usrstubs.asm:2283]
+0075f790 77f5168d ntdll!RtlFreeHeap+0x5c9 [d:\xpclient\base\ntos\rtl\heap.c:3838], calling ntdll!__SEH_epilog [d:\xpclient\base\crts\crtw32\misc\i386\sehprolg.asm:53]
+0075f7b8 791d1c5a mscorsvr!setCallAddrInterlocked+0x20 [e:\com99\src\vm\i386\cgencpu.h:334], calling mscorsvr!CompareExchangeMP [e:\com99\src\vm\i386\cgenx86.cpp:2677]
+0075f7c8 791d1c2f mscorsvr!InterLockedReplacePrestub+0x40 [e:\com99\src\vm\prestub.cpp:495], calling mscorsvr!setCallAddrInterlocked [e:\com99\src\vm\i386\cgencpu.h:329]
+0075f804 791f63aa mscorsvr!Thread::DoAppropriateWaitWorker+0xc1 [e:\com99\src\vm\threads.cpp:4135], calling mscorsvr!Thread::DoAppropriateAptStateWait [e:\com99\src\vm\threads.cpp:4048]
+0075f834 791f7b61 mscorsvr!Thread::DoAppropriateWait+0x46 [e:\com99\src\vm\threads.cpp:3638], calling mscorsvr!Thread::DoAppropriateWaitWorker [e:\com99\src\vm\threads.cpp:4069]
+0075f888 791f7b07 mscorsvr!WaitHandleNative::CorWaitOneNative+0x6f [e:\com99\src\vm\comwaithandle.cpp:49], calling mscorsvr!Thread::DoAppropriateWait [e:\com99\src\vm\threads.cpp:3631]
+0075f8b0 79b7ce60  (stub for System.Threading.WaitHandle.WaitOneNative), calling 0d694204
+0075f8c4 791bae90 mscorsvr!PreStubWorker+0x42 [e:\com99\src\vm\prestub.cpp:554], calling mscorsvr!MethodDesc::DoPrestub [e:\com99\src\vm\prestub.cpp:559]
+0075f8d0 0d694234 0d694234
+0075f904 79b7ce60  (stub for System.Threading.WaitHandle.WaitOneNative), calling 0d694204
+0075f908 799ad439 (<STRONG>MethodDesc</STRONG> 0x79b7cef0 +0x39 System.Threading.WaitHandle.WaitOne), calling 79b7ce5b (MethodDesc 0x79b7ce60 System.Threading.WaitHandle.WaitOneNative)
+0075f91c 0de6099e (MethodDesc 0xd78bbc8 +0x1e Behavior1.Behavior1.Start)
+0075f93c 0de608c5 (MethodDesc 0xd78b480 +0xe5 Test1Page.Test1.Button1_Click), calling (MethodDesc 0xd78bbc8 Behavior1.Behavior1.Start)
+0075f974 0de8ce65 (MethodDesc 0xda6a0b0 +0x6d System.Web.UI.WebControls.Button.OnClick), calling 79b7847b (MethodDesc 0x79b78480 System.EventHandler.Invoke)
+0075f98c 0de8cc42 (MethodDesc 0xda6a100 +0x3a System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent)
+0075f99c 0de8cbf3 (MethodDesc 0xda69138 +0x13 System.Web.UI.Page.RaisePostBackEvent)
+0075f9a0 0de8cb52 (MethodDesc 0xda69128 +0x22 System.Web.UI.Page.RaisePostBackEvent)
+0075f9b4 0daccd10 (MethodDesc 0xda69328 +0x4f0 System.Web.UI.Page.ProcessRequestMain), calling (MethodDesc 0xda69128 System.Web.UI.Page.RaisePostBackEvent)
+0075f9d0 0dacc5b7 (MethodDesc 0xda691a8 +0x1f System.Web.UI.Page.set_FileDependencies), calling (MethodDesc 0xd75b308 System.Web.ResponseDependencyList.AddDependencies)
+0075f9dc 0de6023d (MethodDesc 0xd78b798 +0x35 ASP.Test1Page_aspx.FrameworkInitialize), calling (MethodDesc 0xda69278 System.Web.UI.Page.set_EnableViewStateMac)
+0075f9ec 0dacba7f (MethodDesc 0xda692e8 +0x77 System.Web.UI.Page.ProcessRequest), calling (MethodDesc 0xda69328 System.Web.UI.Page.ProcessRequestMain)
+0075fa24 0dacb203 (MethodDesc 0xda692d8 +0x13 System.Web.UI.Page.ProcessRequest), calling (MethodDesc 0xda692e8 System.Web.UI.Page.ProcessRequest)
+0075fa2c 0dacb1dc (MethodDesc 0xd9136e8 +0xb4 System.Web.HttpApplication/CallHandlerExecutionStep.Execute)
+0075fa3c 0d924b70 (MethodDesc 0xd910e70 +0x58 System.Web.HttpApplication.ExecuteStep)
+0075fa50 0d920225 (MethodDesc 0xd75a360 +0x35 System.Web.HttpContext.GetConfig), calling (MethodDesc 0xd75d098 System.Web.Configuration.HttpConfigurationRecord.get_Item)
+0075fa60 791c4a1d mscorsvr!ThreadNative::FastGetCurrentThread+0x6 [e:\com99\src\vm\comsynchronizable.cpp:606], calling  (JitHelp: GET_THREAD)
+0075fa64 0d9249e1 (MethodDesc 0xd910e10 +0xb1 System.Web.HttpApplication.SetCulture), calling mscorsvr!JIT_UP_WriteBarrierReg_Buf
+0075fa78 0d92473e (MethodDesc 0xd910e50 +0x9e System.Web.HttpApplication.OnThreadEnter), calling (MethodDesc 0xd910e10 System.Web.HttpApplication.SetCulture)
+0075fa80 0d924543 (MethodDesc 0xd910ea0 +0xf3 System.Web.HttpApplication.ResumeSteps), calling (MethodDesc 0xd910e70 System.Web.HttpApplication.ExecuteStep)
+0075fab4 79980b68 (MethodDesc 0x79b7d668 +0x10 System.Runtime.InteropServices.GCHandle.Alloc), calling (MethodDesc 0x79b7d648 System.Runtime.InteropServices.GCHandle..ctor)
+0075fac8 0d924413 (MethodDesc 0xd910f20 +0xe3 System.Web.HttpApplication.System.Web.IHttpAsyncHandler.BeginProcessRequest), calling (MethodDesc 0xd910ea0 System.Web.HttpApplication.ResumeSteps)
+0075fadc 0d6b8ee8 (MethodDesc 0xd753700 +0x1e0 System.Web.HttpRuntime.ProcessRequestInternal)
+0075fb04 0de8a161 (MethodDesc 0xd759e80 +0x19 System.Web.RequestQueue.GetRequestToExecute), calling mscorsvr!ThreadPoolNative::CorGetAvailableThreads [e:\com99\src\vm\comthreadpool.cpp:90]
+0075fb20 0d6b8ccd (MethodDesc 0xd7537f0 +0x3d System.Web.HttpRuntime.ProcessRequest), calling (MethodDesc 0xd753700 System.Web.HttpRuntime.ProcessRequestInternal)
+0075fb2c 0d6b5bc7 (MethodDesc 0xd752248 +0xb7 System.Web.Hosting.ISAPIRuntime.ProcessRequest), calling (MethodDesc 0xd7537f0 System.Web.HttpRuntime.ProcessRequest)
+0075fb34 0014db14 0014db14, calling 00cda128
+0075fb3c 7921be8f mscorsvr!ComToComPlusWorker+0x176 [e:\com99\src\vm\comcall.cpp:608]
+0075fb6c 77e776cd kernel32!BaseSetLastNTError+0x13 [d:\xpclient\base\win32\client\error.c:205], calling kernel32!SetLastError [d:\xpclient\base\win32\client\error.c:161]
+0075fb78 77ea6bac kernel32!ActivateActCtx+0x28 [d:\xpclient\base\win32\client\sxs.c:994], calling kernel32!BaseSetLastNTError [d:\xpclient\base\win32\client\error.c:200]
+0075fba4 79204361 mscorsvr!ComToComPlusWorker_Wrapper+0x38 [e:\com99\src\vm\comcall.cpp:374]
+0075fbe4 791c4d17 mscorsvr!Thread::DoADCallBack+0x5c [e:\com99\src\vm\threads.cpp:9035]
+0075fc24 791c0b64 mscorsvr!SystemDomain::GetAppDomainAtId+0x12 [e:\com99\src\vm\appdomain.cpp:2026], calling mscorsvr!ArrayList::GetPtr
+0075fc2c 7921bba5 mscorsvr!ComToComPlusWorker+0x6d [e:\com99\src\vm\comcall.cpp:418], calling mscorsvr!Thread::DoADCallBack [e:\com99\src\vm\threads.cpp:9012]
+0075fc88 7921e3be mscorsvr!SimpleComCallWrapper::GetDomainSynchronized+0x1b [e:\com99\src\vm\comcallwrapper.h:999], calling mscorsvr!SystemDomain::GetAppDomainAtId [e:\com99\src\vm\appdomain.cpp:2020]
+0075fc94 00cda179 00cda179, calling mscorsvr!ComToComPlusWorker [e:\com99\src\vm\comcall.cpp:389]
+0075fcd4 0014db14 0014db14, calling 00cda128
+0075fcd8 00421eae aspnet_wp!CAsyncPipeManager::ProcessMessage+0x1cf [e:\dna\src\xsp\wp\asyncpipemanager.cxx:704]
+0075fd48 77f52dbb ntdll!RtlAllocateHeap+0x81f [d:\xpclient\base\ntos\rtl\heap.c:2036], calling ntdll!RtlpUpdateIndexInsertBlock [d:\xpclient\base\ntos\rtl\heap.c:7946]
+0075fd4c 77f52e0f ntdll!RtlAllocateHeap+0x3b0 [d:\xpclient\base\ntos\rtl\heap.c:2171], calling ntdll!RtlLeaveCriticalSection [D:\xpclient\base\ntdll\i386\critsect.asm:271]
+0075fd50 77f5180b ntdll!RtlAllocateHeap+0xdc1 [d:\xpclient\base\ntos\rtl\heap.c:2446], calling ntdll!__SEH_epilog [d:\xpclient\base\crts\crtw32\misc\i386\sehprolg.asm:53]
+0075fdc4 77f519f3 ntdll!LdrpSnapThunk+0xbb [d:\xpclient\base\ntdll\ldrsnap.c:3857], calling ntdll!LdrpNameToOrdinal [d:\xpclient\base\ntdll\ldrsnap.c:4045]
+0075ff08 00421aff aspnet_wp!CAsyncPipeManager::StartRead+0xb8 [e:\dna\src\xsp\wp\asyncpipemanager.cxx:341], calling aspnet_wp!TimeClass::SnapCurrentTime [e:\dna\src\xsp\wp\timeclass.cxx:28]
+0075ff24 0042218c aspnet_wp!CAsyncPipeManager::ProcessCompletion+0x1d4 [e:\dna\src\xsp\wp\asyncpipemanager.cxx:516], calling aspnet_wp!CAsyncPipeManager::ProcessMessage [e:\dna\src\xsp\wp\asyncpipemanager.cxx:597]
+0075ff40 7a13ecc2 aspnet_isapi!CorThreadPoolCompletionCallback+0x41 [e:\dna\src\xsp\isapi\threadpool.cxx:773]
+0075ff84 7923ce52 mscorsvr!ThreadpoolMgr::CompletionPortThreadStart+0x93 [e:\com99\src\vm\win32threadpool.cpp:1980]
+0075ffb4 77e802ed kernel32!BaseThreadStart+0x37 [d:\xpclient\base\win32\client\support.c:492]
+
+										</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Comments</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<P>DumpStack provides a combined native and managed stack trace.<BR>
+								For managed calls the stack frame contains a method description for the managed 
+								function in addition to
+								<BR>
+								<FONT color="black">the return address</FONT></P>
+							<P><FONT size="2"><FONT face="Courier New">0075f93c 0de608c5 (MethodDesc 0xd78b480 +0xe5 
+										Test1Page.Test1.Button1_Click), calling (MethodDesc 0xd78bbc8 
+										Behavior1.Behavior1.Start)</FONT>
+									<BR>
+									<BR>
+								</FONT><FONT size="3">For a more precise managed callstack see the ClrStack 
+									command.</FONT></P>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>

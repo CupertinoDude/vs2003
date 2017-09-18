@@ -1,0 +1,6 @@
+Mobile Capabilities
+This sample shows you the properties available to you from
+the <b>MobileCapabilities</b> object. The sample uses reflection
+to fill a List mobile control with all the public properties available,
+and allows you to view the value of a property using the 
+<b>DataBinder.Eval</b> technique of data binding.

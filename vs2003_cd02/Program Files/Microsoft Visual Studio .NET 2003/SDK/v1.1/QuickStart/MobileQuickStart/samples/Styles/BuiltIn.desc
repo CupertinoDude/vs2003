@@ -1,0 +1,5 @@
+Built-in Styles
+This sample demonstrates how you can have your controls refer to 
+the <b>Title</b> and <b>Error</b> built-in styles, using the 
+<b>StyleReference</b> property.
+<p>

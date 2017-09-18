@@ -1,0 +1,7 @@
+;
+; English (US) strings
+;
+ok=Ok
+cancel=Cancel
+continue=Continue
+close=Close

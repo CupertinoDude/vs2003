@@ -1,0 +1,5 @@
+Data Binding to a List
+This sample demonstrates how to dynamically data bind a List mobile control to 
+a collection of objects. By setting the <b>DataTextField</b> and 
+<b>DataValueField</b> attributes of the control, you can define what
+properties of each object are bound to a list item.

@@ -1,0 +1,8 @@
+Applying Style Properties
+This sample demonstrates how you can use style properties such as 
+<b>FontName</b>, <b>FontSize</b>, <b>ForeColor</b>, and <b>BackColor</b>
+to enhance rendering where supported on the target device.
+This sample is similar to the "Responding To Control Events" sample
+in an earlier section, but the first form now has color properties defined,
+and the contents have font properties defined. 
+<p>

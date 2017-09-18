@@ -1,0 +1,6 @@
+VSWIZARD 6.0
+Wizard={D56785D6-6616-4F59-BC8F-5B9AADEB735E}
+Param="VJSharp"
+Param="VJSharpImportProjectFolder\Templates\"
+Param=".vjsproj"
+Param="{E6FDF86B-F3D1-11D4-8576-0002A516ECE8}"

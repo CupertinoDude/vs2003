@@ -1,0 +1,9 @@
+Displaying Images
+This sample demonstrates how you can specify a set of images from which
+one will be selected based upon the characteristics of the display device.
+In this case, if the preferred image type is BMP (as is the case on 
+Openwave.com 3.x browser), a BMP image is provided.  Similar checks are made for
+WBMP (preferred on other WML browsers), and PNG.  Otherwise,
+a GIF image is provided.
+
+

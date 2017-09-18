@@ -1,0 +1,66 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE HelpTOC>
+<HelpTOC DTDVersion = "1.0" Id="NETSDK_TOC">
+<HelpTOCNode Title=".NET Framework SDK" Url="/sdkstart/html/sdkstart.htm">
+	<HelpTOCNode NodeType="TOC" Url="cpguidenf"/>
+	<HelpTOCNode Title="Reference" Url="/sdkstart/html/cpframeworkref_start.htm">
+		<HelpTOCNode NodeType="TOC" Url="cpref"/>
+		<HelpTOCNode Title="Compiler and Language Reference" Url="/sdkstart/html/cpcsvbvcjscript_start.htm">
+			<HelpTOCNode Title="Visual Basic" Url="/sdkstart/html/cpcsvbvcjscript_visual_basic.htm">
+				<HelpTOCNode NodeType="TOC" Url="vblr7net"/>
+				<HelpTOCNode NodeType="TOC" Url="vblsnet"/>
+			</HelpTOCNode>
+			<HelpTOCNode Title="C#" Url="/sdkstart/html/cpcsvbvcjscript_c_.htm">
+				<HelpTOCNode NodeType="TOC" Url="cscomp"/>
+				<HelpTOCNode NodeType="TOC" Url="csref"/>
+				<HelpTOCNode NodeType="TOC" Url="csspec"/>
+			</HelpTOCNode>
+			<HelpTOCNode NodeType="TOC" Url="dv_vjsharp"/>
+			<HelpTOCNode Title="Managed C++" Url="/sdkstart/html/cpcsvbvcjscript_managed_c__.htm">
+				<HelpTOCNode NodeType="TOC" Url="vcmex"/>
+				<HelpTOCNode NodeType="TOC" Url="vccore"/>
+				<HelpTOCNode NodeType="TOC" Url="vclang"/>
+			</HelpTOCNode>
+			<HelpTOCNode NodeType="TOC" Url="jscriptnet"/>
+		</HelpTOCNode>
+		<HelpTOCNode NodeType="TOC" Url="cpgenref"/>
+	</HelpTOCNode>
+	<HelpTOCNode Title="Tools and Debugger" Url="/sdkstart/html/cptoolsdebug_start.htm">
+		<HelpTOCNode NodeType="TOC" Url="cptools"/>
+		<HelpTOCNode Title="CLR Debugger" Url="/sdkstart/html/vcoriTheCOM20SDKDebugger.htm">
+			<HelpTOCNode NodeType="TOC" Url="vsdebug"/>
+		</HelpTOCNode>
+	</HelpTOCNode>
+	<HelpTOCNode NodeType="TOC" Url="cpqstart"/>
+	<HelpTOCNode NodeType="TOC" Url="cpsamples"/>
+	<HelpTOCNode NodeType="TOC" Url="cptutorials"/>
+	<HelpTOCNode Title="Glossary" Url="/sdkstart/html/cpconglossary.htm">
+		<HelpTOCNode Title="A" Url="/sdkstart/html/cpgloa.htm"/>
+		<HelpTOCNode Title="B" Url="/sdkstart/html/cpglob.htm"/>
+		<HelpTOCNode Title="C" Url="/sdkstart/html/cpgloc.htm"/>
+		<HelpTOCNode Title="D" Url="/sdkstart/html/cpglod.htm"/>
+		<HelpTOCNode Title="E" Url="/sdkstart/html/cpgloe.htm"/>
+		<HelpTOCNode Title="F" Url="/sdkstart/html/cpglof.htm"/>
+		<HelpTOCNode Title="G" Url="/sdkstart/html/cpglog.htm"/>
+		<HelpTOCNode Title="H" Url="/sdkstart/html/cpgloh.htm"/>
+		<HelpTOCNode Title="I" Url="/sdkstart/html/cpgloi.htm"/>
+		<HelpTOCNode Title="J" Url="/sdkstart/html/cpgloj.htm"/>
+		<HelpTOCNode Title="K" Url="/sdkstart/html/cpglok.htm"/>
+		<HelpTOCNode Title="L" Url="/sdkstart/html/cpglol.htm"/>
+		<HelpTOCNode Title="M" Url="/sdkstart/html/cpglom.htm"/>
+		<HelpTOCNode Title="N" Url="/sdkstart/html/cpglon.htm"/>
+		<HelpTOCNode Title="O" Url="/sdkstart/html/cpgloo.htm"/>
+		<HelpTOCNode Title="P" Url="/sdkstart/html/cpglop.htm"/>
+		<HelpTOCNode Title="Q" Url="/sdkstart/html/cpgloq.htm"/>
+		<HelpTOCNode Title="R" Url="/sdkstart/html/cpglor.htm"/>
+		<HelpTOCNode Title="S" Url="/sdkstart/html/cpglos.htm"/>
+		<HelpTOCNode Title="T" Url="/sdkstart/html/cpglot.htm"/>
+		<HelpTOCNode Title="U" Url="/sdkstart/html/cpglou.htm"/>
+		<HelpTOCNode Title="V" Url="/sdkstart/html/cpglov.htm"/>
+		<HelpTOCNode Title="W" Url="/sdkstart/html/cpglow.htm"/>
+		<HelpTOCNode Title="X" Url="/sdkstart/html/cpglox.htm"/>
+		<HelpTOCNode Title="Y" Url="/sdkstart/html/cpgloy.htm"/>
+		<HelpTOCNode Title="Z" Url="/sdkstart/html/cpgloz.htm"/>
+	</HelpTOCNode>
+</HelpTOCNode>
+</HelpTOC>

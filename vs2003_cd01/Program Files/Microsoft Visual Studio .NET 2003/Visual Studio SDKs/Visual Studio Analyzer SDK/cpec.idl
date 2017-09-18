@@ -1,0 +1,542 @@
+//-----------------------------------------------------------------------------
+// Microsoft VSEE
+//
+// Microsoft Confidential
+// Copyright 1995-2000 Microsoft Corporation. All Rights Reserved.
+//
+// @doc EXTERNAL
+// @module CPEC.idl-IDL source for VS Analyzer PEC Control |
+// IDL source for public PEC control interfaces
+//-----------------------------------------------------------------------------
+
+// Includes -------------------------------------------------------------------
+
+#ifndef _CPEC_IDL_
+#define _CPEC_IDL_
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+import "clecinfo.idl";
+import "RuntimeVariablesInfo.idl";
+
+typedef 
+[
+	v1_enum, 
+	uuid(6c736dBA-75F5-43f9-9204-DE2F405B24FF),
+	helpstring("Analyzer Component Status")
+]
+enum eVSAnalyzerComponentStatus
+{
+	eComponentStatusUnknown,
+	eComponentInactive,
+	eComponentActive
+} eVSAnalyzerComponentStatus;
+
+typedef 
+[
+	v1_enum, 
+	uuid(6c736dBD-75F5-43f9-9204-DE2F405B24FF),
+	helpstring("Analyzer Operating System Information")
+]
+enum eVSAnalyzerOperatingSystemInfo 
+{
+	eOperatingSystemUnknown,
+	eWinNt,
+	eWin9x
+} eVSAnalyzerOperatingSystemInfo;
+
+typedef 
+[
+	v1_enum, 
+	uuid(6c736dBE-75F5-43f9-9204-DE2F405B24FF),
+	helpstring("Analyzer System Capabilities")
+] 
+enum eVSAnalyzerCapabilities 
+{
+	eCapabilitiesUnknown = 0,
+	eAnalyzerComEnabled = 1
+} eVSAnalyzerCapabilities;
+
+// Interfaces -----------------------------------------------------------------
+
+//----------------------------------------------------------------------------- 
+// Name: ISystemDebugEventCategory 
+// 
+// @interface ISystemDebugEventCategory |
+// Interface for information about a VS Analyzer Event/Category.
+// 
+// @base public | IDispatch 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736dB8-75F5-43f9-9204-DE2F405B24FF),
+	helpstring("VS Analyzer Event Category Information"),
+	dual
+]
+interface ISystemDebugEventCategory : IDispatch
+{
+	[propget]
+	[id(1), helpstring("property Category ID")]
+	HRESULT EventCategoryId([out, retval] BSTR * pbstrEventCategoryId);
+
+	[propget]
+	[id(2), helpstring("property Source ID")]
+	HRESULT EventSourceId([out, retval] BSTR * pbstrEventSourceId);
+
+	[propget]
+	[id(3), helpstring("property Parent Category ID")]
+	HRESULT EventParentId([out, retval] BSTR * pbstrParentId);
+
+	[propget]
+	[id(4), helpstring("property Visible Name (non-localized)")]
+	HRESULT VisibleName([out, retval] BSTR * pbstrVisibleName);
+
+	[propget]
+	[id(5), helpstring("property Display Name (localized)")]
+	HRESULT DisplayName([out, retval] BSTR * pbstrDisplayName);
+
+	[propget]
+	[id(6), helpstring("property Description")]
+	HRESULT Description([out, retval] BSTR * pbstrDescription);
+
+	[propget]
+	[id(7), helpstring("property Dynamic")]
+	HRESULT IsDynamic([out, retval] VARIANT_BOOL * pfDynamic);
+
+	[propget]
+	[id(8), helpstring("property IsEvent")]
+	HRESULT IsEvent([out, retval] VARIANT_BOOL * pfEvent);
+
+	[propget]
+	[id(9), helpstring("property Event Type")]
+	HRESULT EventType([out, retval] LONG * plEventType);
+};
+
+//----------------------------------------------------------------------------- 
+// Name: ISystemDebugComponent 
+// 
+// @interface ISystemDebugComponent |
+// Interface for information about a VS Analyzer Component.
+// 
+// @base public | IDispatch 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736dB9-75F5-43f9-9204-DE2F405B24FF),
+	helpstring("VS Analyzer Component Information"),
+	dual
+]
+interface ISystemDebugComponent : IDispatch
+{
+	[propget]
+	[id(1), helpstring("property Component ID")]
+	HRESULT ComponentId([out, retval] BSTR * pbstrComponentId);
+
+	[propget]
+	[id(2), helpstring("property Visible Name")]
+	HRESULT VisibleName([out, retval] BSTR * pbstrVisibleName);
+
+	[propget]
+	[id(3), helpstring("property Dynamic")]
+	HRESULT IsDynamic([out, retval] VARIANT_BOOL * pfDynamic);
+
+	[propget]
+	[id(4), helpstring("property Component Status")]
+	HRESULT ComponentStatus([out, retval] eVSAnalyzerComponentStatus * peComponentStatus);
+};
+
+//----------------------------------------------------------------------------- 
+// Name: ISystemDebugProcess 
+// 
+// @interface ISystemDebugProcess |
+// Interface for information about a VS Analyzer Process.
+// 
+// @base public | IDispatch 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736dBB-75F5-43f9-9204-DE2F405B24FF),
+	helpstring("VS Analyzer Process Information"),
+	dual
+]
+interface ISystemDebugProcess : IDispatch
+{
+	[propget]
+	[id(1), helpstring("property Visible Name")]
+	HRESULT VisibleName([out, retval] BSTR * pbstrVisibleName);
+
+	[propget]
+	[id(2), helpstring("property ProcessId")]
+	HRESULT ProcessId([out, retval] int * piProcessId);
+};
+
+//----------------------------------------------------------------------------- 
+// Name: ISystemDebugMachine 
+// 
+// @interface ISystemDebugMachine |
+// Interface for information about a VS Analyzer Machine
+// 
+// @base public | IDispatch 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736dBC-75F5-43f9-9204-DE2F405B24FF),
+	helpstring("VS Analyzer Machine Information"),
+	dual
+]
+interface ISystemDebugMachine : IDispatch
+{
+	[propget]
+	[id(1), helpstring("property Visible Name")]
+	HRESULT VisibleName([out, retval] BSTR * pbstrVisibleName);
+
+	[propget]
+	[id(2), helpstring("property MachineId")]
+	HRESULT MachineId([out, retval] int * piMachineId);
+
+	[propget]
+	[id(3), helpstring("property OperatingSystemInfo")]
+	HRESULT OperatingSystemInfo([out, retval] eVSAnalyzerOperatingSystemInfo * pVSAnalyzerOsInfo);
+
+	[propget]
+	[id(4), helpstring("property Capabilities")]
+	HRESULT Capabilities([out, retval] eVSAnalyzerCapabilities * pCapabilities);
+};
+
+//----------------------------------------------------------------------------- 
+// Name: ISystemDebugEventsEnumComponents 
+// 
+// @interface ISystemDebugEventsEnumComponents |
+// Enumerate VS Analyzer Event Source components.
+// 
+// @base public | IUnknown 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736dFA-C552-11d2-9648-00105AA316F7),
+	helpstring("Analyzer interface for enumerating component")
+]
+interface ISystemDebugEventsEnumComponents : IUnknown 
+{
+	// @meth HRESULT | Next | Get next element.
+	[helpstring("method Next")]
+	HRESULT Next(
+		[in] ULONG cElements, 
+		[out, size_is(cElements),length_is(*pcElementsFetched)] ISystemDebugComponent ** ppIComponent,
+		[out, optional] ULONG *pcElementsFetched
+		);
+
+	// @meth HRESULT | Skip | Skip elements.
+	[helpstring("method Skip")]
+	HRESULT Skip(
+		[in] ULONG cElements
+		);
+
+	// @meth HRESULT | Clone | Duplicate this enumerator.
+	[helpstring("method Clone")]
+	HRESULT Clone(
+		[out, retval] ISystemDebugEventsEnumComponents **ppIDebugEventsEnumComponents
+		);
+
+	// @meth HRESULT | Reset | Reset this enumerator.
+	[helpstring("method Reset")]
+	HRESULT Reset();
+};
+
+//----------------------------------------------------------------------------- 
+// Name: ISystemDebugEventsEnumEvents 
+// 
+// @interface ISystemDebugEventsEnumEvents |
+// Enumerate VS Analyzer Events.
+// 
+// @base public | IUnknown 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736dFB-C552-11d2-9648-00105AA316F7),
+	helpstring("Analyzer interface for enumerating events and categories")
+]
+interface ISystemDebugEventsEnumEvents : IUnknown 
+{
+	// @meth HRESULT | Next | Get next element.
+	[helpstring("method Next")]
+	HRESULT Next(
+		[in] ULONG cElements, 
+		[out, size_is(cElements),length_is(*pcElementsFetched)] ISystemDebugEventCategory ** ppIEventCategoryInfo, 
+		[out, optional] ULONG *pcElementsFetched
+		);
+
+	// @meth HRESULT | Skip | Skip elements
+	[helpstring("method Skip")]
+	HRESULT Skip([in] ULONG cElements);
+
+	// @meth HRESULT | Clone | Duplicate this enumerator.
+	[helpstring("method Clone")]
+	HRESULT Clone([out, retval] ISystemDebugEventsEnumEvents **ppIDebugEventsEnumEvents);
+
+	// @meth HRESULT | Reset | Reset this enumerator.
+	[helpstring("method Reset")]
+	HRESULT Reset();
+};
+
+//----------------------------------------------------------------------------- 
+// Name: ISystemDebugEventsEnumConnectedMachines 
+// 
+// @interface ISystemDebugEventsEnumConnectedMachines |
+// Enumerate machine connections.
+// 
+// @base public | IUnknown 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736dFC-C552-11d2-9648-00105AA316F7),
+	helpstring("Analyzer interface for enumerating connected machines")
+]
+interface ISystemDebugEventsEnumConnectedMachines : IUnknown 
+{
+	// @meth HRESULT | Next | Get next element.
+	[helpstring("method Next")]
+	HRESULT Next(
+		[in] ULONG cElements, 
+		[out, size_is(cElements),length_is(*pcElementsFetched)] ISystemDebugMachine ** ppIMachine, 
+		[out, optional] ULONG *pcElementsFetched
+		);
+
+	// @meth HRESULT | Skip | Skip elements.
+	[helpstring("method Skip")]
+	HRESULT Skip(
+		[in] ULONG cElements
+		);
+
+	// @meth HRESULT | Clone | Duplicate this enumerator.
+	[helpstring("method Clone")]
+	HRESULT Clone(
+		[out, retval] ISystemDebugEventsEnumConnectedMachines **ppIDebugEventsEnumConnnectedMachines
+		);
+
+	// @meth HRESULT | Reset | Reset this enumerator.
+	[helpstring("method Reset")]
+	HRESULT Reset();
+};
+
+//----------------------------------------------------------------------------- 
+// Name: ISystemDebugEventsEnumProcesses 
+// 
+// @interface ISystemDebugEventsEnumProcesses |
+// Enumerate processes.
+// 
+// @base public | IUnknown 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736d26-C5CE-11d2-9648-00105AA316F7),
+	helpstring("Analyzer method for enumerating processes")
+]
+interface ISystemDebugEventsEnumProcesses : IUnknown 
+{
+	// @meth HRESULT | Next | Get next element.
+	HRESULT Next(
+		[in] ULONG cElements, 
+		[out, size_is(cElements),length_is(*pcElementsFetched)] ISystemDebugProcess ** ppIProcess, 
+		[out, optional] ULONG *pcElementsFetched
+		);
+
+	// @meth HRESULT | Skip | Skip elements.
+	HRESULT Skip(
+		[in] ULONG cElements
+		);
+
+	// @meth HRESULT | Clone | Duplicate this enumerator.
+	HRESULT Clone(
+		[out, retval] ISystemDebugEventsEnumProcesses **ppIDebugEventsEnumProcesses
+		);
+
+	// @meth HRESULT | Reset | Reset this enumerator.
+	HRESULT Reset();
+};
+
+//----------------------------------------------------------------------------- 
+// Name: ISystemDebugControlPEC 
+// 
+// @interface ISystemDebugControlPEC |
+// Access control to the VS Analyzer Primary Event Collector (PEC).
+// This interface was introduced in VS7.0.
+// 
+// @base public | IUnknown 
+//----------------------------------------------------------------------------- 
+[
+	uuid(6c736d9A-C533-11d2-9648-00105AA316F7),
+	helpstring("Analyzer interface for controlling the Primary Event Collector (PEC)"),
+	dual
+]
+interface ISystemDebugControlPEC : IDispatch
+{
+	// @meth HRESULT | OpenSession | Open a new session with the PEC
+	[helpstring("method OpenSession")]
+	HRESULT OpenSession(
+		[out, retval] int * pnSessionId		//@parm [out] Session Id
+		);
+
+	// @meth HRESULT | CloseSession | Close a session with the PEC
+	[helpstring("method CloseSession")]
+	HRESULT CloseSession(
+		[in] int nSessionId		//@parm [out] Session Id
+		);
+
+	// @meth HRESULT | EnumerateAllComponents | Get the component enumerator interface.
+	[helpstring("method EnumerateAllComponents")]
+	HRESULT EnumerateAllComponents(
+		[in] int nSessionId,							//@parm [in] Session ID
+		[out, retval] ISystemDebugEventsEnumComponents **pEnum		//@parm The enumerator interface
+		);
+
+	// @meth HRESULT | EnumerateMachineComponetns | Get the component enumerateor interface for specific machine.
+	[helpstring("method EnumerateMachineComponents")]
+	HRESULT EnumerateMachineComponents(
+		[in] int nSessionId,						//@parm Session Id
+		[in] int nMachineId, 						//@parm Machine Id
+		[out, retval] ISystemDebugEventsEnumComponents **pEnum		//@parm The enumerator interface
+		);
+
+	// @meth HRESULT | EnumerateAllEvents | Get the events enumerator interface.
+	[helpstring("method EnumerateAllEvents")]
+	HRESULT EnumerateAllEvents(
+		[in] int nSessionId,					//@parm [in] Session Id
+		[out, retval] ISystemDebugEventsEnumEvents **pEnum	//@parm [out] The enumerator interface
+		);
+
+	// @meth HRESULT | EnumerateComponentEvents | Get the events enumerator interface for a specific component.
+	[helpstring("method EnumerateComponentEvents")]
+	HRESULT EnumerateComponentEvents(
+		[in] int nSessionId,					//@parm [in] Session Id
+		[in] GUID guidComponentId,				//@parm [in] Id of the parent component
+		[out, retval] ISystemDebugEventsEnumEvents **pEnum	//@parm [out] The enumerator interface
+		);
+
+	// @meth HRESULT | EnumerateConnectedMachines | Get the machines enumerator interface.
+	[helpstring("method EnumerateConnectedMachines")]
+	HRESULT EnumerateConnectedMachines(
+		[in] int nSessionId,		//@parm [in] Session ID
+		[out, retval] ISystemDebugEventsEnumConnectedMachines **pEnum //@parm [out] The enumerator interface
+		);
+
+	// @meth HRESULT | EnumerateMachineProcesses | Get the process enumerateor interface for a specific machine.
+	[helpstring("method EnumerateMachineProcesses")]
+	HRESULT EnumerateMachineProcesses(
+		[in] int nSessionId,						//@parm Session Id
+		[in] int nMachineId, 						//@parm Machine Id
+		[out, retval] ISystemDebugEventsEnumProcesses **pEnum		//@parm The enumerator interface
+		);
+
+	// @meth HRESULT | ConnectToMachine | Connect to a machine.
+	// @comm The return result determines if a connection is made or not.
+	// @comm If the return result is E_FAIL, then call GetMachineConnectionInfo
+	// @comm to determine who is already connected to the machine.  All other
+	// @comm errors are unrecoverable.
+	[helpstring("method ConnectToMachine")]
+	HRESULT ConnectToMachine( 
+		[in] int nSessionId,			//@parm [in] Session Id
+		[in] BSTR strMachineName,		//@parm [in] Machine name.
+		[out, retval] int * pnMachineId			//@parm [out] ID representing the machine connected.
+		);
+
+	// @meth HRESULT | GetMachineInfo | Get information about a connected machine.
+	[helpstring("method GetMachineInfo")]
+	HRESULT GetMachineInfo(
+		[in] int nMachineId,							// @parm [in] Machine Id
+		[out, retval] ISystemDebugMachine ** ppIMachine			// @parm Interface for info about remote machine
+		);
+
+	// @meth HRESULT | GetMachineConnectionInfo | Get a unconnected machine's connection information
+	[helpstring("method GetMachineConnectionInfo")]
+	HRESULT GetMachineConnectionInfo(
+		[in] BSTR strMachineName,						// @parm Machine name.
+		[out, retval] struct SystemDebugEventConnectionInfo** ppConnectionInfo
+		// @comm If machine is exclusively connected to someone else, 
+		// @comm this will contain the info of the currently connected user.
+		);
+
+	// @meth HRESULT | InitiateEventFlow | Get the machine going after the ConnectToMachine succeeds. (Allows the subscriber to get ready for dynamic events)
+	[helpstring("method InitiateEventFlow")]
+	HRESULT InitiateEventFlow(
+		[in] int nSessionId,		// @parm [in] Session ID
+		[in] int nMachineId			// @parm [in] Machine ID.
+		);
+
+	[helpstring("method SetMachineBlockOnOverflow")]
+	HRESULT SetMachineBlockOnOverflow(
+		[in] int nSessionId,		//@parm [in] Session Id
+		[in] VARIANT_BOOL fBlock			//@parm [in] New block on overflow setting
+		);
+
+	[helpstring("method SetMachineDynamicFrequency")]
+	HRESULT SetMachineDynamicFrequency(
+		[in] int nSessionId,		//@parm [in] Session Id
+		[in] int nFrequency			//@parm [in] New frequency setting
+		);
+
+	// @meth 	HRESULT | DisconnectFromMachine | Disconnect from a machine.
+	[helpstring("method DisconnectFromMachine")]
+	HRESULT DisconnectFromMachine( 
+		[in] int nSessionId,				//@parm [in] Session Id
+		[in] int nMachineId					//@parm [in] ID representing the machine.
+		);
+
+	// @meth HRESULT | Subscribe | Create a subscription (register the subscriber).
+	[helpstring("method Subscribe")]
+	HRESULT Subscribe( 
+		[in] int nSessionId,				//@parm [in] Session Id
+		[in] IUnknown *punkReceiver			//@parm [in] Subscription interface.
+		);
+
+	// @meth HRESULT | Unsubsribe | Destroy a subscription (unregister the subscriber).
+	[helpstring("method Unsubscribe")]
+	HRESULT Unsubscribe( 
+		[in] int nSessionId				//@parm [in] Session Id
+		);
+
+	// @meth HRESULT | SetFilter | Set the filter for a subscriber.
+	[helpstring("method SetFilter")]
+	HRESULT SetFilter( 
+		[in] int nSessionId,			//@parm [in] Session Id
+		[in] BSTR bstrFilterText			//@parm [in] New filter expression.
+		);
+
+	// @meth HRESULT | ClearFilter | Clear the filter for a subscriber.
+	[helpstring("method ClearFilter")]
+	HRESULT ClearFilter(
+		[in] int nSessionId		//@parm [in] Session Id
+		);
+};
+
+
+
+//----------------------------------------------------------------------------- 
+// Name: ISystemDebugRuntimeVariablesSettings
+// 
+// @interface ISystemDebugRuntimeVariablesSettings |
+// Control the runtime variables settings.
+// 
+// @base public | IUnknown 
+//----------------------------------------------------------------------------- 
+
+[
+	uuid(6c736d00-1222-11d3-BA1D-00105AA31A58),
+	helpstring("Analyzer interface for setting runtime variables")
+]
+interface ISystemDebugRuntimeVariablesSettings : IUnknown
+{
+	// @meth HRESULT | SetRuntimeVariable | 
+	// Set the values for different targets for a runtime variable.
+	[helpstring("method SetRuntimeVariable")]
+	HRESULT SetRuntimeVariable(
+		[in] int nSessionId,			// @parm [in] Session ID
+		[in] BSTR bstrVariableName,		// @parm [in] Variable name.
+		[in] int nValuesCount,			// @parm [in] Count of values being passed in.
+		[in, size_is(nValuesCount)] struct SystemDebugRuntimeVariableValue Values[] // @parm [in] Array of variable value-target pairs.
+	);
+
+	// @meth HRESULT | ClearRuntimeVariables | 
+	// Clear runtime variables.
+	[helpstring("method ClearRuntimeVariables")]
+	HRESULT ClearRuntimeVariables(
+		[in] int nSessionId,			// @parm [in] Session ID
+		[in] int nVariablesCount,		// @parm [in] Variables count.
+		[in, size_is(nVariablesCount)] BSTR* pbstrNames // @parm [in] Array of variable names.
+	);
+};
+
+#endif // _CPEC_IDL_

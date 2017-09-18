@@ -1,0 +1,57 @@
+//-----------------------------------------------------------------------------
+// Microsoft VSEE
+//
+// Microsoft Confidential
+// Copyright 1995-2000 Microsoft Corporation. All Rights Reserved.
+//
+// @doc EXTERNAL
+// @module VSAEventClass.idl-IDL source for VS Analyzer Event Class (for LCE) |
+//
+//-----------------------------------------------------------------------------
+
+// Includes -------------------------------------------------------------------
+
+#ifndef _VSAEventClass_IDL_
+#define _VSAEventClass_IDL_
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+#include "vsaeventclassinterface.idl"
+
+// Constants -----------------------------------------------------------------
+
+cpp_quote ("#define PROGID_VSAEventClass OLESTR(\"MSVSA.AnalyzerEventClass.1\")")
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Classes....
+//
+////////////////////////////////////////////////////////////////////////////////
+
+[
+	uuid(6c736dA8-0A20-11d3-9667-00105AA316F7),
+	version(1.0),
+	helpstring("Microsoft Visual Studio Analyzer 2002 Event System Type Library")
+]
+library AnalyzerEventSystemLib
+{
+	importlib("stdole2.tlb");
+	importlib("stdole32.tlb");
+
+	[
+		uuid(6c736d22-0A20-11d3-9667-00105AA316F7),
+		helpstring("CAnalyzerEventSystem class")
+	]
+	coclass CAnalyzerEventSystem
+	{
+		[default] interface IVSAnalyzerEventClass;
+		interface ISystemDebugRuntimeVariableChangeNotify;
+		interface ISystemDebugFilterChangeNotify;
+	};
+
+};
+
+
+#endif // _VSAEventClass_IDL_

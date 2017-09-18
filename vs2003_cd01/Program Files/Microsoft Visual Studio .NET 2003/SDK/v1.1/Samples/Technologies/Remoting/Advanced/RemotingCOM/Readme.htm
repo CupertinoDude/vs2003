@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root xmlns:dt="urn:schemas-microsoft-com:datatypes" xmlns:d2="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><?xml-stylesheet type="text/xsl" href="..\..\..\..\readme.xsl"?><HTML><HEAD><TITLE> Remoting COM Sample</TITLE><STYLE>
+    .Title{FONT-FAMILY: Verdana;FONT-SIZE: large;COLOR: #808080}
+    </STYLE><STYLE>
+    .Heading{FONT-FAMILY: Verdana;FONT-SIZE: large}
+    </STYLE><STYLE>
+    .SectionBreak{FONT-SIZE: small;MARGIN-BOTTOM: 2em}
+    </STYLE><STYLE>
+    .SmallBreak{FONT-SIZE: small;MARGIN-BOTTOM: 1.5em}
+    </STYLE><STYLE>
+    .Text{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedHeading{FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE><STYLE>
+    .FixedText{MARGIN-LEFT: 3ex;FONT-FAMILY: Lucida Console;FONT-SIZE: x-small;FONT-WEIGHT: Bold}
+    </STYLE><STYLE>
+    .ListSansBullets {list-style-type: none;FONT-FAMILY: Verdana;FONT-SIZE: x-small}
+    </STYLE></HEAD><BODY><table><tr><td><h2 class="Title"> Remoting COM Sample</h2></td><td valign="baseline" class="Text">
+               
+              
+                  (Console Application)
+                </td></tr></table><p class="Text">
+    This document contains the release information for the .NET Framework Using COM with .NET remoting sample. You will find the following sections below: 
+    </p><ul class="Text"><li><a href="#_Sample_Overview">Overview</a></li><li><a HREF="#Hosting the service in a console application">Hosting the service in a console application</a></li><li><a HREF="#Requirements">Requirements</a></li><li><a href="#_Location_of_Sample">Location</a></li><li><a href="#_Building_the_Sample">Building the sample</a></li><li><a href="#_Running_the_Sample">Running the sample</a></li><li><a href="#_sdkvars">Notes</a></li></ul><p class="SectionBreak" /><h4 class="Heading"><a name="_Sample_Overview" />
+    Overview
+    </h4><p class="Text"> 
+This sample shows how to use remoting with COM by providing the MediaPlayer
+as a service to remoting clients.  When PT (Play Title) is selected on the client,
+the sample will play an audio as well as a video clip.  This sample assumes you have
+multimedia installed in Windows and that this service is working properly. This
+sample does not close the Media Player automatically, you have to do that
+manually after running the sample.
+</p><p class="SectionBreak" /><p class="SectionBreak" /><h4 class="Heading"><a name="#Hosting the service in a console application"></a>Hosting the service in a console application</h4><span class="Text"><p class="Text"><li>Go to the MediaPlayer/Service directory and run runme.bat from a console window.</li><p></p><li>The service will start and wait for a client to connect.</li></p></span><p class="SectionBreak" /><h4 class="Heading"><a name="#Requirements"></a>Requirements</h4><span class="Text"><p class="Text">
+This sample will only operate correctly on any version of Windows with the Common Language Runtime and Windows Media Player installed.  
+</p></span><p class="SectionBreak" /><h4 class="Heading"><a name="_Location_of_Sample" />
+    Location
+    </h4><p class="Text">
+    This sample is located in the <a href="." title="Jump to Folder" target="_blank">Technologies\Remoting\Advanced\RemotingCOM\MediaPlayer
+
+</a> subdirectory of the .NET Framework SDK samples directory.
+    </p><p class="FixedHeading">
+    For Example:
+      <p class="FixedText">
+      C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\Advanced\RemotingCOM\MediaPlayer
+
+</p></p><p class="SmallBreak" /><p class="Text">
+      This sample contains the following directory structure:
+      
+      <ul><li class="ListSansBullets"><b>\Service</b> -- 
+     
+The source files for the service as well as the host.  The
+MediaPlayer DLL is generated with tlbimp from the msdxm.ocx.
+</li></ul><ul><li class="ListSansBullets"><b>\Client</b> -- 
+     
+The source code as well as the relevant makefile for building the client
+</li></ul></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Building_the_Sample" />
+    Building the Sample
+    </h4><p class="Text">
+    In order to properly build and run this sample, the following steps need to be performed.
+    </p><p class="Text"> 
+Type <b>nmake -a all</b> from the command line.
+<p class="FixedHeading">
+  For Example:
+  </p><p class="FixedText"> 
+C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Technologies\Remoting\Advanced\RemotingCOM&gt; nmake -a all
+</p></p><p class="SectionBreak" /><h4 class="Heading"><a name="_Running_the_Sample" />
+    Running the Sample
+    </h4><p class="Text">
+    In order to run this sample, follow the instructions listed below.
+    </p><span class="Text"><ul class="Text"><li>
+Ensure the service is running by executing runme.bat (in the MediaPlayer/Service 
+directory) from a console window.
+</li></ul><ul class="Text"><li>
+Start the client by running Client.exe (in the MediaPlayer/Client) from a console 
+window and select PT to play the titles provided by this service.
+</li></ul></span><p class="SectionBreak" /><h4 class="Heading"><a name="_sdkvars" />
+    Notes
+    </h4><p class="Text">
+    For the .Net Framework samples to function properly, your Path, Include, and Lib environment variables must be set correctly. 
+    In many cases, the SDK install program updates these environment variables for you. However, if you installed the .Net Framework SDK 
+    using Visual Studio .NET, or unselected "register environment variables" during setup, these environment variables will not be updated. 
+    You can set the Path, Include and Lib environment variables by running SDKVars.bat, located in the <i>&lt;SDKRoot&gt;\Bin</i> directory. 
+    SDKVars.bat must be executed in every command shell.
+    </p></BODY></HTML></root>

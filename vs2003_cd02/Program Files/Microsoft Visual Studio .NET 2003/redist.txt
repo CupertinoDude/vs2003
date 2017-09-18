@@ -1,0 +1,317 @@
+
+The following list reflects all files available with Microsoft Visual Studio for redistribution; if you have acquired a Microsoft developer tool product other than Visual Studio, such as Visual Basic, Visual C#, Visual J# or Visual C++, the files available for redistribution with these other products are specific to such product and as such will be a subset of the following list.
+
+Visual C++ Runtime Files
+
+The following merge modules have been provided for use when redistributing the Visual C++ runtime files. Redistributing the merge modules is the recommended method for the redistribution of these files. 
+
+vc_user_atl71_rtl_x86_---.msm
+	atl71.dll (UNICODE)
+	atl71.dll (ANSI)
+
+vc_user_crt71_rtl_x86_---.msm
+	msvcr71.dll
+
+vc_user_mfc71_rtl_x86_---.msm
+	mfc71.dll
+	mfc71u.dll
+
+vc_user_mfc71_loc_rtl_x86_---.msm
+	mfc71deu.dll
+	mfc71enu.dll
+	mfc71esp.dll
+	mfc71fra.dll
+	mfc71ita.dll
+	mfc71chs.dll
+	mfc71cht.dll
+	mfc71jpn.dll
+	mfc71kor.dll
+
+vc_user_stl71_rtl_x86_---.msm
+	msvcp71.dll
+
+GDIPlus.msm
+	gdiplus.dll
+
+_____________________________________________________________
+
+Microsoft.VisualBasic.Compatibility.dll
+
+Microsoft.VisualBasic.Compatibility.Data.dll 
+
+_____________________________________________________________
+
+The following files may be redistributed as needed for the sole purpose of debugging deployed applications. It is not recommended that these files be redistributed along with applications.  Merge modules have not been provided for the redistribution of these files.
+	mfc71.pdb
+	mfc71u.pdb
+	atl71.pdb
+	msvcp71.pdb
+	msvcr71.pdb
+_____________________________________________________________
+
+ActiveX Controls
+
+msmask32_X86.msm
+
+msmask32_X86_ENU.msm
+
+VB_Control_mschart_RTL_X86_---.msm
+
+VB_Control_mschart_RTL_X86_ENU.msm
+
+_____________________________________________________________
+WMI_DECOUPLED_PROVIDER_RTL_X86_---.msm
+	Wmidcad.dll
+	wbemDC.dll
+
+WMIUTILS_RTL_X86_ENU.msm
+	wmiutils.dll
+
+_____________________________________________________________
+adodb.dll
+microsoft.mshtml.dll
+microsoft.stdformat.dll
+msdatasrc.dll
+stdole.dll
+
+_____________________________________________________________
+Smart Device Extentions Files
+
+vsd_setup.dll
+
+_____________________________________________________________
+.NET Framework Files
+
+dotnetfx.exe
+langpack.exe
+_____________________________________________________________
+.NET Compact Framework Files
+
+netcf.all.wce4.armv4.cab 
+netcf.all.wce4.armv4t.cab 
+netcf.all.wce4.mips16.cab 
+netcf.all.wce4.mipsii.cab 
+netcf.all.wce4.mipsii_fp.cab 
+netcf.all.wce4.mipsiv.cab 
+netcf.all.wce4.mipsiv_fp.cab 
+netcf.all.wce4.sh3.cab 
+netcf.all.wce4.sh4.cab 
+netcf.all.wce4.x86.cab 
+netcf.core.ppc3.arm.cab 
+netcf.core.ppc3.mips.cab 
+netcf.core.ppc3.sh3.cab 
+netcf.core.ppc3.x86.cab 
+netcf.core.wce4.armv4.cab 
+netcf.core.wce4.armv4t.cab 
+netcf.core.wce4.mips16.cab 
+netcf.core.wce4.mipsii.cab 
+netcf.core.wce4.mipsii_fp.cab 
+netcf.core.wce4.mipsiv.cab 
+netcf.core.wce4.mipsiv_fp.cab 
+netcf.core.wce4.sh3.cab 
+netcf.core.wce4.sh4.cab 
+netcf.core.wce4.x86.cab 
+System_SR_chs.CAB 
+System_SR_cht.CAB 
+System_SR_de.CAB 
+System_SR_enu.CAB 
+System_SR_es.CAB 
+System_SR_fr.CAB 
+System_SR_it.CAB 
+System_SR_ja.CAB 
+System_SR_ko.CAB 
+
+_____________________________________________________________
+The following files are required to install MSDE 2000 SP3. For information regarding MSDE redistribution rights refer to your Visual Studio .NET license agreement.
+
+required:
+sqlrun01.msi
+sqlrun02.msi
+sqlrun03.msi
+sqlrun04.msi
+sqlrun05.msi
+sqlrun06.msi
+sqlrun07.msi
+sqlrun08.msi
+sqlrun09.msi
+sqlrun10.msi
+sqlrun11.msi
+sqlrun12.msi
+sqlrun13.msi
+sqlrun14.msi
+sqlrun15.msi
+sqlrun16.msi
+SqlRun01P.msp
+SqlRun02P.msp
+SqlRun03P.msp
+SqlRun04P.msp
+SqlRun05P.msp
+SqlRun06P.msp
+SqlRun07P.msp
+SqlRun08P.msp
+SqlRun09P.msp
+SqlRun10P.msp
+SqlRun11P.msp
+SqlRun12P.msp
+SqlRun13P.msp
+SqlRun14P.msp
+SqlRun15P.msp
+SqlRun16P.msp
+sqlrun.cab
+setup.exe
+setup.rll
+sqlresld.dll
+ 
+optional:
+setup.ini
+readme.txt
+sp3readme.htm
+
+
+_____________________________________________________________
+
+
+MDAC_typ.exe
+	sqlxmlx.rll
+	odbcint.dll
+	odbctrac.dll
+	odbcconf.rsp
+	msorcl32.dll
+	msorc32r.dll
+	odbcp32r.dll
+	mscpx32r.dll
+	mscpxl32.dll
+	msxml3.dll
+	msxml3r.dll
+	dbmsvinn.dll
+	sqlxmlx.dll
+	odbccp32.dll
+	sqloledb.dll
+	sqloledb.rll
+	sqlsoldb.chm
+	msdaosp.dll
+	msdaps.dll
+	msdatl3.dll
+	msxactps.dll
+	mtxoci7x_win2k.reg
+	mtxoci7x_winnt.reg
+	mtxoci80_win2k.reg
+	mtxoci80_winnt.reg
+	msxml3a.dll
+	sqlclnt.rsp
+	instcat.sql
+	cliconfg.exe
+	dbnetlib.dll
+	dbnmpntw.dll
+	sqlunirl.dll
+	dbmsgnet.dll
+	dbmsadsn.dll
+	odbcbcp.dll
+	sqlsodbc.chm
+	sqlsrv32.dll
+	sqlsrv32.rll
+	odbccu32.dll
+	mdaccore.rsp
+	odbccr32.dll
+	odbcconf.exe
+	odbcconf.dll
+	ds32gt.dll
+	simpdata.tlb
+	msdart.dll
+	msdatsrc.tlb
+	odbc32.dll
+	odbc32gt.dll
+	odbcad32.exe
+	odbccp32.cpl
+	newudl.reg
+	redist.rsp
+	oledb32r.dll
+	mtxoci81_win2k.reg
+	mdacreadme.htm
+	msader15.dll
+	msado15.dll
+	msadomd.dll
+	msador15.dll
+	msadox.dll
+	msadrh15.dll
+	msado20.tlb
+	msado21.tlb
+	msado25.tlb
+	adojavas.inc
+	msjro.dll
+	msdfmap.dll
+	msdaenum.dll
+	msdaer.dll
+	oledbjvs.inc
+	msdaora.dll
+	oledbvbs.inc
+	msdasc.dll
+	msdadc.dll
+	msdasql.dll
+	msdasqlr.dll
+	msdatt.dll
+	msdaurl.dll
+	msado26.tlb
+	msadcer.dll
+	msdaorar.dll
+	nonewudl.reg
+	oledb32.dll
+	odbcinst.ini
+	schedlgu.txt
+	odbc.ini
+	cliconfg.dll
+	cliconf.chm
+	cliconfg.rll
+	dbmsrpcn.dll
+	muisetup.exe
+	adovbs.inc
+	msadce.dll
+	mtxoci81_winnt.reg
+	msadcf.dll
+	msadcfr.dll
+	msadco.dll
+	msadcor.dll
+	msadcs.dll
+	msadds.dll
+	msaddsr.dll
+	msdaprsr.dll
+	msdaprst.dll
+	msdarem.dll
+	msdaremr.dll
+	mui.inf
+
+_____________________________________________________
+
+
+Microsoft Visual J# .NET
+
+
+Microsoft Visual J# .NET is a development tool that developers who are familiar with the java-language syntax can use to build applications and services on the .NET Framework. It integrates the java-language syntax into the Visual Studio .NET shell. Microsoft Visual J# .NET also supports the functionality found in VJ++ 6.0 including Microsoft extensions. Microsoft Visual J# .NET is not a tool for developing applications intended to run on a Java Virtual Machine. Applications and services built with Visual J# .NET will run only in the .NET Framework.  Microsoft Visual J# .NET Redistributable Package is the redistributable package for Microsoft Visual J# .NET.  The Redistributable Package will only run applications and services developed with Microsoft Visual J# .NET; Java-language applications written with other Java-language development tools will not run with the Microsoft Visual J# .NET Redistributable Package. Visual J# .NET and Microsoft Visual J# .NET Redistributable Package have been independently developed by Microsoft, and are not endorsed or approved by Sun Microsystems, Inc.
+
+
+The following list of files is available with Microsoft Visual J# .NET for redistribution:
+
+vjredist.exe
+vjredist-lp.exe
+
+dw15.exe
+vjc.exe
+vjc.exe.config
+vjsc.dll
+vjscor.dll
+VJSharpCodeProvider.DLL
+vjslib.dll
+vjslib.tlb
+vjslibcw.dll
+vjsnativ.dll
+vjswfc.dll
+vjswfc.tlb
+VJSWfcBrowserStubLib.dll
+vjswfccw.dll
+VJSWfcHost.dll
+vjswfchtml.dll
+dwintl.dll
+vjscui.dll
+vjslibui.dll
+VJSharpSxS10.dll
+

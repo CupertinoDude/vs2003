@@ -1,0 +1,6 @@
+Object List Context Menus
+This sample demonstrates how you can handle the <b>OnShowItemCommands</b> event
+of an ObjectList mobile control to alter the set of commands available for 
+a given item. This sample is identical to the earlier object list sample, 
+except that wherever a city has a weather map available, this event handler 
+adds an extra command to the list of commands.

@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+	<HEAD>
+		<TITLE>Automatic Log On Readme</TITLE>
+		<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+		<STYLE> <!-- BODY { BACKGROUND: #ffffff; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; MARGIN: 0px; PADDING: 0px; PADDING-BOTTOM: 12pt }
+	.banner { PADDING-TOP: 6pt; PADDING-BOTTOM: 6pt; PADDING-LEFT: 5px; PADDING-RIGHT: 0px; TEXT-ALIGN: left; FONT-SIZE: 10pt; WIDTH: 100%; BACKGROUND-COLOR: #66FF99; FONT-WEIGHT: bold }
+	.tblpara { MARGIN-LEFT: 5px }
+	H1 { FONT-SIZE: 13.5pt; FONT-WEIGHT: bold; MARGIN-BOTTOM: 6pt; MARGIN-LEFT: 5px; }
+	H2 { FONT-SIZE: 10pt; FONT-WEIGHT: bold; MARGIN-BOTTOM: 6pt; MARGIN-LEFT: 5px; }
+	TABLE { BACKGROUND-COLOR: #FFFFFF; FONT-SIZE: 100%; MARGIN-BOTTOM: 12pt; MARGIN-LEFT: 30px; MARGIN-RIGHT: 30px; BORDER: #CCCCCC 1px solid }
+	TH { FONT-SIZE: 10pt; FONT-WEIGHT: bold; TEXT-ALIGN: left; BACKGROUND: #cccccc; VERTICAL-ALIGN: top; PADDING-TOP: 6pt; PADDING-BOTTOM: 6pt; PADDING-LEFT: 5px }
+	TD { BACKGROUND: #ffffff; VERTICAL-ALIGN: top }
+	P { MARGIN-LEFT: 30px }
+	BLOCKQUOTE.dtBlock {MARGIN: 0.5em 1.5em 0.5em 2em}
+	A:link {COLOR: #0000ff}
+	A:visited {COLOR: #666699}
+	A:hover {COLOR: #3366ff}
+	OL {MARGIN: 0.5em 0em 0em 2em}
+	UL {MARGIN: 0.5em 0em 0em 2em}
+	LI {MARGIN-BOTTOM: 0.5em}
+	UL P {MARGIN-LEFT: 0em}
+	OL P {MARGIN-LEFT: 0em}
+	DL P {MARGIN-LEFT: 0em}
+	UL P.label {MARGIN-TOP: 0.5em}
+	OL P.label {MARGIN-TOP: 0.5em}
+	DL {MARGIN-TOP: 0em; PADDING-LEFT: 1px}
+	DD {MARGIN-BOTTOM: 0em; MARGIN-LEFT: 1.5em}
+	DT {MARGIN-TOP: 0.5em}
+	PRE {MARGIN-BOTTOM: 0.5em; MARGIN-TOP: 0.5em}
+	PRE {COLOR: #000066; FONT: 100% Courier New, Courier, mono}
+	CODE {COLOR: #000066; FONT: 100% Courier New, Courier, mono}
+	.code {COLOR: #000066; FONT: 100% Courier New, Courier, mono}
+	PRE B {LETTER-SPACING: 0.1em}
+	CODE B {LETTER-SPACING: 0.1em}
+	PRE.syntax {BACKGROUND: #cccccc; BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid; BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; COLOR: #000000; CURSOR: text; MARGIN-BOTTOM: 1em; MARGIN-TOP: 1em; PADDING-BOTTOM: 4px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; PADDING-TOP: 4px}
+	OL DIV.tablediv {MARGIN-TOP: 0em}
+	UL DIV.tablediv {MARGIN-TOP: 0em}
+	--></STYLE>
+	</HEAD>
+	<BODY>
+		<DIV class="banner">Microsoft Visual Studio .NET Prerequisites</DIV>
+		<H1><A NAME="contents"></A>Automatic Log On Readme</H1>
+		<p>Issues you should be aware of when using Automatic Log On are listed below.
+		</p>
+		<H2>1. Known Issues</H2>
+		<H2>1.1. Password left behind when system fails during setup</H2>
+		<p>If the machine shuts down unexpectedly during setup and you have chosen to use 
+			the Automatic Log On feature, your password information may remain in temporary 
+			setup files as well as the system registry.
+		</p>
+		<TABLE>
+			<TR>
+				<TH>
+					To remove temporary files</TH>
+			</TR>
+			<TR>
+				<TD>
+					<OL>
+						<LI>
+							On the <B>Start</B> menu, choose <B>Run</B>.
+						<LI>
+							In the <B>Run</B> dialog box, type: <CODE class="ce">%TEMP%</CODE>.
+						<LI>
+							Select all files that begin with the letters "SIT" and delete them.</LI>
+					</OL>
+				</TD>
+			</TR>
+		</TABLE>
+		<P>On Windows 2000 automatic log on information may be left in the registry, 
+			depending on when the system failed.</P>
+		<TABLE>
+			<TR>
+				<TH>
+					To remove automatic log on from the registry on Windows 2000</TH>
+			</TR>
+			<TR>
+				<TD>
+					<OL>
+						<LI>
+							On the <B>Start</B> menu, choose <B>Run</B>.
+						<LI>
+							In the <B>Run</B> dialog box, type: <FONT face="Courier New" color="#000066">regedit</FONT>.
+						<LI>
+							Navigate to the <CODE class="ce">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows 
+								NT\CurrentVersion\Winlogon</CODE>
+						key.
+						<LI>
+							Set the <CODE class="ce">AutoAdminLogon</CODE> value to <CODE class="ce">0</CODE>.
+						<LI>
+							Delete <CODE class="ce">DefaultPassword</CODE>.</LI>
+					</OL>
+				</TD>
+			</TR>
+		</TABLE>
+		<H2>1.2. Lock Computer is not set on restart</H2>
+		<P>When you use automatic log on, setup does not lock your machine after setup 
+			completes, even if the machine had been locked previously.</P>
+		<H2>1.3. Blank passwords are not supported</H2>
+		<P>Your password must have at least one character for automatic log on to function.</P>
+		<H2>1.4. Log on banners and legal notices interrupt automatic log on</H2>
+		<P>Automatic log on cannot ignore legal notices or log on banners that display when 
+			Windows launches. You must manually dismiss these messages for setup to 
+			continue. If your system administrator has specified that legal notices or log 
+			on banners appear, it is recommended that you do not use the automatic log on 
+			feature.</P>
+		<H2>1.5. Machines running third-party client networking software are not supported</H2>
+		<P>Setup does not automatically log on after a restart on machines running 
+			third-party client networking software. It is recommended that you do not use 
+			this feature if you have this type of software installed.</P>
+	</BODY>
+</HTML>

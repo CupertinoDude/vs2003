@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{20D4826A-C6FA-45DB-90F4-C717570B9F32}") = "Roman Legion", "Roman Legion.csdproj", "{FCA3B4B9-2600-4844-8BEB-B8ABDD015A4C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{FCA3B4B9-2600-4844-8BEB-B8ABDD015A4C}.Debug.ActiveCfg = Debug|Windows CE
+		{FCA3B4B9-2600-4844-8BEB-B8ABDD015A4C}.Debug.Build.0 = Debug|Windows CE
+		{FCA3B4B9-2600-4844-8BEB-B8ABDD015A4C}.Debug.Deploy.0 = Debug|Windows CE
+		{FCA3B4B9-2600-4844-8BEB-B8ABDD015A4C}.Release.ActiveCfg = Release|Windows CE
+		{FCA3B4B9-2600-4844-8BEB-B8ABDD015A4C}.Release.Build.0 = Release|Windows CE
+		{FCA3B4B9-2600-4844-8BEB-B8ABDD015A4C}.Release.Deploy.0 = Release|Windows CE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

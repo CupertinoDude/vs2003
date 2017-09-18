@@ -1,0 +1,7 @@
+Object Lists
+This sample demonstrates how to use the ObjectList mobile control. It shows how you
+can databind a collection of objects to an ObjectList; how you can define fields to 
+be bound and shown for each object, using the <b>&lt;Field&gt;</b> element; 
+and how you can define commands that the user can select for an object, using 
+the <b>&lt;Command&gt;</b> element. It also shows how you can access field values
+for an individual item at runtime.

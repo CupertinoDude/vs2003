@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Stream I/O">
+	<Paragraph Title="Introduction">
+		The .NET Framework Class Library offers a set of classes that allow for the rich manipulation of I/O. This section introduces you to the Stream I/O architecture and some additional Class Library types that you can use to fine-tune your I/O operations.
+	</Paragraph>
+	<Paragraph>
+		<List Title="System.Stream">
+			This type is an abstract class that all streams must derive from. This ensures that all streams offer the same programming paradigm for reading bytes, writing bytes, seeking to a position within a 		stream, and flushing data to the underlying stream.
+		</List>
+		<List Title="System.FileStream, System.MemoryStream, and System.Net.Sockets.NetworkStream">
+			These types (plus others not listed) represent concrete implementations of the System.Stream type. Obviously, the FileStream type offers a stream to a disk file, the MemoryStream type offers a stream over a block of bytes in memory (great for temporary files), and the NetworkStream type offers a stream of a network socket.
+		</List>
+		<List Title="System.IO.BinaryReader and System.IO.BinaryWriter">
+			All of the Stream types support the reading and writing of bytes only. So, if you have an Int32 or a String that you wish to read/write to a stream, the value must first be converted to a sequence of bytes. To simplify the developer's work, the Class Library offers the BinaryReader and BinaryWriter types. The constructors for these types accept a Stream object. Once constructed, you can use the BinaryReader/BinaryWriter objects to easily read/write values that are more complex than bytes.
+		</List>
+		<List Title="System.IO.StreamReader and System.IO.StreamWriter">
+			The BinaryRead/BinaryWriter types always write binary data to a stream. The StreamReader/StreamWriter types always write characters to a stream. It includes methods to read/write lines of text.
+		</List>
+		<List Title="System.Text.Encoding">
+			Internally, the CLR represents all characters as Unicode. However, Unicode can be inefficient when transferring characters over a network or when persisting in a file. To improve efficiency, the Class Library offers several types derived from the System.Text.Encoding abstract base class. These classes know how to encode/decode Unicode characters to ASCII, UTF-7, UTF-8, Unicode, and other arbitrary code pages. When you construct a BinaryReader, BinaryWriter, StreamReader, or StreamWriter, you may optionally choose any of these encodings. The default encoding is UTF-8.
+	</List>
+	</Paragraph>
+	<Navigation>
+		<Previous>Strings.xml</Previous>
+	</Navigation>
+</Document>

@@ -1,0 +1,244 @@
+<VisualStudioProject>
+    <VisualBasic
+        ProjectType = "Web"
+        ProductVersion = "7.10.2169"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{2674266F-FC15-42F6-99C2-8BB7AA19B21F}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "Pagelets"
+                AssemblyOriginatorKeyFile = ""
+                AssemblyOriginatorKeyMode = "None"
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Flow"
+                DefaultTargetSchema = "IE32Nav30"
+                DelaySign = "false"
+                OutputType = "Library"
+                OptionCompare = "Binary"
+                OptionExplicit = "On"
+                OptionStrict = "On"
+                RootNamespace = ""
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    BaseAddress = "0"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "true"
+                    DefineTrace = "true"
+                    DebugSymbols = "true"
+                    IncrementalBuild = "true"
+                    Optimize = "false"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+                <Config
+                    Name = "Release"
+                    BaseAddress = "0"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "false"
+                    DefineTrace = "true"
+                    DebugSymbols = "false"
+                    IncrementalBuild = "true"
+                    Optimize = "false"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                />
+                <Reference
+                    Name = "System.Web"
+                    AssemblyName = "System.Web"
+                />
+                <Reference
+                    Name = "System.Web.Services"
+                    AssemblyName = "System.Web.Services"
+                />
+                <Reference
+                    Name = "System.Management"
+                    AssemblyName = "System.Management"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                />
+            </References>
+            <Imports>
+                <Import Namespace = "Microsoft.VisualBasic" />
+                <Import Namespace = "System" />
+                <Import Namespace = "System.Data" />
+                <Import Namespace = "System.Collections" />
+                <Import Namespace = "System.Diagnostics" />
+                <Import Namespace = "System.Management" />
+            </Imports>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "pagelet1.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "pagelet1.ascx.vb"
+                    DependentUpon = "pagelet1.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "pagelet1.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "pagelet1.aspx.vb"
+                    DependentUpon = "pagelet1.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "pagelet2.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "pagelet2.ascx.vb"
+                    DependentUpon = "pagelet2.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "pagelet2.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "pagelet2.aspx.vb"
+                    DependentUpon = "pagelet2.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "pagelet3.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "pagelet3.ascx.vb"
+                    DependentUpon = "pagelet3.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "pagelet3.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "pagelet3.aspx.vb"
+                    DependentUpon = "pagelet3.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "pagelet4.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "pagelet4.ascx.vb"
+                    DependentUpon = "pagelet4.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "pagelet4.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "pagelet4.aspx.vb"
+                    DependentUpon = "pagelet4.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "pagelet5.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "pagelet5.ascx.vb"
+                    DependentUpon = "pagelet5.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "pagelet5.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "pagelet5.aspx.vb"
+                    DependentUpon = "pagelet5.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "pagelet6.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "pagelet6.ascx.vb"
+                    DependentUpon = "pagelet6.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "pagelet6.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "pagelet6.aspx.vb"
+                    DependentUpon = "pagelet6.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "pagelet7.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "pagelet7.ascx.vb"
+                    DependentUpon = "pagelet7.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "pagelet7.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "pagelet7.aspx.vb"
+                    DependentUpon = "pagelet7.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+            </Include>
+        </Files>
+    </VisualBasic>
+</VisualStudioProject>
+

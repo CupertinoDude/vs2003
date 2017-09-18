@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="CLI.xsl"?>
+<Document Title="Special Types">
+	<Paragraph Title="Introduction">
+		The Framework Class Library contains literally thousands of types. In this section, we look at some of the special types that all developers will use frequently.	
+	</Paragraph>
+	<Navigation>
+		<Previous>Namespaces and Assemblies.xml</Previous>
+		<Next>EnumeratedTypes.xml</Next>
+	</Navigation>
+</Document>

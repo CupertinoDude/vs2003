@@ -1,0 +1,7 @@
+Custom Device Filters
+This sample shows you how to create your own custom device filters,
+and provides a useful gallery of custom filters.
+An application page can then use the filters in a &lt;Choice&gt;
+tag, or programmatically as shown here.  Note that the
+<b>web.config</b> that associates the filters with code is
+available to be viewed as part of the source.

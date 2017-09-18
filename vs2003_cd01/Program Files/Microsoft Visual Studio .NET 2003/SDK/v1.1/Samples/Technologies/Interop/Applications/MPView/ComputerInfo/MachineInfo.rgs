@@ -1,0 +1,25 @@
+HKCR
+{
+	ComputerInfo.MachineInfo.1 = s 'MachineInfo Class'
+	{
+		CLSID = s '{B9645D48-7260-4092-B058-F9830C3E4746}'
+	}
+	ComputerInfo.MachineInfo = s 'MachineInfo Class'
+	{
+		CLSID = s '{B9645D48-7260-4092-B058-F9830C3E4746}'
+		CurVer = s 'ComputerInfo.MachineInfo.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {B9645D48-7260-4092-B058-F9830C3E4746} = s 'MachineInfo Class'
+		{
+			ProgID = s 'ComputerInfo.MachineInfo.1'
+			VersionIndependentProgID = s 'ComputerInfo.MachineInfo'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+			}
+			'TypeLib' = s '{72C4542B-1223-4076-AFCD-0944CD072034}'
+		}
+	}
+}

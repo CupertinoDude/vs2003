@@ -1,0 +1,6 @@
+Template Sets in Stylesheets
+This sample demonstrates how you can use a Style element in a 
+Stylesheet to define template sets. The sample defines the
+form template sets in a single style, and refers to the style
+from more than one form using the <b>StyleReference</b> property.
+The style also includes ordinary style properties.

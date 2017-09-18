@@ -1,0 +1,110 @@
+﻿<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="..\..\readme.xsl"?>
+
+<sample windowsforms="true">
+<title>WinTalk Sample Application</title>
+<title-short>WinTalk</title-short>
+<overview>
+This sample offers a brief introduction to Windows Forms and Sockets including other FCL topics. The sample is a very simple "Sockets Chat" application.
+</overview>
+<subdirectory>Applications\WinTalk</subdirectory>
+<buildsteps>
+   <step>
+      Type <b>BUILD.bat</b> from the command line.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Applications\WinTalk\VB>Build.bat
+      </example>
+   </step>   
+</buildsteps>
+<runsteps>   
+   <step>
+      Type <b>WinTalk.exe /?</b> from the command line for a complete list of command line options for the utility.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Applications\WinTalk\VB>WinTalk.exe /?
+      </example>
+   </step>
+   <step>
+      To try the sample where the client and the server are on the same machine, simply run the application twice with no parameters.
+      <example>
+         C:\Program Files\Microsoft.NET\SDK\v1.1\Samples\Applications\WinTalk\VB>WinTalk.exe 
+      </example>
+   </step>
+   <step>
+	  When specifying a port number, be sure to check if that port isn't already in use by another program. The sample won't run correctly if there is
+	  another program already running on that port. Try using a high portnumber, e.g. somewhere between 5001 and 5150.
+   </step>
+</runsteps>
+<technologies>
+   <technology name = "Windows Forms" keyword="T">      
+      <class name = "Application" keyword="T">      
+      Used by the sample app to implement a message pump.
+      </class>      
+      <class name = "Splitter" keyword="T">
+      Control type that handles splitter semantics. Used in the application to separate the send and receive text frames.
+      </class>            
+      <class name = "Panel" keyword="T">      
+      The Panel control allow you to group controls in a way that allows for flexible organizing, docking, and anchoring of controls on a form.  In this case, the pane is used to house the two text boxes and the splitter.  The status control, on the other hand, is a peer to the panel.
+      </class>            
+      <class name = "TextBox" keyword="T">      
+      Implements two edit controls in the sample. One is read-only for receiving text.
+      </class>     
+      <class name = "Label" keyword="T">      
+      Used to display static status information in the sample.
+      </class>     
+      <class name = "MessageBox" keyword="T">      
+      Used by the sample to relay information about errors and shutdown situations.
+      </class>     
+   </technology>
+   <technology name = "Networking" keyword="T">            
+      <class name = "IPEndPoint" keyword="T">      
+      This type is used by the sample to encapsulate an IPAddress and port number.
+      </class>
+      <class name = "IPAddress" keyword="T">      
+      The sample uses this type for useful IPAddress related logic.
+      </class>
+      <class name = "Dns" keyword="T">      
+      This type can be used to get an IPAddress from a DNS name.
+      </class>
+      <class name = "Socket" keyword="T">      
+      Most networking implemented in managed code will be done using an abstraction such as remoting or WebServices.  However, it is possible to implement socket code directly, and this sample uses the Socket class to do this.
+      </class>
+      <class name = "NetworkStream" keyword="T">      
+      NetworkStream is derived from stream, and uses a socket as its underlying device. This makes it very useful for streaming data over a socket. You can use the NetworkStream type just like you would use any other stream type such as FileStream.
+      </class>
+   </technology>          
+   <technology name = "I/O" keyword="T">            
+      <class name = "StreamWriter" keyword="T">      
+      The sample uses the StreamWriter to write to the NetworkStream which represents a socket.
+      </class>
+      <class name = "StreamReader" keyword="T">      
+      The sample uses the StreamReader to read from the  network stream which represents a socket.
+      </class>
+   </technology>          
+   <technology name = "Garbage Collection" keyword="T">      
+      <class name = "GC" keyword="T">      
+      The GC type is used to surpress finalization of a custom object which has already been disposed.
+      </class>      
+   </technology>
+   <technology name = "Delegates" keyword="T">      
+      <class name = "MulticastDelegate" keyword="T">      
+      This sample implements a delegate type derived from MulticastDelegate.  This type is used for notifications related to network events.  The sample uses this delegate type to bind the networking type to the form type in the sample.
+      </class>      
+   </technology>
+   <technology name = "Threading" keyword="T">      
+      <class name = "ThreadPool" keyword="T">      
+      The custom <i>Talker</i> class in this sample handles networking logic and uses a second thread for reading from the network.  However, rather than creating a thread, it simply uses a thread from the CLR's thread pool.  This is the suggested method for multithreading in managed code.
+      </class>      
+   </technology>
+   <technology name = "Exceptions" keyword="T">      
+      <class name = "IOException" keyword="T">      
+      The StreamReader and StreamWriter types commonly throw the IOException type.  However, to catch and handle these exceptions properly, it is commonly necessary to check the attached exception which reflects the more base error.  In this sample's case this will be the SocketException type.
+      </class>      
+      <class name = "SocketException" keyword="T">      
+      This sample catches the SocketException type and checks the ErrorCode property of the socket for certain expected error types.
+      </class>      
+   </technology>
+</technologies>
+</sample>
+
+
+

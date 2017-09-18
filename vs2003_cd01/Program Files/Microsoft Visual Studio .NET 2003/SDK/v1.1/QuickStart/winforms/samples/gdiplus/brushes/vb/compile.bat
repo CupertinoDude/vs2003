@@ -1,0 +1,1 @@
+vbc /nologo /out:b.exe /t:winexe /r:System.DLL,System.Windows.Forms.DLL,System.Drawing.DLL /res:colorbars.jpg gdipbrushes.vb

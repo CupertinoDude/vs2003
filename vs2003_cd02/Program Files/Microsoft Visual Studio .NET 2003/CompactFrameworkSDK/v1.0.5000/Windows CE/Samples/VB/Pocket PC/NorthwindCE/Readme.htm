@@ -1,0 +1,1240 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="readme_files/filelist.xml">
+<title>NorthwindCE Sample</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Eric Feng</o:Author>
+  <o:LastAuthor>Eric Feng</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>9</o:TotalTime>
+  <o:Created>2002-07-08T21:02:00Z</o:Created>
+  <o:LastSaved>2002-07-08T21:02:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1799</o:Words>
+  <o:Characters>10260</o:Characters>
+  <o:Company>Microsoft Corporation</o:Company>
+  <o:Lines>85</o:Lines>
+  <o:Paragraphs>24</o:Paragraphs>
+  <o:CharactersWithSpaces>12035</o:CharactersWithSpaces>
+  <o:Version>10.3501</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:Symbol;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:Tahoma;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 134676480 16 0 131073 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-alt:"?l?r ??¡¯c";
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-alt:Tahoma;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536871559 0 0 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:-.25in;
+	line-height:20.0pt;
+	mso-line-height-rule:exactly;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:18.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:silver;
+	mso-font-kerning:12.0pt;
+	font-weight:bold;}
+h3
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	mso-outline-level:7;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	mso-outline-level:8;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-noshow:yes;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+span.MsoCommentReference
+	{mso-style-noshow:yes;
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Arial Unicode MS";
+	mso-fareast-font-family:"Arial Unicode MS";
+	mso-bidi-font-family:"Arial Unicode MS";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:81027881;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-442210342 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1
+	{mso-list-id:531190871;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-851308348 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l1:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:868034196;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1484916402 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l2:level1
+	{mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h1 style='margin-left:0in'><span class=SpellE>NorthwindCE</span> Sample</h1>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>The <span class=SpellE>NorthwindCE</span>
+sample application illustrates how to develop a mobile application capable of
+offline storage using </span><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:Verdana'>Microsoft® SQL Server™ 2000 Windows® CE Edition
+(SQL Server CE) and </span><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>the .NET Compact Framework</span><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Verdana'>.</span><span
+style='font-size:10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black'> The application highlights the design of forms and controls, data
+access against a local SQL Server CE database, and synchronization to a SQL
+Server database through replication. <span class=SpellE>NorthwindCE</span> is
+made up of four controls embedded into a single form, <span class=SpellE>FormNorthwindCE.cs</span>.
+Each <span class=SpellE>NorthwindCE</span> control contains complete and
+thoroughly documented source code that can be reused as templates when
+designing new applications.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>The four controls in the application are:
+<span class=SpellE><b style='mso-bidi-font-weight:normal'>ControlCustomer</b></span>,
+<span class=SpellE><b style='mso-bidi-font-weight:normal'>ControlEmployees</b></span>,
+<span class=SpellE><b style='mso-bidi-font-weight:normal'>ControlOrders</b></span>,
+and <span class=SpellE><b style='mso-bidi-font-weight:normal'>ControlReplication</b></span>,
+which are referred to, respectively, as the <b style='mso-bidi-font-weight:
+normal'>Customer</b> control, <b style='mso-bidi-font-weight:normal'>Employees</b>
+control, <b style='mso-bidi-font-weight:normal'>Orders</b> control, and <b
+style='mso-bidi-font-weight:normal'>Replication</b> control. The <b
+style='mso-bidi-font-weight:normal'>Customer</b> control, <b style='mso-bidi-font-weight:
+normal'>Employees</b> control, and <b style='mso-bidi-font-weight:normal'>Orders</b>
+control read data from and write data to the <b style='mso-bidi-font-weight:
+normal'>Customers</b>, <b style='mso-bidi-font-weight:normal'>Employees</b>,
+and <b style='mso-bidi-font-weight:normal'>Orders</b> tables in a copy of the <span
+class=SpellE>Northwind</span> database on the <span class=SpellE>device.Customer</span>
+and order data can be accessed and employee information updated using these
+controls. The <b style='mso-bidi-font-weight:normal'>Replication</b> control
+accepts connection settings and uses this information to connect to a remote
+SQL Server database. The local database is then synchronized to the server
+database through replication.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span class=SpellE><span style='font-size:10.0pt;
+font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>NorthwindCE</span></span><span
+style='font-size:10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black'> is designed for Pocket PC devices and the Pocket PC emulator. Modify
+the user interface of the sample application for use with other devices.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:9.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:18.0pt;mso-line-height-rule:exactly;page-break-after:
+avoid;mso-outline-level:7;mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:16.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black;mso-font-kerning:12.0pt'>Requirements<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>To run <span class=SpellE>NorthwindCE</span>,
+you must already have the following software installed on your computer:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;text-indent:-.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-list:l0 level1 lfo1;tab-stops:.25in list .5in;mso-layout-grid-align:
+none;text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
+color:black'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>SQL Server 2000 Service Pack 1 or
+higher<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;text-indent:-.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-list:l0 level1 lfo1;tab-stops:.25in list .5in;mso-layout-grid-align:
+none;text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
+color:black'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>Internet Information Services (IIS)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>For more information, see
+&quot;Installing Internet Information Services and Internet Information
+Server&quot; in </span><u><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:blue'>Visual Studio .NET Software
+Requirements</span></u><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:red;display:none;mso-hide:all'>!ALink(&quot;vxtbsVisualStudioNETSoftwareRequirements&quot;)</span><span
+style='font-size:10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;text-indent:-.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-list:l0 level1 lfo1;tab-stops:.25in list .5in;mso-layout-grid-align:
+none;text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
+color:black'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>SQL Server CE (included with Visual
+Studio .NET)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;text-indent:-.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-list:l0 level1 lfo1;tab-stops:.25in list .5in;mso-layout-grid-align:
+none;text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
+color:black'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>SQL Server CE 2.0 Server Tools<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>The SQL Server CE
+2.0 Server Tools installers, sqlce20sql2ksp1.exe for SQL Server Service Pack 1 and
+sqlce20sql2ksp2.exe for SQL Server Service Pack 2, come with Visual Studio
+.NET. These files are located by default in <span class=GramE>C:\Program
+Files\Microsoft Visual Studio .NET\CompactFrameworkSDK\v1.0.5000\Windows CE\.</span>
+The SQL Server CE Connectivity Management utility and the SQL Server CE Virtual
+Directory Creation Wizard are automatically installed by running one of the SQL
+Server CE Server Tools installers on the computer running IIS.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:Verdana;mso-bidi-font-family:Verdana;color:black'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>At the end of the
+setup, you can optionally launch the SQL Server CE Virtual Directory Creation
+Wizard to configure the computer running IIS. Alternatively, you can go to the
+Start menu, point to Programs, Microsoft SQL Server CE 2.0, and then click <b
+style='mso-bidi-font-weight:normal'>Configure Connectivity Support</b> in IIS. Launch
+the wizard by double-clicking <b style='mso-bidi-font-weight:normal'>Create a
+Virtual Directory</b> in the right pane of the SQL Server CE Management
+utility. <span style='mso-spacerun:yes'> </span>To configure the computer
+running IIS, follow the instructions provided by the wizard.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;tab-stops:.25in;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+font-family:Verdana;mso-bidi-font-family:Verdana;color:black'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:9.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:18.0pt;mso-line-height-rule:exactly;page-break-after:
+avoid;mso-outline-level:7;mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:16.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black;mso-font-kerning:12.0pt'>Configuring SQL Server<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>After Microsoft® Internet Information
+Services (IIS) is properly <span class=GramE>configured,</span> you can enable
+Microsoft SQL Server 2000 for replication. The replication sample application uses
+a duplicated <span class=SpellE>Northwind</span> database called <span
+class=SpellE><b style='mso-bidi-font-weight:normal'>Nwind_SQLCE</b></span>.
+Running the setup script <span class=SpellE>SetupRepl.bat</span> on the
+computer running SQL Server 2000 creates the <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Nwind_SQLCE</b></span> database, enables
+SQL Server for replication, and creates a publication named <span class=SpellE>SQLCEReplDemoNet</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.25in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>To configure the computer running SQL
+Server 2000, perform the following steps. If the computer running SQL Server is
+already configured as a Publisher/Distributor for replication and has a
+snapshot folder defined with the appropriate permissions, skip Step 1 and Step
+2.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.75in;text-indent:-.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-list:l2 level1 lfo3;tab-stops:list .75in;mso-layout-grid-align:
+none;text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Verdana;mso-fareast-font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black'><span style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>Create a shared directory on the
+computer running SQL Server 2000 that will become the Publisher/Distributor.
+Replication snapshot files are created in this directory by the replication
+process and are read by the SQL Server CE Subscriber.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.75in;text-indent:-.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-list:l2 level1 lfo3;tab-stops:list .75in;mso-layout-grid-align:
+none;text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Verdana;mso-fareast-font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black'><span style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>Ensure that the IIS user specified
+during synchronization has read access to the shared directory. By default, the
+virtual directory is configured with anonymous access; therefore, grant <span
+class=SpellE>computername\IUSR_computername</span> read access to the shared directory
+created in Step 1.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.75in;text-indent:-.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-list:l2 level1 lfo3;tab-stops:list .75in;mso-layout-grid-align:
+none;text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Verdana;mso-fareast-font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black'><span style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>Run <span class=SpellE>SetupRepl.bat</span>,
+located with the <span class=SpellE>NorthwindCE</span> sample: <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;text-indent:.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-layout-grid-align:none;text-autospace:none'><span style='font-size:
+10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>Usage: <span
+class=SpellE>SetupRepl</span> {required <span class=SpellE>parms</span>}
+{optional <span class=SpellE>parms</span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;text-indent:.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-layout-grid-align:none;text-autospace:none'><span style='font-size:
+10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>Required
+Arguments:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.75in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>{<span class=GramE>snapshot</span>
+share} - <span class=GramE>a</span> share available for the storage of snapshot
+files. All Subscribers (IIS user) must be able to read from this share.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;text-indent:.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-layout-grid-align:none;text-autospace:none'><span style='font-size:
+10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>{<span
+class=GramE>publisher</span> login} - Publisher user ID.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;text-indent:.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-layout-grid-align:none;text-autospace:none'><span style='font-size:
+10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>{<span
+class=GramE>publisher</span> password} - Publisher password.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;text-indent:.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-layout-grid-align:none;text-autospace:none'><span style='font-size:
+10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>Optional
+Arguments:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;text-indent:.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-layout-grid-align:none;text-autospace:none'><span style='font-size:
+10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>{<span
+class=GramE>publisher</span>} - Publisher name. <span class=GramE>Defaults to
+local computer.</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.75in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>{<span class=GramE>snapshot</span>
+server name} - Defaults to Publisher name (Must be set to support named
+instances).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;text-indent:.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-layout-grid-align:none;text-autospace:none'><span style='font-size:
+10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>Examples:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;text-indent:.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-layout-grid-align:none;text-autospace:none'><span class=SpellE><span
+style='font-size:10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black'>SetupRepl</span></span><span style='font-size:10.0pt;font-family:
+Verdana;mso-bidi-font-family:Verdana;color:black'> <span class=SpellE>ReplSnapshot</span>
+<span class=SpellE><span class=GramE>sa</span></span> password<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;text-indent:.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-layout-grid-align:none;text-autospace:none'><span class=SpellE><span
+style='font-size:10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black'>SetupRepl</span></span><span style='font-size:10.0pt;font-family:
+Verdana;mso-bidi-font-family:Verdana;color:black'> <span class=SpellE>ReplSnapshot</span>
+<span class=SpellE><span class=GramE>sa</span></span> password Publisher <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;text-indent:.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-layout-grid-align:none;text-autospace:none'><span class=SpellE><span
+style='font-size:10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black'>SetupRepl</span></span><span style='font-size:10.0pt;font-family:
+Verdana;mso-bidi-font-family:Verdana;color:black'> <span class=SpellE>ReplSnapshot</span>
+<span class=SpellE><span class=GramE>sa</span></span> password
+Publisher\instance <span class=SpellE>ServerName</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.25in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.75in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>This step installs a Publisher with a
+local Distributor, creates a database named <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Nwind_SQLCE</b></span>, and populates it
+with initial data that matches data in the <span class=SpellE>Northwind</span>
+database that ships with SQL Server. It also creates a merge publication named <span
+class=SpellE>SQLCEReplDemoNet</span> from the <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Nwind_SQLCE</b></span> database.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.75in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>The Distributor is installed using
+the shared directory specified when the <span class=SpellE>Setuprepl.bat</span>
+file is run. This shared directory is used as the replication snapshot folder.
+For example, if you call <span class=SpellE>Setuprepl.bat</span> and specify <span
+class=SpellE>ReplSnapshot</span> as the snapshot shared directory, the
+directory for all snapshot files is <a href="file:///\\computername\ReplSnapshot">\\computername\ReplSnapshot</a>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.75in;text-indent:-.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-list:l2 level1 lfo3;tab-stops:list .75in;mso-layout-grid-align:
+none;text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Verdana;mso-fareast-font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black'><span style='mso-list:Ignore'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>Grant the IIS user (<span
+class=SpellE>NT_Authentication</span>) or the SQL Server user (<span
+class=SpellE>DB_Authentication</span>) access to the publication access list (PAL).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;text-indent:.25in;line-height:13.0pt;mso-line-height-rule:exactly;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+font-family:Verdana;mso-bidi-font-family:Verdana;color:black'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:9.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:18.0pt;mso-line-height-rule:exactly;page-break-after:
+avoid;mso-outline-level:7;mso-list:skip;mso-layout-grid-align:none;text-autospace:
+none'><b><span style='font-size:16.0pt;font-family:Verdana;mso-bidi-font-family:
+Verdana;color:black;mso-font-kerning:12.0pt'>Building and Launching the Sample<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;mso-list:skip;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>This sample
+application is available in Visual Basic and Visual C#. After completing the
+following procedures you can run the application.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;mso-list:skip;
+mso-layout-grid-align:none;text-autospace:none'><b><span style='font-size:10.0pt;
+font-family:Verdana;mso-bidi-font-family:Verdana;color:navy'>To build and
+launch the sample<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;text-indent:-.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-list:l1 level1 lfo2;tab-stops:.25in list .5in;mso-layout-grid-align:
+none;text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Verdana;mso-fareast-font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black'><span style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>Copy the <span class=SpellE>NorthwindCE</span>
+sample files into a solution directory on your development computer.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>The Visual Basic files are located in
+Program Files\Microsoft Visual Studio&nbsp;.NET\CompactFrameworkSDK\v1.0.5000\Samples\PocketPC\VB\NorthwindCE.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>The Visual C# files are located in
+Program Files\Microsoft Visual
+Studio&nbsp;.NET\CompactFrameworkSDK\v1.0.5000\Samples\PocketPC\VC#\NorthwindCE.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;text-indent:-.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-list:l1 level1 lfo2;tab-stops:.25in list .5in;mso-layout-grid-align:
+none;text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Verdana;mso-fareast-font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black'><span style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>On the <b>File</b> menu, click <b>Open
+Solution</b>, and load <span class=SpellE>NorthwindCE.sln</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;text-indent:-.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-list:l1 level1 lfo2;tab-stops:.25in list .5in;mso-layout-grid-align:
+none;text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Verdana;mso-fareast-font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black'><span style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>In the <b>Deployment Device</b> box
+on the <b style='mso-bidi-font-weight:normal'>Device</b><span style='mso-bidi-font-weight:
+bold'> </span>toolbar, select the device you want to target.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;text-indent:-.25in;line-height:13.0pt;mso-line-height-rule:
+exactly;mso-list:l1 level1 lfo2;tab-stops:.25in list .5in;mso-layout-grid-align:
+none;text-autospace:none'><![if !supportLists]><span style='font-size:10.0pt;
+font-family:Verdana;mso-fareast-font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black'><span style='mso-list:Ignore'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>On the <b>Debug</b> menu, click <b>Start
+<span class=GramE>Without</span> Debugging</b>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:.5in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>The application is compiled, deployed
+to the target device (along with any additional libraries required for run
+time), and launched on the device. On the device, the executable is located at \Windows\Start
+Menu\NorthwindDemo.exe.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:9.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:18.0pt;mso-line-height-rule:exactly;page-break-after:
+avoid;mso-outline-level:7;mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:16.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black;mso-font-kerning:12.0pt'>Using the Application<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>There is a standard menu at the bottom
+of the screen for all four controls (<b style='mso-bidi-font-weight:normal'>Replication</b>,
+<b style='mso-bidi-font-weight:normal'>Customers</b>, <b style='mso-bidi-font-weight:
+normal'>Employees</b>, and <b style='mso-bidi-font-weight:normal'>Orders</b>).
+The menu has the following options: <o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:6.0pt;mso-line-height-rule:exactly;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-size:6.0pt;
+font-family:Verdana;mso-bidi-font-family:Verdana;color:fuchsia'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:4.0pt;border-collapse:collapse;border:none;mso-border-alt:
+ solid silver .5pt;mso-padding-alt:0in 4.0pt 0in 4.0pt'>
+ <tr style='mso-yfti-irow:0'>
+  <td width=161 valign=top style='width:120.9pt;border:solid silver 1.0pt;
+  mso-border-alt:solid silver .5pt;background:#E2E2E2;mso-shading:windowtext;
+  mso-pattern:gray-50 silver;padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><b><span style='font-size:
+  10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>Menu<o:p></o:p></span></b></p>
+  </td>
+  <td width=433 valign=top style='width:325.1pt;border:solid silver 1.0pt;
+  border-left:none;mso-border-left-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  background:#E2E2E2;mso-shading:windowtext;mso-pattern:gray-50 silver;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><b><span style='font-size:
+  10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>Actions<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=161 valign=top style='width:120.9pt;border:solid silver 1.0pt;
+  border-top:none;mso-border-top-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>File<o:p></o:p></span></p>
+  </td>
+  <td width=433 valign=top style='width:325.1pt;border-top:none;border-left:
+  none;border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;
+  mso-border-top-alt:solid silver .5pt;mso-border-left-alt:solid silver .5pt;
+  mso-border-alt:solid silver .5pt;padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span class=GramE><span
+  style='font-size:10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;
+  color:black'>Exit :</span></span><span style='font-size:10.0pt;font-family:
+  Verdana;mso-bidi-font-family:Verdana;color:black'> Closes the <span
+  class=SpellE>NorthwindCE</span> application.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=161 valign=top style='width:120.9pt;border:solid silver 1.0pt;
+  border-top:none;mso-border-top-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;
+  color:black'>Northwind</span></span><span style='font-size:10.0pt;font-family:
+  Verdana;mso-bidi-font-family:Verdana;color:black'><o:p></o:p></span></p>
+  </td>
+  <td width=433 valign=top style='width:325.1pt;border-top:none;border-left:
+  none;border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;
+  mso-border-top-alt:solid silver .5pt;mso-border-left-alt:solid silver .5pt;
+  mso-border-alt:solid silver .5pt;padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span class=GramE><span
+  style='font-size:10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;
+  color:black'>Employees :</span></span><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'> Loads the <b
+  style='mso-bidi-font-weight:normal'>Employees</b> control.<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span class=GramE><span
+  style='font-size:10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;
+  color:black'>Customers :</span></span><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'> Loads the <b
+  style='mso-bidi-font-weight:normal'>Customers</b> control.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;mso-yfti-lastrow:yes'>
+  <td width=161 valign=top style='width:120.9pt;border:solid silver 1.0pt;
+  border-top:none;mso-border-top-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>Sync<o:p></o:p></span></p>
+  </td>
+  <td width=433 valign=top style='width:325.1pt;border-top:none;border-left:
+  none;border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;
+  mso-border-top-alt:solid silver .5pt;mso-border-left-alt:solid silver .5pt;
+  mso-border-alt:solid silver .5pt;padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span class=GramE><span
+  style='font-size:10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;
+  color:black'>Replication :</span></span><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'> Loads the <b
+  style='mso-bidi-font-weight:normal'>Replication</b> control.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='line-height:6.0pt;mso-line-height-rule:exactly;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-size:6.0pt;
+font-family:Verdana;mso-bidi-font-family:Verdana;color:fuchsia'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:9.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:15.0pt;mso-line-height-rule:exactly;page-break-after:
+avoid;mso-outline-level:8;mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:13.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black;mso-font-kerning:12.0pt'>Replication Control<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>The <b style='mso-bidi-font-weight:
+normal'>Replication</b> control allows you to synchronize to a SQL Server
+database and replicate information to a local database. Navigate to this
+control using the <b>Replication</b> command on the <b>Sync</b> menu. The <b
+style='mso-bidi-font-weight:normal'>Replication</b> control is always displayed
+first<span class=GramE>; <span style='mso-spacerun:yes'> </span>it</span>
+checks whether there is a local database containing the necessary data for the
+other controls. <span style='mso-spacerun:yes'> </span>Because the <b
+style='mso-bidi-font-weight:normal'>Customers</b>, <b style='mso-bidi-font-weight:
+normal'>Employees</b>, and <b style='mso-bidi-font-weight:normal'>Orders</b>
+controls access data from the local database, the local database must be
+present for those controls to function. If a local database does not exist, the
+<span class=SpellE>Northwind</span> menu option is disabled to prevent access
+to other controls. If a local database exists, the fields in this control are
+populated with default values from the database.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>The following properties are required
+for replication with a SQL Server database.<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:4.0pt;border-collapse:collapse;border:none;mso-border-alt:
+ solid silver .5pt;mso-padding-alt:0in 4.0pt 0in 4.0pt'>
+ <tr style='mso-yfti-irow:0'>
+  <td width=198 valign=top style='width:148.65pt;border:solid silver 1.0pt;
+  mso-border-alt:solid silver .5pt;background:#E2E2E2;mso-shading:windowtext;
+  mso-pattern:gray-50 silver;padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><b><span style='font-size:
+  10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>Property<o:p></o:p></span></b></p>
+  </td>
+  <td width=198 valign=top style='width:148.65pt;border:solid silver 1.0pt;
+  border-left:none;mso-border-left-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  background:#E2E2E2;mso-shading:windowtext;mso-pattern:gray-50 silver;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><b><span style='font-size:
+  10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>Value<o:p></o:p></span></b></p>
+  </td>
+  <td width=198 valign=top style='width:148.65pt;border:solid silver 1.0pt;
+  border-left:none;mso-border-left-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  background:#E2E2E2;mso-shading:windowtext;mso-pattern:gray-50 silver;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><b><span style='font-size:
+  10.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>Comment<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=198 style='width:148.65pt;border:solid silver 1.0pt;border-top:
+  none;mso-border-top-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>Authentication </span><span
+  style='font-family:Verdana;mso-bidi-font-family:Verdana;color:black'><o:p></o:p></span></p>
+  </td>
+  <td width=198 style='width:148.65pt;border-top:none;border-left:none;
+  border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;mso-border-top-alt:
+  solid silver .5pt;mso-border-left-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>&lt;SQL&gt; or
+  &lt;Windows&gt; </span><span style='font-family:Verdana;mso-bidi-font-family:
+  Verdana;color:black'><o:p></o:p></span></p>
+  </td>
+  <td width=198 valign=top style='width:148.65pt;border-top:none;border-left:
+  none;border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;
+  mso-border-top-alt:solid silver .5pt;mso-border-left-alt:solid silver .5pt;
+  mso-border-alt:solid silver .5pt;padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>SQL
+  authentication requires a user ID and password to be specified. Windows
+  Authentication does not require a user ID and password. .<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=198 style='width:148.65pt;border:solid silver 1.0pt;border-top:
+  none;mso-border-top-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>Publisher </span><span
+  style='font-family:Verdana;mso-bidi-font-family:Verdana;color:black'><o:p></o:p></span></p>
+  </td>
+  <td width=198 style='width:148.65pt;border-top:none;border-left:none;
+  border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;mso-border-top-alt:
+  solid silver .5pt;mso-border-left-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>&lt;Database Server
+  Name&gt; </span><span style='font-family:Verdana;mso-bidi-font-family:Verdana;
+  color:black'><o:p></o:p></span></p>
+  </td>
+  <td width=198 valign=top style='width:148.65pt;border-top:none;border-left:
+  none;border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;
+  mso-border-top-alt:solid silver .5pt;mso-border-left-alt:solid silver .5pt;
+  mso-border-alt:solid silver .5pt;padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>The name of the
+  computer running SQL Server.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=198 style='width:148.65pt;border:solid silver 1.0pt;border-top:
+  none;mso-border-top-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>User ID </span><span
+  style='font-family:Verdana;mso-bidi-font-family:Verdana;color:black'><o:p></o:p></span></p>
+  </td>
+  <td width=198 style='width:148.65pt;border-top:none;border-left:none;
+  border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;mso-border-top-alt:
+  solid silver .5pt;mso-border-left-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>&lt;default <span
+  class=SpellE>sa</span>&gt; </span><span style='font-family:Verdana;
+  mso-bidi-font-family:Verdana;color:black'><o:p></o:p></span></p>
+  </td>
+  <td width=198 valign=top style='width:148.65pt;border-top:none;border-left:
+  none;border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;
+  mso-border-top-alt:solid silver .5pt;mso-border-left-alt:solid silver .5pt;
+  mso-border-alt:solid silver .5pt;padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>The user ID is
+  required only if SQL authentication is used.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=198 style='width:148.65pt;border:solid silver 1.0pt;border-top:
+  none;mso-border-top-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>Password </span><span
+  style='font-family:Verdana;mso-bidi-font-family:Verdana;color:black'><o:p></o:p></span></p>
+  </td>
+  <td width=198 style='width:148.65pt;border-top:none;border-left:none;
+  border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;mso-border-top-alt:
+  solid silver .5pt;mso-border-left-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>&lt;default
+  blank&gt; </span><span style='font-family:Verdana;mso-bidi-font-family:Verdana;
+  color:black'><o:p></o:p></span></p>
+  </td>
+  <td width=198 style='width:148.65pt;border-top:none;border-left:none;
+  border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;mso-border-top-alt:
+  solid silver .5pt;mso-border-left-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>A password is
+  required only if SQL Server authentication is used.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=198 style='width:148.65pt;border:solid silver 1.0pt;border-top:
+  none;mso-border-top-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>Internet URL </span><span
+  style='font-family:Verdana;mso-bidi-font-family:Verdana;color:black'><o:p></o:p></span></p>
+  </td>
+  <td width=198 style='width:148.65pt;border-top:none;border-left:none;
+  border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;mso-border-top-alt:
+  solid silver .5pt;mso-border-left-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span class=MsoHyperlink><span
+  style='font-size:10.0pt;font-family:Verdana'><a href="http://%3ciis/">http://&lt;IIS</a>
+  Server Name&gt;/ &lt;virtual directory&gt;/sscesa20.dll <o:p></o:p></span></span></p>
+  </td>
+  <td width=198 valign=top style='width:148.65pt;border-top:none;border-left:
+  none;border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;
+  mso-border-top-alt:solid silver .5pt;mso-border-left-alt:solid silver .5pt;
+  mso-border-alt:solid silver .5pt;padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>This URL points
+  to the location of the SQL Server CE 2.0 Server Agent file (sscesa20.dll).
+  The IIS server name is the name of the computer running IIS. The virtual
+  directory is the same directory name used when configuring IIS through the SQL
+  Server CE Virtual Directory Creation Wizard.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=198 style='width:148.65pt;border:solid silver 1.0pt;border-top:
+  none;mso-border-top-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>Internet Login </span><span
+  style='font-family:Verdana;mso-bidi-font-family:Verdana;color:black'><o:p></o:p></span></p>
+  </td>
+  <td width=198 style='width:148.65pt;border-top:none;border-left:none;
+  border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;mso-border-top-alt:
+  solid silver .5pt;mso-border-left-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>&lt;default
+  blank&gt; </span><span style='font-family:Verdana;mso-bidi-font-family:Verdana;
+  color:black'><o:p></o:p></span></p>
+  </td>
+  <td width=198 valign=top style='width:148.65pt;border-top:none;border-left:
+  none;border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;
+  mso-border-top-alt:solid silver .5pt;mso-border-left-alt:solid silver .5pt;
+  mso-border-alt:solid silver .5pt;padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>The Internet
+  login is required only if security is set on IIS to require a login and
+  password.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width=198 style='width:148.65pt;border:solid silver 1.0pt;border-top:
+  none;mso-border-top-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>Internet
+  Password </span><span style='font-family:Verdana;mso-bidi-font-family:Verdana;
+  color:black'><o:p></o:p></span></p>
+  </td>
+  <td width=198 style='width:148.65pt;border-top:none;border-left:none;
+  border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;mso-border-top-alt:
+  solid silver .5pt;mso-border-left-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>&lt;default
+  blank&gt; </span><span style='font-family:Verdana;mso-bidi-font-family:Verdana;
+  color:black'><o:p></o:p></span></p>
+  </td>
+  <td width=198 valign=top style='width:148.65pt;border-top:none;border-left:
+  none;border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;
+  mso-border-top-alt:solid silver .5pt;mso-border-left-alt:solid silver .5pt;
+  mso-border-alt:solid silver .5pt;padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>The Internet
+  password is required only if security is set on IIS to require a login and
+  password.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;mso-yfti-lastrow:yes'>
+  <td width=198 style='width:148.65pt;border:solid silver 1.0pt;border-top:
+  none;mso-border-top-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>Subscriber </span><span
+  style='font-family:Verdana;mso-bidi-font-family:Verdana;color:black'><o:p></o:p></span></p>
+  </td>
+  <td width=198 style='width:148.65pt;border-top:none;border-left:none;
+  border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;mso-border-top-alt:
+  solid silver .5pt;mso-border-left-alt:solid silver .5pt;mso-border-alt:solid silver .5pt;
+  padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>&lt;SQLCESub#1&gt;
+  </span><span style='font-family:Verdana;mso-bidi-font-family:Verdana;
+  color:black'><o:p></o:p></span></p>
+  </td>
+  <td width=198 valign=top style='width:148.65pt;border-top:none;border-left:
+  none;border-bottom:solid silver 1.0pt;border-right:solid silver 1.0pt;
+  mso-border-top-alt:solid silver .5pt;mso-border-left-alt:solid silver .5pt;
+  mso-border-alt:solid silver .5pt;padding:0in 4.0pt 0in 4.0pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;
+  mso-layout-grid-align:none;text-autospace:none'><span style='font-size:10.0pt;
+  font-family:Verdana;mso-bidi-font-family:Verdana;color:black'>The Subscriber
+  field is used to identify the Subscriber.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='line-height:6.0pt;mso-line-height-rule:exactly;
+mso-layout-grid-align:none;text-autospace:none'><span style='font-size:6.0pt;
+font-family:Verdana;mso-bidi-font-family:Verdana;color:fuchsia'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>There are two buttons on this
+control: <b>Initialize</b><span style='mso-bidi-font-weight:bold'> and <b>Reset</b></span>.
+<b>Initialize</b> begins a replication session to the specified Publisher using
+the specified connection settings. A local database, <span class=SpellE>NorthwindDemo.sdf</span>
+is created. The connection fields are then disabled after replication has
+finished. <b>Reset</b> deletes the local <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>NorthwindDemo</b></span> database and
+enables the connection setting fields so they can be changed.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>A sample copy of the <span
+class=SpellE>NorthwindDemo.sdf</span> SQL Server CE database is included with
+the <span class=SpellE>NorthwindCE</span> Visual Studio.NET project. When <span
+class=SpellE>NorthwindDemo.sdf</span> is copied onto the device, you do not
+have to complete the steps above to configure replication before you can begin
+using the <span class=SpellE>NorthwindCE</span> application. All features of
+the <span class=SpellE>NorthwindCE</span> application will be available except
+for synchronization using replication. To use replication, you must click <b
+style='mso-bidi-font-weight:normal'>Reset</b> and then complete all
+configuration steps listed above.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>To copy <span class=SpellE>NorthwindDemo.sdf</span>
+onto the device, open the <span class=SpellE>NorthwindCE.sln</span> Visual
+Studio.NET solution. Right click on the <span class=SpellE>NorthwindDemo.sdf</span>
+file in the Solutions Explorer and select Properties. In the Properties window,
+click on Build Action and select Content from the drop down box. Open the file <span
+class=SpellE>FormNorthwindCE.vb</span> or <span class=SpellE>FormNorthwindCE.cs</span>
+depending on which version you have and follow the instructions in comments
+within the constructor of the class before building the application.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:9.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:15.0pt;mso-line-height-rule:exactly;page-break-after:
+avoid;mso-outline-level:8;mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:13.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black;mso-font-kerning:12.0pt'>Employees Control<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>The <b style='mso-bidi-font-weight:
+normal'>Employees</b> control allows you to select employee data from the <b
+style='mso-bidi-font-weight:normal'>Employees</b> table in the local <span
+class=SpellE><b style='mso-bidi-font-weight:normal'>NorthwindDemo</b></span> database
+(<span class=SpellE>NorthwindDemo.sdf</span>). Selecting an employee name from
+the combo box retrieves the corresponding <b style='mso-bidi-font-weight:normal'>Title</b>,
+<b style='mso-bidi-font-weight:normal'>Address</b>, <b style='mso-bidi-font-weight:
+normal'>City</b>, <b style='mso-bidi-font-weight:normal'>Region</b>, <span
+class=SpellE><b style='mso-bidi-font-weight:normal'>PostalCode</b></span>, <span
+class=SpellE><span class=GramE><b style='mso-bidi-font-weight:normal'>HomePhone</b></span></span>,
+<span class=SpellE><b style='mso-bidi-font-weight:normal'>HireDate</b></span>,
+and <span class=SpellE><b style='mso-bidi-font-weight:normal'>EmployeeID</b></span>
+column values from the <b style='mso-bidi-font-weight:normal'>Employees</b>
+table. All columns are editable except <span class=SpellE><b style='mso-bidi-font-weight:
+normal'>HireDate</b></span> and <span class=SpellE><b style='mso-bidi-font-weight:
+normal'>EmployeeID</b></span>. Clicking the <b>Save</b> button persists the
+changes to the local SQL Server CE database.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:9.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:15.0pt;mso-line-height-rule:exactly;page-break-after:
+avoid;mso-outline-level:8;mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:13.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black;mso-font-kerning:12.0pt'>Customer Control<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:13.0pt;mso-line-height-rule:exactly;mso-layout-grid-align:
+none;text-autospace:none'><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>The <b style='mso-bidi-font-weight:
+normal'>Customer</b> control allows you to select customer data from the <b
+style='mso-bidi-font-weight:normal'>Customers</b> table in the local <span
+class=SpellE><b style='mso-bidi-font-weight:normal'>NorthwindDemo</b></span>
+database. Selecting a customer name from the combo box retrieves the
+corresponding <b style='mso-bidi-font-weight:normal'>Address</b>, <b
+style='mso-bidi-font-weight:normal'>City</b>, <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>PostalCode</b></span>, <span class=GramE><b
+style='mso-bidi-font-weight:normal'>Country</b></span>, <b style='mso-bidi-font-weight:
+normal'>Phone</b>, and <span class=SpellE><b style='mso-bidi-font-weight:normal'>ContactTitle</b></span>
+column values from the <b style='mso-bidi-font-weight:normal'>Customers</b>
+table. None of the fields on the <b style='mso-bidi-font-weight:normal'>Customer</b>
+control are editable; the <b style='mso-bidi-font-weight:normal'>Customers</b>
+table is read-only.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:9.0pt;margin-right:0in;margin-bottom:3.0pt;
+margin-left:0in;line-height:15.0pt;mso-line-height-rule:exactly;page-break-after:
+avoid;mso-outline-level:8;mso-layout-grid-align:none;text-autospace:none'><b><span
+style='font-size:13.0pt;font-family:Verdana;mso-bidi-font-family:Verdana;
+color:black;mso-font-kerning:12.0pt'>Orders Control<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'>The <b style='mso-bidi-font-weight:
+normal'>Orders</b> control allows you to select orders and order details from
+the <b style='mso-bidi-font-weight:normal'>Orders</b> and <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>OrderDetails</b></span> tables in the local
+<span class=SpellE><b style='mso-bidi-font-weight:normal'>NorthwindDemo</b></span>
+database. Selecting a customer name from the combo box retrieves the order
+records for that customer; the <span class=SpellE><b style='mso-bidi-font-weight:
+normal'>OrderID</b></span>, <span class=SpellE><b style='mso-bidi-font-weight:
+normal'>OrderDate</b></span>, <span class=SpellE><b style='mso-bidi-font-weight:
+normal'>RequiredDate</b></span>, <span class=SpellE><b style='mso-bidi-font-weight:
+normal'>ShippedDate</b></span>, and <span class=SpellE><b style='mso-bidi-font-weight:
+normal'>ShipVia</b></span> column values are displayed. Selecting a specific
+order brings up the corresponding records for that order from the <span
+class=SpellE><b style='mso-bidi-font-weight:normal'>OrderDetails</b></span>
+table; the <span class=SpellE><b style='mso-bidi-font-weight:normal'>ProductID</b></span>,
+<span class=SpellE><b style='mso-bidi-font-weight:normal'>UnitPrice</b></span>,
+<b style='mso-bidi-font-weight:normal'>Quantity</b>, and <b style='mso-bidi-font-weight:
+normal'>Discount</b> column values are displayed. None of fields on the <b
+style='mso-bidi-font-weight:normal'>Orders</b> control are editable; both the <b
+style='mso-bidi-font-weight:normal'>Orders</b> and <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>OrderDetails</b></span> tables are
+read-only.</span></p>
+
+</div>
+
+</body>
+
+</html>

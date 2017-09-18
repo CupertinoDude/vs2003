@@ -1,0 +1,324 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META content="Microsoft Visual Studio 7.0" name="GENERATOR">
+		<LINK href="HelpStyle.css" type="text/css" rel="stylesheet"></HEAD>
+	<BODY>
+		<P><FONT face="Arial">
+				<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="300" border="0">
+					<TR>
+						<TD class="Command">DumpClass</TD>
+					</TR>
+					<TR>
+						<TD>Dumps EEClass information</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Syntax</TD>
+					</TR>
+					<TR>
+						<TD class="Syntax">!DumpClass &lt;addr&gt;</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Parameters</TD>
+					</TR>
+					<TR>
+						<TD class="Parameters">
+							<TABLE id="Table2" height="15" cellSpacing="1" cellPadding="1" width="708" border="0" valign="top">
+								<TR>
+									<TD vAlign="top" width="81"><STRONG>&lt;addr&gt;<BR>
+										</STRONG><EM>Class Address</EM></TD>
+									<TD vAlign="top">Can be obtained with DumpMT</TD>
+								</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Example</TD>
+					</TR>
+					<TR>
+						<TD class="Example"><pre>0:001&gt; !DumpClass 0daf36bc
+Class Name : System.Web.UI.WebControls.Button
+mdToken : 020001eb ()
+Parent Class : 0daf3584
+ClassLoader : 0016d200
+Method Table : 0da6a130
+Vtable Slots : 5e
+Total Method Slots : 6c
+Class Attributes : 100001 : 
+Flags : 3000821
+NumInstanceFields: 16
+NumStaticFields: 2
+ThreadStaticOffset: 0
+ThreadStaticsSize: 0
+ContextStaticOffset: 0
+ContextStaticsSize: 0
+FieldDesc*: 0da69fa0
+      MT    Field   Offset                 Type       Attr    Value Name
+0da68594  4000a47        4                CLASS   instance           _dataBindings
+0da68594  4000a48        8                CLASS   instance           _id
+0da68594  4000a49        c                CLASS   instance           _cachedUniqueID
+0da68594  4000a4a       10                CLASS   instance           _parent
+0da68594  4000a4b       14                CLASS   instance           _site
+0da68594  4000a4c       18                CLASS   instance           _events
+0da68594  4000a4d       1c                CLASS   instance           _controls
+0da68594  4000a4e       38         System.Int32   instance           _controlState
+0da68594  4000a4f       20                CLASS   instance           _renderMethod
+0da68594  4000a50       24                CLASS   instance           _viewState
+0da68594  4000a51       28                CLASS   instance           _controlsViewState
+0da68594  4000a52       2c                CLASS   instance           _namedControls
+0da68594  4000a53       3c         System.Int32   instance           _namedControlsID
+0da68594  4000a54       30                CLASS   instance           _namingContainer
+0da68594  4000a55       34                CLASS   instance           _page
+0da68594  4000a56       40            VALUETYPE   instance           flags
+0da68594  4000a41        0                CLASS     shared   static EventDataBinding
+    &gt;&gt; Domain:Value 00150718:NotInit  001a57b8:050c71a4 &lt;&lt;
+0da68594  4000a42        4                CLASS     shared   static EventInit
+    &gt;&gt; Domain:Value 00150718:NotInit  001a57b8:050c71b0 &lt;&lt;
+0da68594  4000a43        8                CLASS     shared   static EventLoad
+    &gt;&gt; Domain:Value 00150718:NotInit  001a57b8:050c71bc &lt;&lt;
+0da68594  4000a44        c                CLASS     shared   static EventUnload
+    &gt;&gt; Domain:Value 00150718:NotInit  001a57b8:050c71c8 &lt;&lt;
+0da68594  4000a45       10                CLASS     shared   static EventPreRender
+    &gt;&gt; Domain:Value 00150718:NotInit  001a57b8:050c71d4 &lt;&lt;
+0da68594  4000a46       14                CLASS     shared   static EventDisposed
+    &gt;&gt; Domain:Value 00150718:NotInit  001a57b8:050c71e0 &lt;&lt;
+0da68594  4000a57       18                CLASS     shared   static automaticIDs
+    &gt;&gt; Domain:Value 00150718:NotInit  001a57b8:050c71ec &lt;&lt;
+0da69d50  4000d31       44                CLASS   instance           tagName
+0da69d50  4000d32       54         System.Int32   instance           tagKey
+0da69d50  4000d33       48                CLASS   instance           attrColl
+0da69d50  4000d34       4c                CLASS   instance           attrState
+0da69d50  4000d35       50                CLASS   instance           controlStyle
+0da69d50  4000d36       58            VALUETYPE   instance           flags
+0da6a130  4000d6a        0                CLASS     shared   static EventClick
+    &gt;&gt; Domain:Value 00150718:NotInit  001a57b8:050c61b4 &lt;&lt;
+0da6a130  4000d6b        4                CLASS     shared   static EventCommand
+    &gt;&gt; Domain:Value 00150718:NotInit  001a57b8:050c61c0 &lt;&lt;
+										</pre>
+						</TD>
+					</TR>
+					<TR>
+						<TD class="SectionTitle">Output</TD>
+					</TR>
+					<TR>
+						<TD class="Comments">
+							<P>The MT column contains the address of the <STRONG>MethodTable</STRONG> the 
+								specific&nbsp;field comes from. In this example, some&nbsp;fields come from <STRONG>
+									System.Web.UI.WebControls.Button</STRONG> and some from <STRONG>System.Web.UI.Control</STRONG>.</P>
+							<P>
+								<TABLE id="Table3" height="550" cellSpacing="1" cellPadding="1" width="700" border="1">
+									<TR>
+										<TD>Class Name</TD>
+										<TD>Name of the dumped class</TD>
+									</TR>
+									<TR>
+										<TD>mdToken</TD>
+										<TD>
+											Metadata token (for more information see Glossary)</TD>
+									</TR>
+									<TR>
+										<TD>Parent Class</TD>
+										<TD>Class that the current class is derived from. Can be dumped with 
+											the&nbsp;DumpClass command</TD>
+									</TR>
+									<TR>
+										<TD>ClassLoader</TD>
+										<TD>
+											<P>
+												ClassLoader for the particular class.</P>
+										</TD>
+									</TR>
+									<TR>
+										<TD height="18">Method Table</TD>
+										<TD height="18">Method Table for the current class; can be examined with 
+											the&nbsp;DumpMT command</TD>
+									</TR>
+									<TR>
+										<TD>Vtable Slots</TD>
+										<TD>Number of vtable methods (hex),&nbsp;including derived methods</TD>
+									</TR>
+									<TR>
+										<TD>Total Method Slots</TD>
+										<TD>Total number of methods (hex), including derived methods.</TD>
+									</TR>
+									<TR>
+										<TD>Class Attributes</TD>
+										<TD>ValueType<BR>
+											Enum<BR>
+											UnmanagedValueType<BR>
+											Interface<BR>
+											Abstract<BR>
+											Import</TD>
+									</TR>
+									<TR>
+										<TD>Flags</TD>
+										<TD>Bitmasked DWORD for assigning class attribute values
+										</TD>
+									</TR>
+									<TR>
+										<TD>NumInstanceFields</TD>
+										<TD>
+											Number of non-static member variables</TD>
+									</TR>
+									<TR>
+										<TD>NumStaticFields</TD>
+										<TD>Number of static member variables</TD>
+									</TR>
+									<TR>
+										<TD>ThreadStaticOffset</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD>ThreadStaticsSize</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD>ContextStaticOffset</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD>ContextStaticsSize</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD>FieldDesc</TD>
+										<TD>Pointer to fielddata printed in the Fields table.
+										</TD>
+									</TR>
+									<TR>
+										<TD>MT</TD>
+										<TD>Method table the particular field comes from. You can use the&nbsp;DumpMT 
+											command to find out which class this field is defined in, such as the current 
+											class or the classes that the current class derives from.</TD>
+									</TR>
+									<TR>
+										<TD>Field</TD>
+										<TD>mdToken (mdtFieldDef) for the particular field.<BR>
+											Note: You cannot&nbsp;use the&nbsp;Token2EE command&nbsp;- it&nbsp;supports 
+											only&nbsp;mdtMethodDef, mdtTypeDef and mdtTypeRef</TD>
+									</TR>
+									<TR>
+										<TD>Offset</TD>
+										<TD><FONT color="#ff00ff"></FONT></TD>
+									</TR>
+									<TR>
+										<TD height="22">Type</TD>
+										<TD height="22">
+											<P>Type of field. This can be one of the following types
+											</P>
+											<P>
+												<TABLE id="Table4" height="297" cellSpacing="1" cellPadding="1" width="446" border="1">
+													<TR>
+														<TD>PTR</TD>
+													</TR>
+													<TR>
+														<TD>BYREF</TD>
+													</TR>
+													<TR>
+														<TD>VALUETYPE</TD>
+													</TR>
+													<TR>
+														<TD>CLASS</TD>
+													</TR>
+													<TR>
+														<TD>VAR</TD>
+													</TR>
+													<TR>
+														<TD>ARRAY</TD>
+													</TR>
+													<TR>
+														<TD>VALUEARRAY</TD>
+													</TR>
+													<TR>
+														<TD>Native Real</TD>
+													</TR>
+													<TR>
+														<TD>FNPTR</TD>
+													</TR>
+													<TR>
+														<TD>SZARRAY</TD>
+													</TR>
+													<TR>
+														<TD>GENERICARRAY</TD>
+													</TR>
+													<TR>
+														<TD>&lt;base type name&nbsp;ex. System.Int32 &gt;</TD>
+													</TR>
+												</TABLE>
+											</P>
+										</TD>
+									</TR>
+									<TR>
+										<TD>Attr</TD>
+										<TD>
+											<P>
+												Field attribute. Can be one of the following</P>
+											<P>
+												<TABLE id="Table7" cellSpacing="1" cellPadding="1" width="300" border="1">
+													<TR>
+														<TD>shared</TD>
+													</TR>
+													<TR>
+														<TD>shared static</TD>
+													</TR>
+													<TR>
+														<TD>static</TD>
+													</TR>
+													<TR>
+														<TD>instance</TD>
+													</TR>
+												</TABLE>
+											</P>
+											<P>
+												For shared static attributes, you&nbsp;also get an extra line for each domain, 
+												except&nbsp;the system domain and the shared domain
+												<table ID="Table5">
+													<tr>
+														<td class="WinDBGOut"><pre>0da689e4 4000bc8 8 CLASS shared static EventError <BR>
+    &gt;&gt; Domain:Value 00150718:NotInit  001a57b8:<STRONG><FONT color=red>050c7510</FONT></STRONG> &lt;&lt;</pre>
+														</td>
+													</tr>
+												</table>
+												<PRE></PRE>
+											<P>Domain: is followed by all available domains and whether the variable is 
+												initialized in the specific domain.&nbsp;NotInit, FailInit or UnInit2 is 
+												displayed if the static field&nbsp;is not initialized in the specific domain. 
+												Use the DumpDomain command on the domain address to display information about 
+												the domain.
+												<BR>
+												<BR>
+												You can dump out the object using the DumpObj command, as shown below.
+												<table ID="Table6">
+													<tr>
+														<td class="WinDBGOut"><pre>0:001&gt; !DumpObj <STRONG><FONT color=red>050c7510</FONT></STRONG> 
+Name: System.Object
+MethodTable 0x79b4dd80
+EEClass 0x79b4dde4
+Size 12(0xc) bytes
+mdToken: 02000002  (c:\windows\microsoft.net\framework\v1.0.3705\mscorlib.dll)
+Object</pre>
+														</td>
+													</tr>
+												</table>
+											</P>
+										</TD>
+									</TR>
+									<TR>
+										<TD>Value</TD>
+										<TD>Can be empty if it is an instance field, or static if it is an uninitialized 
+											shared variable.</TD>
+									</TR>
+									<TR>
+										<TD>Name</TD>
+										<TD>Name of field (member variable).</TD>
+									</TR>
+								</TABLE>
+							</P>
+						</TD>
+					</TR>
+				</TABLE>
+			</FONT>
+		</P>
+	</BODY>
+</HTML>
